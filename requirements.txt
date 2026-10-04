@@ -1,0 +1,8 @@
+fastapi
+pydantic
+rich
+instructor
+anthropic
+google-genai
+jinja2
+python-dotenv

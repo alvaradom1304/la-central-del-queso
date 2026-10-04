@@ -1,0 +1,139 @@
+{
+  "name": "01_order_intake_google_sheets",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "order-capture",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [250, 300],
+      "webhookId": "placeholder-id"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"status\": \"received\",\n  \"orderId\": \"{{ $json.body.orderId }}\"\n}",
+        "options": {}
+      },
+      "name": "Respond to Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [450, 150]
+    },
+    {
+      "parameters": {
+        "keepOnlySet": false,
+        "values": {
+          "string": [
+            {
+              "name": "formattedTotal",
+              "value": "=₡{{ $json.body.totalPriceCRC.toLocaleString('es-CR') }}"
+            },
+            {
+              "name": "dateFormatted",
+              "value": "={{ new Date($json.body.createdAt).toLocaleString('es-CR') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Data Normalization",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [450, 350]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "placeholder-doc-id",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "placeholder-sheet-name",
+          "mode": "id"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Fecha": "={{ $json.dateFormatted }}",
+            "ID Orden": "={{ $json.body.orderId }}",
+            "Cliente": "={{ $json.body.customerName }}",
+            "Teléfono": "={{ $json.body.customerPhone }}",
+            "Producto": "={{ $json.body.productName }}",
+            "Cantidad": "={{ $json.body.quantity }} {{ $json.body.unit }}",
+            "Total CRC": "={{ $json.formattedTotal }}",
+            "Retiro/Feria": "={{ $json.body.pickupLocation }}",
+            "Estado Pago": "Pendiente Sinpe",
+            "Notas": "={{ $json.body.notes }}",
+            "Canal de Origen": "={{ $json.body.source }}"
+          }
+        },
+        "options": {}
+      },
+      "name": "Google Sheets Logger",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 3,
+      "position": [650, 350]
+    },
+    {
+      "parameters": {
+        "content": "=🚨 Nuevo pedido recibido!\nID: {{ $json.body.orderId }}\nCliente: {{ $json.body.customerName }}\nLugar: {{ $json.body.pickupLocation }}\n\nRevisar Google Sheets para preparar la entrega."
+      },
+      "name": "Notification Preparer",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [850, 350]
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Data Normalization",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Data Normalization": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets Logger",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets Logger": {
+      "main": [
+        [
+          {
+            "node": "Notification Preparer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "versionId": "2"
+}

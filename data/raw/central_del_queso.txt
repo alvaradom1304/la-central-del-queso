@@ -1,0 +1,26 @@
+PROYECTO: La Central del Queso / Quesos Doña Martha
+UBICACIÓN: Costa Rica
+HISTORIA: Más de 30 años de tradición familiar elaborando y vendiendo lácteos artesanales costarricenses. La figura central es Doña Martha (tradición, calidad artesanal, frescura, trato humano y confianza). Especialidad histórica: Queso Turrialba.
+
+PORTAFOLIO DE PRODUCTOS:
+Turrialba, semiduro, maduro, duro, bagaces, queso rayado a mano, duro con diferentes niveles de sal, palmito, mozzarella, ahumado, queso de la India, leche casera, natilla casera y panes con queso.
+Productos de alta venta reportados: Turrialba, semiduro, duro, queso de la India y leche.
+Hipótesis interna: El semiduro se considera de mejor rentabilidad, pero está pendiente de validación con costos y margen exacto.
+
+INVESTIGACIÓN DE CLIENTES (Muestra primaria de 33 encuestas en feria, agosto 2026):
+- Descubrimiento: 29 de 33 clientes conocieron la marca en la Feria del Agricultor.
+- Producto recurrente: 17 de 33 clientes compran semiduro con frecuencia (candidato a Hero Product).
+- Atributos valorados: Confianza, calidad artesanal, frescura, sabor y atención personalizada.
+- Mejoras solicitadas: Combos, ofertas controladas por margen y servicio de entrega (delivery).
+- Tensión detectada: Clientes valoran la conveniencia del delivery pero disfrutan la experiencia física de degustación en la feria.
+
+OPERACIONES Y FRICCIONES:
+- Canal principal: Feria del agricultor (funciona simultáneamente como adquisición, punto de venta y degustación).
+- Inventario dinámico: El stock fluctúa durante la feria por ventas y entradas simultáneas de producto.
+- Fricción financiera: Ventas fiadas / cuentas por cobrar manuales que consumen tiempo y no tienen seguimiento automatizado.
+- Contabilidad manual: Registros en papel y procesos administrativos no sistematizados.
+
+VISIÓN Y PRÓXIMOS PASOS:
+- Expandir a canales B2B (restaurantes, sodas, minimarkets, distribuidores) y pedidos directos sin descuidar la feria.
+- Mantener la esencia artesanal automatizando únicamente la gestión administrativa, inventario, datos y pedidos.
+- Regla rectora: No escalar complejidad antes de escalar evidencia.

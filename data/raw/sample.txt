@@ -1,0 +1,15 @@
+Interview Transcript - Acme Corp
+Founder: Jane Doe
+Date: Oct 3, 2026
+
+Jane: So Acme Corp is fundamentally trying to revolutionize the widget industry. We sell mainly to mid-market B2B and some enterprise clients.
+Interviewer: What's the main value you provide?
+Jane: We're automating their manual widget processes, which honestly saves them about 20 hours a week.
+Interviewer: Interesting. How do you make money?
+Jane: It's a SaaS subscription model, but we also have enterprise support tiers. 
+Interviewer: And your costs?
+Jane: Mainly cloud hosting and R&D. We have a gross margin of around 80%. Oh, and sales team costs.
+Interviewer: What are the main bottlenecks right now?
+Jane: Our onboarding for enterprise clients is super manual. And we're a bit slow on feature delivery. Also, I think customers churn because we are missing feature X, but I don't have the numbers to prove it yet.
+Interviewer: Any facts we can rely on regarding costs?
+Jane: Yes, server costs are definitely 40% of our COGS, I checked the AWS billing dashboard yesterday.
