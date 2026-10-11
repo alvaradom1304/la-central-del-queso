@@ -2,137 +2,146 @@
 
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Leaf, Droplets, Sun } from "lucide-react";
+import { Clock, Heart, Award, MapPin, Truck, Sparkles } from "lucide-react";
 
 export default function StorySection() {
   const sectionRef = useRef<HTMLDivElement>(null);
-  
-  // Capturar el progreso del scroll dentro de esta sección
+
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start end", "end start"]
+    offset: ["start end", "end start"],
   });
 
-  // Efectos de Parallax y Transformación
-  const yImage = useTransform(scrollYProgress, [0, 1], ["-10%", "20%"]);
-  const scaleImage = useTransform(scrollYProgress, [0, 0.5, 1], [1.1, 1, 1.05]);
-  const opacityText = useTransform(scrollYProgress, [0.1, 0.3, 0.6], [0, 1, 1]);
-  const yText = useTransform(scrollYProgress, [0.1, 0.3], [50, 0]);
+  const yImage = useTransform(scrollYProgress, [0, 1], ["-6%", "12%"]);
+  const opacityText = useTransform(scrollYProgress, [0.1, 0.35], [0, 1]);
 
-  const features = [
-    { icon: <Droplets className="w-5 h-5"/>, title: "Leche Pura", desc: "Ordeño diario sin aditivos industriales." },
-    { icon: <Leaf className="w-5 h-5"/>, title: "100% Artesanal", desc: "Hilado a mano siguiendo la receta original." },
-    { icon: <Sun className="w-5 h-5"/>, title: "Curado Natural", desc: "Maduración perfecta en el clima de Turrialba." }
+  const pillars = [
+    {
+      icon: <Clock className="w-5 h-5" />,
+      title: "Desde 1980",
+      desc: "Más de 44 años de presencia ininterrumpida en las mañanas de feria de San José.",
+    },
+    {
+      icon: <Award className="w-5 h-5" />,
+      title: "Origen Turrialba",
+      desc: "Seleccionamos cada semana el mejor semiduro directamente de cuajadas tradicionales.",
+    },
+    {
+      icon: <Heart className="w-5 h-5" />,
+      title: "Legado Familiar",
+      desc: "El camino fundado por el padre, custodiado hoy por la madre y continuado con orgullo por los hijos.",
+    },
   ];
 
   return (
-    <section 
+    <section
       ref={sectionRef}
-      className="relative py-32 px-4 bg-white overflow-hidden" 
-      id="nuestra-historia"
+      className="relative py-28 sm:py-36 px-4 sm:px-6 lg:px-8 bg-cream-dark/50 border-t border-forest/10 overflow-hidden"
+      id="historia"
     >
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-24 relative z-10">
-        
-        {/* Lado de Imagen con Parallax (Scrollytelling visual) */}
-        <div className="w-full lg:w-1/2 relative">
-          <motion.div 
-            style={{ y: yImage }}
-            className="relative z-10"
-          >
-            <div className="aspect-[4/5] bg-cream-dark rounded-[2rem] overflow-hidden relative shadow-2xl shadow-forest/10 border border-forest/5">
-              
-              {/* Contenedor de la imagen que hace zoom inverso al hacer scroll */}
-              <motion.div 
-                style={{ scale: scaleImage }}
-                className="absolute inset-0 bg-stone-100 flex flex-col items-center justify-center"
-              >
-                <img src="/historia_queso.jpg" alt="Manos elaborando queso artesanal" className="w-full h-full object-cover" />
-              </motion.div>
+      {/* Elementos decorativos */}
+      <div className="absolute top-1/2 left-0 w-72 h-72 bg-cheese/10 rounded-full blur-[120px] pointer-events-none -z-10" />
+      <div className="absolute bottom-0 right-10 w-96 h-96 bg-terracotta/5 rounded-full blur-[140px] pointer-events-none -z-10" />
 
-              <div className="absolute inset-0 bg-gradient-to-t from-forest/80 via-forest/20 to-transparent mix-blend-multiply"></div>
-              
-              {/* Badge Flotante (Años de Tradición) */}
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
-                whileInView={{ opacity: 1, scale: 1, rotate: -3 }}
-                transition={{ duration: 0.8, delay: 0.3, type: "spring" }}
-                viewport={{ once: true, margin: "-100px" }}
-                className="absolute bottom-10 left-[-20px] bg-terracotta text-cream p-6 rounded-2xl shadow-2xl backdrop-blur-md"
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-14 lg:gap-20 relative z-10">
+        
+        {/* Lado de Imagen con Parallax Suave */}
+        <div className="w-full lg:w-1/2 relative">
+          <motion.div style={{ y: yImage }} className="relative z-10">
+            <div className="aspect-[4/5] max-w-lg mx-auto bg-forest/5 rounded-[2.5rem] overflow-hidden relative shadow-2xl shadow-forest/15 border border-forest/10">
+              <img
+                src="/historia_queso.jpg"
+                alt="Elaboración tradicional del queso artesanal costarricense"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-forest/80 via-forest/20 to-transparent" />
+
+              {/* Badge del Legado de 1980 */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.85, rotate: -4 }}
+                whileInView={{ opacity: 1, scale: 1, rotate: -2 }}
+                transition={{ duration: 0.7, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="absolute bottom-8 left-6 sm:left-8 bg-terracotta text-cream p-5 sm:p-6 rounded-2xl shadow-xl border border-white/10"
               >
-                <span className="block text-5xl font-serif leading-none mb-1">+30</span>
-                <span className="block text-xs uppercase tracking-[0.2em] font-bold opacity-90">Años de Legado</span>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-4xl sm:text-5xl font-serif font-bold leading-none">1980</span>
+                </div>
+                <span className="block text-2xs sm:text-xs uppercase tracking-[0.2em] font-semibold mt-1 opacity-90">
+                  Año de Fundación Familiar
+                </span>
               </motion.div>
             </div>
           </motion.div>
-
-          {/* Elemento decorativo de fondo */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-cheese/5 rounded-full blur-3xl -z-10"></div>
         </div>
-        
-        {/* Lado de Texto con aparición progresiva (Scrollytelling narrativo) */}
-        <motion.div 
-          style={{ opacity: opacityText, y: yText }}
-          className="w-full lg:w-1/2"
-        >
-          <div className="flex items-center gap-4 mb-6">
-            <div className="h-px w-12 bg-terracotta"></div>
-            <h2 className="text-sm font-bold tracking-widest text-terracotta uppercase">Nuestras Raíces</h2>
+
+        {/* Lado de Narrativa y Verdad de Negocio */}
+        <motion.div style={{ opacity: opacityText }} className="w-full lg:w-1/2 space-y-6">
+          <div className="flex items-center gap-3">
+            <div className="h-px w-10 bg-terracotta" />
+            <h2 className="text-xs sm:text-sm font-bold tracking-[0.2em] text-terracotta uppercase">
+              Nuestra Historia Real
+            </h2>
           </div>
-          
-          <h3 className="text-4xl md:text-5xl font-serif text-forest mb-8 leading-[1.15]">
-            De nuestras manos a su mesa, <span className="italic text-forest/70 font-light">sin atajos.</span>
+
+          <h3 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-forest font-bold leading-[1.15]">
+            Cuatro décadas de madrugada, <br />
+            <span className="italic font-light text-forest/70">palabra y buen queso.</span>
           </h3>
-          
-          <div className="space-y-6 text-lg text-forest/70 leading-relaxed font-light mb-12">
+
+          <div className="space-y-4 text-forest/80 text-sm sm:text-base leading-relaxed font-light">
             <p>
-              Por más de tres décadas, nuestra familia se ha levantado de madrugada para cuidar la leche 
-              más fresca y transformarla en los quesos artesanales que usted conoce y en los que confía. 
+              En 1980, nuestro padre comenzó a recorrer los pueblos lecheros de Turrialba buscando 
+              lo que ninguna fábrica industrial podía producir: el queso semiduro auténtico, cuajado 
+              con leche recién ordeñada y curado al viento fresco de las faldas del volcán.
             </p>
             <p>
-              No creemos en procesos industriales masivos ni en alterar los sabores con químicos. 
-              Creemos en el <strong className="text-forest font-medium">trato humano</strong>, en el queso hilado a mano, y en el sabor a campo 
-              que solo se logra cuando las cosas se hacen con paciencia.
+              Con ese queso cargado en su vehículo llegaba cada fin de semana a las ferias del agricultor, 
+              ganándose a pulso la confianza de las familias ticas cliente por cliente, saludo por saludo.
+            </p>
+            <p>
+              Hoy, ese legado que él fundó sigue más vivo que nunca: nuestra madre continúa al frente 
+              con la misma devoción inquebrantable, y sus hijos llevamos con orgullo el relevo de su nombre, 
+              cuidando que cada pieza de queso mantenga la misma textura, el mismo corte y el mismo respeto por la tradición.
             </p>
           </div>
 
-          {/* Features animadas escalonadamente */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
-            {features.map((feature, index) => (
-              <motion.div 
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 + (index * 0.1) }}
-                viewport={{ once: true }}
-                className="flex flex-col gap-3"
+          {/* Tres Pilares Fundamentales */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 pt-4">
+            {pillars.map((pillar, idx) => (
+              <div
+                key={idx}
+                className="bg-white/80 p-4 rounded-2xl border border-forest/10 space-y-2 shadow-xs"
               >
-                <div className="w-10 h-10 rounded-full bg-forest/5 flex items-center justify-center text-terracotta">
-                  {feature.icon}
+                <div className="w-9 h-9 rounded-xl bg-forest/5 flex items-center justify-center text-terracotta">
+                  {pillar.icon}
                 </div>
-                <h4 className="font-serif text-forest font-bold text-lg">{feature.title}</h4>
-                <p className="text-sm text-forest/60 leading-relaxed">{feature.desc}</p>
-              </motion.div>
+                <h4 className="font-serif font-bold text-forest text-base">{pillar.title}</h4>
+                <p className="text-xs text-forest/70 leading-relaxed font-light">{pillar.desc}</p>
+              </div>
             ))}
           </div>
-          
-          {/* Firma */}
-          <motion.div 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.6 }}
-            viewport={{ once: true }}
-            className="flex items-center gap-5 border-t border-forest/10 pt-8"
-          >
-            <div className="h-16 w-16 bg-cream rounded-full flex items-center justify-center text-forest text-2xl font-serif font-bold italic border border-forest/5">
-              M
+
+          {/* Pie de historia con mención transparente a ferias */}
+          <div className="flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-forest/10">
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 rounded-full bg-forest text-cream font-serif font-bold text-lg flex items-center justify-center italic">
+                LC
+              </div>
+              <div>
+                <p className="font-serif font-bold text-forest text-sm">La Central del Queso</p>
+                <p className="text-2xs text-forest/50 uppercase tracking-wider">
+                  Guadalupe (Sábados) · Hatillo (Domingos)
+                </p>
+              </div>
             </div>
-            <div>
-              <p className="font-bold text-forest text-lg">Familia Doña Martha</p>
-              <p className="text-forest/50 text-sm tracking-wide">FUNDADORES, TURRIALBA</p>
+
+            <div className="text-2xs text-forest/60 italic bg-forest/5 px-3 py-1.5 rounded-lg border border-forest/5">
+              * Nota de transparencia: Cualquier representación campestre es ambientación ilustrativa en homenaje a los lecheros de Turrialba.
             </div>
-          </motion.div>
-          
+          </div>
         </motion.div>
+
       </div>
     </section>
   );

@@ -2,36 +2,43 @@
 
 import React, { Suspense } from "react";
 import Header from "@/components/Header";
+import HeroJourney from "@/components/HeroJourney";
 import StorySection from "@/components/StorySection";
 import ProductCatalog from "@/components/ProductCatalog";
 import FeriaLocator from "@/components/FeriaLocator";
 import Footer from "@/components/Footer";
-import FarmJourney from "@/components/FarmJourney";
+import CartDrawer from "@/components/CartDrawer";
+import { CartProvider } from "@/lib/CartContext";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-cream flex flex-col font-sans selection:bg-cheese selection:text-forest">
-      <Header />
-      
-      <main className="flex-grow">
-        
-        {/* El Viaje Inmersivo: Zoom a la Finca -> Puertas -> Catálogo */}
-        <FarmJourney>
-          <div className="pt-24 pb-12">
-            <Suspense fallback={<div className="py-24 text-center text-cream font-serif text-2xl">Preparando la cava...</div>}>
-              <ProductCatalog />
-            </Suspense>
-          </div>
-        </FarmJourney>
+    <CartProvider>
+      <div className="min-h-screen bg-cream flex flex-col font-sans selection:bg-cheese selection:text-forest">
+        {/* Cabecera de Navegación Fija */}
+        <Header />
 
-        {/* Las secciones posteriores continúan el flujo normal de la página */}
-        <div className="relative z-50 bg-cream">
+        <main className="flex-grow">
+          {/* 1. Recorrido Cinematográfico Editorial: Llegada -> Legado 1980 -> Semiduro Turrialba -> En Mesa */}
+          <HeroJourney />
+
+          {/* 2. Catálogo Comercial: Búsqueda, Filtros, Moneda Dual CRC/USD, Pedido */}
+          <Suspense fallback={<div className="py-24 text-center text-forest font-serif text-2xl">Cargando selección de quesos...</div>}>
+            <ProductCatalog />
+          </Suspense>
+
+          {/* 3. Historia Familiar & Verdad del Negocio */}
           <StorySection />
-          <FeriaLocator />
-        </div>
-      </main>
 
-      <Footer />
-    </div>
+          {/* 4. Ubicación Física en Ferias del Agricultor */}
+          <FeriaLocator />
+        </main>
+
+        {/* 5. Pie de Página */}
+        <Footer />
+
+        {/* 6. Panel Desplegable de Carrito / Pedido Preparado */}
+        <CartDrawer />
+      </div>
+    </CartProvider>
   );
 }

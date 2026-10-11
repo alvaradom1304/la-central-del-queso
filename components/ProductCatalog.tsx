@@ -1,341 +1,381 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
+import React, { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ShoppingBag, Info, ChevronDown } from "lucide-react";
-import { products, CATEGORIES, Product } from "../lib/products";
+import { 
+  Search, 
+  ShoppingBag, 
+  Plus, 
+  Minus, 
+  Check, 
+  Sparkles, 
+  Filter, 
+  Store, 
+  UtensilsCrossed, 
+  ArrowRight,
+  Info
+} from "lucide-react";
+import { products, CATEGORIES, Product, USD_EXCHANGE_RATE } from "../lib/products";
+import { useCart } from "../lib/CartContext";
 
 export default function ProductCatalog() {
-  const searchParams = useSearchParams();
-  const [source, setSource] = useState<string>("direct_web");
-
-  useEffect(() => {
-    const utmSource = searchParams.get("utm_source");
-    const srcParam = searchParams.get("src");
-    const detectedSource = utmSource || srcParam;
-    
-    if (detectedSource) {
-      setSource(detectedSource);
-      sessionStorage.setItem("acquisition_source", detectedSource);
-    } else {
-      const storedSource = sessionStorage.getItem("acquisition_source");
-      if (storedSource) setSource(storedSource);
-    }
-  }, [searchParams]);
-
-  const [activeCategory, setActiveCategory] = useState<string>("Todos");
-  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const { addToCart, items, setIsCartOpen, currency, setCurrency } = useCart();
   
-  const [customerName, setCustomerName] = useState("");
-  const [pickupLocation, setPickupLocation] = useState<"Guadalupe" | "Hatillo" | "Delivery">("Guadalupe");
-  const [notes, setNotes] = useState("");
-  const [quantity, setQuantity] = useState(1);
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState<string>("Todos");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [quantities, setQuantities] = useState<Record<string, number>>({});
+  const [addedAnimation, setAddedAnimation] = useState<Record<string, boolean>>({});
 
-  const filteredProducts = products.filter((product) => {
-    if (activeCategory === "Todos") return true;
-    return product.category === activeCategory;
-  });
+  const filteredProducts = useMemo(() => {
+    return products.filter((product) => {
+      const matchesCategory =
+        selectedCategory === "Todos" || product.category === selectedCategory;
+      const matchesSearch =
+        product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        product.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        product.presentation.toLowerCase().includes(searchQuery.toLowerCase());
+      return matchesCategory && matchesSearch;
+    });
+  }, [selectedCategory, searchQuery]);
 
-  const tabs = ["Todos", ...CATEGORIES];
+  const handleQuantityChange = (id: string, delta: number) => {
+    const current = quantities[id] || 1;
+    const next = Math.max(1, current + delta);
+    setQuantities((prev) => ({ ...prev, [id]: next }));
+  };
 
-  const handleOrderSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!selectedProduct || !customerName) return;
-
-    setIsSubmitting(true);
+  const handleAdd = (product: Product) => {
+    const qty = quantities[product.id] || 1;
+    addToCart(product, qty);
     
-    try {
-      const payload = {
-        orderId: `ORD-${Date.now().toString().slice(-6)}`,
-        customerName,
-        customerPhone: "",
-        productId: selectedProduct.id,
-        productName: selectedProduct.name,
-        quantity,
-        unit: selectedProduct.unit,
-        totalPriceCRC: selectedProduct.priceCRC * quantity,
-        pickupLocation,
-        notes,
-        source
-      };
+    // Feedback visual temporal
+    setAddedAnimation((prev) => ({ ...prev, [product.id]: true }));
+    setTimeout(() => {
+      setAddedAnimation((prev) => ({ ...prev, [product.id]: false }));
+    }, 1500);
+  };
 
-      const res = await fetch("/api/orders", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-
-      const data = await res.json();
-
-      if (data.success && data.whatsappUrl) {
-        window.location.href = data.whatsappUrl;
-      } else {
-        alert("Hubo un error procesando su pedido. Por favor intente de nuevo.");
-      }
-    } catch (error) {
-      console.error(error);
-      alert("Error de conexión. Intente de nuevo.");
-    } finally {
-      setIsSubmitting(false);
-      setSelectedProduct(null);
+  const formatPrice = (priceCRC: number) => {
+    if (currency === "CRC") {
+      return `₡${priceCRC.toLocaleString("es-CR")}`;
     }
+    const usd = priceCRC / USD_EXCHANGE_RATE;
+    return `$${usd.toFixed(2)} USD`;
+  };
+
+  const formatSecondaryPrice = (priceCRC: number) => {
+    if (currency === "CRC") {
+      const usd = priceCRC / USD_EXCHANGE_RATE;
+      return `≈ $${usd.toFixed(2)} USD`;
+    }
+    return `≈ ₡${priceCRC.toLocaleString("es-CR")} CRC`;
   };
 
   return (
-    <section className="py-32 px-4 bg-forest relative overflow-hidden" id="catalogo">
-      {/* Elementos decorativos de la cava */}
-      <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-cream to-transparent opacity-10 pointer-events-none"></div>
-      <div className="absolute -top-40 -right-40 w-96 h-96 bg-cheese/10 rounded-full blur-[100px] pointer-events-none"></div>
-      <div className="absolute bottom-0 left-10 w-[500px] h-[500px] bg-terracotta/5 rounded-full blur-[120px] pointer-events-none"></div>
-
-      <div className="max-w-7xl mx-auto relative z-10">
+    <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-cream" id="catalogo">
+      <div className="max-w-7xl mx-auto">
         
-        <div className="text-center mb-20">
-          <motion.div 
-            initial={{ height: 0 }}
-            whileInView={{ height: 60 }}
-            viewport={{ once: true }}
-            className="w-px bg-cheese mx-auto mb-8"
-          ></motion.div>
-          
-          <motion.span 
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-cheese text-sm font-semibold tracking-[0.3em] uppercase mb-4 block"
-          >
-            La Cava de Doña Martha
-          </motion.span>
-          
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-            className="text-5xl md:text-6xl font-serif text-cream mb-6"
-          >
-            El final del recorrido. <br/> <span className="italic font-light text-cream/70">Su recompensa.</span>
-          </motion.h2>
-          
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
-            className="text-cream/50 max-w-2xl mx-auto text-lg font-light"
-          >
-            Nuestros quesos han alcanzado su punto perfecto. Seleccione sus favoritos para que se los llevemos directamente de la finca a su casa.
-          </motion.p>
-        </div>
+        {/* Cabecera Editorial del Catálogo */}
+        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-forest/5 border border-forest/10 text-terracotta text-2xs sm:text-xs font-bold uppercase tracking-wider">
+            <Sparkles className="w-3.5 h-3.5 text-cheese" />
+            <span>Nuestra Selección Artesanal</span>
+          </div>
 
-        {/* Category Filters (Modo Oscuro) */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
-          className="flex flex-wrap justify-center gap-3 mb-16"
-        >
-          {tabs.map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setActiveCategory(tab)}
-              className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
-                activeCategory === tab
-                  ? "bg-cheese text-forest shadow-[0_0_20px_rgba(242,169,0,0.2)]"
-                  : "bg-transparent text-cream/70 border border-cream/20 hover:border-cheese/50 hover:text-cheese"
-              }`}
-            >
-              {tab}
-            </button>
-          ))}
-        </motion.div>
+          <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-forest font-bold tracking-tight">
+            Quesos de Verdad. <br />
+            <span className="italic font-light text-forest/70">Sin atajos industriales.</span>
+          </h2>
 
-        {/* Product Grid */}
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 xl:gap-10">
-          <AnimatePresence mode="popLayout">
-            {filteredProducts.map((product, index) => (
-              <motion.div
-                layout
-                initial={{ opacity: 0, y: 50, scale: 0.95 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.5, delay: index * 0.05, type: "spring", stiffness: 100 }}
-                key={product.id}
-                className={`group flex flex-col bg-cream rounded-3xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] border ${
-                  product.isHero ? "border-terracotta ring-2 ring-terracotta/20 shadow-[0_0_30px_rgba(192,80,61,0.2)]" : "border-cream-dark"
+          <p className="text-forest/70 text-sm sm:text-base leading-relaxed font-light">
+            Seleccionados en Turrialba y llevados directamente a la feria cada semana. 
+            Consulte pesos, agregue a su canasta y arme su consulta para retiro o entrega.
+          </p>
+
+          {/* Selector de Moneda Centralizado */}
+          <div className="pt-2 flex items-center justify-center gap-3">
+            <span className="text-xs text-forest/60 font-medium">Ver precios en:</span>
+            <div className="inline-flex items-center bg-forest/5 p-1 rounded-xl border border-forest/10">
+              <button
+                type="button"
+                onClick={() => setCurrency("CRC")}
+                className={`text-xs px-3 py-1.5 rounded-lg font-bold transition-all duration-200 ${
+                  currency === "CRC"
+                    ? "bg-forest text-cream shadow-xs"
+                    : "text-forest/70 hover:text-forest"
                 }`}
               >
-                {/* Visual Placeholder for Product */}
-                <div className={`h-64 flex flex-col items-center justify-center relative overflow-hidden bg-stone-100`}>
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/30 z-10"></div>
-                  
-                  {/* Imagen del queso */}
-                  <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-110 z-0">
-                    <img src="/queso_catalogo.jpg" alt={product.name} className="w-full h-full object-cover" />
-                  </div>
+                Colones (₡ CRC)
+              </button>
+              <button
+                type="button"
+                onClick={() => setCurrency("USD")}
+                className={`text-xs px-3 py-1.5 rounded-lg font-bold transition-all duration-200 ${
+                  currency === "USD"
+                    ? "bg-forest text-cream shadow-xs"
+                    : "text-forest/70 hover:text-forest"
+                }`}
+              >
+                Dólares ($ USD)
+              </button>
+            </div>
+            <span className="text-2xs text-forest/40 hidden sm:inline">
+              (TC ref: ₡{USD_EXCHANGE_RATE} / $1)
+            </span>
+          </div>
+        </div>
 
-                  {product.badge && (
-                    <span className="absolute top-5 right-5 bg-terracotta text-cream text-xs font-bold px-4 py-1.5 rounded-full shadow-lg z-20">
-                      {product.badge}
-                    </span>
-                  )}
-                </div>
+        {/* Barra de Búsqueda y Filtros de Categoría */}
+        <div className="mb-12 space-y-6">
+          {/* Buscador de Texto */}
+          <div className="max-w-md mx-auto relative">
+            <Search className="w-4 h-4 text-forest/40 absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none" />
+            <input
+              type="text"
+              placeholder="Buscar por tipo de queso, presentación o receta..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full bg-white border border-forest/15 rounded-2xl pl-11 pr-4 py-3 text-sm text-forest placeholder:text-forest/35 focus:outline-hidden focus:ring-2 focus:ring-terracotta/40 shadow-xs"
+            />
+            {searchQuery && (
+              <button
+                type="button"
+                onClick={() => setSearchQuery("")}
+                className="absolute right-3.5 top-1/2 -translate-y-1/2 text-xs text-forest/40 hover:text-forest px-1.5 py-0.5 rounded"
+              >
+                Limpiar
+              </button>
+            )}
+          </div>
 
-                {/* Product Details */}
-                <div className="p-8 flex flex-col flex-grow bg-cream z-10 relative">
-                  <div className="text-xs text-terracotta font-bold uppercase tracking-[0.15em] mb-3">
-                    {product.category}
-                  </div>
-                  <h3 className="text-2xl font-serif text-forest mb-3 leading-snug">{product.name}</h3>
-                  <p className="text-forest/70 text-sm mb-8 flex-grow leading-relaxed font-light">{product.description}</p>
-                  
-                  <div className="flex items-center justify-between mt-auto pt-6 border-t border-forest/10">
-                    <div>
-                      <span className="text-2xl font-bold text-forest">
-                        ₡{product.priceCRC.toLocaleString("es-CR")}
-                      </span>
-                      <span className="text-forest/50 text-xs uppercase tracking-wider ml-1">/ {product.unit}</span>
+          {/* Categorías como Pastillas Horizontales */}
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
+            <button
+              type="button"
+              onClick={() => setSelectedCategory("Todos")}
+              className={`text-xs sm:text-sm px-4 py-2 rounded-full font-medium transition-all duration-200 ${
+                selectedCategory === "Todos"
+                  ? "bg-terracotta text-cream shadow-md shadow-terracotta/20 font-semibold"
+                  : "bg-white text-forest/70 border border-forest/10 hover:border-forest/30 hover:text-forest"
+              }`}
+            >
+              Todos los Quesos ({products.length})
+            </button>
+            {CATEGORIES.map((cat) => {
+              const count = products.filter((p) => p.category === cat).length;
+              return (
+                <button
+                  key={cat}
+                  type="button"
+                  onClick={() => setSelectedCategory(cat)}
+                  className={`text-xs sm:text-sm px-4 py-2 rounded-full font-medium transition-all duration-200 ${
+                    selectedCategory === cat
+                      ? "bg-terracotta text-cream shadow-md shadow-terracotta/20 font-semibold"
+                      : "bg-white text-forest/70 border border-forest/10 hover:border-forest/30 hover:text-forest"
+                  }`}
+                >
+                  {cat} ({count})
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Cuadrícula de Productos */}
+        {filteredProducts.length === 0 ? (
+          <div className="text-center py-20 bg-white/60 rounded-3xl border border-forest/10 p-8 space-y-3">
+            <Info className="w-8 h-8 text-forest/30 mx-auto" />
+            <h3 className="font-serif text-xl font-bold text-forest">No se encontraron productos</h3>
+            <p className="text-sm text-forest/60 max-w-sm mx-auto">
+              Intente con otro término de búsqueda o seleccione otra categoría.
+            </p>
+            <button
+              type="button"
+              onClick={() => {
+                setSearchQuery("");
+                setSelectedCategory("Todos");
+              }}
+              className="mt-2 text-xs font-semibold text-terracotta hover:underline"
+            >
+              Restablecer filtros
+            </button>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <AnimatePresence mode="popLayout">
+              {filteredProducts.map((product) => {
+                const currentQty = quantities[product.id] || 1;
+                const isAdded = addedAnimation[product.id];
+
+                return (
+                  <motion.div
+                    layout
+                    key={product.id}
+                    initial={{ opacity: 0, scale: 0.96 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.96 }}
+                    transition={{ duration: 0.35 }}
+                    className={`flex flex-col bg-white rounded-3xl overflow-hidden border transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${
+                      product.isHero
+                        ? "border-terracotta/60 ring-2 ring-terracotta/15 shadow-md shadow-terracotta/5"
+                        : "border-forest/10 shadow-xs"
+                    }`}
+                  >
+                    {/* Contenedor Visual de Producto */}
+                    <div className="relative aspect-[16/11] bg-cream-dark/60 overflow-hidden">
+                      <img
+                        src={product.image}
+                        alt={product.name}
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+
+                      {/* Badge Superior */}
+                      {product.badge && (
+                        <div className="absolute top-4 left-4 bg-terracotta text-cream text-2xs font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-md">
+                          {product.badge}
+                        </div>
+                      )}
+
+                      {/* Presentación en la base de la imagen */}
+                      <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-2xs text-cream font-medium">
+                        <span className="bg-forest/75 backdrop-blur-xs px-2.5 py-1 rounded-md border border-white/10">
+                          {product.presentation}
+                        </span>
+                        <span className="bg-forest/75 backdrop-blur-xs px-2.5 py-1 rounded-md border border-white/10">
+                          Por {product.unit}
+                        </span>
+                      </div>
                     </div>
-                    
-                    <button
-                      onClick={() => setSelectedProduct(product)}
-                      className={`flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-medium transition-all duration-300 ${
-                        product.isHero
-                          ? "bg-terracotta text-cream hover:bg-[#A33F2E] hover:shadow-lg hover:shadow-terracotta/30"
-                          : "bg-forest text-cream hover:bg-forest-light hover:shadow-lg hover:shadow-forest/30"
-                      }`}
-                    >
-                      <ShoppingBag className="w-4 h-4" />
-                      <span>Agregar</span>
-                    </button>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </motion.div>
-        
-        {filteredProducts.length === 0 && (
-          <div className="text-center py-20 text-cream/50">
-            No se encontraron productos en esta categoría.
+
+                    {/* Ficha Técnica y Detalles */}
+                    <div className="p-6 flex flex-col flex-1 justify-between space-y-4">
+                      <div className="space-y-2">
+                        <span className="text-2xs font-bold uppercase tracking-widest text-terracotta block">
+                          {product.category}
+                        </span>
+
+                        <h3 className="font-serif font-bold text-forest text-xl leading-snug">
+                          {product.name}
+                        </h3>
+
+                        <p className="text-xs sm:text-sm text-forest/75 font-light leading-relaxed">
+                          {product.description}
+                        </p>
+                      </div>
+
+                      {/* Bloque de Precio y Selector de Cantidad */}
+                      <div className="pt-4 border-t border-forest/10 space-y-3">
+                        <div className="flex items-baseline justify-between">
+                          <div>
+                            <span className="font-serif font-bold text-2xl text-forest block">
+                              {formatPrice(product.priceCRC)}
+                            </span>
+                            <span className="text-2xs text-forest/50 block">
+                              {formatSecondaryPrice(product.priceCRC)} / {product.unit}
+                            </span>
+                          </div>
+
+                          {/* Selector de Cantidad rápido */}
+                          <div className="flex items-center border border-forest/20 rounded-xl bg-cream/70 p-0.5">
+                            <button
+                              type="button"
+                              onClick={() => handleQuantityChange(product.id, -1)}
+                              className="p-1 text-forest/60 hover:text-forest hover:bg-forest/10 rounded-lg transition-colors"
+                              aria-label="Restar una unidad"
+                            >
+                              <Minus className="w-3.5 h-3.5" />
+                            </button>
+                            <span className="px-2.5 text-xs font-bold text-forest min-w-[1.75rem] text-center">
+                              {currentQty}
+                            </span>
+                            <button
+                              type="button"
+                              onClick={() => handleQuantityChange(product.id, 1)}
+                              className="p-1 text-forest/60 hover:text-forest hover:bg-forest/10 rounded-lg transition-colors"
+                              aria-label="Sumar una unidad"
+                            >
+                              <Plus className="w-3.5 h-3.5" />
+                            </button>
+                          </div>
+                        </div>
+
+                        {/* Botón de Agregar a la Canasta */}
+                        <button
+                          type="button"
+                          onClick={() => handleAdd(product)}
+                          className={`w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-sm font-semibold transition-all duration-200 ${
+                            isAdded
+                              ? "bg-forest-light text-cream shadow-xs"
+                              : product.isHero
+                              ? "bg-terracotta text-cream hover:bg-[#A33F2E] shadow-md shadow-terracotta/20 hover:-translate-y-0.5"
+                              : "bg-forest text-cream hover:bg-forest-light shadow-md shadow-forest/15 hover:-translate-y-0.5"
+                          }`}
+                        >
+                          {isAdded ? (
+                            <>
+                              <Check className="w-4 h-4 text-cheese" />
+                              <span>¡Agregado al pedido!</span>
+                            </>
+                          ) : (
+                            <>
+                              <ShoppingBag className="w-4 h-4" />
+                              <span>
+                                Agregar {currentQty > 1 ? `(${currentQty})` : ""} al Pedido
+                              </span>
+                            </>
+                          )}
+                        </button>
+                      </div>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </AnimatePresence>
           </div>
         )}
 
-        {/* Modal de Pedido Mantiene la elegancia */}
-        <AnimatePresence>
-          {selectedProduct && (
-            <div className="fixed inset-0 z-[100] flex items-center justify-center px-4">
-              <motion.div 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                onClick={() => setSelectedProduct(null)}
-                className="absolute inset-0 bg-forest/80 backdrop-blur-md"
-              />
-              
-              <motion.div 
-                initial={{ opacity: 0, y: 50, scale: 0.95 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                exit={{ opacity: 0, y: 20, scale: 0.95 }}
-                className="bg-cream rounded-3xl w-full max-w-lg p-8 shadow-2xl relative z-10 border border-cream-dark"
-              >
-                <button 
-                  onClick={() => setSelectedProduct(null)}
-                  className="absolute top-6 right-6 text-forest/40 hover:text-terracotta transition-colors p-2 rounded-full hover:bg-white"
-                >
-                  <X className="w-5 h-5" />
-                </button>
-                
-                <div className="mb-8">
-                  <span className="text-terracotta text-sm font-bold tracking-widest uppercase mb-2 block">
-                    Confirmar Selección
-                  </span>
-                  <h3 className="text-3xl font-serif text-forest mb-2">{selectedProduct.name}</h3>
-                  <p className="text-forest/70 font-medium">
-                    ₡{selectedProduct.priceCRC.toLocaleString("es-CR")} <span className="font-light">/ {selectedProduct.unit}</span>
-                  </p>
-                </div>
-
-                <form onSubmit={handleOrderSubmit} className="space-y-5">
-                  {/* ... Inputs del form ... (se mantienen iguales visualmente, pero asegurando contrastes) */}
-                  <div>
-                    <label className="block text-sm font-medium text-forest mb-2">Su Nombre Completo</label>
-                    <input 
-                      type="text" 
-                      required
-                      value={customerName}
-                      onChange={(e) => setCustomerName(e.target.value)}
-                      className="w-full bg-white border-none rounded-xl p-4 focus:ring-2 focus:ring-terracotta/50 shadow-sm text-forest placeholder:text-forest/30"
-                      placeholder="Ej: María Rojas"
-                    />
-                  </div>
-
-                  <div className="flex flex-col sm:flex-row gap-5">
-                    <div className="w-full sm:w-1/3">
-                      <label className="block text-sm font-medium text-forest mb-2">Cantidad</label>
-                      <input 
-                        type="number" 
-                        min="1"
-                        required
-                        value={quantity}
-                        onChange={(e) => setQuantity(Number(e.target.value))}
-                        className="w-full bg-white border-none rounded-xl p-4 focus:ring-2 focus:ring-terracotta/50 shadow-sm text-forest"
-                      />
-                    </div>
-                    <div className="w-full sm:w-2/3">
-                      <label className="block text-sm font-medium text-forest mb-2">Punto de Entrega</label>
-                      <select 
-                        value={pickupLocation}
-                        onChange={(e) => setPickupLocation(e.target.value as any)}
-                        className="w-full bg-white border-none rounded-xl p-4 focus:ring-2 focus:ring-terracotta/50 shadow-sm text-forest"
-                      >
-                        <option value="Guadalupe">Feria Guadalupe (Sábado)</option>
-                        <option value="Hatillo">Feria Hatillo (Domingo)</option>
-                        <option value="Delivery">A Domicilio (Ruta GAM)</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-forest mb-2">Notas Opcionales</label>
-                    <textarea 
-                      rows={2}
-                      value={notes}
-                      onChange={(e) => setNotes(e.target.value)}
-                      className="w-full bg-white border-none rounded-xl p-4 focus:ring-2 focus:ring-terracotta/50 shadow-sm text-forest resize-none placeholder:text-forest/30"
-                      placeholder="Ej: Lo necesito rallado, paso a las 9am..."
-                    ></textarea>
-                  </div>
-
-                  <div className="pt-6 mt-6 flex justify-between items-center border-t border-forest/10">
-                    <div>
-                      <span className="block text-xs text-forest/50 uppercase tracking-widest mb-1">Total a Pagar</span>
-                      <div className="text-2xl font-bold text-forest">
-                        ₡{(selectedProduct.priceCRC * quantity).toLocaleString("es-CR")}
-                      </div>
-                    </div>
-                    <button 
-                      type="submit" 
-                      disabled={isSubmitting}
-                      className="bg-forest text-cream px-8 py-4 rounded-xl font-medium shadow-xl shadow-forest/20 hover:bg-forest-light disabled:opacity-50 transition-all hover:-translate-y-1"
-                    >
-                      {isSubmitting ? "Procesando..." : "Enviar a WhatsApp"}
-                    </button>
-                  </div>
-                  
-                  <div className="flex items-center gap-2 mt-4 text-xs text-forest/50 justify-center">
-                    <Info className="w-3 h-3" />
-                    <span>Pagará en efectivo o SINPE al momento de la entrega.</span>
-                  </div>
-                </form>
-              </motion.div>
+        {/* Sección Especial B2B: Atención a Sodas, Restaurantes y Hoteles */}
+        <div
+          id="mayoristas"
+          className="mt-20 bg-forest text-cream rounded-[2.5rem] p-8 sm:p-12 lg:p-16 relative overflow-hidden shadow-2xl shadow-forest/30 border border-forest-light/20"
+        >
+          <div className="absolute top-0 right-0 w-96 h-96 bg-cheese/10 rounded-full blur-[100px] pointer-events-none" />
+          <div className="max-w-3xl relative z-10 space-y-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-cheese text-2xs uppercase tracking-wider font-bold">
+              <UtensilsCrossed className="w-3.5 h-3.5" />
+              <span>Canal Institucional & Gastronómico</span>
             </div>
-          )}
-        </AnimatePresence>
+
+            <h3 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
+              ¿Administra una Soda, Pizzería o Restaurante?
+            </h3>
+
+            <p className="text-cream/80 text-sm sm:text-base leading-relaxed font-light">
+              Abastecemos cocinas comerciales en San José con bloques enteros de Semiduro de Turrialba (2.5 kg y más). 
+              Garantizamos punto de sal consistente, excelente rendimiento en fundición y precio preferencial por volumen 
+              con entregas programadas.
+            </p>
+
+            <div className="pt-2 flex flex-wrap items-center gap-4">
+              <a
+                href="https://wa.me/50688888888?text=Hola,%20represento%20a%20un%20negocio%20gastron%C3%B3mico%20y%20deseo%20consultar%20precios%20por%20volumen%20de%20Queso%20Semiduro."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-cheese text-forest px-6 py-3.5 rounded-2xl text-sm font-bold shadow-lg hover:bg-cheese-light transition-all duration-200"
+              >
+                <Store className="w-4 h-4" />
+                <span>Consultar Condiciones Mayoristas</span>
+                <ArrowRight className="w-4 h-4" />
+              </a>
+
+              <span className="text-2xs sm:text-xs text-cream/60 italic">
+                * Atención personalizada previa coordinación telefónica o WhatsApp.
+              </span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   );
