@@ -7,12 +7,23 @@ import { useCart } from "../lib/CartContext";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isInWorld, setIsInWorld] = useState(true);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { setIsCartOpen, totalItemsCount } = useCart();
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+      const cat = document.getElementById("catalogo");
+      if (cat) {
+        const rect = cat.getBoundingClientRect();
+        setIsInWorld(rect.top > 60);
+      } else {
+        setIsInWorld(window.scrollY < window.innerHeight * 3.5);
+      }
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -30,19 +41,29 @@ export default function Header() {
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className={`fixed top-0 z-40 w-full transition-all duration-300 ${
-          isScrolled
-            ? "bg-cream/95 backdrop-blur-md border-b border-forest/10 py-3 shadow-xs"
-            : "bg-transparent py-5"
+          isInWorld
+            ? isScrolled
+              ? "bg-black/50 backdrop-blur-md border-b border-white/10 py-3 shadow-lg"
+              : "bg-transparent py-4 sm:py-5"
+            : "bg-cream/95 backdrop-blur-md border-b border-forest/10 py-3 shadow-xs"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
             {/* Logotipo de Marca */}
             <a href="#" className="flex flex-col group cursor-pointer focus:outline-hidden">
-              <span className="font-serif text-2xl sm:text-3xl text-forest font-bold tracking-tight group-hover:text-terracotta transition-colors">
+              <span
+                className={`font-serif text-2xl sm:text-3xl font-bold tracking-tight transition-colors ${
+                  isInWorld ? "text-white group-hover:text-cheese" : "text-forest group-hover:text-terracotta"
+                }`}
+              >
                 La Central del Queso
               </span>
-              <span className="text-2xs sm:text-xs text-terracotta tracking-[0.2em] uppercase font-semibold">
+              <span
+                className={`text-2xs sm:text-xs tracking-[0.2em] uppercase font-semibold transition-colors ${
+                  isInWorld ? "text-cheese" : "text-terracotta"
+                }`}
+              >
                 Tradición Familiar desde 1980
               </span>
             </a>
@@ -53,10 +74,18 @@ export default function Header() {
                 <a
                   key={item.href}
                   href={item.href}
-                  className="text-sm font-medium tracking-wide text-forest/80 hover:text-terracotta transition-colors py-1 relative group"
+                  className={`text-sm font-medium tracking-wide transition-colors py-1 relative group ${
+                    isInWorld
+                      ? "text-white/80 hover:text-cheese"
+                      : "text-forest/80 hover:text-terracotta"
+                  }`}
                 >
                   {item.label}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-terracotta transition-all duration-300 group-hover:w-full"></span>
+                  <span
+                    className={`absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full ${
+                      isInWorld ? "bg-cheese" : "bg-terracotta"
+                    }`}
+                  ></span>
                 </a>
               ))}
             </nav>
@@ -67,10 +96,14 @@ export default function Header() {
               <button
                 type="button"
                 onClick={() => setIsCartOpen(true)}
-                className="relative flex items-center gap-2 bg-forest text-cream px-5 py-2.5 rounded-full text-sm font-medium shadow-md shadow-forest/20 hover:bg-forest-light hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
+                className={`relative flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 shadow-md ${
+                  isInWorld
+                    ? "bg-cheese text-forest hover:bg-yellow-400 font-semibold"
+                    : "bg-forest text-cream hover:bg-forest-light shadow-forest/20"
+                } hover:-translate-y-0.5 active:translate-y-0`}
                 aria-label={`Ver pedido (${totalItemsCount} productos)`}
               >
-                <ShoppingBag className="w-4 h-4 text-cheese" />
+                <ShoppingBag className={`w-4 h-4 ${isInWorld ? "text-forest" : "text-cheese"}`} />
                 <span className="hidden sm:inline">Hacer Pedido</span>
                 {totalItemsCount > 0 && (
                   <span className="bg-terracotta text-cream text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center -mr-1">
@@ -82,7 +115,9 @@ export default function Header() {
               {/* Botón Menú Móvil */}
               <button
                 type="button"
-                className="lg:hidden text-forest p-2 rounded-xl hover:bg-forest/5 focus:outline-hidden"
+                className={`lg:hidden p-2 rounded-xl focus:outline-hidden transition-colors ${
+                  isInWorld ? "text-white hover:bg-white/10" : "text-forest hover:bg-forest/5"
+                }`}
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 aria-label="Abrir menú"
               >
