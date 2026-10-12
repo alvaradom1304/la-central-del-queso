@@ -393,7 +393,8 @@ function DynamicEnvironmentLighting({ progressRef }: { progressRef: React.Mutabl
   const { scene } = useThree();
 
   useEffect(() => {
-    scene.fog = new THREE.FogExp2('#141d18', 0.016);
+    scene.fog = new THREE.FogExp2('#4a635e', 0.0055);
+    scene.background = new THREE.Color('#8da4a8');
   }, [scene]);
 
   useFrame(() => {
@@ -412,7 +413,7 @@ function DynamicEnvironmentLighting({ progressRef }: { progressRef: React.Mutabl
 
     if (scene.fog) {
       const fogColor = new THREE.Color().lerpColors(
-        new THREE.Color('#141d18'),
+        new THREE.Color('#4a635e'),
         new THREE.Color('#0a0a0a'),
         insideFactor
       );
@@ -645,7 +646,7 @@ export default function HaciendaWorld3D({ children }: { children?: React.ReactNo
         <div className="sticky top-0 h-screen w-full overflow-hidden bg-[#0a0a0a]">
           
           <Canvas
-            camera={{ fov: 48, near: 0.1, far: 180 }}
+            camera={{ fov: 48, near: 0.1, far: 450 }}
             className={`h-full w-full ${isAtCava ? 'cursor-grab active:cursor-grabbing' : ''}`}
           >
             <Suspense fallback={null}>
