@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { BUSINESS_PHONE } from "@/lib/whatsapp";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Trash2, Plus, Minus, ShoppingBag, ArrowRight, CheckCircle2, AlertCircle } from "lucide-react";
 import { useCart } from "../lib/CartContext";
@@ -69,7 +70,7 @@ export default function CartDrawer() {
       alert("Por favor ingrese su nombre para personalizar su pedido.");
       return;
     }
-    const phone = "50688888888"; // Línea provisional de WhatsApp
+    const phone = BUSINESS_PHONE;
     const message = generateWhatsAppMessage();
     const url = `https://wa.me/${phone}?text=${message}`;
     window.open(url, "_blank");

@@ -1,4 +1,5 @@
 import React from "react";
+import { BUSINESS_PHONE_DISPLAY, whatsappUrl } from "@/lib/whatsapp";
 import { Phone, Mail } from "lucide-react";
 
 export default function Footer() {
@@ -90,14 +91,13 @@ export default function Footer() {
                 <div>
                   <span className="block text-[#F7F4EC] font-medium">WhatsApp de Pedidos</span>
                   <a
-                    href="https://wa.me/50688888888"
+                    href={whatsappUrl()}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-[#DDA13E] text-[#F7F4EC]/90 transition-colors font-mono"
                   >
-                    +506 8888-8888
+                    {BUSINESS_PHONE_DISPLAY}
                   </a>
-                  <span className="block text-[11px] text-[#F7F4EC]/50">(Línea provisional)</span>
                 </div>
               </li>
               <li className="flex items-start gap-2.5">

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useRef, useState, useEffect, useMemo } from "react";
+import { BUSINESS_PHONE } from "@/lib/whatsapp";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { ContactShadows, Html } from "@react-three/drei";
 import { motion, AnimatePresence } from "framer-motion";
@@ -2352,7 +2353,7 @@ export default function FincaToTableExperience() {
 
               <div className="space-y-3 pt-2">
                 <a
-                  href="https://wa.me/50688888888?text=Hola,%20me%20interesa%20cotizar%20abastecimiento%20B2B%20para%20mi%20restaurante%20o%20comercio%20con%20La%20Central%20del%20Queso."
+                  href={`https://wa.me/${BUSINESS_PHONE}?text=Hola,%20me%20interesa%20cotizar%20abastecimiento%20B2B%20para%20mi%20restaurante%20o%20comercio%20con%20La%20Central%20del%20Queso.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full min-h-[48px] py-3.5 px-6 rounded-2xl bg-[#DDA13E] hover:bg-[#F0BA5C] text-[#0D1510] font-bold text-sm flex items-center justify-center gap-2 shadow-lg transition-all"

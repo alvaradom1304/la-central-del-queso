@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
+import { whatsappUrl } from "@/lib/whatsapp";
 import { motion } from "framer-motion";
 import {
   Ticket,
@@ -9,10 +10,8 @@ import {
   BellRing,
   CheckCircle2,
   Clock,
-  Star,
   ArrowRight,
   ShieldCheck,
-  Users,
 } from "lucide-react";
 
 const TASTING_OPTIONS = [
@@ -26,30 +25,6 @@ const PICKUP_OPTIONS = [
   { id: "Guadalupe (Sábado)", label: "Feria de Guadalupe · Sábados", badge: "Fila Rápida" },
   { id: "Hatillo (Domingo)", label: "Feria de Hatillo · Domingos", badge: "Fila Rápida" },
   { id: "Domicilio GAM", label: "Entrega a Domicilio GAM", badge: "Ruta Semanal" },
-];
-
-const TESTIMONIALS = [
-  {
-    name: "Doña Cecilia Madrigal",
-    role: "Clienta en Feria de Guadalupe desde 1998",
-    quote:
-      "En mi casa no entra otro queso para el gallo pinto. Uno lo pone al sartén y dora parejito sin soltar agua ni pegarse. Apartarlo por WhatsApp entre semana es una bendición.",
-    highlight: "26 años comprando Semiduro",
-  },
-  {
-    name: "Chef Roberto Solano",
-    role: "Propietario de Cafetería & Soda en San Pedro",
-    quote:
-      "El bloque institucional de 2.5 kg nos cambió la operación: siempre viene con el mismo punto de sal y rinde muchísimo más que los quesos comerciales de supermercado.",
-    highlight: "Cliente Mayorista B2B",
-  },
-  {
-    name: "Familia Vargas Mora",
-    role: "Clientes en Feria de Hatillo",
-    quote:
-      "La natilla casera y el queso palmito saben a finca de verdad. Llegamos el domingo, recogemos nuestra bolsa ya pesada sin hacer fila y nos dan a probar el ahumado.",
-    highlight: "Canasta Semanal Familiar",
-  },
 ];
 
 export default function VipTastingPass() {
@@ -80,7 +55,7 @@ export default function VipTastingPass() {
       `_Hola, acabo de generar mi Pase VIP en la web. Por favor avísenme cuando llegue el lote fresco de esta semana._`;
 
     window.open(
-      `https://wa.me/50688888888?text=${encodeURIComponent(msg)}`,
+      whatsappUrl(msg),
       "_blank"
     );
   };
@@ -92,7 +67,7 @@ export default function VipTastingPass() {
       `Hola, quiero recibir el aviso prioritario de los jueves cuando llega el camión con el lote fresco de Turrialba para apartar mi canasta ${clubFrequency} y acumular mi regalía cada 4 pedidos.`;
 
     window.open(
-      `https://wa.me/50688888888?text=${encodeURIComponent(msg)}`,
+      whatsappUrl(msg),
       "_blank"
     );
   };
@@ -124,9 +99,6 @@ export default function VipTastingPass() {
             <span className="bg-white/5 px-3.5 py-2 rounded-xl border border-white/10 flex items-center gap-1.5 text-[#F7F4EC]/85">
               <Clock className="w-3.5 h-3.5 text-[#DDA13E]" />
               <span>Cierre de apartados: Viernes 6:00 PM</span>
-            </span>
-            <span className="bg-[#B85634] text-white px-3.5 py-2 rounded-xl font-bold tabular-nums">
-              18 cupos de apartado sin fila disponibles
             </span>
           </div>
         </div>
@@ -385,51 +357,6 @@ export default function VipTastingPass() {
               <span>Recibir Aviso Prioritario de Lote ({clubFrequency})</span>
             </button>
           </div>
-        </div>
-      </div>
-
-      {/* VOCES REALES DE LA FERIA */}
-      <div className="max-w-[1440px] mx-auto mt-20 pt-16 border-t border-white/10">
-        <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
-          <div className="inline-flex items-center gap-1.5 text-[#DDA13E] font-mono text-xs uppercase tracking-widest">
-            <Users className="w-3.5 h-3.5" />
-            <span>Confianza Ganada desde 1980</span>
-          </div>
-          <h3 className="font-serif text-3xl sm:text-5xl font-semibold text-[#F7F4EC]">
-            Lo que dicen las familias y cocinas que nos eligen cada semana
-          </h3>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {TESTIMONIALS.map((t) => (
-            <div
-              key={t.name}
-              className="bg-[#16110C] rounded-3xl p-6 sm:p-7 border border-white/10 shadow-xl flex flex-col justify-between space-y-4"
-            >
-              <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-1 text-[#DDA13E]">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-[#DDA13E] text-[#DDA13E]" />
-                    ))}
-                  </div>
-                  <span className="font-mono text-[10px] uppercase tracking-wider bg-white/5 text-[#DDA13E] border border-[#DDA13E]/30 px-2.5 py-1 rounded-full">
-                    {t.highlight}
-                  </span>
-                </div>
-                <p className="text-xs sm:text-sm text-[#F7F4EC]/80 italic leading-relaxed font-light">
-                  “{t.quote}”
-                </p>
-              </div>
-
-              <div className="pt-3 border-t border-white/10">
-                <span className="font-serif font-semibold text-[#F7F4EC] text-lg block">
-                  {t.name}
-                </span>
-                <span className="text-xs text-[#F7F4EC]/55 block">{t.role}</span>
-              </div>
-            </div>
-          ))}
         </div>
       </div>
     </section>
