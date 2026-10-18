@@ -92,3 +92,5 @@
  .cinematic-play { bottom:112px; right:6%; }
  .timber-sign { top:22%; padding:12px 16px; }.timber-leaf { top:34%; }
 }
+
+.cinematic-topline button { background:#0b160ee6; color:#f7f4ec; padding:10px 14px; border:1px solid #ffffff50; border-radius:24px; align-self:flex-start; }

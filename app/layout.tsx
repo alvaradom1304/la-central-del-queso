@@ -18,6 +18,7 @@ export default function RootLayout({
       lang="es"
       style={{ "--font-inter": "Arial, sans-serif", "--font-playfair": "Georgia, serif", "--font-mono": "Consolas, monospace" } as React.CSSProperties}
     >
+      <head><link rel="preload" as="image" href="/porton_finca_turrialba.webp" imageSrcSet="/porton_finca_turrialba-mobile.webp 768w, /porton_finca_turrialba.webp 1376w" imageSizes="100vw" fetchPriority="high"/></head>
       <body className="font-sans bg-[#0D1510] text-[#F7F4EC] selection:bg-[#DDA13E] selection:text-[#0D1510]">
         {children}
       </body>

@@ -19,7 +19,7 @@ export const JOURNEY_VIDEOS: JourneyVideoClip[] = [
     stageIndex: 0,
     title: "El Umbral · Cordillera de Turrialba",
     src: "/videos/finca_umbral_camino.mp4",
-    poster: "/porton_finca_turrialba.jpg",
+    poster: "/porton_finca_turrialba.webp",
     atmosphereGradient:
       "linear-gradient(180deg, rgba(10,18,14,0.60) 0%, rgba(16,28,20,0.22) 45%, rgba(10,17,13,0.85) 100%)",
   },
@@ -99,8 +99,8 @@ export function VideoScrollytellingPlayer({ currentStage, localStageProgress, ca
   }, [liteMode, ambient, visible]);
   return <div ref={root} className={`relative w-full h-full overflow-hidden ${className}`}>
     {JOURNEY_VIDEOS.map((clip, i) => <div key={clip.id} className="absolute inset-0 transition-opacity duration-700" style={{opacity: currentStage === i ? 1 : 0, transform: `scale(${currentStage === i ? cameraDollyScale : 1.02})`, transition: "opacity 700ms ease, transform 180ms linear"}} aria-hidden="true">
-      <img src={clip.poster} alt="" className="absolute inset-0 w-full h-full object-cover" loading={i === 0 ? "eager" : "lazy"} fetchPriority={i === 0 ? "high" : "auto"}/>
-      {!liteMode && !failed[i] && Math.abs(i - currentStage) <= 1 && <video ref={v => { videos.current[i] = v; }} src={clip.src} poster={clip.poster} muted playsInline loop preload={i === currentStage ? "auto" : "metadata"}
+      <img src={clip.poster} srcSet={i === 0 ? "/porton_finca_turrialba-mobile.webp 768w, /porton_finca_turrialba.webp 1376w" : undefined} sizes="100vw" alt="" className="absolute inset-0 w-full h-full object-cover" loading={i === 0 ? "eager" : "lazy"} fetchPriority={i === 0 ? "high" : "auto"}/>
+      {!liteMode && !failed[i] && (localStageProgress > .005 || ambient || currentStage > 0) && Math.abs(i - currentStage) <= 1 && <video ref={v => { videos.current[i] = v; }} src={clip.src} muted playsInline loop preload={i === currentStage ? "auto" : "metadata"}
         onLoadedData={() => setReady(r => ({...r, [i]: true}))} onError={() => setFailed(r => ({...r, [i]: true}))}
         className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500" style={{opacity: ready[i] ? 1 : 0}}/>}
     </div>)}
