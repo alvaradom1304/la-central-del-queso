@@ -398,7 +398,7 @@ export function InteractiveArtisanalPhysics() {
         />
         <div className="pointer-events-none absolute bottom-3 left-4 text-[11px] font-mono text-[#F7F4EC]/55 flex items-center gap-1.5">
           <Sparkles className="w-3.5 h-3.5 text-[#DDA13E]" />
-          <span>Motor de colisiones 2D a 120 FPS · Arrastre y lance cualquier sello</span>
+          <span>Arrastre y lance cualquier sello sobre la mesa</span>
         </div>
       </div>
     </div>

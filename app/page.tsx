@@ -18,7 +18,7 @@ import { CartProvider } from "@/lib/CartContext";
 const FincaToTableExperience = dynamic(
   () => import("@/components/FincaToTableExperience"),
   {
-    ssr: false,
+    ssr: true,
     loading: () => (
       <div className="min-h-screen w-full bg-[#0D1510] flex flex-col items-center justify-center text-[#F7F4EC] space-y-4 px-4 text-center">
         <div className="w-10 h-10 border-2 border-[#DDA13E] border-t-transparent rounded-full animate-spin" />

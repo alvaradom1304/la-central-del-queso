@@ -1,0 +1,236 @@
+[
+  {
+    "path": "/campo_floral_turrialba.jpg",
+    "bytes": 1061347,
+    "extension": ".jpg",
+    "provenance": "existing repository asset; original rights not independently verified"
+  },
+  {
+    "path": "/combo_feria.jpg",
+    "bytes": 906747,
+    "extension": ".jpg",
+    "provenance": "existing repository asset; original rights not independently verified"
+  },
+  {
+    "path": "/entrada_lecheria_granero.jpg",
+    "bytes": 1038405,
+    "extension": ".jpg",
+    "provenance": "existing repository asset; original rights not independently verified"
+  },
+  {
+    "path": "/favicon.ico",
+    "bytes": 62,
+    "extension": ".ico",
+    "provenance": "existing repository asset; original rights not independently verified"
+  },
+  {
+    "path": "/hero_finca.jpg",
+    "bytes": 908645,
+    "extension": ".jpg",
+    "provenance": "existing repository asset; original rights not independently verified"
+  },
+  {
+    "path": "/hero_luxury_maison.jpg",
+    "bytes": 750590,
+    "extension": ".jpg",
+    "provenance": "existing repository asset; original rights not independently verified"
+  },
+  {
+    "path": "/hero_queso.jpg",
+    "bytes": 769430,
+    "extension": ".jpg",
+    "provenance": "existing repository asset; original rights not independently verified"
+  },
+  {
+    "path": "/hero_semiduro_master.png",
+    "bytes": 1367676,
+    "extension": ".png",
+    "provenance": "existing repository asset; original rights not independently verified"
+  },
+  {
+    "path": "/historia_queso.jpg",
+    "bytes": 753188,
+    "extension": ".jpg",
+    "provenance": "existing repository asset; original rights not independently verified"
+  },
+  {
+    "path": "/interior_cava_roble.jpg",
+    "bytes": 970202,
+    "extension": ".jpg",
+    "provenance": "existing repository asset; original rights not independently verified"
+  },
+  {
+    "path": "/lecheria_proceso_artesanal.jpg",
+    "bytes": 931113,
+    "extension": ".jpg",
+    "provenance": "existing repository asset; original rights not independently verified"
+  },
+  {
+    "path": "/mesa_interactiva_tasting.jpg",
+    "bytes": 800774,
+    "extension": ".jpg",
+    "provenance": "existing repository asset; original rights not independently verified"
+  },
+  {
+    "path": "/natilla_mantequilla.jpg",
+    "bytes": 785961,
+    "extension": ".jpg",
+    "provenance": "existing repository asset; original rights not independently verified"
+  },
+  {
+    "path": "/porton_finca_turrialba-mobile.webp",
+    "bytes": 88568,
+    "extension": ".webp",
+    "provenance": "optimized derivative of existing repository farm poster"
+  },
+  {
+    "path": "/porton_finca_turrialba.jpg",
+    "bytes": 1064286,
+    "extension": ".jpg",
+    "provenance": "existing repository asset; original rights not independently verified"
+  },
+  {
+    "path": "/porton_finca_turrialba.webp",
+    "bytes": 249382,
+    "extension": ".webp",
+    "provenance": "optimized derivative of existing repository farm poster"
+  },
+  {
+    "path": "/potrero_vacas_lecheria.jpg",
+    "bytes": 1061115,
+    "extension": ".jpg",
+    "provenance": "existing repository asset; original rights not independently verified"
+  },
+  {
+    "path": "/queso_ahumado.jpg",
+    "bytes": 799179,
+    "extension": ".jpg",
+    "provenance": "existing repository asset; original rights not independently verified"
+  },
+  {
+    "path": "/queso_catalogo.jpg",
+    "bytes": 656759,
+    "extension": ".jpg",
+    "provenance": "existing repository asset; original rights not independently verified"
+  },
+  {
+    "path": "/queso_palmito.jpg",
+    "bytes": 753797,
+    "extension": ".jpg",
+    "provenance": "existing repository asset; original rights not independently verified"
+  },
+  {
+    "path": "/models/cheese_wheel.glb",
+    "bytes": 122896,
+    "extension": ".glb",
+    "provenance": "existing repository asset; original rights not independently verified"
+  },
+  {
+    "path": "/models/finca_world.glb",
+    "bytes": 6012520,
+    "extension": ".glb",
+    "provenance": "existing repository asset; original rights not independently verified"
+  },
+  {
+    "path": "/models/tree_realistic.glb",
+    "bytes": 4575532,
+    "extension": ".glb",
+    "provenance": "existing repository asset; original rights not independently verified"
+  },
+  {
+    "path": "/textures/grass_diff.jpg",
+    "bytes": 120023,
+    "extension": ".jpg",
+    "provenance": "existing repository asset; original rights not independently verified"
+  },
+  {
+    "path": "/textures/path_diff.jpg",
+    "bytes": 136869,
+    "extension": ".jpg",
+    "provenance": "existing repository asset; original rights not independently verified"
+  },
+  {
+    "path": "/textures/path_nor.jpg",
+    "bytes": 392661,
+    "extension": ".jpg",
+    "provenance": "existing repository asset; original rights not independently verified"
+  },
+  {
+    "path": "/textures/stone_diff.jpg",
+    "bytes": 73862,
+    "extension": ".jpg",
+    "provenance": "existing repository asset; original rights not independently verified"
+  },
+  {
+    "path": "/textures/stone_nor.jpg",
+    "bytes": 495254,
+    "extension": ".jpg",
+    "provenance": "existing repository asset; original rights not independently verified"
+  },
+  {
+    "path": "/textures/stone_rough.jpg",
+    "bytes": 48705,
+    "extension": ".jpg",
+    "provenance": "existing repository asset; original rights not independently verified"
+  },
+  {
+    "path": "/textures/wood_dark_diff.jpg",
+    "bytes": 56998,
+    "extension": ".jpg",
+    "provenance": "existing repository asset; original rights not independently verified"
+  },
+  {
+    "path": "/textures/wood_dark_diff.webp",
+    "bytes": 20082,
+    "extension": ".webp",
+    "provenance": "optimized derivative of corresponding local JPG texture"
+  },
+  {
+    "path": "/textures/wood_nor.jpg",
+    "bytes": 180112,
+    "extension": ".jpg",
+    "provenance": "existing repository asset; original rights not independently verified"
+  },
+  {
+    "path": "/textures/wood_plank_diff.jpg",
+    "bytes": 49077,
+    "extension": ".jpg",
+    "provenance": "existing repository asset; original rights not independently verified"
+  },
+  {
+    "path": "/textures/wood_plank_diff.webp",
+    "bytes": 14650,
+    "extension": ".webp",
+    "provenance": "optimized derivative of corresponding local JPG texture"
+  },
+  {
+    "path": "/textures/wood_plank_rough.jpg",
+    "bytes": 13948,
+    "extension": ".jpg",
+    "provenance": "existing repository asset; original rights not independently verified"
+  },
+  {
+    "path": "/videos/finca_cava_maduracion.mp4",
+    "bytes": 4539434,
+    "extension": ".mp4",
+    "provenance": "existing repository asset; original rights not independently verified"
+  },
+  {
+    "path": "/videos/finca_lecheria_leche.mp4",
+    "bytes": 19086842,
+    "extension": ".mp4",
+    "provenance": "existing repository asset; original rights not independently verified"
+  },
+  {
+    "path": "/videos/finca_potrero_vacas.mp4",
+    "bytes": 5907437,
+    "extension": ".mp4",
+    "provenance": "existing repository asset; original rights not independently verified"
+  },
+  {
+    "path": "/videos/finca_umbral_camino.mp4",
+    "bytes": 5550916,
+    "extension": ".mp4",
+    "provenance": "existing repository asset; original rights not independently verified"
+  }
+]
