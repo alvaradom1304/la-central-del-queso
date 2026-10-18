@@ -4,6 +4,19 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { ContactShadows, Html, useTexture } from "@react-three/drei";
 import * as THREE from "three";
 import type { TableFamilyConfig } from "./FincaToTableExperience";
+
+function PhotographicFallback({ image, name }: { image: string; name: string }) {
+  return <div data-testid="webgl-fallback" className="absolute inset-0 flex flex-col items-center justify-center gap-4 p-8">
+    <img src={image} alt={name} className="w-full max-w-sm h-52 object-contain rounded-xl"/>
+    <p role="status" className="max-w-sm text-center text-sm text-[#F7F4EC]/80">La vista 3D no está disponible en este dispositivo. Puede explorar la fotografía y añadir su selección al pedido.</p>
+  </div>;
+}
+
+class TastingBoundary extends React.Component<{ image: string; name: string; children: React.ReactNode }, { failed: boolean }> {
+  state = { failed: false };
+  static getDerivedStateFromError() { return { failed: true }; }
+  render() { return this.state.failed ? <PhotographicFallback image={this.props.image} name={this.props.name}/> : this.props.children; }
+}
 function createTableCheeseTextures() {
   if (typeof document === "undefined") {
     return { rindBump: null, pasteBump: null, woodPlankBump: null };
@@ -383,10 +396,10 @@ function TableCheeseSculpture3D({
 export default function TastingSculpture({ familyConfig, cheeseRotYRef, isDraggingRef, isWedgeCut, onToggleWedge, visible, onContextLost, image, name }: {
  familyConfig: TableFamilyConfig; cheeseRotYRef: React.MutableRefObject<number>; isDraggingRef: React.MutableRefObject<boolean>; isWedgeCut: boolean; onToggleWedge: () => void; visible: boolean; onContextLost: () => void; image: string; name: string;
 }) {
- return <Canvas style={{ height: "100%", position: "absolute", inset: 0 }} frameloop={visible ? "always" : "never"}
+ return <TastingBoundary image={image} name={name}><Canvas style={{ height: "100%", position: "absolute", inset: 0 }} frameloop={visible ? "always" : "never"}
  onCreated={({gl}) => { gl.shadowMap.type = THREE.PCFShadowMap; gl.domElement.addEventListener("webglcontextlost", onContextLost, {once:true}); }}
- fallback={<img src={image} alt={name} className="w-full h-full object-contain"/>} shadows dpr={[1,1.5]} camera={{position:[0,3.1,6.6],fov:42}}>
+ fallback={<PhotographicFallback image={image} name={name}/>} shadows dpr={[1,1.5]} camera={{position:[0,3.1,6.6],fov:42}}>
  <TableStudioLighting/><ambientLight intensity={0.55}/><directionalLight position={[4,6,4]} intensity={1.6} castShadow shadow-mapSize={[1024,1024]}/>
  <TableCheeseSculpture3D familyConfig={familyConfig} cheeseRotYRef={cheeseRotYRef} isDraggingRef={isDraggingRef} isWedgeCut={isWedgeCut} onToggleWedge={onToggleWedge}/>
- </Canvas>;
+ </Canvas></TastingBoundary>;
 }
