@@ -40,6 +40,7 @@ import { products, CATEGORIES, Product, USD_EXCHANGE_RATE } from "../lib/product
 import { locations } from "../lib/locations";
 import { spatialAudio } from "../lib/spatialAudio";
 import { DepthPhotoCanvas } from "./DepthPhotoCanvas";
+import { VideoScrollytellingPlayer } from "./VideoScrollytellingPlayer";
 
 // ==============================================================================
 // 1. DEFINICIÓN DE LAS 7 ESCENAS DEL STORYBOARD «DE LA FINCA A TU MESA»
@@ -1101,43 +1102,15 @@ export default function FincaToTableExperience() {
             liteMode ? "relative min-h-[85vh]" : "sticky top-0 h-screen w-full"
           } overflow-hidden flex flex-col justify-between pt-20 pb-8 px-4 sm:px-10 select-none`}
         >
-          {/* CAPA 1: ESCENARIO FOTOGRÁFICO Y PROFUNDIDAD 2.5D CON TRAVELLING CONTINUO */}
-          <div
-            className="absolute inset-0 -z-20 overflow-hidden bg-[#0A110D]"
-            style={{
-              transform: `scale(${cameraDollyScale.toFixed(4)})`,
-              transition: liteMode ? "none" : "transform 120ms linear",
-              willChange: "transform",
-            }}
-          >
-            {!liteMode ? (
-              <DepthPhotoCanvas
-                imageUrl={stageImages[currentJourneyStage]}
-                mousePos={mouseNorm}
-                intensity={0.95}
-                className="w-full h-full"
-              />
-            ) : (
-              <img
-                src={stageImages[currentJourneyStage]}
-                alt={NARRATIVE_SCENES[currentJourneyStage].subtitle}
-                className="w-full h-full object-cover"
-              />
-            )}
-
-            {/* Gradientes Atmosféricos Dinámicos según la hora y escena (Sin fundidos negros arbitrarios) */}
-            <div
-              className="absolute inset-0 pointer-events-none transition-colors duration-700"
-              style={{
-                background:
-                  currentJourneyStage === 0
-                    ? "linear-gradient(180deg, rgba(10,18,14,0.55) 0%, rgba(16,28,20,0.18) 45%, rgba(10,17,13,0.82) 100%)"
-                    : currentJourneyStage === 1
-                    ? "linear-gradient(180deg, rgba(12,24,16,0.45) 0%, rgba(22,38,24,0.12) 50%, rgba(10,18,13,0.84) 100%)"
-                    : currentJourneyStage === 2
-                    ? "linear-gradient(180deg, rgba(28,18,10,0.52) 0%, rgba(45,28,14,0.18) 50%, rgba(18,12,8,0.86) 100%)"
-                    : "linear-gradient(180deg, rgba(22,14,9,0.55) 0%, rgba(38,24,14,0.20) 48%, rgba(24,17,12,0.92) 100%)",
-              }}
+          {/* CAPA 1: VIDEO SCROLLYTELLING CONTINUO COHERENTE («DE LA FINCA A TU MESA») */}
+          <div className="absolute inset-0 -z-20 overflow-hidden bg-[#0A110D]">
+            <VideoScrollytellingPlayer
+              currentStage={currentJourneyStage}
+              localStageProgress={localStageProgress}
+              globalProgress={narrativeProgress}
+              cameraDollyScale={cameraDollyScale}
+              liteMode={liteMode}
+              className="w-full h-full"
             />
           </div>
 
