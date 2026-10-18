@@ -5,8 +5,9 @@
 - Base main: 73519f0416e9c63146662a8572b564f5b3dd6eec.
 - hito2-exterior-realista: 39e87b018d3df3852dce66c1986380906952188d.
 - Application code is identical between these two refs. Only .gitignore and PROJECT_STATUS.md differ.
-- Public URL inspected: https://web-psi-bice-72.vercel.app. Its exact deployed commit could not be verified: the connected Vercel account returns 404 for project web and its tracked project ID prj_7yfjYYyGDtQcttlz4V7zS4zTj2KS.
-- Team altiora13 currently exposes project la-central-del-queso-5qyq (prj_IkPIX1RZDdgXKPBCAXzxejMZZNk3). Its latest main and hito2 builds fail. The main build log explicitly reports nonexistent Root Directory src/web; application files are at repository root. No project settings or production aliases were changed.
+- Public URL inspected: https://web-psi-bice-72.vercel.app. CLI authentication verified production deployment dpl_6J2BUCNU2GPkm6bkZpJTBx6ShWB4, main at 73519f0416e9c63146662a8572b564f5b3dd6eec. The connector account returns 404 for web and its project ID prj_7yfjYYyGDtQcttlz4V7zS4zTj2KS; the local CLI can access the project.
+- The connector exposes project la-central-del-queso-5qyq (prj_IkPIX1RZDdgXKPBCAXzxejMZZNk3). Its latest main and hito2 builds fail because its Root Directory src/web does not exist. This is distinct from the actual public web project, whose CLI inspection confirms root directory `.`. No project settings or production aliases were changed.
+- Preview: https://web-bzshu64lf-altiora13.vercel.app, deployment dpl_EtaG7UGvU8MXF6PAUXayQ2FtKiGx. CLI target preview; response target null and productionUrl null. Remote production-mode build and types passed in 39 seconds. Home first-load JavaScript reported by Next: 167 kB (not the complete lazy scene or media payload). Authentication protection retained.
 
 ## Diagnosis and implementation
 1. Reduced motion enables lite mode and intentionally removes video/3D. Public browser observation confirms video can appear after disabling lite mode; negative media z-index was a fragile stacking implementation, not a proven universal explanation for disappearance.

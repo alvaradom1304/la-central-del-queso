@@ -502,7 +502,7 @@ function TableCheeseSculpture3D({
 
           {/* Caras Interiores de la Pasta */}
           <mesh
-            position={[0, HEIGHT / 2, 0]}
+            position={[Math.sin(WEDGE_ANGLE) * RADIUS / 2, HEIGHT / 2, Math.cos(WEDGE_ANGLE) * RADIUS / 2]}
             rotation={[0, WEDGE_ANGLE - Math.PI / 2, 0]}
             receiveShadow
           >
@@ -518,7 +518,7 @@ function TableCheeseSculpture3D({
             />
           </mesh>
 
-          <mesh position={[0, HEIGHT / 2, 0]} rotation={[0, -Math.PI / 2, 0]} receiveShadow>
+          <mesh position={[0, HEIGHT / 2, RADIUS / 2]} rotation={[0, -Math.PI / 2, 0]} receiveShadow>
             <planeGeometry args={[RADIUS, HEIGHT]} />
             <meshPhysicalMaterial
               color={familyConfig.pasteColor}
@@ -553,7 +553,7 @@ function TableCheeseSculpture3D({
           </mesh>
 
           <mesh
-            position={[0, HEIGHT / 2, 0]}
+            position={[Math.sin(WEDGE_ANGLE) * RADIUS / 2, HEIGHT / 2, Math.cos(WEDGE_ANGLE) * RADIUS / 2]}
             rotation={[0, WEDGE_ANGLE - Math.PI / 2, 0]}
             receiveShadow
           >
@@ -568,7 +568,7 @@ function TableCheeseSculpture3D({
             />
           </mesh>
 
-          <mesh position={[0, HEIGHT / 2, 0]} rotation={[0, -Math.PI / 2, 0]} receiveShadow>
+          <mesh position={[0, HEIGHT / 2, RADIUS / 2]} rotation={[0, -Math.PI / 2, 0]} receiveShadow>
             <planeGeometry args={[RADIUS, HEIGHT]} />
             <meshPhysicalMaterial
               color={familyConfig.pasteColor}
@@ -637,7 +637,7 @@ export default function FincaToTableExperience() {
   const [mouseNorm, setMouseNorm] = useState({ x: 0, y: 0 });
 
   // --- Preferencias de Accesibilidad, Rendimiento y Audio ---
-  const [liteMode, setLiteMode] = useState(false);
+  const [liteMode, setLiteMode] = useState(true);
   const [audioEnabled, setAudioEnabled] = useState(false);
 
   // --- Estado de Escena 05 y 06 (La Mesa como Interfaz Viva) ---
@@ -773,11 +773,9 @@ export default function FincaToTableExperience() {
   useEffect(() => {
     if (typeof window === "undefined") return;
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (mq.matches) {
-      setLiteMode(true);
-    }
+    setLiteMode(mq.matches);
     const handler = (e: MediaQueryListEvent) => {
-      if (e.matches) setLiteMode(true);
+      setLiteMode(e.matches);
     };
     mq.addEventListener("change", handler);
     return () => mq.removeEventListener("change", handler);
@@ -2087,5 +2085,3 @@ export default function FincaToTableExperience() {
     </div>
   );
 }
-
-
