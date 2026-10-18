@@ -22,14 +22,14 @@ function TimberDoors({ open, barn = false }: { open: number; barn?: boolean }) {
   </div>;
 }
 
-export default function CinematicJourney({ containerRef, progress, liteMode, onNavigate }: {
-  containerRef: React.RefObject<HTMLDivElement>; progress: number; liteMode: boolean; onNavigate: (index: number) => void;
+export default function CinematicJourney({ containerRef, progress, liteMode, fullMotionOverride, onNavigate }: {
+  containerRef: React.RefObject<HTMLDivElement>; progress: number; liteMode: boolean; fullMotionOverride: boolean; onNavigate: (index: number) => void;
 }) {
   const stage = progress < .25 ? 0 : progress < .5 ? 1 : progress < .76 ? 2 : 3;
   const starts = [0, .25, .5, .76], spans = [.25, .25, .26, .24];
   const local = clamp((progress - starts[stage]) / spans[stage]);
   const chapter = chapters[stage];
-  return <section ref={containerRef} id="inicio-umbral" className={`cinematic-journey ${liteMode ? "cinematic-lite" : ""}`} aria-label="De la finca a su mesa">
+  return <section ref={containerRef} id="inicio-umbral" className={`cinematic-journey ${liteMode ? "cinematic-lite" : ""} ${fullMotionOverride ? "cinematic-user-full" : ""}`} aria-label="De la finca a su mesa">
     <div className="cinematic-stage">
       <div className="cinematic-media"><VideoScrollytellingPlayer currentStage={stage} localStageProgress={local} globalProgress={progress} cameraDollyScale={liteMode ? 1 : 1.02 + local * .07} liteMode={liteMode}/></div>
       {!liteMode && stage === 0 && <TimberDoors open={clamp(progress / .16)}/>}

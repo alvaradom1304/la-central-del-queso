@@ -259,7 +259,8 @@ export default function FincaToTableExperience() {
   const [activeSceneIndex, setActiveSceneIndex] = useState(0);
 
   // --- Preferencias de Accesibilidad, Rendimiento y Audio ---
-  const [liteMode, setLiteMode] = useState(true);
+  const [liteMode, setLiteMode] = useState(false);
+  const [fullMotionOverride, setFullMotionOverride] = useState(false);
   const [audioEnabled, setAudioEnabled] = useState(false);
 
   // --- Estado de Escena 05 y 06 (La Mesa como Interfaz Viva) ---
@@ -650,7 +651,7 @@ export default function FincaToTableExperience() {
           <div className="flex items-center gap-2 sm:gap-2.5">
             <button
               type="button"
-              onClick={() => setLiteMode((prev) => !prev)}
+              onClick={() => { setFullMotionOverride(liteMode); setLiteMode(!liteMode); }}
               aria-label={liteMode ? "Desactivar modo ligero" : "Activar modo ligero"} aria-pressed={liteMode} title="Activar o desactivar animaciones espaciales y 3D"
               className={`px-2.5 py-1.5 rounded-full text-[11px] font-mono uppercase tracking-wider border transition-colors flex items-center gap-1.5 ${
                 liteMode
@@ -722,7 +723,7 @@ export default function FincaToTableExperience() {
           apertura 3D del portón «Finca Doña Martha», camino vivo, lechería y
           match-cut espacial hacia la mesa.
       ==================================================================== */}
-      <CinematicJourney containerRef={journeyContainerRef} progress={narrativeProgress} liteMode={liteMode} onNavigate={navigateToScene}/>
+      <CinematicJourney containerRef={journeyContainerRef} progress={narrativeProgress} liteMode={liteMode} fullMotionOverride={fullMotionOverride} onNavigate={navigateToScene}/>
 
       {/* ====================================================================
           ESCENA 05 — LA MESA ARTESANAL COMO INTERFAZ VIVA (#escena-mesa)
