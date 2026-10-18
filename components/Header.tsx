@@ -28,10 +28,11 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { label: "Tradición Familiar", href: "#historia" },
-    { label: "Nuestros Quesos", href: "#catalogo" },
-    { label: "Puntos en Feria", href: "#ferias" },
-    { label: "Sodas & Mayoristas", href: "#mayoristas" },
+    { label: "Recomendador", href: "#experiencias" },
+    { label: "Catálogo", href: "#catalogo" },
+    { label: "Pase de Cata Gratis", href: "#club-vip" },
+    { label: "Tradición 1980", href: "#historia" },
+    { label: "Ferias", href: "#ferias" },
   ];
 
   return (
