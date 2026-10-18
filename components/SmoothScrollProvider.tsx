@@ -1,34 +1,10 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { ReactLenis } from "@studio-freight/react-lenis";
+import React from "react";
 
-export default function SmoothScrollProvider({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  const [reduced, setReduced] = useState(true);
-  useEffect(() => {
-    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const update = () => setReduced(media.matches);
-    update();
-    media.addEventListener("change", update);
-    return () => media.removeEventListener("change", update);
-  }, []);
-  if (reduced) return <>{children}</>;
-  return (
-    <ReactLenis
-      root
-      options={{
-        lerp: 0.14,
-        duration: 0.85,
-        smoothWheel: true,
-        wheelMultiplier: 1.08,
-        touchMultiplier: 1.4,
-      }}
-    >
-      {children}
-    </ReactLenis>
-  );
+// Keep the server-rendered tree stable. Browser scrolling already supports touch,
+// keyboard and reduced-motion CSS; replacing its root during hydration remounts
+// the journey and can shift the page while restoring a saved scroll position.
+export default function SmoothScrollProvider({ children }: { children: React.ReactNode }) {
+  return <>{children}</>;
 }
