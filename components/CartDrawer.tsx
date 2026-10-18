@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Trash2, Plus, Minus, ShoppingBag, ArrowRight, CheckCircle2, AlertCircle } from "lucide-react";
 import { useCart } from "../lib/CartContext";
@@ -24,6 +24,21 @@ export default function CartDrawer() {
   const [pickupLocation, setPickupLocation] = useState<string>("Feria Guadalupe (Sábados)");
   const [notes, setNotes] = useState("");
   const [step, setStep] = useState<"review" | "form">("review");
+  const dialogRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (!isCartOpen) return;
+    const previous = document.activeElement as HTMLElement | null;
+    const focusable = () => Array.from(dialogRef.current?.querySelectorAll<HTMLElement>('button:not(:disabled), a[href], input, select, textarea, [tabindex="0"]') ?? []).filter(el => el.getClientRects().length);
+    const frame = requestAnimationFrame(() => focusable()[0]?.focus());
+    const trap = (event: KeyboardEvent) => {
+      if (event.key !== "Tab") return;
+      const elements = focusable(), first = elements[0], last = elements[elements.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
+    };
+    document.addEventListener("keydown", trap);
+    return () => { cancelAnimationFrame(frame); document.removeEventListener("keydown", trap); previous?.focus(); };
+  }, [isCartOpen]);
 
   // Cerrar con Escape
   useEffect(() => {
@@ -78,7 +93,7 @@ export default function CartDrawer() {
   return (
     <AnimatePresence>
       {isCartOpen && (
-        <div className="fixed inset-0 z-[100] overflow-hidden" role="dialog" aria-modal="true" aria-label="Carrito de compras">
+        <div ref={dialogRef} className="fixed inset-0 z-[100] overflow-hidden" role="dialog" aria-modal="true" aria-label="Carrito de compras">
           {/* Backdrop con desenfoque suave */}
           <motion.div
             initial={{ opacity: 0 }}
