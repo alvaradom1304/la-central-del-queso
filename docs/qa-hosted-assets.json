@@ -1,0 +1,52 @@
+{
+  "preview": "https://web-cd804vlhn-altiora13.vercel.app",
+  "sourceCommit": "5a07d59",
+  "checks": [
+    {
+      "name": "optimized assets and layout 1440",
+      "ok": true
+    },
+    {
+      "name": "optimized assets and layout 375",
+      "ok": true
+    },
+    {
+      "name": "optimized assets and layout 768",
+      "ok": true
+    }
+  ],
+  "errors": [],
+  "httpErrors": [],
+  "timings": [
+    {
+      "lcp": 4736,
+      "shift": 0,
+      "url": "https://web-cd804vlhn-altiora13.vercel.app/textures/wood_plank_diff.webp",
+      "tag": "DIV",
+      "viewport": 1440,
+      "scroll": 1440,
+      "doorBackground": "repeating-linear-gradient(90deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) calc(16.66% - 3px), rgb(17, 14, 11) 16.66%), url(\"https://web-cd804vlhn-altiora13.vercel.app/textures/wood_plank_diff.webp\")",
+      "skipBackground": "rgba(11, 22, 14, 0.9)"
+    },
+    {
+      "lcp": 3200,
+      "shift": 0,
+      "url": "https://web-cd804vlhn-altiora13.vercel.app/textures/wood_plank_diff.webp",
+      "tag": "DIV",
+      "viewport": 375,
+      "scroll": 375,
+      "doorBackground": "repeating-linear-gradient(90deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) calc(16.66% - 3px), rgb(17, 14, 11) 16.66%), url(\"https://web-cd804vlhn-altiora13.vercel.app/textures/wood_plank_diff.webp\")",
+      "skipBackground": "rgba(11, 22, 14, 0.9)"
+    },
+    {
+      "lcp": 10604,
+      "shift": 0,
+      "url": "https://web-cd804vlhn-altiora13.vercel.app/textures/wood_plank_diff.webp",
+      "tag": "DIV",
+      "viewport": 768,
+      "scroll": 768,
+      "doorBackground": "repeating-linear-gradient(90deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) calc(16.66% - 3px), rgb(17, 14, 11) 16.66%), url(\"https://web-cd804vlhn-altiora13.vercel.app/textures/wood_plank_diff.webp\")",
+      "skipBackground": "rgba(11, 22, 14, 0.9)"
+    }
+  ]
+}
