@@ -634,7 +634,6 @@ export default function FincaToTableExperience() {
   const journeyContainerRef = useRef<HTMLDivElement>(null);
   const [narrativeProgress, setNarrativeProgress] = useState(0);
   const [activeSceneIndex, setActiveSceneIndex] = useState(0);
-  const [mouseNorm, setMouseNorm] = useState({ x: 0, y: 0 });
 
   // --- Preferencias de Accesibilidad, Rendimiento y Audio ---
   const [liteMode, setLiteMode] = useState(true);
@@ -970,12 +969,6 @@ export default function FincaToTableExperience() {
 
   return (
     <div
-      onMouseMove={(e) => {
-        if (liteMode) return;
-        const nx = (e.clientX / window.innerWidth - 0.5) * 2;
-        const ny = (e.clientY / window.innerHeight - 0.5) * 2;
-        setMouseNorm({ x: nx, y: ny });
-      }}
       className="relative bg-[#0D1510] text-[#F7F4EC] selection:bg-[#DDA13E] selection:text-[#0D1510]"
     >
       {/* ====================================================================

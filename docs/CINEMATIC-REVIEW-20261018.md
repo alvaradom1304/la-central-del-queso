@@ -36,3 +36,10 @@ No new library, paid generation, stock purchase or external service was introduc
 ## Verification
 Protocol: https://github.com/alvaradom1304/Altiora-Immersive-Web-Lab/blob/main/protocols/IMMERSIVE-QUALITY-PROTOCOL.md (blob 3794136967bab5790907422906f5f13627e9858b).
 Types passed before visual iteration; final build and browser results are recorded separately after testing. No field p75 LCP/CLS/INP or FPS claim is made. Human art-direction approval remains required. Production publication is not authorized.
+
+## Browser iteration evidence
+- Original public 3D view visibly clipped wheel and board; revised view shows both complete. Screenshot after-tasting-3d.png was captured before the subsequent radial cut-face alignment fix.
+- System reduced-motion was active in the test browser. Lite photographic composition was inspected and captured. Manual full-mode selection revealed a CSS override conflict; corrected by allowing React liteMode to own layout/door visibility, initially defaulting safely to lite until preferences are read.
+- Corrected radial cut-face placement after visible protruding planes in the model.
+- Final mobile, door animation, scroll roundtrip and cart/calculator interaction gates remain pending because integrated browser calls repeatedly timed out. Direct Playwright authorization was requested. Do not treat these as passing tests.
+- No production deployment, promotion, settings change, or merge was performed.
