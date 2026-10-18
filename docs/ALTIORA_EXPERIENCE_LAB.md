@@ -105,3 +105,12 @@ Adoptamos una **síntesis deliberada y sin fisuras**:
    - Al elegir una estación en la mesa, cambia la atmósfera lumínica del comedor, se actualiza la tabla principal (con vista 3D manipulable o vista macro fotográfica), y se despliegan las piezas reales de esa familia en formato de **Alacena y Ficha de Cata Táctil** (con precios confirmados en `₡ CRC` y `$ USD`, selector de peso/cantidad, buscador instantáneo con estado vacío/reset y adición directa al pedido).
 7. **Escena 07 — La Conexión Humana (`#conexion-humana`)**:
    - Cierra con la crónica familiar desde 1980 (comparador Día 1 vs Día 45), puntos de retiro en Ferias del Agricultor (Guadalupe y Hatillo con Waze/Google Maps) y portal de abastecimiento B2B para sodas, pizzerías y restaurantes.
+
+---
+
+## 6. Repositorio de Laboratorio y Ecosistema Altiora OS
+
+- **Repositorio Oficial de Investigación y Laboratorio:** [`https://github.com/alvaradom1304/Altiora-Immersive-Web-Lab`](https://github.com/alvaradom1304/Altiora-Immersive-Web-Lab)
+- **Ruta local vinculada:** `C:\Users\Usuario\OneDrive\Desktop\Altiora-Immersive-Web-Lab`
+- **Estado de Comprobación:** Clonado, verificado e integrado (`OK: 16 repositorios y 9 documentos validados`).
+- **Propósito:** Aloja los experimentos reproducibles de WebGL, shaders GLSL, modelos glTF, benchmarks de interacción y las plantillas de auditoría técnica que alimentan la experiencia en producción de *La Central del Queso*.
