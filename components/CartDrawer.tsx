@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { BUSINESS_PHONE } from "@/lib/whatsapp";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Trash2, Plus, Minus, ShoppingBag, ArrowRight, CheckCircle2, AlertCircle } from "lucide-react";
@@ -26,15 +26,43 @@ export default function CartDrawer() {
   const [notes, setNotes] = useState("");
   const [step, setStep] = useState<"review" | "form">("review");
 
-  // Cerrar con Escape
+  const panelRef = useRef<HTMLDivElement>(null);
+  const returnFocusRef = useRef<HTMLElement | null>(null);
+
+  // Diálogo modal: foco dentro al abrir, atrapado con Tab, devuelto al cerrar; Escape cierra.
   useEffect(() => {
+    if (!isCartOpen) return;
+    const FOCUSABLE = 'button:not([disabled]), [href], input:not([disabled]), select, textarea, [tabindex]:not([tabindex="-1"])';
+    returnFocusRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    const focusTimer = window.setTimeout(() => {
+      panelRef.current?.querySelector<HTMLElement>(FOCUSABLE)?.focus();
+    }, 30);
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape" && isCartOpen) {
+      if (e.key === "Escape") {
         setIsCartOpen(false);
+        return;
+      }
+      if (e.key !== "Tab" || !panelRef.current) return;
+      const nodes = Array.from(panelRef.current.querySelectorAll<HTMLElement>(FOCUSABLE)).filter((n) => n.offsetParent !== null);
+      if (!nodes.length) return;
+      const first = nodes[0];
+      const last = nodes[nodes.length - 1];
+      const inside = panelRef.current.contains(document.activeElement);
+      if (e.shiftKey && (document.activeElement === first || !inside)) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && (document.activeElement === last || !inside)) {
+        e.preventDefault();
+        first.focus();
       }
     };
     window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
+    const returnTo = returnFocusRef;
+    return () => {
+      window.clearTimeout(focusTimer);
+      window.removeEventListener("keydown", handleKeyDown);
+      returnTo.current?.focus?.();
+    };
   }, [isCartOpen, setIsCartOpen]);
 
   const generateWhatsAppMessage = () => {
@@ -95,6 +123,7 @@ export default function CartDrawer() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 28, stiffness: 280 }}
+              ref={panelRef}
               className="w-screen max-w-md bg-cream text-forest flex flex-col shadow-2xl border-l border-forest/10"
             >
               {/* Header del Drawer */}

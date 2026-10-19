@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "guard": "node scripts/immersive-guard.mjs"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",

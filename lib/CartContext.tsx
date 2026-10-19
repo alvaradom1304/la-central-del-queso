@@ -10,7 +10,8 @@ export interface CartItem {
 
 interface CartContextType {
   items: CartItem[];
-  addToCart: (product: Product, quantity?: number) => void;
+  /** options.open = false agrega sin abrir el cajón (la fila da su propio aviso). */
+  addToCart: (product: Product, quantity?: number, options?: { open?: boolean }) => void;
   updateQuantity: (productId: string, quantity: number) => void;
   removeFromCart: (productId: string) => void;
   clearCart: () => void;
@@ -51,7 +52,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     }
   }, [items]);
 
-  const addToCart = (product: Product, quantity = 1) => {
+  const addToCart = (product: Product, quantity = 1, options?: { open?: boolean }) => {
     setItems((prev) => {
       const existing = prev.find((item) => item.product.id === product.id);
       if (existing) {
@@ -63,7 +64,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       }
       return [...prev, { product, quantity }];
     });
-    setIsCartOpen(true);
+    if (options?.open !== false) setIsCartOpen(true);
   };
 
   const updateQuantity = (productId: string, quantity: number) => {
