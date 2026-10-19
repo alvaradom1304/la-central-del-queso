@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "provisional": true,
+  "notice": "Recreación visual provisional",
+  "frameCount": 150,
+  "pad": 4,
+  "variants": {
+    "desktop": {
+      "width": 1280,
+      "height": 720,
+      "pattern": "/frames/finca/desktop/f_{n}.webp"
+    },
+    "mobile": {
+      "width": 720,
+      "height": 1280,
+      "pattern": "/frames/finca/mobile/f_{n}.webp"
+    }
+  },
+  "tramos": [
+    {
+      "id": "porton",
+      "start": 0,
+      "end": 0.219,
+      "kicker": "El portón",
+      "title": "Bienvenido a la finca",
+      "text": "Pase adelante. Desde aquí empieza el camino de la leche hasta su mesa."
+    },
+    {
+      "id": "camino",
+      "start": 0.219,
+      "end": 0.406,
+      "kicker": "El camino",
+      "title": "Entre neblina y verde",
+      "text": "La finca amanece despacio. Siga avanzando por el camino."
+    },
+    {
+      "id": "potrero",
+      "start": 0.406,
+      "end": 0.594,
+      "kicker": "El potrero",
+      "title": "Donde empieza todo",
+      "text": "Aquí pastan las vacas. De su leche nacen nuestros quesos."
+    },
+    {
+      "id": "puerta",
+      "start": 0.594,
+      "end": 0.781,
+      "kicker": "La lechería",
+      "title": "Pase, la puerta está abierta",
+      "text": "Adentro la leche se convierte en queso."
+    },
+    {
+      "id": "lecheria",
+      "start": 0.781,
+      "end": 1,
+      "kicker": "La recepción",
+      "title": "La mesa está lista",
+      "text": "Estos son los quesos de la semana. Elija los suyos y le preparamos el pedido."
+    }
+  ]
+}
