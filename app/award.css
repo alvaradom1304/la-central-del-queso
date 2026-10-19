@@ -542,3 +542,121 @@ html.aw-paused .aw-feria__dot::after { animation: none; }
 @media (prefers-reduced-motion: reduce) {
   .aw *, .aw *::before, .aw *::after { transition-duration: 0.01ms !important; animation: none !important; scroll-behavior: auto !important; }
 }
+
+/* --- Entrada a la finca (FincaIntro) ------------------------------------------ */
+.aw-finca { position: relative; height: 100svh; background: var(--forest); }
+html.aw-js .aw-finca { height: 520svh; }
+@media (max-aspect-ratio: 9/10) { html.aw-js .aw-finca { height: 440svh; } }
+.aw-finca__sticky { position: sticky; top: 0; height: 100svh; overflow: hidden; isolation: isolate; }
+.aw-finca__view { position: absolute; inset: 0; transform-origin: 50% 55%; will-change: transform; }
+html.aw-js .aw-finca__view { transform: scale(1.14); }
+.aw-finca picture { display: contents; }
+.aw-finca__poster, .aw-finca__frames { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.aw-finca__frames { opacity: 0; transition: opacity 0.4s linear; }
+.aw-finca[data-frames="ready"] .aw-finca__frames { opacity: 1; }
+.aw-finca__smoke { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
+.aw-finca[data-smoke="off"] .aw-finca__smoke, .aw-finca[data-motion="reduced"] .aw-finca__smoke { display: none; }
+/* Respaldo sin WebGL2: neblina que sigue al cursor (--mx/--my). */
+.aw-finca__mist {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none; opacity: 0; transition: opacity 0.6s linear;
+  background:
+    radial-gradient(circle 22vmax at var(--mx, 50%) var(--my, 72%), rgba(247, 244, 236, 0.34), rgba(247, 244, 236, 0) 70%),
+    radial-gradient(ellipse 80% 28% at 30% 82%, rgba(247, 244, 236, 0.2), rgba(247, 244, 236, 0) 70%),
+    radial-gradient(ellipse 70% 24% at 76% 66%, rgba(247, 244, 236, 0.15), rgba(247, 244, 236, 0) 70%);
+}
+.aw-finca[data-smoke="off"][data-motion="full"] .aw-finca__mist { opacity: 1; animation: aw-mist 16s ease-in-out infinite alternate; }
+@keyframes aw-mist { to { transform: translate3d(3%, -2%, 0); } }
+.aw-finca__shade {
+  position: absolute; inset: 0; z-index: 2; pointer-events: none;
+  background:
+    linear-gradient(to top, rgba(15, 30, 22, 0.86) 0%, rgba(15, 30, 22, 0.4) 30%, rgba(15, 30, 22, 0) 55%),
+    linear-gradient(to bottom, rgba(15, 30, 22, 0.6), rgba(15, 30, 22, 0) 20%);
+}
+
+/* Portón: tablones con travesaños, tornapuntas en Z, bisagras de hierro y rótulo colgante. */
+.aw-gate { --rail: clamp(30px, 6vh, 60px); position: absolute; inset: 0; z-index: 3; perspective: 1500px; perspective-origin: 50% 45%; pointer-events: none; }
+/* Con movimiento reducido el portón no gira: se desvanece (FincaIntro). */
+html:not(.aw-js) .aw-gate,
+.aw-finca[data-gate="open"] .aw-gate { visibility: hidden; }
+.aw-gate__leaf {
+  position: absolute; top: 0; bottom: 0; width: 50.2%; will-change: transform;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 14%, rgba(0, 0, 0, 0) 84%, rgba(0, 0, 0, 0.6)),
+    linear-gradient(180deg, rgba(255, 214, 160, 0.1), rgba(0, 0, 0, 0.4)),
+    url("/textures/wood_plank_diff.jpg") 0 0 / clamp(300px, 34vmax, 520px) auto repeat;
+  background-color: #3a2a1c;
+}
+.aw-gate__leaf--l { left: 0; transform-origin: 0 50%; }
+.aw-gate__leaf--r { right: 0; transform-origin: 100% 50%; background-position: 0 0, 0 0, 37% 0; }
+.aw-gate__rail, .aw-gate__brace {
+  position: absolute; left: 5%; right: 5%;
+  background: linear-gradient(180deg, rgba(255, 224, 176, 0.14), rgba(0, 0, 0, 0.38)), url("/textures/wood_dark_diff.jpg") center / 280px auto;
+}
+.aw-gate__rail { height: var(--rail); border-radius: 2px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 230, 190, 0.16); }
+.aw-gate__rail--t { top: 15%; }
+.aw-gate__rail--b { bottom: 15%; }
+.aw-gate__brace { top: calc(15% + var(--rail)); bottom: calc(15% + var(--rail)); clip-path: polygon(0 100%, 15% 100%, 100% 0, 85% 0); }
+.aw-gate__leaf--r .aw-gate__brace { clip-path: polygon(100% 100%, 85% 100%, 0 0, 15% 0); }
+.aw-gate__hinge {
+  position: absolute; left: 0; width: 36%; height: 14px; border-radius: 0 8px 8px 0;
+  background: radial-gradient(circle, #7a7e78 0 2px, transparent 3px) 10px 0 / 30px 14px repeat-x, linear-gradient(180deg, #41463f, #15181a);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
+}
+.aw-gate__hinge--t { top: calc(15% + var(--rail) / 2 - 7px); }
+.aw-gate__hinge--b { bottom: calc(15% + var(--rail) / 2 - 7px); }
+.aw-gate__leaf--r .aw-gate__hinge { left: auto; right: 0; border-radius: 8px 0 0 8px; }
+.aw-gate__latch { position: absolute; left: -26px; top: calc(50% - 9px); width: 70px; height: 18px; border-radius: 4px; background: linear-gradient(180deg, #4a4f48, #121416); box-shadow: 0 3px 8px rgba(0, 0, 0, 0.6); }
+.aw-gate__light {
+  position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin-inline: auto; width: 22vw; opacity: 0;
+  background: radial-gradient(ellipse 50% 62% at 50% 50%, rgba(255, 228, 172, 0.92), rgba(255, 196, 120, 0.32) 42%, rgba(255, 196, 120, 0) 72%);
+  mix-blend-mode: screen;
+}
+.aw-gate__sign {
+  position: absolute; top: 24%; left: 0; right: 0; margin-inline: auto; width: fit-content; max-width: calc(100% - 2 * var(--gutter));
+  display: grid; justify-items: center; gap: 6px; padding: 18px clamp(18px, 3vw, 38px) 16px; text-align: center; border-radius: 6px;
+  background: linear-gradient(180deg, rgba(255, 224, 176, 0.12), rgba(0, 0, 0, 0.3)), url("/textures/wood_dark_diff.jpg") center / 320px auto, #2a1d12;
+  box-shadow: 0 22px 44px rgba(0, 0, 0, 0.55), inset 0 0 0 2px rgba(0, 0, 0, 0.4), inset 0 2px 0 rgba(255, 230, 190, 0.18);
+}
+.aw-gate__sign::before { content: ""; position: absolute; bottom: 100%; left: 16%; right: 16%; height: 40vh; border-inline: 2px solid #23180f; }
+.aw-gate__sign strong { font: 900 clamp(28px, 4.8vw, 66px)/0.95 var(--f-display); text-transform: uppercase; color: var(--cheese-l); text-shadow: 0 2px 0 rgba(0, 0, 0, 0.7), 0 -1px 0 rgba(255, 240, 200, 0.12); text-wrap: balance; }
+.aw-gate__sign-top, .aw-gate__sign-bottom { font: 500 12px/1.2 var(--f-mono); letter-spacing: 0.2em; text-transform: uppercase; color: var(--cream-2); }
+
+/* Textos del recorrido: uno visible a la vez; todos en el DOM, en orden, para lectores. */
+.aw-finca__caps {
+  position: absolute; z-index: 4; left: var(--gutter); bottom: calc(92px + env(safe-area-inset-bottom, 0px));
+  width: min(700px, calc(100% - 2 * var(--gutter))); margin: 0; padding: 0; list-style: none; display: grid;
+  transition: opacity 0.6s linear;
+}
+.aw-finca[data-gate="closed"] .aw-finca__caps, .aw-finca[data-gate="opening"] .aw-finca__caps { opacity: 0; }
+.aw-finca__cap { grid-area: 1 / 1; align-self: end; opacity: 0; transform: translateY(18px); transition: opacity 0.5s var(--ease), transform 0.8s var(--ease); text-shadow: 0 2px 18px rgba(15, 30, 22, 0.55); }
+.aw-finca__cap[data-active] { opacity: 1; transform: none; }
+.aw-finca[data-motion="reduced"] .aw-finca__cap { transform: none; transition: opacity 0.2s linear; }
+html:not(.aw-js) .aw-finca__cap:not(:first-child) { display: none; }
+.aw-finca__kicker { margin: 0 0 12px; font: 500 12px/1.3 var(--f-mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--cheese); }
+.aw-finca__kicker span { margin-right: 8px; color: var(--cream); }
+.aw-finca__title { margin: 0; font: 900 clamp(40px, 7vw, 104px)/0.95 var(--f-display); text-transform: uppercase; text-wrap: balance; }
+.aw-finca__text { max-width: 46ch; margin: 14px 0 0; font-size: clamp(16px, 1.3vw, 19px); color: var(--cream); }
+
+.aw-finca__ui { position: absolute; z-index: 4; left: var(--gutter); right: var(--gutter); bottom: calc(24px + env(safe-area-inset-bottom, 0px)); display: flex; align-items: center; gap: 18px; }
+.aw-finca__bar { position: relative; flex: 1; height: 2px; background: rgba(247, 244, 236, 0.25); }
+.aw-finca__bar span { position: absolute; inset: 0; background: var(--cheese); transform-origin: 0 50%; transform: scaleX(0); }
+.aw-finca__tick { position: absolute; top: -3px; width: 8px; height: 8px; margin-left: -4px; border-radius: 50%; background: rgba(247, 244, 236, 0.45); transition: background-color 0.3s linear; }
+.aw-finca__tick[data-on] { background: var(--cheese); }
+.aw-finca__note { margin: 0; font: 500 11px/1 var(--f-mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--soft); white-space: nowrap; }
+.aw-finca__skip {
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border: 1.5px solid rgba(247, 244, 236, 0.6); border-radius: 999px;
+  background: rgba(15, 30, 22, 0.4); font-size: 14px; font-weight: 600; text-decoration: none; white-space: nowrap;
+  transition: background-color 0.25s linear, color 0.25s linear, border-color 0.25s linear;
+}
+.aw-finca__skip:hover { background: var(--cheese); border-color: var(--cheese); color: var(--forest); }
+.aw-finca__hint {
+  position: absolute; z-index: 4; left: 0; right: 0; top: calc(92px + env(safe-area-inset-top, 0px)); margin: 0; text-align: center;
+  font: 500 12px/1.2 var(--f-mono); letter-spacing: 0.18em; text-transform: uppercase; color: var(--cream);
+  opacity: 0; transition: opacity 0.5s linear; text-shadow: 0 1px 10px rgba(15, 30, 22, 0.7);
+}
+.aw-finca[data-gate="open"]:not([data-moved]) .aw-finca__hint { opacity: 1; }
+@media (prefers-reduced-motion: no-preference) {
+  html:not(.aw-paused) .aw-finca[data-gate="open"]:not([data-moved]) .aw-finca__hint { animation: aw-bob 1.8s ease-in-out infinite; }
+}
+@keyframes aw-bob { 50% { transform: translateY(6px); } }
+@media (max-width: 520px) { .aw-finca__note { display: none; } .aw-finca__caps { bottom: calc(84px + env(safe-area-inset-bottom, 0px)); } }

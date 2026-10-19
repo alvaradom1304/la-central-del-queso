@@ -3,6 +3,7 @@ import "./award.css";
 import { display, accent } from "./award-fonts";
 import AwardShell from "@/components/award/AwardShell";
 import HeroStage from "@/components/award/HeroStage";
+import FincaIntro from "@/components/award/FincaIntro";
 import Pizarra from "@/components/award/Pizarra";
 import Canasta from "@/components/award/Canasta";
 import OpenCart from "@/components/award/OpenCart";
@@ -65,6 +66,7 @@ export default function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }} />
       <AwardShell>
         <main id="contenido">
+          <FincaIntro />
           <HeroStage>
             <div className="aw-hero">
               <p className="aw-eyebrow">Semiduro de Turrialba · Ferias de Guadalupe y Hatillo</p>
