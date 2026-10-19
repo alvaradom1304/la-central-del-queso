@@ -8,12 +8,12 @@
     "desktop": {
       "width": 1280,
       "height": 720,
-      "pattern": "/frames/finca/desktop/f_{n}.webp"
+      "pattern": "/frames/finca/v1/desktop/f_{n}.webp"
     },
     "mobile": {
       "width": 720,
       "height": 1280,
-      "pattern": "/frames/finca/mobile/f_{n}.webp"
+      "pattern": "/frames/finca/v1/mobile/f_{n}.webp"
     }
   },
   "tramos": [

@@ -6,10 +6,14 @@
 //   node scripts/build-frames.mjs --frames 150 clip1.mp4 clip2.mp4 ...
 //   node scripts/build-frames.mjs --frames 150 --provisional foto1.jpg foto2.jpg ...
 //
+// --version vN escribe en public/frames/finca/vN/ (por defecto v1). Usa una
+// versión nueva cada vez que cambien las imágenes: los .webp se sirven con
+// caché inmutable de un año (vercel.json).
+//
 // --fade S fija el fundido entre clips (por defecto 0,6 s con fotos y 0 con
 // video, porque los clips encadenados ya continúan uno en el otro).
 //
-// Salida: public/frames/finca/{desktop,mobile}/f_0001.webp ... y manifest.json.
+// Salida: public/frames/finca/vN/{desktop,mobile}/f_0001.webp ... y manifest.json.
 // Los clips se unen en un solo plano y se muestrean de forma uniforme.
 
 import { spawnSync } from "node:child_process";
@@ -68,15 +72,17 @@ function duration(file) {
 }
 
 function parseArgs(argv) {
-  const opts = { frames: 150, provisional: false, fade: null, inputs: [] };
+  const opts = { frames: 150, provisional: false, fade: null, version: "v1", inputs: [] };
   for (let i = 0; i < argv.length; i++) {
     if (argv[i] === "--frames") opts.frames = parseInt(argv[++i], 10);
     else if (argv[i] === "--provisional") opts.provisional = true;
     else if (argv[i] === "--fade") opts.fade = parseFloat(argv[++i]);
+    else if (argv[i] === "--version") opts.version = argv[++i];
     else opts.inputs.push(resolve(argv[i]));
   }
   if (!opts.inputs.length) throw new Error("Indica al menos un clip o foto de entrada.");
   for (const f of opts.inputs) if (!existsSync(f)) throw new Error(`No existe: ${f}`);
+  if (!/^vd+$/.test(opts.version)) throw new Error("--version debe tener la forma v1, v2…");
   opts.fade ??= opts.provisional ? 0.6 : 0;
   return opts;
 }
@@ -140,11 +146,11 @@ function concat(clips, tmp, fade) {
   return out;
 }
 
-function extract(master, frames) {
+function extract(master, frames, version) {
   const total = duration(master);
   const result = {};
   for (const [name, v] of Object.entries(VARIANTS)) {
-    const dir = join(OUT, name);
+    const dir = join(OUT, version, name);
     rmSync(dir, { recursive: true, force: true });
     mkdirSync(dir, { recursive: true });
     run(FFMPEG, ["-y", "-i", master, "-vf",
@@ -164,7 +170,7 @@ mkdirSync(tmp, { recursive: true });
 try {
   const clips = opts.inputs.map((f, i) => normalize(f, tmp, i));
   const master = concat(clips, tmp, opts.fade);
-  const stats = extract(master, opts.frames);
+  const stats = extract(master, opts.frames, opts.version);
   const frameCount = Math.min(stats.desktop.count, stats.mobile.count);
   const manifest = {
     version: 1,
@@ -173,7 +179,7 @@ try {
     frameCount,
     pad: PAD,
     variants: Object.fromEntries(Object.entries(VARIANTS).map(([name, v]) => [name, {
-      width: v.width, height: v.height, pattern: `/frames/finca/${name}/f_{n}.webp`,
+      width: v.width, height: v.height, pattern: `/frames/finca/${opts.version}/${name}/f_{n}.webp`,
     }])),
     tramos: tramosFor(clips, opts.fade),
   };

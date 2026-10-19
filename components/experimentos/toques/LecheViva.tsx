@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { useReducedMotion } from "./useReducedMotion";
 import { gsap } from "gsap";
 
 // Cuenco de leche: la superficie se ondula al pasar el cursor o el dedo.
@@ -12,6 +13,7 @@ const DAMP = 0.975;
 const BASE = [244, 239, 228]; // color de la leche
 
 export default function LecheViva({ className = "" }: { className?: string }) {
+  const reduced = useReducedMotion();
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -23,7 +25,6 @@ export default function LecheViva({ className = "" }: { className?: string }) {
     const image = ctx.createImageData(N, N);
     let current = new Float32Array(N * N);
     let previous = new Float32Array(N * N);
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     let energy = 0;
 
     const render = () => {
@@ -87,7 +88,12 @@ export default function LecheViva({ className = "" }: { className?: string }) {
     const onLeave = () => (last = null);
 
     let visible = true;
-    const observer = new IntersectionObserver(([entry]) => (visible = entry.isIntersecting));
+    const observer = new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting;
+      if (reduced) return;
+      if (visible) gsap.ticker.add(tick);
+      else gsap.ticker.remove(tick);
+    });
     observer.observe(canvas);
 
     // Solo simula mientras hay ondas: en reposo no consume.
@@ -111,7 +117,7 @@ export default function LecheViva({ className = "" }: { className?: string }) {
       canvas.removeEventListener("pointerleave", onLeave);
       observer.disconnect();
     };
-  }, []);
+  }, [reduced]);
 
   return (
     <div

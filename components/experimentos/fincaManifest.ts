@@ -7,7 +7,7 @@ export type FrameVariantKey = "desktop" | "mobile";
 export interface FrameVariant {
   width: number;
   height: number;
-  /** Ruta con el marcador {n}, p. ej. "/frames/finca/desktop/f_{n}.webp". */
+  /** Ruta con el marcador {n}, p. ej. "/frames/finca/v1/desktop/f_{n}.webp". */
   pattern: string;
 }
 

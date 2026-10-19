@@ -2,6 +2,7 @@
 
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { MotionConfig } from "framer-motion";
 import CartDrawer from "@/components/CartDrawer";
 import { CartProvider, useCart } from "@/lib/CartContext";
 import type { Product } from "@/lib/products";
@@ -23,7 +24,10 @@ interface FincaExperienceProps {
 export default function FincaExperience(props: FincaExperienceProps) {
   return (
     <CartProvider>
-      <ExperienceShell {...props} />
+      {/* framer-motion (panel de la canasta) también respeta "reducir movimiento". */}
+      <MotionConfig reducedMotion="user">
+        <ExperienceShell {...props} />
+      </MotionConfig>
     </CartProvider>
   );
 }
@@ -94,6 +98,16 @@ function ExperienceShell({ manifest, ventanaOverlay, sceneOverlays, cuenco }: Fi
     if (back && back.isConnected) back.focus({ preventScroll: true });
   }, [isCartOpen]);
 
+  // La cabecera fija no debe tapar el elemento enfocado al navegar con teclado.
+  useEffect(() => {
+    const root = document.documentElement;
+    const before = root.style.scrollPaddingTop;
+    root.style.scrollPaddingTop = "6rem";
+    return () => {
+      root.style.scrollPaddingTop = before;
+    };
+  }, []);
+
   const notice = manifest?.notice ?? DEFAULT_NOTICE;
   // Cabecera transparente solo sobre el escenario fijo; si no, fondo propio
   // para que nada pase por debajo de los atajos.
@@ -111,10 +125,10 @@ function ExperienceShell({ manifest, ventanaOverlay, sceneOverlays, cuenco }: Fi
         >
           <Link
             href="/"
-            className="min-w-0 truncate font-serif text-[15px] font-normal text-[#F2EDE3] sm:text-lg sm:tracking-wide focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-[#F2EDE3] sm:text-lg"
+            className="min-w-0 truncate font-serif text-[15px] font-normal text-[#F2EDE3] sm:text-lg sm:tracking-wide focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-[#F2EDE3]"
           >
             La Central del Queso
-            <span className="ml-3 hidden align-middle font-sans text-[10px] uppercase tracking-[0.26em] text-[#F2EDE3]/45 sm:inline">
+            <span className="ml-3 hidden align-middle font-sans text-[10px] uppercase tracking-[0.26em] text-[#F2EDE3]/60 sm:inline">
               Experimento
             </span>
           </Link>
@@ -162,7 +176,7 @@ function ExperienceShell({ manifest, ventanaOverlay, sceneOverlays, cuenco }: Fi
 
       <footer
         ref={footerRef}
-        className="flex flex-col gap-3 border-t border-[#F2EDE3]/10 px-6 py-10 text-[10px] uppercase tracking-[0.24em] text-[#F2EDE3]/45 sm:flex-row sm:items-center sm:justify-between sm:px-12 lg:px-20"
+        className="flex flex-col gap-3 border-t border-[#F2EDE3]/10 px-6 py-10 text-[10px] uppercase tracking-[0.24em] text-[#F2EDE3]/60 sm:flex-row sm:items-center sm:justify-between sm:px-12 lg:px-20"
       >
         <p>Página experimental · Imágenes: {notice}</p>
         <Link

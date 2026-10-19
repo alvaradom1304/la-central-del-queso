@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { useReducedMotion } from "./useReducedMotion";
 import * as THREE from "three";
 import { gsap } from "gsap";
 
@@ -17,7 +18,7 @@ const DAMPING = 0.982;
 const RADIUS = 95; // px de influencia del cursor
 const PUSH = 0.35;
 const MAX_SPEED = 24; // px por paso: tope del empujón para que la tela no se dispare
-const PANEL = 0.4; // ancho de cada paño respecto a la ventana
+const PANEL = 0.22; // ancho de cada paño: recogidos a los lados, la escena queda a la vista
 
 type Cloth = {
   pos: Float32Array;
@@ -195,6 +196,7 @@ function step(cloth: Cloth, pointer: Pointer, time: number) {
 }
 
 export default function CortinaLino({ className = "" }: { className?: string }) {
+  const reduced = useReducedMotion();
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -228,14 +230,14 @@ export default function CortinaLino({ className = "" }: { className?: string }) 
       metalness: 0,
       side: THREE.DoubleSide,
       transparent: true,
-      opacity: 0.9,
+      // En pantallas táctiles el dedo apenas aparta la tela: más translúcida.
+      opacity: window.matchMedia("(pointer: coarse)").matches ? 0.72 : 0.9,
     });
 
     let cloths: Cloth[] = [];
     let width = 0;
     let height = 0;
     const pointer: Pointer = { x: 0, y: 0, vx: 0, vy: 0, active: false };
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     const build = () => {
       width = host.clientWidth;
@@ -272,7 +274,12 @@ export default function CortinaLino({ className = "" }: { className?: string }) 
     settle();
 
     let visible = true;
-    const observer = new IntersectionObserver(([entry]) => (visible = entry.isIntersecting));
+    const observer = new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting;
+      if (reduced) return;
+      if (visible) gsap.ticker.add(tick);
+      else gsap.ticker.remove(tick);
+    });
     observer.observe(host);
 
     const resize = new ResizeObserver(() => {
@@ -323,7 +330,7 @@ export default function CortinaLino({ className = "" }: { className?: string }) 
       texture.dispose();
       renderer.dispose();
     };
-  }, []);
+  }, [reduced]);
 
   return (
     <>

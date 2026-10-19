@@ -30,6 +30,9 @@ export interface FrameSequenceHandle {
 const MAX_DPR = 2;
 const MAX_CONCURRENT_LOADS = 6;
 const COARSE_STEP = 8;
+/** Fotogramas finos que se cargan a cada lado del que se ve (los gruesos se cargan todos). */
+const FINE_WINDOW = 30;
+const FINE_WINDOW_SAVE_DATA = 6;
 /** Constante de tiempo (ms) del suavizado del progreso. */
 const SMOOTHING_MS = 90;
 const SETTLE_EPSILON = 0.0005;
@@ -75,6 +78,8 @@ interface FrameLoader {
   readonly images: Array<HTMLImageElement | null>;
   readonly status: Uint8Array;
   readyCount(): number;
+  /** Reanuda la carga (al cambiar de fotograma objetivo o volver a la vista). */
+  pump(): void;
   /** Deja de pedir fotogramas y cancela los que están en curso; conserva los listos. */
   halt(): void;
   /** Libera todas las imágenes. */
@@ -83,6 +88,8 @@ interface FrameLoader {
 
 interface LoaderHooks {
   targetIndex: () => number;
+  /** false mientras la sección está fuera de vista: no se descarga nada. */
+  canLoad: () => boolean;
   onReady: (loader: FrameLoader, index: number) => void;
   onPosterFailed: (loader: FrameLoader) => void;
 }
@@ -103,12 +110,19 @@ function createLoader(manifest: FincaManifest, variantKey: FrameVariantKey, hook
   for (let i = COARSE_STEP; i < count; i += COARSE_STEP) coarse.push(i);
   if (count > 1 && coarse[coarse.length - 1] !== count - 1) coarse.push(count - 1);
   let coarseCursor = 0;
+  const isCoarse = new Uint8Array(count);
+  isCoarse[0] = 1;
+  coarse.forEach((i) => (isCoarse[i] = 1));
+  // Con "ahorro de datos" la ventana fina es mínima.
+  const connection = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection;
+  const fineWindow = connection?.saveData ? FINE_WINDOW_SAVE_DATA : FINE_WINDOW;
 
   const loader: FrameLoader = {
     variant: variantKey,
     images,
     status,
     readyCount: () => ready,
+    pump,
     halt,
     destroy,
   };
@@ -120,7 +134,7 @@ function createLoader(manifest: FincaManifest, variantKey: FrameVariantKey, hook
       if (status[i] === IDLE) return i;
     }
     const t = Math.min(count - 1, Math.max(0, hooks.targetIndex()));
-    for (let d = 0; d < count; d++) {
+    for (let d = 0; d <= fineWindow; d++) {
       const ahead = t + d;
       if (ahead < count && status[ahead] === IDLE) return ahead;
       const behind = t - d;
@@ -129,7 +143,21 @@ function createLoader(manifest: FincaManifest, variantKey: FrameVariantKey, hook
     return -1;
   }
 
+  // Libera los fotogramas finos lejanos para acotar la memoria de imágenes decodificadas.
+  function evict(t: number) {
+    const limit = fineWindow * 2;
+    for (let i = 1; i < count; i++) {
+      if (isCoarse[i] || status[i] !== READY || Math.abs(i - t) <= limit) continue;
+      images[i]?.removeAttribute("src");
+      images[i] = null;
+      status[i] = IDLE;
+      ready--;
+    }
+  }
+
   function pump() {
+    if (halted || !hooks.canLoad()) return;
+    evict(Math.min(count - 1, Math.max(0, hooks.targetIndex())));
     while (!halted && active < MAX_CONCURRENT_LOADS) {
       const i = nextIndex();
       if (i < 0) return;
@@ -251,6 +279,7 @@ export function createFrameSequence(
   let fillCache = -1;
   let activeStep = -1;
   let lastOverlayProgress = -1;
+  let pumpedIndex = -1;
 
   let ctx: CanvasRenderingContext2D | null = null;
   try {
@@ -265,6 +294,7 @@ export function createFrameSequence(
 
   const hooks: LoaderHooks = {
     targetIndex: () => Math.round(clamp01(current < 0 ? target : current) * lastIndex),
+    canLoad: () => inView && !disposed,
     onReady: (from, index) => {
       if (from === loader && index === 0 && previous) {
         previous.destroy();
@@ -451,6 +481,12 @@ export function createFrameSequence(
     }
     renderOverlays(current);
     renderFrame(current);
+    // Al cambiar de fotograma, la ventana de carga se desplaza con él.
+    const index = Math.round(clamp01(target) * lastIndex);
+    if (index !== pumpedIndex) {
+      pumpedIndex = index;
+      loader?.pump();
+    }
     if (current !== target) {
       rafId = requestAnimationFrame(tick);
     } else {
@@ -478,6 +514,7 @@ export function createFrameSequence(
               // Al volver a la sección, saltar al progreso real sin animar el atraso.
               current = -1;
               needsDraw = true;
+              loader?.pump();
               wake();
             }
           },

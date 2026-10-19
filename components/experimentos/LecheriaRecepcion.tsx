@@ -71,7 +71,7 @@ export default function LecheriaRecepcion({ onProductAdded, ventanaOverlay, cuen
               />
               {ventanaOverlay}
             </div>
-            <figcaption className="mt-3 text-[10px] uppercase tracking-[0.24em] text-[#F2EDE3]/45">
+            <figcaption className="mt-3 text-[10px] uppercase tracking-[0.24em] text-[#F2EDE3]/60">
               {DEFAULT_NOTICE}
             </figcaption>
           </figure>
@@ -91,7 +91,7 @@ export default function LecheriaRecepcion({ onProductAdded, ventanaOverlay, cuen
             {cuenco ? (
               <div aria-hidden="true" className="mt-12 flex items-center gap-6">
                 {cuenco}
-                <p className="text-[10px] uppercase tracking-[0.28em] text-[#F2EDE3]/45 motion-reduce:hidden">
+                <p className="text-[10px] uppercase tracking-[0.28em] text-[#F2EDE3]/60 motion-reduce:hidden">
                   Pase la mano por la leche
                 </p>
               </div>

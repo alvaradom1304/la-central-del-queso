@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { useReducedMotion } from "./useReducedMotion";
 import { gsap } from "gsap";
 
 // Hierba en primer plano: siluetas que se mecen con la brisa y se apartan al
@@ -11,6 +12,7 @@ type Blade = { x: number; length: number; width: number; phase: number; bend: nu
 const RADIUS = 120;
 
 export default function HierbaViva({ className = "" }: { className?: string }) {
+  const reduced = useReducedMotion();
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -19,7 +21,6 @@ export default function HierbaViva({ className = "" }: { className?: string }) {
     const ctx = canvas?.getContext("2d");
     if (!canvas || !host || !ctx) return;
 
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     let blades: Blade[] = [];
     let width = 0;
     let height = 0;
@@ -75,7 +76,12 @@ export default function HierbaViva({ className = "" }: { className?: string }) {
     draw(0);
 
     let visible = true;
-    const observer = new IntersectionObserver(([entry]) => (visible = entry.isIntersecting));
+    const observer = new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting;
+      if (reduced) return;
+      if (visible) gsap.ticker.add(tick);
+      else gsap.ticker.remove(tick);
+    });
     observer.observe(canvas);
     const resize = new ResizeObserver(() => {
       build();
@@ -92,6 +98,14 @@ export default function HierbaViva({ className = "" }: { className?: string }) {
       pointer.active = pointer.x >= 0 && pointer.x <= rect.width && pointer.y >= -RADIUS && pointer.y <= rect.height;
     };
 
+    const release = () => (pointer.active = false);
+    const onPointerEnd = (e: PointerEvent) => {
+      if (e.pointerType === "touch" || e.type === "pointercancel") release();
+    };
+    const onPointerOut = (e: PointerEvent) => {
+      if (!e.relatedTarget) release();
+    };
+
     let time = 0;
     const tick = (_t: number, deltaMs: number) => {
       if (!visible || parseFloat(host.style.opacity || "1") < 0.01) return;
@@ -101,16 +115,24 @@ export default function HierbaViva({ className = "" }: { className?: string }) {
 
     if (!reduced) {
       window.addEventListener("pointermove", onMove, { passive: true });
+      window.addEventListener("pointerup", onPointerEnd);
+      window.addEventListener("pointercancel", onPointerEnd);
+      document.addEventListener("pointerout", onPointerOut);
+      window.addEventListener("blur", release);
       gsap.ticker.add(tick);
     }
 
     return () => {
       gsap.ticker.remove(tick);
       window.removeEventListener("pointermove", onMove);
+      window.removeEventListener("pointerup", onPointerEnd);
+      window.removeEventListener("pointercancel", onPointerEnd);
+      document.removeEventListener("pointerout", onPointerOut);
+      window.removeEventListener("blur", release);
       observer.disconnect();
       resize.disconnect();
     };
-  }, []);
+  }, [reduced]);
 
   return (
     <canvas

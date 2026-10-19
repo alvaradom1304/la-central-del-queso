@@ -53,7 +53,7 @@ export default function StaticTramos({ manifest, priorityFirst = false }: Static
                     />
                     <FilmGrain />
                   </div>
-                  <figcaption className="mt-3 text-right text-[10px] uppercase tracking-[0.24em] text-[#F2EDE3]/45">
+                  <figcaption className="mt-3 text-right text-[10px] uppercase tracking-[0.24em] text-[#F2EDE3]/60">
                     {notice}
                   </figcaption>
                 </figure>
