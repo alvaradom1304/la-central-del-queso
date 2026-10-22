@@ -1,0 +1,1519 @@
+/* Recorrido inmersivo de la portada: del campo a la mesa, en un solo plano.
+   Todo queda bajo .cine para no tocar otras rutas. */
+
+html:has(.cine) {
+  --campo-noche: #0c0f0b;
+  --campo-musgo: #16201a;
+  --madera: #1a130d;
+  --crema: #f4ede0;
+  --leche: #f8f3e8;
+  --tinta: #1d1a14;
+  --tinta-suave: #5a5446;
+  --miel: #d9a55b;
+  --miel-clara: #f1d39b;
+  --tierra: #9a5b35;
+  --cabecera: 72px;
+
+  background-color: var(--campo-noche);
+  scroll-padding-top: calc(var(--cabecera) + 12px);
+}
+
+html:has(.cine) body {
+  background-color: var(--campo-noche);
+  color: var(--crema);
+}
+
+.cine {
+  min-height: 100vh;
+  background-color: var(--campo-noche);
+  color: var(--crema);
+}
+
+.cine ::selection {
+  background: var(--miel);
+  color: var(--tinta);
+}
+
+.cine :focus-visible {
+  outline: 2px solid var(--miel);
+  outline-offset: 3px;
+}
+
+/* ---------- Tipografía y botones ---------- */
+
+.cine-kicker {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--miel);
+}
+
+.cine-titular {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-weight: 500;
+  line-height: 0.98;
+  letter-spacing: -0.012em;
+  text-wrap: balance;
+}
+
+.cine-boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  min-height: 48px;
+  padding: 0.75rem 1.4rem;
+  border: 1px solid var(--miel);
+  border-radius: 999px;
+  background: var(--miel);
+  color: var(--tinta);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.cine-boton:hover {
+  background: var(--miel-clara);
+  border-color: var(--miel-clara);
+}
+
+.cine-boton:active {
+  transform: scale(0.98);
+}
+
+.cine-boton:disabled {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.cine-boton-linea {
+  background: transparent;
+  color: inherit;
+  border-color: color-mix(in srgb, currentColor 45%, transparent);
+}
+
+.cine-boton-linea:hover {
+  background: color-mix(in srgb, currentColor 10%, transparent);
+  border-color: currentColor;
+}
+
+.cine-boton-oscuro {
+  background: var(--tinta);
+  border-color: var(--tinta);
+  color: var(--leche);
+}
+
+.cine-boton-oscuro:hover {
+  background: #3a3226;
+  border-color: #3a3226;
+}
+
+.cine-boton-whatsapp {
+  background: #1f7a4c;
+  border-color: #1f7a4c;
+  color: #fff;
+}
+
+.cine-boton-whatsapp:hover {
+  background: #186340;
+  border-color: #186340;
+}
+
+/* ---------- Cabecera ---------- */
+
+.cine-cabecera {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 60;
+  height: var(--cabecera);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-inline: clamp(16px, 4vw, 56px);
+  background: linear-gradient(rgba(12, 15, 11, 0.72), rgba(12, 15, 11, 0));
+  transition: background-color 0.4s ease;
+}
+
+.cine-cabecera[data-solida] {
+  background: rgba(12, 15, 11, 0.9);
+  backdrop-filter: blur(10px);
+}
+
+.cine-marca {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: clamp(17px, 1.6vw, 21px);
+  color: var(--crema);
+  white-space: nowrap;
+}
+
+.cine-marca small {
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+  margin-top: 5px;
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--miel);
+}
+
+.cine-nav a {
+  font-size: 13px;
+  color: color-mix(in srgb, var(--crema) 82%, transparent);
+  transition: color 0.2s ease;
+}
+
+.cine-nav a:hover {
+  color: var(--miel-clara);
+}
+
+.cine-boton-pedido {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 42px;
+  padding-inline: 0.9rem 0.45rem;
+  border: 1px solid color-mix(in srgb, var(--miel) 70%, transparent);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--crema);
+  background: rgba(12, 15, 11, 0.35);
+}
+
+.cine-boton-pedido:hover {
+  border-color: var(--miel-clara);
+}
+
+.cine-boton-pedido b {
+  display: inline-grid;
+  place-items: center;
+  min-width: 28px;
+  height: 28px;
+  padding-inline: 6px;
+  border-radius: 999px;
+  background: var(--miel);
+  color: var(--tinta);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Sin `display`: lo ponen las utilidades (inline-flex lg:hidden). */
+.cine-pastilla {
+  align-items: center;
+  min-height: 42px;
+  padding-inline: 0.9rem;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--crema);
+  border: 1px solid color-mix(in srgb, var(--crema) 35%, transparent);
+}
+
+.cine-aviso {
+  position: fixed;
+  left: 50%;
+  top: calc(var(--cabecera) + 10px);
+  z-index: 62;
+  max-width: calc(100vw - 32px);
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: var(--leche);
+  color: var(--tinta);
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  translate: -50% -12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, translate 0.3s ease;
+}
+
+.cine-aviso[data-visible="true"] {
+  opacity: 1;
+  translate: -50% 0;
+}
+
+/* Grano fotográfico muy suave sobre todo el recorrido. */
+/* La capa sobra solo una tesela (180 px) por lado y salta dentro de ella. */
+.cine-grano {
+  position: fixed;
+  inset: -180px;
+  z-index: 70;
+  pointer-events: none;
+  opacity: 0.055;
+  background-size: 180px 180px;
+  animation: cine-grano 0.9s steps(6) infinite;
+}
+
+@keyframes cine-grano {
+  0% { transform: translate3d(0, 0, 0); }
+  17% { transform: translate3d(-60px, 40px, 0); }
+  33% { transform: translate3d(50px, -70px, 0); }
+  50% { transform: translate3d(-80px, -30px, 0); }
+  67% { transform: translate3d(70px, 60px, 0); }
+  83% { transform: translate3d(-30px, 85px, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+/* ---------- Escenario y atmósfera ---------- */
+
+.cine-escenario {
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+}
+
+.cine-imagen-plena {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cine-vineta {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(120% 90% at 50% 45%, transparent 55%, rgba(8, 10, 7, 0.6) 100%),
+    linear-gradient(to top, rgba(8, 10, 7, 0.72) 0%, transparent 38%);
+}
+
+/* Neblina: dos velos que derivan despacio en sentidos opuestos. */
+.cine-neblina {
+  position: absolute;
+  inset: -10% -30%;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+.cine-neblina span {
+  position: absolute;
+  inset: 0;
+  filter: blur(24px);
+  will-change: transform;
+  background:
+    radial-gradient(40% 22% at 28% 72%, rgba(236, 232, 220, 0.34), transparent 70%),
+    radial-gradient(34% 18% at 72% 62%, rgba(236, 232, 220, 0.26), transparent 70%);
+  animation: cine-neblina 42s ease-in-out infinite alternate;
+}
+
+.cine-neblina span + span {
+  background:
+    radial-gradient(45% 20% at 60% 80%, rgba(236, 232, 220, 0.3), transparent 70%),
+    radial-gradient(30% 16% at 15% 55%, rgba(236, 232, 220, 0.22), transparent 70%);
+  animation-duration: 58s;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes cine-neblina {
+  from { transform: translate3d(-7%, 1%, 0); }
+  to { transform: translate3d(7%, -2%, 0); }
+}
+
+/* Rayos de sol desde arriba a la derecha. */
+.cine-rayos {
+  position: absolute;
+  inset: -25%;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  opacity: 0.55;
+  background: repeating-conic-gradient(from 205deg at 82% 8%, rgba(255, 224, 166, 0.18) 0deg 2.5deg, transparent 2.5deg 8deg);
+  -webkit-mask-image: radial-gradient(65% 65% at 82% 8%, #000 0%, transparent 72%);
+  mask-image: radial-gradient(65% 65% at 82% 8%, #000 0%, transparent 72%);
+  transform-origin: 82% 8%;
+  animation: cine-rayos 22s ease-in-out infinite alternate;
+}
+
+@keyframes cine-rayos {
+  from { transform: rotate(-2.5deg); }
+  to { transform: rotate(2.5deg); }
+}
+
+.cine-polen {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* ---------- Amanecer (portada) ---------- */
+
+.cine-amanecer-contenido {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 10;
+  padding: 0 clamp(20px, 6vw, 96px) clamp(48px, 10svh, 110px);
+}
+
+/* Sombra de lectura a la izquierda: el texto se lee sobre el cielo claro. */
+.cine-amanecer .cine-vineta {
+  background:
+    linear-gradient(90deg, rgba(8, 10, 7, 0.62) 0%, rgba(8, 10, 7, 0.28) 38%, transparent 62%),
+    radial-gradient(120% 90% at 50% 45%, transparent 55%, rgba(8, 10, 7, 0.6) 100%),
+    linear-gradient(to top, rgba(8, 10, 7, 0.75) 0%, transparent 42%);
+}
+
+.cine-amanecer .cine-kicker {
+  color: var(--miel-clara);
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.7);
+}
+
+/* Cifras grandes en serif: alineadas (las de estilo antiguo bailan en montos). */
+.cine-total strong,
+.cine-cifra strong,
+.cine-contador output,
+.cine-panel .cine-titular {
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+.cine-amanecer h1 {
+  font-size: clamp(2.7rem, min(6.6vw, 10svh), 7rem);
+  max-width: 13ch;
+  text-shadow: 0 2px 30px rgba(0, 0, 0, 0.35);
+}
+
+.cine-amanecer-intro {
+  max-width: 34rem;
+  font-size: clamp(15px, 1.25vw, 18px);
+  line-height: 1.6;
+  color: color-mix(in srgb, var(--crema) 88%, transparent);
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
+}
+
+.cine-pista {
+  position: absolute;
+  right: clamp(20px, 6vw, 96px);
+  bottom: clamp(48px, 10svh, 110px);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--crema) 75%, transparent);
+  writing-mode: vertical-rl;
+}
+
+.cine-pista::after {
+  content: "";
+  width: 1px;
+  height: 44px;
+  background: linear-gradient(var(--miel), transparent);
+  transform-origin: top;
+  animation: cine-pista 1.8s ease-in-out infinite;
+}
+
+@keyframes cine-pista {
+  0% { transform: scaleY(0); }
+  50% { transform: scaleY(1); }
+  100% { transform: scaleY(1); opacity: 0; }
+}
+
+/* ---------- Finca ---------- */
+
+/* Formato panorámico durante el recorrido (no en pantallas verticales). */
+.cine-panoramico::before,
+.cine-panoramico::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  z-index: 15;
+  height: clamp(0px, calc((100svh - 100vw / 2.39) / 2), 11svh);
+  background: var(--campo-noche);
+  pointer-events: none;
+}
+
+.cine-panoramico::before {
+  top: 0;
+}
+
+.cine-panoramico::after {
+  bottom: 0;
+}
+
+@media (orientation: portrait) {
+  .cine-panoramico::before,
+  .cine-panoramico::after {
+    height: 0;
+  }
+}
+
+.cine-relato {
+  position: absolute;
+  inset-inline: 0;
+  bottom: max(28px, calc(clamp(0px, calc((100svh - 100vw / 2.39) / 2), 11svh) + 28px));
+  z-index: 16;
+  display: grid;
+  justify-items: center;
+  padding-inline: clamp(20px, 8vw, 160px);
+  pointer-events: none;
+}
+
+.cine-relato-capa {
+  grid-area: 1 / 1;
+  max-width: 44rem;
+  text-align: center;
+  text-shadow: 0 0 2px #000, 0 2px 18px rgba(0, 0, 0, 0.7);
+}
+
+.cine-relato-capa h3 {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: clamp(1.9rem, 3.6vw, 3.4rem);
+  font-weight: 500;
+  line-height: 1.02;
+}
+
+.cine-relato-capa p {
+  margin-top: 0.6rem;
+  font-size: clamp(14px, 1.15vw, 17px);
+  line-height: 1.55;
+  color: color-mix(in srgb, var(--crema) 90%, transparent);
+}
+
+.cine-aviso-imagen {
+  position: absolute;
+  right: clamp(16px, 4vw, 56px);
+  top: calc(var(--cabecera) + 10px);
+  z-index: 16;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(8, 10, 7, 0.55);
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--crema);
+}
+
+/* Al final del camino, la luz de la puerta lo llena todo. */
+.cine-luz-puerta {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(circle at 50% 50%, #fff6e0 0%, #f5dcaa 32%, #e3b673 62%, #c48f4f 100%);
+}
+
+/* ---------- La mesa (carta) ---------- */
+
+.cine-mesa {
+  position: relative;
+  background: linear-gradient(#c48f4f 0, #6b4627 22vh, var(--madera) 52vh);
+}
+
+.cine-mesa .cine-escenario {
+  height: auto;
+  padding-block: calc(var(--cabecera) + 56px) 72px;
+}
+
+.cine-tira-marco {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: clamp(16px, 5vw, 72px);
+  scrollbar-width: thin;
+  scrollbar-color: var(--miel) transparent;
+}
+
+.cine-tira {
+  display: flex;
+  align-items: stretch;
+  width: max-content;
+  padding-inline: clamp(16px, 5vw, 72px);
+  padding-block: 8px 24px;
+}
+
+.cine-tira-intro,
+.cine-tira-fin {
+  flex: none;
+  width: min(84vw, 440px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: clamp(24px, 4vw, 64px);
+  scroll-snap-align: start;
+}
+
+.cine-tira-fin {
+  padding-inline: clamp(24px, 4vw, 64px) 0;
+}
+
+.cine-productos {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cine-producto {
+  flex: none;
+  width: clamp(260px, 24vw, 340px);
+  padding-inline: 10px;
+  scroll-snap-align: center;
+}
+
+.cine-producto article {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid rgba(217, 165, 91, 0.2);
+  border-radius: 18px;
+  background: rgba(20, 14, 9, 0.78);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+
+.cine-producto-imagen {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #241a11;
+}
+
+.cine-producto-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.92) contrast(1.04);
+}
+
+/* Un barrido de luz cruza la foto al pasar el puntero. */
+.cine-producto-imagen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 32%, rgba(255, 236, 200, 0.3) 50%, transparent 68%);
+  transform: translateX(-120%);
+  transition: transform 1s ease;
+  pointer-events: none;
+}
+
+.cine-producto:hover .cine-producto-imagen::after {
+  transform: translateX(120%);
+}
+
+.cine-producto-num {
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: #fff;
+  text-shadow: 0 1px 6px #000;
+}
+
+.cine-producto-texto {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 16px 16px;
+}
+
+.cine-producto-texto h3 {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+.cine-usos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.cine-usos li {
+  padding: 3px 9px;
+  border-radius: 999px;
+  border: 1px solid rgba(217, 165, 91, 0.35);
+  font-size: 11px;
+  color: var(--miel-clara);
+}
+
+.cine-precio {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--miel-clara);
+  font-variant-numeric: tabular-nums;
+}
+
+.cine-precio small {
+  margin-left: 6px;
+  font-size: 12px;
+  font-weight: 400;
+  color: color-mix(in srgb, var(--crema) 62%, transparent);
+}
+
+.cine-producto-nota {
+  font-size: 13px;
+  line-height: 1.5;
+  color: color-mix(in srgb, var(--crema) 74%, transparent);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.cine-producto-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.cine-producto-acciones .cine-boton {
+  min-height: 42px;
+  padding: 0.5rem 1rem;
+  font-size: 14px;
+}
+
+.cine-en-pedido {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--miel-clara);
+}
+
+/* Escena fija (escritorio con ratón): el scroll vertical desliza la mesa. */
+.cine-mesa[data-fijada] .cine-escenario {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  display: flex;
+  align-items: center;
+  overflow: clip;
+  padding-block: calc(var(--cabecera) + 8px) 16px;
+}
+
+.cine-mesa[data-fijada] .cine-tira-marco {
+  overflow: visible;
+  scroll-snap-type: none;
+}
+
+.cine-mesa[data-fijada] .cine-tira {
+  will-change: transform;
+}
+
+/* Enfoque selectivo: el producto del centro nítido, los demás desenfocados. */
+.cine-mesa[data-fijada] .cine-producto {
+  --foco: 0;
+}
+
+.cine-mesa[data-fijada] .cine-producto-imagen img {
+  filter: saturate(0.92) contrast(1.04) blur(calc(var(--foco) * 2.5px));
+}
+
+.cine-mesa[data-fijada] .cine-producto article {
+  opacity: calc(1 - var(--foco) * 0.3);
+  transform: scale(calc(1 - var(--foco) * 0.045));
+}
+
+/* ---------- Para su casa ---------- */
+
+.cine-casa {
+  position: relative;
+  padding: calc(var(--cabecera) + 64px) clamp(16px, 5vw, 72px) 96px;
+  background:
+    radial-gradient(70% 55% at 85% 0%, #fff7e6 0%, transparent 60%),
+    linear-gradient(var(--madera) 0, #3a2a1b 5rem, #e9dcc3 18rem, var(--leche) 30rem);
+  color: var(--tinta);
+}
+
+.cine-casa .cine-kicker,
+.cine-claro .cine-kicker {
+  color: var(--tierra);
+}
+
+.cine-calc {
+  display: grid;
+  gap: clamp(24px, 4vw, 56px);
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  align-items: start;
+}
+
+.cine-calc fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+
+.cine-calc legend,
+.cine-paso {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.cine-contador {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.cine-contador button {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, currentColor 35%, transparent);
+  font-size: 22px;
+  line-height: 1;
+}
+
+.cine-contador button:disabled {
+  opacity: 0.3;
+}
+
+.cine-contador output {
+  min-width: 3ch;
+  text-align: center;
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 54px;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.cine-opciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cine-opciones label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, currentColor 25%, transparent);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.cine-opciones label:has(input:checked) {
+  background: var(--tinta);
+  border-color: var(--tinta);
+  color: var(--leche);
+}
+
+.cine-oscuro .cine-opciones label:has(input:checked) {
+  background: var(--miel);
+  border-color: var(--miel);
+  color: var(--tinta);
+}
+
+.cine-opciones input,
+.cine-casilla input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--tierra);
+}
+
+.cine-casilla {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  cursor: pointer;
+}
+
+.cine-casilla small {
+  display: block;
+  font-size: 13px;
+  color: var(--tinta-suave);
+}
+
+.cine-recibo {
+  position: relative;
+  padding: clamp(22px, 3vw, 34px);
+  border-radius: 20px;
+  background: #fffdf7;
+  box-shadow: 0 30px 70px rgba(70, 48, 20, 0.18);
+}
+
+.cine-recibo ul {
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
+}
+
+.cine-recibo li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding-block: 10px;
+  border-bottom: 1px dashed rgba(29, 26, 20, 0.18);
+  font-size: 15px;
+}
+
+.cine-recibo li[data-incluido="false"] {
+  opacity: 0.45;
+  text-decoration: line-through;
+}
+
+.cine-recibo li small {
+  display: block;
+  font-size: 13px;
+  color: var(--tinta-suave);
+}
+
+.cine-recibo strong {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.cine-total {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 16px;
+}
+
+.cine-total strong {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 40px;
+  font-weight: 500;
+}
+
+.cine-confianza {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cine-confianza li {
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: rgba(255, 253, 247, 0.7);
+  border: 1px solid rgba(29, 26, 20, 0.08);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.cine-confianza strong {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 15px;
+}
+
+/* ---------- Para su negocio ---------- */
+
+.cine-negocios {
+  position: relative;
+  padding: calc(var(--cabecera) + 64px) clamp(16px, 5vw, 72px) 96px;
+  background:
+    radial-gradient(60% 45% at 12% 0%, rgba(217, 165, 91, 0.16), transparent 60%),
+    radial-gradient(50% 40% at 100% 100%, rgba(217, 165, 91, 0.1), transparent 60%),
+    var(--campo-musgo);
+}
+
+.cine-campo-texto {
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid color-mix(in srgb, currentColor 25%, transparent);
+  background: transparent;
+  color: inherit;
+  font-size: 16px;
+}
+
+.cine-oscuro .cine-campo-texto {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.cine-campo-texto:focus {
+  border-color: var(--miel);
+}
+
+.cine-rango {
+  width: 100%;
+  accent-color: var(--miel);
+  min-height: 32px;
+}
+
+.cine-cifras {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.cine-cifra {
+  padding: 18px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(217, 165, 91, 0.18);
+}
+
+.cine-cifra span {
+  display: block;
+  font-size: 13px;
+  color: color-mix(in srgb, var(--crema) 70%, transparent);
+}
+
+.cine-cifra strong {
+  display: block;
+  margin-top: 6px;
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: clamp(28px, 3vw, 38px);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.cine-cifra-destacada {
+  grid-column: 1 / -1;
+  background: rgba(217, 165, 91, 0.12);
+  border-color: rgba(217, 165, 91, 0.45);
+}
+
+.cine-ventajas {
+  display: grid;
+  gap: 14px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cine-ventajas li {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 10px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.cine-ventajas li::before {
+  content: "";
+  width: 22px;
+  height: 22px;
+  margin-top: 1px;
+  border-radius: 50%;
+  border: 1px solid var(--miel);
+  background: radial-gradient(circle, var(--miel) 0 3px, transparent 4px);
+}
+
+/* ---------- Ferias y cierre ---------- */
+
+.cine-ferias {
+  padding: calc(var(--cabecera) + 56px) clamp(16px, 5vw, 72px) 96px;
+  background: linear-gradient(var(--campo-musgo), var(--campo-noche));
+}
+
+.cine-feria {
+  padding: clamp(22px, 3vw, 32px);
+  border-radius: 20px;
+  border: 1px solid rgba(217, 165, 91, 0.22);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.cine-feria dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px 18px;
+  margin: 18px 0 0;
+}
+
+.cine-feria dt {
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--miel);
+  padding-top: 4px;
+}
+
+.cine-feria dd {
+  margin: 0;
+  font-size: 15px;
+}
+
+.cine-cierre {
+  position: relative;
+  overflow: hidden;
+  padding: calc(var(--cabecera) + 96px) clamp(16px, 5vw, 72px) 64px;
+  background:
+    radial-gradient(70% 60% at 50% 115%, rgba(232, 156, 74, 0.55), transparent 70%),
+    linear-gradient(var(--campo-noche), #22170e);
+  text-align: center;
+}
+
+.cine-sol {
+  position: absolute;
+  left: 50%;
+  bottom: -38vmin;
+  width: 76vmin;
+  aspect-ratio: 1;
+  translate: -50% 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffe2a8 0%, #f0a65a 38%, rgba(214, 120, 58, 0) 70%);
+  filter: blur(6px);
+  pointer-events: none;
+}
+
+/* ---------- Panel del pedido ---------- */
+
+.cine-capa {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  visibility: hidden;
+}
+
+.cine-capa[data-abierto="true"] {
+  visibility: visible;
+}
+
+.cine-capa-fondo {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 9, 7, 0.62);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.cine-capa[data-abierto="true"] .cine-capa-fondo {
+  opacity: 1;
+}
+
+.cine-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  width: min(480px, 100%);
+  background: var(--leche);
+  color: var(--tinta);
+  box-shadow: -30px 0 80px rgba(0, 0, 0, 0.4);
+  transform: translateX(100%);
+  transition: transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.cine-capa[data-abierto="true"] .cine-panel {
+  transform: none;
+}
+
+@media (max-width: 640px) {
+  .cine-panel {
+    top: auto;
+    height: 92svh;
+    width: 100%;
+    border-radius: 22px 22px 0 0;
+    transform: translateY(100%);
+  }
+}
+
+.cine-linea-pedido {
+  padding-block: 14px;
+  border-bottom: 1px dashed rgba(29, 26, 20, 0.18);
+}
+
+.cine-cantidad {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(29, 26, 20, 0.25);
+  border-radius: 999px;
+}
+
+.cine-cantidad button {
+  width: 38px;
+  height: 38px;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.cine-cantidad button:disabled {
+  opacity: 0.3;
+}
+
+.cine-cantidad span {
+  min-width: 5.5rem;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.cine-sugerencia {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid rgba(29, 26, 20, 0.08);
+}
+
+.cine-opcion-retiro {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(29, 26, 20, 0.14);
+  cursor: pointer;
+}
+
+.cine-opcion-retiro:has(input:checked) {
+  border-color: var(--tinta);
+  background: #fff;
+}
+
+.cine-opcion-retiro input {
+  margin-top: 4px;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--tinta);
+}
+
+.cine-barra {
+  position: fixed;
+  inset-inline: 12px;
+  bottom: 12px;
+  z-index: 58;
+  translate: 0 140%;
+  transition: translate 0.35s ease;
+}
+
+.cine-barra[data-visible="true"] {
+  translate: 0 0;
+}
+
+.cine-barra button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 58px;
+  padding: 8px 10px 8px 18px;
+  border-radius: 999px;
+  background: var(--miel);
+  color: var(--tinta);
+  font-weight: 700;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+/* ---------- Cursor de luz ---------- */
+
+.cine-luz-cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 88;
+  width: 16px;
+  height: 16px;
+  margin: -8px 0 0 -8px;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(circle, rgba(255, 232, 186, 0.95) 0%, rgba(217, 165, 91, 0.55) 45%, transparent 72%);
+  box-shadow: 0 0 26px 10px rgba(217, 165, 91, 0.22);
+  transition: opacity 0.3s ease, width 0.3s ease, height 0.3s ease, margin 0.3s ease, background 0.3s ease;
+  will-change: transform;
+}
+
+.cine-luz-cursor[data-sobre] {
+  width: 56px;
+  height: 56px;
+  margin: -28px 0 0 -28px;
+  background: radial-gradient(circle, rgba(255, 232, 186, 0.18) 0%, transparent 70%);
+  border: 1px solid rgba(241, 211, 155, 0.7);
+}
+
+.cine-luz-cursor span {
+  position: absolute;
+  left: calc(100% + 10px);
+  top: 50%;
+  translate: 0 -50%;
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--miel-clara);
+  text-shadow: 0 0 2px #000, 0 1px 6px #000;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1023px) {
+  .cine-calc {
+    grid-template-columns: 1fr;
+  }
+
+  .cine-confianza {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .cine-confianza,
+  .cine-cifras {
+    grid-template-columns: 1fr;
+  }
+
+  .cine-pista {
+    display: none;
+  }
+}
+
+/* ---------- Movimiento reducido ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .cine-grano,
+  .cine-neblina span,
+  .cine-rayos,
+  .cine-pista::after {
+    animation: none;
+  }
+
+  .cine-luz-cursor,
+  .cine-polen,
+  .cine-luz-puerta {
+    display: none;
+  }
+
+  .cine-aviso,
+  .cine-panel,
+  .cine-capa-fondo,
+  .cine-barra,
+  .cine-producto-imagen::after {
+    transition: none;
+  }
+}
+
+/* Entrada del primer cuadro: CSS desde el primer pintado (sin parpadeo al hidratar). */
+.cine-entrada {
+  animation: cine-entrada 1.25s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation-delay: calc(var(--d, 0) * 1ms);
+}
+
+@keyframes cine-entrada {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cine-entrada {
+    animation: none;
+  }
+}
+
+/* ---------- Textos atenuados (Tailwind no genera opacidad sobre variables) ---------- */
+
+.cine-crema-60 { color: color-mix(in srgb, var(--crema) 60%, transparent); }
+.cine-crema-75 { color: color-mix(in srgb, var(--crema) 75%, transparent); }
+.cine-crema-80 { color: color-mix(in srgb, var(--crema) 80%, transparent); }
+.cine-crema-85 { color: color-mix(in srgb, var(--crema) 85%, transparent); }
+.cine-borde-crema { border-color: color-mix(in srgb, var(--crema) 18%, transparent); }
+.cine-borde-tinta { border-color: rgba(29, 26, 20, 0.45); }
+
+/* ---------- Superficies claras: bordes y foco con contraste suficiente ---------- */
+
+.cine-casa :focus-visible,
+.cine-panel :focus-visible {
+  outline-color: var(--tierra);
+}
+
+.cine-campo-texto.cine-campo-claro {
+  background: #fff;
+  border-color: #8a8070;
+}
+
+.cine-casa .cine-opciones label,
+.cine-casa .cine-contador button {
+  border-color: #8a8070;
+}
+
+/* La transición oscuro → claro termina antes del rótulo de la sección. */
+.cine-casa {
+  background:
+    radial-gradient(70% 55% at 85% 0%, #fff7e6 0%, transparent 60%),
+    linear-gradient(var(--madera) 0, #b49a77 3rem, #efe4cf 6.5rem, var(--leche) 12rem);
+}
+
+/* ---------- Estabilidad y espacio para la barra móvil ---------- */
+
+html:has(.cine) {
+  scrollbar-gutter: stable;
+}
+
+html:has(.cine-barra[data-visible="true"]) {
+  scroll-padding-bottom: 96px;
+}
+
+@media (max-width: 1023px) {
+  .cine-cierre {
+    padding-bottom: 120px;
+  }
+}
+
+/* ---------- Pantallas táctiles: menos capas a pantalla completa ---------- */
+
+@media (pointer: coarse) {
+  .cine-grano {
+    display: none;
+  }
+
+  .cine-cabecera[data-solida] {
+    backdrop-filter: none;
+    background: rgba(12, 15, 11, 0.96);
+  }
+}
+
+/* globals.css da a todo `transition-duration: 0.01ms` con reducción de
+   movimiento; como `transition-property` vale `all`, la visibilidad heredada
+   del panel también «transiciona» y el foco inicial podía caer sobre un botón
+   todavía oculto. El panel no transiciona nada en ese modo. */
+@media (prefers-reduced-motion: reduce) {
+  .cine-capa,
+  .cine-capa * {
+    transition-property: none !important;
+  }
+}
+
+/* Montos en la sans: la Cormorant servida no trae cifras alineadas (lnum) y
+   los totales «bailaban». */
+.cine-total strong,
+.cine-cifra strong,
+.cine-contador output,
+.cine-numero {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.cine-total strong {
+  font-size: 34px;
+}
+
+.cine-cifra strong {
+  font-size: clamp(24px, 2.6vw, 32px);
+}
+
+.cine-contador output {
+  font-size: 44px;
+}
+
+/* Barra de desplazamiento con los tonos del recorrido. */
+html:has(.cine) {
+  color-scheme: dark;
+  scrollbar-color: #8a6a3e var(--campo-noche);
+}
+
+/* ---------- Fotos reales de la sesión ---------- */
+
+/* Tarjeta de producto: el detalle (textura) aparece al pasar el puntero o al enfocar. */
+.cine-producto-detalle {
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+.cine-producto:hover .cine-producto-detalle,
+.cine-producto:focus-within .cine-producto-detalle {
+  opacity: 1;
+}
+
+.cine-galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cine-galeria figure {
+  margin: 0;
+}
+
+.cine-galeria-foto {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 16px;
+  background: color-mix(in srgb, currentColor 8%, transparent);
+}
+
+.cine-galeria-foto img {
+  object-fit: cover;
+  transition: transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.cine-galeria li:hover .cine-galeria-foto img {
+  transform: scale(1.04);
+}
+
+.cine-galeria figcaption {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* La foto del puesto ocupa el borde superior de la tarjeta de la feria. */
+.cine-feria-foto {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  margin: calc(-1 * clamp(22px, 3vw, 32px)) calc(-1 * clamp(22px, 3vw, 32px)) 22px;
+  border-radius: 20px 20px 0 0;
+}
+
+.cine-feria-foto img {
+  object-fit: cover;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cine-producto-detalle,
+  .cine-galeria-foto img {
+    transition: none;
+  }
+
+  .cine-galeria li:hover .cine-galeria-foto img {
+    transform: none;
+  }
+}
+
+/* Superficies claras: controles de formulario con el esquema claro (el
+   recorrido usa color-scheme: dark para la barra de desplazamiento). */
+.cine-casa,
+.cine-panel {
+  color-scheme: light;
+}

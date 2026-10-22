@@ -501,6 +501,14 @@ export function createFrameSequence(
     layout();
     wake();
   };
+  // Tras perder y recuperar el contexto 2D el lienzo queda en blanco: redibujar.
+  const onContextRestored = () => {
+    if (disposed || fatal) return;
+    configureContext();
+    drawnImage = null;
+    needsDraw = true;
+    renderFrame(current < 0 ? readTarget() : current);
+  };
 
   const resizeObserver = typeof ResizeObserver !== "undefined" ? new ResizeObserver(onResize) : null;
   const intersectionObserver =
@@ -531,6 +539,7 @@ export function createFrameSequence(
 
   window.addEventListener("scroll", onScroll, { passive: true });
   window.addEventListener("resize", onResize);
+  canvas.addEventListener("contextrestored", onContextRestored);
   resizeObserver?.observe(section);
   resizeObserver?.observe(stage);
   intersectionObserver?.observe(section);
@@ -557,6 +566,7 @@ export function createFrameSequence(
       running = false;
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onResize);
+      canvas.removeEventListener("contextrestored", onContextRestored);
       resizeObserver?.disconnect();
       intersectionObserver?.disconnect();
       loader?.destroy();
