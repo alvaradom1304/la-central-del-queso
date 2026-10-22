@@ -33,3 +33,7 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 *.key
+
+# Isolated development output and recovery backups
+.next-dev/
+.next-recovery-*/
