@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { SITIO_URL } from "@/lib/sitio";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -21,10 +22,15 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-mono",
 });
 
+// Metadata base de todas las rutas (la heredan las que no definen la suya, como el 404).
 export const metadata: Metadata = {
-  title: "La Central del Queso | De la Finca a tu Mesa · Desde 1980",
+  metadataBase: SITIO_URL ? new URL(SITIO_URL) : undefined,
+  title: {
+    default: "La Central del Queso | Quesos de Turrialba",
+    template: "%s | La Central del Queso",
+  },
   description:
-    "Experiencia inmersiva de origen costarricense: recorra el camino desde el portón de Finca Doña Martha en Turrialba hasta nuestra mesa artesanal de quesos y derivados lácteos.",
+    "Quesos de Turrialba, natilla y mantequilla en las ferias de Guadalupe y Hatillo, San José, Costa Rica. Pedidos por WhatsApp.",
 };
 
 export default function RootLayout({
@@ -34,7 +40,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="es"
+      lang="es-CR"
       className={`${plusJakarta.variable} ${cormorant.variable} ${jetbrainsMono.variable}`}
     >
       <body className="font-sans bg-[#0D1510] text-[#F7F4EC] selection:bg-[#DDA13E] selection:text-[#0D1510]">

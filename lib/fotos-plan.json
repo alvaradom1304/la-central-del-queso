@@ -1,0 +1,160 @@
+{
+  "nota": "Plan de las fotos reales (lista de tomas). Lo leen la web (lib/fotos.ts) y el validador (scripts/validar-fotos.mjs). Los productos salen de lib/products.ts.",
+  "carpeta": "public/fotos",
+  "extensiones": [
+    "jpg",
+    "jpeg",
+    "png",
+    "webp"
+  ],
+  "formatos": {
+    "4:3": {
+      "proporcion": 1.3333,
+      "ancho": 2400,
+      "alto": 1800
+    },
+    "16:9": {
+      "proporcion": 1.7778,
+      "ancho": 3840,
+      "alto": 2160
+    },
+    "1.91:1": {
+      "proporcion": 1.9048,
+      "ancho": 1200,
+      "alto": 630
+    }
+  },
+  "productos": {
+    "carpeta": "productos",
+    "tomas": [
+      "general",
+      "medio",
+      "detalle"
+    ],
+    "formato": "4:3"
+  },
+  "uso": {
+    "carpeta": "uso",
+    "formato": "4:3",
+    "tomas": [
+      {
+        "nombre": "uso-sarten",
+        "para": "casa",
+        "titulo": "En el sartén",
+        "alt": "Tajadas de queso semiduro dorándose en un sartén de hierro"
+      },
+      {
+        "nombre": "uso-desayuno",
+        "para": "casa",
+        "titulo": "El desayuno",
+        "alt": "Desayuno tico con gallo pinto, natilla, queso semiduro, plátano maduro y café"
+      },
+      {
+        "nombre": "uso-tortilla",
+        "para": "casa",
+        "titulo": "Con tortilla",
+        "alt": "Tortilla recién salida del comal con cuajada encima"
+      },
+      {
+        "nombre": "uso-tabla",
+        "para": "casa",
+        "titulo": "Para compartir",
+        "alt": "Tabla con queso maduro y ahumado en cubos y láminas, uvas y nueces"
+      },
+      {
+        "nombre": "uso-canasta",
+        "para": "casa",
+        "titulo": "La canasta de la semana",
+        "alt": "Queso semiduro, queso palmito y natilla juntos sobre la mesa familiar"
+      },
+      {
+        "nombre": "negocio-plancha",
+        "para": "negocio",
+        "titulo": "En la plancha",
+        "alt": "Fila de tajadas de queso semiduro dorándose en una plancha profesional"
+      },
+      {
+        "nombre": "negocio-horno",
+        "para": "negocio",
+        "titulo": "Gratinado",
+        "alt": "Pizza o empanadas saliendo del horno con el queso gratinado"
+      },
+      {
+        "nombre": "negocio-corte",
+        "para": "negocio",
+        "titulo": "En la cocina",
+        "alt": "Bloque de queso semiduro de 2,5 kg cortándose en tajadas en una cocina"
+      },
+      {
+        "nombre": "negocio-casado",
+        "para": "negocio",
+        "titulo": "En el casado",
+        "alt": "Casado servido con su queso en un plato de soda"
+      },
+      {
+        "nombre": "pedido-listo",
+        "para": "ambos",
+        "titulo": "Listo para entregar",
+        "alt": "Pedido empacado y listo para entregar"
+      }
+    ]
+  },
+  "ferias": {
+    "carpeta": "ferias",
+    "sedes": [
+      "guadalupe",
+      "hatillo"
+    ],
+    "tomas": [
+      {
+        "nombre": "amanecer",
+        "formato": "16:9",
+        "titulo": "Al abrir la feria",
+        "alt": "El puesto armándose al abrir la feria"
+      },
+      {
+        "nombre": "frente",
+        "formato": "16:9",
+        "titulo": "El puesto",
+        "alt": "El puesto de La Central del Queso ya armado"
+      },
+      {
+        "nombre": "mostrador",
+        "formato": "4:3",
+        "titulo": "El mostrador",
+        "alt": "Los quesos acomodados en el mostrador del puesto"
+      },
+      {
+        "nombre": "balanza",
+        "formato": "4:3",
+        "titulo": "Se pesa frente a usted",
+        "alt": "Un trozo de queso en la balanza del puesto"
+      },
+      {
+        "nombre": "prueba",
+        "formato": "4:3",
+        "titulo": "Pruebe antes de llevar",
+        "alt": "Una mano ofrece un trocito de queso para probar"
+      },
+      {
+        "nombre": "entrega",
+        "formato": "4:3",
+        "titulo": "Su apartado, listo",
+        "alt": "Un pedido apartado entregado en su bolsa"
+      },
+      {
+        "nombre": "retrato",
+        "formato": "4:3",
+        "titulo": "En el puesto",
+        "alt": "Retrato en el puesto"
+      }
+    ]
+  },
+  "compartir": {
+    "nombre": "compartir",
+    "formato": "1.91:1"
+  },
+  "sufijosOpcionales": [
+    "vertical"
+  ]
+}

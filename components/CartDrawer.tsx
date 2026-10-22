@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { BUSINESS_PHONE } from "@/lib/whatsapp";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Trash2, Plus, Minus, ShoppingBag, ArrowRight, CheckCircle2, AlertCircle } from "lucide-react";
 import { useCart } from "../lib/CartContext";
@@ -69,7 +70,7 @@ export default function CartDrawer() {
       alert("Por favor ingrese su nombre para personalizar su pedido.");
       return;
     }
-    const phone = "50688888888"; // Línea provisional de WhatsApp
+    const phone = BUSINESS_PHONE;
     const message = generateWhatsAppMessage();
     const url = `https://wa.me/${phone}?text=${message}`;
     window.open(url, "_blank");
@@ -241,12 +242,15 @@ export default function CartDrawer() {
                         </h4>
 
                         <div>
-                          <label className="block text-xs font-medium text-forest mb-1">
+                          <label htmlFor="pedido-nombre" className="block text-xs font-medium text-forest mb-1">
                             Nombre del Solicitante *
                           </label>
                           <input
+                            id="pedido-nombre"
                             type="text"
                             required
+                            aria-required="true"
+                            autoComplete="name"
                             placeholder="Ej: Laura Castro"
                             value={customerName}
                             onChange={(e) => setCustomerName(e.target.value)}
@@ -255,10 +259,11 @@ export default function CartDrawer() {
                         </div>
 
                         <div>
-                          <label className="block text-xs font-medium text-forest mb-1">
+                          <label htmlFor="pedido-lugar" className="block text-xs font-medium text-forest mb-1">
                             Lugar de Retiro o Entrega
                           </label>
                           <select
+                            id="pedido-lugar"
                             value={pickupLocation}
                             onChange={(e) => setPickupLocation(e.target.value)}
                             className="w-full text-sm bg-cream border border-forest/15 rounded-xl px-3 py-2 text-forest focus:outline-hidden focus:ring-2 focus:ring-terracotta/40"
@@ -270,10 +275,11 @@ export default function CartDrawer() {
                         </div>
 
                         <div>
-                          <label className="block text-xs font-medium text-forest mb-1">
+                          <label htmlFor="pedido-notas" className="block text-xs font-medium text-forest mb-1">
                             Observaciones (Opcional)
                           </label>
                           <input
+                            id="pedido-notas"
                             type="text"
                             placeholder="Ej: Empacar en bolsa al vacío, trozo grande..."
                             value={notes}

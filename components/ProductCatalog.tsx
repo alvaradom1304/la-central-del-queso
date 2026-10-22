@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
+import { BUSINESS_PHONE } from "@/lib/whatsapp";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Search,
@@ -474,7 +475,7 @@ export default function ProductCatalog() {
 
             <div className="pt-2 flex flex-wrap items-center gap-4">
               <a
-                href="https://wa.me/50688888888?text=Hola,%20represento%20a%20un%20negocio%20gastron%C3%B3mico%20y%20deseo%20consultar%20precios%20por%20volumen%20de%20Queso%20Semiduro."
+                href={`https://wa.me/${BUSINESS_PHONE}?text=Hola,%20represento%20a%20un%20negocio%20gastron%C3%B3mico%20y%20deseo%20consultar%20precios%20por%20volumen%20de%20Queso%20Semiduro.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="min-h-[48px] inline-flex items-center gap-2 bg-cheese text-forest px-6 py-3.5 rounded-2xl text-sm font-bold shadow-lg hover:bg-cheese-light transition-all duration-200 active:scale-[0.98]"

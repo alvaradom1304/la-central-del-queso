@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
+import { BUSINESS_PHONE } from "@/lib/whatsapp";
 import { OrderPayload, OrderRecord } from "@/lib/orderSchema";
 
-const BUSINESS_PHONE = process.env.NEXT_PUBLIC_BUSINESS_PHONE || "50688888888";
 const WEBHOOK_URL = process.env.N8N_ORDER_WEBHOOK_URL;
 
 export async function POST(request: Request) {
