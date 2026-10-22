@@ -1,0 +1,332 @@
+/* Dirección artesanal: fotografía existente, papel, tinta y recibo de feria. */
+.cq .cq-toldo {
+  height: 10px;
+  background: repeating-linear-gradient(90deg, #294b39 0 32px, #e7d8b8 32px 64px);
+  border: 0;
+}
+.cq .cq-toldo-borde {
+  display: none;
+}
+.cq header {
+  border-bottom: 1px solid #c7c0ac;
+}
+.cq .cq-boton {
+  border-width: 1px;
+  border-radius: 5px;
+  box-shadow: none;
+  font-size: 14px;
+}
+.cq .cq-boton:hover {
+  box-shadow: 0 4px 12px #1c262015;
+  transform: translateY(-2px);
+}
+.cq .cq-boton-tinta {
+  background: #294b39;
+  border-color: #294b39;
+}
+.cq .cq-tarjeta {
+  border: 1px solid #c7c0ac;
+  border-radius: 7px;
+  box-shadow: none;
+}
+.cq .cq-chip {
+  border: 1px solid #bcb9a8;
+  border-radius: 4px;
+}
+.cq .cq-boleto {
+  box-shadow: none;
+  border: 1px solid #c7c0ac;
+  border-radius: 5px;
+}
+.cq .cq-h2 em {
+  color: inherit;
+}
+.cq .cq-h1 {
+  font-size: clamp(3.6rem, 6.8vw, 6.3rem);
+  line-height: 1.02;
+  font-weight: 500;
+  letter-spacing: -0.055em;
+}
+.cq .cq-h1 em {
+  color: #a3482f;
+}
+.art-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 30px;
+}
+.art-calculadora {
+  max-width: 1200px;
+  margin: auto;
+  padding: 85px 32px;
+  scroll-margin-top: 95px;
+}
+.art-section-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  align-items: end;
+  margin-bottom: 35px;
+}
+.art-section-head .cq-mano {
+  font-size: 29px;
+  color: #a3482f;
+}
+.art-section-head h2 {
+  font-size: clamp(2.25rem, 4.2vw, 3.6rem);
+  line-height: 1.12;
+  margin-top: 7px;
+}
+.art-section-head > p {
+  max-width: 300px;
+  font-size: 15px;
+  color: #536050;
+}
+.art-calc-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  gap: 64px;
+  background: #eae5d6;
+  padding: 45px;
+  border: 1px solid #d4ceba;
+  border-radius: 8px;
+}
+.art-calc-controls fieldset {
+  margin-top: 30px;
+  border: 0;
+  padding: 0;
+  min-width: 0;
+}
+.art-step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+.art-step span {
+  font-family: var(--cq-mano), cursive;
+  color: #9a452c;
+  font-size: 25px;
+}
+.art-people {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 290px;
+  margin: 15px 0;
+}
+.art-people button {
+  width: 45px;
+  height: 45px;
+  border: 1px solid #a4ad98;
+  border-radius: 50%;
+  font-size: 24px;
+  background: #f7f2e8;
+}
+.art-people button:disabled {
+  opacity: 0.35;
+}
+.art-people output {
+  font-family: var(--cq-display), Georgia, serif;
+  font-size: 55px;
+  line-height: 1;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+.art-people small {
+  display: block;
+  font:
+    12px var(--cq-sans),
+    sans-serif;
+  margin-top: 8px;
+}
+.art-calc-controls input[type="range"] {
+  width: 100%;
+  accent-color: #294b39;
+  min-height: 30px;
+}
+.art-options {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.art-options label {
+  font-size: 12px;
+  padding: 11px 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #f7f2e8;
+  border: 1px solid #c5c4b5;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.art-options label[data-selected="true"] {
+  background: #294b39;
+  color: #fffdf7;
+}
+.art-options input {
+  accent-color: #294b39;
+}
+.art-extra {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  cursor: pointer;
+}
+.art-extra input {
+  height: 20px;
+  width: 20px;
+  accent-color: #294b39;
+}
+.art-extra small {
+  display: block;
+  color: #536050;
+  font-size: 12px;
+}
+.art-receipt {
+  background: #fffdf6;
+  padding: 30px;
+  box-shadow: 0 6px 20px #51412112;
+  position: relative;
+  border-bottom: 5px dotted #eae5d6;
+  transform: rotate(1deg);
+}
+.art-receipt-title {
+  text-align: center;
+  padding-bottom: 22px;
+  border-bottom: 1px dashed #bcb9a8;
+}
+.art-receipt-title > span {
+  font-size: 9px;
+  letter-spacing: 0.17em;
+}
+.art-receipt-title h3 {
+  font-size: 29px;
+  line-height: 1.2;
+  margin: 8px 0;
+}
+.art-receipt-title p {
+  font-size: 11px;
+  color: #536050;
+}
+.art-receipt ul {
+  list-style: none;
+  padding: 16px 0;
+  margin: 0;
+}
+.art-receipt li {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  font-size: 13px;
+  padding: 10px 0;
+}
+.art-receipt li small {
+  display: block;
+  font-size: 11px;
+  color: #536050;
+}
+.art-receipt strong {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.art-total {
+  border-block: 1px dashed #bcb9a8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  font-size: 13px;
+}
+.art-total strong {
+  font-family: var(--cq-display), Georgia, serif;
+  font-size: 36px;
+  font-weight: 500;
+}
+.art-disclaimer {
+  font-size: 11px;
+  line-height: 1.65;
+  color: #626857;
+  margin: 20px 0;
+}
+.art-receipt .cq-boton {
+  width: 100%;
+  white-space: normal;
+  height: auto;
+  min-height: 52px;
+  padding: 12px;
+}
+.art-small {
+  font-size: 10px;
+  text-align: center;
+  color: #626857;
+  margin-top: 10px;
+}
+.art-mobile-nav {
+  display: none;
+}
+.cq #quesos {
+  border-top: 1px solid #d4ceba;
+}
+.cq #como-pedir {
+  border-block-width: 1px;
+}
+.cq #negocios {
+  border-block-width: 1px;
+}
+@media (max-width: 767px) {
+  .cq .cq-h1 {
+    font-size: clamp(3.1rem, 12vw, 4.3rem);
+  }
+  .art-calculadora {
+    padding: 50px 20px;
+  }
+  .art-section-head {
+    display: block;
+  }
+  .art-section-head > p {
+    margin-top: 18px;
+  }
+  .art-calc-grid {
+    grid-template-columns: 1fr;
+    padding: 22px 18px;
+    gap: 28px;
+  }
+  .art-receipt {
+    padding: 24px 18px;
+    transform: none;
+  }
+  .art-mobile-nav {
+    display: flex;
+    overflow-x: auto;
+    gap: 24px;
+    padding: 12px 20px;
+    border-bottom: 1px solid #d4ceba;
+    font-size: 12px;
+    background: #f7f2e8;
+  }
+  .art-mobile-nav a {
+    white-space: nowrap;
+  }
+  .cq header .max-w-\[1200px\] {
+    gap: 6px;
+  }
+  .art-hero-actions .cq-boton {
+    padding-inline: 16px;
+  }
+  .art-options label {
+    font-size: 11px;
+    padding: 11px 8px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cq .cq-boton {
+    transition: none;
+    transform: none;
+  }
+}
