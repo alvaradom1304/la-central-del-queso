@@ -1,0 +1,115 @@
+{
+  "name": "owasp-review",
+  "domain": "Cybersecurity",
+  "sprint": 6,
+  "inputs": "app/repo, alcance, versión estándar, evidencia",
+  "output": "owasp_findings, mappings, remediation",
+  "procedure": [
+    "Seleccionar OWASP ASVS/WSTG/Top10 según objetivo y verificar versión",
+    "Revisar controles pertinentes con evidencia",
+    "Mapear hallazgos a requisitos y retestar correcciones"
+  ],
+  "decision": "Top10 no es auditoría exhaustiva; no dar certificado de conformidad",
+  "kpi": "requisitos aplicables comprobados",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://owasp.org/projects/asvs",
+      "OWASP ASVS; verificar versión y scope"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Cybersecurity",
+  "purpose": "Seleccionar OWASP ASVS/WSTG/Top10 según objetivo y verificar versión",
+  "business_outcome": "requisitos aplicables comprobados",
+  "when_to_use": "owasp-review: Cybersecurity. Usar para producir owasp_findings, mappings, remediation a partir de app/repo, alcance, versión estándar, evidencia; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "owasp-review",
+    "owasp_findings, mappings, remediation"
+  ],
+  "required_inputs": [
+    "app/repo",
+    " alcance",
+    " versión estándar",
+    " evidencia"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://owasp.org/projects/asvs",
+      "OWASP ASVS; verificar versión y scope"
+    ]
+  ],
+  "decision_rules": [
+    "Top10 no es auditoría exhaustiva; no dar certificado de conformidad",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "owasp_findings",
+    " mappings",
+    " remediation"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: Top10 no es auditoría exhaustiva; no dar certificado de conformidad",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "requisitos aplicables comprobados"
+  ],
+  "examples": [
+    "Usa $owasp-review con app/repo, alcance, versión estándar, evidencia para obtener owasp_findings, mappings, remediation.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

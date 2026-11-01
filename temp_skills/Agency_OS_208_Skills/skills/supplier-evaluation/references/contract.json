@@ -1,0 +1,106 @@
+{
+  "name": "supplier-evaluation",
+  "domain": "Operations & Logistics",
+  "sprint": 8,
+  "inputs": "proveedores, criterios, entregas, calidad, costo",
+  "output": "supplier_scorecard, risks, actions",
+  "procedure": [
+    "Definir criterios y evidencia por proveedor",
+    "Comparar desempeño y concentración",
+    "Proponer mejora, alternativa o contingencia"
+  ],
+  "decision": "No evaluar solo precio ni inventar entregas/defectos",
+  "kpi": "calidad/plazo y concentración",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Operations & Logistics",
+  "purpose": "Definir criterios y evidencia por proveedor",
+  "business_outcome": "calidad/plazo y concentración",
+  "when_to_use": "supplier-evaluation: Operations & Logistics. Usar para producir supplier_scorecard, risks, actions a partir de proveedores, criterios, entregas, calidad, costo; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "supplier-evaluation",
+    "supplier_scorecard, risks, actions"
+  ],
+  "required_inputs": [
+    "proveedores",
+    " criterios",
+    " entregas",
+    " calidad",
+    " costo"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [],
+  "decision_rules": [
+    "No evaluar solo precio ni inventar entregas/defectos",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "supplier_scorecard",
+    " risks",
+    " actions"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No evaluar solo precio ni inventar entregas/defectos",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "calidad/plazo y concentración"
+  ],
+  "examples": [
+    "Usa $supplier-evaluation con proveedores, criterios, entregas, calidad, costo para obtener supplier_scorecard, risks, actions.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

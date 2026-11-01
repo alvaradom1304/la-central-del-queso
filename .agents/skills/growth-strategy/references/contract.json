@@ -1,0 +1,106 @@
+{
+  "name": "growth-strategy",
+  "domain": "Growth & Scaling",
+  "sprint": 8,
+  "inputs": "demanda, economía, capacidad, funnel, objetivos",
+  "output": "growth_levers, priorities, safeguards",
+  "procedure": [
+    "Identificar restricción de crecimiento real",
+    "Comparar adquisición, conversión, retención y oferta",
+    "Definir experimentos con límites de margen y servicio"
+  ],
+  "decision": "No recomendar crecer un sistema roto",
+  "kpi": "crecimiento rentable y servicio",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Growth & Scaling",
+  "purpose": "Identificar restricción de crecimiento real",
+  "business_outcome": "crecimiento rentable y servicio",
+  "when_to_use": "growth-strategy: Growth & Scaling. Usar para producir growth_levers, priorities, safeguards a partir de demanda, economía, capacidad, funnel, objetivos; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "growth-strategy",
+    "growth_levers, priorities, safeguards"
+  ],
+  "required_inputs": [
+    "demanda",
+    " economía",
+    " capacidad",
+    " funnel",
+    " objetivos"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [],
+  "decision_rules": [
+    "No recomendar crecer un sistema roto",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "growth_levers",
+    " priorities",
+    " safeguards"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No recomendar crecer un sistema roto",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "crecimiento rentable y servicio"
+  ],
+  "examples": [
+    "Usa $growth-strategy con demanda, economía, capacidad, funnel, objetivos para obtener growth_levers, priorities, safeguards.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

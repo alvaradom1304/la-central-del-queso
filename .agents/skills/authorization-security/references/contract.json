@@ -1,0 +1,116 @@
+{
+  "name": "authorization-security",
+  "domain": "Cybersecurity",
+  "sprint": 6,
+  "inputs": "roles, recursos, reglas, ownership, API",
+  "output": "access_matrix, negative_tests, fixes",
+  "procedure": [
+    "Construir matriz actor/recurso/acción",
+    "Verificar enforcement en servidor y por objeto",
+    "Probar acceso cruzado y denegación con cuentas de prueba autorizadas"
+  ],
+  "decision": "Ocultar botón no protege dato; denegar por defecto",
+  "kpi": "pruebas negativas de acceso aprobadas",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://owasp.org/projects/asvs",
+      "OWASP ASVS; verificar versión y scope"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Cybersecurity",
+  "purpose": "Construir matriz actor/recurso/acción",
+  "business_outcome": "pruebas negativas de acceso aprobadas",
+  "when_to_use": "authorization-security: Cybersecurity. Usar para producir access_matrix, negative_tests, fixes a partir de roles, recursos, reglas, ownership, API; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "authorization-security",
+    "access_matrix, negative_tests, fixes"
+  ],
+  "required_inputs": [
+    "roles",
+    " recursos",
+    " reglas",
+    " ownership",
+    " API"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://owasp.org/projects/asvs",
+      "OWASP ASVS; verificar versión y scope"
+    ]
+  ],
+  "decision_rules": [
+    "Ocultar botón no protege dato; denegar por defecto",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "access_matrix",
+    " negative_tests",
+    " fixes"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: Ocultar botón no protege dato; denegar por defecto",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "pruebas negativas de acceso aprobadas"
+  ],
+  "examples": [
+    "Usa $authorization-security con roles, recursos, reglas, ownership, API para obtener access_matrix, negative_tests, fixes.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

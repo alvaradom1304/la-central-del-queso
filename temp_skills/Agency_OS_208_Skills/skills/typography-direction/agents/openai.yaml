@@ -1,0 +1,4 @@
+interface:
+  display_name: "Typography Direction"
+  short_description: "Brand Intelligence: capacidad AEM OS"
+  default_prompt: "Usa $typography-direction para abordar esta tarea con evidencia y resultado verificable."

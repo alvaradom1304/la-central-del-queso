@@ -1,0 +1,14 @@
+interface:
+  display_name: AEM Skill System
+  short_description: Contratos, catálogo y evolución de capacidades AEM OS
+  default_prompt: Usa $aem-skill-system para seleccionar, delegar o mejorar capacidades
+    de AEM OS.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

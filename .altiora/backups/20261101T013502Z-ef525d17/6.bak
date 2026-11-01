@@ -1,0 +1,62 @@
+<!-- ALTIORA_SKILLS_ON_DEMAND_START -->
+## Selección automática de skills según la tarea
+
+El usuario quiere que las skills se utilicen automáticamente cuando aporten valor real, sin invocarlas manualmente ni cargar toda la biblioteca.
+
+1. Entender la solicitud y revisar primero los nombres y descripciones disponibles. Leer el SKILL.md completo solo de las capacidades pertinentes a la tarea actual. Consultar sus referencias únicamente cuando sean necesarias.
+2. Elegir el conjunto mínimo suficiente; empezar normalmente con una o dos especialidades y añadir otra solo si aparece una necesidad concreta. Si ninguna aporta valor, resolver directamente. No activar capacidades por coincidencias superficiales ni leer los 237 archivos al iniciar cada conversación.
+3. Para una corrección pequeña, responder o editar directamente con la especialidad pertinente. Usar altiora-agent-orchestrator para trabajo de varias áreas o coordinación solicitada, no para cada mensaje. No lanzar agentes en paralelo salvo que estén autorizados, disponibles y aporten una ventaja concreta.
+4. Orientación: diseño visual → frontend-design; experiencia web completa → elite-web-experience-os; investigación de repositorios → altiora-repository-research; revisión de entrega → altiora-quality-review; costes de IA → altiora-ai-economy. Para otras tareas, elegir por su descripción entre las demás skills instaladas, incluidas las capacidades AEM creadas por el usuario.
+5. Ante versiones duplicadas, preferir la capacidad del proyecto cuando corresponda al encargo; no ejecutar ambas por defecto. Respetar las instrucciones del usuario y las reglas de mayor prioridad.
+6. Indicar brevemente las skills que realmente se leyeron y aplicaron, sin inventar ejecuciones. Distinguir disponible, aplicada, probada y servicio conectado. No prometer ahorros o calidad sin evidencia.
+7. Una skill es una instrucción: no cambia por sí sola el modelo, no conecta APIs, no habilita herramientas ausentes y no inicia servicios. No instalar dependencias, conectar cuentas o activar gasto solo porque una skill las mencione.
+8. Si falta una capacidad necesaria, identificar la carencia y avanzar con las herramientas disponibles; no cargar especialidades ajenas para simular cobertura.
+<!-- ALTIORA_SKILLS_ON_DEMAND_END -->
+
+<!-- ALTIORA_CONTINUOUS_IMPROVEMENT_START -->
+## Debate y mejora continua solicitados por el usuario
+- Ante solicitudes de más animación, realismo 3D, inmersión o rechazo de un resultado básico/repetitivo, aplicar [el protocolo de mejora visual](docs/altiora-improvement/visual-improvement.md). Diagnosticar, buscar una técnica pertinente si hace falta, probarla, integrarla y comparar antes/después. No entregar una lista de repositorios como sustituto de la mejora solicitada.
+- Ante un tribunal de ideas o una decisión importante con objeciones materiales, consultar [el protocolo de debate](docs/altiora-improvement/idea-tribunal.md). Defensor y crítico pueden trabajar en paralelo si hay delegación real autorizada; el juez evalúa después. No inventar agentes o certeza.
+- Usar las fuentes de [repositories.json](docs/altiora-improvement/repositories.json) bajo demanda. Un repositorio descargado no es un servicio activo; comprobar versiones, licencias y herramientas antes de integrarlo.
+- Resolver mejoras reversibles dentro del alcance autorizado sin pedir confirmación repetida. Las conexiones de cuentas, gasto o publicación requieren la autorización correspondiente. Registrar resultados y aprendizajes comprobables, sin iniciar bucles o tareas periódicas por defecto.
+<!-- ALTIORA_CONTINUOUS_IMPROVEMENT_END -->
+
+
+<!-- ALTIORA_AUTOMATIC_CAPABILITIES_START -->
+## Uso automático de capacidades de Altiora
+
+El usuario autoriza seleccionar y aplicar automáticamente skills y agentes pertinentes a cada solicitud. No debe mencionar nombres, comandos ni pedir expresamente que se use una capacidad instalada. Esta regla incluye capacidades añadidas en el futuro; no mantener una lista cerrada de nombres.
+
+- Al recibir una tarea, usar primero los nombres y descripciones que el cliente ya haya descubierto. Si falta una capacidad pertinente en ese inventario, inspeccionar los metadatos de las carpetas locales de skills del proyecto (.claude/skills en Claude; .agents/skills en Antigravity; skills/ para la biblioteca existente). Leer el cuerpo y referencias únicamente de las seleccionadas. No cargar toda la biblioteca.
+- Resolver directamente trabajos pequeños. Para varias especialidades, elegir el coordinador pertinente por descripción y repartir responsabilidades cuando aporte valor. Esta autorización incluye delegación pertinente dentro del alcance de la tarea, siempre que el cliente disponga de subagentes reales. En Claude descubrir roles en .claude/agents; en Antigravity consultar altiora-os/agents como instrucciones cuando no exista delegación nativa. No afirmar que esos archivos crean agentes activos.
+- No pedir al usuario que invoque una skill o agente por nombre ni que repita esta preferencia. Ante capacidades equivalentes, elegir una variante adecuada y conservar las demás. Respetar una elección explícita del usuario.
+- Al añadir una capacidad, incluir nombre y descripción claros, instalarla en la ruta de descubrimiento del cliente, conservar sus recursos y verificar su descubrimiento cuando sea posible. No marcarla como exclusivamente manual salvo petición expresa. Tras una incorporación, indicar si el cliente necesita reabrir el proyecto para actualizar su inventario.
+- La selección automática no autoriza acciones externas, gasto, publicación, cambios fuera del alcance ni ejecución de código no revisado. Los permisos reales del host y las instrucciones del proyecto siguen vigentes. No inventar herramientas, conexiones ni revisiones independientes.
+
+No hace falta usar siempre el mismo agente: escoger la capacidad mínima que resuelva el encargo. Informar brevemente de las capacidades aplicadas cuando ayude a verificar una entrega, sin convertirlo en un paso que deba realizar el usuario.
+<!-- ALTIORA_AUTOMATIC_CAPABILITIES_END -->
+
+<!-- ALTIORA_AGENT_SYSTEM_START -->
+## Altiora Agent System 1.0.0
+Leer `.altiora/system/core/constitution.md` al empezar trabajo en este proyecto. Usar `.altiora/project.json` como contexto y `.altiora/handoff.json` si existe, contrastando siempre con el encargo vigente. Seleccionar skills por descripcion. Las instrucciones propias del proyecto y las del usuario siguen aplicando.
+<!-- ALTIORA_AGENT_SYSTEM_END -->
+
+<!-- ALTIORA_VALUE_BUSINESS_START -->
+## Negocio de Altiora · contexto bajo demanda
+Para estrategia, oferta, clientes, precios, finanzas u operación de Altiora, consultar docs/altiora-business/INICIO.md y solo la sección necesaria. Objetivo confirmado: US$10.000 por proyecto, con mantenimiento mensual opcional separado; cero clientes de pago confirmados. Reutilizar capacidades disponibles y conservar tareas técnicas anteriores. No cargar toda la biblioteca, inventar resultados, atribuir habilitación profesional a roles IA, contactar, contratar o gastar por efecto lateral. Esta guía no concede nuevos permisos ni crea ejecución persistente.
+<!-- ALTIORA_VALUE_BUSINESS_END -->
+
+<!-- ALTIORA_COORDINATOR_MODE_START -->
+## Coordinación de Altiora
+El usuario designó a Codex coordinador de este encargo. Para trabajo amplio de Altiora consultar docs/altiora-toolkit/ORQUESTADOR.md y el registro .altiora/orchestration.json. Elegir skills pertinentes y resolver directamente cambios pequeños; delegar solo con capacidad real, dueño de archivos y revisión de evidencia. Respetar nuevas instrucciones del usuario y permisos del host. Orca está añadido como referencia fijada, no como runtime conectado. No activar servicios, hooks, cuentas, instalaciones, emparejamiento móvil o modelos por leer su documentación. El prompt de Claude sigue no enviado tras detenerse el control del PC; este registro no reanuda ese control ni crea trabajo periódico.
+<!-- ALTIORA_COORDINATOR_MODE_END -->
+
+<!-- ALTIORA_META_ADS_GROWTH_START -->
+## Meta Ads · estrategia y medición
+Para auditoría, plan o análisis de Meta Ads, leer bajo demanda `docs/altiora-toolkit/skills/meta-ads-growth/SKILL.md`. Para conceptos y guiones, reutilizar `meta-ads-creator` si está disponible. Esta referencia no conecta cuentas ni autoriza gasto, edición de campañas o publicación.
+<!-- ALTIORA_META_ADS_GROWTH_END -->
+
+<!-- ALTIORA_PROJECT_DIRECTOR_START -->
+## Dirección de proyectos integrales
+Para un proyecto multidisciplinar de Altiora, leer bajo demanda `docs/altiora-business/ALTIORA-MAESTRO-PROYECTOS.md` y aplicar la Parte III (Director de Experiencia y Resultados), junto con la propuesta y el estándar incluidos en el mismo archivo. No cargarlo para cambios pequeños. El rol no crea una sesión, garantiza resultados ni amplía permisos.
+<!-- ALTIORA_PROJECT_DIRECTOR_END -->

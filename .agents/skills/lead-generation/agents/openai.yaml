@@ -1,0 +1,4 @@
+interface:
+  display_name: "Lead Generation"
+  short_description: "Marketing Intelligence: capacidad AEM OS"
+  default_prompt: "Usa $lead-generation para abordar esta tarea con evidencia y resultado verificable."

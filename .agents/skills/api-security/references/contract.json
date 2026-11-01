@@ -1,0 +1,116 @@
+{
+  "name": "api-security",
+  "domain": "Cybersecurity",
+  "sprint": 6,
+  "inputs": "endpoints, contrato, auth, datos, límites",
+  "output": "api_risks, controls, verification",
+  "procedure": [
+    "Revisar entrada, autorización y exposición por endpoint",
+    "Evaluar límites, abuso, errores y logging seguro",
+    "Probar escenarios controlados y corregir"
+  ],
+  "decision": "No ejecutar fuzzing agresivo fuera de scope ni revelar claves",
+  "kpi": "endpoints con controles comprobados",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://owasp.org/projects/asvs",
+      "OWASP ASVS; verificar versión y scope"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Cybersecurity",
+  "purpose": "Revisar entrada, autorización y exposición por endpoint",
+  "business_outcome": "endpoints con controles comprobados",
+  "when_to_use": "api-security: Cybersecurity. Usar para producir api_risks, controls, verification a partir de endpoints, contrato, auth, datos, límites; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "api-security",
+    "api_risks, controls, verification"
+  ],
+  "required_inputs": [
+    "endpoints",
+    " contrato",
+    " auth",
+    " datos",
+    " límites"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://owasp.org/projects/asvs",
+      "OWASP ASVS; verificar versión y scope"
+    ]
+  ],
+  "decision_rules": [
+    "No ejecutar fuzzing agresivo fuera de scope ni revelar claves",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "api_risks",
+    " controls",
+    " verification"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No ejecutar fuzzing agresivo fuera de scope ni revelar claves",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "endpoints con controles comprobados"
+  ],
+  "examples": [
+    "Usa $api-security con endpoints, contrato, auth, datos, límites para obtener api_risks, controls, verification.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

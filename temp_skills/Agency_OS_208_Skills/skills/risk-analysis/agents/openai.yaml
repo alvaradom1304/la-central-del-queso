@@ -1,0 +1,4 @@
+interface:
+  display_name: "Risk Analysis"
+  short_description: "Business Intelligence: capacidad AEM OS"
+  default_prompt: "Usa $risk-analysis para abordar esta tarea con evidencia y resultado verificable."

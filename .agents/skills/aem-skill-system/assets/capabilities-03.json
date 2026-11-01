@@ -1,0 +1,185 @@
+[
+  {
+    "name": "unit-economics",
+    "domain": "Financial Intelligence",
+    "sprint": 3,
+    "inputs": "unidad, precio neto, costos variables, periodo, moneda",
+    "output": "contribution_per_unit, assumptions, sensitivity",
+    "procedure": [
+      "Definir unidad y separar ingresos netos de impuestos/descuentos",
+      "Incluir costos variables y costo de servir atribuible",
+      "Calcular contribución y sensibilidad por producto/canal"
+    ],
+    "decision": "Contribución=ingreso neto menos costo variable; markup no es margen; sin cifras dar fórmula",
+    "kpi": "contribución por unidad y canal",
+    "type": "Atomic"
+  },
+  {
+    "name": "break-even-analysis",
+    "domain": "Financial Intelligence",
+    "sprint": 3,
+    "inputs": "precio neto, costo variable, costo fijo, mezcla, periodo",
+    "output": "break_even_units, break_even_revenue, conditions",
+    "procedure": [
+      "Definir periodo, capacidad y mezcla de ventas",
+      "Calcular Q=costos fijos/(precio neto-costo variable) si contribución positiva",
+      "Contrastar unidades requeridas con capacidad y demanda"
+    ],
+    "decision": "Contribución cero/negativa no tiene punto de equilibrio finito bajo este modelo; no dividir por cero",
+    "kpi": "distancia al punto de equilibrio",
+    "type": "Atomic"
+  },
+  {
+    "name": "financial-diagnostic",
+    "domain": "Financial Intelligence",
+    "sprint": 3,
+    "inputs": "estados/registros, periodos, moneda, políticas contables",
+    "output": "reconciled_snapshot, red_flags, missing_data",
+    "procedure": [
+      "Revisar integridad y conciliación de ingresos, gastos, activos y pasivos",
+      "Separar resultado, caja y obligaciones",
+      "Evaluar liquidez y rentabilidad con límites de datos"
+    ],
+    "decision": "No emitir auditoría contable ni inventar estados; consultar profesional para decisiones críticas",
+    "kpi": "registros conciliados y alertas materiales",
+    "type": "Atomic"
+  },
+  {
+    "name": "cost-analysis",
+    "domain": "Financial Intelligence",
+    "sprint": 3,
+    "inputs": "costos, drivers, volúmenes, periodos",
+    "output": "cost_structure, drivers, allocation_rules",
+    "procedure": [
+      "Clasificar fijo/variable y directo/indirecto según decisión",
+      "Conciliar total y asignar drivers transparentes",
+      "Comparar costo marginal y total por alternativa"
+    ],
+    "decision": "Evitar asignaciones arbitrarias que parezcan causalidad",
+    "kpi": "costo por unidad/actividad",
+    "type": "Atomic"
+  },
+  {
+    "name": "margin-analysis",
+    "domain": "Financial Intelligence",
+    "sprint": 3,
+    "inputs": "ingresos netos, costos, mezcla, canal, periodo",
+    "output": "margin_bridge, contribution, reconciliation",
+    "procedure": [
+      "Definir margen bruto, contribución u operativo",
+      "Calcular por producto/canal y reconciliar con total",
+      "Explicar cambios por precio, costo, volumen y mezcla"
+    ],
+    "decision": "Margen=(ingreso-costo)/ingreso; markup=(precio-costo)/costo; ingreso cero no permite margen porcentual",
+    "kpi": "margen por producto/canal",
+    "type": "Atomic"
+  },
+  {
+    "name": "pricing",
+    "domain": "Financial Intelligence",
+    "sprint": 3,
+    "inputs": "costos, alternativas, valor, restricciones, segmento",
+    "output": "pricing_options, floor, test_plan",
+    "procedure": [
+      "Separar precio piso económico de disposición a pagar",
+      "Comparar oferta, canal y condiciones de competencia",
+      "Diseñar pruebas con protección de margen y transparencia"
+    ],
+    "decision": "No inventar disposición a pagar ni pactar precios con competidores",
+    "kpi": "margen y conversión por precio",
+    "type": "Atomic"
+  },
+  {
+    "name": "cash-flow-analysis",
+    "domain": "Financial Intelligence",
+    "sprint": 3,
+    "inputs": "cobros/pagos, saldo inicial, fechas, moneda",
+    "output": "cash_schedule, closing_balance, liquidity_gaps",
+    "procedure": [
+      "Usar fechas de caja, no solo facturación",
+      "Calcular saldo final=saldo inicial+cobros-pagos por periodo",
+      "Conciliar y probar retrasos de cobro/gastos"
+    ],
+    "decision": "Ganancia no es caja; no incluir crédito no aprobado como efectivo disponible",
+    "kpi": "saldo mínimo y cobertura de pagos",
+    "type": "Atomic"
+  },
+  {
+    "name": "working-capital",
+    "domain": "Financial Intelligence",
+    "sprint": 3,
+    "inputs": "inventario, cuentas por cobrar/pagar, plazos",
+    "output": "working_capital_needs, cycle, levers",
+    "procedure": [
+      "Delimitar entidad, moneda, periodo, fechas de cierre y definiciones contables aplicables.",
+      "Separar efectivo, cuentas por cobrar/pagar, inventario, reservas y partidas no operativas.",
+      "Calcular capital de trabajo y ciclo de caja con bases comparables; registrar método para promedios y saldos.",
+      "Modelar cambios de volumen, plazos, stock y cobranza en escenarios trazables.",
+      "Priorizar acciones por liquidez, costo, servicio y riesgo, sin confundir mejora de caja con beneficio.",
+      "Reconciliar con flujo de caja y entregar fórmulas, sensibilidad, datos faltantes y responsables propuestos."
+    ],
+    "decision": "No recomendar retrasar obligaciones ilegítimamente; fórmulas dependen de datos comparables",
+    "kpi": "días del ciclo de conversión de efectivo",
+    "type": "Atomic"
+  },
+  {
+    "name": "financial-forecasting",
+    "domain": "Financial Intelligence",
+    "sprint": 3,
+    "inputs": "histórico, drivers, horizonte, supuestos, moneda",
+    "output": "forecast, drivers, intervals",
+    "procedure": [
+      "Depurar histórico y distinguir ventas, ingresos y caja",
+      "Proyectar con drivers documentados y escenarios",
+      "Contrastar contra capacidad y realizar backtest si hay datos"
+    ],
+    "decision": "Pronóstico no es dato real; no extrapolar sin límites ni estacionalidad",
+    "kpi": "error de pronóstico por horizonte",
+    "type": "Atomic"
+  },
+  {
+    "name": "scenario-planning",
+    "domain": "Financial Intelligence",
+    "sprint": 3,
+    "inputs": "decisión, incertidumbres, drivers, límites",
+    "output": "scenarios, sensitivities, triggers",
+    "procedure": [
+      "Seleccionar incertidumbres materiales e independientes",
+      "Construir escenarios coherentes, no porcentajes arbitrarios",
+      "Definir señales y decisiones contingentes"
+    ],
+    "decision": "No asignar probabilidades sin fundamento",
+    "kpi": "cobertura de escenarios relevantes",
+    "type": "Atomic"
+  },
+  {
+    "name": "investment-analysis",
+    "domain": "Financial Intelligence",
+    "sprint": 3,
+    "inputs": "desembolsos, flujos incrementales, horizonte, riesgo",
+    "output": "investment_cases, sensitivity, recommendation",
+    "procedure": [
+      "Comparar inversión con alternativa de no invertir",
+      "Evaluar flujos, recuperación y descuento si tasa justificada",
+      "Analizar sensibilidad y condiciones de decisión"
+    ],
+    "decision": "No inventar tasa ni garantizar retorno; revisión financiera humana para comprometer capital",
+    "kpi": "retorno/riesgo bajo supuestos",
+    "type": "Atomic"
+  },
+  {
+    "name": "profitability-analysis",
+    "domain": "Financial Intelligence",
+    "sprint": 3,
+    "inputs": "ingresos, costos, canales/clientes, criterio de asignación",
+    "output": "profit_by_segment, drivers, actions",
+    "procedure": [
+      "Conciliar resultado con registros",
+      "Separar contribución y costo asignado por segmento",
+      "Evaluar acciones sin eliminar actividad rentable por reparto arbitrario"
+    ],
+    "decision": "Declarar método de asignación; rentabilidad y liquidez son dimensiones distintas",
+    "kpi": "utilidad/contribución por segmento",
+    "type": "Atomic"
+  }
+]

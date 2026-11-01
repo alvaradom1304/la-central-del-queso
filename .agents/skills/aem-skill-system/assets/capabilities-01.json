@@ -1,0 +1,227 @@
+[
+  {
+    "name": "market-research",
+    "domain": "Business Intelligence",
+    "sprint": 2,
+    "inputs": "pregunta, mercado, geografía, periodo, fuentes accesibles",
+    "output": "evidence_matrix, insights, research_gaps",
+    "procedure": [
+      "Delimitar pregunta y población; diseñar búsqueda y criterios de inclusión",
+      "Contrastar fuentes primarias con fecha, método y unidad; registrar contradicciones",
+      "Sintetizar insights vinculados a evidencia y decisiones, no solo recopilar enlaces"
+    ],
+    "decision": "No extrapolar una muestra no representativa; cada afirmación externa debe tener fuente o marcarse hipótesis",
+    "kpi": "cobertura de preguntas decisivas",
+    "type": "Atomic"
+  },
+  {
+    "name": "market-sizing",
+    "domain": "Business Intelligence",
+    "sprint": 2,
+    "inputs": "segmento, territorio, unidad de demanda, precios, fuentes",
+    "output": "tam_sam_som, calculation, sensitivity",
+    "procedure": [
+      "Definir mercado total y mercado realmente atendible",
+      "Construir estimación bottom-up y contrastar con agregado top-down compatible",
+      "Separar mercado potencial de captura viable según capacidad y canales"
+    ],
+    "decision": "TAM/SAM/SOM deben compartir periodo y unidad; SOM no es porcentaje arbitrario; sin base devolver modelo y vacíos",
+    "kpi": "amplitud del intervalo de estimación",
+    "type": "Atomic"
+  },
+  {
+    "name": "industry-analysis",
+    "domain": "Business Intelligence",
+    "sprint": 2,
+    "inputs": "industria delimitada, cadena de valor, territorio, periodo",
+    "output": "industry_map, structural_forces, implications",
+    "procedure": [
+      "Mapear actores, cadena de valor y reguladores",
+      "Investigar demanda, oferta, barreras, sustitutos y estructura económica",
+      "Evaluar implicaciones y escenarios para el negocio específico"
+    ],
+    "decision": "No confundir tendencia global con realidad local; separar fuerzas estructurales de coyuntura",
+    "kpi": "cobertura de fuerzas materiales",
+    "type": "Atomic"
+  },
+  {
+    "name": "competitive-intelligence",
+    "domain": "Business Intelligence",
+    "sprint": 2,
+    "inputs": "decisiones estratégicas, competidores, fuentes públicas, frecuencia",
+    "output": "intelligence_plan, signals, alerts",
+    "procedure": [
+      "Definir preguntas de inteligencia y señales tempranas",
+      "Seleccionar fuentes públicas y mecanismo de monitoreo legítimo",
+      "Relacionar cambios con decisiones y actualizar alertas"
+    ],
+    "decision": "No usar secretos de competidores ni ingeniería social; señales requieren corroboración",
+    "kpi": "señales útiles por revisión",
+    "type": "Atomic"
+  },
+  {
+    "name": "competitor-analysis",
+    "domain": "Business Intelligence",
+    "sprint": 2,
+    "inputs": "competidores directos/indirectos, criterios, mercado, fecha",
+    "output": "comparison_matrix, differentiation_gaps",
+    "procedure": [
+      "Definir comparables por tarea del cliente y segmento",
+      "Registrar oferta, precio comparable, canales y prueba de posicionamiento",
+      "Comparar fortalezas y vacíos con evidencia y límites"
+    ],
+    "decision": "No afirmar ventas o rentabilidad del rival a partir de su web; normalizar precio/unidad",
+    "kpi": "proporción de comparaciones verificables",
+    "type": "Atomic"
+  },
+  {
+    "name": "customer-research",
+    "domain": "Business Intelligence",
+    "sprint": 2,
+    "inputs": "preguntas, segmento, acceso consentido, datos de clientes",
+    "output": "research_protocol, observations, findings",
+    "procedure": [
+      "Seleccionar método y muestra con sus sesgos",
+      "Recopilar comportamiento y relatos específicos sin preguntas inductivas",
+      "Codificar patrones y casos negativos; distinguir observación de interpretación"
+    ],
+    "decision": "No inventar entrevistas; sin acceso producir protocolo, no hallazgos de campo",
+    "kpi": "preguntas resueltas con evidencia",
+    "type": "Atomic"
+  },
+  {
+    "name": "consumer-behavior",
+    "domain": "Business Intelligence",
+    "sprint": 2,
+    "inputs": "categoría, contexto de compra, observaciones, segmento",
+    "output": "behavior_model, barriers, hypotheses",
+    "procedure": [
+      "Mapear detonantes, búsqueda, evaluación, compra y uso",
+      "Identificar fricciones y factores sociales/contextuales con evidencia",
+      "Formular hipótesis de intervención y pruebas de comportamiento"
+    ],
+    "decision": "No atribuir motivos ocultos por demografía ni presentar neuromitos como ciencia",
+    "kpi": "éxito de tarea y compra observada",
+    "type": "Atomic"
+  },
+  {
+    "name": "trend-analysis",
+    "domain": "Business Intelligence",
+    "sprint": 2,
+    "inputs": "fenómeno, series comparables, periodo, región",
+    "output": "trend_assessment, drivers, uncertainty",
+    "procedure": [
+      "Normalizar indicadores y horizonte temporal",
+      "Separar ruido, estacionalidad, difusión y cambio sostenido",
+      "Evaluar mecanismos y escenarios con señales para revisar"
+    ],
+    "decision": "Una noticia o viralidad aislada no prueba tendencia duradera",
+    "kpi": "estabilidad de señal entre periodos",
+    "type": "Atomic"
+  },
+  {
+    "name": "business-model-analysis",
+    "domain": "Business Intelligence",
+    "sprint": 2,
+    "inputs": "oferta, segmentos, canales, ingresos, costos, procesos",
+    "output": "model_map, dependencies, vulnerabilities",
+    "procedure": [
+      "Reconstruir cómo se crea, entrega y captura valor",
+      "Relacionar recursos, costos y actores con cada flujo de ingreso",
+      "Identificar dependencia crítica y evidencia necesaria para mejorar"
+    ],
+    "decision": "No llamar rentable a un modelo sin margen/caja; separar diseño de desempeño real",
+    "kpi": "contribución por flujo de ingreso",
+    "type": "Atomic"
+  },
+  {
+    "name": "business-strategy",
+    "domain": "Business Intelligence",
+    "sprint": 2,
+    "inputs": "diagnóstico, objetivos, recursos, evidencia, restricciones",
+    "output": "strategic_choices, tradeoffs, outcome_map",
+    "procedure": [
+      "Formular opciones y decisiones sobre dónde competir y cómo ganar",
+      "Contrastar ventaja, economía, riesgos y capacidades requeridas",
+      "Elegir prioridades y renuncias con condiciones de revisión"
+    ],
+    "decision": "Una lista de iniciativas sin elección ni tradeoffs no es estrategia",
+    "kpi": "progreso del objetivo estratégico",
+    "type": "Atomic"
+  },
+  {
+    "name": "strategic-planning",
+    "domain": "Business Intelligence",
+    "sprint": 2,
+    "inputs": "estrategia vigente, horizonte, recursos, responsables",
+    "output": "milestones, initiatives, kpis, dependencies",
+    "procedure": [
+      "Traducir elecciones a resultados por horizonte",
+      "Definir responsables, dependencias, recursos y criterios de terminado",
+      "Establecer revisión, riesgos y respuesta a cambios"
+    ],
+    "decision": "No inventar fechas comprometidas ni responsables asignados; diferenciar propuesto/acordado",
+    "kpi": "cumplimiento de milestones y outcomes",
+    "type": "Atomic"
+  },
+  {
+    "name": "business-diagnostic",
+    "domain": "Business Intelligence",
+    "sprint": 2,
+    "inputs": "brief, procesos, ventas/costos disponibles, problemas, responsables",
+    "output": "current_state, root_cause_hypotheses, prioritized_actions",
+    "procedure": [
+      "Levantar estado de estrategia, finanzas, clientes, ventas, marketing, marca, tecnología, personas, datos, seguridad y operación",
+      "Triangular síntomas con datos y proceso; formular causas alternativas",
+      "Priorizar por impacto, evidencia y esfuerzo; definir siguiente prueba"
+    ],
+    "decision": "Marcar causas no demostradas; ausencia de datos no equivale a buena salud; no comenzar prescribiendo una web",
+    "kpi": "problemas con causa respaldada",
+    "type": "Composite"
+  },
+  {
+    "name": "business-health-assessment",
+    "domain": "Business Intelligence",
+    "sprint": 2,
+    "inputs": "periodos comparables, finanzas, demanda, servicio, capacidad",
+    "output": "health_dimensions, red_flags, monitoring_plan",
+    "procedure": [
+      "Definir dimensiones y umbrales pertinentes antes de puntuar",
+      "Evaluar tendencia, liquidez, margen, concentración y calidad operativa",
+      "Identificar alertas y seguimiento con responsable"
+    ],
+    "decision": "No asignar puntaje verde a dimensiones sin datos; umbrales requieren contexto",
+    "kpi": "cobertura de dimensiones con datos",
+    "type": "Composite"
+  },
+  {
+    "name": "opportunity-analysis",
+    "domain": "Business Intelligence",
+    "sprint": 2,
+    "inputs": "alternativas, evidencia, costos, impacto, capacidad",
+    "output": "opportunity_matrix, recommendation, validation_plan",
+    "procedure": [
+      "Describir oportunidad y mecanismo de valor",
+      "Comparar impacto, confianza, costo, riesgo y dependencias",
+      "Priorizar y diseñar prueba de la oportunidad elegida"
+    ],
+    "decision": "Hacer visibles pesos y supuestos; score no sustituye juicio",
+    "kpi": "oportunidad validada por inversión",
+    "type": "Atomic"
+  },
+  {
+    "name": "risk-analysis",
+    "domain": "Business Intelligence",
+    "sprint": 2,
+    "inputs": "objetivo, activos/procesos, amenazas, impacto, controles",
+    "output": "risk_register, mitigation, residual_risk",
+    "procedure": [
+      "Identificar escenarios y exposición concreta",
+      "Evaluar impacto y probabilidad cualitativos con evidencia",
+      "Asignar controles, responsables y condiciones de escalación"
+    ],
+    "decision": "No multiplicar escalas ordinales como pérdidas monetarias; registrar incertidumbre",
+    "kpi": "riesgos materiales con mitigación",
+    "type": "Atomic"
+  }
+]

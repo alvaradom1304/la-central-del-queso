@@ -1,0 +1,116 @@
+{
+  "name": "financial-forecasting",
+  "domain": "Financial Intelligence",
+  "sprint": 3,
+  "inputs": "histórico, drivers, horizonte, supuestos, moneda",
+  "output": "forecast, drivers, intervals",
+  "procedure": [
+    "Depurar histórico y distinguir ventas, ingresos y caja",
+    "Proyectar con drivers documentados y escenarios",
+    "Contrastar contra capacidad y realizar backtest si hay datos"
+  ],
+  "decision": "Pronóstico no es dato real; no extrapolar sin límites ni estacionalidad",
+  "kpi": "error de pronóstico por horizonte",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://www.sba.gov/counseling/plan-your-business/",
+      "SBA; planificación oficial, contexto estadounidense; verificar fuente financiera concreta y normativa local al ejecutar"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Financial Intelligence",
+  "purpose": "Depurar histórico y distinguir ventas, ingresos y caja",
+  "business_outcome": "error de pronóstico por horizonte",
+  "when_to_use": "financial-forecasting: Financial Intelligence. Usar para producir forecast, drivers, intervals a partir de histórico, drivers, horizonte, supuestos, moneda; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "financial-forecasting",
+    "forecast, drivers, intervals"
+  ],
+  "required_inputs": [
+    "histórico",
+    " drivers",
+    " horizonte",
+    " supuestos",
+    " moneda"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://www.sba.gov/counseling/plan-your-business/",
+      "SBA; planificación oficial, contexto estadounidense; verificar fuente financiera concreta y normativa local al ejecutar"
+    ]
+  ],
+  "decision_rules": [
+    "Pronóstico no es dato real; no extrapolar sin límites ni estacionalidad",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "forecast",
+    " drivers",
+    " intervals"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: Pronóstico no es dato real; no extrapolar sin límites ni estacionalidad",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "error de pronóstico por horizonte"
+  ],
+  "examples": [
+    "Usa $financial-forecasting con histórico, drivers, horizonte, supuestos, moneda para obtener forecast, drivers, intervals.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

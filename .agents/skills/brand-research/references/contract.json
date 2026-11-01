@@ -1,0 +1,106 @@
+{
+  "name": "brand-research",
+  "domain": "Brand Intelligence",
+  "sprint": 5,
+  "inputs": "marca, mercado, audiencia, activos, evidencia",
+  "output": "brand_audit, perception_evidence, gaps",
+  "procedure": [
+    "Examinar identidad y comunicación actuales",
+    "Investigar percepción y alternativas con fuentes verificables",
+    "Identificar diferencia entre intención y percepción"
+  ],
+  "decision": "No confundir opinión interna con percepción del mercado",
+  "kpi": "brechas de percepción sustentadas",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Brand Intelligence",
+  "purpose": "Examinar identidad y comunicación actuales",
+  "business_outcome": "brechas de percepción sustentadas",
+  "when_to_use": "brand-research: Brand Intelligence. Usar para producir brand_audit, perception_evidence, gaps a partir de marca, mercado, audiencia, activos, evidencia; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "brand-research",
+    "brand_audit, perception_evidence, gaps"
+  ],
+  "required_inputs": [
+    "marca",
+    " mercado",
+    " audiencia",
+    " activos",
+    " evidencia"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [],
+  "decision_rules": [
+    "No confundir opinión interna con percepción del mercado",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "brand_audit",
+    " perception_evidence",
+    " gaps"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No confundir opinión interna con percepción del mercado",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "brechas de percepción sustentadas"
+  ],
+  "examples": [
+    "Usa $brand-research con marca, mercado, audiencia, activos, evidencia para obtener brand_audit, perception_evidence, gaps.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Responsive Design"
+  short_description: "Premium Web Experience: capacidad AEM OS"
+  default_prompt: "Usa $responsive-design para abordar esta tarea con evidencia y resultado verificable."

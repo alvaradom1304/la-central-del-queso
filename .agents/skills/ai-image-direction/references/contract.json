@@ -1,0 +1,105 @@
+{
+  "name": "ai-image-direction",
+  "domain": "Creative Intelligence",
+  "sprint": 5,
+  "inputs": "objetivo, referencias autorizadas, marca, generador",
+  "output": "generation_brief, variants, qa",
+  "procedure": [
+    "Separar contenido, composición, estilo y restricciones",
+    "Generar/editar con herramienta disponible y referencias consentidas",
+    "Revisar fidelidad, manos/texto/logos, derechos y claims"
+  ],
+  "decision": "Usar skill de imagen apropiada; no declarar imagen generada sin resultado",
+  "kpi": "variantes útiles por iteración",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Creative Intelligence",
+  "purpose": "Separar contenido, composición, estilo y restricciones",
+  "business_outcome": "variantes útiles por iteración",
+  "when_to_use": "ai-image-direction: Creative Intelligence. Usar para producir generation_brief, variants, qa a partir de objetivo, referencias autorizadas, marca, generador; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "ai-image-direction",
+    "generation_brief, variants, qa"
+  ],
+  "required_inputs": [
+    "objetivo",
+    " referencias autorizadas",
+    " marca",
+    " generador"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [],
+  "decision_rules": [
+    "Usar skill de imagen apropiada; no declarar imagen generada sin resultado",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "generation_brief",
+    " variants",
+    " qa"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: Usar skill de imagen apropiada; no declarar imagen generada sin resultado",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "variantes útiles por iteración"
+  ],
+  "examples": [
+    "Usa $ai-image-direction con objetivo, referencias autorizadas, marca, generador para obtener generation_brief, variants, qa.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

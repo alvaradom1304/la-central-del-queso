@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "task_id",
+    "objective",
+    "context",
+    "inputs",
+    "authorized_scope",
+    "available_tools",
+    "acceptance_criteria"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string"
+    },
+    "objective": {
+      "type": "string"
+    },
+    "context": {
+      "type": "object"
+    },
+    "inputs": {
+      "type": "object",
+      "required": [
+        "cobros_pagos",
+        "saldo_inicial",
+        "fechas",
+        "moneda"
+      ],
+      "properties": {
+        "cobros_pagos": {
+          "description": "cobros/pagos",
+          "type": [
+            "object",
+            "array",
+            "string",
+            "number",
+            "boolean",
+            "null"
+          ]
+        },
+        "saldo_inicial": {
+          "description": "saldo inicial",
+          "type": [
+            "object",
+            "array",
+            "string",
+            "number",
+            "boolean",
+            "null"
+          ]
+        },
+        "fechas": {
+          "description": "fechas",
+          "type": [
+            "object",
+            "array",
+            "string",
+            "number",
+            "boolean",
+            "null"
+          ]
+        },
+        "moneda": {
+          "description": "moneda",
+          "type": [
+            "object",
+            "array",
+            "string",
+            "number",
+            "boolean",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "authorized_scope": {
+      "type": "object"
+    },
+    "available_tools": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "acceptance_criteria": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "budget": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}

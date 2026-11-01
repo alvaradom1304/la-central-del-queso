@@ -1,0 +1,260 @@
+[
+  {
+    "name": "secure-development",
+    "domain": "Cybersecurity",
+    "sprint": 6,
+    "inputs": "repo, stack, datos, alcance autorizado, amenazas",
+    "output": "secure_controls, fixes, verification",
+    "procedure": [
+      "Definir requisitos de seguridad y trust boundaries",
+      "Revisar validación, auth, datos, errores y dependencias",
+      "Aplicar correcciones mínimas y retestar controles"
+    ],
+    "decision": "Seguridad por diseño; no declarar sistema seguro por ausencia de hallazgos",
+    "kpi": "controles críticos verificados",
+    "type": "Atomic"
+  },
+  {
+    "name": "security-requirements",
+    "domain": "Cybersecurity",
+    "sprint": 6,
+    "inputs": "activos, flujos, datos, roles, riesgo",
+    "output": "security_requirements, acceptance_tests, owners",
+    "procedure": [
+      "Clasificar activos y exposición según negocio",
+      "Traducir riesgos a controles y criterios verificables",
+      "Definir responsable y evidencia necesaria"
+    ],
+    "decision": "No inventar obligaciones legales; verificar jurisdicción/estándar",
+    "kpi": "requisitos con prueba y responsable",
+    "type": "Atomic"
+  },
+  {
+    "name": "threat-modeling",
+    "domain": "Cybersecurity",
+    "sprint": 6,
+    "inputs": "arquitectura, activos, actores, boundaries, permisos",
+    "output": "threat_model, scenarios, mitigations",
+    "procedure": [
+      "Diagramar datos y fronteras de confianza",
+      "Identificar amenazas por escenario y control existente",
+      "Priorizar impacto/probabilidad y acciones de mitigación"
+    ],
+    "decision": "Solo sistemas autorizados; sin arquitectura no afirmar modelo completo",
+    "kpi": "amenazas materiales con control",
+    "type": "Atomic"
+  },
+  {
+    "name": "owasp-review",
+    "domain": "Cybersecurity",
+    "sprint": 6,
+    "inputs": "app/repo, alcance, versión estándar, evidencia",
+    "output": "owasp_findings, mappings, remediation",
+    "procedure": [
+      "Seleccionar OWASP ASVS/WSTG/Top10 según objetivo y verificar versión",
+      "Revisar controles pertinentes con evidencia",
+      "Mapear hallazgos a requisitos y retestar correcciones"
+    ],
+    "decision": "Top10 no es auditoría exhaustiva; no dar certificado de conformidad",
+    "kpi": "requisitos aplicables comprobados",
+    "type": "Atomic"
+  },
+  {
+    "name": "authentication-security",
+    "domain": "Cybersecurity",
+    "sprint": 6,
+    "inputs": "flujos login/sesión, roles, proveedor, amenazas",
+    "output": "auth_findings, session_controls, fixes",
+    "procedure": [
+      "Revisar establecimiento/recuperación de identidad",
+      "Evaluar sesiones, expiración, revocación y MFA pertinente",
+      "Probar fallos en entorno autorizado sin exponer tokens"
+    ],
+    "decision": "Autenticación no equivale a autorización",
+    "kpi": "rutas auth verificadas",
+    "type": "Atomic"
+  },
+  {
+    "name": "authorization-security",
+    "domain": "Cybersecurity",
+    "sprint": 6,
+    "inputs": "roles, recursos, reglas, ownership, API",
+    "output": "access_matrix, negative_tests, fixes",
+    "procedure": [
+      "Construir matriz actor/recurso/acción",
+      "Verificar enforcement en servidor y por objeto",
+      "Probar acceso cruzado y denegación con cuentas de prueba autorizadas"
+    ],
+    "decision": "Ocultar botón no protege dato; denegar por defecto",
+    "kpi": "pruebas negativas de acceso aprobadas",
+    "type": "Atomic"
+  },
+  {
+    "name": "api-security",
+    "domain": "Cybersecurity",
+    "sprint": 6,
+    "inputs": "endpoints, contrato, auth, datos, límites",
+    "output": "api_risks, controls, verification",
+    "procedure": [
+      "Revisar entrada, autorización y exposición por endpoint",
+      "Evaluar límites, abuso, errores y logging seguro",
+      "Probar escenarios controlados y corregir"
+    ],
+    "decision": "No ejecutar fuzzing agresivo fuera de scope ni revelar claves",
+    "kpi": "endpoints con controles comprobados",
+    "type": "Atomic"
+  },
+  {
+    "name": "secrets-management",
+    "domain": "Cybersecurity",
+    "sprint": 6,
+    "inputs": "inventario claves sin valores, entornos, acceso",
+    "output": "secret_locations, remediation, rotation_plan",
+    "procedure": [
+      "Identificar dónde se inyectan y quién accede sin imprimir valores",
+      "Detectar exposición en cliente, repo y logs",
+      "Proponer rotación/revocación y validar configuración"
+    ],
+    "decision": "Si hay secreto expuesto, no volver a publicarlo; cambios de credenciales requieren autoridad",
+    "kpi": "exposiciones remediadas",
+    "type": "Atomic"
+  },
+  {
+    "name": "dependency-security",
+    "domain": "Cybersecurity",
+    "sprint": 6,
+    "inputs": "manifest/lockfile, advisories, versiones, alcance",
+    "output": "dependency_findings, upgrade_plan, retest",
+    "procedure": [
+      "Verificar advisories oficiales y aplicabilidad",
+      "Evaluar reachability y compatibilidad de actualización",
+      "Actualizar dentro de autorización y probar regresiones"
+    ],
+    "decision": "Hallazgo de scanner no prueba explotación; no ejecutar paquete sospechoso",
+    "kpi": "vulnerabilidades aplicables corregidas",
+    "type": "Atomic"
+  },
+  {
+    "name": "frontend-security",
+    "domain": "Cybersecurity",
+    "sprint": 6,
+    "inputs": "cliente, render, entradas, sesiones, CSP",
+    "output": "frontend_findings, fixes, tests",
+    "procedure": [
+      "Revisar DOM/render y fuentes no confiables",
+      "Evaluar XSS, contenido activo y exposición de datos",
+      "Aplicar defensas y verificar flujo afectado"
+    ],
+    "decision": "No tratar input del cliente como confiable ni auth cliente como enforcement",
+    "kpi": "rutas de entrada protegidas",
+    "type": "Atomic"
+  },
+  {
+    "name": "backend-security",
+    "domain": "Cybersecurity",
+    "sprint": 6,
+    "inputs": "servidor, datos, endpoints, roles, deployment",
+    "output": "backend_controls, findings, validation",
+    "procedure": [
+      "Revisar autorización, validación y manejo de errores",
+      "Evaluar acceso a datos, aislamiento y límites",
+      "Aplicar correcciones y pruebas negativas proporcionales"
+    ],
+    "decision": "No registrar PII/secrets ni probar fuera del sistema autorizado",
+    "kpi": "controles backend comprobados",
+    "type": "Atomic"
+  },
+  {
+    "name": "cloud-security",
+    "domain": "Cybersecurity",
+    "sprint": 6,
+    "inputs": "proveedor, recursos, permisos, redes, alcance",
+    "output": "cloud_review, misconfigurations, actions",
+    "procedure": [
+      "Inventariar recursos y límites de cuenta",
+      "Revisar identidad, exposición, cifrado y logging pertinentes",
+      "Priorizar cambios con impacto operativo y reversión"
+    ],
+    "decision": "No modificar IAM/redes críticas sin autorización ni asumir cuenta conectada",
+    "kpi": "exposición y privilegios innecesarios reducidos",
+    "type": "Atomic"
+  },
+  {
+    "name": "cicd-security",
+    "domain": "Cybersecurity",
+    "sprint": 6,
+    "inputs": "pipeline, repos, secretos, artifacts, permisos",
+    "output": "pipeline_risks, controls, verification",
+    "procedure": [
+      "Revisar identidad, permisos y origen de código",
+      "Evaluar exposición de secrets en forks/builds/logs",
+      "Proteger artifacts y revisiones, probar flujo autorizado"
+    ],
+    "decision": "No disparar workflows productivos ni merge irreversible por auditar",
+    "kpi": "controles de pipeline verificados",
+    "type": "Atomic"
+  },
+  {
+    "name": "security-testing",
+    "domain": "Cybersecurity",
+    "sprint": 6,
+    "inputs": "scope escrito, entorno, controles, límites",
+    "output": "test_plan, evidence, remediation",
+    "procedure": [
+      "Acordar targets, intensidad y límites desde autorización vigente",
+      "Ejecutar verificaciones seguras y reproducibles",
+      "Clasificar hallazgos y retestar sin datos reales innecesarios"
+    ],
+    "decision": "Detener ante scope incierto o riesgo de daño; no explorar sistemas de terceros sin autorización verificada",
+    "kpi": "hallazgos reproducibles dentro de alcance",
+    "type": "Atomic"
+  },
+  {
+    "name": "vulnerability-triage",
+    "domain": "Cybersecurity",
+    "sprint": 6,
+    "inputs": "hallazgo, evidencia, activo, exposición, controles",
+    "output": "severity, impact, likelihood, priority, remediation",
+    "procedure": [
+      "Confirmar autorización, activo, entorno, hallazgo, versión y evidencia técnica disponible.",
+      "Distinguir scanner finding, reproducción, exposición y explotación confirmada sin elevar hipótesis.",
+      "Evaluar precondiciones, impacto sobre datos/negocio, alcance y controles compensatorios.",
+      "Priorizar con severidad/contexto y urgencia justificadas; registrar incertidumbre y fuente del score.",
+      "Definir contención/remediación por responsable con recuperación y pruebas de regresión.",
+      "Retestar dentro de alcance y emitir estado verified/open/false-positive/not-tested con evidencia."
+    ],
+    "decision": "No inflar severidad ni reducirla sin evidencia; usar CVSS solo con vector justificado",
+    "kpi": "tiempo a remediación y falsos positivos",
+    "type": "Atomic"
+  },
+  {
+    "name": "incident-response",
+    "domain": "Cybersecurity",
+    "sprint": 6,
+    "inputs": "incidente, autoridad, activos, evidencias, contactos",
+    "output": "incident_timeline, containment_options, recovery_plan",
+    "procedure": [
+      "Confirmar indicios y preservar evidencia con acceso mínimo",
+      "Proponer contención proporcional y escalar al responsable",
+      "Planificar recuperación, verificación y retrospectiva"
+    ],
+    "decision": "No borrar evidencia, apagar sistemas ni enviar notificaciones sin autoridad; no prometer cumplimiento legal",
+    "kpi": "tiempo de detección/contención y recuperación",
+    "type": "Atomic"
+  },
+  {
+    "name": "privacy-engineering",
+    "domain": "Cybersecurity",
+    "sprint": 6,
+    "inputs": "datos, propósito, usuarios, flujos, territorio",
+    "output": "data_map, minimization, retention_controls",
+    "procedure": [
+      "Mapear datos personales, finalidad y destinatarios",
+      "Minimizar colección y definir retención/acceso",
+      "Verificar controles y requisitos vigentes con revisión especializada"
+    ],
+    "decision": "No declarar cumplimiento legal automático ni transferir datos sin necesidad",
+    "kpi": "datos innecesarios eliminados y controles verificados",
+    "type": "Atomic"
+  }
+]

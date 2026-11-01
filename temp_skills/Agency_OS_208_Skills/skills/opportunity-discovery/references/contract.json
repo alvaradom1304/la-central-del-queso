@@ -1,0 +1,121 @@
+{
+  "name": "opportunity-discovery",
+  "domain": "Venture Building",
+  "sprint": 3,
+  "inputs": "capacidades, problemas observados, mercados accesibles",
+  "output": "opportunity_hypotheses, discovery_questions",
+  "procedure": [
+    "Explorar tareas insatisfechas y alternativas actuales",
+    "Relacionar problemas con recursos y acceso real a clientes",
+    "Generar hipótesis falsables y seleccionar investigación inicial"
+  ],
+  "decision": "Idea atractiva no es demanda; no elegir por tendencia tecnológica solamente",
+  "kpi": "hipótesis contrastables identificadas",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://www.sba.gov/counseling/plan-your-business/",
+      "SBA; planificación"
+    ],
+    [
+      "https://robfitz.com/about/",
+      "Autor de The Mom Test; referencia de autor, no libro leído completo"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Venture Building",
+  "purpose": "Explorar tareas insatisfechas y alternativas actuales",
+  "business_outcome": "hipótesis contrastables identificadas",
+  "when_to_use": "opportunity-discovery: Venture Building. Usar para producir opportunity_hypotheses, discovery_questions a partir de capacidades, problemas observados, mercados accesibles; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "opportunity-discovery",
+    "opportunity_hypotheses, discovery_questions"
+  ],
+  "required_inputs": [
+    "capacidades",
+    " problemas observados",
+    " mercados accesibles"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://www.sba.gov/counseling/plan-your-business/",
+      "SBA; planificación"
+    ],
+    [
+      "https://robfitz.com/about/",
+      "Autor de The Mom Test; referencia de autor, no libro leído completo"
+    ]
+  ],
+  "decision_rules": [
+    "Idea atractiva no es demanda; no elegir por tendencia tecnológica solamente",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "opportunity_hypotheses",
+    " discovery_questions"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: Idea atractiva no es demanda; no elegir por tendencia tecnológica solamente",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "hipótesis contrastables identificadas"
+  ],
+  "examples": [
+    "Usa $opportunity-discovery con capacidades, problemas observados, mercados accesibles para obtener opportunity_hypotheses, discovery_questions.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

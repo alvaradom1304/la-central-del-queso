@@ -1,0 +1,116 @@
+{
+  "name": "business-strategy",
+  "domain": "Business Intelligence",
+  "sprint": 2,
+  "inputs": "diagnóstico, objetivos, recursos, evidencia, restricciones",
+  "output": "strategic_choices, tradeoffs, outcome_map",
+  "procedure": [
+    "Formular opciones y decisiones sobre dónde competir y cómo ganar",
+    "Contrastar ventaja, economía, riesgos y capacidades requeridas",
+    "Elegir prioridades y renuncias con condiciones de revisión"
+  ],
+  "decision": "Una lista de iniciativas sin elección ni tradeoffs no es estrategia",
+  "kpi": "progreso del objetivo estratégico",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://www.sba.gov/counseling/plan-your-business/",
+      "SBA; marco empresarial, contexto estadounidense, no regulación de Costa Rica"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Business Intelligence",
+  "purpose": "Formular opciones y decisiones sobre dónde competir y cómo ganar",
+  "business_outcome": "progreso del objetivo estratégico",
+  "when_to_use": "business-strategy: Business Intelligence. Usar para producir strategic_choices, tradeoffs, outcome_map a partir de diagnóstico, objetivos, recursos, evidencia, restricciones; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "business-strategy",
+    "strategic_choices, tradeoffs, outcome_map"
+  ],
+  "required_inputs": [
+    "diagnóstico",
+    " objetivos",
+    " recursos",
+    " evidencia",
+    " restricciones"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://www.sba.gov/counseling/plan-your-business/",
+      "SBA; marco empresarial, contexto estadounidense, no regulación de Costa Rica"
+    ]
+  ],
+  "decision_rules": [
+    "Una lista de iniciativas sin elección ni tradeoffs no es estrategia",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "strategic_choices",
+    " tradeoffs",
+    " outcome_map"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: Una lista de iniciativas sin elección ni tradeoffs no es estrategia",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "progreso del objetivo estratégico"
+  ],
+  "examples": [
+    "Usa $business-strategy con diagnóstico, objetivos, recursos, evidencia, restricciones para obtener strategic_choices, tradeoffs, outcome_map.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

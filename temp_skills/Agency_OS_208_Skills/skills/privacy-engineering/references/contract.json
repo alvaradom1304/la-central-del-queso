@@ -1,0 +1,116 @@
+{
+  "name": "privacy-engineering",
+  "domain": "Cybersecurity",
+  "sprint": 6,
+  "inputs": "datos, propósito, usuarios, flujos, territorio",
+  "output": "data_map, minimization, retention_controls",
+  "procedure": [
+    "Mapear datos personales, finalidad y destinatarios",
+    "Minimizar colección y definir retención/acceso",
+    "Verificar controles y requisitos vigentes con revisión especializada"
+  ],
+  "decision": "No declarar cumplimiento legal automático ni transferir datos sin necesidad",
+  "kpi": "datos innecesarios eliminados y controles verificados",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://owasp.org/projects/asvs",
+      "OWASP ASVS; verificar versión y scope"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Cybersecurity",
+  "purpose": "Mapear datos personales, finalidad y destinatarios",
+  "business_outcome": "datos innecesarios eliminados y controles verificados",
+  "when_to_use": "privacy-engineering: Cybersecurity. Usar para producir data_map, minimization, retention_controls a partir de datos, propósito, usuarios, flujos, territorio; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "privacy-engineering",
+    "data_map, minimization, retention_controls"
+  ],
+  "required_inputs": [
+    "datos",
+    " propósito",
+    " usuarios",
+    " flujos",
+    " territorio"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://owasp.org/projects/asvs",
+      "OWASP ASVS; verificar versión y scope"
+    ]
+  ],
+  "decision_rules": [
+    "No declarar cumplimiento legal automático ni transferir datos sin necesidad",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "data_map",
+    " minimization",
+    " retention_controls"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No declarar cumplimiento legal automático ni transferir datos sin necesidad",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "datos innecesarios eliminados y controles verificados"
+  ],
+  "examples": [
+    "Usa $privacy-engineering con datos, propósito, usuarios, flujos, territorio para obtener data_map, minimization, retention_controls.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "status": "PASSED",
+  "checks": [
+    "8 distinct candidate IDs and source domains",
+    "Budget/qualification/contact remain unknown or false",
+    "Source evidence mapping",
+    "Customer-research input/output schema subset with local strict-type adapter",
+    "Local document links",
+    "No personal contact fields",
+    "Commercial purpose disclosed in three drafts",
+    "Separate optional presentation consent",
+    "Eight source SHA-256 values well formed; gathered by read-only explorer"
+  ],
+  "candidates_researched": 8,
+  "contacts_sent": 0,
+  "interviews_completed": 0,
+  "qualified_opportunities": 0,
+  "field_validation": "NOT_RUN",
+  "pilot_execution": "NOT_RUN",
+  "installed_validator_modified": false
+}

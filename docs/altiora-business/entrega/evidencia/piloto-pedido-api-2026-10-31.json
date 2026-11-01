@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-10-31",
+  "root": "C:/Users/Usuario/OneDrive/Desktop/client-central-del-queso/web",
+  "method": "SHA-256 de archivos; no acredita ejecución, despliegue ni derechos",
+  "files": {
+    "app/api/orders/route.ts": "663611f3ff905fe4d1f79b24cb895f8dfd31d2f5ff50ec41292d2001c2635bb6",
+    "components/CartDrawer.tsx": "b7fd8a812639b1fbb30d0434b3204ca336549f7fc6e625b3994c6011335a0e4e",
+    "lib/orderSchema.ts": "8db7671846a2c98907426abf7aad2f833bac8f91b8256e5cc272809d59dd12a2",
+    "lib/orders.ts": "4500b2536842ec4d72f7183c66bb882001588b2b06a022b680a471a93094786e",
+    "lib/orderStore.ts": "03c0da8121962f40269a8ca745c6f6fcd6c6678ed5f45a38785e0e6642168f63",
+    "lib/orderService.ts": "05446118ef5d9b9951f667f246995ceb80e95573af045251552eae663a11b0bd",
+    "lib/__tests__/orders.test.ts": "2394f16af4f18591be5342c7781a267956ba3521c93a99498ad994c6d86765db",
+    "lib/products.ts": "d1eb401a7f871b9effb28acd52aa059d2256b2b521b872c8b06a0cb2a364c3e5",
+    "package.json": "0c1557c45c4a76c8e5af0c794d9302bd46999a969f72b144e0c2f31267b16f3c",
+    "tsconfig.test.json": "f114287ab0ce4e6106bc0e7aa86abbecea17e6ebeae793f26d305e5d0da34662",
+    ".gitignore": "5bfc1be6ed5b26fda0c1066d42c030a9ac4466d6150b10d3618922704cd92958",
+    "TESTING_SOP.md": "ddd931cf5fe9b05e6f99c326145cb1ada990cda501da574167217ce1eeed5ceb"
+  }
+}

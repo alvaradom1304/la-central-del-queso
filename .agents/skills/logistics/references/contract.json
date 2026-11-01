@@ -1,0 +1,106 @@
+{
+  "name": "logistics",
+  "domain": "Operations & Logistics",
+  "sprint": 8,
+  "inputs": "pedidos, cobertura, horarios, capacidad, restricciones",
+  "output": "fulfillment_process, service_rules, costs",
+  "procedure": [
+    "Definir preparación, despacho, entrega y excepciones",
+    "Asignar responsables, ventanas y controles pertinentes",
+    "Medir costo y cumplimiento end-to-end"
+  ],
+  "decision": "No prometer cobertura/horario sin capacidad; requisitos regulados necesitan verificación",
+  "kpi": "entrega a tiempo y costo por pedido",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Operations & Logistics",
+  "purpose": "Definir preparación, despacho, entrega y excepciones",
+  "business_outcome": "entrega a tiempo y costo por pedido",
+  "when_to_use": "logistics: Operations & Logistics. Usar para producir fulfillment_process, service_rules, costs a partir de pedidos, cobertura, horarios, capacidad, restricciones; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "logistics",
+    "fulfillment_process, service_rules, costs"
+  ],
+  "required_inputs": [
+    "pedidos",
+    " cobertura",
+    " horarios",
+    " capacidad",
+    " restricciones"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [],
+  "decision_rules": [
+    "No prometer cobertura/horario sin capacidad; requisitos regulados necesitan verificación",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "fulfillment_process",
+    " service_rules",
+    " costs"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No prometer cobertura/horario sin capacidad; requisitos regulados necesitan verificación",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "entrega a tiempo y costo por pedido"
+  ],
+  "examples": [
+    "Usa $logistics con pedidos, cobertura, horarios, capacidad, restricciones para obtener fulfillment_process, service_rules, costs.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

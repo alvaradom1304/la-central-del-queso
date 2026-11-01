@@ -1,0 +1,177 @@
+{
+  "id": "20261031T154526Z-f76ba98a",
+  "files": {
+    ".agents/skills/altiora-bibliotecario/SKILL.md": {
+      "backup": null,
+      "installed_hash": "b90c14be80a8082d43a772b45d566b0184b8ef64f215a63a0d6ac698ce37db32"
+    },
+    ".agents/skills/altiora-bibliotecario/agents/openai.yaml": {
+      "backup": null,
+      "installed_hash": "52076a15d587818c1894efff5fcb347288810641716edfe54760e28efd4a8d4f"
+    },
+    ".agents/skills/altiora-bibliotecario/references/portability.md": {
+      "backup": null,
+      "installed_hash": "14033b89ec301dd344da61ae8b91f2c0659e6165fffd0bc2ff449e2e289cc130"
+    },
+    ".agents/skills/altiora-bibliotecario/references/retrieval-evaluation.md": {
+      "backup": null,
+      "installed_hash": "e4bab2f3ad12963a6c0710d3d7d79e5421ad55004aacc9f54f061df45d7507d4"
+    },
+    ".agents/skills/altiora-bibliotecario/references/routing-evals.json": {
+      "backup": null,
+      "installed_hash": "c0c558879ed7d0d702830b8e0935d0cbb2d00f5f641bf12c50b0e03639486dbd"
+    },
+    ".agents/skills/altiora-bibliotecario/scripts/evaluate_routes.py": {
+      "backup": null,
+      "installed_hash": "2ddac665835549c632a40a56b19a8e19471db6e838c0f599152bcda8e7249856"
+    },
+    ".agents/skills/altiora-bibliotecario/scripts/library.py": {
+      "backup": null,
+      "installed_hash": "c86c12a12077500f6ba7c39a30152f3a09243732d93593672e40cae147ef0a3f"
+    },
+    ".agents/skills/altiora-bibliotecario/scripts/test_evaluate_routes.py": {
+      "backup": null,
+      "installed_hash": "f08c39ae3b66dd3ee2c0c3a1f9e8cbce6ac4aa80c94e0e6b098ebfb0b405575d"
+    },
+    ".agents/skills/altiora-bibliotecario/scripts/test_library.py": {
+      "backup": null,
+      "installed_hash": "3d5805b1b61f0cebea9e39dbd86f3d8926871d54f13be93a2a11e71d52b7d239"
+    },
+    ".claude/skills/altiora-bibliotecario/SKILL.md": {
+      "backup": null,
+      "installed_hash": "b90c14be80a8082d43a772b45d566b0184b8ef64f215a63a0d6ac698ce37db32"
+    },
+    ".claude/skills/altiora-bibliotecario/agents/openai.yaml": {
+      "backup": null,
+      "installed_hash": "52076a15d587818c1894efff5fcb347288810641716edfe54760e28efd4a8d4f"
+    },
+    ".claude/skills/altiora-bibliotecario/references/portability.md": {
+      "backup": null,
+      "installed_hash": "14033b89ec301dd344da61ae8b91f2c0659e6165fffd0bc2ff449e2e289cc130"
+    },
+    ".claude/skills/altiora-bibliotecario/references/retrieval-evaluation.md": {
+      "backup": null,
+      "installed_hash": "e4bab2f3ad12963a6c0710d3d7d79e5421ad55004aacc9f54f061df45d7507d4"
+    },
+    ".claude/skills/altiora-bibliotecario/references/routing-evals.json": {
+      "backup": null,
+      "installed_hash": "c0c558879ed7d0d702830b8e0935d0cbb2d00f5f641bf12c50b0e03639486dbd"
+    },
+    ".claude/skills/altiora-bibliotecario/scripts/evaluate_routes.py": {
+      "backup": null,
+      "installed_hash": "2ddac665835549c632a40a56b19a8e19471db6e838c0f599152bcda8e7249856"
+    },
+    ".claude/skills/altiora-bibliotecario/scripts/library.py": {
+      "backup": null,
+      "installed_hash": "c86c12a12077500f6ba7c39a30152f3a09243732d93593672e40cae147ef0a3f"
+    },
+    ".claude/skills/altiora-bibliotecario/scripts/test_evaluate_routes.py": {
+      "backup": null,
+      "installed_hash": "f08c39ae3b66dd3ee2c0c3a1f9e8cbce6ac4aa80c94e0e6b098ebfb0b405575d"
+    },
+    ".claude/skills/altiora-bibliotecario/scripts/test_library.py": {
+      "backup": null,
+      "installed_hash": "3d5805b1b61f0cebea9e39dbd86f3d8926871d54f13be93a2a11e71d52b7d239"
+    },
+    ".agents/skills/altiora-agent-orchestrator/.altiora-install.json": {
+      "backup": null,
+      "installed_hash": "c7d04560a39e2418aeadd9c77aac666eb6f6f3e442b5a11c24efb8d95b77e06b"
+    },
+    ".agents/skills/altiora-agent-orchestrator/SKILL.md": {
+      "backup": null,
+      "installed_hash": "c45ba8568d1abbee531a6dde2e1b58780e27aede91c2f817ca20ffe7078f0710"
+    },
+    ".agents/skills/altiora-agent-orchestrator/references/altiora-workspace.md": {
+      "backup": null,
+      "installed_hash": "3eb74351b4b577c25c1c8515cb49f919fbac5251388f15f1f08e5c3e05d32683"
+    },
+    ".agents/skills/altiora-agent-orchestrator/references/delegation.md": {
+      "backup": null,
+      "installed_hash": "11ce4a4156e5a66b9c763dbbc6c5d267ffee2896f69a2ba894a2516cbae61236"
+    },
+    ".claude/skills/altiora-agent-orchestrator/.altiora-install.json": {
+      "backup": null,
+      "installed_hash": "c7d04560a39e2418aeadd9c77aac666eb6f6f3e442b5a11c24efb8d95b77e06b"
+    },
+    ".claude/skills/altiora-agent-orchestrator/SKILL.md": {
+      "backup": null,
+      "installed_hash": "c45ba8568d1abbee531a6dde2e1b58780e27aede91c2f817ca20ffe7078f0710"
+    },
+    ".claude/skills/altiora-agent-orchestrator/references/altiora-workspace.md": {
+      "backup": null,
+      "installed_hash": "3eb74351b4b577c25c1c8515cb49f919fbac5251388f15f1f08e5c3e05d32683"
+    },
+    ".claude/skills/altiora-agent-orchestrator/references/delegation.md": {
+      "backup": null,
+      "installed_hash": "11ce4a4156e5a66b9c763dbbc6c5d267ffee2896f69a2ba894a2516cbae61236"
+    },
+    ".agents/skills/altiora-quality-review/.altiora-install.json": {
+      "backup": null,
+      "installed_hash": "01353c08b76bb999609480cd95ff7ad7b96357f23efd9329061bb8167039be5e"
+    },
+    ".agents/skills/altiora-quality-review/SKILL.md": {
+      "backup": null,
+      "installed_hash": "f09eb09eab00ee1ca1980fde6a2ecf4c21aa9eb330a342a20721a3671adbabbe"
+    },
+    ".agents/skills/altiora-quality-review/references/altiora-workspace.md": {
+      "backup": null,
+      "installed_hash": "3eb74351b4b577c25c1c8515cb49f919fbac5251388f15f1f08e5c3e05d32683"
+    },
+    ".claude/skills/altiora-quality-review/.altiora-install.json": {
+      "backup": null,
+      "installed_hash": "01353c08b76bb999609480cd95ff7ad7b96357f23efd9329061bb8167039be5e"
+    },
+    ".claude/skills/altiora-quality-review/SKILL.md": {
+      "backup": null,
+      "installed_hash": "f09eb09eab00ee1ca1980fde6a2ecf4c21aa9eb330a342a20721a3671adbabbe"
+    },
+    ".claude/skills/altiora-quality-review/references/altiora-workspace.md": {
+      "backup": null,
+      "installed_hash": "3eb74351b4b577c25c1c8515cb49f919fbac5251388f15f1f08e5c3e05d32683"
+    },
+    ".claude/skills/business-diagnostic/SKILL.md": {
+      "backup": null,
+      "installed_hash": "3550035d49781b7d7773fd68fcf1dd41d31852a633289844e9bb75fda1ebd4a3"
+    },
+    ".claude/skills/business-diagnostic/agents/openai.yaml": {
+      "backup": null,
+      "installed_hash": "ba82634c698eb1a21c1ea4349ea9e689a6fb9ea78ab531233273b08a664a9af0"
+    },
+    ".claude/skills/business-diagnostic/assets/icon.svg": {
+      "backup": null,
+      "installed_hash": "812ebaa22207a03c6b8154c03d13a3f393777635dbbdf4ce615a721f65985d03"
+    },
+    ".claude/skills/business-diagnostic/references/contract.json": {
+      "backup": null,
+      "installed_hash": "7d5654b15576c62324dd32ec064d021cedc6fe1d3023516227acb587313a1129"
+    },
+    ".claude/skills/business-diagnostic/references/evaluation-cases.json": {
+      "backup": null,
+      "installed_hash": "928adbd5cb3767f82ceb4dd8aedfe03f7a1bbc84f604931c29e99d5975129dd9"
+    },
+    ".claude/skills/business-diagnostic/references/input-schema.json": {
+      "backup": null,
+      "installed_hash": "b35ec2c139b1acebe952d1a2fc74c3dfd43c874c7c1e26830bba2cacf1570624"
+    },
+    ".claude/skills/business-diagnostic/references/output-schema.json": {
+      "backup": null,
+      "installed_hash": "e716a222cbd7daeac6bb9f33fddb07449b40e6d2ef0bb56c9640b83aabc43181"
+    },
+    ".claude/skills/business-diagnostic/references/protocol.md": {
+      "backup": null,
+      "installed_hash": "104b84dc1915d0e34f6bdfc18ade36bcc93b3530c9ee70868780030ef487365c"
+    },
+    ".agents/skills/company-builder-orchestrator/SKILL.md": {
+      "backup": null,
+      "installed_hash": "5ca2f0a52500e6ba85a26f90abc6e1021ad240321224b22fffef437038a1485b"
+    },
+    ".claude/skills/company-builder-orchestrator/SKILL.md": {
+      "backup": null,
+      "installed_hash": "5ca2f0a52500e6ba85a26f90abc6e1021ad240321224b22fffef437038a1485b"
+    },
+    ".altiora/installation.json": {
+      "backup": "42.bak",
+      "installed_hash": "14d1c59ebefce4558c6572f7ef7c54d3a0454e1fd1c5a69afe9536bebce1c458"
+    }
+  }
+}

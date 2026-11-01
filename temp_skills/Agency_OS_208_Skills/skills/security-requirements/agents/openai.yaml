@@ -1,0 +1,4 @@
+interface:
+  display_name: "Security Requirements"
+  short_description: "Cybersecurity: capacidad AEM OS"
+  default_prompt: "Usa $security-requirements para abordar esta tarea con evidencia y resultado verificable."

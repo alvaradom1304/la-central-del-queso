@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Altiora delegated result 1.0.0",
+  "type": "object",
+  "required": ["task_id", "status", "result", "evidence", "assumptions", "missing_inputs", "validation", "next_actions"],
+  "properties": {
+    "task_id": {"type": "string", "minLength": 1},
+    "status": {"enum": ["SUCCESS", "FAILED", "BLOCKED", "NEEDS_REVIEW"]},
+    "result": {"type": "object"},
+    "evidence": {"type": "array", "items": {"type": "object", "required": ["source", "claim", "date", "limitations"], "properties": {
+      "source": {"type": "string"}, "claim": {"type": "string"}, "date": {"type": "string"}, "limitations": {"type": "string"}
+    }}},
+    "assumptions": {"type": "array", "items": {"type": "string"}},
+    "missing_inputs": {"type": "array", "items": {"type": "string"}},
+    "validation": {"type": "array", "items": {"type": "string"}},
+    "next_actions": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

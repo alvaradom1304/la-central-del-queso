@@ -1,0 +1,131 @@
+{
+  "name": "ai-observability",
+  "domain": "AI & Automation",
+  "sprint": 7,
+  "inputs": "sistema, eventos, límites de privacidad, KPIs",
+  "output": "telemetry_plan, alerts, diagnostics",
+  "procedure": [
+    "Definir trazas, métricas y correlación por ejecución",
+    "Minimizar contenido sensible y retención",
+    "Diseñar alertas de costo, latencia, fallos y drift"
+  ],
+  "decision": "No almacenar prompts con datos privados por defecto",
+  "kpi": "detección y explicación de fallos",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://www.nist.gov/itl/ai-risk-management-framework",
+      "NIST AI RMF; marco, no certificación"
+    ],
+    [
+      "https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro",
+      "MCP; versión observada en esta auditoría, revalidar"
+    ],
+    [
+      "https://docs.n8n.io/",
+      "n8n; docs"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — AI & Automation",
+  "purpose": "Definir trazas, métricas y correlación por ejecución",
+  "business_outcome": "detección y explicación de fallos",
+  "when_to_use": "ai-observability: AI & Automation. Usar para producir telemetry_plan, alerts, diagnostics a partir de sistema, eventos, límites de privacidad, KPIs; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "ai-observability",
+    "telemetry_plan, alerts, diagnostics"
+  ],
+  "required_inputs": [
+    "sistema",
+    " eventos",
+    " límites de privacidad",
+    " KPIs"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://www.nist.gov/itl/ai-risk-management-framework",
+      "NIST AI RMF; marco, no certificación"
+    ],
+    [
+      "https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro",
+      "MCP; versión observada en esta auditoría, revalidar"
+    ],
+    [
+      "https://docs.n8n.io/",
+      "n8n; docs"
+    ]
+  ],
+  "decision_rules": [
+    "No almacenar prompts con datos privados por defecto",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "telemetry_plan",
+    " alerts",
+    " diagnostics"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No almacenar prompts con datos privados por defecto",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "detección y explicación de fallos"
+  ],
+  "examples": [
+    "Usa $ai-observability con sistema, eventos, límites de privacidad, KPIs para obtener telemetry_plan, alerts, diagnostics.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

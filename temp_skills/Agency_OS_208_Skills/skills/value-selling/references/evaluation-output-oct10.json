@@ -1,0 +1,192 @@
+{
+  "task_id": "commercial-quality-oct10",
+  "version": "0.2.0",
+  "status": "NEEDS_REVIEW",
+  "evidence": [
+    {
+      "id": "E1",
+      "type": "FACT",
+      "source": "Brief sintético recibido",
+      "observed_at": "2026-10-10",
+      "claim": "Facturado 100000 CRC; cobrado 40000; pendiente 60000.",
+      "limits": [
+        "Dato del ejercicio; sin verificación externa",
+        "Periodo sin duración ni corte especificados"
+      ]
+    },
+    {
+      "id": "E2",
+      "type": "FACT",
+      "source": "Brief sintético recibido",
+      "observed_at": "2026-10-10",
+      "claim": "Costos variables 65000 CRC; implementación 20000; licencias/soporte 10000.",
+      "limits": [
+        "Dato del ejercicio; sin verificación externa",
+        "Periodo sin duración ni corte especificados"
+      ]
+    },
+    {
+      "id": "E3",
+      "type": "FACT",
+      "source": "Brief sintético recibido",
+      "observed_at": "2026-10-10",
+      "claim": "Inventario físico registrado 30 kg; 12 kg reservados; valoración y cuentas por pagar faltantes.",
+      "limits": [
+        "Dato del ejercicio; sin verificación externa",
+        "Periodo sin duración ni corte especificados"
+      ]
+    },
+    {
+      "id": "E4",
+      "type": "FACT",
+      "source": "Brief sintético recibido",
+      "observed_at": "2026-10-10",
+      "claim": "Propuesta ROI 500%, diez horas y costo salarial repetidos; nómina no disminuye; formatos grandes universales sin consumo/vida útil.",
+      "limits": [
+        "Dato del ejercicio; sin verificación externa",
+        "Periodo sin duración ni corte especificados"
+      ]
+    },
+    {
+      "id": "S1",
+      "type": "EVIDENCE",
+      "source": "https://www.ifrs.org/issued-standards/list-of-standards/ias-7-statement-of-cash-flows/",
+      "observed_at": "2026-10-10",
+      "claim": "IAS 7 diferencia cobros/pagos y ajustes del resultado por partidas sin efectivo y devengos.",
+      "limits": [
+        "Apoyo conceptual; no determina marco contable aplicable ni tratamiento local."
+      ]
+    }
+  ],
+  "skill": "value-selling",
+  "result": {
+    "value_case": {
+      "summary": "500% no sustentado; modelo incremental pendiente.",
+      "data": {
+        "currency": "CRC",
+        "contribution_arithmetic": 35000,
+        "contribution_pct": 35,
+        "known_solution_cost": 30000,
+        "arithmetic_remainder": 5000,
+        "ROI_model": "(B − C)/C × 100; B incremental frente a alternativa, C total relevante",
+        "illustrative_only_ROI_pct": 16.6666666667,
+        "illustration_conditions": "Ventas y costos 100% incrementales, C=30000 completo, ningún otro beneficio/costo"
+      },
+      "evidence_ids": [
+        "E1",
+        "E2",
+        "E4"
+      ],
+      "limitations": [
+        "35000 no atribuibles sin baseline",
+        "5000 no utilidad neta ni caja",
+        "16.67% es escenario, no retorno observado ni garantía"
+      ]
+    },
+    "assumptions": {
+      "summary": "No monetizar dos veces las mismas diez horas.",
+      "data": {
+        "hours_claimed": 10,
+        "confirmed_payroll_cash_saving": "No confirmado; nómina sin reducción",
+        "alternatives": [
+          "Mantener situación actual",
+          "Solución menor suficiente",
+          "Propuesta con costos completos"
+        ]
+      },
+      "evidence_ids": [
+        "E4"
+      ],
+      "limitations": [
+        "Horas sin medición",
+        "Capacidad no es automáticamente efectivo evitado",
+        "Venta adicional por reasignación requiere contribución y atribución"
+      ]
+    },
+    "validation": {
+      "summary": "Criterios documentales cumplidos; aceptación comprador pendiente.",
+      "data": {
+        "required": [
+          "Baseline comparable",
+          "Atribución",
+          "Horizonte y costo total",
+          "No doble conteo",
+          "Sensibilidad y aprobación comprador"
+        ],
+        "proposal_original_defects": [
+          "Ingreso usado como beneficio",
+          "Costo incompleto",
+          "Doble conteo de horas/costo salarial"
+        ]
+      },
+      "evidence_ids": [
+        "E1",
+        "E2",
+        "E4"
+      ],
+      "limitations": [
+        "Sin aceptación comercial ni resultados medidos"
+      ]
+    }
+  },
+  "assumptions": [
+    "Igual periodo y ventas/costos comparables para 35000",
+    "Escenario 16.67% supone baseline cero y costo total completo"
+  ],
+  "missing_inputs": [
+    "Baseline y alternativa actual",
+    "Drivers y atribución",
+    "Adopción y tiempo a valor",
+    "Comprador y criterios",
+    "Horizonte y otros costos",
+    "Medición de horas y gasto contrafactual"
+  ],
+  "validation": [
+    {
+      "criterion": "Cálculos 35000, 30000 y 5000 y rechazo ROI ficticio",
+      "performed": true,
+      "outcome": "PASS",
+      "evidence_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ]
+    },
+    {
+      "criterion": "No doble conteo ni ahorro salarial inventado",
+      "performed": true,
+      "outcome": "PASS",
+      "evidence_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ]
+    },
+    {
+      "criterion": "Caso incremental confirmado por comprador",
+      "performed": false,
+      "outcome": "NOT_RUN",
+      "evidence_ids": [
+        "E4"
+      ]
+    },
+    {
+      "criterion": "Schema Draft 2020-12 validado con jsonschema y aritmética verificada localmente",
+      "performed": true,
+      "outcome": "PASS",
+      "evidence_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ]
+    }
+  ],
+  "next_actions": [
+    "Ventas propuestas: retirar 500% y presentar modelo condicional",
+    "Comprador/finanzas propuestos: validar baseline, costos y criterios",
+    "Principal: revisión independiente pendiente"
+  ]
+}

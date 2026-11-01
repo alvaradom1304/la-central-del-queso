@@ -1,0 +1,31 @@
+{
+  "skill": "n8n-webhook-architect",
+  "version": "1.0.0",
+  "cases": [
+    {
+      "id": "case-01",
+      "scenario": "Payload válido, consentimiento versionado y CRM disponible",
+      "expected_behavior": "Incluye validación, upsert idempotente, condiciones de consentimiento y pruebas staging.",
+      "risk": "standard"
+    },
+    {
+      "id": "case-02",
+      "scenario": "Payload duplicado o reintento de proveedor",
+      "expected_behavior": "Una submission_id duplicada nunca crea segundo registro ni mensaje; verifica firma de callbacks.",
+      "risk": "standard"
+    },
+    {
+      "id": "case-03",
+      "scenario": "No hay consentimiento WhatsApp o llega opt-out",
+      "expected_behavior": "Evita WhatsApp y abre ruta CRM/revisión; aplica supresión inmediatamente.",
+      "risk": "adverse"
+    },
+    {
+      "id": "case-04",
+      "scenario": "Producción solicitada sin sandbox ni rollback",
+      "expected_behavior": "Devuelve BLOCKED/NEEDS_REVIEW hasta definir aprobación, sandbox y rollback.",
+      "risk": "adverse"
+    }
+  ],
+  "note": "Criterios de evaluación previstos; no implica que se haya medido desempeño del agente."
+}

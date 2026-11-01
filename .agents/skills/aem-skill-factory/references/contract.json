@@ -1,0 +1,127 @@
+{
+  "name": "aem-skill-factory",
+  "domain": "Orchestration",
+  "sprint": 1,
+  "inputs": "capacidad repetible, ejemplos, alcance, fuentes, skills existentes",
+  "output": "capability_contract, skill_package, evaluation",
+  "procedure": [
+    "Auditar capacidades/alias y decidir REUSE/IMPROVE/CREATE/DEFER con aporte incremental.",
+    "Precisar responsabilidad, contexto, salida, métrica y baseline real o UNKNOWN.",
+    "Implementar procedimiento y contrato técnicos con límites, alternativas, estados adversos y recuperación.",
+    "Depurar fuentes y diseñar casos propios; ejecutar validación estructural y casos independientes pertinentes.",
+    "Revisar criterios de primera entrega, corregir defectos sustantivos y preservar evidencia/versiones.",
+    "Guardar y verificar persistencia; registrar aprendizaje y decidir KEEP/REVISE/REVERT con regresiones."
+  ],
+  "decision": "No generar variantes vacías ni marcar VALIDATED por YAML; preservar originales y verificar guardado",
+  "kpi": "reutilización y éxito en casos independientes",
+  "type": "Composite",
+  "dependencies": [
+    "aem-skill-system"
+  ],
+  "sources": [],
+  "version": "0.1.1",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Orchestration",
+  "purpose": "Auditar alias/solapamiento y separar skill de knowledge/context/workflow",
+  "business_outcome": "reutilización y éxito en casos independientes",
+  "when_to_use": "aem-skill-factory: Orchestration. Usar para producir capability_contract, skill_package, evaluation a partir de capacidad repetible, ejemplos, alcance, fuentes, skills existentes; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "aem-skill-factory",
+    "capability_contract, skill_package, evaluation"
+  ],
+  "required_inputs": [
+    "capacidad repetible",
+    " ejemplos",
+    " alcance",
+    " fuentes",
+    " skills existentes"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [],
+  "decision_rules": [
+    "No generar variantes vacías ni marcar VALIDATED por YAML; preservar originales y verificar guardado",
+    "aplicar protocolo común",
+    "Buscar por nombre, alias y responsabilidad antes de crear; distinguir definición existente de guardado pendiente.",
+    "Toda capacidad nueva debe declarar problema repetible, aporte incremental, métrica y plan de evaluación; baseline desconocido no equivale a cero.",
+    "Registrar aprendizaje verificado, evaluar cambio y regresiones, versionar y conservar opción de reversión.",
+    "No declarar biblioteca de alto nivel por conteo o validación estructural.",
+    "Mejora continua afina calidad inicial completa; no posterga requisitos esenciales."
+  ],
+  "outputs": [
+    "capability_contract",
+    " skill_package",
+    " evaluation"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo",
+    "primera entrega técnicamente completa",
+    "casos adversos propios",
+    "fuentes específicas y estado de consulta declarado",
+    "contratos operativos y salida verificable"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No generar variantes vacías ni marcar VALIDATED por YAML; preservar originales y verificar guardado",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "reutilización y éxito en casos independientes"
+  ],
+  "examples": [
+    "Usa $aem-skill-factory con capacidad repetible, ejemplos, alcance, fuentes, skills existentes para obtener capability_contract, skill_package, evaluation.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [
+    "aem-skill-system"
+  ],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    },
+    {
+      "version": "0.1.1",
+      "date": "2026-10-10",
+      "change": "Creación autónoma de capacidades faltantes dentro del alcance autorizado, aporte verificable y ciclo de mejora continua con regresiones y versionado."
+    }
+  ]
+}

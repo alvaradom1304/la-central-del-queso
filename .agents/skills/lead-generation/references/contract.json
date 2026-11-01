@@ -1,0 +1,124 @@
+{
+  "name": "lead-generation",
+  "domain": "Marketing Intelligence",
+  "sprint": 4,
+  "inputs": "ICP, propuesta, canal, calificación, capacidad",
+  "output": "lead_system, capture_fields, handoff",
+  "procedure": [
+    "Elegir oferta de captación relacionada con necesidad",
+    "Minimizar campos y explicar uso de datos",
+    "Definir calificación, responsable y SLA de seguimiento"
+  ],
+  "decision": "Lead no es venta; evitar capturar datos innecesarios",
+  "kpi": "leads aceptados por ventas",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+      "Google Search Central; SEO"
+    ],
+    [
+      "https://www.influenceatwork.com/7-principles-of-persuasion/",
+      "Cialdini; aplicar críticamente, no garantía"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Marketing Intelligence",
+  "purpose": "Elegir oferta de captación relacionada con necesidad",
+  "business_outcome": "leads aceptados por ventas",
+  "when_to_use": "lead-generation: Marketing Intelligence. Usar para producir lead_system, capture_fields, handoff a partir de ICP, propuesta, canal, calificación, capacidad; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "lead-generation",
+    "lead_system, capture_fields, handoff"
+  ],
+  "required_inputs": [
+    "ICP",
+    " propuesta",
+    " canal",
+    " calificación",
+    " capacidad"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+      "Google Search Central; SEO"
+    ],
+    [
+      "https://www.influenceatwork.com/7-principles-of-persuasion/",
+      "Cialdini; aplicar críticamente, no garantía"
+    ]
+  ],
+  "decision_rules": [
+    "Lead no es venta; evitar capturar datos innecesarios",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "lead_system",
+    " capture_fields",
+    " handoff"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: Lead no es venta; evitar capturar datos innecesarios",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "leads aceptados por ventas"
+  ],
+  "examples": [
+    "Usa $lead-generation con ICP, propuesta, canal, calificación, capacidad para obtener lead_system, capture_fields, handoff.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

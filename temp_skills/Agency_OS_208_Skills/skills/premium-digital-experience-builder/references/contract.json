@@ -1,0 +1,121 @@
+{
+  "name": "premium-digital-experience-builder",
+  "domain": "Orchestration",
+  "sprint": 9,
+  "inputs": "estrategia, UX, marca, repo/acceso, objetivos, recursos",
+  "output": "experience_plan, verified_increment, qa",
+  "procedure": [
+    "Coordinar web-strategy, UX y diseño según fase actual",
+    "Seleccionar motion/3D solo con valor y presupuesto",
+    "Integrar desarrollo, seguridad, performance y QA por incrementos"
+  ],
+  "decision": "No duplicar immersive-commerce; usarlo si hay pedidos; no publicar producción sin autorización",
+  "kpi": "éxito de tareas con calidad/rendimiento",
+  "type": "Composite",
+  "dependencies": [
+    "web-strategy",
+    "ux-research",
+    "ui-direction",
+    "secure-development",
+    "web-performance",
+    "web-quality-assurance"
+  ],
+  "sources": [],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Orchestration",
+  "purpose": "Coordinar web-strategy, UX y diseño según fase actual",
+  "business_outcome": "éxito de tareas con calidad/rendimiento",
+  "when_to_use": "premium-digital-experience-builder: Orchestration. Usar para producir experience_plan, verified_increment, qa a partir de estrategia, UX, marca, repo/acceso, objetivos, recursos; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "premium-digital-experience-builder",
+    "experience_plan, verified_increment, qa"
+  ],
+  "required_inputs": [
+    "estrategia",
+    " UX",
+    " marca",
+    " repo/acceso",
+    " objetivos",
+    " recursos"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [],
+  "decision_rules": [
+    "No duplicar immersive-commerce; usarlo si hay pedidos; no publicar producción sin autorización",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "experience_plan",
+    " verified_increment",
+    " qa"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No duplicar immersive-commerce; usarlo si hay pedidos; no publicar producción sin autorización",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "éxito de tareas con calidad/rendimiento"
+  ],
+  "examples": [
+    "Usa $premium-digital-experience-builder con estrategia, UX, marca, repo/acceso, objetivos, recursos para obtener experience_plan, verified_increment, qa.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [
+    "web-strategy",
+    "ux-research",
+    "ui-direction",
+    "secure-development",
+    "web-performance",
+    "web-quality-assurance"
+  ],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

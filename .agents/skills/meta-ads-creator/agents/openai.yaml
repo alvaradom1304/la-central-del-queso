@@ -1,0 +1,3 @@
+display_name: "Meta Ads Creator"
+short_description: "Crear variantes de anuncios Meta con guion y concepto visual sustentados y una prueba medible."
+default_prompt: "Usa $meta-ads-creator y sigue su SOP completo. Primero valida entradas, evidencia y aprobaciones; entrega el sobre de salida definido en las referencias."

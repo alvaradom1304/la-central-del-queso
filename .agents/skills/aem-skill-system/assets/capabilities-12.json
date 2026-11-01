@@ -1,0 +1,227 @@
+[
+  {
+    "name": "growth-strategy",
+    "domain": "Growth & Scaling",
+    "sprint": 8,
+    "inputs": "demanda, economía, capacidad, funnel, objetivos",
+    "output": "growth_levers, priorities, safeguards",
+    "procedure": [
+      "Identificar restricción de crecimiento real",
+      "Comparar adquisición, conversión, retención y oferta",
+      "Definir experimentos con límites de margen y servicio"
+    ],
+    "decision": "No recomendar crecer un sistema roto",
+    "kpi": "crecimiento rentable y servicio",
+    "type": "Atomic"
+  },
+  {
+    "name": "revenue-growth",
+    "domain": "Growth & Scaling",
+    "sprint": 8,
+    "inputs": "ingresos por drivers, segmentos, costos, capacidad",
+    "output": "revenue_bridge, levers, experiments",
+    "procedure": [
+      "Descomponer ingresos en clientes, frecuencia y ticket",
+      "Evaluar palancas con margen/caja/capacidad",
+      "Priorizar pruebas y medir contribución incremental"
+    ],
+    "decision": "Ingreso mayor no prueba rentabilidad ni escalabilidad",
+    "kpi": "ingreso y contribución incrementales",
+    "type": "Atomic"
+  },
+  {
+    "name": "market-penetration",
+    "domain": "Growth & Scaling",
+    "sprint": 8,
+    "inputs": "mercado actual, cuota/evidencia, canales, capacidad",
+    "output": "penetration_options, tests, risks",
+    "procedure": [
+      "Identificar demanda atendible dentro de mercado vigente",
+      "Evaluar distribución, frecuencia y conversión",
+      "Probar palanca y revisar canibalización"
+    ],
+    "decision": "No inventar cuota ni saturación del mercado",
+    "kpi": "ventas rentables en mercado actual",
+    "type": "Atomic"
+  },
+  {
+    "name": "market-development",
+    "domain": "Growth & Scaling",
+    "sprint": 8,
+    "inputs": "oferta vigente, mercados nuevos, acceso, recursos",
+    "output": "market_options, validation, entry_plan",
+    "procedure": [
+      "Comparar mercados por necesidad y capacidad de atender",
+      "Validar demanda/canal y costos locales",
+      "Diseñar entrada progresiva con condiciones de salida"
+    ],
+    "decision": "No transferir encaje actual sin prueba local",
+    "kpi": "demanda y contribución en nuevo mercado",
+    "type": "Atomic"
+  },
+  {
+    "name": "product-expansion",
+    "domain": "Growth & Scaling",
+    "sprint": 8,
+    "inputs": "clientes, necesidades, portfolio, economía",
+    "output": "product_options, validation, dependencies",
+    "procedure": [
+      "Explorar necesidades complementarias verificables",
+      "Comparar costo, margen y canibalización",
+      "Probar oferta mínima antes de ampliar portafolio"
+    ],
+    "decision": "No añadir productos por moda ni ignorar complejidad",
+    "kpi": "contribución incremental neta",
+    "type": "Atomic"
+  },
+  {
+    "name": "channel-expansion",
+    "domain": "Growth & Scaling",
+    "sprint": 8,
+    "inputs": "canal actual, clientes, costos, inventario",
+    "output": "channel_options, pilot, conflict_controls",
+    "procedure": [
+      "Definir nuevo canal y tarea que resuelve",
+      "Modelar economía, operación y conflicto entre canales",
+      "Probar con medición y capacidad acotadas"
+    ],
+    "decision": "No duplicar inventario vendible sin coordinación",
+    "kpi": "contribución y servicio por canal",
+    "type": "Atomic"
+  },
+  {
+    "name": "customer-acquisition",
+    "domain": "Growth & Scaling",
+    "sprint": 8,
+    "inputs": "ICP, propuesta, canales, cohortes, costos",
+    "output": "acquisition_tests, cac, learning",
+    "procedure": [
+      "Seleccionar mecanismo de captación por segmento",
+      "Medir costo completo y clientes reales",
+      "Comparar cohortes y decidir según retención/margen"
+    ],
+    "decision": "Lead no es cliente; no usar CAC incompleto como prueba de viabilidad",
+    "kpi": "CAC y recuperación por cohorte",
+    "type": "Atomic"
+  },
+  {
+    "name": "ltv-optimization",
+    "domain": "Growth & Scaling",
+    "sprint": 8,
+    "inputs": "cohortes, margen, retención, horizonte, costo",
+    "output": "ltv_model, levers, uncertainty",
+    "procedure": [
+      "Definir LTV en contribución y horizonte",
+      "Calcular por cohortes y declarar censura/supuestos",
+      "Probar palancas sin dañar experiencia o margen"
+    ],
+    "decision": "No usar ingreso vitalicio infinito ni fórmula simple sin estabilidad",
+    "kpi": "LTV de contribución y retención",
+    "type": "Atomic"
+  },
+  {
+    "name": "pricing-optimization",
+    "domain": "Growth & Scaling",
+    "sprint": 8,
+    "inputs": "precio vigente, elasticidad/evidencia, costos, segmentos",
+    "output": "price_tests, safeguards, outcome",
+    "procedure": [
+      "Analizar respuesta y mezcla por precio",
+      "Diseñar prueba transparente con guardrails de margen",
+      "Evaluar churn, conversión y contribución"
+    ],
+    "decision": "No asumir elasticidad ni personalizar abusivamente",
+    "kpi": "contribución por cliente expuesto",
+    "type": "Atomic"
+  },
+  {
+    "name": "b2b-expansion",
+    "domain": "Growth & Scaling",
+    "sprint": 8,
+    "inputs": "oferta, cuentas objetivo, capacidad, términos",
+    "output": "b2b_pilot, qualification, economics",
+    "procedure": [
+      "Identificar tareas y compradores organizacionales",
+      "Adaptar volumen, servicio, facturación y venta consultiva",
+      "Probar cuentas piloto antes de comprometer escala"
+    ],
+    "decision": "No trasladar margen B2C sin costo de servir/crédito",
+    "kpi": "cuentas activas y contribución B2B",
+    "type": "Atomic"
+  },
+  {
+    "name": "geographic-expansion",
+    "domain": "Growth & Scaling",
+    "sprint": 8,
+    "inputs": "zonas, demanda, rutas, servicio, costos",
+    "output": "zone_options, pilot, viability",
+    "procedure": [
+      "Comparar demanda y costo de atender por zona",
+      "Validar cobertura y capacidad operativa",
+      "Pilotear con criterios de margen/servicio"
+    ],
+    "decision": "No prometer express donde no hay ruta viable",
+    "kpi": "contribución y cumplimiento por zona",
+    "type": "Atomic"
+  },
+  {
+    "name": "international-expansion",
+    "domain": "Growth & Scaling",
+    "sprint": 8,
+    "inputs": "mercado destino, producto, operación, recursos",
+    "output": "country_research, requirements, staged_plan",
+    "procedure": [
+      "Verificar demanda, canales y requisitos oficiales del destino",
+      "Modelar logística, moneda, impuestos y restricciones como datos/supuestos",
+      "Diseñar validación y revisión legal/técnica antes de comprometer"
+    ],
+    "decision": "No afirmar exportación habilitada ni resolver requisitos regulados con marketing",
+    "kpi": "viabilidad verificada por mercado",
+    "type": "Atomic"
+  },
+  {
+    "name": "operational-scalability",
+    "domain": "Growth & Scaling",
+    "sprint": 8,
+    "inputs": "demanda, capacidad, procesos, costo unitario, calidad",
+    "output": "scale_constraints, systems, milestones",
+    "procedure": [
+      "Evaluar cómo cambia costo y calidad al crecer volumen",
+      "Identificar dependencia manual y cuello de botella",
+      "Diseñar estandarización y pruebas de carga operativa"
+    ],
+    "decision": "Automatización no garantiza escala si proceso/datos fallan",
+    "kpi": "costo unitario y calidad al aumentar volumen",
+    "type": "Atomic"
+  },
+  {
+    "name": "organizational-scalability",
+    "domain": "Growth & Scaling",
+    "sprint": 8,
+    "inputs": "roles, decisiones, carga, habilidades, sistema",
+    "output": "role_design, delegation, governance",
+    "procedure": [
+      "Identificar dependencia del fundador y decisiones repetidas",
+      "Definir roles, autonomía y responsabilidad",
+      "Probar delegación con calidad y feedback"
+    ],
+    "decision": "No proponer contratar sin capacidad financiera ni confundir organigrama con operación",
+    "kpi": "autonomía con calidad y tiempos",
+    "type": "Atomic"
+  },
+  {
+    "name": "scaling-readiness",
+    "domain": "Growth & Scaling",
+    "sprint": 8,
+    "inputs": "demanda validada, economía, caja, calidad, capacidad",
+    "output": "readiness_dimensions, blockers, staged_scale",
+    "procedure": [
+      "Evaluar demanda, margen/caja, operación, personas, datos y seguridad",
+      "Revisar evidencia de desempeño repetible",
+      "Recomendar escala gradual, revisar o detener con condiciones"
+    ],
+    "decision": "Crecimiento es más actividad; escala sostiene calidad/economía; desconocidos críticos impiden GO",
+    "kpi": "capacidad repetible y restricciones abiertas",
+    "type": "Atomic"
+  }
+]

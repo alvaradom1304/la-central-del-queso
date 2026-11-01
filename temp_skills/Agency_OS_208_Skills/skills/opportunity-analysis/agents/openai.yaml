@@ -1,0 +1,4 @@
+interface:
+  display_name: "Opportunity Analysis"
+  short_description: "Business Intelligence: capacidad AEM OS"
+  default_prompt: "Usa $opportunity-analysis para abordar esta tarea con evidencia y resultado verificable."

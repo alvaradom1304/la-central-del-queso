@@ -1,0 +1,170 @@
+{
+  "name": "mom-test-interviewing",
+  "domain": "Sales Intelligence",
+  "sprint": 4,
+  "inputs": "hipótesis, acceso a usuarios, guía y consentimiento",
+  "output": "interview_questions, past_behavior, commitments",
+  "procedure": [
+    "Preguntar por episodios pasados y soluciones actuales",
+    "Escuchar hechos y costos antes de explicar idea",
+    "Registrar compromiso observable y evidencia que contradice hipótesis"
+  ],
+  "decision": "Síntesis original inspirada en Rob Fitzpatrick; no copiar libro ni tomar cumplidos por demanda",
+  "kpi": "evidencia conductual por entrevista",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://www.huthwaiteinternational.com/spin-methodology",
+      "SPIN; fuente original"
+    ],
+    [
+      "https://gapsellingonlinetraining.com/methodology-training/",
+      "Keenan/Gap Selling; temario oficial"
+    ],
+    [
+      "https://meddicc.com/meddpicc-sales-methodology-and-process",
+      "MEDDICC/MEDDPICC; proveedor metodológico"
+    ],
+    [
+      "https://challengerinc.com/what-is-challenger-sales-methodology/",
+      "Challenger; referencia del proveedor"
+    ],
+    [
+      "https://www.blackswanltd.com/newsletter/bridging-the-gap-using-tactical-empathy-to-neutralize-power-in-negotiations",
+      "Black Swan; perspectiva de empatía táctica"
+    ],
+    [
+      "https://jebblount.com/product/fanatical-prospecting/",
+      "Jeb Blount; referencia del autor"
+    ],
+    [
+      "https://www.influenceatwork.com/7-principles-of-persuasion/",
+      "Cialdini; perspectiva del autor"
+    ],
+    [
+      "https://robfitz.com/about/",
+      "Fitzpatrick; referencia del autor"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Sales Intelligence",
+  "purpose": "Preguntar por episodios pasados y soluciones actuales",
+  "business_outcome": "evidencia conductual por entrevista",
+  "when_to_use": "mom-test-interviewing: Sales Intelligence. Usar para producir interview_questions, past_behavior, commitments a partir de hipótesis, acceso a usuarios, guía y consentimiento; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "mom-test-interviewing",
+    "interview_questions, past_behavior, commitments"
+  ],
+  "required_inputs": [
+    "hipótesis",
+    " acceso a usuarios",
+    " guía y consentimiento"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://www.huthwaiteinternational.com/spin-methodology",
+      "SPIN; fuente original"
+    ],
+    [
+      "https://gapsellingonlinetraining.com/methodology-training/",
+      "Keenan/Gap Selling; temario oficial"
+    ],
+    [
+      "https://meddicc.com/meddpicc-sales-methodology-and-process",
+      "MEDDICC/MEDDPICC; proveedor metodológico"
+    ],
+    [
+      "https://challengerinc.com/what-is-challenger-sales-methodology/",
+      "Challenger; referencia del proveedor"
+    ],
+    [
+      "https://www.blackswanltd.com/newsletter/bridging-the-gap-using-tactical-empathy-to-neutralize-power-in-negotiations",
+      "Black Swan; perspectiva de empatía táctica"
+    ],
+    [
+      "https://jebblount.com/product/fanatical-prospecting/",
+      "Jeb Blount; referencia del autor"
+    ],
+    [
+      "https://www.influenceatwork.com/7-principles-of-persuasion/",
+      "Cialdini; perspectiva del autor"
+    ],
+    [
+      "https://robfitz.com/about/",
+      "Fitzpatrick; referencia del autor"
+    ]
+  ],
+  "decision_rules": [
+    "Síntesis original inspirada en Rob Fitzpatrick; no copiar libro ni tomar cumplidos por demanda",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "interview_questions",
+    " past_behavior",
+    " commitments"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: Síntesis original inspirada en Rob Fitzpatrick; no copiar libro ni tomar cumplidos por demanda",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "evidencia conductual por entrevista"
+  ],
+  "examples": [
+    "Usa $mom-test-interviewing con hipótesis, acceso a usuarios, guía y consentimiento para obtener interview_questions, past_behavior, commitments.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

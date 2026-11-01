@@ -1,0 +1,14 @@
+interface:
+  display_name: Brand Guidelines
+  short_description: 'Brand Intelligence: capacidad AEM OS'
+  default_prompt: Usa $brand-guidelines para abordar esta tarea con evidencia y resultado
+    verificable.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

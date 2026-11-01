@@ -1,0 +1,106 @@
+{
+  "name": "ltv-optimization",
+  "domain": "Growth & Scaling",
+  "sprint": 8,
+  "inputs": "cohortes, margen, retención, horizonte, costo",
+  "output": "ltv_model, levers, uncertainty",
+  "procedure": [
+    "Definir LTV en contribución y horizonte",
+    "Calcular por cohortes y declarar censura/supuestos",
+    "Probar palancas sin dañar experiencia o margen"
+  ],
+  "decision": "No usar ingreso vitalicio infinito ni fórmula simple sin estabilidad",
+  "kpi": "LTV de contribución y retención",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Growth & Scaling",
+  "purpose": "Definir LTV en contribución y horizonte",
+  "business_outcome": "LTV de contribución y retención",
+  "when_to_use": "ltv-optimization: Growth & Scaling. Usar para producir ltv_model, levers, uncertainty a partir de cohortes, margen, retención, horizonte, costo; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "ltv-optimization",
+    "ltv_model, levers, uncertainty"
+  ],
+  "required_inputs": [
+    "cohortes",
+    " margen",
+    " retención",
+    " horizonte",
+    " costo"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [],
+  "decision_rules": [
+    "No usar ingreso vitalicio infinito ni fórmula simple sin estabilidad",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "ltv_model",
+    " levers",
+    " uncertainty"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No usar ingreso vitalicio infinito ni fórmula simple sin estabilidad",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "LTV de contribución y retención"
+  ],
+  "examples": [
+    "Usa $ltv-optimization con cohortes, margen, retención, horizonte, costo para obtener ltv_model, levers, uncertainty.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

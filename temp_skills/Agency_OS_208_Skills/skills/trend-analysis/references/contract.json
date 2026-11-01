@@ -1,0 +1,115 @@
+{
+  "name": "trend-analysis",
+  "domain": "Business Intelligence",
+  "sprint": 2,
+  "inputs": "fenómeno, series comparables, periodo, región",
+  "output": "trend_assessment, drivers, uncertainty",
+  "procedure": [
+    "Normalizar indicadores y horizonte temporal",
+    "Separar ruido, estacionalidad, difusión y cambio sostenido",
+    "Evaluar mecanismos y escenarios con señales para revisar"
+  ],
+  "decision": "Una noticia o viralidad aislada no prueba tendencia duradera",
+  "kpi": "estabilidad de señal entre periodos",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://www.sba.gov/counseling/plan-your-business/",
+      "SBA; marco empresarial, contexto estadounidense, no regulación de Costa Rica"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Business Intelligence",
+  "purpose": "Normalizar indicadores y horizonte temporal",
+  "business_outcome": "estabilidad de señal entre periodos",
+  "when_to_use": "trend-analysis: Business Intelligence. Usar para producir trend_assessment, drivers, uncertainty a partir de fenómeno, series comparables, periodo, región; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "trend-analysis",
+    "trend_assessment, drivers, uncertainty"
+  ],
+  "required_inputs": [
+    "fenómeno",
+    " series comparables",
+    " periodo",
+    " región"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://www.sba.gov/counseling/plan-your-business/",
+      "SBA; marco empresarial, contexto estadounidense, no regulación de Costa Rica"
+    ]
+  ],
+  "decision_rules": [
+    "Una noticia o viralidad aislada no prueba tendencia duradera",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "trend_assessment",
+    " drivers",
+    " uncertainty"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: Una noticia o viralidad aislada no prueba tendencia duradera",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "estabilidad de señal entre periodos"
+  ],
+  "examples": [
+    "Usa $trend-analysis con fenómeno, series comparables, periodo, región para obtener trend_assessment, drivers, uncertainty.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

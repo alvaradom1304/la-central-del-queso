@@ -1,0 +1,115 @@
+{
+  "name": "profitability-analysis",
+  "domain": "Financial Intelligence",
+  "sprint": 3,
+  "inputs": "ingresos, costos, canales/clientes, criterio de asignación",
+  "output": "profit_by_segment, drivers, actions",
+  "procedure": [
+    "Conciliar resultado con registros",
+    "Separar contribución y costo asignado por segmento",
+    "Evaluar acciones sin eliminar actividad rentable por reparto arbitrario"
+  ],
+  "decision": "Declarar método de asignación; rentabilidad y liquidez son dimensiones distintas",
+  "kpi": "utilidad/contribución por segmento",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://www.sba.gov/counseling/plan-your-business/",
+      "SBA; planificación oficial, contexto estadounidense; verificar fuente financiera concreta y normativa local al ejecutar"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Financial Intelligence",
+  "purpose": "Conciliar resultado con registros",
+  "business_outcome": "utilidad/contribución por segmento",
+  "when_to_use": "profitability-analysis: Financial Intelligence. Usar para producir profit_by_segment, drivers, actions a partir de ingresos, costos, canales/clientes, criterio de asignación; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "profitability-analysis",
+    "profit_by_segment, drivers, actions"
+  ],
+  "required_inputs": [
+    "ingresos",
+    " costos",
+    " canales/clientes",
+    " criterio de asignación"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://www.sba.gov/counseling/plan-your-business/",
+      "SBA; planificación oficial, contexto estadounidense; verificar fuente financiera concreta y normativa local al ejecutar"
+    ]
+  ],
+  "decision_rules": [
+    "Declarar método de asignación; rentabilidad y liquidez son dimensiones distintas",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "profit_by_segment",
+    " drivers",
+    " actions"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: Declarar método de asignación; rentabilidad y liquidez son dimensiones distintas",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "utilidad/contribución por segmento"
+  ],
+  "examples": [
+    "Usa $profitability-analysis con ingresos, costos, canales/clientes, criterio de asignación para obtener profit_by_segment, drivers, actions.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

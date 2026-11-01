@@ -1,0 +1,41 @@
+{
+  "task_id": "altiora-value-business-20261031",
+  "objective": "Oferta rentable de10000USD por proyecto + mantenimiento mensual opcional",
+  "context": {
+    "paying_clients": 0,
+    "price_target": "USER_CONFIRMED_NOT_MARKET_VALIDATED"
+  },
+  "inputs": {
+    "brief": "Mejorar Altiora y conservar tareas anteriores",
+    "procesos": "Oferta/entrega preparados; piloto y herramientas separados de evidencia comercial",
+    "ventas_costos_disponibles": {
+      "paying_clients": 0,
+      "actual_costs": "UNKNOWN",
+      "cash": "UNKNOWN"
+    },
+    "problemas": [
+      "Precio y demanda sin validar",
+      "Coste/capacidad no medidos"
+    ],
+    "responsables": {
+      "accountable": "Fundador",
+      "specialists": "Roles IA de apoyo; profesionales humanos no contratados"
+    }
+  },
+  "authorized_scope": {
+    "prepare_local_artifacts": true,
+    "outreach": false,
+    "spend": false,
+    "publish_company": false
+  },
+  "available_tools": [
+    "Filesystem/terminal autorizados",
+    "Dos subagentes especialistas y revisión independiente",
+    "MCP de coordinación en carpeta autorizada"
+  ],
+  "acceptance_criteria": [
+    "Respetar la última corrección:10000USD por proyecto",
+    "Separar hechos y supuestos; mantener costes desconocidos",
+    "Modelo calculado y secuencia comercial coherente"
+  ]
+}

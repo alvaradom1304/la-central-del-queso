@@ -1,0 +1,4 @@
+interface:
+  display_name: "Launch Readiness"
+  short_description: "Venture Building: capacidad AEM OS"
+  default_prompt: "Usa $launch-readiness para abordar esta tarea con evidencia y resultado verificable."

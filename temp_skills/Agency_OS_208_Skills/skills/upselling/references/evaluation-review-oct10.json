@@ -1,0 +1,26 @@
+{
+  "skill": "upselling",
+  "version": "0.2.0",
+  "task_id": "commercial-quality-oct10",
+  "independent_documentary_review": "PASS within supplied synthetic case",
+  "parent_arithmetic_checks": {
+    "collection_identity": true,
+    "contribution": true,
+    "reported_remainder": true,
+    "stock_nominal": true,
+    "conditional_cash": true,
+    "illustrative_ROI": true
+  },
+  "schema_trace": {
+    "outputs": 1,
+    "errors": [],
+    "kind": "SCHEMA_AND_TRACE_ONLY"
+  },
+  "limits": [
+    "No business outcome measured",
+    "No field/production tests",
+    "No validation of all designed cases",
+    "No guaranteed ROI or product suitability"
+  ],
+  "reviewed_at": "2026-10-10"
+}

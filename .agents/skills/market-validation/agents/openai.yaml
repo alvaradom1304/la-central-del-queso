@@ -1,0 +1,4 @@
+interface:
+  display_name: "Market Validation"
+  short_description: "Venture Building: capacidad AEM OS"
+  default_prompt: "Usa $market-validation para abordar esta tarea con evidencia y resultado verificable."

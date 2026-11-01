@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "high-ticket-offer input",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "client_profile",
+    "problem",
+    "desired_outcome",
+    "delivery_capacity",
+    "cost_assumptions"
+  ],
+  "properties": {
+    "client_profile": {
+      "type": "object",
+      "required": [
+        "industry",
+        "buyer"
+      ],
+      "properties": {
+        "industry": {
+          "type": "string"
+        },
+        "buyer": {
+          "type": "string"
+        }
+      }
+    },
+    "problem": {
+      "type": "string"
+    },
+    "desired_outcome": {
+      "type": "string"
+    },
+    "baseline_data": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "delivery_capacity": {
+      "type": "string"
+    },
+    "cost_assumptions": {
+      "type": "object"
+    },
+    "budget_range_usd": {
+      "type": "object",
+      "properties": {
+        "min": {
+          "type": "number"
+        },
+        "max": {
+          "type": "number"
+        }
+      }
+    },
+    "timeline": {
+      "type": "string"
+    },
+    "client_dependencies": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "support_expectation": {
+      "type": "string"
+    }
+  }
+}

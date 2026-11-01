@@ -1,0 +1,6 @@
+interface:
+  display_name: "Bibliotecario de Altiora"
+  short_description: "Elige skills y roles con el contexto necesario"
+  default_prompt: "Usa $altiora-bibliotecario para escoger las capacidades pertinentes y completar el encargo con evidencia y una respuesta concisa."
+policy:
+  allow_implicit_invocation: true

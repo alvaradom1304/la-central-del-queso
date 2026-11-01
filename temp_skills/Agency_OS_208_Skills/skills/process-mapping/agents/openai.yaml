@@ -1,0 +1,4 @@
+interface:
+  display_name: "Process Mapping"
+  short_description: "Operations & Logistics: capacidad AEM OS"
+  default_prompt: "Usa $process-mapping para abordar esta tarea con evidencia y resultado verificable."

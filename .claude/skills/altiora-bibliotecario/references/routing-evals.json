@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "scope": "Authored Spanish retrieval fixtures, not live-user telemetry or runtime routing certification",
+  "top_k": 5,
+  "cases": [
+    {"id":"word-boundary-deseo","query":"Deseo qzxv","expected_any":[],"forbidden":["seo"],"constraint":"No interpretar SEO dentro de deseo; sin intención reconocible abstenerse"},
+    {"id":"word-boundary-micro","query":"Micro qzxv","expected_any":[],"forbidden":["cro"],"constraint":"No interpretar CRO dentro de micro; el buscador no decide intención empresarial"},
+    {"id":"word-boundary-api","query":"API","expected_any":["api-integration","api-security"],"forbidden":["capital-requirements","working-capital"],"constraint":"API es un término independiente; no confundirlo con capital ni conceder permisos"},
+    {"id":"audio-cleanup","query":"Limpiar ruido de voz y revisar mezcla de audio para un anuncio","expected_any":["audio-production","audio-specialist"],"forbidden":["api-security"],"constraint":"Medición no acredita escucha ni autoriza instalar un DAW"},
+    {"id":"audio-music","query":"Necesito música y masterización de sonido para video","expected_any":["audio-production","audio-specialist"],"forbidden":["brand-strategy"],"constraint":"Verificar derechos de música antes de uso comercial"},
+    {"id":"economy","query":"Ahorrar tokens y contexto al distribuir tareas entre modelos","expected_any":["altiora-ai-economy"],"forbidden":["audio-production"],"constraint":"No afirmar ahorro medido ni cambiar modelos sin capacidad real"},
+    {"id":"librarian","query":"Bibliotecario para seleccionar skills y enrutar capacidades","expected_any":["altiora-bibliotecario"],"forbidden":["pricing"],"constraint":"El catálogo no es inventario de herramientas conectadas"},
+    {"id":"repository-license","query":"Investigar repositorios según compatibilidad mantenimiento licencia y coste","expected_any":["altiora-repository-research"],"forbidden":["audio-production"],"constraint":"No instalar ni ejecutar código de terceros"},
+    {"id":"review-evidence","query":"Revisar cambios de Altiora contra el encargo y evidencia de prueba","expected_any":["altiora-quality-review"],"forbidden":["pricing"],"constraint":"Revisión independiente de la afirmación del implementador"},
+    {"id":"mcp-contract","query":"Revisar contrato MCP cliente servidor auth scope y tests","expected_any":["mcp-integration"],"forbidden":["audio-production"],"constraint":"Una configuración no demuestra una conexión"},
+    {"id":"api-security","query":"Revisar seguridad de nuestra API de pedidos, sus endpoints, autenticación y límites de datos","expected_any":["api-security"],"forbidden":["audio-production"],"constraint":"No extraer credenciales"},
+    {"id":"accessibility","query":"Comprobar accesibilidad de la tienda para usuarios de teclado y lector de pantalla","expected_any":["accessibility"],"forbidden":["audio-production"],"constraint":"Exigir comprobación manual además de análisis estático"},
+    {"id":"copy","query":"Redactar textos publicitarios para la oferta con tono de marca y afirmaciones verificadas","expected_any":["copywriting"],"forbidden":["audio-production"],"constraint":"No inventar testimonios ni claims comerciales"},
+    {"id":"brand","query":"Definir estrategia y posicionamiento de nuestra marca para diferenciarnos de la competencia","expected_any":["brand-strategy","brand-positioning","brand-strategist"],"forbidden":["audio-production"],"constraint":"Usar hechos de negocio verificables"},
+    {"id":"unknown","query":"zxqv flarnorbit quuxz","expected_any":[],"forbidden":[],"constraint":"Abstenerse sin una coincidencia pertinente"},
+    {"id":"unavailable-local-skill","query":"immersive-interaction-lab","expected_any":[],"forbidden":[],"constraint":"Esta skill personal no está en el catálogo portable de este checkout; no inventarla"},
+    {"id":"stopwords-only","query":"Por favor quiero que me ayudes con esto para mí","expected_any":[],"forbidden":[],"constraint":"Las palabras vacías no deben producir una ruta aparentemente pertinente"}
+  ]
+}

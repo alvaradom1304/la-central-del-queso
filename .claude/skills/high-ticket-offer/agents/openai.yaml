@@ -1,0 +1,3 @@
+display_name: "High Ticket Offer"
+short_description: "Diseñar una oferta comercial viable y auditable para sitio web más automatización."
+default_prompt: "Usa $high-ticket-offer y sigue su SOP completo. Primero valida entradas, evidencia y aprobaciones; entrega el sobre de salida definido en las referencias."

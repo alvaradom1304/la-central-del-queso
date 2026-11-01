@@ -1,0 +1,105 @@
+{
+  "name": "brand-personality",
+  "domain": "Brand Intelligence",
+  "sprint": 5,
+  "inputs": "plataforma, audiencia, comportamiento, tono",
+  "output": "personality_traits, behaviors, boundaries",
+  "procedure": [
+    "Elegir rasgos según posicionamiento y evidencia",
+    "Traducir adjetivos a comportamientos y ejemplos",
+    "Definir excesos a evitar por contexto"
+  ],
+  "decision": "Arquetipos son herramientas interpretativas, no diagnóstico psicológico",
+  "kpi": "consistencia de comportamiento",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Brand Intelligence",
+  "purpose": "Elegir rasgos según posicionamiento y evidencia",
+  "business_outcome": "consistencia de comportamiento",
+  "when_to_use": "brand-personality: Brand Intelligence. Usar para producir personality_traits, behaviors, boundaries a partir de plataforma, audiencia, comportamiento, tono; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "brand-personality",
+    "personality_traits, behaviors, boundaries"
+  ],
+  "required_inputs": [
+    "plataforma",
+    " audiencia",
+    " comportamiento",
+    " tono"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [],
+  "decision_rules": [
+    "Arquetipos son herramientas interpretativas, no diagnóstico psicológico",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "personality_traits",
+    " behaviors",
+    " boundaries"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: Arquetipos son herramientas interpretativas, no diagnóstico psicológico",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "consistencia de comportamiento"
+  ],
+  "examples": [
+    "Usa $brand-personality con plataforma, audiencia, comportamiento, tono para obtener personality_traits, behaviors, boundaries.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

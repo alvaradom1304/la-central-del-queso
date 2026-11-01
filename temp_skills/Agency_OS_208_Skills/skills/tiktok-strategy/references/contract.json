@@ -1,0 +1,120 @@
+{
+  "name": "tiktok-strategy",
+  "domain": "Marketing Intelligence",
+  "sprint": 4,
+  "inputs": "audiencia, marca, recursos video, objetivo",
+  "output": "tiktok_plan, creative_tests, measurement",
+  "procedure": [
+    "Definir audiencia, tarea comercial, oferta, identidad y recursos reales de producción.",
+    "Investigar contenido/formato vigente en fuentes accesibles sin atribuirle eficacia universal.",
+    "Diseñar conceptos originales con hook pertinente, prueba visible, ritmo y CTA conforme al journey.",
+    "Preparar matriz concepto/formato/audiencia, derechos de música/activos y criterios de comparación.",
+    "Conectar alcance y retención con consultas/pedidos mediante seguimiento autorizado y límites de atribución.",
+    "Evaluar resultados por pieza/cohorte, costo y margen; decidir mantener/descartar sin optimizar solo viralidad."
+  ],
+  "decision": "Viralidad no garantiza ventas; verificar derechos de audio",
+  "kpi": "acción comercial por vistas relevantes",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [],
+  "version": "0.2.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Marketing Intelligence",
+  "purpose": "Investigar formatos relevantes sin copiar ni inventar trends",
+  "business_outcome": "acción comercial por vistas relevantes",
+  "when_to_use": "tiktok-strategy: Marketing Intelligence. Usar para producir tiktok_plan, creative_tests, measurement a partir de audiencia, marca, recursos video, objetivo; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "tiktok-strategy",
+    "tiktok_plan, creative_tests, measurement"
+  ],
+  "required_inputs": [
+    "audiencia",
+    " marca",
+    " recursos video",
+    " objetivo"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [],
+  "decision_rules": [
+    "Viralidad no garantiza ventas; verificar derechos de audio",
+    "No cerrar entrega con bloqueadores de tarea esencial ni pruebas declaradas sin ejecutar.",
+    "Aplicar especificación técnica y casos propios de esta capacidad."
+  ],
+  "outputs": [
+    "tiktok_plan",
+    " creative_tests",
+    " measurement"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo",
+    "Resolver el fallo específico con evidencia y límites",
+    "No cerrar con contradicción material o resultado inventado",
+    "Entregar criterios verificables y responsables operativos según alcance"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: Viralidad no garantiza ventas; verificar derechos de audio",
+    "escenarios según evaluation-cases.json; registrar ejecutados",
+    "Resolver el fallo específico con evidencia y límites",
+    "No cerrar con contradicción material o resultado inventado",
+    "Entregar criterios verificables y responsables operativos según alcance"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "acción comercial por vistas relevantes"
+  ],
+  "examples": [
+    "Usa $tiktok-strategy con audiencia, marca, recursos video, objetivo para obtener tiktok_plan, creative_tests, measurement.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    },
+    {
+      "version": "0.2.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento técnico, fallos propios, especificación de aceptación y fuentes depuradas; no presume evaluación de cliente/producción."
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "name": "cinematic-direction",
+  "domain": "Creative Intelligence",
+  "sprint": 5,
+  "inputs": "guion, marca, recursos, look, seguridad",
+  "output": "cinematic_brief, camera_plan, continuity",
+  "procedure": [
+    "Definir cámara, óptica conceptual, luz y movimiento",
+    "Planificar continuidad y producción segura",
+    "Revisar pruebas y corregir artefactos"
+  ],
+  "decision": "No instruir maniobras riesgosas para producción; no garantizar generación IA de plano continuo",
+  "kpi": "coherencia visual y continuidad",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Creative Intelligence",
+  "purpose": "Definir cámara, óptica conceptual, luz y movimiento",
+  "business_outcome": "coherencia visual y continuidad",
+  "when_to_use": "cinematic-direction: Creative Intelligence. Usar para producir cinematic_brief, camera_plan, continuity a partir de guion, marca, recursos, look, seguridad; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "cinematic-direction",
+    "cinematic_brief, camera_plan, continuity"
+  ],
+  "required_inputs": [
+    "guion",
+    " marca",
+    " recursos",
+    " look",
+    " seguridad"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [],
+  "decision_rules": [
+    "No instruir maniobras riesgosas para producción; no garantizar generación IA de plano continuo",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "cinematic_brief",
+    " camera_plan",
+    " continuity"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No instruir maniobras riesgosas para producción; no garantizar generación IA de plano continuo",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "coherencia visual y continuidad"
+  ],
+  "examples": [
+    "Usa $cinematic-direction con guion, marca, recursos, look, seguridad para obtener cinematic_brief, camera_plan, continuity.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

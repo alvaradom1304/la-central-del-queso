@@ -1,0 +1,161 @@
+{
+  "id": "20261018T223233Z-08d7e3c6",
+  "files": {
+    ".altiora/system/core/constitution.md": {
+      "backup": null,
+      "installed_hash": "92cdcb4ded1c99053b00704b589a8d1c0e9efb1f867a26f58c9c2cc3bc6a8611"
+    },
+    ".altiora/system/core/policy.json": {
+      "backup": null,
+      "installed_hash": "39839f2785c67601a9b9b857fb1b6ba0482fd9712bec28dfe9a0c54386e9e39a"
+    },
+    ".altiora/system/core/project.json": {
+      "backup": null,
+      "installed_hash": "4bf2cd35cb8dce4656ecc99cf78914ed4cff70e13d6b1bef9eecf5566814b845"
+    },
+    ".altiora/system/contracts/handoff.schema.json": {
+      "backup": null,
+      "installed_hash": "2cce203683f0e0a1f1e8d2743d9be7dc671bddc57e7aab89137f0fbf96453022"
+    },
+    ".altiora/system/contracts/result.schema.json": {
+      "backup": null,
+      "installed_hash": "4476b19e1287528be47b77a947913ff22c416afdc1641f4f9df09de8fbb2c03f"
+    },
+    ".altiora/system/contracts/task.schema.json": {
+      "backup": null,
+      "installed_hash": "54308e76cf6b7b765851a1d424f6ce41eada407162f9752731821522d1c79911"
+    },
+    ".altiora/system/docs/COMPATIBILITY.md": {
+      "backup": null,
+      "installed_hash": "f808a0de82c71b2d906c3ad036ef5ec12765a594425a7e6e9f0ca1852e18a574"
+    },
+    ".altiora/system/docs/DESIGN.md": {
+      "backup": null,
+      "installed_hash": "0f4c792faaf124e2eba9ed03cc19822c6a58afc8c1249d4ae66357fbfcbf23a8"
+    },
+    ".altiora/system/docs/EVALUATION-CASES.md": {
+      "backup": null,
+      "installed_hash": "176bdc1b30240c9d6fa193480c22bb14712dcaa71a882b49b1186a042add0840"
+    },
+    ".altiora/system/roles/altiora-engineering.md": {
+      "backup": null,
+      "installed_hash": "c407c6d9c991f113b86292b98e42f9b1a7b72bdf53429cfcc3163e7091d60488"
+    },
+    ".altiora/system/roles/altiora-experience.md": {
+      "backup": null,
+      "installed_hash": "aa80a62ecc3742b2ac7cc6cbc69202359e6212cc6e7341b745e63800c4f5cf96"
+    },
+    ".altiora/system/roles/altiora-research.md": {
+      "backup": null,
+      "installed_hash": "81efc97b22bbe3d3c5cc28d96f8738e34381830fca92fc76d9227990a3d1ff6a"
+    },
+    ".altiora/system/roles/altiora-review.md": {
+      "backup": null,
+      "installed_hash": "6fd83fc05715baa90c94c68511468c5a583f7a56bf5fb84e7c47eaefe2047125"
+    },
+    ".altiora/system/scripts/guard.py": {
+      "backup": null,
+      "installed_hash": "e9894c2a9f5e236644e79e1d174ad6b8e0cc5ffda3e9e6c132e68d9e7a4601ea"
+    },
+    ".altiora/system/scripts/manage.py": {
+      "backup": null,
+      "installed_hash": "70d19e76b776d34b52f64bffa0906834ae12f263a1415d078c77565bdd64ec49"
+    },
+    ".altiora/system/scripts/package.py": {
+      "backup": null,
+      "installed_hash": "07afaa71953a04359240ef4254790683f4d717fa6777e8ab9a7b66c4d0373e6e"
+    },
+    ".altiora/system/skills/altiora-runtime-bridge/SKILL.md": {
+      "backup": null,
+      "installed_hash": "710639af4e8c5aa577f20f6d5ba81d6d42c34f74bc39f6e49e6e55f3c51fd385"
+    },
+    ".altiora/system/skills/altiora-session-handoff/SKILL.md": {
+      "backup": null,
+      "installed_hash": "434b16093d62fb1b62810a6ab4c227b7d5d0e4864efbf6794b87a6a786b88ae0"
+    },
+    ".altiora/project.json": {
+      "backup": null,
+      "installed_hash": "4bf2cd35cb8dce4656ecc99cf78914ed4cff70e13d6b1bef9eecf5566814b845"
+    },
+    ".altiora/policy.json": {
+      "backup": null,
+      "installed_hash": "39839f2785c67601a9b9b857fb1b6ba0482fd9712bec28dfe9a0c54386e9e39a"
+    },
+    "AGENTS.md": {
+      "backup": "20.bak",
+      "installed_hash": "b014531f93e08a0b87639d70a2b39f29565bfe335fbd28aed0f21981f577686f"
+    },
+    "CLAUDE.md": {
+      "backup": "21.bak",
+      "installed_hash": "f19a0a35533e7350a07d4a25d9bf3bc97b1b87d770ee58e81efc4986b5a07f91"
+    },
+    "GEMINI.md": {
+      "backup": "22.bak",
+      "installed_hash": "b014531f93e08a0b87639d70a2b39f29565bfe335fbd28aed0f21981f577686f"
+    },
+    ".agents/skills/altiora-runtime-bridge/SKILL.md": {
+      "backup": null,
+      "installed_hash": "710639af4e8c5aa577f20f6d5ba81d6d42c34f74bc39f6e49e6e55f3c51fd385"
+    },
+    ".claude/skills/altiora-runtime-bridge/SKILL.md": {
+      "backup": null,
+      "installed_hash": "710639af4e8c5aa577f20f6d5ba81d6d42c34f74bc39f6e49e6e55f3c51fd385"
+    },
+    ".agents/skills/altiora-session-handoff/SKILL.md": {
+      "backup": null,
+      "installed_hash": "434b16093d62fb1b62810a6ab4c227b7d5d0e4864efbf6794b87a6a786b88ae0"
+    },
+    ".claude/skills/altiora-session-handoff/SKILL.md": {
+      "backup": null,
+      "installed_hash": "434b16093d62fb1b62810a6ab4c227b7d5d0e4864efbf6794b87a6a786b88ae0"
+    },
+    ".codex/agents/altiora-engineering.toml": {
+      "backup": null,
+      "installed_hash": "47ba5b142a60cb22bd6006c99d85e6ee904e7f83153af9a3d092c51dd9ee2872"
+    },
+    ".claude/agents/altiora-engineering.md": {
+      "backup": null,
+      "installed_hash": "b500402296f2dea4fa0bef1d2ff42bae650e6558487d555a5d4607bd1ef50a6b"
+    },
+    ".codex/agents/altiora-experience.toml": {
+      "backup": null,
+      "installed_hash": "c765f84313393e1088011c6c2760514b441b126dfef1a7653f33b86917e6f8b3"
+    },
+    ".claude/agents/altiora-experience.md": {
+      "backup": null,
+      "installed_hash": "53e6cf1e1a4fdb9d333312a5f13209b4e2045c2240303d4b1bc0429f553c36b3"
+    },
+    ".codex/agents/altiora-research.toml": {
+      "backup": null,
+      "installed_hash": "29468ae66276ba8570130ba38ae62e1c67badb4cc1f6f7395c847d7605a48df8"
+    },
+    ".claude/agents/altiora-research.md": {
+      "backup": null,
+      "installed_hash": "1e3b182cb6916d97404aa9b792fb1986649ca3637f0e1ecdd57e64c38ce20034"
+    },
+    ".codex/agents/altiora-review.toml": {
+      "backup": null,
+      "installed_hash": "8b40fef9f46b5c6dd9e588654f46d03b6f03115f3114af234d90306c5840be8f"
+    },
+    ".claude/agents/altiora-review.md": {
+      "backup": null,
+      "installed_hash": "f3395af4c29c4e9673a6383ab28e67525ff9214985997b39e78d67dedd485e47"
+    },
+    ".codex/hooks.json": {
+      "backup": null,
+      "installed_hash": "0113d4b1233bc1fd69e410d6ff0ae459feb2624319d7a8eb6cd5141005d339e0"
+    },
+    ".claude/settings.json": {
+      "backup": null,
+      "installed_hash": "3cfbda3fdd449da581417e5f2c13dc97ccd4abd5c5f9f6628003af18e080b2da"
+    },
+    ".agents/hooks.json": {
+      "backup": null,
+      "installed_hash": "d42e4abcfdd90f0cd5a36980128119dcbd873a3d075212b83868bb2d623c7cb7"
+    },
+    ".altiora/installation.json": {
+      "backup": null,
+      "installed_hash": "973fa412e0e0d4b08c0c2bba5cb85b8ed288f40bcafd23b6a2db2d2c7686a6af"
+    }
+  }
+}

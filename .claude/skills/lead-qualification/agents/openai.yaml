@@ -1,0 +1,4 @@
+interface:
+  display_name: "Lead Qualification"
+  short_description: "Sales Intelligence: capacidad AEM OS"
+  default_prompt: "Usa $lead-qualification para abordar esta tarea con evidencia y resultado verificable."

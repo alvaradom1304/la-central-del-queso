@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "n8n-webhook-architect input",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "form_source",
+    "n8n_version",
+    "crm",
+    "whatsapp_provider",
+    "consent_model",
+    "environment"
+  ],
+  "properties": {
+    "form_source": {
+      "type": "string"
+    },
+    "n8n_version": {
+      "type": "string"
+    },
+    "crm": {
+      "type": "string"
+    },
+    "whatsapp_provider": {
+      "type": "string"
+    },
+    "consent_model": {
+      "type": "string"
+    },
+    "environment": {
+      "enum": [
+        "design",
+        "staging",
+        "production"
+      ]
+    },
+    "expected_volume_per_day": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "required_fields": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "retention_days": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "service_window_policy": {
+      "type": "string"
+    },
+    "owner": {
+      "type": "string"
+    }
+  }
+}

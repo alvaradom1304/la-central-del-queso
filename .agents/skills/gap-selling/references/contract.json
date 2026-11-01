@@ -1,0 +1,172 @@
+{
+  "name": "gap-selling",
+  "domain": "Sales Intelligence",
+  "sprint": 4,
+  "inputs": "estado actual, estado deseado, impacto, causa, oferta",
+  "output": "current_future_gap, value_case, open_questions",
+  "procedure": [
+    "Documentar situación y problema actual con datos del comprador",
+    "Explorar estado futuro y diferencia cuantificable o cualitativa",
+    "Relacionar cambio requerido con solución y criterio de decisión"
+  ],
+  "decision": "Método de Keenan; no exagerar costo de inacción ni declarar brecha numérica sin base",
+  "kpi": "brechas confirmadas por comprador",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://www.huthwaiteinternational.com/spin-methodology",
+      "SPIN; fuente original"
+    ],
+    [
+      "https://gapsellingonlinetraining.com/methodology-training/",
+      "Keenan/Gap Selling; temario oficial"
+    ],
+    [
+      "https://meddicc.com/meddpicc-sales-methodology-and-process",
+      "MEDDICC/MEDDPICC; proveedor metodológico"
+    ],
+    [
+      "https://challengerinc.com/what-is-challenger-sales-methodology/",
+      "Challenger; referencia del proveedor"
+    ],
+    [
+      "https://www.blackswanltd.com/newsletter/bridging-the-gap-using-tactical-empathy-to-neutralize-power-in-negotiations",
+      "Black Swan; perspectiva de empatía táctica"
+    ],
+    [
+      "https://jebblount.com/product/fanatical-prospecting/",
+      "Jeb Blount; referencia del autor"
+    ],
+    [
+      "https://www.influenceatwork.com/7-principles-of-persuasion/",
+      "Cialdini; perspectiva del autor"
+    ],
+    [
+      "https://robfitz.com/about/",
+      "Fitzpatrick; referencia del autor"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Sales Intelligence",
+  "purpose": "Documentar situación y problema actual con datos del comprador",
+  "business_outcome": "brechas confirmadas por comprador",
+  "when_to_use": "gap-selling: Sales Intelligence. Usar para producir current_future_gap, value_case, open_questions a partir de estado actual, estado deseado, impacto, causa, oferta; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "gap-selling",
+    "current_future_gap, value_case, open_questions"
+  ],
+  "required_inputs": [
+    "estado actual",
+    " estado deseado",
+    " impacto",
+    " causa",
+    " oferta"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://www.huthwaiteinternational.com/spin-methodology",
+      "SPIN; fuente original"
+    ],
+    [
+      "https://gapsellingonlinetraining.com/methodology-training/",
+      "Keenan/Gap Selling; temario oficial"
+    ],
+    [
+      "https://meddicc.com/meddpicc-sales-methodology-and-process",
+      "MEDDICC/MEDDPICC; proveedor metodológico"
+    ],
+    [
+      "https://challengerinc.com/what-is-challenger-sales-methodology/",
+      "Challenger; referencia del proveedor"
+    ],
+    [
+      "https://www.blackswanltd.com/newsletter/bridging-the-gap-using-tactical-empathy-to-neutralize-power-in-negotiations",
+      "Black Swan; perspectiva de empatía táctica"
+    ],
+    [
+      "https://jebblount.com/product/fanatical-prospecting/",
+      "Jeb Blount; referencia del autor"
+    ],
+    [
+      "https://www.influenceatwork.com/7-principles-of-persuasion/",
+      "Cialdini; perspectiva del autor"
+    ],
+    [
+      "https://robfitz.com/about/",
+      "Fitzpatrick; referencia del autor"
+    ]
+  ],
+  "decision_rules": [
+    "Método de Keenan; no exagerar costo de inacción ni declarar brecha numérica sin base",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "current_future_gap",
+    " value_case",
+    " open_questions"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: Método de Keenan; no exagerar costo de inacción ni declarar brecha numérica sin base",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "brechas confirmadas por comprador"
+  ],
+  "examples": [
+    "Usa $gap-selling con estado actual, estado deseado, impacto, causa, oferta para obtener current_future_gap, value_case, open_questions.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "name": "web-quality-assurance",
+  "domain": "Premium Web Experience",
+  "sprint": 6,
+  "inputs": "criterios, app/version, flujos, datos, alcance",
+  "output": "qa_evidence, defects, release_verdict",
+  "procedure": [
+    "Construir matriz REQ→caso→resultado esperado→evidencia para tareas y riesgos reales.",
+    "Fijar build, entorno, fixtures, navegadores/dispositivos, permisos y alcance de prueba.",
+    "Verificar recorrido UI→API→persistencia→respuesta y estado comercial; comprobar datos independientes del mensaje UI.",
+    "Ejecutar fallos pertinentes: red, validación, duplicados, refresh, concurrencia, recurso visual ausente y accesibilidad.",
+    "Clasificar defectos por impacto y reproducibilidad, corregir causa y retestar área afectada/regresiones.",
+    "Emitir veredicto según críticos/altos, evidencia y límites; separar gate interno de autorización para publicar."
+  ],
+  "decision": "No declarar aprobado sin evidencia ni publicar sin autorización",
+  "kpi": "criterios cumplidos y defectos abiertos",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://www.w3.org/TR/WCAG22/",
+      "W3C; consultado 2026-10-10, evaluar proceso completo y limitaciones de checks automáticos"
+    ]
+  ],
+  "version": "0.2.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Premium Web Experience",
+  "purpose": "Definir aceptación antes de probar",
+  "business_outcome": "criterios cumplidos y defectos abiertos",
+  "when_to_use": "web-quality-assurance: Premium Web Experience. Usar para producir qa_evidence, defects, release_verdict a partir de criterios, app/version, flujos, datos, alcance; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "web-quality-assurance",
+    "qa_evidence, defects, release_verdict"
+  ],
+  "required_inputs": [
+    "criterios",
+    " app/version",
+    " flujos",
+    " datos",
+    " alcance"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://www.w3.org/TR/WCAG22/",
+      "W3C; consultado 2026-10-10, evaluar proceso completo y limitaciones de checks automáticos"
+    ]
+  ],
+  "decision_rules": [
+    "No declarar aprobado sin evidencia ni publicar sin autorización",
+    "No cerrar entrega con bloqueadores de tarea esencial ni pruebas declaradas sin ejecutar.",
+    "Aplicar especificación técnica y casos propios de esta capacidad."
+  ],
+  "outputs": [
+    "qa_evidence",
+    " defects",
+    " release_verdict"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo",
+    "Falla de persistencia bloquea release",
+    "Verificar estado independiente UI/backend",
+    "No certificar recorrido con captura o mock"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No declarar aprobado sin evidencia ni publicar sin autorización",
+    "escenarios según evaluation-cases.json; registrar ejecutados",
+    "Falla de persistencia bloquea release",
+    "Verificar estado independiente UI/backend",
+    "No certificar recorrido con captura o mock"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "criterios cumplidos y defectos abiertos"
+  ],
+  "examples": [
+    "Usa $web-quality-assurance con criterios, app/version, flujos, datos, alcance para obtener qa_evidence, defects, release_verdict.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    },
+    {
+      "version": "0.2.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento técnico, fallos propios, especificación de aceptación y fuentes depuradas; no presume evaluación de cliente/producción."
+    }
+  ]
+}

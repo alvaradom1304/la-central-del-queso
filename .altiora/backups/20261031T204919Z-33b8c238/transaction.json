@@ -1,0 +1,53 @@
+{
+  "id": "20261031T204919Z-33b8c238",
+  "files": {
+    ".altiora/system/docs/COMPATIBILITY.md": {
+      "backup": "0.bak",
+      "installed_hash": "f6689a98d504ad16515f6211517e3c40f6aab30ab7131eae37a2540d23f1bf5c"
+    },
+    ".altiora/system/roles/altiora-engineering.md": {
+      "backup": "1.bak",
+      "installed_hash": "21bfa0373ecb52577f54d3a298853847b19df84b6ae90cea4b5d519e950912e8"
+    },
+    ".altiora/system/roles/altiora-experience.md": {
+      "backup": "2.bak",
+      "installed_hash": "534f1cb1aa82693658f11da84358ed561a48d43d153dc333309354090f009252"
+    },
+    ".altiora/system/roles/altiora-research.md": {
+      "backup": "3.bak",
+      "installed_hash": "e111722229a083002861e302ea06bc18da174e86103b683a6b34f4a0ba3d0b48"
+    },
+    ".altiora/system/roles/altiora-review.md": {
+      "backup": "4.bak",
+      "installed_hash": "f6277fd0303c85cad116f7e5b88134f262958d5dd1fe7d27561e02d4e4dc9486"
+    },
+    ".altiora/system/scripts/manage.py": {
+      "backup": "5.bak",
+      "installed_hash": "e850001569af956448c1c062e3fc682471ce82c2fa88833508132e70ae7f6fd3"
+    },
+    ".altiora/system/scripts/package.py": {
+      "backup": "6.bak",
+      "installed_hash": "5f4729d7c7bf0e1aad633aa5970224888ec31ca26822eae50956f662166c515a"
+    },
+    ".codex/agents/altiora-engineering.toml": {
+      "backup": null,
+      "installed_hash": "8d4b09cb5ba52b5208d750afff4ab9c49201eee059b2ff2c0cad22de6376e011"
+    },
+    ".codex/agents/altiora-experience.toml": {
+      "backup": null,
+      "installed_hash": "f1b0677e97f29ec67a53ed020f5deb57a9c9fceaf87afef18ed343b4f16270d0"
+    },
+    ".codex/agents/altiora-research.toml": {
+      "backup": null,
+      "installed_hash": "3602362cda1656423adc79d07a446c559f91f06a61c18d73733150423e056e3a"
+    },
+    ".codex/agents/altiora-review.toml": {
+      "backup": null,
+      "installed_hash": "9fcb9d4981f79d4647c999a7ac35fc400121e5a84af35a0d29f3708378b12c4f"
+    },
+    ".altiora/installation.json": {
+      "backup": "11.bak",
+      "installed_hash": "b0f4f8b2ca28e6846c5e227636a33b7d042d32f05da9677aed1c111d3ab9df1f"
+    }
+  }
+}

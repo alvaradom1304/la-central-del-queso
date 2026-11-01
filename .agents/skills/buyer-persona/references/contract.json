@@ -1,0 +1,122 @@
+{
+  "name": "buyer-persona",
+  "domain": "Marketing Intelligence",
+  "sprint": 4,
+  "inputs": "segmento, entrevistas/datos, decisiones de compra",
+  "output": "evidence_persona, goals, barriers",
+  "procedure": [
+    "Sintetizar tareas, detonantes y criterios de compra",
+    "Separar hallazgos de supuestos y evitar ficción demográfica",
+    "Usar perfil para elegir mensaje/canal y actualizar con evidencia"
+  ],
+  "decision": "Sin investigación producir proto-persona rotulada, no persona validada",
+  "kpi": "decisiones mejoradas con perfil",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+      "Google Search Central; SEO"
+    ],
+    [
+      "https://www.influenceatwork.com/7-principles-of-persuasion/",
+      "Cialdini; aplicar críticamente, no garantía"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Marketing Intelligence",
+  "purpose": "Sintetizar tareas, detonantes y criterios de compra",
+  "business_outcome": "decisiones mejoradas con perfil",
+  "when_to_use": "buyer-persona: Marketing Intelligence. Usar para producir evidence_persona, goals, barriers a partir de segmento, entrevistas/datos, decisiones de compra; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "buyer-persona",
+    "evidence_persona, goals, barriers"
+  ],
+  "required_inputs": [
+    "segmento",
+    " entrevistas/datos",
+    " decisiones de compra"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+      "Google Search Central; SEO"
+    ],
+    [
+      "https://www.influenceatwork.com/7-principles-of-persuasion/",
+      "Cialdini; aplicar críticamente, no garantía"
+    ]
+  ],
+  "decision_rules": [
+    "Sin investigación producir proto-persona rotulada, no persona validada",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "evidence_persona",
+    " goals",
+    " barriers"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: Sin investigación producir proto-persona rotulada, no persona validada",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "decisiones mejoradas con perfil"
+  ],
+  "examples": [
+    "Usa $buyer-persona con segmento, entrevistas/datos, decisiones de compra para obtener evidence_persona, goals, barriers.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

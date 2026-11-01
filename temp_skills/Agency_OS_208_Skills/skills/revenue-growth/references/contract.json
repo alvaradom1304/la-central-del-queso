@@ -1,0 +1,105 @@
+{
+  "name": "revenue-growth",
+  "domain": "Growth & Scaling",
+  "sprint": 8,
+  "inputs": "ingresos por drivers, segmentos, costos, capacidad",
+  "output": "revenue_bridge, levers, experiments",
+  "procedure": [
+    "Descomponer ingresos en clientes, frecuencia y ticket",
+    "Evaluar palancas con margen/caja/capacidad",
+    "Priorizar pruebas y medir contribución incremental"
+  ],
+  "decision": "Ingreso mayor no prueba rentabilidad ni escalabilidad",
+  "kpi": "ingreso y contribución incrementales",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Growth & Scaling",
+  "purpose": "Descomponer ingresos en clientes, frecuencia y ticket",
+  "business_outcome": "ingreso y contribución incrementales",
+  "when_to_use": "revenue-growth: Growth & Scaling. Usar para producir revenue_bridge, levers, experiments a partir de ingresos por drivers, segmentos, costos, capacidad; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "revenue-growth",
+    "revenue_bridge, levers, experiments"
+  ],
+  "required_inputs": [
+    "ingresos por drivers",
+    " segmentos",
+    " costos",
+    " capacidad"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [],
+  "decision_rules": [
+    "Ingreso mayor no prueba rentabilidad ni escalabilidad",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "revenue_bridge",
+    " levers",
+    " experiments"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: Ingreso mayor no prueba rentabilidad ni escalabilidad",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "ingreso y contribución incrementales"
+  ],
+  "examples": [
+    "Usa $revenue-growth con ingresos por drivers, segmentos, costos, capacidad para obtener revenue_bridge, levers, experiments.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

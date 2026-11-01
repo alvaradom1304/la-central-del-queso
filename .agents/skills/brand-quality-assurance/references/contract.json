@@ -1,0 +1,105 @@
+{
+  "name": "brand-quality-assurance",
+  "domain": "Brand Intelligence",
+  "sprint": 5,
+  "inputs": "piezas, guideline vigente, brief, criterios",
+  "output": "brand_findings, corrections, verdict",
+  "procedure": [
+    "Comparar cada pieza con voz, identidad y promesa",
+    "Verificar claims, licencias y consistencia multicanal",
+    "Priorizar fallos y comprobar correcciones"
+  ],
+  "decision": "Separar defecto objetivo de preferencia estética",
+  "kpi": "cumplimiento de criterios de marca",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Brand Intelligence",
+  "purpose": "Comparar cada pieza con voz, identidad y promesa",
+  "business_outcome": "cumplimiento de criterios de marca",
+  "when_to_use": "brand-quality-assurance: Brand Intelligence. Usar para producir brand_findings, corrections, verdict a partir de piezas, guideline vigente, brief, criterios; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "brand-quality-assurance",
+    "brand_findings, corrections, verdict"
+  ],
+  "required_inputs": [
+    "piezas",
+    " guideline vigente",
+    " brief",
+    " criterios"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [],
+  "decision_rules": [
+    "Separar defecto objetivo de preferencia estética",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "brand_findings",
+    " corrections",
+    " verdict"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: Separar defecto objetivo de preferencia estética",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "cumplimiento de criterios de marca"
+  ],
+  "examples": [
+    "Usa $brand-quality-assurance con piezas, guideline vigente, brief, criterios para obtener brand_findings, corrections, verdict.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

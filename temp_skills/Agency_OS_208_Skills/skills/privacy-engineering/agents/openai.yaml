@@ -1,0 +1,6 @@
+interface:
+  display_name: "Privacy Engineering"
+  short_description: "Cybersecurity: capacidad AEM OS"
+  default_prompt: "Usa $privacy-engineering para abordar esta tarea con evidencia y resultado verificable."
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/icon.svg"

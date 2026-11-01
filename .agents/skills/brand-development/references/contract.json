@@ -1,0 +1,117 @@
+{
+  "name": "brand-development",
+  "domain": "Orchestration",
+  "sprint": 9,
+  "inputs": "diagnóstico, posicionamiento, audiencias, activos",
+  "output": "brand_program, specialist_outputs, review",
+  "procedure": [
+    "Seleccionar investigación/estrategia necesarias sin repetir las validadas",
+    "Coordinar voz, identidad y aplicaciones con contratos",
+    "Revisar marca completa contra promesa y experiencia"
+  ],
+  "decision": "No activar todos los especialistas por defecto",
+  "kpi": "coherencia de marca en puntos de contacto",
+  "type": "Composite",
+  "dependencies": [
+    "brand-research",
+    "brand-strategy",
+    "brand-voice",
+    "visual-identity",
+    "brand-quality-assurance"
+  ],
+  "sources": [],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Orchestration",
+  "purpose": "Seleccionar investigación/estrategia necesarias sin repetir las validadas",
+  "business_outcome": "coherencia de marca en puntos de contacto",
+  "when_to_use": "brand-development: Orchestration. Usar para producir brand_program, specialist_outputs, review a partir de diagnóstico, posicionamiento, audiencias, activos; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "brand-development",
+    "brand_program, specialist_outputs, review"
+  ],
+  "required_inputs": [
+    "diagnóstico",
+    " posicionamiento",
+    " audiencias",
+    " activos"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [],
+  "decision_rules": [
+    "No activar todos los especialistas por defecto",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "brand_program",
+    " specialist_outputs",
+    " review"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No activar todos los especialistas por defecto",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "coherencia de marca en puntos de contacto"
+  ],
+  "examples": [
+    "Usa $brand-development con diagnóstico, posicionamiento, audiencias, activos para obtener brand_program, specialist_outputs, review.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [
+    "brand-research",
+    "brand-strategy",
+    "brand-voice",
+    "visual-identity",
+    "brand-quality-assurance"
+  ],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

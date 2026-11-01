@@ -1,0 +1,120 @@
+{
+  "name": "enterprise-growth-orchestrator",
+  "domain": "Orchestration",
+  "sprint": 9,
+  "inputs": "estrategia, economía, demanda, capacidad, riesgos",
+  "output": "growth_route, scale_constraints, staged_plan",
+  "procedure": [
+    "Separar expansión comercial de capacidad de escalar",
+    "Seleccionar palancas de revenue/retención/canales",
+    "Revisar caja, operación, organización y seguridad antes de escala"
+  ],
+  "decision": "No escalar sistema roto ni omitir revisión humana de capital",
+  "kpi": "crecimiento rentable y capacidad repetible",
+  "type": "Orchestrator",
+  "dependencies": [
+    "growth-strategy",
+    "revenue-intelligence",
+    "scaling-readiness",
+    "operational-scalability",
+    "organizational-scalability",
+    "business-decision-gates"
+  ],
+  "sources": [],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Orchestration",
+  "purpose": "Separar expansión comercial de capacidad de escalar",
+  "business_outcome": "crecimiento rentable y capacidad repetible",
+  "when_to_use": "enterprise-growth-orchestrator: Orchestration. Usar para producir growth_route, scale_constraints, staged_plan a partir de estrategia, economía, demanda, capacidad, riesgos; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "enterprise-growth-orchestrator",
+    "growth_route, scale_constraints, staged_plan"
+  ],
+  "required_inputs": [
+    "estrategia",
+    " economía",
+    " demanda",
+    " capacidad",
+    " riesgos"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [],
+  "decision_rules": [
+    "No escalar sistema roto ni omitir revisión humana de capital",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "growth_route",
+    " scale_constraints",
+    " staged_plan"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No escalar sistema roto ni omitir revisión humana de capital",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "crecimiento rentable y capacidad repetible"
+  ],
+  "examples": [
+    "Usa $enterprise-growth-orchestrator con estrategia, economía, demanda, capacidad, riesgos para obtener growth_route, scale_constraints, staged_plan.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [
+    "growth-strategy",
+    "revenue-intelligence",
+    "scaling-readiness",
+    "operational-scalability",
+    "organizational-scalability",
+    "business-decision-gates"
+  ],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "name": "market-development",
+  "domain": "Growth & Scaling",
+  "sprint": 8,
+  "inputs": "oferta vigente, mercados nuevos, acceso, recursos",
+  "output": "market_options, validation, entry_plan",
+  "procedure": [
+    "Comparar mercados por necesidad y capacidad de atender",
+    "Validar demanda/canal y costos locales",
+    "Diseñar entrada progresiva con condiciones de salida"
+  ],
+  "decision": "No transferir encaje actual sin prueba local",
+  "kpi": "demanda y contribución en nuevo mercado",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Growth & Scaling",
+  "purpose": "Comparar mercados por necesidad y capacidad de atender",
+  "business_outcome": "demanda y contribución en nuevo mercado",
+  "when_to_use": "market-development: Growth & Scaling. Usar para producir market_options, validation, entry_plan a partir de oferta vigente, mercados nuevos, acceso, recursos; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "market-development",
+    "market_options, validation, entry_plan"
+  ],
+  "required_inputs": [
+    "oferta vigente",
+    " mercados nuevos",
+    " acceso",
+    " recursos"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [],
+  "decision_rules": [
+    "No transferir encaje actual sin prueba local",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "market_options",
+    " validation",
+    " entry_plan"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No transferir encaje actual sin prueba local",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "demanda y contribución en nuevo mercado"
+  ],
+  "examples": [
+    "Usa $market-development con oferta vigente, mercados nuevos, acceso, recursos para obtener market_options, validation, entry_plan.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

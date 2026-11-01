@@ -1,0 +1,4 @@
+interface:
+  display_name: "Scriptwriting"
+  short_description: "Creative Intelligence: capacidad AEM OS"
+  default_prompt: "Usa $scriptwriting para abordar esta tarea con evidencia y resultado verificable."

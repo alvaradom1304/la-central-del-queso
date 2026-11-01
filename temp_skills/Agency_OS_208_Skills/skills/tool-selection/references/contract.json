@@ -1,0 +1,131 @@
+{
+  "name": "tool-selection",
+  "domain": "AI & Automation",
+  "sprint": 7,
+  "inputs": "tarea, opciones disponibles, permisos, costo",
+  "output": "tool_comparison, choice, fallback",
+  "procedure": [
+    "Inventariar capacidades reales y restricciones",
+    "Comparar exactitud, costo, latencia, datos y mantenimiento",
+    "Elegir herramienta y fallback con evidencia"
+  ],
+  "decision": "Disponibilidad no implica autorización; no probar sesiones ajenas",
+  "kpi": "resultado por costo/latencia",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://www.nist.gov/itl/ai-risk-management-framework",
+      "NIST AI RMF; marco, no certificación"
+    ],
+    [
+      "https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro",
+      "MCP; versión observada en esta auditoría, revalidar"
+    ],
+    [
+      "https://docs.n8n.io/",
+      "n8n; docs"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — AI & Automation",
+  "purpose": "Inventariar capacidades reales y restricciones",
+  "business_outcome": "resultado por costo/latencia",
+  "when_to_use": "tool-selection: AI & Automation. Usar para producir tool_comparison, choice, fallback a partir de tarea, opciones disponibles, permisos, costo; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "tool-selection",
+    "tool_comparison, choice, fallback"
+  ],
+  "required_inputs": [
+    "tarea",
+    " opciones disponibles",
+    " permisos",
+    " costo"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://www.nist.gov/itl/ai-risk-management-framework",
+      "NIST AI RMF; marco, no certificación"
+    ],
+    [
+      "https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro",
+      "MCP; versión observada en esta auditoría, revalidar"
+    ],
+    [
+      "https://docs.n8n.io/",
+      "n8n; docs"
+    ]
+  ],
+  "decision_rules": [
+    "Disponibilidad no implica autorización; no probar sesiones ajenas",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "tool_comparison",
+    " choice",
+    " fallback"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: Disponibilidad no implica autorización; no probar sesiones ajenas",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "resultado por costo/latencia"
+  ],
+  "examples": [
+    "Usa $tool-selection con tarea, opciones disponibles, permisos, costo para obtener tool_comparison, choice, fallback.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

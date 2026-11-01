@@ -1,0 +1,116 @@
+{
+  "name": "incident-response",
+  "domain": "Cybersecurity",
+  "sprint": 6,
+  "inputs": "incidente, autoridad, activos, evidencias, contactos",
+  "output": "incident_timeline, containment_options, recovery_plan",
+  "procedure": [
+    "Confirmar indicios y preservar evidencia con acceso mínimo",
+    "Proponer contención proporcional y escalar al responsable",
+    "Planificar recuperación, verificación y retrospectiva"
+  ],
+  "decision": "No borrar evidencia, apagar sistemas ni enviar notificaciones sin autoridad; no prometer cumplimiento legal",
+  "kpi": "tiempo de detección/contención y recuperación",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://owasp.org/projects/asvs",
+      "OWASP ASVS; verificar versión y scope"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Cybersecurity",
+  "purpose": "Confirmar indicios y preservar evidencia con acceso mínimo",
+  "business_outcome": "tiempo de detección/contención y recuperación",
+  "when_to_use": "incident-response: Cybersecurity. Usar para producir incident_timeline, containment_options, recovery_plan a partir de incidente, autoridad, activos, evidencias, contactos; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "incident-response",
+    "incident_timeline, containment_options, recovery_plan"
+  ],
+  "required_inputs": [
+    "incidente",
+    " autoridad",
+    " activos",
+    " evidencias",
+    " contactos"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://owasp.org/projects/asvs",
+      "OWASP ASVS; verificar versión y scope"
+    ]
+  ],
+  "decision_rules": [
+    "No borrar evidencia, apagar sistemas ni enviar notificaciones sin autoridad; no prometer cumplimiento legal",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "incident_timeline",
+    " containment_options",
+    " recovery_plan"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No borrar evidencia, apagar sistemas ni enviar notificaciones sin autoridad; no prometer cumplimiento legal",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "tiempo de detección/contención y recuperación"
+  ],
+  "examples": [
+    "Usa $incident-response con incidente, autoridad, activos, evidencias, contactos para obtener incident_timeline, containment_options, recovery_plan.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

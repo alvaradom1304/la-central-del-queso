@@ -1,0 +1,4 @@
+interface:
+  display_name: "Rag Architecture"
+  short_description: "AI & Automation: capacidad AEM OS"
+  default_prompt: "Usa $rag-architecture para abordar esta tarea con evidencia y resultado verificable."

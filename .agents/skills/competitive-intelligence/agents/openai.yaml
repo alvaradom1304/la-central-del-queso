@@ -1,0 +1,14 @@
+interface:
+  display_name: Competitive Intelligence
+  short_description: 'Business Intelligence: capacidad AEM OS'
+  default_prompt: Usa $competitive-intelligence para abordar esta tarea con evidencia
+    y resultado verificable.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

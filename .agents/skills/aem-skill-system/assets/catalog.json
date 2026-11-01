@@ -1,0 +1,1666 @@
+[
+  {
+    "name": "accessibility",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Premium Web Experience",
+    "type": "Atomic",
+    "path": "skill-6ac9c7b9fc508191acd42962dd6ac1f4"
+  },
+  {
+    "name": "advertising-concept",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Creative Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9c7d77de88191954d9872c121df15"
+  },
+  {
+    "name": "aem-autonomous-quality-loop",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Orchestration",
+    "type": "Orchestrator",
+    "path": "skill-6ac9c76ee9848191bc0b9e82b1e6d5e5"
+  },
+  {
+    "name": "aem-business-transformation",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Orchestration",
+    "type": "Orchestrator",
+    "path": "skill-6ac9c7f746b88191afab59f4641c71f9"
+  },
+  {
+    "name": "aem-company-builder",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Orchestration",
+    "type": "Orchestrator",
+    "path": "skill-6ac9c7898f6c8191a367de3ef6de7ac1"
+  },
+  {
+    "name": "aem-library-validation",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Foundation",
+    "type": "Atomic",
+    "path": "skill-6ac9c4626e988191acc5c765b2ec9f0e"
+  },
+  {
+    "name": "aem-skill-factory",
+    "version": "0.1.1",
+    "status": "EXPERIMENTAL",
+    "domain": "Orchestration",
+    "type": "Composite",
+    "path": "skill-6ac9c31a29188191a291488d7316d196"
+  },
+  {
+    "name": "aem-skill-system",
+    "version": "0.1.2",
+    "status": "EXPERIMENTAL",
+    "domain": "Foundation",
+    "type": "Composite",
+    "path": "skill-6ac9c3f8ec048191a99de429a09f99f9"
+  },
+  {
+    "name": "aem-venture-architect",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Orchestration",
+    "type": "Orchestrator",
+    "path": "skill-6ac9c7a5c8808191b2c1769a954c1fc0"
+  },
+  {
+    "name": "agency-os",
+    "version": "existing",
+    "status": "EXISTING_PRESERVED",
+    "domain": "Foundation",
+    "type": "Composite",
+    "path": "skill-6ac9997d350c8191911ceb94de562df7"
+  },
+  {
+    "name": "agent-design",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "AI & Automation",
+    "type": "Atomic",
+    "path": "skill-6ac9c81682548191b787d70972e6e571"
+  },
+  {
+    "name": "agent-orchestration",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "AI & Automation",
+    "type": "Atomic",
+    "path": "skill-6ac9c8799e108191bd9169b9f0f78b8b"
+  },
+  {
+    "name": "ai-evaluation",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "AI & Automation",
+    "type": "Atomic",
+    "path": "skill-6ac9c8a791bc819189d9be8a7d523cd6"
+  },
+  {
+    "name": "ai-governance",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "AI & Automation",
+    "type": "Atomic",
+    "path": "skill-6ac9c8c4d51c8191ad177fe87c91617c"
+  },
+  {
+    "name": "ai-image-direction",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Creative Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9c8e101288191bd8f0b0868f7424f"
+  },
+  {
+    "name": "ai-observability",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "AI & Automation",
+    "type": "Atomic",
+    "path": "skill-6ac9c8ffcc808191a275e04baf1eb9d7"
+  },
+  {
+    "name": "ai-video-direction",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Creative Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9c922bd3c8191b1036fe52ec81aee"
+  },
+  {
+    "name": "api-integration",
+    "version": "0.2.0",
+    "status": "EXPERIMENTAL",
+    "domain": "AI & Automation",
+    "type": "Atomic",
+    "path": "skill-6ac9c9408e1c8191addfa4b9e1a72b9b"
+  },
+  {
+    "name": "api-security",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Cybersecurity",
+    "type": "Atomic",
+    "path": "skill-6ac9c95f0f648191aa57b92e72e43927"
+  },
+  {
+    "name": "art-direction",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Brand Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9c97efb948191b67d566ef7cf7d79"
+  },
+  {
+    "name": "authentication-security",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Cybersecurity",
+    "type": "Atomic",
+    "path": "skill-6ac9c9a0fa88819182a60e734cf11ccf"
+  },
+  {
+    "name": "authorization-security",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Cybersecurity",
+    "type": "Atomic",
+    "path": "skill-6ac9c9c138d08191b211af1aec391a1c"
+  },
+  {
+    "name": "automation-design",
+    "version": "0.2.0",
+    "status": "EXPERIMENTAL",
+    "domain": "AI & Automation",
+    "type": "Atomic",
+    "path": "skill-6ac9c72d6bb08191a30a9707b13a689c"
+  },
+  {
+    "name": "b2b-expansion",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Growth & Scaling",
+    "type": "Atomic",
+    "path": "skill-6ac9c9e94428819191c7d5d18cc03eed"
+  },
+  {
+    "name": "backend-security",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Cybersecurity",
+    "type": "Atomic",
+    "path": "skill-6ac9ca0d41f881919b6696ac9bbcd898"
+  },
+  {
+    "name": "brand-architecture",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Brand Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9ca362f38819190152d8c33e7557b"
+  },
+  {
+    "name": "brand-development",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Orchestration",
+    "type": "Composite",
+    "path": "skill-6ac9ca60dc0481918bf81ca1b10b0e7d"
+  },
+  {
+    "name": "brand-guidelines",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Brand Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9ca828848819187f6023cb3259bb8"
+  },
+  {
+    "name": "brand-personality",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Brand Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9caa4806c819183695617b2ada9b3"
+  },
+  {
+    "name": "brand-positioning",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Brand Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9cacb0fa88191b2ec6fb3c731305c"
+  },
+  {
+    "name": "brand-quality-assurance",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Brand Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9caf51eb081919b39f69efeb468f1"
+  },
+  {
+    "name": "brand-research",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Brand Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9cb209ff481919b852ac78e7c1a2d"
+  },
+  {
+    "name": "brand-storytelling",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Brand Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9cb4ab12881918db93e5ce824ea7b"
+  },
+  {
+    "name": "brand-strategy",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Brand Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9c6ebfb508191bb0f0363a691f8db"
+  },
+  {
+    "name": "brand-voice",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Brand Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9cb70a58c8191b2199d1b069825a5"
+  },
+  {
+    "name": "break-even-analysis",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Financial Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9cba124d881919a8a180077e7d5a6"
+  },
+  {
+    "name": "business-decision-gates",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Orchestration",
+    "type": "Atomic",
+    "path": "skill-6ac9c75a1ff48191a54da237c3319c87"
+  },
+  {
+    "name": "business-diagnostic",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Business Intelligence",
+    "type": "Composite",
+    "path": "skill-6ac9c476c9608191a48f943675c92d50"
+  },
+  {
+    "name": "business-health-assessment",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Business Intelligence",
+    "type": "Composite",
+    "path": "skill-6ac9cbce6ed48191a55b7af7ed55bd87"
+  },
+  {
+    "name": "business-model-analysis",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Business Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9cbf25bd48191a86a56cf7fd0d29d"
+  },
+  {
+    "name": "business-model-design",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Venture Building",
+    "type": "Atomic",
+    "path": "skill-6ac9c614b6c48191920dd7d7e8c49eea"
+  },
+  {
+    "name": "business-model-validation",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Venture Building",
+    "type": "Atomic",
+    "path": "skill-6ac9cc1fd8908191bf4efc368680f4df"
+  },
+  {
+    "name": "business-strategy",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Business Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9c641251881918b714985803aa615"
+  },
+  {
+    "name": "buyer-persona",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Marketing Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9cc4fb6708191a13e1ec6420f46bb"
+  },
+  {
+    "name": "campaign-concept",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Creative Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9cc7320648191b5641630b437970c"
+  },
+  {
+    "name": "capacity-planning",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Operations & Logistics",
+    "type": "Atomic",
+    "path": "skill-6ac9cc9c8a24819181877eb0c27ea77f"
+  },
+  {
+    "name": "capital-requirements",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Venture Building",
+    "type": "Atomic",
+    "path": "skill-6ac9ccc5beb48191a8d65bab2d184223"
+  },
+  {
+    "name": "cash-flow-analysis",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Financial Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9c62a99988191bb63a393bfc30d3d"
+  },
+  {
+    "name": "challenger-selling",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Sales Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9ccf6357c8191ae1e0fc0a6f7404f"
+  },
+  {
+    "name": "channel-expansion",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Growth & Scaling",
+    "type": "Atomic",
+    "path": "skill-6ac9cd2173cc8191ab5459001b07adfb"
+  },
+  {
+    "name": "cicd-security",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Cybersecurity",
+    "type": "Atomic",
+    "path": "skill-6ac9cd4b89448191b3f285021291f3c4"
+  },
+  {
+    "name": "cinematic-direction",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Creative Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9cd8546208191808d3960cf3b7917"
+  },
+  {
+    "name": "cloud-security",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Cybersecurity",
+    "type": "Atomic",
+    "path": "skill-6ac9cdae440081919f4ba2c07e33aa98"
+  },
+  {
+    "name": "color-system",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Brand Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9ce0617608191ac867df5b814c0f2"
+  },
+  {
+    "name": "competitive-intelligence",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Business Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9ce38360c8191a0c180c847b54873"
+  },
+  {
+    "name": "competitor-analysis",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Business Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9c5c7f1748191806251d1967b2a3a"
+  },
+  {
+    "name": "consumer-behavior",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Business Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9ce640acc8191acded76e1265f6d8"
+  },
+  {
+    "name": "content-strategy",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Marketing Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9ce8bf56c8191bf6ac617d0d35c94"
+  },
+  {
+    "name": "context-engineering",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "AI & Automation",
+    "type": "Atomic",
+    "path": "skill-6ac9cebca7b88191b7cf7125bb6fe99c"
+  },
+  {
+    "name": "conversion-analysis",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Marketing Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9cef9dcdc8191a3370f9efc26eaf5"
+  },
+  {
+    "name": "conversion-rate-optimization",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Marketing Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9cf30036481918ad9c84155044fa6"
+  },
+  {
+    "name": "conversion-ux",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Premium Web Experience",
+    "type": "Atomic",
+    "path": "skill-6ac9cf91791c8191ade43d0d2101e0ef"
+  },
+  {
+    "name": "copywriting",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Marketing Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9cfc1baa0819192ba712a94370221"
+  },
+  {
+    "name": "cost-analysis",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Financial Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9cff3e97881918a26bd0604deb07f"
+  },
+  {
+    "name": "cost-to-serve",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Operations & Logistics",
+    "type": "Atomic",
+    "path": "skill-6ac9d023eb548191a8b3ec808c2744a8"
+  },
+  {
+    "name": "creative-direction",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Creative Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9d0527fe48191b59a11f99647500e"
+  },
+  {
+    "name": "creative-quality-assurance",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Creative Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9d080c14c8191a7a471ef293e379a"
+  },
+  {
+    "name": "creative-strategy",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Creative Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9d0b6bec081919ec0ce2356acdbda"
+  },
+  {
+    "name": "cross-selling",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Sales Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9d0e5cbd0819193ac2d21743f9e65"
+  },
+  {
+    "name": "customer-acquisition",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Growth & Scaling",
+    "type": "Atomic",
+    "path": "skill-6ac9d17579b481919af15138591d4146"
+  },
+  {
+    "name": "customer-discovery",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Venture Building",
+    "type": "Atomic",
+    "path": "skill-6ac9d1b927a08191a6cf11435edddc04"
+  },
+  {
+    "name": "customer-journey",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Marketing Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9d1ef1d488191ae2cea6a45e7f081"
+  },
+  {
+    "name": "customer-research",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Business Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9c4a245408191965e06882c751c0f"
+  },
+  {
+    "name": "customer-success",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Sales Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9d221c2608191ab5787851c5ca7cf"
+  },
+  {
+    "name": "demand-planning",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Operations & Logistics",
+    "type": "Atomic",
+    "path": "skill-6ac9d257236481918ecb9f2a8e491a51"
+  },
+  {
+    "name": "dependency-security",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Cybersecurity",
+    "type": "Atomic",
+    "path": "skill-6ac9d2911ed08191951a052651597b96"
+  },
+  {
+    "name": "design-system",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Premium Web Experience",
+    "type": "Atomic",
+    "path": "skill-6ac9d2c7b8888191b07d162d0ae00e7f"
+  },
+  {
+    "name": "email-marketing",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Marketing Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9d2fbfadc8191bebafeceae23b10b"
+  },
+  {
+    "name": "enterprise-growth-orchestrator",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Orchestration",
+    "type": "Orchestrator",
+    "path": "skill-6ac9d335e530819191dd5dc22a1c89aa"
+  },
+  {
+    "name": "ethical-influence",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Sales Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9d36edd8c81918fdf44b1cebebb17"
+  },
+  {
+    "name": "facebook-growth",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Marketing Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9d3dc0ca8819198676499ce691521"
+  },
+  {
+    "name": "fanatical-prospecting",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Sales Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9d4475034819187c9a41409f6d000"
+  },
+  {
+    "name": "financial-diagnostic",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Financial Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9d4ad45e48191b6f3134ec357a234"
+  },
+  {
+    "name": "financial-forecasting",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Financial Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9d4fa40108191898263cfd06442da"
+  },
+  {
+    "name": "frontend-security",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Cybersecurity",
+    "type": "Atomic",
+    "path": "skill-6ac9d5419d548191b1496770c429b65e"
+  },
+  {
+    "name": "funding-strategy",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Venture Building",
+    "type": "Atomic",
+    "path": "skill-6ac9d5af7f148191a3ce7229a405a600"
+  },
+  {
+    "name": "gap-selling",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Sales Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9d6bd11e4819194b14fc1de52dcbb"
+  },
+  {
+    "name": "geographic-expansion",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Growth & Scaling",
+    "type": "Atomic",
+    "path": "skill-6ac9e5917e9481919d81bc974b0d79a2"
+  },
+  {
+    "name": "go-to-market",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Orchestration",
+    "type": "Composite",
+    "path": "skill-6ac9c68942d08191a8d1ff88deb1ba8f"
+  },
+  {
+    "name": "growth-experimentation",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Marketing Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9d803b558819192a4d23ed90e559a"
+  },
+  {
+    "name": "growth-strategy",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Growth & Scaling",
+    "type": "Atomic",
+    "path": "skill-6ac9d8ac80148191add8a129e4e7da9b"
+  },
+  {
+    "name": "gsap-animation",
+    "version": "0.2.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Premium Web Experience",
+    "type": "Atomic",
+    "path": "skill-6ac9d99d57a481918dae0c5caca5a213"
+  },
+  {
+    "name": "high-value-deliberation",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Decision Intelligence",
+    "type": "Composite",
+    "path": "skill-6aca8dfff9ec8191839209a844739973"
+  },
+  {
+    "name": "human-in-the-loop",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "AI & Automation",
+    "type": "Atomic",
+    "path": "skill-6ac9da57feec8191ad2a21c1aebf78a9"
+  },
+  {
+    "name": "immersive-commerce",
+    "version": "existing",
+    "status": "EXISTING_PRESERVED",
+    "domain": "Premium Web Experience",
+    "type": "Composite",
+    "path": "skill-6ac99d7aac5c819184d1d276af114aef"
+  },
+  {
+    "name": "immersive-web-design",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Premium Web Experience",
+    "type": "Atomic",
+    "path": "skill-6ac9dab26acc81918bc43503b8ad9ad4"
+  },
+  {
+    "name": "incident-response",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Cybersecurity",
+    "type": "Atomic",
+    "path": "skill-6ac9db8a83008191b603a5ab6a5fc946"
+  },
+  {
+    "name": "industry-analysis",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Business Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9dbd234c88191b336acf80b45a73d"
+  },
+  {
+    "name": "information-architecture",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Premium Web Experience",
+    "type": "Atomic",
+    "path": "skill-6ac9dc927490819182363adf2df83080"
+  },
+  {
+    "name": "instagram-growth",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Marketing Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9dcd879b081919387aba8b507d8fe"
+  },
+  {
+    "name": "international-expansion",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Growth & Scaling",
+    "type": "Atomic",
+    "path": "skill-6ac9ddae40ac8191864a9f3b18f30f0d"
+  },
+  {
+    "name": "inventory-forecasting",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Operations & Logistics",
+    "type": "Atomic",
+    "path": "skill-6ac9de91908c8191856e4399de8d4262"
+  },
+  {
+    "name": "inventory-management",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Operations & Logistics",
+    "type": "Atomic",
+    "path": "skill-6ac9c7458f2481918b93ae28334ad586"
+  },
+  {
+    "name": "investment-analysis",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Financial Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9dffab9b4819197c9adc36e4d3367"
+  },
+  {
+    "name": "knowledge-retrieval",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "AI & Automation",
+    "type": "Atomic",
+    "path": "skill-6ac9e167bad8819187d5efc431a8ac84"
+  },
+  {
+    "name": "launch-readiness",
+    "version": "0.2.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Venture Building",
+    "type": "Atomic",
+    "path": "skill-6aca3f5e894881919c44f759a89037c2"
+  },
+  {
+    "name": "lead-generation",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Marketing Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9e68c3134819188b7336eb95f2967"
+  },
+  {
+    "name": "lead-qualification",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Sales Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9e712de04819191bbf652fc154460"
+  },
+  {
+    "name": "local-seo",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Marketing Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9e87d50b48191a64e9479a800fb74"
+  },
+  {
+    "name": "logistics",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Operations & Logistics",
+    "type": "Atomic",
+    "path": "skill-6ac9e90168c0819182cb975390fe4a6c"
+  },
+  {
+    "name": "ltv-optimization",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Growth & Scaling",
+    "type": "Atomic",
+    "path": "skill-6ac9e9518ecc8191b459eed8536c4589"
+  },
+  {
+    "name": "margin-analysis",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Financial Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9e9a8b4c481918c46ab9e90b92225"
+  },
+  {
+    "name": "market-development",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Growth & Scaling",
+    "type": "Atomic",
+    "path": "skill-6ac9ea05c6dc8191a3b27299b35a373b"
+  },
+  {
+    "name": "market-penetration",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Growth & Scaling",
+    "type": "Atomic",
+    "path": "skill-6ac9eb00c8c081918ba1b5bbd39fd197"
+  },
+  {
+    "name": "market-research",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Business Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9c25e42f081918f0f887011febf2b"
+  },
+  {
+    "name": "market-segmentation",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Marketing Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9eb8cbc4c8191a25c6e401dd7eb6c"
+  },
+  {
+    "name": "market-sizing",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Business Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9ebed8e6c8191af1de1b1d0b2335f"
+  },
+  {
+    "name": "market-validation",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Venture Building",
+    "type": "Atomic",
+    "path": "skill-6ac9ec41cce881919235cb7cefb308a2"
+  },
+  {
+    "name": "marketing-analytics",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Marketing Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9ed82b51c81918bfdcb6e064b3410"
+  },
+  {
+    "name": "marketing-strategy",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Marketing Intelligence",
+    "type": "Atomic",
+    "path": "skill-6aca12c5a80481918ada35b7a2a0b07b"
+  },
+  {
+    "name": "mcp-integration",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "AI & Automation",
+    "type": "Atomic",
+    "path": "skill-6aca1336dcb0819190bf0ad7936028e9"
+  },
+  {
+    "name": "meddicc",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Sales Intelligence",
+    "type": "Atomic",
+    "path": "skill-6aca13d555e48191b5e274ad7a2ed5b0"
+  },
+  {
+    "name": "mom-test-interviewing",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Sales Intelligence",
+    "type": "Atomic",
+    "path": "skill-6aca1478bfd081918e32cf5cf200ed6f"
+  },
+  {
+    "name": "motion-design",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Premium Web Experience",
+    "type": "Atomic",
+    "path": "skill-6aca14ef7afc8191a79fa28a51d3c691"
+  },
+  {
+    "name": "motion-direction",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Creative Intelligence",
+    "type": "Atomic",
+    "path": "skill-6aca172473f48191b9012d158813ad7f"
+  },
+  {
+    "name": "mvp-strategy",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Venture Building",
+    "type": "Atomic",
+    "path": "skill-6aca17a5d53c8191816443f38f461acc"
+  },
+  {
+    "name": "n8n-workflow-design",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "AI & Automation",
+    "type": "Atomic",
+    "path": "skill-6aca18a5c86c8191b1cf2cd61b74445a"
+  },
+  {
+    "name": "negotiation",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Sales Intelligence",
+    "type": "Atomic",
+    "path": "skill-6aca191c927c819182e90ba9f89dd834"
+  },
+  {
+    "name": "nextjs-architecture",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Premium Web Experience",
+    "type": "Atomic",
+    "path": "skill-6aca19f77cb08191aa13c4d37a0ba2e1"
+  },
+  {
+    "name": "operational-kpis",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Operations & Logistics",
+    "type": "Atomic",
+    "path": "skill-6aca1a4a719c8191ad6366a3f0f0a532"
+  },
+  {
+    "name": "operational-risk",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Operations & Logistics",
+    "type": "Atomic",
+    "path": "skill-6aca1b8c76908191b70b3b6f51691d5a"
+  },
+  {
+    "name": "operational-scalability",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Growth & Scaling",
+    "type": "Atomic",
+    "path": "skill-6aca1c52ffe08191974f77daea58a3cf"
+  },
+  {
+    "name": "opportunity-analysis",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Business Intelligence",
+    "type": "Atomic",
+    "path": "skill-6aca40d04abc819181ee4797cd50b319"
+  },
+  {
+    "name": "opportunity-discovery",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Venture Building",
+    "type": "Atomic",
+    "path": "skill-6aca1fd2b5e081918ff204936412e93f"
+  },
+  {
+    "name": "organizational-scalability",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Growth & Scaling",
+    "type": "Atomic",
+    "path": "skill-6aca20a974c481919cab36e200a11e4e"
+  },
+  {
+    "name": "owasp-review",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Cybersecurity",
+    "type": "Atomic",
+    "path": "skill-6aca2154c7d081919696273ec47df8ff"
+  },
+  {
+    "name": "paid-media",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Marketing Intelligence",
+    "type": "Atomic",
+    "path": "skill-6aca221273ec81918e4a3e52fbb2b1e3"
+  },
+  {
+    "name": "photography-direction",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Brand Intelligence",
+    "type": "Atomic",
+    "path": "skill-6aca228ab7e0819195592e20c0f09581"
+  },
+  {
+    "name": "positioning",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Marketing Intelligence",
+    "type": "Atomic",
+    "path": "skill-6aca2326007081919ed49f9f55670e14"
+  },
+  {
+    "name": "premium-digital-experience-builder",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Orchestration",
+    "type": "Composite",
+    "path": "skill-6aca41c267ac819182c9d22f908ddeec"
+  },
+  {
+    "name": "pricing",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Financial Intelligence",
+    "type": "Atomic",
+    "path": "skill-6aca2499580c819180760f0ead6761d4"
+  },
+  {
+    "name": "pricing-optimization",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Growth & Scaling",
+    "type": "Atomic",
+    "path": "skill-6aca251fff8c8191aaa442696ee274dd"
+  },
+  {
+    "name": "privacy-engineering",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Cybersecurity",
+    "type": "Atomic",
+    "path": "skill-6aca2579745081918e7da4f03fe9e3c1"
+  },
+  {
+    "name": "problem-centric-selling",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Sales Intelligence",
+    "type": "Atomic",
+    "path": "skill-6aca260e1e0881918db3382144b07a7c"
+  },
+  {
+    "name": "problem-validation",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Venture Building",
+    "type": "Atomic",
+    "path": "skill-6ac9c48a9bf881919249459bb869a7e5"
+  },
+  {
+    "name": "process-mapping",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Operations & Logistics",
+    "type": "Atomic",
+    "path": "skill-6aca26b1420c8191971adbd2187581a6"
+  },
+  {
+    "name": "process-optimization",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Operations & Logistics",
+    "type": "Atomic",
+    "path": "skill-6aca27389c048191924c98d14d6fd9ec"
+  },
+  {
+    "name": "procurement",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Operations & Logistics",
+    "type": "Atomic",
+    "path": "skill-6aca284fb80881919a1522594006d379"
+  },
+  {
+    "name": "product-expansion",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Growth & Scaling",
+    "type": "Atomic",
+    "path": "skill-6aca28a9c48c8191ae356a5b5039cb25"
+  },
+  {
+    "name": "product-market-fit-research",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Venture Building",
+    "type": "Atomic",
+    "path": "skill-6aca29797a248191a2d3e6f7906c1740"
+  },
+  {
+    "name": "product-photography-direction",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Creative Intelligence",
+    "type": "Atomic",
+    "path": "skill-6aca29ec4de48191933a4b36d75dcf8d"
+  },
+  {
+    "name": "profitability-analysis",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Financial Intelligence",
+    "type": "Atomic",
+    "path": "skill-6aca2ab43a4081919fa00e563cd06ab6"
+  },
+  {
+    "name": "prompt-engineering",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "AI & Automation",
+    "type": "Atomic",
+    "path": "skill-6aca2b22ed7c8191a43958b9c676c51b"
+  },
+  {
+    "name": "prospecting",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Sales Intelligence",
+    "type": "Atomic",
+    "path": "skill-6aca2bd8906481919bbb1fb177e36df9"
+  },
+  {
+    "name": "quality-council",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Orchestration",
+    "type": "Orchestrator",
+    "path": "skill-6aca2c74b7a48191a3966d7b911cef84"
+  },
+  {
+    "name": "quality-management",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Operations & Logistics",
+    "type": "Atomic",
+    "path": "skill-6aca2cdf81348191b4cfad8c048d5608"
+  },
+  {
+    "name": "rag-architecture",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "AI & Automation",
+    "type": "Atomic",
+    "path": "skill-6aca2d4838908191867f49b5367f6f69"
+  },
+  {
+    "name": "react-three-fiber",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Premium Web Experience",
+    "type": "Atomic",
+    "path": "skill-6aca2e5a66d88191acad588fb9561a80"
+  },
+  {
+    "name": "responsive-design",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Premium Web Experience",
+    "type": "Atomic",
+    "path": "skill-6aca2f72600c8191b1f1c83f62fffe3e"
+  },
+  {
+    "name": "retention",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Sales Intelligence",
+    "type": "Atomic",
+    "path": "skill-6aca3060975881919c3b6f07641534df"
+  },
+  {
+    "name": "revenue-growth",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Growth & Scaling",
+    "type": "Atomic",
+    "path": "skill-6aca310080c48191aa346e6a6fa57a5d"
+  },
+  {
+    "name": "revenue-intelligence",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Orchestration",
+    "type": "Composite",
+    "path": "skill-6aca316fb6c48191a1951ab7992ad5d4"
+  },
+  {
+    "name": "risk-analysis",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Business Intelligence",
+    "type": "Atomic",
+    "path": "skill-6aca3225b5e48191bd0eb65607fb5dd5"
+  },
+  {
+    "name": "route-optimization",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Operations & Logistics",
+    "type": "Atomic",
+    "path": "skill-6aca5eaf24c8819181b1ae14b95cf99e"
+  },
+  {
+    "name": "sales-discovery",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Sales Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9c6a246d48191a7fbd62b95246210"
+  },
+  {
+    "name": "sales-follow-up",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Sales Intelligence",
+    "type": "Atomic",
+    "path": "skill-6aca343dd5048191b1fb870fdaf72dd2"
+  },
+  {
+    "name": "sales-objection-analysis",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Sales Intelligence",
+    "type": "Atomic",
+    "path": "skill-6aca352e85908191aeba3b7d3628c5ba"
+  },
+  {
+    "name": "sales-proposal",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Sales Intelligence",
+    "type": "Atomic",
+    "path": "skill-6aca35dbbc948191ba210d4b5bda5051"
+  },
+  {
+    "name": "scaling-readiness",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Growth & Scaling",
+    "type": "Atomic",
+    "path": "skill-6aca3655290c8191a74e6398b988cf95"
+  },
+  {
+    "name": "scenario-planning",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Financial Intelligence",
+    "type": "Atomic",
+    "path": "skill-6aca36fae76c819198e08e2d26b99ab4"
+  },
+  {
+    "name": "scriptwriting",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Creative Intelligence",
+    "type": "Atomic",
+    "path": "skill-6aca377837988191912200fd30dd927c"
+  },
+  {
+    "name": "scroll-experience",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Premium Web Experience",
+    "type": "Atomic",
+    "path": "skill-6aca3849bde08191bf61db9b5204f6c0"
+  },
+  {
+    "name": "secrets-management",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Cybersecurity",
+    "type": "Atomic",
+    "path": "skill-6aca39e022c481919116efb949463078"
+  },
+  {
+    "name": "secure-development",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Cybersecurity",
+    "type": "Atomic",
+    "path": "skill-6aca3a9b74348191a240e5263955e36b"
+  },
+  {
+    "name": "security-requirements",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Cybersecurity",
+    "type": "Atomic",
+    "path": "skill-6aca3c23dc108191b960c096dc7359ee"
+  },
+  {
+    "name": "security-testing",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Cybersecurity",
+    "type": "Atomic",
+    "path": "skill-6aca3d1881d08191bf950912fb100eb3"
+  },
+  {
+    "name": "seo",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Marketing Intelligence",
+    "type": "Atomic",
+    "path": "skill-6aca3dd294508191a3ace5ee811ed6d2"
+  },
+  {
+    "name": "seo-audit",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Marketing Intelligence",
+    "type": "Atomic",
+    "path": "skill-6aca447986c88191b97945146fe0a580"
+  },
+  {
+    "name": "social-creative",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Creative Intelligence",
+    "type": "Atomic",
+    "path": "skill-6aca5c41ccdc8191af01fce2870579ee"
+  },
+  {
+    "name": "social-media-strategy",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Marketing Intelligence",
+    "type": "Atomic",
+    "path": "skill-6aca600c3ee8819185466c7978c86382"
+  },
+  {
+    "name": "spin-selling",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Sales Intelligence",
+    "type": "Atomic",
+    "path": "skill-6aca62f248a88191a43aa40d31d1dda0"
+  },
+  {
+    "name": "storyboarding",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Creative Intelligence",
+    "type": "Atomic",
+    "path": "skill-6aca49eca4b4819193815dc5f7e6a607"
+  },
+  {
+    "name": "strategic-planning",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Business Intelligence",
+    "type": "Atomic",
+    "path": "skill-6aca63c976f48191a98409d1d458e805"
+  },
+  {
+    "name": "supplier-evaluation",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Operations & Logistics",
+    "type": "Atomic",
+    "path": "skill-6aca4e1d8d488191b8596d32a2a96bc2"
+  },
+  {
+    "name": "supply-chain",
+    "version": "0.2.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Operations & Logistics",
+    "type": "Atomic",
+    "path": "supply-chain"
+  },
+  {
+    "name": "targeting",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Marketing Intelligence",
+    "type": "Atomic",
+    "path": "skill-6aca663fa5f8819197837493d34469ad"
+  },
+  {
+    "name": "technical-seo",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Premium Web Experience",
+    "type": "Atomic",
+    "path": "skill-6aca505fe3b48191a88b25ca5ddbad35"
+  },
+  {
+    "name": "threat-modeling",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Cybersecurity",
+    "type": "Atomic",
+    "path": "skill-6ac9c7140e808191a7f175b31ec029a0"
+  },
+  {
+    "name": "threejs-experience",
+    "version": "0.2.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Premium Web Experience",
+    "type": "Atomic",
+    "path": "threejs-experience"
+  },
+  {
+    "name": "tiktok-strategy",
+    "version": "0.2.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Marketing Intelligence",
+    "type": "Atomic",
+    "path": "tiktok-strategy"
+  },
+  {
+    "name": "tool-selection",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "AI & Automation",
+    "type": "Atomic",
+    "path": "skill-6aca52b49fac819186adee6657cd784c"
+  },
+  {
+    "name": "trend-analysis",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Business Intelligence",
+    "type": "Atomic",
+    "path": "skill-6aca541217e481919ab890f452226bd2"
+  },
+  {
+    "name": "typography-direction",
+    "version": "0.2.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Brand Intelligence",
+    "type": "Atomic",
+    "path": "typography-direction"
+  },
+  {
+    "name": "ui-direction",
+    "version": "0.2.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Premium Web Experience",
+    "type": "Atomic",
+    "path": "ui-direction"
+  },
+  {
+    "name": "unit-economics",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Financial Intelligence",
+    "type": "Atomic",
+    "path": "skill-6ac9c3d689148191979a61bcd79d4132"
+  },
+  {
+    "name": "upselling",
+    "version": "0.2.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Sales Intelligence",
+    "type": "Atomic",
+    "path": "upselling"
+  },
+  {
+    "name": "user-flow",
+    "version": "0.2.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Premium Web Experience",
+    "type": "Atomic",
+    "path": "user-flow"
+  },
+  {
+    "name": "ux-research",
+    "version": "0.2.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Premium Web Experience",
+    "type": "Atomic",
+    "path": "ux-research"
+  },
+  {
+    "name": "value-proposition-design",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Venture Building",
+    "type": "Atomic",
+    "path": "skill-6ac9c5e9f16081918f630a2b787be6be"
+  },
+  {
+    "name": "value-selling",
+    "version": "0.2.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Sales Intelligence",
+    "type": "Atomic",
+    "path": "value-selling"
+  },
+  {
+    "name": "venture-risk-assessment",
+    "version": "0.2.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Venture Building",
+    "type": "Atomic",
+    "path": "venture-risk-assessment"
+  },
+  {
+    "name": "visual-identity",
+    "version": "0.2.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Brand Intelligence",
+    "type": "Atomic",
+    "path": "visual-identity"
+  },
+  {
+    "name": "vulnerability-triage",
+    "version": "0.2.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Cybersecurity",
+    "type": "Atomic",
+    "path": "vulnerability-triage"
+  },
+  {
+    "name": "web-performance",
+    "version": "0.2.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Premium Web Experience",
+    "type": "Atomic",
+    "path": "web-performance"
+  },
+  {
+    "name": "web-quality-assurance",
+    "version": "0.2.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Premium Web Experience",
+    "type": "Atomic",
+    "path": "web-quality-assurance"
+  },
+  {
+    "name": "web-strategy",
+    "version": "0.1.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Premium Web Experience",
+    "type": "Atomic",
+    "path": "skill-6ac9c6fce8ac819185b96cf1146de0fe"
+  },
+  {
+    "name": "working-capital",
+    "version": "0.2.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Financial Intelligence",
+    "type": "Atomic",
+    "path": "working-capital"
+  },
+  {
+    "name": "youtube-strategy",
+    "version": "0.2.0",
+    "status": "EXPERIMENTAL",
+    "domain": "Marketing Intelligence",
+    "type": "Atomic",
+    "path": "youtube-strategy"
+  }
+]

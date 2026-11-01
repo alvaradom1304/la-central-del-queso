@@ -1,0 +1,4 @@
+interface:
+  display_name: "Social Media Strategy"
+  short_description: "Marketing Intelligence: capacidad AEM OS"
+  default_prompt: "Usa $social-media-strategy para abordar esta tarea con evidencia y resultado verificable."

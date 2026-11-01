@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "task_id",
+    "objective",
+    "context",
+    "inputs",
+    "authorized_scope",
+    "available_tools",
+    "acceptance_criteria"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string"
+    },
+    "objective": {
+      "type": "string"
+    },
+    "context": {
+      "type": "object"
+    },
+    "inputs": {
+      "type": "object",
+      "required": [
+        "objetivos",
+        "fuentes",
+        "eventos",
+        "permisos",
+        "periodos"
+      ],
+      "properties": {
+        "objetivos": {
+          "description": "objetivos",
+          "type": [
+            "object",
+            "array",
+            "string",
+            "number",
+            "boolean",
+            "null"
+          ]
+        },
+        "fuentes": {
+          "description": "fuentes",
+          "type": [
+            "object",
+            "array",
+            "string",
+            "number",
+            "boolean",
+            "null"
+          ]
+        },
+        "eventos": {
+          "description": "eventos",
+          "type": [
+            "object",
+            "array",
+            "string",
+            "number",
+            "boolean",
+            "null"
+          ]
+        },
+        "permisos": {
+          "description": "permisos",
+          "type": [
+            "object",
+            "array",
+            "string",
+            "number",
+            "boolean",
+            "null"
+          ]
+        },
+        "periodos": {
+          "description": "periodos",
+          "type": [
+            "object",
+            "array",
+            "string",
+            "number",
+            "boolean",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "authorized_scope": {
+      "type": "object"
+    },
+    "available_tools": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "acceptance_criteria": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "budget": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Pricing"
+  short_description: "Financial Intelligence: capacidad AEM OS"
+  default_prompt: "Usa $pricing para abordar esta tarea con evidencia y resultado verificable."

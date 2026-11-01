@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "coordinator": "Codex",
+  "scope": "Current Altiora engagement, subordinate to user/project/host authority",
+  "transport": "Current native tools; not an Orca runtime",
+  "objective": "Validate profitable10000USD projects + optional monthly maintenance; preserve previous technical/commercial tasks",
+  "updated_at": "2026-10-31T20:36:08.988979+00:00",
+  "policy": {
+    "direct_for_small_changes": true,
+    "load_skills_on_demand": true,
+    "one_writer_per_file": true,
+    "verify_before_acceptance": true,
+    "source_presence_is_connection": false,
+    "automatic_background_or_periodic_work": false,
+    "verify_current_inventory_before_dispatch": true
+  },
+  "orca": {
+    "reference": "stablyai/orca",
+    "revision": "1c6ac8c3c4d2c3dec2cb5966d225ca2a0e0471d3",
+    "runtime": "NOT_VERIFIED",
+    "orca_run_id": null,
+    "orca_dispatch_id": null
+  },
+  "tasks": [
+    {
+      "id": "ALTIORA-ORCA-SOURCE-20261031",
+      "owner": "Codex",
+      "status": "completed",
+      "evidence": "docs/altiora-toolkit/orca-reference.json"
+    },
+    {
+      "id": "ALTIORA-ORCA-REVIEW-20261031",
+      "owner": "native subagent /root/orca_reference_review",
+      "status": "completed",
+      "scope": "Static reference review only; third-party code not executed"
+    },
+    {
+      "id": "ALTIORA-CLAUDE-PROMPT-DELIVERY",
+      "owner": "Codex",
+      "status": "not_sent",
+      "reason": "User stopped Computer Use with physical Escape; not resumed by this task",
+      "result_received": false
+    },
+    {
+      "id": "ALTIORA-ORCA-RUNTIME-PILOT",
+      "owner": null,
+      "status": "not_scheduled",
+      "prerequisites": [
+        "Review executable installation and effects",
+        "Authorization applicable to installation/access/hooks/services",
+        "Isolated synthetic project and bounded acceptance test"
+      ]
+    }
+  ],
+  "acceptance_note": "This JSON is a local coordination record, not an executable queue or verified Orca API schema.",
+  "claude_kit_health": {
+    "status": "NEEDS_REVIEW",
+    "cause": "NOT_DETERMINED",
+    "last_doctor": "FAILED:8 entries differ or missing",
+    "do_not_assume_native_agents_available": true
+  }
+}

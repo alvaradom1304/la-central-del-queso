@@ -1,0 +1,57 @@
+{
+  "id": "20261031T190255Z-e7a2480b",
+  "files": {
+    ".agents/skills/altiora-bibliotecario/references/portability.md": {
+      "backup": "0.bak",
+      "installed_hash": "aa0b49707159c49cfa72b33c1277f642eac493df4b0db666f352c75348f34719"
+    },
+    ".agents/skills/altiora-bibliotecario/references/retrieval-evaluation.md": {
+      "backup": "1.bak",
+      "installed_hash": "92f05d5e59b936092af37588ea0a6bcb53eb69581018b99536bcecc0cd2b7cd8"
+    },
+    ".agents/skills/altiora-bibliotecario/references/routing-evals.json": {
+      "backup": "2.bak",
+      "installed_hash": "c1e7cf62fe297b6e3f4c1c9c2fe36c55b2fc7259012151d610911d588a0f5e96"
+    },
+    ".agents/skills/altiora-bibliotecario/references/word-boundaries.md": {
+      "backup": "3.bak",
+      "installed_hash": "a23bd443d2715ec6cc57c0bf9ac88ebb0cc914f31a8a2b59901dd4bb527de266"
+    },
+    ".agents/skills/altiora-bibliotecario/scripts/library.py": {
+      "backup": "4.bak",
+      "installed_hash": "eced56bf711cbfa6009b298223f6f8467102a84abedafb77f5214d4bc1120933"
+    },
+    ".agents/skills/altiora-bibliotecario/scripts/test_library.py": {
+      "backup": "5.bak",
+      "installed_hash": "1ebb157f58a16dfedaac35512fceb7db903360ab7edc8663ad93327779d707b1"
+    },
+    ".claude/skills/altiora-bibliotecario/references/portability.md": {
+      "backup": "6.bak",
+      "installed_hash": "aa0b49707159c49cfa72b33c1277f642eac493df4b0db666f352c75348f34719"
+    },
+    ".claude/skills/altiora-bibliotecario/references/retrieval-evaluation.md": {
+      "backup": "7.bak",
+      "installed_hash": "92f05d5e59b936092af37588ea0a6bcb53eb69581018b99536bcecc0cd2b7cd8"
+    },
+    ".claude/skills/altiora-bibliotecario/references/routing-evals.json": {
+      "backup": "8.bak",
+      "installed_hash": "c1e7cf62fe297b6e3f4c1c9c2fe36c55b2fc7259012151d610911d588a0f5e96"
+    },
+    ".claude/skills/altiora-bibliotecario/references/word-boundaries.md": {
+      "backup": "9.bak",
+      "installed_hash": "a23bd443d2715ec6cc57c0bf9ac88ebb0cc914f31a8a2b59901dd4bb527de266"
+    },
+    ".claude/skills/altiora-bibliotecario/scripts/library.py": {
+      "backup": "10.bak",
+      "installed_hash": "eced56bf711cbfa6009b298223f6f8467102a84abedafb77f5214d4bc1120933"
+    },
+    ".claude/skills/altiora-bibliotecario/scripts/test_library.py": {
+      "backup": "11.bak",
+      "installed_hash": "1ebb157f58a16dfedaac35512fceb7db903360ab7edc8663ad93327779d707b1"
+    },
+    ".altiora/installation.json": {
+      "backup": "12.bak",
+      "installed_hash": "2753643ff5b1d70f5c6b0464c51667f47da7268da4a33138f708323f36dcdf60"
+    }
+  }
+}

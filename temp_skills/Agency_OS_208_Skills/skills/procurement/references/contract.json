@@ -1,0 +1,106 @@
+{
+  "name": "procurement",
+  "domain": "Operations & Logistics",
+  "sprint": 8,
+  "inputs": "necesidades, inventario, proveedor, condiciones, autoridad",
+  "output": "purchase_plan, comparisons, approvals",
+  "procedure": [
+    "Definir necesidad, calidad y fecha requerida",
+    "Comparar costo total, plazo y riesgo",
+    "Preparar orden/recomendación y recepción verificable"
+  ],
+  "decision": "No emitir compra ni comprometer pago sin autorización",
+  "kpi": "costo total y cumplimiento proveedor",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Operations & Logistics",
+  "purpose": "Definir necesidad, calidad y fecha requerida",
+  "business_outcome": "costo total y cumplimiento proveedor",
+  "when_to_use": "procurement: Operations & Logistics. Usar para producir purchase_plan, comparisons, approvals a partir de necesidades, inventario, proveedor, condiciones, autoridad; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "procurement",
+    "purchase_plan, comparisons, approvals"
+  ],
+  "required_inputs": [
+    "necesidades",
+    " inventario",
+    " proveedor",
+    " condiciones",
+    " autoridad"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [],
+  "decision_rules": [
+    "No emitir compra ni comprometer pago sin autorización",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "purchase_plan",
+    " comparisons",
+    " approvals"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No emitir compra ni comprometer pago sin autorización",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "costo total y cumplimiento proveedor"
+  ],
+  "examples": [
+    "Usa $procurement con necesidades, inventario, proveedor, condiciones, autoridad para obtener purchase_plan, comparisons, approvals.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

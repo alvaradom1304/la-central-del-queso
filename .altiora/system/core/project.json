@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0.0",
+  "name": "Altiora",
+  "objective": null,
+  "acceptance_criteria": [],
+  "validation_commands": [],
+  "business_metric": {"name": null, "baseline": null, "target": null},
+  "context_files": [],
+  "note": "Completar solo con datos confirmados del proyecto; ninguna orden se ejecuta automáticamente."
+}

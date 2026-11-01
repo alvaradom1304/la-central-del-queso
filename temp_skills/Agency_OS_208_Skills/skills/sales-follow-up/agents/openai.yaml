@@ -1,0 +1,4 @@
+interface:
+  display_name: "Sales Follow Up"
+  short_description: "Sales Intelligence: capacidad AEM OS"
+  default_prompt: "Usa $sales-follow-up para abordar esta tarea con evidencia y resultado verificable."

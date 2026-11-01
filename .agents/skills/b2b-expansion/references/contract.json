@@ -1,0 +1,105 @@
+{
+  "name": "b2b-expansion",
+  "domain": "Growth & Scaling",
+  "sprint": 8,
+  "inputs": "oferta, cuentas objetivo, capacidad, términos",
+  "output": "b2b_pilot, qualification, economics",
+  "procedure": [
+    "Identificar tareas y compradores organizacionales",
+    "Adaptar volumen, servicio, facturación y venta consultiva",
+    "Probar cuentas piloto antes de comprometer escala"
+  ],
+  "decision": "No trasladar margen B2C sin costo de servir/crédito",
+  "kpi": "cuentas activas y contribución B2B",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Growth & Scaling",
+  "purpose": "Identificar tareas y compradores organizacionales",
+  "business_outcome": "cuentas activas y contribución B2B",
+  "when_to_use": "b2b-expansion: Growth & Scaling. Usar para producir b2b_pilot, qualification, economics a partir de oferta, cuentas objetivo, capacidad, términos; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "b2b-expansion",
+    "b2b_pilot, qualification, economics"
+  ],
+  "required_inputs": [
+    "oferta",
+    " cuentas objetivo",
+    " capacidad",
+    " términos"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [],
+  "decision_rules": [
+    "No trasladar margen B2C sin costo de servir/crédito",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "b2b_pilot",
+    " qualification",
+    " economics"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No trasladar margen B2C sin costo de servir/crédito",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "cuentas activas y contribución B2B"
+  ],
+  "examples": [
+    "Usa $b2b-expansion con oferta, cuentas objetivo, capacidad, términos para obtener b2b_pilot, qualification, economics.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

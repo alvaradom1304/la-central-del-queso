@@ -1,0 +1,121 @@
+{
+  "name": "value-selling",
+  "domain": "Sales Intelligence",
+  "sprint": 4,
+  "inputs": "impacto base, drivers, costo, alternativas, criterios comprador",
+  "output": "value_case, assumptions, validation",
+  "procedure": [
+    "Precisar alternativa actual, problema, drivers y criterio económico del comprador.",
+    "Construir baseline trazable con unidad, periodo, volumen y propietario de datos.",
+    "Cuantificar efecto incremental por mecanismo, evitando doble conteo de ahorro/ingreso/riesgo.",
+    "Calcular costos totales, adopción, tiempo a valor y escenarios de sensibilidad.",
+    "Validar supuestos materiales con evidencia del comprador y separar estimación de resultado.",
+    "Entregar caso de valor, fórmula, límites y condiciones de revisión sin garantía de retorno."
+  ],
+  "decision": "No tratar beneficio bruto como ROI ni ingreso como utilidad",
+  "kpi": "valor confirmado frente a costo",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [],
+  "version": "0.2.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Sales Intelligence",
+  "purpose": "Cuantificar beneficios incrementales y costos con comprador",
+  "business_outcome": "valor confirmado frente a costo",
+  "when_to_use": "value-selling: Sales Intelligence. Usar para producir value_case, assumptions, validation a partir de impacto base, drivers, costo, alternativas, criterios comprador; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "value-selling",
+    "value_case, assumptions, validation"
+  ],
+  "required_inputs": [
+    "impacto base",
+    " drivers",
+    " costo",
+    " alternativas",
+    " criterios comprador"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [],
+  "decision_rules": [
+    "No tratar beneficio bruto como ROI ni ingreso como utilidad",
+    "No cerrar entrega con bloqueadores de tarea esencial ni pruebas declaradas sin ejecutar.",
+    "Aplicar especificación técnica y casos propios de esta capacidad."
+  ],
+  "outputs": [
+    "value_case",
+    " assumptions",
+    " validation"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo",
+    "Resolver el fallo específico con evidencia y límites",
+    "No cerrar con contradicción material o resultado inventado",
+    "Entregar criterios verificables y responsables operativos según alcance"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No tratar beneficio bruto como ROI ni ingreso como utilidad",
+    "escenarios según evaluation-cases.json; registrar ejecutados",
+    "Resolver el fallo específico con evidencia y límites",
+    "No cerrar con contradicción material o resultado inventado",
+    "Entregar criterios verificables y responsables operativos según alcance"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "valor confirmado frente a costo"
+  ],
+  "examples": [
+    "Usa $value-selling con impacto base, drivers, costo, alternativas, criterios comprador para obtener value_case, assumptions, validation.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    },
+    {
+      "version": "0.2.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento técnico, fallos propios, especificación de aceptación y fuentes depuradas; no presume evaluación de cliente/producción."
+    }
+  ]
+}

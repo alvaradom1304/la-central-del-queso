@@ -1,0 +1,4 @@
+interface:
+  display_name: "Problem Centric Selling"
+  short_description: "Sales Intelligence: capacidad AEM OS"
+  default_prompt: "Usa $problem-centric-selling para abordar esta tarea con evidencia y resultado verificable."

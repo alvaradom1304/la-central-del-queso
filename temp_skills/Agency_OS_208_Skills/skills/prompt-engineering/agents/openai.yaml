@@ -1,0 +1,4 @@
+interface:
+  display_name: "Prompt Engineering"
+  short_description: "AI & Automation: capacidad AEM OS"
+  default_prompt: "Usa $prompt-engineering para abordar esta tarea con evidencia y resultado verificable."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Mcp Integration"
+  short_description: "AI & Automation: capacidad AEM OS"
+  default_prompt: "Usa $mcp-integration para abordar esta tarea con evidencia y resultado verificable."

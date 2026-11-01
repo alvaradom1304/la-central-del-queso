@@ -1,0 +1,115 @@
+{
+  "name": "authentication-security",
+  "domain": "Cybersecurity",
+  "sprint": 6,
+  "inputs": "flujos login/sesión, roles, proveedor, amenazas",
+  "output": "auth_findings, session_controls, fixes",
+  "procedure": [
+    "Revisar establecimiento/recuperación de identidad",
+    "Evaluar sesiones, expiración, revocación y MFA pertinente",
+    "Probar fallos en entorno autorizado sin exponer tokens"
+  ],
+  "decision": "Autenticación no equivale a autorización",
+  "kpi": "rutas auth verificadas",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://owasp.org/projects/asvs",
+      "OWASP ASVS; verificar versión y scope"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Cybersecurity",
+  "purpose": "Revisar establecimiento/recuperación de identidad",
+  "business_outcome": "rutas auth verificadas",
+  "when_to_use": "authentication-security: Cybersecurity. Usar para producir auth_findings, session_controls, fixes a partir de flujos login/sesión, roles, proveedor, amenazas; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "authentication-security",
+    "auth_findings, session_controls, fixes"
+  ],
+  "required_inputs": [
+    "flujos login/sesión",
+    " roles",
+    " proveedor",
+    " amenazas"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://owasp.org/projects/asvs",
+      "OWASP ASVS; verificar versión y scope"
+    ]
+  ],
+  "decision_rules": [
+    "Autenticación no equivale a autorización",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "auth_findings",
+    " session_controls",
+    " fixes"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: Autenticación no equivale a autorización",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "rutas auth verificadas"
+  ],
+  "examples": [
+    "Usa $authentication-security con flujos login/sesión, roles, proveedor, amenazas para obtener auth_findings, session_controls, fixes.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

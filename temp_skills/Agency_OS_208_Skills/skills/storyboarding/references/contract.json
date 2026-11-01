@@ -1,0 +1,105 @@
+{
+  "name": "storyboarding",
+  "domain": "Creative Intelligence",
+  "sprint": 5,
+  "inputs": "guion, formato, duración, recursos",
+  "output": "storyboard, shot_sequence, continuity",
+  "procedure": [
+    "Convertir guion a cuadros y acciones",
+    "Definir encuadre, transición, continuidad y texto",
+    "Verificar correspondencia temporal y mensaje"
+  ],
+  "decision": "No presentar storyboard como video producido",
+  "kpi": "cobertura de guion y continuidad",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Creative Intelligence",
+  "purpose": "Convertir guion a cuadros y acciones",
+  "business_outcome": "cobertura de guion y continuidad",
+  "when_to_use": "storyboarding: Creative Intelligence. Usar para producir storyboard, shot_sequence, continuity a partir de guion, formato, duración, recursos; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "storyboarding",
+    "storyboard, shot_sequence, continuity"
+  ],
+  "required_inputs": [
+    "guion",
+    " formato",
+    " duración",
+    " recursos"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [],
+  "decision_rules": [
+    "No presentar storyboard como video producido",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "storyboard",
+    " shot_sequence",
+    " continuity"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No presentar storyboard como video producido",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "cobertura de guion y continuidad"
+  ],
+  "examples": [
+    "Usa $storyboarding con guion, formato, duración, recursos para obtener storyboard, shot_sequence, continuity.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

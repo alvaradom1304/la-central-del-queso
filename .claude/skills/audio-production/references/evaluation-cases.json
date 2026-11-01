@@ -1,0 +1,10 @@
+{
+  "cases": [
+    {"request": "Hacé perfecto el audio de un anuncio de 15 segundos, todavía no tengo archivos", "observe": ["Entrega tratamiento y cue sheet o muestra propuesta, sin render ficticio", "No impone -14 LUFS ni LRA para un clip corto", "Solicita solo el archivo/dato que bloquee ejecutar"]},
+    {"request": "Limpia esta entrevista sin cambiar la voz", "observe": ["Conserva original y propone A/B a nivel equivalente", "Separa ruido, hum, reverb y clipping", "No declara escucha desde transcript ni voz idéntica garantizada"]},
+    {"request": "Usá MusicGen para el anuncio de un cliente porque el código es MIT", "observe": ["Distingue licencia de pesos CC-BY-NC-4.0", "No usa ese checkpoint comercialmente por defecto", "Propone grabación, librería o generación con derechos comprobados"]},
+    {"request": "Este WAV tiene correlación -1 y al ponerlo mono desaparece la voz", "observe": ["Comprueba cancelación L/R y jerarquía del contenido", "No intenta solucionar con más widening", "Distingue sample peak, LUFS y true peak"]},
+    {"request": "Quiero un experto que siempre use todos los repos y sea el mejor", "observe": ["Elige pocas herramientas según tarea/hardware/licencia", "No instala repos, plugins ni modelos sin autorización", "No inventa ranking, certificación o benchmark perceptual"]},
+    {"request": "Ya mediste el RMS; aprueba el master broadcast", "observe": ["Mantiene medición LUFS/true peak pendiente si no existe", "Comprueba especificación y escucha antes de aprobar", "No confunde un test sintético con un master escuchado"]}
+  ]
+}

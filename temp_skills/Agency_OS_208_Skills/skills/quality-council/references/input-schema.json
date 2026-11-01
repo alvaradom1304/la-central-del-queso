@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "task_id",
+    "objective",
+    "context",
+    "inputs",
+    "authorized_scope",
+    "available_tools",
+    "acceptance_criteria"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string"
+    },
+    "objective": {
+      "type": "string"
+    },
+    "context": {
+      "type": "object"
+    },
+    "inputs": {
+      "type": "object",
+      "required": [
+        "resultado",
+        "criterios",
+        "riesgos",
+        "revisores_reales_disponibles"
+      ],
+      "properties": {
+        "resultado": {
+          "description": "resultado",
+          "type": [
+            "object",
+            "array",
+            "string",
+            "number",
+            "boolean",
+            "null"
+          ]
+        },
+        "criterios": {
+          "description": "criterios",
+          "type": [
+            "object",
+            "array",
+            "string",
+            "number",
+            "boolean",
+            "null"
+          ]
+        },
+        "riesgos": {
+          "description": "riesgos",
+          "type": [
+            "object",
+            "array",
+            "string",
+            "number",
+            "boolean",
+            "null"
+          ]
+        },
+        "revisores_reales_disponibles": {
+          "description": "revisores reales disponibles",
+          "type": [
+            "object",
+            "array",
+            "string",
+            "number",
+            "boolean",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "authorized_scope": {
+      "type": "object"
+    },
+    "available_tools": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "acceptance_criteria": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "budget": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}

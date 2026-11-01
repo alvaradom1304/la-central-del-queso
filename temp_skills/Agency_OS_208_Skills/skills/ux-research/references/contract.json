@@ -1,0 +1,120 @@
+{
+  "name": "ux-research",
+  "domain": "Premium Web Experience",
+  "sprint": 6,
+  "inputs": "preguntas, usuarios, prototipo, consentimiento",
+  "output": "ux_protocol, findings, limitations",
+  "procedure": [
+    "Convertir decisión de diseño en pregunta falsable y definir qué conducta permitiría decidir.",
+    "Elegir método según pregunta: exploración, evaluación de tarea o medición; documentar población y sesgos.",
+    "Crear screener, consentimiento, guía neutral y tareas sin indicar dónde pulsar; separar piloto y sesiones.",
+    "Registrar observación, cita consentida y conclusión por separado con IDs; codificar casos negativos y fallos de tarea.",
+    "Priorizar hallazgos por impacto, recurrencia dentro de la muestra y evidencia; no extrapolar porcentajes a población.",
+    "Entregar recomendaciones ligadas a decisiones, incertidumbre y siguiente validación proporcional."
+  ],
+  "decision": "Heurística interna no equivale a prueba con usuarios",
+  "kpi": "éxito y fricción en tareas",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [],
+  "version": "0.2.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Premium Web Experience",
+  "purpose": "Elegir entrevistas, observación o pruebas según pregunta",
+  "business_outcome": "éxito y fricción en tareas",
+  "when_to_use": "ux-research: Premium Web Experience. Usar para producir ux_protocol, findings, limitations a partir de preguntas, usuarios, prototipo, consentimiento; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "ux-research",
+    "ux_protocol, findings, limitations"
+  ],
+  "required_inputs": [
+    "preguntas",
+    " usuarios",
+    " prototipo",
+    " consentimiento"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [],
+  "decision_rules": [
+    "Heurística interna no equivale a prueba con usuarios",
+    "No cerrar entrega con bloqueadores de tarea esencial ni pruebas declaradas sin ejecutar.",
+    "Aplicar especificación técnica y casos propios de esta capacidad."
+  ],
+  "outputs": [
+    "ux_protocol",
+    " findings",
+    " limitations"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo",
+    "Separar éxito asistido y no asistido",
+    "No generalizar muestra de conveniencia",
+    "Proponer prueba neutral orientada a la decisión"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: Heurística interna no equivale a prueba con usuarios",
+    "escenarios según evaluation-cases.json; registrar ejecutados",
+    "Separar éxito asistido y no asistido",
+    "No generalizar muestra de conveniencia",
+    "Proponer prueba neutral orientada a la decisión"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "éxito y fricción en tareas"
+  ],
+  "examples": [
+    "Usa $ux-research con preguntas, usuarios, prototipo, consentimiento para obtener ux_protocol, findings, limitations.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    },
+    {
+      "version": "0.2.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento técnico, fallos propios, especificación de aceptación y fuentes depuradas; no presume evaluación de cliente/producción."
+    }
+  ]
+}

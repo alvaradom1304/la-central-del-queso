@@ -1,0 +1,4 @@
+interface:
+  display_name: "Scenario Planning"
+  short_description: "Financial Intelligence: capacidad AEM OS"
+  default_prompt: "Usa $scenario-planning para abordar esta tarea con evidencia y resultado verificable."

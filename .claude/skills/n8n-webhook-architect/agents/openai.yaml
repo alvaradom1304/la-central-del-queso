@@ -1,0 +1,3 @@
+display_name: "N8N Webhook Architect"
+short_description: "Diseñar un flujo confiable y seguro del formulario web a CRM y WhatsApp mediante n8n."
+default_prompt: "Usa $n8n-webhook-architect y sigue su SOP completo. Primero valida entradas, evidencia y aprobaciones; entrega el sobre de salida definido en las referencias."

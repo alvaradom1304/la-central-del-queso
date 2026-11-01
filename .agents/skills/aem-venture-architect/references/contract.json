@@ -1,0 +1,125 @@
+{
+  "name": "aem-venture-architect",
+  "domain": "Orchestration",
+  "sprint": 9,
+  "inputs": "idea, recursos, límites, clientes accesibles",
+  "output": "venture_plan, evidence_by_gate, recommendation",
+  "procedure": [
+    "Coordinar oportunidad→problema/cliente→mercado y economía",
+    "Diseñar modelo/MVP y validación antes de GTM",
+    "Revisar launch y growth con gates y supervisión"
+  ],
+  "decision": "Mantener inversión/compromisos críticos en decisión humana; no presentar idea como negocio validado",
+  "kpi": "hipótesis críticas resueltas por costo",
+  "type": "Orchestrator",
+  "dependencies": [
+    "opportunity-discovery",
+    "problem-validation",
+    "customer-discovery",
+    "market-validation",
+    "business-model-design",
+    "unit-economics",
+    "mvp-strategy",
+    "go-to-market",
+    "business-decision-gates"
+  ],
+  "sources": [],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Orchestration",
+  "purpose": "Coordinar oportunidad→problema/cliente→mercado y economía",
+  "business_outcome": "hipótesis críticas resueltas por costo",
+  "when_to_use": "aem-venture-architect: Orchestration. Usar para producir venture_plan, evidence_by_gate, recommendation a partir de idea, recursos, límites, clientes accesibles; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "aem-venture-architect",
+    "venture_plan, evidence_by_gate, recommendation"
+  ],
+  "required_inputs": [
+    "idea",
+    " recursos",
+    " límites",
+    " clientes accesibles"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [],
+  "decision_rules": [
+    "Mantener inversión/compromisos críticos en decisión humana; no presentar idea como negocio validado",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "venture_plan",
+    " evidence_by_gate",
+    " recommendation"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: Mantener inversión/compromisos críticos en decisión humana; no presentar idea como negocio validado",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "hipótesis críticas resueltas por costo"
+  ],
+  "examples": [
+    "Usa $aem-venture-architect con idea, recursos, límites, clientes accesibles para obtener venture_plan, evidence_by_gate, recommendation.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [
+    "opportunity-discovery",
+    "problem-validation",
+    "customer-discovery",
+    "market-validation",
+    "business-model-design",
+    "unit-economics",
+    "mvp-strategy",
+    "go-to-market",
+    "business-decision-gates"
+  ],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

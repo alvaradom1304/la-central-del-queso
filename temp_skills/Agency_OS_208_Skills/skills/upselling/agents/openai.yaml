@@ -1,0 +1,4 @@
+interface:
+  display_name: "Upselling"
+  short_description: "Sales Intelligence: capacidad AEM OS"
+  default_prompt: "Usa $upselling para abordar esta tarea con evidencia y resultado verificable."

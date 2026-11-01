@@ -1,0 +1,4 @@
+interface:
+  display_name: "Strategic Planning"
+  short_description: "Business Intelligence: capacidad AEM OS"
+  default_prompt: "Usa $strategic-planning para abordar esta tarea con evidencia y resultado verificable."

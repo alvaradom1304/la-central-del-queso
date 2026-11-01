@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ux Research"
+  short_description: "Premium Web Experience: capacidad AEM OS"
+  default_prompt: "Usa $ux-research para abordar esta tarea con evidencia y resultado verificable."

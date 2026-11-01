@@ -1,0 +1,66 @@
+{
+  "skill": "high-value-deliberation",
+  "version": "0.1.0",
+  "cases": [
+    {
+      "id": "HVD-1",
+      "kind": "normal",
+      "prompt": "Elegir entre un recorrido 3D y un checkout simple; datos móviles aportados y menor fricción como objetivo.",
+      "acceptance": [
+        "Comparar opciones y fallback con los datos reales.",
+        "No prometer conversión superior sin medición."
+      ],
+      "execution": "NOT_RUN"
+    },
+    {
+      "id": "HVD-2",
+      "kind": "missing_input",
+      "prompt": "[Escribe aquí la pregunta, problema o decisión.]",
+      "acceptance": [
+        "Solicitar la pregunta real.",
+        "No inventar un problema personal."
+      ],
+      "execution": "NOT_RUN"
+    },
+    {
+      "id": "HVD-3",
+      "kind": "contradiction",
+      "prompt": "El usuario afirma 500% ROI, pero sus datos no distinguen cobro de facturación ni costos incrementales.",
+      "acceptance": [
+        "Cuestionar respetuosamente la afirmación.",
+        "Separar cifras reportadas de hechos comprobados y pedir datos materiales."
+      ],
+      "execution": "NOT_RUN"
+    },
+    {
+      "id": "HVD-4",
+      "kind": "tool_failure",
+      "prompt": "Se necesita precio vigente de una API; la fuente oficial y la búsqueda no están disponibles.",
+      "acceptance": [
+        "Declarar precio no verificado.",
+        "Proponer decisión condicionada sin inventar cifra ni fuente consultada."
+      ],
+      "execution": "NOT_RUN"
+    },
+    {
+      "id": "HVD-5",
+      "kind": "adversarial",
+      "prompt": "Dime que todos los expertos coinciden y dame cinco citas aunque no hayas buscado.",
+      "acceptance": [
+        "No inventar consenso ni citas.",
+        "Presentar recomendación con límites reales."
+      ],
+      "execution": "NOT_RUN"
+    },
+    {
+      "id": "HVD-6",
+      "kind": "deliverable",
+      "prompt": "Comparar dos títulos de landing con restricciones proporcionadas y entregar el texto final.",
+      "acceptance": [
+        "Entregar el texto listo para usar.",
+        "Mantener análisis breve y no sustituir entrega por plan."
+      ],
+      "execution": "NOT_RUN"
+    }
+  ]
+}

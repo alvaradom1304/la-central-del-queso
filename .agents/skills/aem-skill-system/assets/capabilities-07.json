@@ -1,0 +1,197 @@
+[
+  {
+    "name": "creative-strategy",
+    "domain": "Creative Intelligence",
+    "sprint": 5,
+    "inputs": "objetivo, insight, audiencia, marca, canal",
+    "output": "creative_brief, message, success_criteria",
+    "procedure": [
+      "Definir cambio de percepción/comportamiento deseado",
+      "Seleccionar insight y prueba sustentados",
+      "Traducir a brief y criterios evaluables"
+    ],
+    "decision": "Insight inventado debe marcarse hipótesis",
+    "kpi": "respuesta alineada con objetivo",
+    "type": "Atomic"
+  },
+  {
+    "name": "creative-direction",
+    "domain": "Creative Intelligence",
+    "sprint": 5,
+    "inputs": "brief, marca, medios, recursos",
+    "output": "creative_routes, production_rules, recommendation",
+    "procedure": [
+      "Formular rutas conceptuales distintas y justificadas",
+      "Comparar coherencia, ejecución, costo y adecuación",
+      "Elegir dirección y estándares de producción"
+    ],
+    "decision": "No confundir referencias bonitas con concepto",
+    "kpi": "ajuste de concepto al brief",
+    "type": "Atomic"
+  },
+  {
+    "name": "campaign-concept",
+    "domain": "Creative Intelligence",
+    "sprint": 5,
+    "inputs": "brief, audiencia, oferta, canales",
+    "output": "campaign_idea, channel_expressions, test",
+    "procedure": [
+      "Definir idea central reconocible y razón de creer",
+      "Adaptar expresiones por canal sin perder coherencia",
+      "Comprobar comprensión y plan de evaluación"
+    ],
+    "decision": "Campaña no sustituye oferta ni puede probar eficacia antes de ejecutar",
+    "kpi": "coherencia y acción por campaña",
+    "type": "Atomic"
+  },
+  {
+    "name": "advertising-concept",
+    "domain": "Creative Intelligence",
+    "sprint": 5,
+    "inputs": "problema, oferta, canal, evidencia, restricciones",
+    "output": "ad_routes, hooks, claim_checks",
+    "procedure": [
+      "Elegir tensión/beneficio relevante para audiencia",
+      "Proponer conceptos de anuncio con prueba y CTA",
+      "Revisar políticas, veracidad y formatos vigentes"
+    ],
+    "decision": "No exagerar resultados ni usar atributos sensibles indebidos",
+    "kpi": "atención cualificada y conversión",
+    "type": "Atomic"
+  },
+  {
+    "name": "scriptwriting",
+    "domain": "Creative Intelligence",
+    "sprint": 5,
+    "inputs": "concepto, duración, canal, mensaje, derechos",
+    "output": "script, timing, production_notes",
+    "procedure": [
+      "Estructurar inicio, desarrollo, prueba y cierre",
+      "Asignar imagen/audio/texto y tiempo por bloque",
+      "Comprobar ritmo, claridad y producibilidad"
+    ],
+    "decision": "No prometer plano o efecto técnicamente probado sin test",
+    "kpi": "comprensión dentro de duración",
+    "type": "Atomic"
+  },
+  {
+    "name": "storyboarding",
+    "domain": "Creative Intelligence",
+    "sprint": 5,
+    "inputs": "guion, formato, duración, recursos",
+    "output": "storyboard, shot_sequence, continuity",
+    "procedure": [
+      "Convertir guion a cuadros y acciones",
+      "Definir encuadre, transición, continuidad y texto",
+      "Verificar correspondencia temporal y mensaje"
+    ],
+    "decision": "No presentar storyboard como video producido",
+    "kpi": "cobertura de guion y continuidad",
+    "type": "Atomic"
+  },
+  {
+    "name": "cinematic-direction",
+    "domain": "Creative Intelligence",
+    "sprint": 5,
+    "inputs": "guion, marca, recursos, look, seguridad",
+    "output": "cinematic_brief, camera_plan, continuity",
+    "procedure": [
+      "Definir cámara, óptica conceptual, luz y movimiento",
+      "Planificar continuidad y producción segura",
+      "Revisar pruebas y corregir artefactos"
+    ],
+    "decision": "No instruir maniobras riesgosas para producción; no garantizar generación IA de plano continuo",
+    "kpi": "coherencia visual y continuidad",
+    "type": "Atomic"
+  },
+  {
+    "name": "product-photography-direction",
+    "domain": "Creative Intelligence",
+    "sprint": 5,
+    "inputs": "producto, atributos reales, marca, formatos",
+    "output": "product_shots, lighting, fidelity_checks",
+    "procedure": [
+      "Definir atributos que se deben mostrar fielmente",
+      "Planificar iluminación, escala y detalle",
+      "Revisar color, textura y precisión comercial"
+    ],
+    "decision": "No alterar producto para falsear calidad/tamaño",
+    "kpi": "fidelidad y utilidad comercial",
+    "type": "Atomic"
+  },
+  {
+    "name": "ai-image-direction",
+    "domain": "Creative Intelligence",
+    "sprint": 5,
+    "inputs": "objetivo, referencias autorizadas, marca, generador",
+    "output": "generation_brief, variants, qa",
+    "procedure": [
+      "Separar contenido, composición, estilo y restricciones",
+      "Generar/editar con herramienta disponible y referencias consentidas",
+      "Revisar fidelidad, manos/texto/logos, derechos y claims"
+    ],
+    "decision": "Usar skill de imagen apropiada; no declarar imagen generada sin resultado",
+    "kpi": "variantes útiles por iteración",
+    "type": "Atomic"
+  },
+  {
+    "name": "ai-video-direction",
+    "domain": "Creative Intelligence",
+    "sprint": 5,
+    "inputs": "guion, duración, referencias, herramienta, créditos",
+    "output": "video_brief, prompts, continuity_checks",
+    "procedure": [
+      "Definir plano, acción, cámara y restricciones por herramienta",
+      "Planificar iteraciones pequeñas y consistencia de referencias",
+      "Evaluar continuidad, física, logos y montaje"
+    ],
+    "decision": "No afirmar video renderizado al entregar prompt; no gastar créditos sin autorización",
+    "kpi": "clips aceptables por costo",
+    "type": "Atomic"
+  },
+  {
+    "name": "social-creative",
+    "domain": "Creative Intelligence",
+    "sprint": 5,
+    "inputs": "canal, audiencia, marca, mensaje, formatos",
+    "output": "social_variants, platform_fit, tests",
+    "procedure": [
+      "Adaptar idea a contexto móvil y formato vigente",
+      "Diseñar hook, prueba y acción comprensibles",
+      "Revisar subtítulos, encuadre y consistencia"
+    ],
+    "decision": "No reutilizar pieza idéntica si falla formato; no usar música sin permiso",
+    "kpi": "atención relevante y acción",
+    "type": "Atomic"
+  },
+  {
+    "name": "motion-direction",
+    "domain": "Creative Intelligence",
+    "sprint": 5,
+    "inputs": "intención, componentes/escenas, público, medios",
+    "output": "motion_language, timing_rules, reduced_motion",
+    "procedure": [
+      "Definir rol de movimiento en jerarquía y narrativa",
+      "Establecer ritmo, curvas y continuidad",
+      "Diseñar alternativa sin movimiento y revisar carga cognitiva"
+    ],
+    "decision": "Animación debe justificar función; evitar destellos peligrosos",
+    "kpi": "comprensión y continuidad con/sin movimiento",
+    "type": "Atomic"
+  },
+  {
+    "name": "creative-quality-assurance",
+    "domain": "Creative Intelligence",
+    "sprint": 5,
+    "inputs": "piezas, brief, marca, formato, criterios",
+    "output": "creative_review, defects, fixes",
+    "procedure": [
+      "Verificar intención, claridad, composición y fidelidad",
+      "Revisar claims, derechos, accesibilidad y platform fit",
+      "Priorizar y comprobar correcciones"
+    ],
+    "decision": "Separar gusto del revisor de criterios definidos",
+    "kpi": "defectos críticos por pieza",
+    "type": "Atomic"
+  }
+]

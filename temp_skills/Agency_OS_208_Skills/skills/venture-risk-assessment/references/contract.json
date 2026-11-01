@@ -1,0 +1,120 @@
+{
+  "name": "venture-risk-assessment",
+  "domain": "Venture Building",
+  "sprint": 3,
+  "inputs": "hipótesis del negocio, recursos, exposición, límites",
+  "output": "venture_risks, validation_order, stop_conditions",
+  "procedure": [
+    "Definir iniciativa, etapa, decisión, capital en riesgo, horizonte y restricciones.",
+    "Identificar riesgos de demanda, economía, ejecución, liquidez, dependencia, cumplimiento y seguridad pertinentes.",
+    "Registrar mecanismo causal, exposición, evidencia, mitigación y owner; separar incertidumbre de riesgo observado.",
+    "Construir escenarios y sensibilidad sin probabilidades inventadas; probar correlaciones/dependencias.",
+    "Definir stop/go, señales tempranas, pérdida tolerable y costo de opciones reversibles.",
+    "Entregar recomendación según evidencia y exposición; evitar dictamen de inversión sin datos suficientes."
+  ],
+  "decision": "No usar optimismo del fundador como evidencia",
+  "kpi": "exposición antes de validación",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [],
+  "version": "0.2.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Venture Building",
+  "purpose": "Mapear riesgos de demanda, modelo, caja, ejecución y regulación",
+  "business_outcome": "exposición antes de validación",
+  "when_to_use": "venture-risk-assessment: Venture Building. Usar para producir venture_risks, validation_order, stop_conditions a partir de hipótesis del negocio, recursos, exposición, límites; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "venture-risk-assessment",
+    "venture_risks, validation_order, stop_conditions"
+  ],
+  "required_inputs": [
+    "hipótesis del negocio",
+    " recursos",
+    " exposición",
+    " límites"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [],
+  "decision_rules": [
+    "No usar optimismo del fundador como evidencia",
+    "No cerrar entrega con bloqueadores de tarea esencial ni pruebas declaradas sin ejecutar.",
+    "Aplicar especificación técnica y casos propios de esta capacidad."
+  ],
+  "outputs": [
+    "venture_risks",
+    " validation_order",
+    " stop_conditions"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo",
+    "Resolver el fallo específico con evidencia y límites",
+    "No cerrar con contradicción material o resultado inventado",
+    "Entregar criterios verificables y responsables operativos según alcance"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No usar optimismo del fundador como evidencia",
+    "escenarios según evaluation-cases.json; registrar ejecutados",
+    "Resolver el fallo específico con evidencia y límites",
+    "No cerrar con contradicción material o resultado inventado",
+    "Entregar criterios verificables y responsables operativos según alcance"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "exposición antes de validación"
+  ],
+  "examples": [
+    "Usa $venture-risk-assessment con hipótesis del negocio, recursos, exposición, límites para obtener venture_risks, validation_order, stop_conditions.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    },
+    {
+      "version": "0.2.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento técnico, fallos propios, especificación de aceptación y fuentes depuradas; no presume evaluación de cliente/producción."
+    }
+  ]
+}

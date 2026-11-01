@@ -1,0 +1,123 @@
+{
+  "name": "problem-validation",
+  "domain": "Venture Building",
+  "sprint": 3,
+  "inputs": "problema supuesto, segmento, episodios reales, criterios",
+  "output": "problem_evidence, disconfirmation, verdict",
+  "procedure": [
+    "Definir qué evidencia refutaría el problema",
+    "Examinar frecuencia, gravedad, costo y soluciones usadas",
+    "Contrastar casos negativos y emitir validado/provisional/no sustentado"
+  ],
+  "decision": "Cumplidos y intención futura no validan dolor ni pago",
+  "kpi": "incidencia del problema en muestra",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://www.sba.gov/counseling/plan-your-business/",
+      "SBA; planificación"
+    ],
+    [
+      "https://robfitz.com/about/",
+      "Autor de The Mom Test; referencia de autor, no libro leído completo"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Venture Building",
+  "purpose": "Definir qué evidencia refutaría el problema",
+  "business_outcome": "incidencia del problema en muestra",
+  "when_to_use": "problem-validation: Venture Building. Usar para producir problem_evidence, disconfirmation, verdict a partir de problema supuesto, segmento, episodios reales, criterios; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "problem-validation",
+    "problem_evidence, disconfirmation, verdict"
+  ],
+  "required_inputs": [
+    "problema supuesto",
+    " segmento",
+    " episodios reales",
+    " criterios"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://www.sba.gov/counseling/plan-your-business/",
+      "SBA; planificación"
+    ],
+    [
+      "https://robfitz.com/about/",
+      "Autor de The Mom Test; referencia de autor, no libro leído completo"
+    ]
+  ],
+  "decision_rules": [
+    "Cumplidos y intención futura no validan dolor ni pago",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "problem_evidence",
+    " disconfirmation",
+    " verdict"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: Cumplidos y intención futura no validan dolor ni pago",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "incidencia del problema en muestra"
+  ],
+  "examples": [
+    "Usa $problem-validation con problema supuesto, segmento, episodios reales, criterios para obtener problem_evidence, disconfirmation, verdict.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

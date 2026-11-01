@@ -1,0 +1,28 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"C:/Users/Usuario/AppData/Local/Programs/Python/Python312/python.exe\" \"C:/Users/Usuario/OneDrive/Desktop/altiora/.altiora/system/scripts/guard.py\" \"--runtime\" \"claude\" \"--project\" \"C:/Users/Usuario/OneDrive/Desktop/altiora\" \"--event\" \"SessionStart\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"C:/Users/Usuario/AppData/Local/Programs/Python/Python312/python.exe\" \"C:/Users/Usuario/OneDrive/Desktop/altiora/.altiora/system/scripts/guard.py\" \"--runtime\" \"claude\" \"--project\" \"C:/Users/Usuario/OneDrive/Desktop/altiora\" \"--event\" \"PreToolUse\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

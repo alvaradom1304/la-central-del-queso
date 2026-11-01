@@ -1,0 +1,4 @@
+interface:
+  display_name: "Working Capital"
+  short_description: "Financial Intelligence: capacidad AEM OS"
+  default_prompt: "Usa $working-capital para abordar esta tarea con evidencia y resultado verificable."

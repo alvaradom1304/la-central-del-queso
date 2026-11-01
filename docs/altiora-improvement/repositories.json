@@ -1,0 +1,109 @@
+{
+  "observed_at": "2026-10-18",
+  "repositories": [
+    {
+      "id": "debate-skill",
+      "source": "work/debate-skill-reference",
+      "url": "https://github.com/LeSingh1/debate-skill",
+      "license": "MIT",
+      "use": "Patrón de perspectivas especializadas y síntesis final; ejecutor original secuencial ligado a Anthropic SDK o Claude CLI.",
+      "status": "downloaded-reference-not-runtime",
+      "commit": "17b7deeb5aa41d611cc81ae0c832e7a29eb1f736",
+      "local_path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\external\\debate-research\\debate-skill"
+    },
+    {
+      "id": "Multi-Agents-Debate",
+      "source": "work/mad-reference",
+      "url": "https://github.com/Skytliang/Multi-Agents-Debate",
+      "license": "GPL-3.0",
+      "use": "Referencia de dos posturas enfrentadas y juez; código experimental con dependencias/API antiguas; no incorporar código a la aplicación sin revisar compatibilidad y licencia.",
+      "status": "downloaded-reference-not-runtime",
+      "commit": "e58d146033568ccf737d8031a93748597907d7d3",
+      "local_path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\external\\debate-research\\Multi-Agents-Debate"
+    },
+    {
+      "id": "stablyai/orca",
+      "url": "https://github.com/stablyai/orca",
+      "observed_local_date": "2026-10-31",
+      "tag": "v1.4.245",
+      "tag_object": "7a5202ad17310bc22e1f03398a96a189a3b33f03",
+      "commit": "1c6ac8c3c4d2c3dec2cb5966d225ca2a0e0471d3",
+      "version": "1.4.245",
+      "license": "MIT",
+      "license_scope": "Root notice only; dependencies/components not comprehensively audited",
+      "license_sha256": "ff1b611f80580d49f4b97e93a97b24eb050b0671b26b8afe16341fab699112f3",
+      "source": "Pinned shallow Git object cache; seven extracted documentation/manifest files",
+      "local_path": "C:\\Users\\Usuario\\Documents\\Codex\\2026-10-30\\referenced-chatgpt-conversation-this-is-an\\work\\orca-reference-files\\1c6ac8c3c4d2c3dec2cb5966d225ca2a0e0471d3",
+      "source_cache": "C:\\Users\\Usuario\\Documents\\Codex\\2026-10-30\\referenced-chatgpt-conversation-this-is-an\\work\\orca-reference.git",
+      "status": "downloaded-reference-not-runtime",
+      "use": "Ownership, task/attempt separation, bounded handoff and evidence review; potential runtime requires separate validation",
+      "windows": {
+        "declared_by_readme": true,
+        "installer_listed_in_release": true,
+        "binary_downloaded": false,
+        "binary_signature_verified": false,
+        "functional_test": "NOT_RUN"
+      },
+      "source_build_requirements_declared": {
+        "engines": {
+          "node": "24"
+        },
+        "packageManager": "pnpm@12.14.0+sha512.c18ba6d87993d3d164cb5e8948f32b2c06ee854487e06cd8d86781342fb3e5bb4634367034711e86802baa9c37bea906ce1929ad08d70884c97d801df13389a6"
+      },
+      "integration": {
+        "runtime": "NOT_VERIFIED",
+        "orchestration_mode": "EXPERIMENTAL_DECLARED_NOT_ENABLED",
+        "cli_discovery": "NOT_FOUND_IN_CURRENT_PATH",
+        "code_executed": false,
+        "dependencies_installed": false,
+        "services_started": false,
+        "accounts_or_hooks_modified": false,
+        "mobile_pairing": false
+      },
+      "review": {
+        "method": "Static primary docs and manifests; independent reviewer",
+        "native_agent_task": "/root/orca_reference_review",
+        "status": "REFERENCE_APPROVED_RUNTIME_PENDING"
+      },
+      "token_savings": "NOT_MEASURED",
+      "sources": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/stablyai/orca/blob/1c6ac8c3c4d2c3dec2cb5966d225ca2a0e0471d3/README.md",
+          "sha256": "52084eb78da14ef46c9bafea827b55d0a887e07dc1bc8ac62ded71a9bbe34748"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/stablyai/orca/blob/1c6ac8c3c4d2c3dec2cb5966d225ca2a0e0471d3/LICENSE",
+          "sha256": "ff1b611f80580d49f4b97e93a97b24eb050b0671b26b8afe16341fab699112f3"
+        },
+        {
+          "path": "package.json",
+          "url": "https://github.com/stablyai/orca/blob/1c6ac8c3c4d2c3dec2cb5966d225ca2a0e0471d3/package.json",
+          "sha256": "11391940edf31c7b90c21205bd9a80dc98fb83ba4f21f10cdb9394078611e4d4"
+        },
+        {
+          "path": "docs/site/content/docs/agents/claude-code.mdx",
+          "url": "https://github.com/stablyai/orca/blob/1c6ac8c3c4d2c3dec2cb5966d225ca2a0e0471d3/docs/site/content/docs/agents/claude-code.mdx",
+          "sha256": "946e89f2caf6bd92882d781b14a60b8a68f139b5a45ab6f04c2f7f6071796d8b"
+        },
+        {
+          "path": "docs/site/content/docs/agents/codex.mdx",
+          "url": "https://github.com/stablyai/orca/blob/1c6ac8c3c4d2c3dec2cb5966d225ca2a0e0471d3/docs/site/content/docs/agents/codex.mdx",
+          "sha256": "0f92ed5d143814c073a578cc73a4cd0c32294956280925c30e8e017924df1ee1"
+        },
+        {
+          "path": "docs/site/content/docs/cli/orchestration.mdx",
+          "url": "https://github.com/stablyai/orca/blob/1c6ac8c3c4d2c3dec2cb5966d225ca2a0e0471d3/docs/site/content/docs/cli/orchestration.mdx",
+          "sha256": "9652f2def49e2dce4971b7e34240130363d763806e8534cb3ebac6ca27c6fb59"
+        },
+        {
+          "path": "docs/site/content/docs/cli/overview.mdx",
+          "url": "https://github.com/stablyai/orca/blob/1c6ac8c3c4d2c3dec2cb5966d225ca2a0e0471d3/docs/site/content/docs/cli/overview.mdx",
+          "sha256": "cd117eee0038e06ec790fb432f38d63311441ffadb8c45f9debc3b0b17792bd7"
+        }
+      ]
+    }
+  ],
+  "last_entry_added_on": "2026-10-31"
+}

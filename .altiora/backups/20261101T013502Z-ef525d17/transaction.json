@@ -1,0 +1,53 @@
+{
+  "id": "20261101T013502Z-ef525d17",
+  "files": {
+    ".altiora/system/scripts/manage.py": {
+      "backup": "0.bak",
+      "installed_hash": "387390a5241cb3c928d305f48de6a6bf84781b3c10ecb71c5270bee6752ab635"
+    },
+    ".altiora/system/scripts/package.py": {
+      "backup": "1.bak",
+      "installed_hash": "59e65989e445e7620463d8388b6b46524fa034392364eb51d0eaaabc03461a46"
+    },
+    ".altiora/system/skills/altiora-runtime-bridge/scripts/check_runtimes.py": {
+      "backup": null,
+      "installed_hash": "445d21977641042836db068a2b9619e026ad31b3f643a7811d9790f120ff1968"
+    },
+    ".altiora/system/skills/altiora-runtime-bridge/SKILL.md": {
+      "backup": "3.bak",
+      "installed_hash": "ac5268ecb939c2010925c27f460896aa632e369443c9fde6e0f8109993cdade5"
+    },
+    "AGENTS.md": {
+      "backup": "4.bak",
+      "installed_hash": "6763bb2a8abb31a79927d21dc6c99f7b2628384018f591d4087653e247281331"
+    },
+    "CLAUDE.md": {
+      "backup": "5.bak",
+      "installed_hash": "0099d5afbdc5a97e0db0344ec6d08e8d97d1c2de215072dd2cac2ad2fb095e62"
+    },
+    "GEMINI.md": {
+      "backup": "6.bak",
+      "installed_hash": "6763bb2a8abb31a79927d21dc6c99f7b2628384018f591d4087653e247281331"
+    },
+    ".agents/skills/altiora-runtime-bridge/SKILL.md": {
+      "backup": "7.bak",
+      "installed_hash": "ac5268ecb939c2010925c27f460896aa632e369443c9fde6e0f8109993cdade5"
+    },
+    ".agents/skills/altiora-runtime-bridge/scripts/check_runtimes.py": {
+      "backup": null,
+      "installed_hash": "445d21977641042836db068a2b9619e026ad31b3f643a7811d9790f120ff1968"
+    },
+    ".claude/skills/altiora-runtime-bridge/SKILL.md": {
+      "backup": "9.bak",
+      "installed_hash": "ac5268ecb939c2010925c27f460896aa632e369443c9fde6e0f8109993cdade5"
+    },
+    ".claude/skills/altiora-runtime-bridge/scripts/check_runtimes.py": {
+      "backup": null,
+      "installed_hash": "445d21977641042836db068a2b9619e026ad31b3f643a7811d9790f120ff1968"
+    },
+    ".altiora/installation.json": {
+      "backup": "11.bak",
+      "installed_hash": "cf3453d1bec9179baec39ef4449713eb634b8b381b15ac0b2ce3a8b1cc2964ed"
+    }
+  }
+}

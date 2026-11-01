@@ -1,0 +1,4 @@
+interface:
+  display_name: "Product Expansion"
+  short_description: "Growth & Scaling: capacidad AEM OS"
+  default_prompt: "Usa $product-expansion para abordar esta tarea con evidencia y resultado verificable."

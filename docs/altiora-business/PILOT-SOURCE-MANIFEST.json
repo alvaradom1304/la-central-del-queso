@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-10-31",
+  "scope": "Private internal source evidence; no client data or media copied",
+  "root": "C:/Users/Usuario/OneDrive/Desktop/client-central-del-queso",
+  "method": "Read-only explorer source inspection and SHA-256; no Git identity claim",
+  "execution": "NOT_RUN",
+  "outbound_request": "NOT_PERFORMED",
+  "files": {
+    "web/app/page.tsx": "10ae6661b2cf5ba3efaa1fe687c88e31be6e070f0c266affd03137d5d9ac6fac",
+    "web/components/FincaToTableExperience.tsx": "38d698cd2c69c7340eb167c300bdbe740752eede197f407b4ca6e54cd243d300",
+    "web/components/CheeseMatcher.tsx": "6549c947f145135bb953de2d31c7215c13f61aa78bdb6e6b13020b8ef7ce99cf",
+    "web/lib/CartContext.tsx": "243feef1a89584722c2414b611de44b5255c1af66d024cb35b06fdb829b528c4",
+    "web/components/CartDrawer.tsx": "8d3290fa2b21907ae281b23d5bc75f6b39d1d8aec824734a70fc752b2f335920",
+    "web/app/api/orders/route.ts": "ac24a3e56619b5c9b3401f208e56ef021751703c230b8323b4ed84b67ce66afd",
+    "web/package.json": "9df9fc8261c717b66f3587e013442364875667340dadbfacae250e9fbb356495",
+    "web/TESTING_SOP.md": "14d75751e29b1ef1e4c98186a101528f47a512de1a17495bb0d0ad678b195a2b"
+  },
+  "limitations": [
+    "Hashes identify inspected file contents, not execution or commercial results.",
+    "No source contents, customer records, images, credentials or provisional number included.",
+    "Reassess the claims if any cited file changes."
+  ]
+}

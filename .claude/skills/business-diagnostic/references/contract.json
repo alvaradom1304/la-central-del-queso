@@ -1,0 +1,126 @@
+{
+  "name": "business-diagnostic",
+  "domain": "Business Intelligence",
+  "sprint": 2,
+  "inputs": "brief, procesos, ventas/costos disponibles, problemas, responsables",
+  "output": "current_state, root_cause_hypotheses, prioritized_actions",
+  "procedure": [
+    "Levantar estado de estrategia, finanzas, clientes, ventas, marketing, marca, tecnología, personas, datos, seguridad y operación",
+    "Triangular síntomas con datos y proceso; formular causas alternativas",
+    "Priorizar por impacto, evidencia y esfuerzo; definir siguiente prueba"
+  ],
+  "decision": "Marcar causas no demostradas; ausencia de datos no equivale a buena salud; no comenzar prescribiendo una web",
+  "kpi": "problemas con causa respaldada",
+  "type": "Composite",
+  "dependencies": [
+    "process-mapping",
+    "financial-diagnostic",
+    "customer-research",
+    "business-model-analysis"
+  ],
+  "sources": [
+    [
+      "https://www.sba.gov/counseling/plan-your-business/",
+      "SBA; marco empresarial, contexto estadounidense, no regulación de Costa Rica"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Business Intelligence",
+  "purpose": "Levantar estado de estrategia, finanzas, clientes, ventas, marketing, marca, tecnología, personas, datos, seguridad y operación",
+  "business_outcome": "problemas con causa respaldada",
+  "when_to_use": "business-diagnostic: Business Intelligence. Usar para producir current_state, root_cause_hypotheses, prioritized_actions a partir de brief, procesos, ventas/costos disponibles, problemas, responsables; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "business-diagnostic",
+    "current_state, root_cause_hypotheses, prioritized_actions"
+  ],
+  "required_inputs": [
+    "brief",
+    " procesos",
+    " ventas/costos disponibles",
+    " problemas",
+    " responsables"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://www.sba.gov/counseling/plan-your-business/",
+      "SBA; marco empresarial, contexto estadounidense, no regulación de Costa Rica"
+    ]
+  ],
+  "decision_rules": [
+    "Marcar causas no demostradas; ausencia de datos no equivale a buena salud; no comenzar prescribiendo una web",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "current_state",
+    " root_cause_hypotheses",
+    " prioritized_actions"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: Marcar causas no demostradas; ausencia de datos no equivale a buena salud; no comenzar prescribiendo una web",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "problemas con causa respaldada"
+  ],
+  "examples": [
+    "Usa $business-diagnostic con brief, procesos, ventas/costos disponibles, problemas, responsables para obtener current_state, root_cause_hypotheses, prioritized_actions.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [
+    "process-mapping",
+    "financial-diagnostic",
+    "customer-research",
+    "business-model-analysis"
+  ],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

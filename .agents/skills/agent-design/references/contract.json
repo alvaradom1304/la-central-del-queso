@@ -1,0 +1,132 @@
+{
+  "name": "agent-design",
+  "domain": "AI & Automation",
+  "sprint": 7,
+  "inputs": "objetivo, tareas, herramientas reales, riesgo, límites",
+  "output": "agent_spec, tool_contracts, evaluation",
+  "procedure": [
+    "Elegir agente solo si ayuda frente a workflow determinista",
+    "Definir estado, herramientas, permisos y condiciones de parar",
+    "Evaluar fallos, costo y supervisión"
+  ],
+  "decision": "Especificación no es agente desplegado; mínimo privilegio",
+  "kpi": "éxito acotado y costo por tarea",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://www.nist.gov/itl/ai-risk-management-framework",
+      "NIST AI RMF; marco, no certificación"
+    ],
+    [
+      "https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro",
+      "MCP; versión observada en esta auditoría, revalidar"
+    ],
+    [
+      "https://docs.n8n.io/",
+      "n8n; docs"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — AI & Automation",
+  "purpose": "Elegir agente solo si ayuda frente a workflow determinista",
+  "business_outcome": "éxito acotado y costo por tarea",
+  "when_to_use": "agent-design: AI & Automation. Usar para producir agent_spec, tool_contracts, evaluation a partir de objetivo, tareas, herramientas reales, riesgo, límites; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "agent-design",
+    "agent_spec, tool_contracts, evaluation"
+  ],
+  "required_inputs": [
+    "objetivo",
+    " tareas",
+    " herramientas reales",
+    " riesgo",
+    " límites"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://www.nist.gov/itl/ai-risk-management-framework",
+      "NIST AI RMF; marco, no certificación"
+    ],
+    [
+      "https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro",
+      "MCP; versión observada en esta auditoría, revalidar"
+    ],
+    [
+      "https://docs.n8n.io/",
+      "n8n; docs"
+    ]
+  ],
+  "decision_rules": [
+    "Especificación no es agente desplegado; mínimo privilegio",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "agent_spec",
+    " tool_contracts",
+    " evaluation"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: Especificación no es agente desplegado; mínimo privilegio",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "éxito acotado y costo por tarea"
+  ],
+  "examples": [
+    "Usa $agent-design con objetivo, tareas, herramientas reales, riesgo, límites para obtener agent_spec, tool_contracts, evaluation.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

@@ -1,0 +1,197 @@
+{
+  "task_id": "commercial-quality-oct10",
+  "version": "0.2.0",
+  "status": "NEEDS_REVIEW",
+  "evidence": [
+    {
+      "id": "E1",
+      "type": "FACT",
+      "source": "Brief sintético recibido",
+      "observed_at": "2026-10-10",
+      "claim": "Facturado 100000 CRC; cobrado 40000; pendiente 60000.",
+      "limits": [
+        "Dato del ejercicio; sin verificación externa",
+        "Periodo sin duración ni corte especificados"
+      ]
+    },
+    {
+      "id": "E2",
+      "type": "FACT",
+      "source": "Brief sintético recibido",
+      "observed_at": "2026-10-10",
+      "claim": "Costos variables 65000 CRC; implementación 20000; licencias/soporte 10000.",
+      "limits": [
+        "Dato del ejercicio; sin verificación externa",
+        "Periodo sin duración ni corte especificados"
+      ]
+    },
+    {
+      "id": "E3",
+      "type": "FACT",
+      "source": "Brief sintético recibido",
+      "observed_at": "2026-10-10",
+      "claim": "Inventario físico registrado 30 kg; 12 kg reservados; valoración y cuentas por pagar faltantes.",
+      "limits": [
+        "Dato del ejercicio; sin verificación externa",
+        "Periodo sin duración ni corte especificados"
+      ]
+    },
+    {
+      "id": "E4",
+      "type": "FACT",
+      "source": "Brief sintético recibido",
+      "observed_at": "2026-10-10",
+      "claim": "Propuesta ROI 500%, diez horas y costo salarial repetidos; nómina no disminuye; formatos grandes universales sin consumo/vida útil.",
+      "limits": [
+        "Dato del ejercicio; sin verificación externa",
+        "Periodo sin duración ni corte especificados"
+      ]
+    },
+    {
+      "id": "S1",
+      "type": "EVIDENCE",
+      "source": "https://www.ifrs.org/issued-standards/list-of-standards/ias-7-statement-of-cash-flows/",
+      "observed_at": "2026-10-10",
+      "claim": "IAS 7 diferencia cobros/pagos y ajustes del resultado por partidas sin efectivo y devengos.",
+      "limits": [
+        "Apoyo conceptual; no determina marco contable aplicable ni tratamiento local."
+      ]
+    }
+  ],
+  "skill": "working-capital",
+  "result": {
+    "working_capital_needs": {
+      "summary": "No cuantificable; conciliación parcial disponible.",
+      "data": {
+        "currency": "CRC",
+        "period": "Periodo no fechado del caso",
+        "receipts_reported": 40000,
+        "pending_reported": 60000,
+        "collected_pct": 40,
+        "physical_kg": 30,
+        "reserved_kg": 12,
+        "unreserved_nominal_kg": 18,
+        "operating_wc_model": "60000 + inventario valorado − cuentas por pagar; condicionado a exigibilidad y corte común",
+        "conditional_cash_flow_if_all_reported_costs_paid": -55000
+      },
+      "evidence_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "S1"
+      ],
+      "limitations": [
+        "No saldo final de caja ni déficit observado",
+        "Sin valoración, cuentas por pagar, caja inicial o pagos reales",
+        "18 kg sujetos a reservas incluidas, estado/lotes y mismo corte"
+      ]
+    },
+    "cycle": {
+      "summary": "DSO, DIO, DPO y CCC no calculables.",
+      "data": {
+        "DSO": "promedio CxC / ventas a crédito × días",
+        "DIO": "promedio inventario valorado / costo de ventas × días",
+        "DPO": "promedio CxP comercial / compras a crédito × días",
+        "CCC": "DSO + DIO − DPO"
+      },
+      "evidence_ids": [
+        "E1",
+        "E3"
+      ],
+      "limitations": [
+        "Sin promedios, duración, compras y denominadores comparables",
+        "Contra entrega no demuestra DSO cero; costos no sustituyen compras sin justificar"
+      ]
+    },
+    "levers": {
+      "summary": "Conciliar, clasificar vencimientos y proyectar caja.",
+      "data": {
+        "proposals": [
+          "Conciliar entrega/recaudo/liquidación",
+          "Planificar cobros y pagos por fechas acordadas",
+          "Verificar lotes y reservas; no comprometer stock reservado"
+        ],
+        "proposed_owners": [
+          "Administración",
+          "Contabilidad",
+          "Operaciones"
+        ]
+      },
+      "evidence_ids": [
+        "E1",
+        "E3"
+      ],
+      "limitations": [
+        "Sin ejecución ni ahorro confirmado",
+        "No se propone incumplir obligaciones"
+      ]
+    }
+  },
+  "assumptions": [
+    "Reservas incluidas en los 30 kg; corte común",
+    "Escenario −55000 solo si todos los 95000 se pagaron y no hubo otros movimientos"
+  ],
+  "missing_inputs": [
+    "Valoración de inventario",
+    "Cuentas por pagar y vencimientos",
+    "Caja inicial/final y pagos",
+    "Fechas/días, promedios, compras a crédito y ventas comparables",
+    "Evidencia entrega y exigibilidad de pendientes"
+  ],
+  "validation": [
+    {
+      "criterion": "Separación facturación/caja y reservas físicas",
+      "performed": true,
+      "outcome": "PASS",
+      "evidence_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ]
+    },
+    {
+      "criterion": "CCC no inventado",
+      "performed": true,
+      "outcome": "PASS",
+      "evidence_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ]
+    },
+    {
+      "criterion": "Conciliación bancaria",
+      "performed": false,
+      "outcome": "NOT_RUN",
+      "evidence_ids": [
+        "E1"
+      ]
+    },
+    {
+      "criterion": "Conteo físico y valoración",
+      "performed": false,
+      "outcome": "NOT_RUN",
+      "evidence_ids": [
+        "E3"
+      ]
+    },
+    {
+      "criterion": "Schema Draft 2020-12 validado con jsonschema y aritmética verificada localmente",
+      "performed": true,
+      "outcome": "PASS",
+      "evidence_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ]
+    }
+  ],
+  "next_actions": [
+    "Administración propuesta: conciliar 60000 pendientes",
+    "Contabilidad propuesta: completar saldos/plazos antes de diagnóstico",
+    "Principal: revisión independiente pendiente"
+  ]
+}

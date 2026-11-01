@@ -1,0 +1,120 @@
+{
+  "name": "ui-direction",
+  "domain": "Premium Web Experience",
+  "sprint": 6,
+  "inputs": "UX, marca, componentes, dispositivos",
+  "output": "ui_concept, hierarchy, component_rules",
+  "procedure": [
+    "Traducir posicionamiento y tareas a principios visuales concretos con referencias y criterio propio.",
+    "Definir tokens semánticos de color, espacio, tipografía, bordes y movimiento.",
+    "Especificar componentes y estados default/focus/loading/empty/error/disabled/success con comportamiento.",
+    "Diseñar composición por prioridades de tarea y contenido real en móvil/escritorio, sin ocultar condiciones de compra.",
+    "Comprobar contraste, foco, densidad, truncamiento, targets y movimiento con pruebas pertinentes.",
+    "Entregar decisiones, variantes y sistema implementable; resolver inconsistencias antes de cerrar diseño."
+  ],
+  "decision": "No inventar estética premium independiente de marca",
+  "kpi": "claridad y consistencia UI",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [],
+  "version": "0.2.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Premium Web Experience",
+  "purpose": "Traducir identidad y tareas a jerarquía visual",
+  "business_outcome": "claridad y consistencia UI",
+  "when_to_use": "ui-direction: Premium Web Experience. Usar para producir ui_concept, hierarchy, component_rules a partir de UX, marca, componentes, dispositivos; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "ui-direction",
+    "ui_concept, hierarchy, component_rules"
+  ],
+  "required_inputs": [
+    "UX",
+    " marca",
+    " componentes",
+    " dispositivos"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [],
+  "decision_rules": [
+    "No inventar estética premium independiente de marca",
+    "No cerrar entrega con bloqueadores de tarea esencial ni pruebas declaradas sin ejecutar.",
+    "Aplicar especificación técnica y casos propios de esta capacidad."
+  ],
+  "outputs": [
+    "ui_concept",
+    " hierarchy",
+    " component_rules"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo",
+    "Resolver el fallo específico con evidencia y límites",
+    "No cerrar con contradicción material o resultado inventado",
+    "Entregar criterios verificables y responsables operativos según alcance"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No inventar estética premium independiente de marca",
+    "escenarios según evaluation-cases.json; registrar ejecutados",
+    "Resolver el fallo específico con evidencia y límites",
+    "No cerrar con contradicción material o resultado inventado",
+    "Entregar criterios verificables y responsables operativos según alcance"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "claridad y consistencia UI"
+  ],
+  "examples": [
+    "Usa $ui-direction con UX, marca, componentes, dispositivos para obtener ui_concept, hierarchy, component_rules.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    },
+    {
+      "version": "0.2.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento técnico, fallos propios, especificación de aceptación y fuentes depuradas; no presume evaluación de cliente/producción."
+    }
+  ]
+}

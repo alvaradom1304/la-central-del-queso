@@ -1,0 +1,124 @@
+{
+  "name": "funding-strategy",
+  "domain": "Venture Building",
+  "sprint": 3,
+  "inputs": "necesidad, etapa, territorio, condiciones, tolerancia al riesgo",
+  "output": "funding_options, tradeoffs, verification_tasks",
+  "procedure": [
+    "Comparar autofinanciación, deuda, equity y apoyos pertinentes",
+    "Verificar condiciones actuales y elegibilidad en fuentes oficiales",
+    "Evaluar plazo, costo, garantías, dilución y obligaciones"
+  ],
+  "decision": "No garantizar aprobación ni recomendar deuda sin flujo; revisión humana financiera/legal antes de contratar",
+  "kpi": "costo y ajuste del financiamiento",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://www.sba.gov/counseling/plan-your-business/",
+      "SBA; planificación"
+    ],
+    [
+      "https://robfitz.com/about/",
+      "Autor de The Mom Test; referencia de autor, no libro leído completo"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Venture Building",
+  "purpose": "Comparar autofinanciación, deuda, equity y apoyos pertinentes",
+  "business_outcome": "costo y ajuste del financiamiento",
+  "when_to_use": "funding-strategy: Venture Building. Usar para producir funding_options, tradeoffs, verification_tasks a partir de necesidad, etapa, territorio, condiciones, tolerancia al riesgo; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "funding-strategy",
+    "funding_options, tradeoffs, verification_tasks"
+  ],
+  "required_inputs": [
+    "necesidad",
+    " etapa",
+    " territorio",
+    " condiciones",
+    " tolerancia al riesgo"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://www.sba.gov/counseling/plan-your-business/",
+      "SBA; planificación"
+    ],
+    [
+      "https://robfitz.com/about/",
+      "Autor de The Mom Test; referencia de autor, no libro leído completo"
+    ]
+  ],
+  "decision_rules": [
+    "No garantizar aprobación ni recomendar deuda sin flujo; revisión humana financiera/legal antes de contratar",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "funding_options",
+    " tradeoffs",
+    " verification_tasks"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No garantizar aprobación ni recomendar deuda sin flujo; revisión humana financiera/legal antes de contratar",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "costo y ajuste del financiamiento"
+  ],
+  "examples": [
+    "Usa $funding-strategy con necesidad, etapa, territorio, condiciones, tolerancia al riesgo para obtener funding_options, tradeoffs, verification_tasks.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

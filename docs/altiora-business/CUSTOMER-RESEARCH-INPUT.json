@@ -1,0 +1,45 @@
+{
+  "task_id": "altiora-first-market-contrast-20261031",
+  "objective": "Contrastar necesidad y compra de proyectos objetivoUS$10000 + mantenimiento opcional",
+  "context": {
+    "paying_clients_confirmed": 0,
+    "scope": "Desk research; no field interviews"
+  },
+  "inputs": {
+    "preguntas": [
+      "Cómo se asignan y siguen consultas reales",
+      "Qué funciona y qué fricción existe, si alguna",
+      "Quién decide y qué presupuesto declara",
+      "Qué valor verificable justificaría un proyecto"
+    ],
+    "segmento": "Exploración de servicios B2B de logística/carga con presencia pública en Costa Rica; hipótesis de muestra, no mercado aprobado",
+    "acceso_consentido": {
+      "public_pages": "Read-only public web review",
+      "interviews": "NOT_OBTAINED",
+      "contact": "NOT_AUTHORIZED"
+    },
+    "datos_de_clientes": {
+      "field_records": [],
+      "public_organizations_only": true
+    }
+  },
+  "authorized_scope": {
+    "public_reading": true,
+    "local_artifacts": true,
+    "contact": false,
+    "form_submission": false,
+    "spend": false,
+    "public_posting": false
+  },
+  "available_tools": [
+    "Public web reading",
+    "Filesystem/terminal authorized",
+    "Read-only pilot source explorer"
+  ],
+  "acceptance_criteria": [
+    "Evidence URL for every public observation",
+    "Separate research candidates from sales opportunities",
+    "No invented interviews/budgets/pain",
+    "Keep10000USD per project target and optional maintenance"
+  ]
+}

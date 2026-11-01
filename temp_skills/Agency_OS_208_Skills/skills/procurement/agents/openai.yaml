@@ -1,0 +1,4 @@
+interface:
+  display_name: "Procurement"
+  short_description: "Operations & Logistics: capacidad AEM OS"
+  default_prompt: "Usa $procurement para abordar esta tarea con evidencia y resultado verificable."

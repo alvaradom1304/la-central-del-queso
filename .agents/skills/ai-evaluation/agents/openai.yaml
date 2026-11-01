@@ -1,0 +1,14 @@
+interface:
+  display_name: Ai Evaluation
+  short_description: 'AI & Automation: capacidad AEM OS'
+  default_prompt: Usa $ai-evaluation para abordar esta tarea con evidencia y resultado
+    verificable.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

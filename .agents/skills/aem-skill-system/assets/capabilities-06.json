@@ -1,0 +1,218 @@
+[
+  {
+    "name": "brand-research",
+    "domain": "Brand Intelligence",
+    "sprint": 5,
+    "inputs": "marca, mercado, audiencia, activos, evidencia",
+    "output": "brand_audit, perception_evidence, gaps",
+    "procedure": [
+      "Examinar identidad y comunicación actuales",
+      "Investigar percepción y alternativas con fuentes verificables",
+      "Identificar diferencia entre intención y percepción"
+    ],
+    "decision": "No confundir opinión interna con percepción del mercado",
+    "kpi": "brechas de percepción sustentadas",
+    "type": "Atomic"
+  },
+  {
+    "name": "brand-strategy",
+    "domain": "Brand Intelligence",
+    "sprint": 5,
+    "inputs": "estrategia negocio, audiencia, valor, competencia",
+    "output": "brand_platform, promises, proof",
+    "procedure": [
+      "Definir propósito, promesa y rol de marca desde negocio",
+      "Elegir atributos y posicionamiento sustentados",
+      "Traducir a principios de expresión y experiencia"
+    ],
+    "decision": "Valores deben observarse en operación; no imponer estética",
+    "kpi": "coherencia entre promesa y experiencia",
+    "type": "Atomic"
+  },
+  {
+    "name": "brand-positioning",
+    "domain": "Brand Intelligence",
+    "sprint": 5,
+    "inputs": "marca, audiencia, alternativas, diferenciadores",
+    "output": "brand_position, reasons_to_believe, validation",
+    "procedure": [
+      "Establecer marco competitivo y asociación deseada",
+      "Elegir diferencia relevante y prueba creíble",
+      "Contrastar comprensión y ajuste con estrategia"
+    ],
+    "decision": "No usar superlativos no demostrables",
+    "kpi": "asociación y diferenciación pertinentes",
+    "type": "Atomic"
+  },
+  {
+    "name": "brand-architecture",
+    "domain": "Brand Intelligence",
+    "sprint": 5,
+    "inputs": "portafolio, marcas, públicos, costos, relaciones",
+    "output": "architecture_options, naming_rules, migration",
+    "procedure": [
+      "Mapear ofertas y relaciones entre marcas",
+      "Comparar marca paraguas, endorsed y marcas separadas",
+      "Definir jerarquía y transición con costos/riesgos"
+    ],
+    "decision": "No recomendar renombrar sin revisar equity, disponibilidad y consecuencias",
+    "kpi": "claridad del portafolio",
+    "type": "Atomic"
+  },
+  {
+    "name": "brand-personality",
+    "domain": "Brand Intelligence",
+    "sprint": 5,
+    "inputs": "plataforma, audiencia, comportamiento, tono",
+    "output": "personality_traits, behaviors, boundaries",
+    "procedure": [
+      "Elegir rasgos según posicionamiento y evidencia",
+      "Traducir adjetivos a comportamientos y ejemplos",
+      "Definir excesos a evitar por contexto"
+    ],
+    "decision": "Arquetipos son herramientas interpretativas, no diagnóstico psicológico",
+    "kpi": "consistencia de comportamiento",
+    "type": "Atomic"
+  },
+  {
+    "name": "brand-voice",
+    "domain": "Brand Intelligence",
+    "sprint": 5,
+    "inputs": "personalidad, públicos, canales, ejemplos",
+    "output": "voice_rules, tone_matrix, examples",
+    "procedure": [
+      "Definir voz estable y tono adaptable",
+      "Redactar ejemplos y contraejemplos por situación",
+      "Revisar claridad, inclusión y coherencia"
+    ],
+    "decision": "No usar lenguaje premium que impida comprender",
+    "kpi": "coherencia y comprensión del mensaje",
+    "type": "Atomic"
+  },
+  {
+    "name": "brand-storytelling",
+    "domain": "Brand Intelligence",
+    "sprint": 5,
+    "inputs": "hechos de origen/proceso, propósito, audiencia",
+    "output": "narrative, verified_claims, content_routes",
+    "procedure": [
+      "Seleccionar conflicto, proceso y valor reales",
+      "Construir narrativa centrada en cliente y evidencia",
+      "Separar hechos históricos, metáforas y aspiraciones"
+    ],
+    "decision": "No inventar fechas, legado, certificaciones o impacto social",
+    "kpi": "recuerdo y confianza sustentada",
+    "type": "Atomic"
+  },
+  {
+    "name": "visual-identity",
+    "domain": "Brand Intelligence",
+    "sprint": 5,
+    "inputs": "plataforma, dirección, usos, restricciones, activos",
+    "output": "identity_system, tokens, applications",
+    "procedure": [
+      "Recuperar posicionamiento, audiencia, prueba de valor, arquitectura de marca y restricciones de uso.",
+      "Crear conceptos originales y criterios de selección antes de producir variantes.",
+      "Desarrollar sistema de marca, color, tipografía, imagen, composición y movimiento por roles.",
+      "Verificar aplicaciones reales, tamaños mínimos, monocromo, fondos, idiomas y reproducción.",
+      "Auditar procedencia/derechos, consistencia, accesibilidad y diferencia frente a referencias pertinentes.",
+      "Entregar archivos utilizables, reglas, versiones y límites; no declarar registro o exclusividad jurídica sin comprobación."
+    ],
+    "decision": "No presentar logo como marca completa; revisar derechos y legibilidad",
+    "kpi": "consistencia y reconocimiento en usos",
+    "type": "Atomic"
+  },
+  {
+    "name": "art-direction",
+    "domain": "Brand Intelligence",
+    "sprint": 5,
+    "inputs": "estrategia, audiencia, medios, referencias, recursos",
+    "output": "art_concept, visual_rules, alternatives",
+    "procedure": [
+      "Definir intención visual y relación con negocio",
+      "Comparar rutas con referencias legítimas y tradeoffs",
+      "Establecer composición, materialidad, luz y criterios"
+    ],
+    "decision": "No imponer dark premium/rústico universalmente",
+    "kpi": "ajuste estratégico de ejecuciones",
+    "type": "Atomic"
+  },
+  {
+    "name": "typography-direction",
+    "domain": "Brand Intelligence",
+    "sprint": 5,
+    "inputs": "voz visual, idioma, soportes, licencias",
+    "output": "type_system, hierarchy, usage",
+    "procedure": [
+      "Relacionar tono y lectura con posicionamiento, idiomas, audiencias y contextos de uso.",
+      "Comparar familias por carácter, legibilidad, repertorio, números, pesos y licencias.",
+      "Definir roles, escala, line-height, longitudes, jerarquía y comportamiento responsive con contenido real.",
+      "Especificar fallback y carga de fuentes, subconjuntos/licencias y prevención de cambios de layout.",
+      "Verificar precios, cantidades, acentos, textos largos, zoom y pantallas representativas.",
+      "Entregar tokens, reglas y excepciones justificadas con evidencia visual y pruebas de lectura disponibles."
+    ],
+    "decision": "Verificar licencia; no cargar pesos innecesarios",
+    "kpi": "legibilidad y consistencia tipográfica",
+    "type": "Atomic"
+  },
+  {
+    "name": "color-system",
+    "domain": "Brand Intelligence",
+    "sprint": 5,
+    "inputs": "marca, contextos, estados, contraste",
+    "output": "palette, semantic_tokens, contrast_checks",
+    "procedure": [
+      "Definir colores de marca y funciones semánticas",
+      "Probar combinaciones en componentes y estados",
+      "Documentar contrastes y alternativas accesibles"
+    ],
+    "decision": "No transmitir estado solo por color ni inventar psicología universal",
+    "kpi": "combinaciones accesibles comprobadas",
+    "type": "Atomic"
+  },
+  {
+    "name": "photography-direction",
+    "domain": "Brand Intelligence",
+    "sprint": 5,
+    "inputs": "posicionamiento, producto, medios, presupuesto",
+    "output": "photo_brief, shot_list, rights",
+    "procedure": [
+      "Definir autenticidad, luz, encuadre y contexto",
+      "Preparar lista de tomas con objetivo y formatos",
+      "Revisar consistencia y derechos/model releases pertinentes"
+    ],
+    "decision": "No usar imagen sintética como prueba documental de producto real",
+    "kpi": "tomas útiles y consistentes",
+    "type": "Atomic"
+  },
+  {
+    "name": "brand-guidelines",
+    "domain": "Brand Intelligence",
+    "sprint": 5,
+    "inputs": "decisiones de identidad, usos, responsables",
+    "output": "brand_rules, examples, governance",
+    "procedure": [
+      "Consolidar reglas y activos validados",
+      "Dar ejemplos correctos/incorrectos en canales reales",
+      "Definir responsable, excepciones y actualización"
+    ],
+    "decision": "No llenar manual con decisiones aún no aprobadas sin rotular",
+    "kpi": "ejecución consistente y tiempo de aplicación",
+    "type": "Atomic"
+  },
+  {
+    "name": "brand-quality-assurance",
+    "domain": "Brand Intelligence",
+    "sprint": 5,
+    "inputs": "piezas, guideline vigente, brief, criterios",
+    "output": "brand_findings, corrections, verdict",
+    "procedure": [
+      "Comparar cada pieza con voz, identidad y promesa",
+      "Verificar claims, licencias y consistencia multicanal",
+      "Priorizar fallos y comprobar correcciones"
+    ],
+    "decision": "Separar defecto objetivo de preferencia estética",
+    "kpi": "cumplimiento de criterios de marca",
+    "type": "Atomic"
+  }
+]

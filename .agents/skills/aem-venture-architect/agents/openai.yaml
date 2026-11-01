@@ -1,0 +1,14 @@
+interface:
+  display_name: Aem Venture Architect
+  short_description: 'Orchestration: capacidad AEM OS'
+  default_prompt: Usa $aem-venture-architect para abordar esta tarea con evidencia
+    y resultado verificable.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

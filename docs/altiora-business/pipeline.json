@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "purpose": "Registro interno sin contactos ni ingresos inventados",
+  "target_project_price": {
+    "currency": "USD",
+    "amount": 10000,
+    "basis": "per_project",
+    "source": "Última corrección explícita del usuario"
+  },
+  "optional_monthly_maintenance": true,
+  "confirmed_paying_clients": 0,
+  "opportunities": [],
+  "stages": [
+    "researched",
+    "contact_authorized",
+    "interviewed",
+    "qualified",
+    "proposal_review",
+    "contracted",
+    "initial_payment_verified",
+    "delivery",
+    "accepted",
+    "maintenance_optional"
+  ],
+  "qualification_fields": [
+    "problem_evidence",
+    "decision_maker",
+    "budget_declared",
+    "scope_fit",
+    "capacity_evidence",
+    "cost_evidence",
+    "next_action_consent"
+  ],
+  "outreach_sent": false,
+  "next_action": "Revisar selección, emisor y canal institucional apropiado; enviar invitaciones solo con autorización y realizar entrevistas solo con consentimiento. No vender rediseño por defecto.",
+  "research_candidates": [
+    {
+      "id": "CRLOG-01",
+      "organization_display_name": "Soporte Logístico",
+      "source_url": "https://slgroupcr.com/contact/",
+      "status": "DESK_RESEARCH_ONLY",
+      "evidence_file": "research-candidates.json#CRLOG-01",
+      "contacted": false,
+      "qualified_opportunity": false
+    },
+    {
+      "id": "CRLOG-02",
+      "organization_display_name": "Huvasa Transportes",
+      "source_url": "https://www.huvasa.com/contacto",
+      "status": "DESK_RESEARCH_ONLY",
+      "evidence_file": "research-candidates.json#CRLOG-02",
+      "contacted": false,
+      "qualified_opportunity": false
+    },
+    {
+      "id": "CRLOG-03",
+      "organization_display_name": "Agencia de Aduanas Logos",
+      "source_url": "https://agencialogoscr.com/",
+      "status": "DESK_RESEARCH_ONLY",
+      "evidence_file": "research-candidates.json#CRLOG-03",
+      "contacted": false,
+      "qualified_opportunity": false
+    },
+    {
+      "id": "CRLOG-04",
+      "organization_display_name": "VIHESA Logistics",
+      "source_url": "https://vihesalog.com/",
+      "status": "DESK_RESEARCH_ONLY",
+      "evidence_file": "research-candidates.json#CRLOG-04",
+      "contacted": false,
+      "qualified_opportunity": false
+    },
+    {
+      "id": "CRLOG-05",
+      "organization_display_name": "Bridge Comercial / Bridge Logistics",
+      "source_url": "https://bridgelogisticscr.com/carga-comercial/",
+      "status": "DESK_RESEARCH_ONLY",
+      "evidence_file": "research-candidates.json#CRLOG-05",
+      "contacted": false,
+      "qualified_opportunity": false
+    },
+    {
+      "id": "CRLOG-06",
+      "organization_display_name": "Avanza Logistic",
+      "source_url": "https://avanzalogistic.com/",
+      "status": "DESK_RESEARCH_ONLY",
+      "evidence_file": "research-candidates.json#CRLOG-06",
+      "contacted": false,
+      "qualified_opportunity": false
+    },
+    {
+      "id": "CRLOG-07",
+      "organization_display_name": "VIA Comercio exterior y aduanas",
+      "source_url": "https://grupocrvia.com/",
+      "status": "DESK_RESEARCH_ONLY",
+      "evidence_file": "research-candidates.json#CRLOG-07",
+      "contacted": false,
+      "qualified_opportunity": false
+    },
+    {
+      "id": "CRLOG-08",
+      "organization_display_name": "ARAWELT",
+      "source_url": "https://arawelt.com/",
+      "status": "DESK_RESEARCH_ONLY",
+      "evidence_file": "research-candidates.json#CRLOG-08",
+      "contacted": false,
+      "qualified_opportunity": false
+    }
+  ],
+  "research_status": {
+    "sample_id": "CRLOG-20261031",
+    "candidate_count": 8,
+    "interviews_completed": 0,
+    "qualified_in_sample": 0,
+    "contacts_sent": 0,
+    "segment": "EXPLORATORY_NOT_USER_APPROVED",
+    "field_validation": "NOT_RUN"
+  }
+}

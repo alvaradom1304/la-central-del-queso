@@ -1,0 +1,4 @@
+interface:
+  display_name: "Trend Analysis"
+  short_description: "Business Intelligence: capacidad AEM OS"
+  default_prompt: "Usa $trend-analysis para abordar esta tarea con evidencia y resultado verificable."

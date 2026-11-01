@@ -1,0 +1,171 @@
+{
+  "name": "prospecting",
+  "domain": "Sales Intelligence",
+  "sprint": 4,
+  "inputs": "ICP, oferta, canales permitidos, datos legítimos",
+  "output": "prospecting_plan, contact_criteria, drafts",
+  "procedure": [
+    "Elegir cuentas por encaje y señales públicas legítimas",
+    "Diseñar mensaje útil y secuencia por canal",
+    "Definir frecuencia, opt-out y seguimiento por etapa"
+  ],
+  "decision": "No recolectar datos sensibles ni enviar sin instrucción explícita; verificar reglas locales/plataforma",
+  "kpi": "conversaciones cualificadas por contacto",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://www.huthwaiteinternational.com/spin-methodology",
+      "SPIN; fuente original"
+    ],
+    [
+      "https://gapsellingonlinetraining.com/methodology-training/",
+      "Keenan/Gap Selling; temario oficial"
+    ],
+    [
+      "https://meddicc.com/meddpicc-sales-methodology-and-process",
+      "MEDDICC/MEDDPICC; proveedor metodológico"
+    ],
+    [
+      "https://challengerinc.com/what-is-challenger-sales-methodology/",
+      "Challenger; referencia del proveedor"
+    ],
+    [
+      "https://www.blackswanltd.com/newsletter/bridging-the-gap-using-tactical-empathy-to-neutralize-power-in-negotiations",
+      "Black Swan; perspectiva de empatía táctica"
+    ],
+    [
+      "https://jebblount.com/product/fanatical-prospecting/",
+      "Jeb Blount; referencia del autor"
+    ],
+    [
+      "https://www.influenceatwork.com/7-principles-of-persuasion/",
+      "Cialdini; perspectiva del autor"
+    ],
+    [
+      "https://robfitz.com/about/",
+      "Fitzpatrick; referencia del autor"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Sales Intelligence",
+  "purpose": "Elegir cuentas por encaje y señales públicas legítimas",
+  "business_outcome": "conversaciones cualificadas por contacto",
+  "when_to_use": "prospecting: Sales Intelligence. Usar para producir prospecting_plan, contact_criteria, drafts a partir de ICP, oferta, canales permitidos, datos legítimos; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "prospecting",
+    "prospecting_plan, contact_criteria, drafts"
+  ],
+  "required_inputs": [
+    "ICP",
+    " oferta",
+    " canales permitidos",
+    " datos legítimos"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://www.huthwaiteinternational.com/spin-methodology",
+      "SPIN; fuente original"
+    ],
+    [
+      "https://gapsellingonlinetraining.com/methodology-training/",
+      "Keenan/Gap Selling; temario oficial"
+    ],
+    [
+      "https://meddicc.com/meddpicc-sales-methodology-and-process",
+      "MEDDICC/MEDDPICC; proveedor metodológico"
+    ],
+    [
+      "https://challengerinc.com/what-is-challenger-sales-methodology/",
+      "Challenger; referencia del proveedor"
+    ],
+    [
+      "https://www.blackswanltd.com/newsletter/bridging-the-gap-using-tactical-empathy-to-neutralize-power-in-negotiations",
+      "Black Swan; perspectiva de empatía táctica"
+    ],
+    [
+      "https://jebblount.com/product/fanatical-prospecting/",
+      "Jeb Blount; referencia del autor"
+    ],
+    [
+      "https://www.influenceatwork.com/7-principles-of-persuasion/",
+      "Cialdini; perspectiva del autor"
+    ],
+    [
+      "https://robfitz.com/about/",
+      "Fitzpatrick; referencia del autor"
+    ]
+  ],
+  "decision_rules": [
+    "No recolectar datos sensibles ni enviar sin instrucción explícita; verificar reglas locales/plataforma",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "prospecting_plan",
+    " contact_criteria",
+    " drafts"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No recolectar datos sensibles ni enviar sin instrucción explícita; verificar reglas locales/plataforma",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "conversaciones cualificadas por contacto"
+  ],
+  "examples": [
+    "Usa $prospecting con ICP, oferta, canales permitidos, datos legítimos para obtener prospecting_plan, contact_criteria, drafts.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

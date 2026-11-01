@@ -1,0 +1,116 @@
+{
+  "name": "backend-security",
+  "domain": "Cybersecurity",
+  "sprint": 6,
+  "inputs": "servidor, datos, endpoints, roles, deployment",
+  "output": "backend_controls, findings, validation",
+  "procedure": [
+    "Revisar autorización, validación y manejo de errores",
+    "Evaluar acceso a datos, aislamiento y límites",
+    "Aplicar correcciones y pruebas negativas proporcionales"
+  ],
+  "decision": "No registrar PII/secrets ni probar fuera del sistema autorizado",
+  "kpi": "controles backend comprobados",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://owasp.org/projects/asvs",
+      "OWASP ASVS; verificar versión y scope"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Cybersecurity",
+  "purpose": "Revisar autorización, validación y manejo de errores",
+  "business_outcome": "controles backend comprobados",
+  "when_to_use": "backend-security: Cybersecurity. Usar para producir backend_controls, findings, validation a partir de servidor, datos, endpoints, roles, deployment; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "backend-security",
+    "backend_controls, findings, validation"
+  ],
+  "required_inputs": [
+    "servidor",
+    " datos",
+    " endpoints",
+    " roles",
+    " deployment"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://owasp.org/projects/asvs",
+      "OWASP ASVS; verificar versión y scope"
+    ]
+  ],
+  "decision_rules": [
+    "No registrar PII/secrets ni probar fuera del sistema autorizado",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "backend_controls",
+    " findings",
+    " validation"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No registrar PII/secrets ni probar fuera del sistema autorizado",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "controles backend comprobados"
+  ],
+  "examples": [
+    "Usa $backend-security con servidor, datos, endpoints, roles, deployment para obtener backend_controls, findings, validation.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

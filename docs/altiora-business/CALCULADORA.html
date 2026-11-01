@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<title>Altiora · Economía de un proyecto</title>
+<style>
+:root{color-scheme:dark;--bg:#111b25;--paper:#182734;--text:#f0eee5;--muted:#c2cbd1;--line:#52616b;--gold:#e4bd73}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 system-ui,sans-serif}main{max-width:1180px;margin:auto;padding:40px 24px}header{max-width:860px;margin-bottom:30px}h1{font:clamp(32px,5vw,56px)/1.08 Georgia,serif;margin:8px 0 18px}h2{font:26px/1.2 Georgia,serif;margin-top:0}h3{font-size:17px}p{color:var(--muted)}.brand{letter-spacing:.2em;color:var(--gold)}.grid{display:grid;grid-template-columns:1.1fr 1fr;gap:24px}.panel{background:var(--paper);border:1px solid var(--line);padding:24px;border-radius:10px}.fields{display:grid;grid-template-columns:1fr 1fr;gap:16px}label{font-size:14px;display:flex;flex-direction:column;gap:6px}input{background:#0e1822;border:1px solid #748590;border-radius:5px;padding:11px;color:var(--text);font:inherit;min-width:0;width:100%}button{padding:12px 17px;border:1px solid var(--gold);border-radius:5px;background:transparent;color:var(--text);font:inherit;cursor:pointer}button:hover{background:#283844}button:focus-visible,input:focus-visible{outline:3px solid var(--gold);outline-offset:3px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin:20px 0}.tag{color:var(--gold);font-size:14px}.metric{font:38px/1.2 Georgia,serif;display:block;color:var(--text)}dl{margin:0}dl div{padding:13px 0;border-bottom:1px solid var(--line)}dt{color:var(--muted);font-size:14px}dd{margin:4px 0 0;font-variant-numeric:tabular-nums}.notice{border-left:3px solid var(--gold);padding-left:14px}.support{margin-top:24px}footer{margin:28px 0;color:var(--muted);font-size:14px}small{color:var(--muted)}@media(max-width:780px){.grid{grid-template-columns:1fr}main{padding:24px 16px}.panel{padding:20px}}@media(max-width:420px){.fields{grid-template-columns:1fr}}
+</style></head><body><main>
+<header><div class="brand">ALTIORA / CONTROL INTERNO</div><h1>Que el alcance sostenga<br>el valor del proyecto.</h1><p>Objetivo confirmado: <strong>US$10.000 por proyecto</strong>, más mantenimiento mensual opcional. Completa costes y capacidad antes de comprometer una oferta. Esta herramienta calcula escenarios; no contiene contabilidad real ni predice ventas.</p></header>
+<div class="actions"><button id="example" type="button">Cargar ejemplo hipotético</button><button id="reset" type="button">Limpiar supuestos</button></div>
+<p class="tag" id="mode">Sin escenario evaluado · faltan datos</p>
+<div class="grid"><section class="panel" aria-labelledby="project-title"><h2 id="project-title">Economía por proyecto</h2><p>USD netos comerciales para el modelo. Determinar aparte el tratamiento de impuestos con el profesional correspondiente.</p>
+<div class="fields">
+<label for="price">Ingreso del proyecto (USD)<input id="price" type="number" min="0.01" step="any" value="10000" required></label>
+<label for="direct">Costes externos atribuibles (USD)<input id="direct" type="number" min="0" step="any" required></label>
+<label for="hours">Horas del fundador (h)<input id="hours" type="number" min="0" step="any" required></label>
+<label for="rate">Valor económico de su hora (USD/h)<input id="rate" type="number" min="0.01" step="any" required></label>
+<label for="reserve">Contingencia gerencial (USD)<input id="reserve" type="number" min="0" step="any" required></label>
+<label for="overhead">Estructura asignada al proyecto (USD)<input id="overhead" type="number" min="0" step="any" required></label>
+<label for="margin">Margen económico objetivo (%)<input id="margin" type="number" min="0" max="99.99" step="any" value="25" required></label>
+<label for="deposit">Primer cobro previsto (%)<input id="deposit" type="number" min="0" max="100" step="any" value="50" required></label>
+<label for="initial">Pagos antes del siguiente cobro (USD)<input id="initial" type="number" min="0" step="any" required></label>
+</div><p><small>El 25% y el primer cobro del 50% son propuestas internas revisables, no estándares ni condiciones contratadas. Usa cero solo si comprobaste que no hay ese coste. No dupliques en costes externos la remuneración ya valorada por horas.</small></p></section>
+<section class="panel" aria-labelledby="result-title"><h2 id="result-title">Lectura del escenario</h2><div id="results" aria-live="polite"><p>Completa los campos del proyecto. Los importes desconocidos no se consideran cero.</p></div><p class="notice">El excedente económico incluye tiempo y reserva de planificación. No equivale a utilidad contable ni saldo bancario. Un primer cobro previsto no es dinero recibido.</p></section></div>
+<section class="panel support" aria-labelledby="support-title"><h2 id="support-title">Mantenimiento mensual · opcional</h2><p>Cuota orientativa calculada por costes, capacidad reservada y margen elegido. Se contrata aparte; no se asume recurrencia, disponibilidad 24/7 ni trabajo ilimitado.</p><div class="fields">
+<label for="supportDirect">Costes directos mensuales (USD)<input id="supportDirect" type="number" min="0" step="any"></label>
+<label for="supportHours">Horas reservadas al mes (h)<input id="supportHours" type="number" min="0" step="any"></label>
+<label for="supportReserve">Contingencia mensual (USD)<input id="supportReserve" type="number" min="0" step="any"></label>
+<label for="supportOverhead">Estructura mensual asignada (USD)<input id="supportOverhead" type="number" min="0" step="any"></label>
+<label for="supportMargin">Margen económico de soporte (%)<input id="supportMargin" type="number" min="0" max="99.99" step="any" value="25"></label>
+</div><div id="supportResults" aria-live="polite"><p>Completa los costes mensuales y el valor horario del proyecto para estimar una cuota.</p></div></section>
+<footer>Funciona sin conexión, sin cookies, sin guardar entradas y sin enviar datos. Para conservar un escenario, anótalo en el registro revisado de la empresa. Fórmulas de planificación; validar costes reales, capacidad y jurisdicción antes de cotizar.</footer>
+</main>
+<script id="economics">
+'use strict';
+function validNumbers(value, keys) {
+  if (!value || keys.some(k => typeof value[k] !== 'number' || !Number.isFinite(value[k]) || value[k] < 0)) throw new Error('Completa valores numéricos finitos y no negativos.');
+}
+function project(value) {
+  validNumbers(value, ['price','direct','hours','rate','reserve','overhead','margin','deposit','initial']);
+  const {price,direct,hours,rate,reserve,overhead,margin,deposit,initial}=value;
+  if(price<=0 || rate<=0 || margin>=100 || deposit>100) throw new Error('Ingreso y valor horario deben ser positivos; margen menor al 100% y cobro entre 0 y 100%.');
+  const time=hours*rate, contribution=price-direct, surplus=price-direct-time-reserve-overhead;
+  const result={time,contribution,surplus,margin:surplus/price*100,depositCash:price*deposit/100,
+    initialGap:Math.max(0,initial-price*deposit/100),hoursCeiling:(price*(1-margin/100)-direct-reserve-overhead)/rate,
+    meetsTarget:surplus/price*100>=margin};
+  if(Object.values(result).some(v=>typeof v==='number'&&!Number.isFinite(v))) throw new Error('Escenario fuera del rango de cálculo.');
+  return result;
+}
+function maintenance(value) {
+  validNumbers(value,['direct','hours','rate','reserve','overhead','margin']);
+  if(value.rate<=0||value.margin>=100) throw new Error('Valor horario positivo y margen menor al 100%.');
+  const quote=(value.direct+value.hours*value.rate+value.reserve+value.overhead)/(1-value.margin/100);
+  if(!Number.isFinite(quote))throw new Error('Escenario fuera del rango de cálculo.');
+  return {quote};
+}
+globalThis.AltioraEconomics={project,maintenance};
+if(typeof document!=='undefined'){
+  const ids=['price','direct','hours','rate','reserve','overhead','margin','deposit','initial'];
+  const supportIds=['supportDirect','supportHours','supportReserve','supportOverhead','supportMargin'];
+  const money=new Intl.NumberFormat('es',{style:'currency',currency:'USD'});
+  let exampleMode=false;
+  function number(id){const raw=document.getElementById(id).value.trim();return raw===''?null:Number(raw);}
+  function line(list,title,value,large=false){const group=document.createElement('div'),term=document.createElement('dt'),desc=document.createElement('dd');term.textContent=title;desc.textContent=value;if(large)desc.className='metric';group.append(term,desc);list.append(group);}
+  function message(target,value){const p=document.createElement('p');p.textContent=value;target.replaceChildren(p);}
+  function render(){
+    const target=document.getElementById('results');
+    try{
+      const data=Object.fromEntries(ids.map(id=>[id,number(id)])),result=project(data),list=document.createElement('dl');
+      line(list,'Excedente económico de planificación',money.format(result.surplus),true);
+      line(list,'Margen económico del escenario',result.margin.toFixed(1)+'%');
+      line(list,'Contribución antes de tiempo, reserva y estructura',money.format(result.contribution));
+      line(list,'Tiempo del fundador valorado',money.format(result.time));
+      line(list,'Techo de horas para el margen elegido',result.hoursCeiling<0?'Los costes ya exceden el presupuesto de margen':result.hoursCeiling.toFixed(1)+' h');
+      line(list,'Primer cobro previsto · aún no recibido',money.format(result.depositCash));
+      line(list,'Déficit inicial del calendario simplificado',money.format(result.initialGap));
+      line(list,'Respecto al margen elegido',result.meetsTarget?'Cumple el umbral supuesto; falta validar costes y demanda':'Revisar alcance, coste o precio antes de comprometerse');
+      target.replaceChildren(list);
+      document.getElementById('mode').textContent=exampleMode?'Ejemplo hipotético · ningún coste es un dato real de Altiora':'Escenario introducido · cifras no verificadas por esta herramienta';
+    }catch(error){message(target,error.message+' Los campos vacíos son desconocidos.');document.getElementById('mode').textContent='Escenario incompleto o inválido';}
+    try{
+      const result=maintenance({direct:number('supportDirect'),hours:number('supportHours'),rate:number('rate'),reserve:number('supportReserve'),overhead:number('supportOverhead'),margin:number('supportMargin')});
+      message(document.getElementById('supportResults'),'Cuota mensual orientativa: '+money.format(result.quote)+'. Precio sin validar; revisar alcance, costes, impuestos y condiciones antes de ofrecerlo.');
+    }catch(error){message(document.getElementById('supportResults'),'Completa los datos mensuales y un valor horario positivo. La cuota permanece sin determinar.');}
+  }
+  document.querySelectorAll('input').forEach(input=>input.addEventListener('input',()=>{exampleMode=false;render();}));
+  document.getElementById('example').addEventListener('click',()=>{
+    const values={price:10000,direct:3000,hours:90,rate:50,reserve:750,overhead:0,margin:25,deposit:50,initial:1000,supportDirect:200,supportHours:4,supportReserve:50,supportOverhead:50,supportMargin:25};
+    for(const [id,value] of Object.entries(values))document.getElementById(id).value=value;
+    exampleMode=true;render();
+  });
+  document.getElementById('reset').addEventListener('click',()=>{for(const id of [...ids,...supportIds])document.getElementById(id).value='';document.getElementById('price').value=10000;document.getElementById('margin').value=25;document.getElementById('deposit').value=50;document.getElementById('supportMargin').value=25;exampleMode=false;render();});
+  render();
+}
+</script></body></html>

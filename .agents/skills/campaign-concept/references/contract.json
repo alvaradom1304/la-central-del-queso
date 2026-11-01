@@ -1,0 +1,105 @@
+{
+  "name": "campaign-concept",
+  "domain": "Creative Intelligence",
+  "sprint": 5,
+  "inputs": "brief, audiencia, oferta, canales",
+  "output": "campaign_idea, channel_expressions, test",
+  "procedure": [
+    "Definir idea central reconocible y razón de creer",
+    "Adaptar expresiones por canal sin perder coherencia",
+    "Comprobar comprensión y plan de evaluación"
+  ],
+  "decision": "Campaña no sustituye oferta ni puede probar eficacia antes de ejecutar",
+  "kpi": "coherencia y acción por campaña",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Creative Intelligence",
+  "purpose": "Definir idea central reconocible y razón de creer",
+  "business_outcome": "coherencia y acción por campaña",
+  "when_to_use": "campaign-concept: Creative Intelligence. Usar para producir campaign_idea, channel_expressions, test a partir de brief, audiencia, oferta, canales; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "campaign-concept",
+    "campaign_idea, channel_expressions, test"
+  ],
+  "required_inputs": [
+    "brief",
+    " audiencia",
+    " oferta",
+    " canales"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [],
+  "decision_rules": [
+    "Campaña no sustituye oferta ni puede probar eficacia antes de ejecutar",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "campaign_idea",
+    " channel_expressions",
+    " test"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: Campaña no sustituye oferta ni puede probar eficacia antes de ejecutar",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "coherencia y acción por campaña"
+  ],
+  "examples": [
+    "Usa $campaign-concept con brief, audiencia, oferta, canales para obtener campaign_idea, channel_expressions, test.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

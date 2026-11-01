@@ -1,0 +1,4 @@
+interface:
+  display_name: "Sales Proposal"
+  short_description: "Sales Intelligence: capacidad AEM OS"
+  default_prompt: "Usa $sales-proposal para abordar esta tarea con evidencia y resultado verificable."

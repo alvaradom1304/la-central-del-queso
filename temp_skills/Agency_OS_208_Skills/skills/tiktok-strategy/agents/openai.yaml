@@ -1,0 +1,4 @@
+interface:
+  display_name: "Tiktok Strategy"
+  short_description: "Marketing Intelligence: capacidad AEM OS"
+  default_prompt: "Usa $tiktok-strategy para abordar esta tarea con evidencia y resultado verificable."

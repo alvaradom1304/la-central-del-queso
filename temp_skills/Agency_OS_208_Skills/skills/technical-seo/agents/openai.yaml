@@ -1,0 +1,4 @@
+interface:
+  display_name: "Technical Seo"
+  short_description: "Premium Web Experience: capacidad AEM OS"
+  default_prompt: "Usa $technical-seo para abordar esta tarea con evidencia y resultado verificable."

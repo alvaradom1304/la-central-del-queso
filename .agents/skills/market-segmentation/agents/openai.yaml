@@ -1,0 +1,4 @@
+interface:
+  display_name: "Market Segmentation"
+  short_description: "Marketing Intelligence: capacidad AEM OS"
+  default_prompt: "Usa $market-segmentation para abordar esta tarea con evidencia y resultado verificable."

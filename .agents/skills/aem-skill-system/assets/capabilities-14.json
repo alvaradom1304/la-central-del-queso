@@ -1,0 +1,20 @@
+[
+  {
+    "name": "high-value-deliberation",
+    "domain": "Decision Intelligence",
+    "inputs": "pregunta o decisión, contexto disponible, restricciones, fuentes y alcance",
+    "procedure": [
+      "Precisar pregunta, resultado, restricciones y datos materiales; hasta tres preguntas cuando cambien la respuesta.",
+      "Seleccionar perspectivas distintas, sin inventar revisores externos.",
+      "Formular propuesta viable y condiciones; contrastar objeciones concretas y alternativas pertinentes.",
+      "Verificar premisas materiales y actuales; separar hechos, inferencias y supuestos.",
+      "Corregir según evidencia; documentar desacuerdo no resuelto y dato que cambiaría la decisión.",
+      "Entregar conclusión integrada en seis apartados pertinentes y completar el entregable autorizado."
+    ],
+    "type": "Composite",
+    "version": "0.1.0",
+    "output": "decision",
+    "decision": "No inventar consenso ni certeza; completar entregable solicitado.",
+    "kpi": "afirmaciones materiales respaldadas o explícitamente no verificadas"
+  }
+]

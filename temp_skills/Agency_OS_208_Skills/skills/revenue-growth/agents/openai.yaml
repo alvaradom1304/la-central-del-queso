@@ -1,0 +1,4 @@
+interface:
+  display_name: "Revenue Growth"
+  short_description: "Growth & Scaling: capacidad AEM OS"
+  default_prompt: "Usa $revenue-growth para abordar esta tarea con evidencia y resultado verificable."

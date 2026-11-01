@@ -1,0 +1,104 @@
+{
+  "name": "brand-guidelines",
+  "domain": "Brand Intelligence",
+  "sprint": 5,
+  "inputs": "decisiones de identidad, usos, responsables",
+  "output": "brand_rules, examples, governance",
+  "procedure": [
+    "Consolidar reglas y activos validados",
+    "Dar ejemplos correctos/incorrectos en canales reales",
+    "Definir responsable, excepciones y actualización"
+  ],
+  "decision": "No llenar manual con decisiones aún no aprobadas sin rotular",
+  "kpi": "ejecución consistente y tiempo de aplicación",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Brand Intelligence",
+  "purpose": "Consolidar reglas y activos validados",
+  "business_outcome": "ejecución consistente y tiempo de aplicación",
+  "when_to_use": "brand-guidelines: Brand Intelligence. Usar para producir brand_rules, examples, governance a partir de decisiones de identidad, usos, responsables; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "brand-guidelines",
+    "brand_rules, examples, governance"
+  ],
+  "required_inputs": [
+    "decisiones de identidad",
+    " usos",
+    " responsables"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [],
+  "decision_rules": [
+    "No llenar manual con decisiones aún no aprobadas sin rotular",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "brand_rules",
+    " examples",
+    " governance"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No llenar manual con decisiones aún no aprobadas sin rotular",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "ejecución consistente y tiempo de aplicación"
+  ],
+  "examples": [
+    "Usa $brand-guidelines con decisiones de identidad, usos, responsables para obtener brand_rules, examples, governance.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

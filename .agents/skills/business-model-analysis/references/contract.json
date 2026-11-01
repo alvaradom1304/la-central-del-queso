@@ -1,0 +1,117 @@
+{
+  "name": "business-model-analysis",
+  "domain": "Business Intelligence",
+  "sprint": 2,
+  "inputs": "oferta, segmentos, canales, ingresos, costos, procesos",
+  "output": "model_map, dependencies, vulnerabilities",
+  "procedure": [
+    "Reconstruir cómo se crea, entrega y captura valor",
+    "Relacionar recursos, costos y actores con cada flujo de ingreso",
+    "Identificar dependencia crítica y evidencia necesaria para mejorar"
+  ],
+  "decision": "No llamar rentable a un modelo sin margen/caja; separar diseño de desempeño real",
+  "kpi": "contribución por flujo de ingreso",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://www.sba.gov/counseling/plan-your-business/",
+      "SBA; marco empresarial, contexto estadounidense, no regulación de Costa Rica"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Business Intelligence",
+  "purpose": "Reconstruir cómo se crea, entrega y captura valor",
+  "business_outcome": "contribución por flujo de ingreso",
+  "when_to_use": "business-model-analysis: Business Intelligence. Usar para producir model_map, dependencies, vulnerabilities a partir de oferta, segmentos, canales, ingresos, costos, procesos; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "business-model-analysis",
+    "model_map, dependencies, vulnerabilities"
+  ],
+  "required_inputs": [
+    "oferta",
+    " segmentos",
+    " canales",
+    " ingresos",
+    " costos",
+    " procesos"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://www.sba.gov/counseling/plan-your-business/",
+      "SBA; marco empresarial, contexto estadounidense, no regulación de Costa Rica"
+    ]
+  ],
+  "decision_rules": [
+    "No llamar rentable a un modelo sin margen/caja; separar diseño de desempeño real",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "model_map",
+    " dependencies",
+    " vulnerabilities"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No llamar rentable a un modelo sin margen/caja; separar diseño de desempeño real",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "contribución por flujo de ingreso"
+  ],
+  "examples": [
+    "Usa $business-model-analysis con oferta, segmentos, canales, ingresos, costos, procesos para obtener model_map, dependencies, vulnerabilities.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

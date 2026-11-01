@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-10-31",
+  "note": "Skills de terceros importadas a .claude/skills y .agents/skills. Cada una conserva LICENSE.txt y SOURCE.md. Actualizar copiando desde una revisión nueva y revisando el diff; no ejecutar sus scripts sin leerlos. Complementa references/skill-sources.json del laboratorio (importaciones de Codex del 2026-10-18).",
+  "sources": [
+    {
+      "repo": "coreyhaines31/marketingskills",
+      "revision": "88c79f6528a9347420e57ceb1fff9a60de651768",
+      "license": "MIT",
+      "skills": [
+        "cold-email",
+        "sales-enablement",
+        "competitor-profiling",
+        "copy-editing",
+        "site-architecture",
+        "launch",
+        "conversion-tracking",
+        "attribution",
+        "ai-seo",
+        "ad-creative",
+        "video",
+        "image",
+        "social"
+      ],
+      "why": {
+        "cold-email": "Primer contacto con prospectos calificados; Codex lo marcó como skill hermana citada y no importada.",
+        "sales-enablement": "Material comercial de la oferta de US$10.000 (deck, one-pager, objeciones).",
+        "competitor-profiling": "Fase de investigación de proyectos de cliente y posicionamiento de Altiora.",
+        "copy-editing": "Pulido de propuestas, webs y casos antes de entregarlos.",
+        "site-architecture": "Fase de definición de los proyectos web de la oferta.",
+        "launch": "Salida pública de proyectos de cliente; Codex lo marcó como skill hermana citada y no importada.",
+        "conversion-tracking": "Medición verificada al entregar y en mantenimiento (pedidos por WhatsApp/formularios).",
+        "attribution": "Informes de mantenimiento; Codex lo marcó como skill hermana citada y no importada.",
+        "ai-seo": "Servicio diferencial de IA en la oferta; Codex lo marcó como skill hermana citada y no importada.",
+        "ad-creative": "Producción de anuncios con oficio por plataforma; las skills creativas de Codex eran plantillas genéricas.",
+        "video": "Vídeo para anuncios y webs; no existía una skill de producción de vídeo con oficio.",
+        "image": "Activos visuales de marketing con método; sustituye las plantillas genéricas de dirección de imagen.",
+        "social": "Redes sociales forman parte de la oferta integral de Altiora."
+      }
+    },
+    {
+      "repo": "anthropics/skills",
+      "revision": "ca45fc496a3436251f191354091d557da31c15b5",
+      "license": "Apache-2.0 (LICENSE.txt de la skill)",
+      "skills": [
+        "mcp-builder",
+        "frontend-design",
+        "canvas-design",
+        "algorithmic-art"
+      ],
+      "why": {
+        "mcp-builder": "Componente de IA de la oferta: integraciones MCP a medida.",
+        "frontend-design": "Calidad visual premium; Codex la tiene en ~/.codex/skills pero Claude no la descubría.",
+        "canvas-design": "Explorar territorios visuales propios por proyecto en vez de referencias genéricas.",
+        "algorithmic-art": "Sistemas visuales únicos por proyecto, coherentes con la web inmersiva de Altiora."
+      }
+    },
+    {
+      "repo": "obra/superpowers",
+      "revision": "2ce8aa15d05bd57213e6f746f953aafb7ded7a8b",
+      "license": "MIT",
+      "skills": [
+        "brainstorming",
+        "test-driven-development",
+        "executing-plans",
+        "subagent-driven-development",
+        "requesting-code-review",
+        "receiving-code-review",
+        "dispatching-parallel-agents",
+        "finishing-a-development-branch",
+        "writing-skills"
+      ],
+      "why": {
+        "brainstorming": "Diseño antes de construir; antecede a writing-plans, ya importada por Codex.",
+        "test-driven-development": "Calidad de ingeniería; Codex lo marcó como citada por writing-plans y no importada.",
+        "executing-plans": "Completa el ciclo de writing-plans; Codex lo marcó como citada y no importada.",
+        "subagent-driven-development": "Construcción con subagentes reales; sus scripts los usa executing-plans.",
+        "requesting-code-review": "Revisión técnica independiente de la fase 4 de la oferta.",
+        "receiving-code-review": "Cierra el ciclo de revisión sin cambios a ciegas.",
+        "dispatching-parallel-agents": "Método de reparto que usan los coordinadores de Altiora.",
+        "finishing-a-development-branch": "Cierre ordenado de ramas en entregas.",
+        "writing-skills": "Afilar las propias herramientas con pruebas, no por intuición."
+      }
+    },
+    {
+      "repo": "vercel-labs/agent-skills",
+      "revision": "1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62",
+      "license": "MIT (declarada en README; el repositorio no incluye archivo LICENSE)",
+      "skills": [
+        "vercel-react-view-transitions"
+      ],
+      "why": {
+        "vercel-react-view-transitions": "Transiciones premium ligeras para webs de la oferta."
+      }
+    }
+  ]
+}

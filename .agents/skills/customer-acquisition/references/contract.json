@@ -1,0 +1,106 @@
+{
+  "name": "customer-acquisition",
+  "domain": "Growth & Scaling",
+  "sprint": 8,
+  "inputs": "ICP, propuesta, canales, cohortes, costos",
+  "output": "acquisition_tests, cac, learning",
+  "procedure": [
+    "Seleccionar mecanismo de captación por segmento",
+    "Medir costo completo y clientes reales",
+    "Comparar cohortes y decidir según retención/margen"
+  ],
+  "decision": "Lead no es cliente; no usar CAC incompleto como prueba de viabilidad",
+  "kpi": "CAC y recuperación por cohorte",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Growth & Scaling",
+  "purpose": "Seleccionar mecanismo de captación por segmento",
+  "business_outcome": "CAC y recuperación por cohorte",
+  "when_to_use": "customer-acquisition: Growth & Scaling. Usar para producir acquisition_tests, cac, learning a partir de ICP, propuesta, canales, cohortes, costos; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "customer-acquisition",
+    "acquisition_tests, cac, learning"
+  ],
+  "required_inputs": [
+    "ICP",
+    " propuesta",
+    " canales",
+    " cohortes",
+    " costos"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [],
+  "decision_rules": [
+    "Lead no es cliente; no usar CAC incompleto como prueba de viabilidad",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "acquisition_tests",
+    " cac",
+    " learning"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: Lead no es cliente; no usar CAC incompleto como prueba de viabilidad",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "CAC y recuperación por cohorte"
+  ],
+  "examples": [
+    "Usa $customer-acquisition con ICP, propuesta, canales, cohortes, costos para obtener acquisition_tests, cac, learning.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

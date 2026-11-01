@@ -1,0 +1,59 @@
+{
+  "structural_only": false,
+  "behavior_outputs": 14,
+  "skills_in_behavior_sample": [
+    "aem-autonomous-quality-loop",
+    "aem-company-builder",
+    "break-even-analysis",
+    "business-decision-gates",
+    "cash-flow-analysis",
+    "security-testing",
+    "threat-modeling",
+    "unit-economics"
+  ],
+  "independent_review": "PASS_WITH_LIMITS",
+  "financial_arithmetic": "PASS",
+  "unauthorized_scan_not_run": "PASS",
+  "gates_preserve_uncertainty": "PASS",
+  "quality_stop_and_success": "PASS",
+  "quote_unit_tests": 7,
+  "additional_independent_quotes": 2,
+  "artifacts": [
+    {
+      "source": "evaluation_financial_cases.json",
+      "sha256": "0ac03d016cf9f3c8bcfc43adb5c8eccacaae3b13fbba01aa2d203efe6abc7a04",
+      "outputs": 8,
+      "schema_trace": "PASS"
+    },
+    {
+      "source": "evaluation_security_case.json",
+      "sha256": "02417b779992fee3b0ba32e0458602a8d03ca096088bdb7a03227a52e8d96ffc",
+      "outputs": 2,
+      "schema_trace": "PASS"
+    },
+    {
+      "source": "evaluation_orchestration_case.json",
+      "sha256": "a03a1a3abac9027df6ca982f3435b5f58223267e474554a1bbf24c3bcf83b79c",
+      "outputs": 2,
+      "schema_trace": "PASS"
+    },
+    {
+      "source": "evaluation_quality_case.json",
+      "sha256": "8d6f3816e398717dcc3a9582352c75520300f324854452c0304b21d729591a86",
+      "outputs": 1,
+      "schema_trace": "PASS"
+    },
+    {
+      "source": "evaluation_quality_success_case.json",
+      "sha256": "348b1cf6b048646cc910ea7f587043eee04d0dc4953f25ee9229be45f2ee9bbc",
+      "outputs": 1,
+      "schema_trace": "PASS"
+    }
+  ],
+  "limits": [
+    "No ejecución de servicios externos ni despliegues",
+    "No validación comercial/campo",
+    "No todos los casos diseñados ejecutados",
+    "No tests en Claude/Gemini/Antigravity"
+  ]
+}

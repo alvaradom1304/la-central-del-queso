@@ -1,0 +1,4 @@
+interface:
+  display_name: "Positioning"
+  short_description: "Marketing Intelligence: capacidad AEM OS"
+  default_prompt: "Usa $positioning para abordar esta tarea con evidencia y resultado verificable."

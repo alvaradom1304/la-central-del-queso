@@ -1,0 +1,259 @@
+{
+  "task_id": "altiora-value-gates-20261031",
+  "skill": "business-decision-gates",
+  "version": "0.1.0",
+  "status": "NEEDS_REVIEW",
+  "result": {
+    "gate": {
+      "summary": "Validar antes de vender o escalar",
+      "data": {
+        "primary": "VALIDATION",
+        "secondary": [
+          "OPPORTUNITY",
+          "VIABILITY",
+          "LAUNCH"
+        ]
+      },
+      "evidence_ids": [
+        "E1",
+        "E2"
+      ],
+      "limitations": [
+        "Preparar documentos no abre compuertas comerciales."
+      ]
+    },
+    "evidence": {
+      "summary": "Base disponible",
+      "data": {
+        "price": "Meta10000USD por proyecto",
+        "paid_clients": 0,
+        "offer": "Propuesta interna revisada",
+        "financial_model": "Supuestos, no costes reales",
+        "pilot_source_review": "Source reviewed; runtime/receipt NOT_RUN",
+        "desk_research": {
+          "candidates": 8,
+          "interviews": 0,
+          "qualified_in_sample": 0,
+          "need_verified": false
+        }
+      },
+      "evidence_ids": [
+        "E1",
+        "E3",
+        "E4",
+        "PILOT_SOURCE_20261031",
+        "WEB_SAMPLE_20261031"
+      ],
+      "limitations": [
+        "Sin demanda, caja o capacidad reales."
+      ]
+    },
+    "assumptions": {
+      "summary": "Hipótesis revisables",
+      "data": [
+        "Segmento de servicios B2B, seis semanas y90h son hipótesis de oferta; no compromisos aceptados.",
+        "25% de margen económico es política interna propuesta, no estándar universal.",
+        "50/30/20 es calendario de cobros propuesto, sujeto a condiciones revisadas."
+      ],
+      "evidence_ids": [
+        "E3",
+        "E4"
+      ],
+      "limitations": [
+        "No estándares o previsiones."
+      ]
+    },
+    "risks": {
+      "summary": "Riesgos sin cuantificar como hechos",
+      "data": [
+        "Alcance/horas pueden exceder precio objetivo",
+        "No hay comprador validado",
+        "Soporte puede consumir capacidad comprometida"
+      ],
+      "evidence_ids": [
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "limitations": [
+        "Probabilidad e impacto reales desconocidos."
+      ]
+    },
+    "kpis": {
+      "summary": "Indicadores con línea base y método",
+      "data": {
+        "paying_clients": {
+          "baseline": 0,
+          "target": 1,
+          "kind": "PLANNING_TARGET"
+        },
+        "interviews": {
+          "actual": "NOT_RUN",
+          "target_proposed": 8
+        },
+        "economic_margin": {
+          "actual": "UNKNOWN",
+          "threshold_proposed": 0.25
+        },
+        "capacity": {
+          "actual": "UNKNOWN"
+        }
+      },
+      "evidence_ids": [
+        "E1",
+        "E3",
+        "E4"
+      ],
+      "limitations": [
+        "Metas no demuestran resultados."
+      ]
+    },
+    "missing_information": {
+      "summary": "Vacíos críticos",
+      "data": [
+        "Compradores/segmento validado",
+        "Costes reales y cotizaciones",
+        "Caja y capacidad medida",
+        "Jurisdicción/entidad",
+        "Material aprobado y evidencia de resultados del piloto"
+      ],
+      "evidence_ids": [
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "limitations": [
+        "No completados por inferencia."
+      ]
+    },
+    "recommendation": {
+      "summary": "HOLD para comprometer precio/entrega y escalar",
+      "data": {
+        "overall": "HOLD",
+        "initiatives": {
+          "opportunity": "HOLD",
+          "validation": "HOLD",
+          "viability": "HOLD",
+          "launch": "HOLD"
+        },
+        "conditions": [
+          "Problema y comprador respaldados por evidencia",
+          "Costes/caja/capacidad reales y alcance viable",
+          "Aceptación y obligaciones revisadas",
+          "Recorrido técnico demostrado y autorizado",
+          "Alinear recorrido de aceptación del piloto (consulta WhatsApp u orden API), interfaz/backend/SOP y comprobarlo con datos sintéticos antes de afirmar integración."
+        ],
+        "independent_work_allowed": "Preparar entrevistas, presupuestos y demostración interna reversible"
+      },
+      "evidence_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "limitations": [
+        "GO futuro sería recomendación, no permiso de contacto, gasto o publicación."
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "id": "E1",
+      "type": "FACT",
+      "source": "Confirmación del usuario en este chat",
+      "observed_at": "2026-10-31",
+      "claim": "Cero clientes de pago; objetivo10000USD por proyecto; mantenimiento mensual opcional.",
+      "limits": [
+        "No confirma caja, coste, disponibilidad de compra o jurisdicción."
+      ]
+    },
+    {
+      "id": "E2",
+      "type": "EVIDENCE",
+      "source": "README.md y CLIENTS_PORTFOLIO.md de empresa; inspección local",
+      "observed_at": "2026-10-31",
+      "claim": "Capacidades declaradas, un piloto y marcadores de pipeline.",
+      "limits": [
+        "No verifica rendimiento comercial o entregas actuales del cliente."
+      ]
+    },
+    {
+      "id": "E3",
+      "type": "EVIDENCE",
+      "source": "Revisión financiera delegada; fuentes SBA citadas en FINANZAS.md y cálculo local",
+      "observed_at": "2026-10-31",
+      "claim": "Modelo ilustrativo y aritmética comprobados; escenario90h deja1750USD antes de estructura.",
+      "limits": [
+        "Costes supuestos, no contabilidad o rentabilidad real."
+      ]
+    },
+    {
+      "id": "E4",
+      "type": "EVIDENCE",
+      "source": "Revisión comercial delegada; OFERTA.md",
+      "observed_at": "2026-10-31",
+      "claim": "Oferta y recorrido propuestos con criterios de aceptación y límites.",
+      "limits": [
+        "No entrevistas, propuestas enviadas o precio validado."
+      ]
+    },
+    {
+      "id": "PILOT_SOURCE_20261031",
+      "type": "EVIDENCE",
+      "source": "PRUEBA-PILOTO.md + PILOT-SOURCE-MANIFEST.json",
+      "observed_at": "2026-10-31",
+      "claim": "Código de carrito abre WhatsApp directamente; API/SOP separados. Ocho archivos identificados por hash.",
+      "limits": [
+        "Revisión de código solamente; sin ejecución, integración, envío o resultados comerciales verificados."
+      ]
+    },
+    {
+      "id": "WEB_SAMPLE_20261031",
+      "type": "EVIDENCE",
+      "source": "CUSTOMER-RESEARCH.json + research-candidates.json",
+      "observed_at": "2026-10-31",
+      "claim": "Ocho páginas seleccionadas ya presentan vías de cotización; no prueba necesidad de rediseño o automatización.",
+      "limits": [
+        "Muestra por conveniencia; cero entrevistas y ninguna oportunidad cualificada en ella."
+      ]
+    }
+  ],
+  "assumptions": [
+    "Segmento de servicios B2B, seis semanas y90h son hipótesis de oferta; no compromisos aceptados.",
+    "25% de margen económico es política interna propuesta, no estándar universal.",
+    "50/30/20 es calendario de cobros propuesto, sujeto a condiciones revisadas."
+  ],
+  "missing_inputs": [
+    "Compradores/segmento validado",
+    "Costes reales y cotizaciones",
+    "Caja y capacidad medida",
+    "Jurisdicción/entidad",
+    "Material aprobado y evidencia de resultados del piloto"
+  ],
+  "validation": [
+    {
+      "criterion": "Precio/recurrencia y estados no promueven desconocidos",
+      "performed": true,
+      "outcome": "PASS",
+      "evidence_ids": [
+        "E1",
+        "E3",
+        "E4"
+      ]
+    },
+    {
+      "criterion": "Validación real de demanda/viabilidad",
+      "performed": false,
+      "outcome": "NOT_RUN",
+      "evidence_ids": [
+        "E2",
+        "E3",
+        "E4"
+      ]
+    }
+  ],
+  "next_actions": [
+    "Preparar entrevistas y costes con evidencia real; no prometer éxito ni precio validado.",
+    "Revisar alcance si las horas y costes no sostienen el margen antes de cotizar."
+  ]
+}

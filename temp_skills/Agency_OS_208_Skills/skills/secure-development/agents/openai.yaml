@@ -1,0 +1,4 @@
+interface:
+  display_name: "Secure Development"
+  short_description: "Cybersecurity: capacidad AEM OS"
+  default_prompt: "Usa $secure-development para abordar esta tarea con evidencia y resultado verificable."

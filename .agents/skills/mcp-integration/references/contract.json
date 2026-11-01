@@ -1,0 +1,131 @@
+{
+  "name": "mcp-integration",
+  "domain": "AI & Automation",
+  "sprint": 7,
+  "inputs": "cliente/servidor, versión, herramientas, scope",
+  "output": "mcp_contract, auth_plan, tests",
+  "procedure": [
+    "Verificar especificación vigente y compatibilidad real",
+    "Definir tools/resources y esquema con privilegio mínimo",
+    "Probar conexión, validación, errores y contenido no confiable"
+  ],
+  "decision": "MCP no elimina autenticación ni autoriza acciones; no enviar secretos a servidores desconocidos",
+  "kpi": "llamadas válidas y errores controlados",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://www.nist.gov/itl/ai-risk-management-framework",
+      "NIST AI RMF; marco, no certificación"
+    ],
+    [
+      "https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro",
+      "MCP; versión observada en esta auditoría, revalidar"
+    ],
+    [
+      "https://docs.n8n.io/",
+      "n8n; docs"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — AI & Automation",
+  "purpose": "Verificar especificación vigente y compatibilidad real",
+  "business_outcome": "llamadas válidas y errores controlados",
+  "when_to_use": "mcp-integration: AI & Automation. Usar para producir mcp_contract, auth_plan, tests a partir de cliente/servidor, versión, herramientas, scope; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "mcp-integration",
+    "mcp_contract, auth_plan, tests"
+  ],
+  "required_inputs": [
+    "cliente/servidor",
+    " versión",
+    " herramientas",
+    " scope"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://www.nist.gov/itl/ai-risk-management-framework",
+      "NIST AI RMF; marco, no certificación"
+    ],
+    [
+      "https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro",
+      "MCP; versión observada en esta auditoría, revalidar"
+    ],
+    [
+      "https://docs.n8n.io/",
+      "n8n; docs"
+    ]
+  ],
+  "decision_rules": [
+    "MCP no elimina autenticación ni autoriza acciones; no enviar secretos a servidores desconocidos",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "mcp_contract",
+    " auth_plan",
+    " tests"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: MCP no elimina autenticación ni autoriza acciones; no enviar secretos a servidores desconocidos",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "llamadas válidas y errores controlados"
+  ],
+  "examples": [
+    "Usa $mcp-integration con cliente/servidor, versión, herramientas, scope para obtener mcp_contract, auth_plan, tests.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

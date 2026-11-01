@@ -1,0 +1,14 @@
+interface:
+  display_name: Agency OS
+  short_description: Estrategia, evidencia y sistemas para resultados de negocio
+  default_prompt: Usa $agency-os para abordar este proyecto con estrategia antes que
+    diseño y revisiones por etapas.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

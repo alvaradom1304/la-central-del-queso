@@ -1,0 +1,4 @@
+interface:
+  display_name: "Route Optimization"
+  short_description: "Operations & Logistics: capacidad AEM OS"
+  default_prompt: "Usa $route-optimization para abordar esta tarea con evidencia y resultado verificable."

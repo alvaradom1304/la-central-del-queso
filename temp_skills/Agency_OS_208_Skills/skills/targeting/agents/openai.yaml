@@ -1,0 +1,4 @@
+interface:
+  display_name: "Targeting"
+  short_description: "Marketing Intelligence: capacidad AEM OS"
+  default_prompt: "Usa $targeting para abordar esta tarea con evidencia y resultado verificable."

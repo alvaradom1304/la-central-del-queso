@@ -1,0 +1,4 @@
+interface:
+  display_name: "Deliberación de alto valor"
+  short_description: "Decisiones claras con evidencia y crítica útil"
+  default_prompt: "Usa $high-value-deliberation para analizar esta decisión y entregar una conclusión fundamentada y accionable."

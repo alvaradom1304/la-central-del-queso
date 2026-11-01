@@ -1,0 +1,171 @@
+{
+  "name": "problem-centric-selling",
+  "domain": "Sales Intelligence",
+  "sprint": 4,
+  "inputs": "problema, causa/impacto, solución, límites",
+  "output": "problem_solution_map, fit, discovery_gaps",
+  "procedure": [
+    "Separar síntomas técnicos de problema empresarial",
+    "Conectar capacidad de solución a impacto verificable",
+    "Detectar mal encaje y recomendar no vender si no ayuda"
+  ],
+  "decision": "No inventar dolor ni urgencia",
+  "kpi": "encaje documentado y conversión cualificada",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://www.huthwaiteinternational.com/spin-methodology",
+      "SPIN; fuente original"
+    ],
+    [
+      "https://gapsellingonlinetraining.com/methodology-training/",
+      "Keenan/Gap Selling; temario oficial"
+    ],
+    [
+      "https://meddicc.com/meddpicc-sales-methodology-and-process",
+      "MEDDICC/MEDDPICC; proveedor metodológico"
+    ],
+    [
+      "https://challengerinc.com/what-is-challenger-sales-methodology/",
+      "Challenger; referencia del proveedor"
+    ],
+    [
+      "https://www.blackswanltd.com/newsletter/bridging-the-gap-using-tactical-empathy-to-neutralize-power-in-negotiations",
+      "Black Swan; perspectiva de empatía táctica"
+    ],
+    [
+      "https://jebblount.com/product/fanatical-prospecting/",
+      "Jeb Blount; referencia del autor"
+    ],
+    [
+      "https://www.influenceatwork.com/7-principles-of-persuasion/",
+      "Cialdini; perspectiva del autor"
+    ],
+    [
+      "https://robfitz.com/about/",
+      "Fitzpatrick; referencia del autor"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Sales Intelligence",
+  "purpose": "Separar síntomas técnicos de problema empresarial",
+  "business_outcome": "encaje documentado y conversión cualificada",
+  "when_to_use": "problem-centric-selling: Sales Intelligence. Usar para producir problem_solution_map, fit, discovery_gaps a partir de problema, causa/impacto, solución, límites; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "problem-centric-selling",
+    "problem_solution_map, fit, discovery_gaps"
+  ],
+  "required_inputs": [
+    "problema",
+    " causa/impacto",
+    " solución",
+    " límites"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://www.huthwaiteinternational.com/spin-methodology",
+      "SPIN; fuente original"
+    ],
+    [
+      "https://gapsellingonlinetraining.com/methodology-training/",
+      "Keenan/Gap Selling; temario oficial"
+    ],
+    [
+      "https://meddicc.com/meddpicc-sales-methodology-and-process",
+      "MEDDICC/MEDDPICC; proveedor metodológico"
+    ],
+    [
+      "https://challengerinc.com/what-is-challenger-sales-methodology/",
+      "Challenger; referencia del proveedor"
+    ],
+    [
+      "https://www.blackswanltd.com/newsletter/bridging-the-gap-using-tactical-empathy-to-neutralize-power-in-negotiations",
+      "Black Swan; perspectiva de empatía táctica"
+    ],
+    [
+      "https://jebblount.com/product/fanatical-prospecting/",
+      "Jeb Blount; referencia del autor"
+    ],
+    [
+      "https://www.influenceatwork.com/7-principles-of-persuasion/",
+      "Cialdini; perspectiva del autor"
+    ],
+    [
+      "https://robfitz.com/about/",
+      "Fitzpatrick; referencia del autor"
+    ]
+  ],
+  "decision_rules": [
+    "No inventar dolor ni urgencia",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "problem_solution_map",
+    " fit",
+    " discovery_gaps"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No inventar dolor ni urgencia",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "encaje documentado y conversión cualificada"
+  ],
+  "examples": [
+    "Usa $problem-centric-selling con problema, causa/impacto, solución, límites para obtener problem_solution_map, fit, discovery_gaps.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

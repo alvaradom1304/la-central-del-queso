@@ -1,0 +1,105 @@
+{
+  "name": "process-optimization",
+  "domain": "Operations & Logistics",
+  "sprint": 8,
+  "inputs": "mapa actual, tiempos, errores, restricciones",
+  "output": "root_causes, to_be_process, pilot",
+  "procedure": [
+    "Identificar espera, retrabajo y cuello de botella",
+    "Comparar intervenciones por impacto y esfuerzo",
+    "Probar cambio y medir calidad/tiempo"
+  ],
+  "decision": "No acelerar una etapa trasladando costo al resto",
+  "kpi": "tiempo total y errores del proceso",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Operations & Logistics",
+  "purpose": "Identificar espera, retrabajo y cuello de botella",
+  "business_outcome": "tiempo total y errores del proceso",
+  "when_to_use": "process-optimization: Operations & Logistics. Usar para producir root_causes, to_be_process, pilot a partir de mapa actual, tiempos, errores, restricciones; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "process-optimization",
+    "root_causes, to_be_process, pilot"
+  ],
+  "required_inputs": [
+    "mapa actual",
+    " tiempos",
+    " errores",
+    " restricciones"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [],
+  "decision_rules": [
+    "No acelerar una etapa trasladando costo al resto",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "root_causes",
+    " to_be_process",
+    " pilot"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No acelerar una etapa trasladando costo al resto",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "tiempo total y errores del proceso"
+  ],
+  "examples": [
+    "Usa $process-optimization con mapa actual, tiempos, errores, restricciones para obtener root_causes, to_be_process, pilot.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

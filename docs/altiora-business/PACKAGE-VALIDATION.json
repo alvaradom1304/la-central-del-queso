@@ -1,0 +1,18 @@
+{
+  "status": "PASSED",
+  "checks": [
+    "schema subset with local strict-type adapter: diagnostic input/output",
+    "schema subset with local strict-type adapter: gates output",
+    "local links",
+    "evidence references",
+    "empty real pipeline",
+    "last payment/acceptance/warranty consistency",
+    "maintenance capacity consistency"
+  ],
+  "independent_review": "CORRECTIONS_VERIFIED",
+  "calculator_math": "PASSED",
+  "browser_visual": "NOT_PERFORMED",
+  "market_validation": "NOT_RUN",
+  "professional_review": "NOT_RUN",
+  "installed_validator_modified": false
+}

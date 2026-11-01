@@ -1,0 +1,290 @@
+{
+  "task_id": "altiora-first-market-contrast-20261031",
+  "skill": "customer-research",
+  "version": "0.1.0",
+  "status": "NEEDS_REVIEW",
+  "result": {
+    "research_protocol": {
+      "summary": "Lectura pública realizada; entrevistas solo preparadas",
+      "data": {
+        "segment_hypothesis": "Exploración de servicios B2B de logística/carga con presencia pública en Costa Rica; hipótesis de muestra, no mercado aprobado",
+        "method": "Conveniencia por buscador y disponibilidad de página legible; selección por señal de cotización",
+        "biases": [
+          "Visibilidad en buscadores",
+          "Autodescripción comercial",
+          "Disponibilidad de texto público",
+          "Concentración geográfica/sectorial",
+          "Sin acceso al proceso interno o a compradores"
+        ],
+        "field_interviews": {
+          "target_proposed": 8,
+          "completed": 0,
+          "consent": "NOT_OBTAINED"
+        },
+        "questions": [
+          "Cómo se asignan y siguen consultas reales",
+          "Qué funciona y qué fricción existe, si alguna",
+          "Quién decide y qué presupuesto declara",
+          "Qué valor verificable justificaría un proyecto"
+        ]
+      },
+      "evidence_ids": [
+        "WEB1",
+        "WEB2",
+        "WEB3",
+        "WEB4",
+        "WEB5",
+        "WEB6",
+        "WEB7",
+        "WEB8"
+      ],
+      "limitations": [
+        "No hay acceso consentido a procesos internos o entrevistas."
+      ]
+    },
+    "observations": {
+      "summary": "Señales públicas, no problemas internos comprobados",
+      "data": [
+        {
+          "id": "CRLOG-01",
+          "name": "Soporte Logístico",
+          "observation": "La página describe transporte/carga y remite a un formulario para preparar cotizaciones.",
+          "source": "https://slgroupcr.com/contact/"
+        },
+        {
+          "id": "CRLOG-02",
+          "name": "Huvasa Transportes",
+          "observation": "La página presenta formulario con empresa/servicio y alternativa de cotización por WhatsApp.",
+          "source": "https://www.huvasa.com/contacto"
+        },
+        {
+          "id": "CRLOG-03",
+          "name": "Agencia de Aduanas Logos",
+          "observation": "La página ofrece cotización e incluye campos de compañía, producto, origen y destino.",
+          "source": "https://agencialogoscr.com/"
+        },
+        {
+          "id": "CRLOG-04",
+          "name": "VIHESA Logistics",
+          "observation": "El sitio describe servicios logísticos y muestra una llamada a solicitar cotización.",
+          "source": "https://vihesalog.com/"
+        },
+        {
+          "id": "CRLOG-05",
+          "name": "Bridge Comercial / Bridge Logistics",
+          "observation": "La página diferencia carga para casilleros y empresas y propone solicitar tarifa comercial.",
+          "source": "https://bridgelogisticscr.com/carga-comercial/"
+        },
+        {
+          "id": "CRLOG-06",
+          "name": "Avanza Logistic",
+          "observation": "La página muestra una cotización inicial por modalidad, operación, origen y destino.",
+          "source": "https://avanzalogistic.com/"
+        },
+        {
+          "id": "CRLOG-07",
+          "name": "VIA Comercio exterior y aduanas",
+          "observation": "El sitio agrupa servicios y casos de operación con llamadas a cotizar.",
+          "source": "https://grupocrvia.com/"
+        },
+        {
+          "id": "CRLOG-08",
+          "name": "ARAWELT",
+          "observation": "El sitio presenta consultas por necesidad y un recorrido anunciado hacia WhatsApp o correo.",
+          "source": "https://arawelt.com/"
+        }
+      ],
+      "evidence_ids": [
+        "WEB1",
+        "WEB2",
+        "WEB3",
+        "WEB4",
+        "WEB5",
+        "WEB6",
+        "WEB7",
+        "WEB8"
+      ],
+      "limitations": [
+        "No se envió ni probó ningún formulario.",
+        "Muestra elegida por señal de cotización; no representa el sector."
+      ]
+    },
+    "findings": {
+      "summary": "Sin hallazgos de campo ni validación del precio",
+      "data": {
+        "desk_interpretation": "Las páginas elegidas ya presentan vías de cotización; no hay base para recomendarles un rediseño por defecto.",
+        "field_findings": [],
+        "hypothesis": "Puede existir una necesidad de recepción/asignación/seguimiento; debe comprobarse o refutarse.",
+        "price_validation": "NOT_RUN",
+        "qualified_opportunities": 0,
+        "recommendation": "Mantener HOLD comercial; preparar entrevistas y registrar casos negativos."
+      },
+      "evidence_ids": [
+        "WEB1",
+        "WEB2",
+        "WEB3",
+        "WEB4",
+        "WEB5",
+        "WEB6",
+        "WEB7",
+        "WEB8"
+      ],
+      "limitations": [
+        "Cero entrevistas, presupuestos o compromisos de compra comprobados."
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "id": "WEB1",
+      "type": "EVIDENCE",
+      "source": "https://slgroupcr.com/contact/",
+      "observed_at": "2026-10-31",
+      "claim": "La página describe transporte/carga y remite a un formulario para preparar cotizaciones.",
+      "limits": [
+        "No se probó el envío ni el proceso interno.",
+        "No se conocen presupuesto, necesidad, tamaño, identidad registral o interés.",
+        "La presencia de una vía de cotización no demuestra un problema.",
+        "Autodescripción web; identidad legal no verificada independientemente."
+      ]
+    },
+    {
+      "id": "WEB2",
+      "type": "EVIDENCE",
+      "source": "https://www.huvasa.com/contacto",
+      "observed_at": "2026-10-31",
+      "claim": "La página presenta formulario con empresa/servicio y alternativa de cotización por WhatsApp.",
+      "limits": [
+        "No se probó el envío ni el proceso interno.",
+        "No se conocen presupuesto, necesidad, tamaño, identidad registral o interés.",
+        "La presencia de una vía de cotización no demuestra un problema.",
+        "Autodescripción web; identidad legal no verificada independientemente."
+      ]
+    },
+    {
+      "id": "WEB3",
+      "type": "EVIDENCE",
+      "source": "https://agencialogoscr.com/",
+      "observed_at": "2026-10-31",
+      "claim": "La página ofrece cotización e incluye campos de compañía, producto, origen y destino.",
+      "limits": [
+        "No se probó el envío ni el proceso interno.",
+        "No se conocen presupuesto, necesidad, tamaño, identidad registral o interés.",
+        "La presencia de una vía de cotización no demuestra un problema.",
+        "Autodescripción web; identidad legal no verificada independientemente."
+      ]
+    },
+    {
+      "id": "WEB4",
+      "type": "EVIDENCE",
+      "source": "https://vihesalog.com/",
+      "observed_at": "2026-10-31",
+      "claim": "El sitio describe servicios logísticos y muestra una llamada a solicitar cotización.",
+      "limits": [
+        "No se probó el envío ni el proceso interno.",
+        "No se conocen presupuesto, necesidad, tamaño, identidad registral o interés.",
+        "La presencia de una vía de cotización no demuestra un problema.",
+        "Autodescripción web; identidad legal no verificada independientemente."
+      ]
+    },
+    {
+      "id": "WEB5",
+      "type": "EVIDENCE",
+      "source": "https://bridgelogisticscr.com/carga-comercial/",
+      "observed_at": "2026-10-31",
+      "claim": "La página diferencia carga para casilleros y empresas y propone solicitar tarifa comercial.",
+      "limits": [
+        "No se probó el envío ni el proceso interno.",
+        "No se conocen presupuesto, necesidad, tamaño, identidad registral o interés.",
+        "La presencia de una vía de cotización no demuestra un problema.",
+        "Autodescripción web; identidad legal no verificada independientemente."
+      ]
+    },
+    {
+      "id": "WEB6",
+      "type": "EVIDENCE",
+      "source": "https://avanzalogistic.com/",
+      "observed_at": "2026-10-31",
+      "claim": "La página muestra una cotización inicial por modalidad, operación, origen y destino.",
+      "limits": [
+        "No se probó el envío ni el proceso interno.",
+        "No se conocen presupuesto, necesidad, tamaño, identidad registral o interés.",
+        "La presencia de una vía de cotización no demuestra un problema.",
+        "Autodescripción web; identidad legal no verificada independientemente."
+      ]
+    },
+    {
+      "id": "WEB7",
+      "type": "EVIDENCE",
+      "source": "https://grupocrvia.com/",
+      "observed_at": "2026-10-31",
+      "claim": "El sitio agrupa servicios y casos de operación con llamadas a cotizar.",
+      "limits": [
+        "No se probó el envío ni el proceso interno.",
+        "No se conocen presupuesto, necesidad, tamaño, identidad registral o interés.",
+        "La presencia de una vía de cotización no demuestra un problema.",
+        "Autodescripción web; identidad legal no verificada independientemente."
+      ]
+    },
+    {
+      "id": "WEB8",
+      "type": "EVIDENCE",
+      "source": "https://arawelt.com/",
+      "observed_at": "2026-10-31",
+      "claim": "El sitio presenta consultas por necesidad y un recorrido anunciado hacia WhatsApp o correo.",
+      "limits": [
+        "No se probó el envío ni el proceso interno.",
+        "No se conocen presupuesto, necesidad, tamaño, identidad registral o interés.",
+        "La presencia de una vía de cotización no demuestra un problema.",
+        "Autodescripción web; identidad legal no verificada independientemente."
+      ]
+    }
+  ],
+  "assumptions": [
+    "Costa Rica/logística es una muestra exploratoria, no mercado elegido por el usuario.",
+    "US$10000 por proyecto es objetivo confirmado, no precio de mercado validado.",
+    "El experimento propuesto no estima tasas de conversión."
+  ],
+  "missing_inputs": [
+    "Autorización de contacto, emisor y canal adecuado",
+    "Consentimiento y compradores reales",
+    "Necesidad, presupuesto y proceso interno",
+    "Capacidad/costes reales de entrega"
+  ],
+  "validation": [
+    {
+      "criterion": "Ocho páginas legibles y fuentes para cada señal",
+      "performed": true,
+      "outcome": "PASS",
+      "evidence_ids": [
+        "WEB1",
+        "WEB2",
+        "WEB3",
+        "WEB4",
+        "WEB5",
+        "WEB6",
+        "WEB7",
+        "WEB8"
+      ]
+    },
+    {
+      "criterion": "Entrevistas, problema, presupuesto e interés",
+      "performed": false,
+      "outcome": "NOT_RUN",
+      "evidence_ids": [
+        "WEB1",
+        "WEB2",
+        "WEB3",
+        "WEB4",
+        "WEB5",
+        "WEB6",
+        "WEB7",
+        "WEB8"
+      ]
+    }
+  ],
+  "next_actions": [
+    "Revisar selección y canal; realizar entrevistas solo con autorización y consentimiento.",
+    "Descartar candidatas sin necesidad o capacidad de compra; no forzar la oferta."
+  ]
+}

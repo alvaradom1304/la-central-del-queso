@@ -1,0 +1,4 @@
+interface:
+  display_name: "Photography Direction"
+  short_description: "Brand Intelligence: capacidad AEM OS"
+  default_prompt: "Usa $photography-direction para abordar esta tarea con evidencia y resultado verificable."

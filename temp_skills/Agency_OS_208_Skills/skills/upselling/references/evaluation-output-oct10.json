@@ -1,0 +1,194 @@
+{
+  "task_id": "commercial-quality-oct10",
+  "version": "0.2.0",
+  "status": "NEEDS_REVIEW",
+  "evidence": [
+    {
+      "id": "E1",
+      "type": "FACT",
+      "source": "Brief sintético recibido",
+      "observed_at": "2026-10-10",
+      "claim": "Facturado 100000 CRC; cobrado 40000; pendiente 60000.",
+      "limits": [
+        "Dato del ejercicio; sin verificación externa",
+        "Periodo sin duración ni corte especificados"
+      ]
+    },
+    {
+      "id": "E2",
+      "type": "FACT",
+      "source": "Brief sintético recibido",
+      "observed_at": "2026-10-10",
+      "claim": "Costos variables 65000 CRC; implementación 20000; licencias/soporte 10000.",
+      "limits": [
+        "Dato del ejercicio; sin verificación externa",
+        "Periodo sin duración ni corte especificados"
+      ]
+    },
+    {
+      "id": "E3",
+      "type": "FACT",
+      "source": "Brief sintético recibido",
+      "observed_at": "2026-10-10",
+      "claim": "Inventario físico registrado 30 kg; 12 kg reservados; valoración y cuentas por pagar faltantes.",
+      "limits": [
+        "Dato del ejercicio; sin verificación externa",
+        "Periodo sin duración ni corte especificados"
+      ]
+    },
+    {
+      "id": "E4",
+      "type": "FACT",
+      "source": "Brief sintético recibido",
+      "observed_at": "2026-10-10",
+      "claim": "Propuesta ROI 500%, diez horas y costo salarial repetidos; nómina no disminuye; formatos grandes universales sin consumo/vida útil.",
+      "limits": [
+        "Dato del ejercicio; sin verificación externa",
+        "Periodo sin duración ni corte especificados"
+      ]
+    },
+    {
+      "id": "S1",
+      "type": "EVIDENCE",
+      "source": "https://www.ifrs.org/issued-standards/list-of-standards/ias-7-statement-of-cash-flows/",
+      "observed_at": "2026-10-10",
+      "claim": "IAS 7 diferencia cobros/pagos y ajustes del resultado por partidas sin efectivo y devengos.",
+      "limits": [
+        "Apoyo conceptual; no determina marco contable aplicable ni tratamiento local."
+      ]
+    }
+  ],
+  "skill": "upselling",
+  "result": {
+    "upgrade_case": {
+      "summary": "No recomendar formatos grandes universalmente.",
+      "data": {
+        "decision": "Hipótesis opcional; mantener formato actual/pequeño suficiente",
+        "automatic_additions": false
+      },
+      "evidence_ids": [
+        "E4"
+      ],
+      "limitations": [
+        "Sin necesidad, consumo o vida útil documentados"
+      ]
+    },
+    "comparison": {
+      "summary": "Comparación parametrizada; margen incremental desconocido.",
+      "data": {
+        "buyer_metrics": [
+          "Precio total y por kg",
+          "Gramos utilizables antes de vencimiento",
+          "Almacenamiento",
+          "Merma y frecuencia de compra"
+        ],
+        "seller_formula": "Δingreso neto − Δcostos variables − costos adicionales no incluidos previamente",
+        "alternatives": [
+          "Formato actual/pequeño",
+          "Formato grande opcional"
+        ]
+      },
+      "evidence_ids": [
+        "E2",
+        "E4"
+      ],
+      "limitations": [
+        "Sin precios, gramos, descuentos, costo variable ni devoluciones por formato",
+        "Mayor ticket no prueba contribución"
+      ]
+    },
+    "suitability": {
+      "summary": "Elegibilidad y aceptación explícita pendientes.",
+      "data": {
+        "eligibility": [
+          "Consumo suficiente documentado",
+          "Almacenamiento adecuado",
+          "Vida útil validada del lote y abierto",
+          "Elección explícita del comprador"
+        ],
+        "future_metrics": [
+          "Contribución",
+          "Merma",
+          "Devoluciones",
+          "Satisfacción",
+          "Recompra/retención"
+        ]
+      },
+      "evidence_ids": [
+        "E3",
+        "E4"
+      ],
+      "limitations": [
+        "Sin prueba de inocuidad ni días seguros inventados",
+        "Sin piloto, aceptación o mejora futura confirmada"
+      ]
+    }
+  },
+  "assumptions": [
+    "No se presume que todos consumen el formato grande antes de vencer"
+  ],
+  "missing_inputs": [
+    "Consumo por cliente",
+    "Vida útil validada y almacenamiento",
+    "Gramos/precio/costo de formatos",
+    "Necesidad actual y alternativas suficientes",
+    "Criterios y aceptación explícita"
+  ],
+  "validation": [
+    {
+      "criterion": "Oferta universal rechazada y opción suficiente visible",
+      "performed": true,
+      "outcome": "PASS",
+      "evidence_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ]
+    },
+    {
+      "criterion": "Ingreso incremental separado de contribución",
+      "performed": true,
+      "outcome": "PASS",
+      "evidence_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ]
+    },
+    {
+      "criterion": "Consumo, vida útil y piloto",
+      "performed": false,
+      "outcome": "NOT_RUN",
+      "evidence_ids": [
+        "E4"
+      ]
+    },
+    {
+      "criterion": "Aceptación explícita comprador",
+      "performed": false,
+      "outcome": "NOT_RUN",
+      "evidence_ids": [
+        "E4"
+      ]
+    },
+    {
+      "criterion": "Schema Draft 2020-12 validado con jsonschema y aritmética verificada localmente",
+      "performed": true,
+      "outcome": "PASS",
+      "evidence_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ]
+    }
+  ],
+  "next_actions": [
+    "Ventas propuestas: conservar compra actual sencilla",
+    "Operaciones propuestas: validar lotes y vida útil",
+    "Comprador propuesto: elegir formato solo con comparación completa",
+    "Principal: revisión independiente pendiente"
+  ]
+}

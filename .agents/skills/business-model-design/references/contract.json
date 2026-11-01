@@ -1,0 +1,125 @@
+{
+  "name": "business-model-design",
+  "domain": "Venture Building",
+  "sprint": 3,
+  "inputs": "valor, segmentos, recursos, canales, costos, ingresos",
+  "output": "model_options, economics_hypotheses, operating_requirements",
+  "procedure": [
+    "Diseñar alternativas de creación/entrega/captura de valor",
+    "Estimar costos y recursos como supuestos explícitos",
+    "Comparar riesgos y seleccionar modelo para validar"
+  ],
+  "decision": "No presentar canvas como prueba de viabilidad",
+  "kpi": "hipótesis críticas del modelo resueltas",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://www.sba.gov/counseling/plan-your-business/",
+      "SBA; planificación"
+    ],
+    [
+      "https://robfitz.com/about/",
+      "Autor de The Mom Test; referencia de autor, no libro leído completo"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Venture Building",
+  "purpose": "Diseñar alternativas de creación/entrega/captura de valor",
+  "business_outcome": "hipótesis críticas del modelo resueltas",
+  "when_to_use": "business-model-design: Venture Building. Usar para producir model_options, economics_hypotheses, operating_requirements a partir de valor, segmentos, recursos, canales, costos, ingresos; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "business-model-design",
+    "model_options, economics_hypotheses, operating_requirements"
+  ],
+  "required_inputs": [
+    "valor",
+    " segmentos",
+    " recursos",
+    " canales",
+    " costos",
+    " ingresos"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://www.sba.gov/counseling/plan-your-business/",
+      "SBA; planificación"
+    ],
+    [
+      "https://robfitz.com/about/",
+      "Autor de The Mom Test; referencia de autor, no libro leído completo"
+    ]
+  ],
+  "decision_rules": [
+    "No presentar canvas como prueba de viabilidad",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "model_options",
+    " economics_hypotheses",
+    " operating_requirements"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No presentar canvas como prueba de viabilidad",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "hipótesis críticas del modelo resueltas"
+  ],
+  "examples": [
+    "Usa $business-model-design con valor, segmentos, recursos, canales, costos, ingresos para obtener model_options, economics_hypotheses, operating_requirements.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

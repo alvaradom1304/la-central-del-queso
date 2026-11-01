@@ -1,0 +1,4 @@
+interface:
+  display_name: "Security Testing"
+  short_description: "Cybersecurity: capacidad AEM OS"
+  default_prompt: "Usa $security-testing para abordar esta tarea con evidencia y resultado verificable."

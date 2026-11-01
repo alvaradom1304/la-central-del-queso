@@ -1,0 +1,4 @@
+interface:
+  display_name: "Social Creative"
+  short_description: "Creative Intelligence: capacidad AEM OS"
+  default_prompt: "Usa $social-creative para abordar esta tarea con evidencia y resultado verificable."

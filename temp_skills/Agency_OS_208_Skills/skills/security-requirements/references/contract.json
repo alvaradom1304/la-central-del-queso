@@ -1,0 +1,116 @@
+{
+  "name": "security-requirements",
+  "domain": "Cybersecurity",
+  "sprint": 6,
+  "inputs": "activos, flujos, datos, roles, riesgo",
+  "output": "security_requirements, acceptance_tests, owners",
+  "procedure": [
+    "Clasificar activos y exposición según negocio",
+    "Traducir riesgos a controles y criterios verificables",
+    "Definir responsable y evidencia necesaria"
+  ],
+  "decision": "No inventar obligaciones legales; verificar jurisdicción/estándar",
+  "kpi": "requisitos con prueba y responsable",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://owasp.org/projects/asvs",
+      "OWASP ASVS; verificar versión y scope"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Cybersecurity",
+  "purpose": "Clasificar activos y exposición según negocio",
+  "business_outcome": "requisitos con prueba y responsable",
+  "when_to_use": "security-requirements: Cybersecurity. Usar para producir security_requirements, acceptance_tests, owners a partir de activos, flujos, datos, roles, riesgo; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "security-requirements",
+    "security_requirements, acceptance_tests, owners"
+  ],
+  "required_inputs": [
+    "activos",
+    " flujos",
+    " datos",
+    " roles",
+    " riesgo"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://owasp.org/projects/asvs",
+      "OWASP ASVS; verificar versión y scope"
+    ]
+  ],
+  "decision_rules": [
+    "No inventar obligaciones legales; verificar jurisdicción/estándar",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "security_requirements",
+    " acceptance_tests",
+    " owners"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No inventar obligaciones legales; verificar jurisdicción/estándar",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "requisitos con prueba y responsable"
+  ],
+  "examples": [
+    "Usa $security-requirements con activos, flujos, datos, roles, riesgo para obtener security_requirements, acceptance_tests, owners.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

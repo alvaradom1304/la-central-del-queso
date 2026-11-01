@@ -1,0 +1,941 @@
+{
+  "created_at": "2026-10-10",
+  "scope": "Solo análisis local; sin servicios externos ni modificación de skills.",
+  "summary": "A: contribución de 30 CRC/unidad (30% del precio neto); equilibrio de 10 unidades y 1000 CRC de ventas al mes, equivalente al 10% de capacidad. La demanda no está comprobada. B: contribución cero; no existe equilibrio finito con costos fijos de 300 CRC/mes. C: caja final de 30 CRC y salida neta de 20 CRC; faltan fechas para descartar déficit intramensual. Si se paga antes de cobrar, el saldo transitorio sería −70 CRC. D: faltan datos; no se puede declarar viable ni tratar registros ausentes como ceros. Son cálculos de escenarios suministrados; no prueban éxito comercial ni ejecución empresarial.",
+  "summary_word_count": 99,
+  "cases": {
+    "A": [
+      {
+        "task_id": "A-unit-economics",
+        "skill": "unit-economics",
+        "version": "0.1.0",
+        "status": "SUCCESS",
+        "result": {
+          "contribution_per_unit": {
+            "summary": "{'value': 30, 'currency': 'CRC', 'unit': 'unidad', 'formula': '100−70', 'contribution_margin_percent': 30}",
+            "data": {
+              "value": 30,
+              "currency": "CRC",
+              "unit": "unidad",
+              "formula": "100−70",
+              "contribution_margin_percent": 30
+            },
+            "evidence_ids": [
+              "brief"
+            ],
+            "limitations": [
+              "Datos de escenario proporcionados; sin verificación empresarial.",
+              "No demuestra viabilidad integral."
+            ]
+          },
+          "assumptions": {
+            "summary": "{'price_net': 100, 'variable_cost': 70, 'period': 'mes', 'classification': 'ASSUMPTION', 'single_product': True}",
+            "data": {
+              "price_net": 100,
+              "variable_cost": 70,
+              "period": "mes",
+              "classification": "ASSUMPTION",
+              "single_product": true
+            },
+            "evidence_ids": [
+              "brief"
+            ],
+            "limitations": [
+              "Datos de escenario proporcionados; sin verificación empresarial.",
+              "No demuestra viabilidad integral."
+            ]
+          },
+          "sensitivity": {
+            "summary": "{'formula': 'Δcontribución=Δprecio_neto−Δcosto_variable', 'price_plus_1_contribution': 31, 'variable_cost_plus_1_contribution': 29, 'classification': 'HYPOTHETICAL_SCENARIO'}",
+            "data": {
+              "formula": "Δcontribución=Δprecio_neto−Δcosto_variable",
+              "price_plus_1_contribution": 31,
+              "variable_cost_plus_1_contribution": 29,
+              "classification": "HYPOTHETICAL_SCENARIO"
+            },
+            "evidence_ids": [
+              "brief"
+            ],
+            "limitations": [
+              "Datos de escenario proporcionados; sin verificación empresarial.",
+              "No demuestra viabilidad integral."
+            ]
+          }
+        },
+        "evidence": [
+          {
+            "id": "brief",
+            "type": "EVIDENCE",
+            "source": "Encargo delegado, caso A",
+            "observed_at": "2026-10-10",
+            "claim": "Datos suministrados para análisis local, no registros auditados.",
+            "limits": [
+              "No verifica demanda ni ejecución real."
+            ]
+          }
+        ],
+        "assumptions": [
+          "Sin cambios de precio ni costo en el mes; mezcla de producto único inferida para A/B; C agregado mensual."
+        ],
+        "missing_inputs": [],
+        "validation": [
+          {
+            "criterion": "2026-10-10; Python 3.12.14; exactitud de cálculo/regla y límites revisados",
+            "performed": true,
+            "outcome": "PASS",
+            "evidence_ids": [
+              "brief"
+            ]
+          },
+          {
+            "criterion": "output-schema.json mediante jsonschema",
+            "performed": true,
+            "outcome": "PASS",
+            "evidence_ids": [
+              "brief"
+            ]
+          },
+          {
+            "criterion": "Registros reales y comprobaciones externas",
+            "performed": false,
+            "outcome": "NOT_RUN",
+            "evidence_ids": [
+              "brief"
+            ]
+          },
+          {
+            "criterion": "Revisión independiente por agente padre pendiente",
+            "performed": false,
+            "outcome": "NOT_RUN",
+            "evidence_ids": [
+              "brief"
+            ]
+          }
+        ],
+        "next_actions": [
+          "Obtener evidencia faltante antes de decisiones empresariales; no se ejecutaron acciones."
+        ]
+      },
+      {
+        "task_id": "A-break-even-analysis",
+        "skill": "break-even-analysis",
+        "version": "0.1.0",
+        "status": "SUCCESS",
+        "result": {
+          "break_even_units": {
+            "summary": "{'value': 10, 'finite': True, 'unit': 'unidades/mes', 'formula': '300/30=10'}",
+            "data": {
+              "value": 10,
+              "finite": true,
+              "unit": "unidades/mes",
+              "formula": "300/30=10"
+            },
+            "evidence_ids": [
+              "brief"
+            ],
+            "limitations": [
+              "Datos de escenario proporcionados; sin verificación empresarial.",
+              "No demuestra viabilidad integral."
+            ]
+          },
+          "break_even_revenue": {
+            "summary": "{'value': 1000, 'currency': 'CRC', 'period': 'mes', 'formula': '10×100'}",
+            "data": {
+              "value": 1000,
+              "currency": "CRC",
+              "period": "mes",
+              "formula": "10×100"
+            },
+            "evidence_ids": [
+              "brief"
+            ],
+            "limitations": [
+              "Datos de escenario proporcionados; sin verificación empresarial.",
+              "No demuestra viabilidad integral."
+            ]
+          },
+          "conditions": {
+            "summary": "{'capacity': 100, 'unit': 'unidades/mes', 'capacity_utilization_at_break_even': 0.1, 'capacity_feasible': True, 'demand_verified': False, 'operating_result_formula': '30×Q−300', 'operating_result_at_capacity': 2700, 'limitation': 'Capacidad no demuestra ventas ni viabilidad.'}",
+            "data": {
+              "capacity": 100,
+              "unit": "unidades/mes",
+              "capacity_utilization_at_break_even": 0.1,
+              "capacity_feasible": true,
+              "demand_verified": false,
+              "operating_result_formula": "30×Q−300",
+              "operating_result_at_capacity": 2700,
+              "limitation": "Capacidad no demuestra ventas ni viabilidad."
+            },
+            "evidence_ids": [
+              "brief"
+            ],
+            "limitations": [
+              "Datos de escenario proporcionados; sin verificación empresarial.",
+              "No demuestra viabilidad integral."
+            ]
+          }
+        },
+        "evidence": [
+          {
+            "id": "brief",
+            "type": "EVIDENCE",
+            "source": "Encargo delegado, caso A",
+            "observed_at": "2026-10-10",
+            "claim": "Datos suministrados para análisis local, no registros auditados.",
+            "limits": [
+              "No verifica demanda ni ejecución real."
+            ]
+          }
+        ],
+        "assumptions": [
+          "Sin cambios de precio ni costo en el mes; mezcla de producto único inferida para A/B; C agregado mensual."
+        ],
+        "missing_inputs": [],
+        "validation": [
+          {
+            "criterion": "2026-10-10; Python 3.12.14; exactitud de cálculo/regla y límites revisados",
+            "performed": true,
+            "outcome": "PASS",
+            "evidence_ids": [
+              "brief"
+            ]
+          },
+          {
+            "criterion": "output-schema.json mediante jsonschema",
+            "performed": true,
+            "outcome": "PASS",
+            "evidence_ids": [
+              "brief"
+            ]
+          },
+          {
+            "criterion": "Registros reales y comprobaciones externas",
+            "performed": false,
+            "outcome": "NOT_RUN",
+            "evidence_ids": [
+              "brief"
+            ]
+          },
+          {
+            "criterion": "Revisión independiente por agente padre pendiente",
+            "performed": false,
+            "outcome": "NOT_RUN",
+            "evidence_ids": [
+              "brief"
+            ]
+          }
+        ],
+        "next_actions": [
+          "Obtener evidencia faltante antes de decisiones empresariales; no se ejecutaron acciones."
+        ]
+      }
+    ],
+    "B": [
+      {
+        "task_id": "B-unit-economics",
+        "skill": "unit-economics",
+        "version": "0.1.0",
+        "status": "SUCCESS",
+        "result": {
+          "contribution_per_unit": {
+            "summary": "{'value': 0, 'currency': 'CRC', 'unit': 'unidad', 'formula': '100−100', 'contribution_margin_percent': 0}",
+            "data": {
+              "value": 0,
+              "currency": "CRC",
+              "unit": "unidad",
+              "formula": "100−100",
+              "contribution_margin_percent": 0
+            },
+            "evidence_ids": [
+              "brief"
+            ],
+            "limitations": [
+              "Datos de escenario proporcionados; sin verificación empresarial.",
+              "No demuestra viabilidad integral."
+            ]
+          },
+          "assumptions": {
+            "summary": "{'price_net': 100, 'variable_cost': 100, 'period': 'mes', 'classification': 'ASSUMPTION', 'single_product': True}",
+            "data": {
+              "price_net": 100,
+              "variable_cost": 100,
+              "period": "mes",
+              "classification": "ASSUMPTION",
+              "single_product": true
+            },
+            "evidence_ids": [
+              "brief"
+            ],
+            "limitations": [
+              "Datos de escenario proporcionados; sin verificación empresarial.",
+              "No demuestra viabilidad integral."
+            ]
+          },
+          "sensitivity": {
+            "summary": "{'formula': 'Δcontribución=Δprecio_neto−Δcosto_variable', 'price_plus_1_contribution': 1, 'variable_cost_plus_1_contribution': -1, 'classification': 'HYPOTHETICAL_SCENARIO'}",
+            "data": {
+              "formula": "Δcontribución=Δprecio_neto−Δcosto_variable",
+              "price_plus_1_contribution": 1,
+              "variable_cost_plus_1_contribution": -1,
+              "classification": "HYPOTHETICAL_SCENARIO"
+            },
+            "evidence_ids": [
+              "brief"
+            ],
+            "limitations": [
+              "Datos de escenario proporcionados; sin verificación empresarial.",
+              "No demuestra viabilidad integral."
+            ]
+          }
+        },
+        "evidence": [
+          {
+            "id": "brief",
+            "type": "EVIDENCE",
+            "source": "Encargo delegado, caso B",
+            "observed_at": "2026-10-10",
+            "claim": "Datos suministrados para análisis local, no registros auditados.",
+            "limits": [
+              "No verifica demanda ni ejecución real."
+            ]
+          }
+        ],
+        "assumptions": [
+          "Sin cambios de precio ni costo en el mes; mezcla de producto único inferida para A/B; C agregado mensual."
+        ],
+        "missing_inputs": [],
+        "validation": [
+          {
+            "criterion": "2026-10-10; Python 3.12.14; exactitud de cálculo/regla y límites revisados",
+            "performed": true,
+            "outcome": "PASS",
+            "evidence_ids": [
+              "brief"
+            ]
+          },
+          {
+            "criterion": "output-schema.json mediante jsonschema",
+            "performed": true,
+            "outcome": "PASS",
+            "evidence_ids": [
+              "brief"
+            ]
+          },
+          {
+            "criterion": "Registros reales y comprobaciones externas",
+            "performed": false,
+            "outcome": "NOT_RUN",
+            "evidence_ids": [
+              "brief"
+            ]
+          },
+          {
+            "criterion": "Revisión independiente por agente padre pendiente",
+            "performed": false,
+            "outcome": "NOT_RUN",
+            "evidence_ids": [
+              "brief"
+            ]
+          }
+        ],
+        "next_actions": [
+          "Obtener evidencia faltante antes de decisiones empresariales; no se ejecutaron acciones."
+        ]
+      },
+      {
+        "task_id": "B-break-even-analysis",
+        "skill": "break-even-analysis",
+        "version": "0.1.0",
+        "status": "SUCCESS",
+        "result": {
+          "break_even_units": {
+            "summary": "{'value': None, 'finite': False, 'unit': 'unidades/mes', 'formula': 'Contribución cero: no dividir por cero; no existe Q finita'}",
+            "data": {
+              "value": null,
+              "finite": false,
+              "unit": "unidades/mes",
+              "formula": "Contribución cero: no dividir por cero; no existe Q finita"
+            },
+            "evidence_ids": [
+              "brief"
+            ],
+            "limitations": [
+              "Datos de escenario proporcionados; sin verificación empresarial.",
+              "No demuestra viabilidad integral."
+            ]
+          },
+          "break_even_revenue": {
+            "summary": "{'value': None, 'currency': 'CRC', 'period': 'mes', 'formula': 'No aplica: no existe Q finita'}",
+            "data": {
+              "value": null,
+              "currency": "CRC",
+              "period": "mes",
+              "formula": "No aplica: no existe Q finita"
+            },
+            "evidence_ids": [
+              "brief"
+            ],
+            "limitations": [
+              "Datos de escenario proporcionados; sin verificación empresarial.",
+              "No demuestra viabilidad integral."
+            ]
+          },
+          "conditions": {
+            "summary": "{'capacity': 100, 'unit': 'unidades/mes', 'capacity_utilization_at_break_even': None, 'capacity_feasible': False, 'demand_verified': False, 'operating_result_formula': '0×Q−300', 'operating_result_at_capacity': -300, 'limitation': 'Capacidad no demuestra ventas ni viabilidad.'}",
+            "data": {
+              "capacity": 100,
+              "unit": "unidades/mes",
+              "capacity_utilization_at_break_even": null,
+              "capacity_feasible": false,
+              "demand_verified": false,
+              "operating_result_formula": "0×Q−300",
+              "operating_result_at_capacity": -300,
+              "limitation": "Capacidad no demuestra ventas ni viabilidad."
+            },
+            "evidence_ids": [
+              "brief"
+            ],
+            "limitations": [
+              "Datos de escenario proporcionados; sin verificación empresarial.",
+              "No demuestra viabilidad integral."
+            ]
+          }
+        },
+        "evidence": [
+          {
+            "id": "brief",
+            "type": "EVIDENCE",
+            "source": "Encargo delegado, caso B",
+            "observed_at": "2026-10-10",
+            "claim": "Datos suministrados para análisis local, no registros auditados.",
+            "limits": [
+              "No verifica demanda ni ejecución real."
+            ]
+          }
+        ],
+        "assumptions": [
+          "Sin cambios de precio ni costo en el mes; mezcla de producto único inferida para A/B; C agregado mensual."
+        ],
+        "missing_inputs": [],
+        "validation": [
+          {
+            "criterion": "2026-10-10; Python 3.12.14; exactitud de cálculo/regla y límites revisados",
+            "performed": true,
+            "outcome": "PASS",
+            "evidence_ids": [
+              "brief"
+            ]
+          },
+          {
+            "criterion": "output-schema.json mediante jsonschema",
+            "performed": true,
+            "outcome": "PASS",
+            "evidence_ids": [
+              "brief"
+            ]
+          },
+          {
+            "criterion": "Registros reales y comprobaciones externas",
+            "performed": false,
+            "outcome": "NOT_RUN",
+            "evidence_ids": [
+              "brief"
+            ]
+          },
+          {
+            "criterion": "Revisión independiente por agente padre pendiente",
+            "performed": false,
+            "outcome": "NOT_RUN",
+            "evidence_ids": [
+              "brief"
+            ]
+          }
+        ],
+        "next_actions": [
+          "Obtener evidencia faltante antes de decisiones empresariales; no se ejecutaron acciones."
+        ]
+      }
+    ],
+    "C": [
+      {
+        "task_id": "C-cash-flow-analysis",
+        "skill": "cash-flow-analysis",
+        "version": "0.1.0",
+        "status": "NEEDS_REVIEW",
+        "result": {
+          "cash_schedule": {
+            "summary": "{'period': 'mes sin fecha calendario', 'currency': 'CRC', 'opening': 50, 'receipts': 100, 'payments': 120, 'net_movement': -20, 'closing': 30}",
+            "data": {
+              "period": "mes sin fecha calendario",
+              "currency": "CRC",
+              "opening": 50,
+              "receipts": 100,
+              "payments": 120,
+              "net_movement": -20,
+              "closing": 30
+            },
+            "evidence_ids": [
+              "brief"
+            ],
+            "limitations": [
+              "Datos de escenario proporcionados; sin verificación empresarial.",
+              "No demuestra viabilidad integral."
+            ]
+          },
+          "closing_balance": {
+            "summary": "{'value': 30, 'currency': 'CRC', 'formula': '50+100−120'}",
+            "data": {
+              "value": 30,
+              "currency": "CRC",
+              "formula": "50+100−120"
+            },
+            "evidence_ids": [
+              "brief"
+            ],
+            "limitations": [
+              "Datos de escenario proporcionados; sin verificación empresarial.",
+              "No demuestra viabilidad integral."
+            ]
+          },
+          "liquidity_gaps": {
+            "summary": "{'closing_gap': 0, 'intramonth_gap': None, 'currency': 'CRC', 'pay_before_collect_scenario_balance': -70, 'pay_before_collect_scenario_gap': 70, 'delayed_receipts_next_month_scenario_closing': -70, 'classification': 'HYPOTHETICAL_SCENARIO', 'limitation': 'Sin fechas/secuencia no puede descartarse déficit intramensual; no se agregó crédito.'}",
+            "data": {
+              "closing_gap": 0,
+              "intramonth_gap": null,
+              "currency": "CRC",
+              "pay_before_collect_scenario_balance": -70,
+              "pay_before_collect_scenario_gap": 70,
+              "delayed_receipts_next_month_scenario_closing": -70,
+              "classification": "HYPOTHETICAL_SCENARIO",
+              "limitation": "Sin fechas/secuencia no puede descartarse déficit intramensual; no se agregó crédito."
+            },
+            "evidence_ids": [
+              "brief"
+            ],
+            "limitations": [
+              "Datos de escenario proporcionados; sin verificación empresarial.",
+              "No demuestra viabilidad integral."
+            ]
+          }
+        },
+        "evidence": [
+          {
+            "id": "brief",
+            "type": "EVIDENCE",
+            "source": "Encargo delegado, caso C",
+            "observed_at": "2026-10-10",
+            "claim": "Datos suministrados para análisis local, no registros auditados.",
+            "limits": [
+              "No verifica demanda ni ejecución real."
+            ]
+          }
+        ],
+        "assumptions": [
+          "Sin cambios de precio ni costo en el mes; mezcla de producto único inferida para A/B; C agregado mensual."
+        ],
+        "missing_inputs": [
+          "Fechas/secuencia intramensual para saldo mínimo y cobertura."
+        ],
+        "validation": [
+          {
+            "criterion": "2026-10-10; Python 3.12.14; exactitud de cálculo/regla y límites revisados",
+            "performed": true,
+            "outcome": "PASS",
+            "evidence_ids": [
+              "brief"
+            ]
+          },
+          {
+            "criterion": "output-schema.json mediante jsonschema",
+            "performed": true,
+            "outcome": "PASS",
+            "evidence_ids": [
+              "brief"
+            ]
+          },
+          {
+            "criterion": "Registros reales y comprobaciones externas",
+            "performed": false,
+            "outcome": "NOT_RUN",
+            "evidence_ids": [
+              "brief"
+            ]
+          },
+          {
+            "criterion": "Revisión independiente por agente padre pendiente",
+            "performed": false,
+            "outcome": "NOT_RUN",
+            "evidence_ids": [
+              "brief"
+            ]
+          }
+        ],
+        "next_actions": [
+          "Obtener evidencia faltante antes de decisiones empresariales; no se ejecutaron acciones."
+        ]
+      }
+    ],
+    "D": [
+      {
+        "task_id": "D-unit-economics",
+        "skill": "unit-economics",
+        "version": "0.1.0",
+        "status": "BLOCKED",
+        "result": {
+          "contribution_per_unit": {
+            "summary": "{'value': None, 'state': 'UNKNOWN', 'formula': 'precio_neto−costos_variables', 'viability': 'NOT_DETERMINED', 'limitation': 'Registros ausentes no equivalen a cero; no declarar viable sin evidencia.'}",
+            "data": {
+              "value": null,
+              "state": "UNKNOWN",
+              "formula": "precio_neto−costos_variables",
+              "viability": "NOT_DETERMINED",
+              "limitation": "Registros ausentes no equivalen a cero; no declarar viable sin evidencia."
+            },
+            "evidence_ids": [
+              "brief"
+            ],
+            "limitations": [
+              "Datos de escenario proporcionados; sin verificación empresarial.",
+              "No demuestra viabilidad integral."
+            ]
+          },
+          "assumptions": {
+            "summary": "{'value': None, 'state': 'UNKNOWN', 'formula': None, 'viability': 'NOT_DETERMINED', 'limitation': 'Registros ausentes no equivalen a cero; no declarar viable sin evidencia.'}",
+            "data": {
+              "value": null,
+              "state": "UNKNOWN",
+              "formula": null,
+              "viability": "NOT_DETERMINED",
+              "limitation": "Registros ausentes no equivalen a cero; no declarar viable sin evidencia."
+            },
+            "evidence_ids": [
+              "brief"
+            ],
+            "limitations": [
+              "Datos de escenario proporcionados; sin verificación empresarial.",
+              "No demuestra viabilidad integral."
+            ]
+          },
+          "sensitivity": {
+            "summary": "{'value': None, 'state': 'UNKNOWN', 'formula': None, 'viability': 'NOT_DETERMINED', 'limitation': 'Registros ausentes no equivalen a cero; no declarar viable sin evidencia.'}",
+            "data": {
+              "value": null,
+              "state": "UNKNOWN",
+              "formula": null,
+              "viability": "NOT_DETERMINED",
+              "limitation": "Registros ausentes no equivalen a cero; no declarar viable sin evidencia."
+            },
+            "evidence_ids": [
+              "brief"
+            ],
+            "limitations": [
+              "Datos de escenario proporcionados; sin verificación empresarial.",
+              "No demuestra viabilidad integral."
+            ]
+          }
+        },
+        "evidence": [
+          {
+            "id": "brief",
+            "type": "EVIDENCE",
+            "source": "Encargo delegado, caso D",
+            "observed_at": "2026-10-10",
+            "claim": "Datos suministrados para análisis local, no registros auditados.",
+            "limits": [
+              "No verifica demanda ni ejecución real."
+            ]
+          }
+        ],
+        "assumptions": [
+          "Sin cambios de precio ni costo en el mes; mezcla de producto único inferida para A/B; C agregado mensual."
+        ],
+        "missing_inputs": [
+          "unidad",
+          "precio_neto",
+          "costos_variables",
+          "periodo",
+          "moneda"
+        ],
+        "validation": [
+          {
+            "criterion": "2026-10-10; Python 3.12.14; exactitud de cálculo/regla y límites revisados",
+            "performed": true,
+            "outcome": "PASS",
+            "evidence_ids": [
+              "brief"
+            ]
+          },
+          {
+            "criterion": "output-schema.json mediante jsonschema",
+            "performed": true,
+            "outcome": "PASS",
+            "evidence_ids": [
+              "brief"
+            ]
+          },
+          {
+            "criterion": "Registros reales y comprobaciones externas",
+            "performed": false,
+            "outcome": "NOT_RUN",
+            "evidence_ids": [
+              "brief"
+            ]
+          },
+          {
+            "criterion": "Revisión independiente por agente padre pendiente",
+            "performed": false,
+            "outcome": "NOT_RUN",
+            "evidence_ids": [
+              "brief"
+            ]
+          }
+        ],
+        "next_actions": [
+          "Obtener evidencia faltante antes de decisiones empresariales; no se ejecutaron acciones."
+        ]
+      },
+      {
+        "task_id": "D-break-even-analysis",
+        "skill": "break-even-analysis",
+        "version": "0.1.0",
+        "status": "BLOCKED",
+        "result": {
+          "break_even_units": {
+            "summary": "{'value': None, 'state': 'UNKNOWN', 'formula': 'costo_fijo/(precio_neto−costo_variable), solo contribución positiva', 'viability': 'NOT_DETERMINED', 'limitation': 'Registros ausentes no equivalen a cero; no declarar viable sin evidencia.'}",
+            "data": {
+              "value": null,
+              "state": "UNKNOWN",
+              "formula": "costo_fijo/(precio_neto−costo_variable), solo contribución positiva",
+              "viability": "NOT_DETERMINED",
+              "limitation": "Registros ausentes no equivalen a cero; no declarar viable sin evidencia."
+            },
+            "evidence_ids": [
+              "brief"
+            ],
+            "limitations": [
+              "Datos de escenario proporcionados; sin verificación empresarial.",
+              "No demuestra viabilidad integral."
+            ]
+          },
+          "break_even_revenue": {
+            "summary": "{'value': None, 'state': 'UNKNOWN', 'formula': 'Q_equilibrio×precio_neto', 'viability': 'NOT_DETERMINED', 'limitation': 'Registros ausentes no equivalen a cero; no declarar viable sin evidencia.'}",
+            "data": {
+              "value": null,
+              "state": "UNKNOWN",
+              "formula": "Q_equilibrio×precio_neto",
+              "viability": "NOT_DETERMINED",
+              "limitation": "Registros ausentes no equivalen a cero; no declarar viable sin evidencia."
+            },
+            "evidence_ids": [
+              "brief"
+            ],
+            "limitations": [
+              "Datos de escenario proporcionados; sin verificación empresarial.",
+              "No demuestra viabilidad integral."
+            ]
+          },
+          "conditions": {
+            "summary": "{'value': None, 'state': 'UNKNOWN', 'formula': None, 'viability': 'NOT_DETERMINED', 'limitation': 'Registros ausentes no equivalen a cero; no declarar viable sin evidencia.'}",
+            "data": {
+              "value": null,
+              "state": "UNKNOWN",
+              "formula": null,
+              "viability": "NOT_DETERMINED",
+              "limitation": "Registros ausentes no equivalen a cero; no declarar viable sin evidencia."
+            },
+            "evidence_ids": [
+              "brief"
+            ],
+            "limitations": [
+              "Datos de escenario proporcionados; sin verificación empresarial.",
+              "No demuestra viabilidad integral."
+            ]
+          }
+        },
+        "evidence": [
+          {
+            "id": "brief",
+            "type": "EVIDENCE",
+            "source": "Encargo delegado, caso D",
+            "observed_at": "2026-10-10",
+            "claim": "Datos suministrados para análisis local, no registros auditados.",
+            "limits": [
+              "No verifica demanda ni ejecución real."
+            ]
+          }
+        ],
+        "assumptions": [
+          "Sin cambios de precio ni costo en el mes; mezcla de producto único inferida para A/B; C agregado mensual."
+        ],
+        "missing_inputs": [
+          "precio_neto",
+          "costo_variable",
+          "costo_fijo",
+          "mezcla",
+          "periodo"
+        ],
+        "validation": [
+          {
+            "criterion": "2026-10-10; Python 3.12.14; exactitud de cálculo/regla y límites revisados",
+            "performed": true,
+            "outcome": "PASS",
+            "evidence_ids": [
+              "brief"
+            ]
+          },
+          {
+            "criterion": "output-schema.json mediante jsonschema",
+            "performed": true,
+            "outcome": "PASS",
+            "evidence_ids": [
+              "brief"
+            ]
+          },
+          {
+            "criterion": "Registros reales y comprobaciones externas",
+            "performed": false,
+            "outcome": "NOT_RUN",
+            "evidence_ids": [
+              "brief"
+            ]
+          },
+          {
+            "criterion": "Revisión independiente por agente padre pendiente",
+            "performed": false,
+            "outcome": "NOT_RUN",
+            "evidence_ids": [
+              "brief"
+            ]
+          }
+        ],
+        "next_actions": [
+          "Obtener evidencia faltante antes de decisiones empresariales; no se ejecutaron acciones."
+        ]
+      },
+      {
+        "task_id": "D-cash-flow-analysis",
+        "skill": "cash-flow-analysis",
+        "version": "0.1.0",
+        "status": "BLOCKED",
+        "result": {
+          "cash_schedule": {
+            "summary": "{'value': None, 'state': 'UNKNOWN', 'formula': None, 'viability': 'NOT_DETERMINED', 'limitation': 'Registros ausentes no equivalen a cero; no declarar viable sin evidencia.'}",
+            "data": {
+              "value": null,
+              "state": "UNKNOWN",
+              "formula": null,
+              "viability": "NOT_DETERMINED",
+              "limitation": "Registros ausentes no equivalen a cero; no declarar viable sin evidencia."
+            },
+            "evidence_ids": [
+              "brief"
+            ],
+            "limitations": [
+              "Datos de escenario proporcionados; sin verificación empresarial.",
+              "No demuestra viabilidad integral."
+            ]
+          },
+          "closing_balance": {
+            "summary": "{'value': None, 'state': 'UNKNOWN', 'formula': 'saldo_inicial+cobros−pagos', 'viability': 'NOT_DETERMINED', 'limitation': 'Registros ausentes no equivalen a cero; no declarar viable sin evidencia.'}",
+            "data": {
+              "value": null,
+              "state": "UNKNOWN",
+              "formula": "saldo_inicial+cobros−pagos",
+              "viability": "NOT_DETERMINED",
+              "limitation": "Registros ausentes no equivalen a cero; no declarar viable sin evidencia."
+            },
+            "evidence_ids": [
+              "brief"
+            ],
+            "limitations": [
+              "Datos de escenario proporcionados; sin verificación empresarial.",
+              "No demuestra viabilidad integral."
+            ]
+          },
+          "liquidity_gaps": {
+            "summary": "{'value': None, 'state': 'UNKNOWN', 'formula': None, 'viability': 'NOT_DETERMINED', 'limitation': 'Registros ausentes no equivalen a cero; no declarar viable sin evidencia.'}",
+            "data": {
+              "value": null,
+              "state": "UNKNOWN",
+              "formula": null,
+              "viability": "NOT_DETERMINED",
+              "limitation": "Registros ausentes no equivalen a cero; no declarar viable sin evidencia."
+            },
+            "evidence_ids": [
+              "brief"
+            ],
+            "limitations": [
+              "Datos de escenario proporcionados; sin verificación empresarial.",
+              "No demuestra viabilidad integral."
+            ]
+          }
+        },
+        "evidence": [
+          {
+            "id": "brief",
+            "type": "EVIDENCE",
+            "source": "Encargo delegado, caso D",
+            "observed_at": "2026-10-10",
+            "claim": "Datos suministrados para análisis local, no registros auditados.",
+            "limits": [
+              "No verifica demanda ni ejecución real."
+            ]
+          }
+        ],
+        "assumptions": [
+          "Sin cambios de precio ni costo en el mes; mezcla de producto único inferida para A/B; C agregado mensual."
+        ],
+        "missing_inputs": [
+          "cobros_pagos",
+          "saldo_inicial",
+          "fechas",
+          "moneda"
+        ],
+        "validation": [
+          {
+            "criterion": "2026-10-10; Python 3.12.14; exactitud de cálculo/regla y límites revisados",
+            "performed": true,
+            "outcome": "PASS",
+            "evidence_ids": [
+              "brief"
+            ]
+          },
+          {
+            "criterion": "output-schema.json mediante jsonschema",
+            "performed": true,
+            "outcome": "PASS",
+            "evidence_ids": [
+              "brief"
+            ]
+          },
+          {
+            "criterion": "Registros reales y comprobaciones externas",
+            "performed": false,
+            "outcome": "NOT_RUN",
+            "evidence_ids": [
+              "brief"
+            ]
+          },
+          {
+            "criterion": "Revisión independiente por agente padre pendiente",
+            "performed": false,
+            "outcome": "NOT_RUN",
+            "evidence_ids": [
+              "brief"
+            ]
+          }
+        ],
+        "next_actions": [
+          "Obtener evidencia faltante antes de decisiones empresariales; no se ejecutaron acciones."
+        ]
+      }
+    ]
+  },
+  "validation": {
+    "output_count": 8,
+    "schemas": "PASS",
+    "arithmetic": "PASS",
+    "independent_review": "NOT_RUN",
+    "input_semantics": "A/B suficientes bajo mezcla única explícita; C parcial por fechas; D bloqueado."
+  }
+}

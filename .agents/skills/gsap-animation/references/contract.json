@@ -1,0 +1,130 @@
+{
+  "name": "gsap-animation",
+  "domain": "Premium Web Experience",
+  "sprint": 6,
+  "inputs": "repo, versiones, elementos, motion spec",
+  "output": "animation_code, cleanup, verification",
+  "procedure": [
+    "Inspeccionar versiones, lifecycle del framework, elementos y objetivo de cada efecto; registrar qué tarea comercial apoya.",
+    "Especificar estados base/final, breakpoints, reduced motion, orden de foco y fallback con JavaScript fallido.",
+    "Crear timelines con ownership por componente y selectores limitados al root; usar matchMedia para variantes.",
+    "Restaurar con revert al cambiar condiciones/desmontar; retirar listeners y observers propios, y registrar handlers diferidos en contexto.",
+    "Medir layouts, paints y coste de interacción; evitar animar propiedades de layout sin justificación y lecturas/escrituras intercaladas.",
+    "Probar mount/unmount repetido, cambio de ruta, viewport, fuentes/imágenes tardías y acceso directo al CTA; registrar resultados."
+  ],
+  "decision": "No manipular globals sin scope ni instalar plugins por defecto",
+  "kpi": "fluidez y recursos tras navegación",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://gsap.com/docs/v3/GSAP/gsap.matchMedia()/",
+      "GSAP; consultado 2026-10-10, scope, reversión y condiciones"
+    ]
+  ],
+  "version": "0.2.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Premium Web Experience",
+  "purpose": "Verificar GSAP y plugins instalados con docs vigentes",
+  "business_outcome": "fluidez y recursos tras navegación",
+  "when_to_use": "gsap-animation: Premium Web Experience. Usar para producir animation_code, cleanup, verification a partir de repo, versiones, elementos, motion spec; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "gsap-animation",
+    "animation_code, cleanup, verification"
+  ],
+  "required_inputs": [
+    "repo",
+    " versiones",
+    " elementos",
+    " motion spec"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://gsap.com/docs/v3/GSAP/gsap.matchMedia()/",
+      "GSAP; consultado 2026-10-10, scope, reversión y condiciones"
+    ]
+  ],
+  "decision_rules": [
+    "No manipular globals sin scope ni instalar plugins por defecto",
+    "No cerrar entrega con bloqueadores de tarea esencial ni pruebas declaradas sin ejecutar.",
+    "Aplicar especificación técnica y casos propios de esta capacidad."
+  ],
+  "outputs": [
+    "animation_code",
+    " cleanup",
+    " verification"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo",
+    "Inspeccionar instancias antes/después y cleanup propio",
+    "Restaurar estado accesible en reduced motion y desmontaje",
+    "No declarar fluidez por inspección visual solamente"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No manipular globals sin scope ni instalar plugins por defecto",
+    "escenarios según evaluation-cases.json; registrar ejecutados",
+    "Inspeccionar instancias antes/después y cleanup propio",
+    "Restaurar estado accesible en reduced motion y desmontaje",
+    "No declarar fluidez por inspección visual solamente"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "fluidez y recursos tras navegación"
+  ],
+  "examples": [
+    "Usa $gsap-animation con repo, versiones, elementos, motion spec para obtener animation_code, cleanup, verification.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    },
+    {
+      "version": "0.2.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento técnico, fallos propios, especificación de aceptación y fuentes depuradas; no presume evaluación de cliente/producción."
+    }
+  ]
+}

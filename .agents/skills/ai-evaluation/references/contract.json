@@ -1,0 +1,132 @@
+{
+  "name": "ai-evaluation",
+  "domain": "AI & Automation",
+  "sprint": 7,
+  "inputs": "tarea, outputs, dataset, criterios, riesgos",
+  "output": "evaluation_protocol, results, limitations",
+  "procedure": [
+    "Definir rúbrica y casos representativos/adversos",
+    "Separar desarrollo de evaluación y evitar contaminación",
+    "Medir calidad, costo y seguridad con revisión proporcional"
+  ],
+  "decision": "No declarar producción por prueba sintética ni usar judge único sin calibrar",
+  "kpi": "éxito/abstención y errores críticos",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://www.nist.gov/itl/ai-risk-management-framework",
+      "NIST AI RMF; marco, no certificación"
+    ],
+    [
+      "https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro",
+      "MCP; versión observada en esta auditoría, revalidar"
+    ],
+    [
+      "https://docs.n8n.io/",
+      "n8n; docs"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — AI & Automation",
+  "purpose": "Definir rúbrica y casos representativos/adversos",
+  "business_outcome": "éxito/abstención y errores críticos",
+  "when_to_use": "ai-evaluation: AI & Automation. Usar para producir evaluation_protocol, results, limitations a partir de tarea, outputs, dataset, criterios, riesgos; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "ai-evaluation",
+    "evaluation_protocol, results, limitations"
+  ],
+  "required_inputs": [
+    "tarea",
+    " outputs",
+    " dataset",
+    " criterios",
+    " riesgos"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://www.nist.gov/itl/ai-risk-management-framework",
+      "NIST AI RMF; marco, no certificación"
+    ],
+    [
+      "https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro",
+      "MCP; versión observada en esta auditoría, revalidar"
+    ],
+    [
+      "https://docs.n8n.io/",
+      "n8n; docs"
+    ]
+  ],
+  "decision_rules": [
+    "No declarar producción por prueba sintética ni usar judge único sin calibrar",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "evaluation_protocol",
+    " results",
+    " limitations"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No declarar producción por prueba sintética ni usar judge único sin calibrar",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "éxito/abstención y errores críticos"
+  ],
+  "examples": [
+    "Usa $ai-evaluation con tarea, outputs, dataset, criterios, riesgos para obtener evaluation_protocol, results, limitations.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

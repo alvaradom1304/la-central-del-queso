@@ -1,0 +1,308 @@
+[
+  {
+    "name": "web-strategy",
+    "domain": "Premium Web Experience",
+    "sprint": 6,
+    "inputs": "negocio, audiencia, oferta, canales, operación",
+    "output": "web_role, journeys, scope, measurement",
+    "procedure": [
+      "Definir función de web en sistema comercial",
+      "Seleccionar tareas y contenido prioritarios",
+      "Relacionar arquitectura, operación y métricas"
+    ],
+    "decision": "No empezar por efectos visuales ni asumir ecommerce completo",
+    "kpi": "tareas comerciales completadas",
+    "type": "Atomic"
+  },
+  {
+    "name": "ux-research",
+    "domain": "Premium Web Experience",
+    "sprint": 6,
+    "inputs": "preguntas, usuarios, prototipo, consentimiento",
+    "output": "ux_protocol, findings, limitations",
+    "procedure": [
+      "Convertir decisión de diseño en pregunta falsable y definir qué conducta permitiría decidir.",
+      "Elegir método según pregunta: exploración, evaluación de tarea o medición; documentar población y sesgos.",
+      "Crear screener, consentimiento, guía neutral y tareas sin indicar dónde pulsar; separar piloto y sesiones.",
+      "Registrar observación, cita consentida y conclusión por separado con IDs; codificar casos negativos y fallos de tarea.",
+      "Priorizar hallazgos por impacto, recurrencia dentro de la muestra y evidencia; no extrapolar porcentajes a población.",
+      "Entregar recomendaciones ligadas a decisiones, incertidumbre y siguiente validación proporcional."
+    ],
+    "decision": "Heurística interna no equivale a prueba con usuarios",
+    "kpi": "éxito y fricción en tareas",
+    "type": "Atomic"
+  },
+  {
+    "name": "information-architecture",
+    "domain": "Premium Web Experience",
+    "sprint": 6,
+    "inputs": "contenido, tareas, audiencias, navegación",
+    "output": "sitemap, taxonomy, navigation_rules",
+    "procedure": [
+      "Inventariar y agrupar contenido por tareas",
+      "Definir etiquetas, jerarquía y rutas alternativas",
+      "Evaluar encontrabilidad y ambigüedad"
+    ],
+    "decision": "No publicar estructura derivada solo de organigrama",
+    "kpi": "encontrabilidad del contenido",
+    "type": "Atomic"
+  },
+  {
+    "name": "user-flow",
+    "domain": "Premium Web Experience",
+    "sprint": 6,
+    "inputs": "tarea, actores, estados, restricciones",
+    "output": "flow, transitions, error_states",
+    "procedure": [
+      "Definir actor, tarea, punto de entrada, éxito, permisos y condiciones previas.",
+      "Mapear decisiones, datos y transiciones del recorrido principal con fuente de verdad.",
+      "Añadir estados de error, vacío, carga, retorno, refresh, cancelación y expiración pertinentes.",
+      "Especificar cada nodo con UI, validación, efecto, respuesta, owner y eventos observables.",
+      "Recorrer ramas con fixtures consistentes y comprobar recuperación sin pérdida ni duplicado.",
+      "Entregar flujo ejecutable, vacíos críticos y aceptación por rama; mantener versión y trazabilidad UX→implementación."
+    ],
+    "decision": "No omitir fallos ni confundir flujo ideal con flujo completo",
+    "kpi": "finalización y recuperación de tarea",
+    "type": "Atomic"
+  },
+  {
+    "name": "ui-direction",
+    "domain": "Premium Web Experience",
+    "sprint": 6,
+    "inputs": "UX, marca, componentes, dispositivos",
+    "output": "ui_concept, hierarchy, component_rules",
+    "procedure": [
+      "Traducir posicionamiento y tareas a principios visuales concretos con referencias y criterio propio.",
+      "Definir tokens semánticos de color, espacio, tipografía, bordes y movimiento.",
+      "Especificar componentes y estados default/focus/loading/empty/error/disabled/success con comportamiento.",
+      "Diseñar composición por prioridades de tarea y contenido real en móvil/escritorio, sin ocultar condiciones de compra.",
+      "Comprobar contraste, foco, densidad, truncamiento, targets y movimiento con pruebas pertinentes.",
+      "Entregar decisiones, variantes y sistema implementable; resolver inconsistencias antes de cerrar diseño."
+    ],
+    "decision": "No inventar estética premium independiente de marca",
+    "kpi": "claridad y consistencia UI",
+    "type": "Atomic"
+  },
+  {
+    "name": "design-system",
+    "domain": "Premium Web Experience",
+    "sprint": 6,
+    "inputs": "producto, componentes, marca, stack, estados",
+    "output": "tokens, components, guidelines",
+    "procedure": [
+      "Identificar patrones repetidos y semántica",
+      "Definir componentes con estados, accesibilidad y API",
+      "Verificar ejemplos reales y política de cambios"
+    ],
+    "decision": "No sobreconstruir librería sin usos; tokens no reemplazan QA",
+    "kpi": "reutilización y consistencia",
+    "type": "Atomic"
+  },
+  {
+    "name": "conversion-ux",
+    "domain": "Premium Web Experience",
+    "sprint": 6,
+    "inputs": "oferta, flujo, fricciones, datos",
+    "output": "conversion_flow, trust_content, test_plan",
+    "procedure": [
+      "Clarificar valor, costo, condiciones y siguiente acción",
+      "Reducir pasos innecesarios manteniendo consentimiento",
+      "Probar comprensión y finalización con medición"
+    ],
+    "decision": "No dark patterns ni checkout que oculte costo",
+    "kpi": "finalización y errores en compra",
+    "type": "Atomic"
+  },
+  {
+    "name": "immersive-web-design",
+    "domain": "Premium Web Experience",
+    "sprint": 6,
+    "inputs": "narrativa, marca, tareas, recursos, dispositivos",
+    "output": "immersive_concept, interaction_map, fallback",
+    "procedure": [
+      "Elegir interacción que aumente comprensión/narrativa",
+      "Mantener acceso directo a tareas y contenido",
+      "Diseñar degradación y presupuesto antes de producir"
+    ],
+    "decision": "Más animación no equivale a mejor UX; no obligar al tour",
+    "kpi": "tarea completada con rendimiento aceptable",
+    "type": "Atomic"
+  },
+  {
+    "name": "motion-design",
+    "domain": "Premium Web Experience",
+    "sprint": 6,
+    "inputs": "tarea, UI/escena, ritmo, marca",
+    "output": "motion_spec, states, alternatives",
+    "procedure": [
+      "Asignar función a cada transición y feedback",
+      "Definir timing y continuidad espacial",
+      "Comprobar movimiento reducido, foco y comprensión"
+    ],
+    "decision": "No esconder información necesaria detrás de animación",
+    "kpi": "claridad de estados y feedback",
+    "type": "Atomic"
+  },
+  {
+    "name": "gsap-animation",
+    "domain": "Premium Web Experience",
+    "sprint": 6,
+    "inputs": "repo, versiones, elementos, motion spec",
+    "output": "animation_code, cleanup, verification",
+    "procedure": [
+      "Inspeccionar versiones, lifecycle del framework, elementos y objetivo de cada efecto; registrar qué tarea comercial apoya.",
+      "Especificar estados base/final, breakpoints, reduced motion, orden de foco y fallback con JavaScript fallido.",
+      "Crear timelines con ownership por componente y selectores limitados al root; usar matchMedia para variantes.",
+      "Restaurar con revert al cambiar condiciones/desmontar; retirar listeners y observers propios, y registrar handlers diferidos en contexto.",
+      "Medir layouts, paints y coste de interacción; evitar animar propiedades de layout sin justificación y lecturas/escrituras intercaladas.",
+      "Probar mount/unmount repetido, cambio de ruta, viewport, fuentes/imágenes tardías y acceso directo al CTA; registrar resultados."
+    ],
+    "decision": "No manipular globals sin scope ni instalar plugins por defecto",
+    "kpi": "fluidez y recursos tras navegación",
+    "type": "Atomic"
+  },
+  {
+    "name": "scroll-experience",
+    "domain": "Premium Web Experience",
+    "sprint": 6,
+    "inputs": "narrativa, navegación, dispositivos, stack",
+    "output": "scroll_behavior, skip_paths, checks",
+    "procedure": [
+      "Diseñar progresión compatible con scroll nativo",
+      "Implementar triggers y medidas adaptables",
+      "Comprobar teclado, anchors, historial y escape del recorrido"
+    ],
+    "decision": "No secuestrar scroll ni bloquear compra",
+    "kpi": "navegación/tarea sin fricción",
+    "type": "Atomic"
+  },
+  {
+    "name": "threejs-experience",
+    "domain": "Premium Web Experience",
+    "sprint": 6,
+    "inputs": "escena, assets, dispositivo objetivo, presupuesto",
+    "output": "scene_code, loading_plan, fallback",
+    "procedure": [
+      "Definir función narrativa del 3D y comparación con alternativa 2D completa; fijar presupuesto por dispositivo.",
+      "Auditar modelos/texturas/derechos; registrar descarga comprimida y memoria estimada descomprimida, geometría, materiales y luces.",
+      "Cargar diferido fuera del camino crítico comercial; mantener poster/HTML y estados loading/error.",
+      "Limitar resolución/DPR, reutilizar recursos e instancias cuando aporte; reducir passes/shadows según profiling real.",
+      "Pausar trabajo fuera de pantalla y en pestaña oculta; implementar recuperación de context loss y timeout de activos.",
+      "Liberar recursos por ownership al desmontar; probar repetición, dispositivo representativo y fallback comercial."
+    ],
+    "decision": "WebGL puede fallar; render no debe ser único acceso a contenido",
+    "kpi": "costo GPU/carga y fluidez",
+    "type": "Atomic"
+  },
+  {
+    "name": "react-three-fiber",
+    "domain": "Premium Web Experience",
+    "sprint": 6,
+    "inputs": "React/R3F versiones, escena, lifecycle, presupuesto",
+    "output": "canvas_components, resource_lifecycle, checks",
+    "procedure": [
+      "Verificar compatibilidad y frontera cliente",
+      "Separar estado UI de actualización por frame",
+      "Controlar carga, dispose, suspensión y fallback"
+    ],
+    "decision": "No setState innecesario por frame ni asumir compatibilidad de versiones",
+    "kpi": "render y recursos después de desmontar",
+    "type": "Atomic"
+  },
+  {
+    "name": "nextjs-architecture",
+    "domain": "Premium Web Experience",
+    "sprint": 6,
+    "inputs": "repo/versiones, rutas, datos, auth, hosting",
+    "output": "architecture, boundaries, implementation_plan",
+    "procedure": [
+      "Inspeccionar stack actual y docs oficiales",
+      "Definir server/client, datos, errores y caché por necesidad",
+      "Verificar build y flujo completo sin exponer secretos"
+    ],
+    "decision": "No asumir versión o API; no meter claves servidor en cliente",
+    "kpi": "integridad de build y tareas",
+    "type": "Atomic"
+  },
+  {
+    "name": "responsive-design",
+    "domain": "Premium Web Experience",
+    "sprint": 6,
+    "inputs": "UI, contenido, dispositivos, input modes",
+    "output": "responsive_rules, fixes, verification",
+    "procedure": [
+      "Diseñar layout fluido por contenido y prioridad",
+      "Adaptar navegación/tipo/media y objetivos táctiles",
+      "Probar anchuras, orientación, zoom y overflow"
+    ],
+    "decision": "No usar solo capturas desktop como validación",
+    "kpi": "tareas completas en dispositivos objetivo",
+    "type": "Atomic"
+  },
+  {
+    "name": "accessibility",
+    "domain": "Premium Web Experience",
+    "sprint": 6,
+    "inputs": "UI/código, alcance, nivel objetivo, usuarios",
+    "output": "a11y_findings, fixes, manual_checks",
+    "procedure": [
+      "Verificar criterios WCAG pertinentes y alcance",
+      "Combinar revisión automática con teclado, foco y lectura",
+      "Corregir y repetir flujos principales"
+    ],
+    "decision": "No declarar conformidad completa con escáner aislado; registrar excepciones",
+    "kpi": "barreras críticas verificadas",
+    "type": "Atomic"
+  },
+  {
+    "name": "web-performance",
+    "domain": "Premium Web Experience",
+    "sprint": 6,
+    "inputs": "sitio, entorno, dispositivos/red, objetivos",
+    "output": "performance_budget, measurements, fixes",
+    "procedure": [
+      "Definir plantillas y acciones críticas, dispositivo/red, build, cache y condiciones; separar laboratorio, RUM y CrUX.",
+      "Registrar baseline reproducible y presupuestos por ruta para carga, interacción, layout, recursos y costo de inmersión.",
+      "Diagnosticar LCP por TTFB, demora/carga del recurso y demora de render; INP por input delay/procesamiento/presentación; CLS por shifts.",
+      "Corregir la causa medida: prioridad/dimensiones del hero, JS/hidratación, terceros, fuentes, cache o trabajo de GPU.",
+      "Repetir antes/después bajo condiciones comparables y registrar variabilidad, ejecuciones y limitaciones.",
+      "Verificar compra y regresiones visuales/accesibilidad; definir monitor de campo y recuperación sin prometer datos ausentes."
+    ],
+    "decision": "Distinguir laboratorio de campo; verificar umbrales vigentes",
+    "kpi": "LCP/INP/CLS y peso bajo condiciones registradas",
+    "type": "Atomic"
+  },
+  {
+    "name": "technical-seo",
+    "domain": "Premium Web Experience",
+    "sprint": 6,
+    "inputs": "sitio, rutas, render, acceso, contenido",
+    "output": "technical_findings, fixes, validation",
+    "procedure": [
+      "Comprobar respuesta, rastreo, indexación y enlaces",
+      "Revisar metadata, canonical, sitemap y schema pertinente",
+      "Verificar contenido fuera de canvas y cambios"
+    ],
+    "decision": "No marcar indexado solo por existir sitemap",
+    "kpi": "errores técnicos y páginas indexables",
+    "type": "Atomic"
+  },
+  {
+    "name": "web-quality-assurance",
+    "domain": "Premium Web Experience",
+    "sprint": 6,
+    "inputs": "criterios, app/version, flujos, datos, alcance",
+    "output": "qa_evidence, defects, release_verdict",
+    "procedure": [
+      "Construir matriz REQ→caso→resultado esperado→evidencia para tareas y riesgos reales.",
+      "Fijar build, entorno, fixtures, navegadores/dispositivos, permisos y alcance de prueba.",
+      "Verificar recorrido UI→API→persistencia→respuesta y estado comercial; comprobar datos independientes del mensaje UI.",
+      "Ejecutar fallos pertinentes: red, validación, duplicados, refresh, concurrencia, recurso visual ausente y accesibilidad.",
+      "Clasificar defectos por impacto y reproducibilidad, corregir causa y retestar área afectada/regresiones.",
+      "Emitir veredicto según críticos/altos, evidencia y límites; separar gate interno de autorización para publicar."
+    ],
+    "decision": "No declarar aprobado sin evidencia ni publicar sin autorización",
+    "kpi": "criterios cumplidos y defectos abiertos",
+    "type": "Atomic"
+  }
+]

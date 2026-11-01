@@ -1,0 +1,353 @@
+[
+  {
+    "name": "marketing-strategy",
+    "domain": "Marketing Intelligence",
+    "sprint": 4,
+    "inputs": "objetivos, segmentos, oferta, recursos, funnel",
+    "output": "demand_strategy, channel_choices, measurement",
+    "procedure": [
+      "Identificar demanda y barrera comercial prioritaria",
+      "Elegir segmentos, propuesta, canales y mezcla coherente",
+      "Definir interacción ventas-marketing y aprendizaje desde clientes"
+    ],
+    "decision": "No usar seguidores como objetivo empresarial sin vínculo",
+    "kpi": "demanda cualificada y contribución",
+    "type": "Atomic"
+  },
+  {
+    "name": "market-segmentation",
+    "domain": "Marketing Intelligence",
+    "sprint": 4,
+    "inputs": "mercado, necesidades, comportamiento, datos, alcance",
+    "output": "segments, criteria, validation",
+    "procedure": [
+      "Seleccionar variables útiles para decisión y servicio",
+      "Construir segmentos diferenciables y accesibles",
+      "Contrastar tamaño, necesidad y capacidad de atender"
+    ],
+    "decision": "No segmentar por estereotipos ni atributos sensibles innecesarios",
+    "kpi": "diferencias observadas entre segmentos",
+    "type": "Atomic"
+  },
+  {
+    "name": "targeting",
+    "domain": "Marketing Intelligence",
+    "sprint": 4,
+    "inputs": "segmentos, economía, acceso, capacidades",
+    "output": "target_priorities, exclusions, rationale",
+    "procedure": [
+      "Comparar atractivo, costo y encaje de cada segmento",
+      "Evaluar acceso, competencia y capacidad de entrega",
+      "Seleccionar prioridades y exclusiones con prueba inicial"
+    ],
+    "decision": "Segmento grande no implica oportunidad atendible",
+    "kpi": "margen/costo de adquisición por segmento",
+    "type": "Atomic"
+  },
+  {
+    "name": "positioning",
+    "domain": "Marketing Intelligence",
+    "sprint": 4,
+    "inputs": "audiencia, alternativas, valor, prueba, contexto",
+    "output": "positioning_statement, differentiators, proof",
+    "procedure": [
+      "Definir marco competitivo según decisión del cliente",
+      "Elegir beneficio/diferencia importante y creíble",
+      "Validar comprensión frente a alternativas"
+    ],
+    "decision": "No declarar liderazgo sin evidencia",
+    "kpi": "diferenciación percibida y relevancia",
+    "type": "Atomic"
+  },
+  {
+    "name": "buyer-persona",
+    "domain": "Marketing Intelligence",
+    "sprint": 4,
+    "inputs": "segmento, entrevistas/datos, decisiones de compra",
+    "output": "evidence_persona, goals, barriers",
+    "procedure": [
+      "Sintetizar tareas, detonantes y criterios de compra",
+      "Separar hallazgos de supuestos y evitar ficción demográfica",
+      "Usar perfil para elegir mensaje/canal y actualizar con evidencia"
+    ],
+    "decision": "Sin investigación producir proto-persona rotulada, no persona validada",
+    "kpi": "decisiones mejoradas con perfil",
+    "type": "Atomic"
+  },
+  {
+    "name": "customer-journey",
+    "domain": "Marketing Intelligence",
+    "sprint": 4,
+    "inputs": "segmento, tareas, puntos de contacto, evidencias",
+    "output": "journey_map, friction, opportunities",
+    "procedure": [
+      "Mapear descubrimiento, evaluación, compra, uso y recompra",
+      "Relacionar canales, incertidumbre y responsables",
+      "Priorizar fricciones medibles por etapa"
+    ],
+    "decision": "No afirmar emociones observadas sin investigación",
+    "kpi": "éxito/transición entre etapas",
+    "type": "Atomic"
+  },
+  {
+    "name": "content-strategy",
+    "domain": "Marketing Intelligence",
+    "sprint": 4,
+    "inputs": "posicionamiento, journey, canales, recursos",
+    "output": "content_pillars, plan, measurement",
+    "procedure": [
+      "Vincular necesidades y preguntas a etapas del journey",
+      "Definir temas, formatos, distribución y responsables",
+      "Diseñar calendario y evaluación por resultado"
+    ],
+    "decision": "Evitar volumen sin utilidad; verificar claims y derechos",
+    "kpi": "leads/uso/conversión asistida por contenido",
+    "type": "Atomic"
+  },
+  {
+    "name": "copywriting",
+    "domain": "Marketing Intelligence",
+    "sprint": 4,
+    "inputs": "audiencia, oferta, evidencia, tono, canal",
+    "output": "copy_variants, claim_sources, rationale",
+    "procedure": [
+      "Formular beneficio sustentado y jerarquía de información",
+      "Redactar variantes con CTA y condiciones claras",
+      "Verificar tono, comprensión y claims antes de publicar"
+    ],
+    "decision": "No inventar escasez ni testimonios; no garantizar conversión",
+    "kpi": "comprensión y acción cualificada",
+    "type": "Atomic"
+  },
+  {
+    "name": "seo",
+    "domain": "Marketing Intelligence",
+    "sprint": 4,
+    "inputs": "sitio/contenido, audiencia, consultas, acceso",
+    "output": "seo_plan, prioritized_fixes, measurement",
+    "procedure": [
+      "Analizar intención, estructura y contenido pertinente",
+      "Identificar rastreo/indexación y oportunidades de relevancia",
+      "Priorizar mejoras verificables y seguimiento"
+    ],
+    "decision": "No garantizar ranking ni confundir optimización con tráfico obtenido",
+    "kpi": "tráfico relevante y conversiones orgánicas",
+    "type": "Atomic"
+  },
+  {
+    "name": "seo-audit",
+    "domain": "Marketing Intelligence",
+    "sprint": 4,
+    "inputs": "dominio, páginas, acceso/alcance, datos search",
+    "output": "audit_findings, evidence, remediation",
+    "procedure": [
+      "Inspeccionar rastreabilidad, indexación, canonical y enlaces",
+      "Comparar intención/contenido y problemas técnicos",
+      "Priorizar correcciones por impacto y evidencia"
+    ],
+    "decision": "No ejecutar cambios ni rastreo agresivo fuera de autorización",
+    "kpi": "problemas SEO corregidos y verificados",
+    "type": "Atomic"
+  },
+  {
+    "name": "local-seo",
+    "domain": "Marketing Intelligence",
+    "sprint": 4,
+    "inputs": "ubicación/servicio, datos negocio, acceso, mercado",
+    "output": "local_presence_plan, consistency, measures",
+    "procedure": [
+      "Verificar datos públicos y elegibilidad de perfiles",
+      "Alinear páginas/servicios con demanda local",
+      "Corregir inconsistencias y medir acciones comerciales"
+    ],
+    "decision": "No crear ubicaciones falsas ni publicar datos privados",
+    "kpi": "consultas y pedidos locales atribuibles",
+    "type": "Atomic"
+  },
+  {
+    "name": "paid-media",
+    "domain": "Marketing Intelligence",
+    "sprint": 4,
+    "inputs": "objetivo, oferta, presupuesto autorizado, plataforma, tracking",
+    "output": "campaign_plan, spend_limits, experiment",
+    "procedure": [
+      "Seleccionar audiencia, objetivo y creativo según funnel",
+      "Definir presupuesto, conversiones y límites antes de activar",
+      "Diseñar prueba y revisar margen, atribución y fraude"
+    ],
+    "decision": "No gastar ni activar campañas sin autorización explícita; verificar políticas vigentes",
+    "kpi": "CAC y contribución después de publicidad",
+    "type": "Atomic"
+  },
+  {
+    "name": "social-media-strategy",
+    "domain": "Marketing Intelligence",
+    "sprint": 4,
+    "inputs": "audiencia, marca, canales, recursos, funnel",
+    "output": "channel_roles, content_system, measurement",
+    "procedure": [
+      "Definir función de cada red en demanda/relación",
+      "Diseñar pilares y cadencia sostenible",
+      "Conectar señales con leads, ventas y aprendizajes"
+    ],
+    "decision": "No prometer crecimiento ni comprar engagement",
+    "kpi": "demanda y retención desde redes",
+    "type": "Atomic"
+  },
+  {
+    "name": "instagram-growth",
+    "domain": "Marketing Intelligence",
+    "sprint": 4,
+    "inputs": "cuenta/datos autorizados, audiencia, marca, oferta",
+    "output": "instagram_plan, format_tests, funnel",
+    "procedure": [
+      "Analizar audiencia y formatos disponibles actuales",
+      "Diseñar pruebas de contenido y perfil orientadas a oferta",
+      "Medir respuestas, consultas y venta con límites de atribución"
+    ],
+    "decision": "No bots ni seguidores comprados; algoritmo no es fórmula universal",
+    "kpi": "consultas cualificadas por alcance",
+    "type": "Atomic"
+  },
+  {
+    "name": "facebook-growth",
+    "domain": "Marketing Intelligence",
+    "sprint": 4,
+    "inputs": "cuenta/página, mercado, audiencia, oferta",
+    "output": "facebook_plan, community_tests, measures",
+    "procedure": [
+      "Definir papel de página, comunidad y contenido",
+      "Probar mensajes/formato con recursos reales",
+      "Conectar interacciones con atención y venta"
+    ],
+    "decision": "Respetar reglas de grupos, consentimiento y políticas vigentes",
+    "kpi": "leads/ventas por canal",
+    "type": "Atomic"
+  },
+  {
+    "name": "tiktok-strategy",
+    "domain": "Marketing Intelligence",
+    "sprint": 4,
+    "inputs": "audiencia, marca, recursos video, objetivo",
+    "output": "tiktok_plan, creative_tests, measurement",
+    "procedure": [
+      "Definir audiencia, tarea comercial, oferta, identidad y recursos reales de producción.",
+      "Investigar contenido/formato vigente en fuentes accesibles sin atribuirle eficacia universal.",
+      "Diseñar conceptos originales con hook pertinente, prueba visible, ritmo y CTA conforme al journey.",
+      "Preparar matriz concepto/formato/audiencia, derechos de música/activos y criterios de comparación.",
+      "Conectar alcance y retención con consultas/pedidos mediante seguimiento autorizado y límites de atribución.",
+      "Evaluar resultados por pieza/cohorte, costo y margen; decidir mantener/descartar sin optimizar solo viralidad."
+    ],
+    "decision": "Viralidad no garantiza ventas; verificar derechos de audio",
+    "kpi": "acción comercial por vistas relevantes",
+    "type": "Atomic"
+  },
+  {
+    "name": "youtube-strategy",
+    "domain": "Marketing Intelligence",
+    "sprint": 4,
+    "inputs": "audiencia, temas, producción, oferta",
+    "output": "youtube_plan, series, conversion_paths",
+    "procedure": [
+      "Definir audiencia, problema, oferta, objetivo comercial y capacidad editorial.",
+      "Investigar intención/preguntas y formatos con fuentes y derechos verificables.",
+      "Diseñar arquitectura de contenidos original por journey y función de cada serie.",
+      "Especificar títulos/thumbnails veraces, narrativa, prueba propia, CTA y ruta de conversión.",
+      "Preparar seguimiento por cohorte/ventana, costo, retención y acciones comerciales con límites.",
+      "Evaluar consistencia entre promesa y contenido, aprendizaje y rentabilidad sin prometer algoritmo o viralidad."
+    ],
+    "decision": "Evitar clickbait engañoso y claims sin sustento",
+    "kpi": "consumo útil y conversión asistida",
+    "type": "Atomic"
+  },
+  {
+    "name": "email-marketing",
+    "domain": "Marketing Intelligence",
+    "sprint": 4,
+    "inputs": "audiencia consentida, oferta, lifecycle, plataforma",
+    "output": "email_plan, drafts, suppression_rules",
+    "procedure": [
+      "Segmentar por necesidad y relación legítima",
+      "Diseñar secuencia, asunto y CTA con condiciones claras",
+      "Comprobar bajas, entregabilidad y medición"
+    ],
+    "decision": "No enviar sin autorización ni usar listas ilegítimas; verificar requisitos aplicables",
+    "kpi": "conversión, bajas y quejas",
+    "type": "Atomic"
+  },
+  {
+    "name": "lead-generation",
+    "domain": "Marketing Intelligence",
+    "sprint": 4,
+    "inputs": "ICP, propuesta, canal, calificación, capacidad",
+    "output": "lead_system, capture_fields, handoff",
+    "procedure": [
+      "Elegir oferta de captación relacionada con necesidad",
+      "Minimizar campos y explicar uso de datos",
+      "Definir calificación, responsable y SLA de seguimiento"
+    ],
+    "decision": "Lead no es venta; evitar capturar datos innecesarios",
+    "kpi": "leads aceptados por ventas",
+    "type": "Atomic"
+  },
+  {
+    "name": "conversion-rate-optimization",
+    "domain": "Marketing Intelligence",
+    "sprint": 4,
+    "inputs": "funnel, eventos fiables, hipótesis, muestra",
+    "output": "cro_backlog, experiment, outcome",
+    "procedure": [
+      "Diagnosticar fricción con analítica y observación",
+      "Priorizar hipótesis por impacto/confianza/esfuerzo",
+      "Probar con métrica principal, guardrails y criterio previo"
+    ],
+    "decision": "No declarar ganador sin evidencia suficiente ni inducir conversiones engañosas",
+    "kpi": "conversión y contribución por usuario",
+    "type": "Atomic"
+  },
+  {
+    "name": "conversion-analysis",
+    "domain": "Marketing Intelligence",
+    "sprint": 4,
+    "inputs": "eventos, denominadores, periodos, segmentos",
+    "output": "funnel_rates, leakage, data_quality",
+    "procedure": [
+      "Verificar eventos, duplicados y definiciones",
+      "Calcular tasas por paso y cohorte comparable",
+      "Separar señal, correlación e hipótesis de causa"
+    ],
+    "decision": "Clic en WhatsApp no confirma venta; denominador debe ser explícito",
+    "kpi": "pérdida por etapa del funnel",
+    "type": "Atomic"
+  },
+  {
+    "name": "marketing-analytics",
+    "domain": "Marketing Intelligence",
+    "sprint": 4,
+    "inputs": "objetivos, fuentes, eventos, permisos, periodos",
+    "output": "measurement_model, reconciliation, insights",
+    "procedure": [
+      "Definir métricas/fuentes y esquema de eventos",
+      "Verificar captura, duplicados y conciliación con ventas",
+      "Analizar resultados y límites de atribución"
+    ],
+    "decision": "No atribuir todos los ingresos a último clic ni exponer PII en eventos",
+    "kpi": "calidad de datos y decisiones apoyadas",
+    "type": "Atomic"
+  },
+  {
+    "name": "growth-experimentation",
+    "domain": "Marketing Intelligence",
+    "sprint": 4,
+    "inputs": "hipótesis, funnel, baseline, recursos, riesgo",
+    "output": "experiment_design, results, learning",
+    "procedure": [
+      "Definir mecanismo, KPI y criterio antes de ejecutar",
+      "Planificar comparación, duración/muestra y guardrails",
+      "Evaluar efecto, incertidumbre y siguiente decisión"
+    ],
+    "decision": "No fabricar causalidad; detener ante daño o falta de datos",
+    "kpi": "aprendizaje validado y contribución incremental",
+    "type": "Atomic"
+  }
+]

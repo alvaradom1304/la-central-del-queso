@@ -1,0 +1,172 @@
+{
+  "name": "retention",
+  "domain": "Sales Intelligence",
+  "sprint": 4,
+  "inputs": "cohortes, compras/uso, churn, feedback, costos",
+  "output": "retention_diagnosis, interventions, measures",
+  "procedure": [
+    "Definir activo/recompra/churn y periodo por negocio",
+    "Analizar cohortes y razones de abandono",
+    "Probar mejoras de experiencia y oferta con margen protegido"
+  ],
+  "decision": "No obstaculizar cancelación ni usar descuentos indiscriminados",
+  "kpi": "retención por cohorte y contribución",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://www.huthwaiteinternational.com/spin-methodology",
+      "SPIN; fuente original"
+    ],
+    [
+      "https://gapsellingonlinetraining.com/methodology-training/",
+      "Keenan/Gap Selling; temario oficial"
+    ],
+    [
+      "https://meddicc.com/meddpicc-sales-methodology-and-process",
+      "MEDDICC/MEDDPICC; proveedor metodológico"
+    ],
+    [
+      "https://challengerinc.com/what-is-challenger-sales-methodology/",
+      "Challenger; referencia del proveedor"
+    ],
+    [
+      "https://www.blackswanltd.com/newsletter/bridging-the-gap-using-tactical-empathy-to-neutralize-power-in-negotiations",
+      "Black Swan; perspectiva de empatía táctica"
+    ],
+    [
+      "https://jebblount.com/product/fanatical-prospecting/",
+      "Jeb Blount; referencia del autor"
+    ],
+    [
+      "https://www.influenceatwork.com/7-principles-of-persuasion/",
+      "Cialdini; perspectiva del autor"
+    ],
+    [
+      "https://robfitz.com/about/",
+      "Fitzpatrick; referencia del autor"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Sales Intelligence",
+  "purpose": "Definir activo/recompra/churn y periodo por negocio",
+  "business_outcome": "retención por cohorte y contribución",
+  "when_to_use": "retention: Sales Intelligence. Usar para producir retention_diagnosis, interventions, measures a partir de cohortes, compras/uso, churn, feedback, costos; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "retention",
+    "retention_diagnosis, interventions, measures"
+  ],
+  "required_inputs": [
+    "cohortes",
+    " compras/uso",
+    " churn",
+    " feedback",
+    " costos"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://www.huthwaiteinternational.com/spin-methodology",
+      "SPIN; fuente original"
+    ],
+    [
+      "https://gapsellingonlinetraining.com/methodology-training/",
+      "Keenan/Gap Selling; temario oficial"
+    ],
+    [
+      "https://meddicc.com/meddpicc-sales-methodology-and-process",
+      "MEDDICC/MEDDPICC; proveedor metodológico"
+    ],
+    [
+      "https://challengerinc.com/what-is-challenger-sales-methodology/",
+      "Challenger; referencia del proveedor"
+    ],
+    [
+      "https://www.blackswanltd.com/newsletter/bridging-the-gap-using-tactical-empathy-to-neutralize-power-in-negotiations",
+      "Black Swan; perspectiva de empatía táctica"
+    ],
+    [
+      "https://jebblount.com/product/fanatical-prospecting/",
+      "Jeb Blount; referencia del autor"
+    ],
+    [
+      "https://www.influenceatwork.com/7-principles-of-persuasion/",
+      "Cialdini; perspectiva del autor"
+    ],
+    [
+      "https://robfitz.com/about/",
+      "Fitzpatrick; referencia del autor"
+    ]
+  ],
+  "decision_rules": [
+    "No obstaculizar cancelación ni usar descuentos indiscriminados",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "retention_diagnosis",
+    " interventions",
+    " measures"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No obstaculizar cancelación ni usar descuentos indiscriminados",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "retención por cohorte y contribución"
+  ],
+  "examples": [
+    "Usa $retention con cohortes, compras/uso, churn, feedback, costos para obtener retention_diagnosis, interventions, measures.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

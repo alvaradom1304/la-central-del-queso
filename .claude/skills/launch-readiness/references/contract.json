@@ -1,0 +1,122 @@
+{
+  "name": "launch-readiness",
+  "domain": "Venture Building",
+  "sprint": 3,
+  "inputs": "oferta, operación, calidad, medición, soporte, autorización",
+  "output": "readiness_checks, blockers, launch_plan",
+  "procedure": [
+    "Consolidar aceptación funcional, negocio, contenido, operación, accesibilidad, rendimiento y seguridad pertinente.",
+    "Verificar pedido/precio/stock/entrega/cobro y capacidad de cumplir; separar evidencia real de mock.",
+    "Revisar errores abiertos, clasificación y resolución; críticos/altos impiden gate final.",
+    "Verificar medición, responsable de soporte, alertas, backups/recuperación y procedimiento manual según sistema.",
+    "Preparar plan de publicación/reversión con efectos externos y rollback de datos tratados explícitamente.",
+    "Emitir READY/BLOCKED con evidencia, alcance y límites; publicar solo dentro de autorización vigente."
+  ],
+  "decision": "Bloquear lanzamiento si falla flujo crítico; esta skill no autoriza producción",
+  "kpi": "bloqueos críticos pendientes",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [],
+  "version": "0.2.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Venture Building",
+  "purpose": "Revisar oferta, pedido, pago, entrega, soporte y cumplimiento",
+  "business_outcome": "bloqueos críticos pendientes",
+  "when_to_use": "launch-readiness: Venture Building. Usar para producir readiness_checks, blockers, launch_plan a partir de oferta, operación, calidad, medición, soporte, autorización; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "launch-readiness",
+    "readiness_checks, blockers, launch_plan"
+  ],
+  "required_inputs": [
+    "oferta",
+    " operación",
+    " calidad",
+    " medición",
+    " soporte",
+    " autorización"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [],
+  "decision_rules": [
+    "Bloquear lanzamiento si falla flujo crítico; esta skill no autoriza producción",
+    "No cerrar entrega con bloqueadores de tarea esencial ni pruebas declaradas sin ejecutar.",
+    "Aplicar especificación técnica y casos propios de esta capacidad."
+  ],
+  "outputs": [
+    "readiness_checks",
+    " blockers",
+    " launch_plan"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo",
+    "Bloquear readiness por pérdida de tarea esencial",
+    "Preparar recuperación y responsable",
+    "No inventar autorización ni pruebas de producción"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: Bloquear lanzamiento si falla flujo crítico; esta skill no autoriza producción",
+    "escenarios según evaluation-cases.json; registrar ejecutados",
+    "Bloquear readiness por pérdida de tarea esencial",
+    "Preparar recuperación y responsable",
+    "No inventar autorización ni pruebas de producción"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "bloqueos críticos pendientes"
+  ],
+  "examples": [
+    "Usa $launch-readiness con oferta, operación, calidad, medición, soporte, autorización para obtener readiness_checks, blockers, launch_plan.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    },
+    {
+      "version": "0.2.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento técnico, fallos propios, especificación de aceptación y fuentes depuradas; no presume evaluación de cliente/producción."
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "name": "consumer-behavior",
+  "domain": "Business Intelligence",
+  "sprint": 2,
+  "inputs": "categoría, contexto de compra, observaciones, segmento",
+  "output": "behavior_model, barriers, hypotheses",
+  "procedure": [
+    "Mapear detonantes, búsqueda, evaluación, compra y uso",
+    "Identificar fricciones y factores sociales/contextuales con evidencia",
+    "Formular hipótesis de intervención y pruebas de comportamiento"
+  ],
+  "decision": "No atribuir motivos ocultos por demografía ni presentar neuromitos como ciencia",
+  "kpi": "éxito de tarea y compra observada",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://www.sba.gov/counseling/plan-your-business/",
+      "SBA; marco empresarial, contexto estadounidense, no regulación de Costa Rica"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Business Intelligence",
+  "purpose": "Mapear detonantes, búsqueda, evaluación, compra y uso",
+  "business_outcome": "éxito de tarea y compra observada",
+  "when_to_use": "consumer-behavior: Business Intelligence. Usar para producir behavior_model, barriers, hypotheses a partir de categoría, contexto de compra, observaciones, segmento; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "consumer-behavior",
+    "behavior_model, barriers, hypotheses"
+  ],
+  "required_inputs": [
+    "categoría",
+    " contexto de compra",
+    " observaciones",
+    " segmento"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://www.sba.gov/counseling/plan-your-business/",
+      "SBA; marco empresarial, contexto estadounidense, no regulación de Costa Rica"
+    ]
+  ],
+  "decision_rules": [
+    "No atribuir motivos ocultos por demografía ni presentar neuromitos como ciencia",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "behavior_model",
+    " barriers",
+    " hypotheses"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No atribuir motivos ocultos por demografía ni presentar neuromitos como ciencia",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "éxito de tarea y compra observada"
+  ],
+  "examples": [
+    "Usa $consumer-behavior con categoría, contexto de compra, observaciones, segmento para obtener behavior_model, barriers, hypotheses.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

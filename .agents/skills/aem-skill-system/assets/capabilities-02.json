@@ -1,0 +1,203 @@
+[
+  {
+    "name": "opportunity-discovery",
+    "domain": "Venture Building",
+    "sprint": 3,
+    "inputs": "capacidades, problemas observados, mercados accesibles",
+    "output": "opportunity_hypotheses, discovery_questions",
+    "procedure": [
+      "Explorar tareas insatisfechas y alternativas actuales",
+      "Relacionar problemas con recursos y acceso real a clientes",
+      "Generar hipótesis falsables y seleccionar investigación inicial"
+    ],
+    "decision": "Idea atractiva no es demanda; no elegir por tendencia tecnológica solamente",
+    "kpi": "hipótesis contrastables identificadas",
+    "type": "Atomic"
+  },
+  {
+    "name": "problem-validation",
+    "domain": "Venture Building",
+    "sprint": 3,
+    "inputs": "problema supuesto, segmento, episodios reales, criterios",
+    "output": "problem_evidence, disconfirmation, verdict",
+    "procedure": [
+      "Definir qué evidencia refutaría el problema",
+      "Examinar frecuencia, gravedad, costo y soluciones usadas",
+      "Contrastar casos negativos y emitir validado/provisional/no sustentado"
+    ],
+    "decision": "Cumplidos y intención futura no validan dolor ni pago",
+    "kpi": "incidencia del problema en muestra",
+    "type": "Atomic"
+  },
+  {
+    "name": "customer-discovery",
+    "domain": "Venture Building",
+    "sprint": 3,
+    "inputs": "hipótesis, segmento, guía, acceso consentido",
+    "output": "interview_plan, behavior_notes, learning",
+    "procedure": [
+      "Preparar preguntas sobre episodios pasados y decisiones reales",
+      "Escuchar alternativas, costos y compromisos sin vender la idea",
+      "Registrar evidencia y modificar hipótesis"
+    ],
+    "decision": "No asumir entrevista realizada; separar aplicación original de conceptos de The Mom Test de citas o contenido protegido",
+    "kpi": "aprendizajes accionables por conversación",
+    "type": "Atomic"
+  },
+  {
+    "name": "market-validation",
+    "domain": "Venture Building",
+    "sprint": 3,
+    "inputs": "oferta, segmento, canal, prueba, criterio",
+    "output": "validation_experiment, demand_signals, verdict",
+    "procedure": [
+      "Diseñar prueba con compromiso observable y criterios previos",
+      "Medir respuesta, compra/piloto y costo del canal",
+      "Evaluar señales, sesgos y siguiente iteración"
+    ],
+    "decision": "Landing clicks no equivalen a compra; no cobrar ni lanzar sin autorización",
+    "kpi": "compromisos cualificados por exposición",
+    "type": "Atomic"
+  },
+  {
+    "name": "value-proposition-design",
+    "domain": "Venture Building",
+    "sprint": 3,
+    "inputs": "tareas, dolores, beneficios, alternativas, capacidades",
+    "output": "value_proposition, proof_points, test_plan",
+    "procedure": [
+      "Ordenar tareas y dolores con evidencia",
+      "Relacionar beneficios y mecanismo de solución con capacidad real",
+      "Redactar propuesta y verificar comprensión y diferenciación"
+    ],
+    "decision": "No prometer beneficios no demostrados; destacar para quién no encaja",
+    "kpi": "comprensión y relevancia de propuesta",
+    "type": "Atomic"
+  },
+  {
+    "name": "business-model-design",
+    "domain": "Venture Building",
+    "sprint": 3,
+    "inputs": "valor, segmentos, recursos, canales, costos, ingresos",
+    "output": "model_options, economics_hypotheses, operating_requirements",
+    "procedure": [
+      "Diseñar alternativas de creación/entrega/captura de valor",
+      "Estimar costos y recursos como supuestos explícitos",
+      "Comparar riesgos y seleccionar modelo para validar"
+    ],
+    "decision": "No presentar canvas como prueba de viabilidad",
+    "kpi": "hipótesis críticas del modelo resueltas",
+    "type": "Atomic"
+  },
+  {
+    "name": "business-model-validation",
+    "domain": "Venture Building",
+    "sprint": 3,
+    "inputs": "modelo, supuestos críticos, pruebas, datos observados",
+    "output": "hypothesis_results, model_changes, viability_limits",
+    "procedure": [
+      "Priorizar supuestos de demanda, economía y operación",
+      "Diseñar pruebas que puedan refutar el modelo",
+      "Integrar resultados en cambios y próxima decisión"
+    ],
+    "decision": "Validar compra no valida logística o rentabilidad; cubrir dimensiones por separado",
+    "kpi": "supuestos críticos comprobados",
+    "type": "Atomic"
+  },
+  {
+    "name": "product-market-fit-research",
+    "domain": "Venture Building",
+    "sprint": 3,
+    "inputs": "cohortes, uso, recompra, feedback, segmento",
+    "output": "pmf_signals, cohort_analysis, limitations",
+    "procedure": [
+      "Analizar adopción y retención por cohorte",
+      "Triangular recompra, alternativas, referidos y valor percibido",
+      "Evaluar consistencia por segmento y periodo"
+    ],
+    "decision": "No declarar PMF por una encuesta aislada ni umbral universal",
+    "kpi": "retención y repetición por cohorte",
+    "type": "Atomic"
+  },
+  {
+    "name": "mvp-strategy",
+    "domain": "Venture Building",
+    "sprint": 3,
+    "inputs": "hipótesis de mayor riesgo, recursos, alcance, criterio",
+    "output": "mvp_scope, experiment, acceptance_criteria",
+    "procedure": [
+      "Seleccionar aprendizaje crítico y menor solución capaz de medirlo",
+      "Comparar piloto manual, concierge y producto acotado",
+      "Definir costos, límites, aceptación y siguiente iteración"
+    ],
+    "decision": "MVP debe probar hipótesis sin omitir controles esenciales de seguridad",
+    "kpi": "aprendizaje validado por costo/tiempo",
+    "type": "Atomic"
+  },
+  {
+    "name": "capital-requirements",
+    "domain": "Venture Building",
+    "sprint": 3,
+    "inputs": "inversión inicial, gastos, cobros, calendario, reserva",
+    "output": "capital_schedule, funding_gap, sensitivity",
+    "procedure": [
+      "Separar gastos iniciales, recurrentes y capital de trabajo",
+      "Modelar entradas/salidas por periodo y punto mínimo de caja",
+      "Evaluar contingencias y financiamiento requerido"
+    ],
+    "decision": "No sumar gasto y activo dos veces; supuestos no son disponibilidad de dinero",
+    "kpi": "déficit máximo de caja proyectado",
+    "type": "Atomic"
+  },
+  {
+    "name": "funding-strategy",
+    "domain": "Venture Building",
+    "sprint": 3,
+    "inputs": "necesidad, etapa, territorio, condiciones, tolerancia al riesgo",
+    "output": "funding_options, tradeoffs, verification_tasks",
+    "procedure": [
+      "Comparar autofinanciación, deuda, equity y apoyos pertinentes",
+      "Verificar condiciones actuales y elegibilidad en fuentes oficiales",
+      "Evaluar plazo, costo, garantías, dilución y obligaciones"
+    ],
+    "decision": "No garantizar aprobación ni recomendar deuda sin flujo; revisión humana financiera/legal antes de contratar",
+    "kpi": "costo y ajuste del financiamiento",
+    "type": "Atomic"
+  },
+  {
+    "name": "launch-readiness",
+    "domain": "Venture Building",
+    "sprint": 3,
+    "inputs": "oferta, operación, calidad, medición, soporte, autorización",
+    "output": "readiness_checks, blockers, launch_plan",
+    "procedure": [
+      "Consolidar aceptación funcional, negocio, contenido, operación, accesibilidad, rendimiento y seguridad pertinente.",
+      "Verificar pedido/precio/stock/entrega/cobro y capacidad de cumplir; separar evidencia real de mock.",
+      "Revisar errores abiertos, clasificación y resolución; críticos/altos impiden gate final.",
+      "Verificar medición, responsable de soporte, alertas, backups/recuperación y procedimiento manual según sistema.",
+      "Preparar plan de publicación/reversión con efectos externos y rollback de datos tratados explícitamente.",
+      "Emitir READY/BLOCKED con evidencia, alcance y límites; publicar solo dentro de autorización vigente."
+    ],
+    "decision": "Bloquear lanzamiento si falla flujo crítico; esta skill no autoriza producción",
+    "kpi": "bloqueos críticos pendientes",
+    "type": "Atomic"
+  },
+  {
+    "name": "venture-risk-assessment",
+    "domain": "Venture Building",
+    "sprint": 3,
+    "inputs": "hipótesis del negocio, recursos, exposición, límites",
+    "output": "venture_risks, validation_order, stop_conditions",
+    "procedure": [
+      "Definir iniciativa, etapa, decisión, capital en riesgo, horizonte y restricciones.",
+      "Identificar riesgos de demanda, economía, ejecución, liquidez, dependencia, cumplimiento y seguridad pertinentes.",
+      "Registrar mecanismo causal, exposición, evidencia, mitigación y owner; separar incertidumbre de riesgo observado.",
+      "Construir escenarios y sensibilidad sin probabilidades inventadas; probar correlaciones/dependencias.",
+      "Definir stop/go, señales tempranas, pérdida tolerable y costo de opciones reversibles.",
+      "Entregar recomendación según evidencia y exposición; evitar dictamen de inversión sin datos suficientes."
+    ],
+    "decision": "No usar optimismo del fundador como evidencia",
+    "kpi": "exposición antes de validación",
+    "type": "Atomic"
+  }
+]

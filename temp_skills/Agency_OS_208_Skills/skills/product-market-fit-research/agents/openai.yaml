@@ -1,0 +1,4 @@
+interface:
+  display_name: "Product Market Fit Research"
+  short_description: "Venture Building: capacidad AEM OS"
+  default_prompt: "Usa $product-market-fit-research para abordar esta tarea con evidencia y resultado verificable."

@@ -1,0 +1,157 @@
+{
+  "schema_version": "1.0.0",
+  "task_id": "toolkit-sharpening-2026-10-31",
+  "objective": "Construir y validar una oferta rentable de US$10.000 por proyecto, con mantenimiento mensual opcional, entrega verificable y herramientas compartidas fiables.",
+  "updated_at": "2026-10-31T20:36:08.988979+00:00",
+  "source_runtime": "codex",
+  "status": "needs_review",
+  "authorized_scope": [
+    "Mejorar capacidades, rutas y diagnósticos de Altiora; preservar variantes y datos"
+  ],
+  "git_revision": null,
+  "decisions": [
+    "No publicar desde este directorio con identidad sin confirmar",
+    "Usar metadatos y referencias bajo demanda; no abrir nuevos servidores ni instalar colecciones",
+    "Primer ciclo de herramientas fusionado en PR37 del laboratorio; copias locales y MCP de coordinación actualizados sin publicar desde empresa.",
+    "PR38 fusionada: handler instalado comprobado con18 casos aislados; no demuestra carga/confianza en sesiones nativas.",
+    "PR39 fusionada: Bibliotecario compara términos completos; cinco copias instaladas verificadas sin certificar selección nativa.",
+    "PR40 fusionada: npm run check desde el laboratorio ejecuta el mismo control completo que CI; check:base es parcial.",
+    "PR41 fusionada: vigencia del índice comprobada por metadatos y raíces explícitas; índices antiguos requieren reconstrucción, no certifican runtime.",
+    "PR42 fusionada: WAV completo identificado por hash; cinco copias verificadas,148 pruebas +17 casos, CI Windows/Linux aprobado.",
+    "Meta comercial vigente: US$10.000 por proyecto y mantenimiento mensual opcional; se conservan tareas anteriores.",
+    "Paquete comercial y calculadora preparados; no acredita clientes, demanda, costes reales ni éxito garantizado.",
+    "Revisión independiente corrigió secuencia de entrega/aceptación/pago final/garantía; costes y capacidad aún requieren evidencia.",
+    "Investigación comercial: ocho candidatas de páginas públicas de logística/carga enCosta Rica; no mercado confirmado, compradores o necesidades verificadas.",
+    "Las vías de cotización ya existen en la muestra; no vender rediseño por defecto.",
+    "Evidencia del piloto revisada como código: carrito WhatsApp y API/SOP separados, sin prueba reciente de recepción; afirmaciones de automatización siguen HOLD.",
+    "Tres invitaciones preparadas con finalidad comercial transparente y presentación opcional consentida; no enviadas.",
+    "Preparado prompt maestro Claude con contexto mínimo, evidencia y ownership; primera tarea solo revisión de calculadora, sin solapar sesiones creativas. Entrega en UI pendiente de verificar.",
+    "Usuario designa a Codex orquestador del encargo; no convierte consultas pequeñas en equipos ni amplía permisos.",
+    "Orca confirmado como stablyai/orca; fuente fijada v1.4.245/1c6ac8c3c4d2c3dec2cb5966d225ca2a0e0471d3, siete archivos extraídos sin ejecutar.",
+    "Orca: licencia raíz MIT revisada; Windows declarado e instalador listado, sin prueba funcional del runtime.",
+    "Se adoptan patrones de ownership/tarea/intento/evidencia mediante herramientas actuales; Experimental, hooks, cuentas y servicios no activados.",
+    "Claude sigue PREPARED_NOT_SENT tras la detención del control; revisión de calculadora y permisos pendientes se conservan.",
+    "Referencia Orca validada:13 archivos de adopción y respaldos,7 hashes de fuentes y commit fijado comprobados; no runtime ejecutado.",
+    "Doctor Claude:primero faltaban2 roles de solo lectura, restaurados con hash original; después aparecen8 faltantes distintos. Causa no determinada. No afirmar salud global ni continuar reparando a ciegas."
+  ],
+  "changed_files": [
+    ".altiora/project.json",
+    "docs/altiora-toolkit/ROUTING.md",
+    ".altiora/catalog.local.json",
+    "docs/altiora-business/INICIO.md",
+    "docs/altiora-business/OFERTA.md",
+    "docs/altiora-business/FINANZAS.md",
+    "docs/altiora-business/OPERACION.md",
+    "docs/altiora-business/CALCULADORA.html",
+    "CLIENTS_PORTFOLIO.md",
+    "01_DISCOVERY_ALTIORA.md",
+    "README.md",
+    "AGENTS.md",
+    "CLAUDE.md",
+    "GEMINI.md",
+    "docs/altiora-business/VALIDACION-COMERCIAL.md",
+    "docs/altiora-business/INVITACIONES.md",
+    "docs/altiora-business/research-candidates.json",
+    "docs/altiora-business/interview-template.json",
+    "docs/altiora-business/CUSTOMER-RESEARCH.json",
+    "docs/altiora-business/CUSTOMER-RESEARCH-INPUT.json",
+    "docs/altiora-business/PRUEBA-PILOTO.md",
+    "docs/altiora-business/PILOT-SOURCE-MANIFEST.json",
+    "docs/altiora-business/MARKET-VALIDATION.json",
+    "docs/altiora-business/pipeline.json",
+    "docs/altiora-business/GATES.json",
+    "docs/altiora-toolkit/CLAUDE-MASTER.md",
+    ".altiora/claude-assignment.json",
+    "docs/altiora-toolkit/ORQUESTADOR.md",
+    "docs/altiora-toolkit/ORCA-ALTIORA.md",
+    "docs/altiora-toolkit/orca-reference.json",
+    "docs/altiora-toolkit/LICENSE.orca.txt",
+    "docs/altiora-improvement/repositories.json",
+    ".altiora/orchestration.json"
+  ],
+  "tests": [
+    {
+      "command": "library.py build/find with project roots",
+      "status": "passed",
+      "evidence": "Metadata-only catalog built; Bibliotecario first candidate.",
+      "executed_at": "2026-10-31T15:52:03.502050+00:00"
+    },
+    {
+      "command": "Revisión de Check Windows/Linux y respuesta de merge PR37",
+      "status": "passed",
+      "evidence": "https://github.com/alvaradom1304/Altiora-Immersive-Web-Lab/actions/runs/41217390444; merge aec9152a3066bbe06d1a59ccdb6dcf0e0fb53f9c",
+      "executed_at": "2026-10-31T16:02:06.490883+00:00"
+    },
+    {
+      "command": "runtime-smoke.py desde laboratorio con proyecto de empresa y scratch propio",
+      "status": "passed",
+      "evidence": "18/18; guard sha256 099719c26909a4ef5b801b786bd678f91b7bc19842e6d5b116bcc28b119fdcc2; PR38 / Check41219618488 Windows/Linux aprobados",
+      "executed_at": "2026-10-31T16:21:32.006192+00:00"
+    },
+    {
+      "command": "Bibliotecario PR39: unitarias, corpus y copias instaladas",
+      "status": "passed",
+      "evidence": "https://github.com/alvaradom1304/Altiora-Immersive-Web-Lab/pull/39; 19 unitarias; corpus de17 casos pasado en cada una de5 copias; CI Windows/Linux aprobado; no son85 casos independientes.",
+      "executed_at": "2026-10-31T18:33:52.124732+00:00"
+    },
+    {
+      "command": "Control unificado de herramientas PR40",
+      "status": "passed",
+      "evidence": "136 pruebas locales sin omisiones y17/17 casos de recuperación; paridad de17 comandos con CI anterior; https://github.com/alvaradom1304/Altiora-Immersive-Web-Lab/actions/runs/41231597001",
+      "executed_at": "2026-10-31T18:54:59.032688+00:00"
+    },
+    {
+      "command": "Vigencia de catálogos PR41 y cinco copias instaladas",
+      "status": "passed",
+      "evidence": "144 pruebas locales +17/17 casos;27 pruebas Bibliotecario; cinco helpers pasaron el mismo fixture. Índice179→194 conserva entradas previas; incluye15 definiciones preexistentes de otra raíz de agentes. CI: https://github.com/alvaradom1304/Altiora-Immersive-Web-Lab/actions/runs/41232492872",
+      "executed_at": "2026-10-31T19:06:28.117085+00:00"
+    },
+    {
+      "command": "Control completo de audio PR42 y cinco copias instaladas",
+      "status": "passed",
+      "evidence": "148 pruebas locales +17/17 casos; identidad WAV con fixture idéntico en cinco helpers; CI41234158714 Windows/Linux aprobado.",
+      "executed_at": "2026-10-31T19:38:46.375429+00:00"
+    },
+    {
+      "command": "Calculadora de economía de proyecto y revisión independiente de paquete comercial",
+      "status": "passed",
+      "evidence": "Escenarios, pérdidas, horas, caja inicial e inputs inválidos comprobados; correcciones de coherencia comercial aplicadas. Visual en navegador y validación de mercado no ejecutadas.",
+      "executed_at": "2026-10-31T19:38:46.375429+00:00"
+    },
+    {
+      "command": "Coherencia de investigación comercial y registros estructurados",
+      "status": "passed",
+      "evidence": "Ocho IDs/dominios, fuentes, estados desconocidos, esquemas compatibles y enlaces comprobados; revisión independiente de transparencia/duración corregida. No entrevistas ni ejecución del piloto.",
+      "executed_at": "2026-10-31T19:58:05.906721+00:00"
+    },
+    {
+      "command": "Verificación de referencia Orca y adopción de coordinación",
+      "status": "passed",
+      "evidence": "outputs/orca/VALIDATION.json:13 archivos, backups, commit1c6ac8c3c4d2c3dec2cb5966d225ca2a0e0471d3,7 fuentes; revisión estática independiente. No ejecuta Orca.",
+      "executed_at": "2026-10-31T20:36:08.988979+00:00"
+    },
+    {
+      "command": "Doctor del kit después de registrar Orca",
+      "status": "failed",
+      "evidence": "Primera lectura:2 roles ausentes; restaurados contra recibo. Segunda lectura:8 faltantes distintos fuera de los archivos de adopción Orca. Ver outputs/orca/KIT-DRIFT.json del workspace de coordinación; causa no determinada.",
+      "executed_at": "2026-10-31T20:36:08.988979+00:00"
+    }
+  ],
+  "pending": [
+    "Identidad Git empresarial sin confirmar",
+    "Sesiones reales de otros clientes y autenticaciones no verificadas",
+    "Validar segmento, demanda y precio con compradores reales.",
+    "Completar costes, caja, capacidad y jurisdicción reales antes de comprometer oferta.",
+    "Revisión visual/interactiva de calculadora en navegador; aritmética sí comprobada.",
+    "Autorizar contactos y confirmar emisor/canal antes de usar invitaciones; aún cero entrevistas en esta muestra.",
+    "Definir y comprobar el recorrido del piloto antes de usarlo como prueba de automatización comercial.",
+    "Verificar entrega del prompt a Claude y revisar su informe antes de atribuirle pruebas o mejoras.",
+    "Integración ejecutable de Orca no probada; revisar efectos y autorización antes de un piloto aislado.",
+    "Determinar causa de faltantes variables del kit Claude antes de repararlo o asumir agentes/skills nativos disponibles; no sobrescribir variantes o actividad ajena."
+  ],
+  "next_action": "Continuar como coordinador con herramientas disponibles y prioridades comerciales vigentes. Orca permanece referencia fijada hasta una prueba autorizada; no reanudar UI o dar por entregado el prompt Claude. Conservar demanda/costes/capacidad y Git empresarial pendientes.",
+  "limitations": [
+    "No acredita ventas, ahorro de tokens ni autonomía fuera de una sesión activa.",
+    "git_revision null porque la identidad Git de la empresa no está confirmada; no se modificó su Git."
+  ]
+}

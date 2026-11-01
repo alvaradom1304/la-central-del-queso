@@ -1,0 +1,16 @@
+{
+  "status": "PASSED",
+  "checks": [
+    "reference1750/17.5%/75h",
+    "target boundary",
+    "positive/negative scenarios",
+    "initial cash gap",
+    "overhead allocation",
+    "invalid/empty/nonfinite/overflow inputs",
+    "maintenance formula",
+    "no network/storage APIs"
+  ],
+  "ui_browser": "NOT_TESTED_YET",
+  "financial_data": "ILLUSTRATIVE_NOT_ACTUAL",
+  "target_project_price_usd": 10000
+}

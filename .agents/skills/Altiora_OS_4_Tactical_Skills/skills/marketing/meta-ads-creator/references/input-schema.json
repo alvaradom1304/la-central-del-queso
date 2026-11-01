@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "meta-ads-creator input",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "product",
+    "objective",
+    "audience",
+    "market",
+    "destination"
+  ],
+  "properties": {
+    "product": {
+      "type": "object",
+      "required": [
+        "name",
+        "description"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "price": {
+          "type": [
+            "number",
+            "string"
+          ]
+        },
+        "proof_points": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "claims_not_allowed": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "objective": {
+      "enum": [
+        "awareness",
+        "traffic",
+        "leads",
+        "sales",
+        "engagement",
+        "other"
+      ]
+    },
+    "audience": {
+      "type": "string"
+    },
+    "market": {
+      "type": "string"
+    },
+    "destination": {
+      "type": "string",
+      "format": "uri"
+    },
+    "funnel_stage": {
+      "type": "string"
+    },
+    "brand_voice": {
+      "type": "string"
+    },
+    "placements": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "formats": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

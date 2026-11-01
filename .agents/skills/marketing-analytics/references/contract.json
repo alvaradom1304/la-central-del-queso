@@ -1,0 +1,124 @@
+{
+  "name": "marketing-analytics",
+  "domain": "Marketing Intelligence",
+  "sprint": 4,
+  "inputs": "objetivos, fuentes, eventos, permisos, periodos",
+  "output": "measurement_model, reconciliation, insights",
+  "procedure": [
+    "Definir métricas/fuentes y esquema de eventos",
+    "Verificar captura, duplicados y conciliación con ventas",
+    "Analizar resultados y límites de atribución"
+  ],
+  "decision": "No atribuir todos los ingresos a último clic ni exponer PII en eventos",
+  "kpi": "calidad de datos y decisiones apoyadas",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+      "Google Search Central; SEO"
+    ],
+    [
+      "https://www.influenceatwork.com/7-principles-of-persuasion/",
+      "Cialdini; aplicar críticamente, no garantía"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Marketing Intelligence",
+  "purpose": "Definir métricas/fuentes y esquema de eventos",
+  "business_outcome": "calidad de datos y decisiones apoyadas",
+  "when_to_use": "marketing-analytics: Marketing Intelligence. Usar para producir measurement_model, reconciliation, insights a partir de objetivos, fuentes, eventos, permisos, periodos; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "marketing-analytics",
+    "measurement_model, reconciliation, insights"
+  ],
+  "required_inputs": [
+    "objetivos",
+    " fuentes",
+    " eventos",
+    " permisos",
+    " periodos"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+      "Google Search Central; SEO"
+    ],
+    [
+      "https://www.influenceatwork.com/7-principles-of-persuasion/",
+      "Cialdini; aplicar críticamente, no garantía"
+    ]
+  ],
+  "decision_rules": [
+    "No atribuir todos los ingresos a último clic ni exponer PII en eventos",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "measurement_model",
+    " reconciliation",
+    " insights"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No atribuir todos los ingresos a último clic ni exponer PII en eventos",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "calidad de datos y decisiones apoyadas"
+  ],
+  "examples": [
+    "Usa $marketing-analytics con objetivos, fuentes, eventos, permisos, periodos para obtener measurement_model, reconciliation, insights.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

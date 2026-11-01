@@ -1,0 +1,119 @@
+{
+  "name": "working-capital",
+  "domain": "Financial Intelligence",
+  "sprint": 3,
+  "inputs": "inventario, cuentas por cobrar/pagar, plazos",
+  "output": "working_capital_needs, cycle, levers",
+  "procedure": [
+    "Delimitar entidad, moneda, periodo, fechas de cierre y definiciones contables aplicables.",
+    "Separar efectivo, cuentas por cobrar/pagar, inventario, reservas y partidas no operativas.",
+    "Calcular capital de trabajo y ciclo de caja con bases comparables; registrar método para promedios y saldos.",
+    "Modelar cambios de volumen, plazos, stock y cobranza en escenarios trazables.",
+    "Priorizar acciones por liquidez, costo, servicio y riesgo, sin confundir mejora de caja con beneficio.",
+    "Reconciliar con flujo de caja y entregar fórmulas, sensibilidad, datos faltantes y responsables propuestos."
+  ],
+  "decision": "No recomendar retrasar obligaciones ilegítimamente; fórmulas dependen de datos comparables",
+  "kpi": "días del ciclo de conversión de efectivo",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [],
+  "version": "0.2.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Financial Intelligence",
+  "purpose": "Definir capital de trabajo operativo y partidas",
+  "business_outcome": "días del ciclo de conversión de efectivo",
+  "when_to_use": "working-capital: Financial Intelligence. Usar para producir working_capital_needs, cycle, levers a partir de inventario, cuentas por cobrar/pagar, plazos; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "working-capital",
+    "working_capital_needs, cycle, levers"
+  ],
+  "required_inputs": [
+    "inventario",
+    " cuentas por cobrar/pagar",
+    " plazos"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [],
+  "decision_rules": [
+    "No recomendar retrasar obligaciones ilegítimamente; fórmulas dependen de datos comparables",
+    "No cerrar entrega con bloqueadores de tarea esencial ni pruebas declaradas sin ejecutar.",
+    "Aplicar especificación técnica y casos propios de esta capacidad."
+  ],
+  "outputs": [
+    "working_capital_needs",
+    " cycle",
+    " levers"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo",
+    "Resolver el fallo específico con evidencia y límites",
+    "No cerrar con contradicción material o resultado inventado",
+    "Entregar criterios verificables y responsables operativos según alcance"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No recomendar retrasar obligaciones ilegítimamente; fórmulas dependen de datos comparables",
+    "escenarios según evaluation-cases.json; registrar ejecutados",
+    "Resolver el fallo específico con evidencia y límites",
+    "No cerrar con contradicción material o resultado inventado",
+    "Entregar criterios verificables y responsables operativos según alcance"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "días del ciclo de conversión de efectivo"
+  ],
+  "examples": [
+    "Usa $working-capital con inventario, cuentas por cobrar/pagar, plazos para obtener working_capital_needs, cycle, levers.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    },
+    {
+      "version": "0.2.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento técnico, fallos propios, especificación de aceptación y fuentes depuradas; no presume evaluación de cliente/producción."
+    }
+  ]
+}

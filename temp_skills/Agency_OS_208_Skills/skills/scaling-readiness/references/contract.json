@@ -1,0 +1,106 @@
+{
+  "name": "scaling-readiness",
+  "domain": "Growth & Scaling",
+  "sprint": 8,
+  "inputs": "demanda validada, economía, caja, calidad, capacidad",
+  "output": "readiness_dimensions, blockers, staged_scale",
+  "procedure": [
+    "Evaluar demanda, margen/caja, operación, personas, datos y seguridad",
+    "Revisar evidencia de desempeño repetible",
+    "Recomendar escala gradual, revisar o detener con condiciones"
+  ],
+  "decision": "Crecimiento es más actividad; escala sostiene calidad/economía; desconocidos críticos impiden GO",
+  "kpi": "capacidad repetible y restricciones abiertas",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Growth & Scaling",
+  "purpose": "Evaluar demanda, margen/caja, operación, personas, datos y seguridad",
+  "business_outcome": "capacidad repetible y restricciones abiertas",
+  "when_to_use": "scaling-readiness: Growth & Scaling. Usar para producir readiness_dimensions, blockers, staged_scale a partir de demanda validada, economía, caja, calidad, capacidad; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "scaling-readiness",
+    "readiness_dimensions, blockers, staged_scale"
+  ],
+  "required_inputs": [
+    "demanda validada",
+    " economía",
+    " caja",
+    " calidad",
+    " capacidad"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [],
+  "decision_rules": [
+    "Crecimiento es más actividad; escala sostiene calidad/economía; desconocidos críticos impiden GO",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "readiness_dimensions",
+    " blockers",
+    " staged_scale"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: Crecimiento es más actividad; escala sostiene calidad/economía; desconocidos críticos impiden GO",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "capacidad repetible y restricciones abiertas"
+  ],
+  "examples": [
+    "Usa $scaling-readiness con demanda validada, economía, caja, calidad, capacidad para obtener readiness_dimensions, blockers, staged_scale.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

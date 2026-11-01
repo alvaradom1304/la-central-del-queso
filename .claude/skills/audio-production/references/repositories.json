@@ -1,0 +1,322 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-10-31",
+  "scope": "Reviewed primary repository metadata, pinned README/license files and selected official model cards; no installation, dependency audit, listening benchmark or commercial clearance",
+  "repos": [
+    {
+      "id": "FFmpeg/FFmpeg",
+      "url": "https://github.com/FFmpeg/FFmpeg",
+      "category": "measure-export",
+      "revision": "11ef8d60d670b6908185a4780ad1a33b77783b0f",
+      "verified_on": "2026-10-31",
+      "archived": false,
+      "last_push": "2026-10-31T12:44:50Z",
+      "latest_release": null,
+      "decision": "evaluate",
+      "use": "Base de medición/exportación, ebur128/loudnorm y ffprobe",
+      "license_code": "LGPL-2.1-or-later; optional GPL/nonfree build components change terms",
+      "model_license": "none",
+      "risk": "Guardar versión y configuración del binario; disponibilidad y filtros dependen de build; referencia existente del catálogo visual",
+      "integrated": false,
+      "runtime_status": "NOT_TESTED",
+      "sources": [
+        "https://github.com/FFmpeg/FFmpeg/blob/11ef8d60d670b6908185a4780ad1a33b77783b0f/LICENSE.md",
+        "https://github.com/FFmpeg/FFmpeg/blob/11ef8d60d670b6908185a4780ad1a33b77783b0f/README.md"
+      ]
+    },
+    {
+      "id": "audacity/audacity",
+      "url": "https://github.com/audacity/audacity",
+      "category": "waveform-editing",
+      "revision": "f6be9d7522fc01f59e8461f38ca3f8fcd35fd043",
+      "verified_on": "2026-10-31",
+      "archived": false,
+      "last_push": "2026-10-30T16:53:31Z",
+      "latest_release": "Audacity-4.0.1",
+      "decision": "evaluate",
+      "use": "Edición, reparación manual y escucha comparativa",
+      "license_code": "GPL-3.0 overall; per-file GPL-2.0-or-later and third-party exceptions; docs CC-BY-3.0",
+      "model_license": "none",
+      "risk": "GUI Windows/macOS/Linux; no puente local ni instalación comprobados",
+      "integrated": false,
+      "runtime_status": "NOT_TESTED",
+      "sources": [
+        "https://github.com/audacity/audacity/blob/f6be9d7522fc01f59e8461f38ca3f8fcd35fd043/LICENSE.txt",
+        "https://github.com/audacity/audacity/blob/f6be9d7522fc01f59e8461f38ca3f8fcd35fd043/README.md"
+      ]
+    },
+    {
+      "id": "librosa/librosa",
+      "url": "https://github.com/librosa/librosa",
+      "category": "analysis",
+      "revision": "4ffed287f9044654cc4a1a7393f895cd716a0a5d",
+      "verified_on": "2026-10-31",
+      "archived": false,
+      "last_push": "2026-10-06T15:53:10Z",
+      "latest_release": "1.0.0",
+      "decision": "evaluate",
+      "use": "Onsets, ritmo, características espectrales y apoyo a sincronía",
+      "license_code": "ISC",
+      "model_license": "none",
+      "risk": "Análisis MIR no demuestra calidad perceptual ni sustituye medidor normativo; dependencias numéricas a aislar",
+      "integrated": false,
+      "runtime_status": "NOT_TESTED",
+      "sources": [
+        "https://github.com/librosa/librosa/blob/4ffed287f9044654cc4a1a7393f895cd716a0a5d/LICENSE.md",
+        "https://github.com/librosa/librosa/blob/4ffed287f9044654cc4a1a7393f895cd716a0a5d/README.md"
+      ]
+    },
+    {
+      "id": "csteinmetz1/pyloudnorm",
+      "url": "https://github.com/csteinmetz1/pyloudnorm",
+      "category": "loudness",
+      "revision": "b8d67bfd3ce5deef872f688fcfa491a0ca69fddd",
+      "verified_on": "2026-10-31",
+      "archived": false,
+      "last_push": "2026-01-04T11:43:07Z",
+      "latest_release": "v0.2.0",
+      "decision": "evaluate",
+      "use": "Medir loudness integrada en pipeline Python",
+      "license_code": "MIT",
+      "model_license": "none",
+      "risk": "README declara BS.1770-4; no atribuir BS.1770-5 o true peak sin validación; corpus oficial y control de versiones",
+      "integrated": false,
+      "runtime_status": "NOT_TESTED",
+      "sources": [
+        "https://github.com/csteinmetz1/pyloudnorm/blob/b8d67bfd3ce5deef872f688fcfa491a0ca69fddd/LICENSE",
+        "https://github.com/csteinmetz1/pyloudnorm/blob/b8d67bfd3ce5deef872f688fcfa491a0ca69fddd/README.md"
+      ]
+    },
+    {
+      "id": "spotify/pedalboard",
+      "url": "https://github.com/spotify/pedalboard",
+      "category": "dsp-mixing",
+      "revision": "05e8f0b3c4851e77485d7e842dc0355b44106471",
+      "verified_on": "2026-10-31",
+      "archived": false,
+      "last_push": "2026-10-23T20:33:09Z",
+      "latest_release": "v0.9.26",
+      "decision": "evaluate",
+      "use": "Compresión, EQ, reverberación, limitación y hosting de plugins",
+      "license_code": "GPL-3.0",
+      "model_license": "plugin-dependent",
+      "risk": "Plataformas anunciadas Win/macOS/Linux; licencias de cada VST/AU y binario aparte; no instalar plugins automáticamente",
+      "integrated": false,
+      "runtime_status": "NOT_TESTED",
+      "sources": [
+        "https://github.com/spotify/pedalboard/blob/05e8f0b3c4851e77485d7e842dc0355b44106471/LICENSE",
+        "https://github.com/spotify/pedalboard/blob/05e8f0b3c4851e77485d7e842dc0355b44106471/README.md"
+      ]
+    },
+    {
+      "id": "bastibe/python-soundfile",
+      "url": "https://github.com/bastibe/python-soundfile",
+      "category": "audio-io",
+      "revision": "e8293394e6b712240f06aea5d074956481abf33e",
+      "verified_on": "2026-10-31",
+      "archived": false,
+      "last_push": "2026-10-24T10:53:24Z",
+      "latest_release": "0.14.0",
+      "decision": "evaluate",
+      "use": "I/O WAV/FLAC y arrays para análisis",
+      "license_code": "BSD-3-Clause wrapper; libsndfile and bundled libraries have separate terms",
+      "model_license": "none",
+      "risk": "CFFI/NumPy/libsndfile; compatibilidad de wheels y canales/formatos requiere prueba real",
+      "integrated": false,
+      "runtime_status": "NOT_TESTED",
+      "sources": [
+        "https://github.com/bastibe/python-soundfile/blob/e8293394e6b712240f06aea5d074956481abf33e/LICENSE",
+        "https://github.com/bastibe/python-soundfile/blob/e8293394e6b712240f06aea5d074956481abf33e/README.rst"
+      ]
+    },
+    {
+      "id": "xiph/rnnoise",
+      "url": "https://github.com/xiph/rnnoise",
+      "category": "speech-denoise",
+      "revision": "70f1d256acd4b34a572f999a05c87bf00b67730d",
+      "verified_on": "2026-10-31",
+      "archived": false,
+      "last_push": "2025-02-22T23:58:31Z",
+      "latest_release": "v0.2",
+      "decision": "evaluate",
+      "use": "Supresión ligera de ruido de voz",
+      "license_code": "BSD-3-Clause code",
+      "model_license": "verify exact downloaded model and terms",
+      "risk": "C/compilación; respetar formato/tasa de la demo; no aplicar como restauración universal de música",
+      "integrated": false,
+      "runtime_status": "NOT_TESTED",
+      "sources": [
+        "https://github.com/xiph/rnnoise/blob/70f1d256acd4b34a572f999a05c87bf00b67730d/COPYING",
+        "https://github.com/xiph/rnnoise/blob/70f1d256acd4b34a572f999a05c87bf00b67730d/README"
+      ]
+    },
+    {
+      "id": "Rikorose/DeepFilterNet",
+      "url": "https://github.com/Rikorose/DeepFilterNet",
+      "category": "speech-restoration",
+      "revision": "d375b2d8309e0935d165700c91da9de862a99c31",
+      "verified_on": "2026-10-31",
+      "archived": false,
+      "last_push": "2024-10-17T08:35:11Z",
+      "latest_release": "v0.5.6",
+      "decision": "evaluate",
+      "use": "Restauración de voz con prueba A/B",
+      "license_code": "MIT OR Apache-2.0",
+      "model_license": "verify selected weights and bundled notices",
+      "risk": "Repo anuncia Win/macOS/Linux pero entrenamiento solo probado Linux; última actividad observada 2024, compatibilidad actual pendiente",
+      "integrated": false,
+      "runtime_status": "NOT_TESTED",
+      "sources": [
+        "https://github.com/Rikorose/DeepFilterNet/blob/d375b2d8309e0935d165700c91da9de862a99c31/LICENSE",
+        "https://github.com/Rikorose/DeepFilterNet/blob/d375b2d8309e0935d165700c91da9de862a99c31/LICENSE-MIT",
+        "https://github.com/Rikorose/DeepFilterNet/blob/d375b2d8309e0935d165700c91da9de862a99c31/LICENSE-APACHE",
+        "https://github.com/Rikorose/DeepFilterNet/blob/d375b2d8309e0935d165700c91da9de862a99c31/README.md"
+      ]
+    },
+    {
+      "id": "ggml-org/whisper.cpp",
+      "url": "https://github.com/ggml-org/whisper.cpp",
+      "category": "transcription",
+      "revision": "482279b8a18855ba741d7b88c30fcb3874691f59",
+      "verified_on": "2026-10-31",
+      "archived": false,
+      "last_push": "2026-10-30T05:51:01Z",
+      "latest_release": "v1.9.5",
+      "decision": "evaluate",
+      "use": "Transcripción y timestamps como ayuda para edición/subtítulos",
+      "license_code": "MIT code",
+      "model_license": "verify exact model card and release",
+      "risk": "ASR puede alucinar en silencio/música; no es separación ni aprobación de inteligibilidad; CPU/GPU según build",
+      "integrated": false,
+      "runtime_status": "NOT_TESTED",
+      "sources": [
+        "https://github.com/ggml-org/whisper.cpp/blob/482279b8a18855ba741d7b88c30fcb3874691f59/LICENSE",
+        "https://github.com/ggml-org/whisper.cpp/blob/482279b8a18855ba741d7b88c30fcb3874691f59/README.md"
+      ]
+    },
+    {
+      "id": "resemble-ai/chatterbox",
+      "url": "https://github.com/resemble-ai/chatterbox",
+      "category": "voice-generation",
+      "revision": "5de7a54aa4e5e2baadb0182dde554908b48b85c2",
+      "verified_on": "2026-10-31",
+      "archived": false,
+      "last_push": "2026-07-21T12:27:05Z",
+      "latest_release": "v0.1.2",
+      "decision": "evaluate",
+      "use": "Locución sintética bajo consentimiento y guion verificado",
+      "license_code": "MIT code",
+      "model_license": "MIT label on official ResembleAI/chatterbox card; verify selected variant",
+      "risk": "Código pyproject 0.1.7 difiere de latest release tag; dependencias pinnadas y git@master; README prueba Debian/Python3.11; Windows sin certificar; mantener watermark",
+      "integrated": false,
+      "runtime_status": "NOT_TESTED",
+      "sources": [
+        "https://github.com/resemble-ai/chatterbox/blob/5de7a54aa4e5e2baadb0182dde554908b48b85c2/LICENSE",
+        "https://github.com/resemble-ai/chatterbox/blob/5de7a54aa4e5e2baadb0182dde554908b48b85c2/README.md",
+        "https://github.com/resemble-ai/chatterbox/blob/5de7a54aa4e5e2baadb0182dde554908b48b85c2/pyproject.toml"
+      ]
+    },
+    {
+      "id": "Stability-AI/stable-audio-tools",
+      "url": "https://github.com/Stability-AI/stable-audio-tools",
+      "category": "sound-generation",
+      "revision": "3241adba4fc2a85cf5b29d9eb68d42f40a28e820",
+      "verified_on": "2026-10-31",
+      "archived": false,
+      "last_push": "2026-10-24T00:11:02Z",
+      "latest_release": null,
+      "decision": "hold",
+      "use": "Candidato para SFX/text-to-audio si se valida licencia y hardware",
+      "license_code": "MIT code",
+      "model_license": "separate Stable Audio Community terms for stable-audio-open-1.0; gated acceptance",
+      "risk": "pyproject exige Python >=3.10,<3.11 y torch2.7.1; no comparte entorno con QA stdlib; no descargar modelos ni aceptar términos por usuario",
+      "integrated": false,
+      "runtime_status": "NOT_TESTED",
+      "sources": [
+        "https://github.com/Stability-AI/stable-audio-tools/blob/3241adba4fc2a85cf5b29d9eb68d42f40a28e820/LICENSE",
+        "https://github.com/Stability-AI/stable-audio-tools/blob/3241adba4fc2a85cf5b29d9eb68d42f40a28e820/README.md",
+        "https://github.com/Stability-AI/stable-audio-tools/blob/3241adba4fc2a85cf5b29d9eb68d42f40a28e820/pyproject.toml"
+      ]
+    },
+    {
+      "id": "facebookresearch/audiocraft",
+      "url": "https://github.com/facebookresearch/audiocraft",
+      "category": "music-generation",
+      "revision": "896ec7c47f5e5d1e5aa1e4b260c4405328bf009d",
+      "verified_on": "2026-10-31",
+      "archived": false,
+      "last_push": "2026-03-03T21:50:32Z",
+      "latest_release": null,
+      "decision": "hold",
+      "use": "Referencia de investigación MusicGen/AudioGen",
+      "license_code": "MIT code",
+      "model_license": "CC-BY-NC-4.0 pretrained weights",
+      "risk": "Pesos no aprobados para uso comercial; entorno Python3.9/PyTorch2.1; no instalar para campañas ni afirmar derechos de outputs",
+      "integrated": false,
+      "runtime_status": "NOT_TESTED",
+      "sources": [
+        "https://github.com/facebookresearch/audiocraft/blob/896ec7c47f5e5d1e5aa1e4b260c4405328bf009d/LICENSE",
+        "https://github.com/facebookresearch/audiocraft/blob/896ec7c47f5e5d1e5aa1e4b260c4405328bf009d/LICENSE_weights",
+        "https://github.com/facebookresearch/audiocraft/blob/896ec7c47f5e5d1e5aa1e4b260c4405328bf009d/README.md"
+      ]
+    },
+    {
+      "id": "supercollider/supercollider",
+      "url": "https://github.com/supercollider/supercollider",
+      "category": "synthesis",
+      "revision": "a1eab9a0c05310eb4b32290149c40d31d88d440b",
+      "verified_on": "2026-10-31",
+      "archived": false,
+      "last_push": "2026-10-30T21:07:24Z",
+      "latest_release": "Version-3.14.1",
+      "decision": "evaluate",
+      "use": "Foley sintético, texturas, sonificación y variaciones originales",
+      "license_code": "GPL-3.0",
+      "model_license": "samples/plugins individually licensed",
+      "risk": "Servidor de audio y device I/O requieren acción autorizada; C++17/Qt/Boost para build; no iniciar escucha ni sintetizador en background",
+      "integrated": false,
+      "runtime_status": "NOT_TESTED",
+      "sources": [
+        "https://github.com/supercollider/supercollider/blob/a1eab9a0c05310eb4b32290149c40d31d88d440b/COPYING",
+        "https://github.com/supercollider/supercollider/blob/a1eab9a0c05310eb4b32290149c40d31d88d440b/README.md"
+      ]
+    },
+    {
+      "id": "juce-framework/JUCE",
+      "url": "https://github.com/juce-framework/JUCE",
+      "category": "plugin-engineering",
+      "revision": "454fe891acc8204f99f4ef1e3a28c84b1a4da145",
+      "verified_on": "2026-10-31",
+      "archived": false,
+      "last_push": "2026-10-30T17:14:56Z",
+      "latest_release": "9.0.4",
+      "decision": "reference_only",
+      "use": "Ingeniería DSP y plugins cuando se solicite producto propio",
+      "license_code": "AGPL-3.0 OR commercial JUCE 9 terms",
+      "model_license": "third-party plugins separately licensed",
+      "risk": "Sobredimensionado para mezclar anuncios; términos comerciales y módulos a revisar antes de incorporar código; no es DAW ni app conectada",
+      "integrated": false,
+      "runtime_status": "NOT_TESTED",
+      "sources": [
+        "https://github.com/juce-framework/JUCE/blob/454fe891acc8204f99f4ef1e3a28c84b1a4da145/LICENSE.md",
+        "https://github.com/juce-framework/JUCE/blob/454fe891acc8204f99f4ef1e3a28c84b1a4da145/README.md"
+      ]
+    }
+  ],
+  "standards": [
+    {
+      "id": "ITU-R BS.1770-5",
+      "url": "https://www.itu.int/rec/R-REC-BS.1770-5-202311-I/",
+      "note": "Current in-force edition observed; meter implementation conformance not inferred"
+    },
+    {
+      "id": "EBU R128-2023",
+      "url": "https://tech.ebu.ch/docs/r/r128.pdf",
+      "note": "Broadcast profile only; not universal streaming target"
+    }
+  ],
+  "model_cards": [
+    "https://huggingface.co/ResembleAI/chatterbox",
+    "https://huggingface.co/stabilityai/stable-audio-open-1.0"
+  ]
+}

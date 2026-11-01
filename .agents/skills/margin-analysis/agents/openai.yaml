@@ -1,0 +1,4 @@
+interface:
+  display_name: "Margin Analysis"
+  short_description: "Financial Intelligence: capacidad AEM OS"
+  default_prompt: "Usa $margin-analysis para abordar esta tarea con evidencia y resultado verificable."

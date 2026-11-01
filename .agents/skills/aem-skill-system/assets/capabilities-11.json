@@ -1,0 +1,230 @@
+[
+  {
+    "name": "process-mapping",
+    "domain": "Operations & Logistics",
+    "sprint": 8,
+    "inputs": "actores, entradas/salidas, pasos, evidencias",
+    "output": "as_is_map, handoffs, exceptions",
+    "procedure": [
+      "Observar o reconstruir proceso real con fuentes",
+      "Mapear decisiones, responsables, datos y excepciones",
+      "Validar mapa con operador y registrar diferencias"
+    ],
+    "decision": "No confundir SOP ideal con proceso observado",
+    "kpi": "cobertura de pasos/excepciones",
+    "type": "Atomic"
+  },
+  {
+    "name": "process-optimization",
+    "domain": "Operations & Logistics",
+    "sprint": 8,
+    "inputs": "mapa actual, tiempos, errores, restricciones",
+    "output": "root_causes, to_be_process, pilot",
+    "procedure": [
+      "Identificar espera, retrabajo y cuello de botella",
+      "Comparar intervenciones por impacto y esfuerzo",
+      "Probar cambio y medir calidad/tiempo"
+    ],
+    "decision": "No acelerar una etapa trasladando costo al resto",
+    "kpi": "tiempo total y errores del proceso",
+    "type": "Atomic"
+  },
+  {
+    "name": "inventory-management",
+    "domain": "Operations & Logistics",
+    "sprint": 8,
+    "inputs": "SKUs, unidades, stock inicial, movimientos, responsable",
+    "output": "stock_model, reconciliation, controls",
+    "procedure": [
+      "Definir existencia, reserva, disponible y unidades",
+      "Registrar entrada/venta/merma/ajuste con IDs y motivo",
+      "Conciliar físico/digital y gestionar cancelación/concurrencia"
+    ],
+    "decision": "Sin registrar todos los canales no prometer stock real; no ajustar inventario real sin autoridad",
+    "kpi": "precisión de inventario y merma",
+    "type": "Atomic"
+  },
+  {
+    "name": "inventory-forecasting",
+    "domain": "Operations & Logistics",
+    "sprint": 8,
+    "inputs": "ventas/consumo histórico, stockouts, leadtime, temporada",
+    "output": "inventory_forecast, uncertainty, replenishment",
+    "procedure": [
+      "Depurar demanda y distinguir venta de demanda no atendida",
+      "Estimar consumo por horizonte y error",
+      "Relacionar reposición con leadtime, variabilidad y caducidad"
+    ],
+    "decision": "No proyectar ventas censuradas como demanda completa",
+    "kpi": "error y stockouts/merma",
+    "type": "Atomic"
+  },
+  {
+    "name": "demand-planning",
+    "domain": "Operations & Logistics",
+    "sprint": 8,
+    "inputs": "demanda, promociones, capacidad, leadtime",
+    "output": "demand_scenarios, consensus_plan, review",
+    "procedure": [
+      "Separar demanda base de promoción y estacionalidad",
+      "Contrastar pronóstico con ventas/operación",
+      "Definir revisión, responsables y escenarios"
+    ],
+    "decision": "No planificar demanda igual a capacidad disponible",
+    "kpi": "error y cumplimiento de demanda",
+    "type": "Atomic"
+  },
+  {
+    "name": "procurement",
+    "domain": "Operations & Logistics",
+    "sprint": 8,
+    "inputs": "necesidades, inventario, proveedor, condiciones, autoridad",
+    "output": "purchase_plan, comparisons, approvals",
+    "procedure": [
+      "Definir necesidad, calidad y fecha requerida",
+      "Comparar costo total, plazo y riesgo",
+      "Preparar orden/recomendación y recepción verificable"
+    ],
+    "decision": "No emitir compra ni comprometer pago sin autorización",
+    "kpi": "costo total y cumplimiento proveedor",
+    "type": "Atomic"
+  },
+  {
+    "name": "supplier-evaluation",
+    "domain": "Operations & Logistics",
+    "sprint": 8,
+    "inputs": "proveedores, criterios, entregas, calidad, costo",
+    "output": "supplier_scorecard, risks, actions",
+    "procedure": [
+      "Definir criterios y evidencia por proveedor",
+      "Comparar desempeño y concentración",
+      "Proponer mejora, alternativa o contingencia"
+    ],
+    "decision": "No evaluar solo precio ni inventar entregas/defectos",
+    "kpi": "calidad/plazo y concentración",
+    "type": "Atomic"
+  },
+  {
+    "name": "supply-chain",
+    "domain": "Operations & Logistics",
+    "sprint": 8,
+    "inputs": "red proveedores, flujos, inventario, servicio",
+    "output": "supply_network, vulnerabilities, resilience",
+    "procedure": [
+      "Mapear proveedores, lotes, lead times, inventario, preparación, cobertura y transporte con fuentes de operación.",
+      "Definir unidad/base temporal, variabilidad de demanda y capacidad; distinguir stock físico, reservado, disponible y rechazado.",
+      "Dimensionar reposición y buffers según nivel de servicio y restricciones reales; comparar costos y riesgo de perecederos.",
+      "Especificar trazabilidad, manejo de excepciones y owner de abastecimiento, entrega y devolución.",
+      "Analizar interrupción de proveedor, demanda pico y retraso; comprobar coherencia de reservas y promesas.",
+      "Entregar políticas operativas, indicadores con denominador y riesgos; validar con operación antes de comprometer niveles."
+    ],
+    "decision": "No asumir diversificación sin costos y calidad comparables",
+    "kpi": "servicio y resiliencia de suministro",
+    "type": "Atomic"
+  },
+  {
+    "name": "logistics",
+    "domain": "Operations & Logistics",
+    "sprint": 8,
+    "inputs": "pedidos, cobertura, horarios, capacidad, restricciones",
+    "output": "fulfillment_process, service_rules, costs",
+    "procedure": [
+      "Definir preparación, despacho, entrega y excepciones",
+      "Asignar responsables, ventanas y controles pertinentes",
+      "Medir costo y cumplimiento end-to-end"
+    ],
+    "decision": "No prometer cobertura/horario sin capacidad; requisitos regulados necesitan verificación",
+    "kpi": "entrega a tiempo y costo por pedido",
+    "type": "Atomic"
+  },
+  {
+    "name": "route-optimization",
+    "domain": "Operations & Logistics",
+    "sprint": 8,
+    "inputs": "destinos consentidos, ventanas, vehículo, capacidad",
+    "output": "route_options, feasibility, assumptions",
+    "procedure": [
+      "Validar distancias/tiempos y restricciones",
+      "Comparar rutas viables incluyendo carga y servicio",
+      "Proponer secuencia y contingencia con datos disponibles"
+    ],
+    "decision": "No llamar óptima a heurística no demostrada ni inventar tráfico actual",
+    "kpi": "tiempo/costo por entrega",
+    "type": "Atomic"
+  },
+  {
+    "name": "capacity-planning",
+    "domain": "Operations & Logistics",
+    "sprint": 8,
+    "inputs": "demanda, recursos, tiempos, rendimiento, restricciones",
+    "output": "capacity_model, bottleneck, scenarios",
+    "procedure": [
+      "Calcular capacidad efectiva por recurso con unidades coherentes",
+      "Identificar cuello y buffers",
+      "Comparar turnos, recursos y demanda sin deteriorar calidad"
+    ],
+    "decision": "Capacidad nominal no es efectiva; no extrapolar productividad no medida",
+    "kpi": "utilización y cumplimiento de servicio",
+    "type": "Atomic"
+  },
+  {
+    "name": "quality-management",
+    "domain": "Operations & Logistics",
+    "sprint": 8,
+    "inputs": "promesa, proceso, defectos, controles, responsable",
+    "output": "quality_controls, corrective_actions, monitoring",
+    "procedure": [
+      "Definir defecto y estándar por producto/proceso",
+      "Diseñar control proporcional en puntos críticos",
+      "Analizar causas y verificar corrección"
+    ],
+    "decision": "No afirmar inocuidad o certificación por checklist genérico",
+    "kpi": "defectos y retrabajo",
+    "type": "Atomic"
+  },
+  {
+    "name": "operational-kpis",
+    "domain": "Operations & Logistics",
+    "sprint": 8,
+    "inputs": "objetivos, proceso, datos, responsables",
+    "output": "kpi_dictionary, capture_plan, review",
+    "procedure": [
+      "Definir resultado, fórmula y unidad de cada indicador",
+      "Asignar fuente, frecuencia y responsable",
+      "Verificar captura y decisiones derivadas"
+    ],
+    "decision": "No confundir KIP con KPI ni diseñar tablero sin datos",
+    "kpi": "indicadores confiables usados en decisiones",
+    "type": "Atomic"
+  },
+  {
+    "name": "cost-to-serve",
+    "domain": "Operations & Logistics",
+    "sprint": 8,
+    "inputs": "pedidos/clientes, tiempos, transporte, atención, costos",
+    "output": "service_cost, allocation, decisions",
+    "procedure": [
+      "Identificar actividades por cliente/canal",
+      "Asignar costos con drivers explícitos",
+      "Comparar contribución y alternativas de servicio"
+    ],
+    "decision": "No cargar costo fijo arbitrario como variable causal",
+    "kpi": "contribución neta de costo de servir",
+    "type": "Atomic"
+  },
+  {
+    "name": "operational-risk",
+    "domain": "Operations & Logistics",
+    "sprint": 8,
+    "inputs": "procesos, fallos, exposición, controles",
+    "output": "operational_risks, contingencies, triggers",
+    "procedure": [
+      "Mapear escenarios de falla y dependencia humana",
+      "Evaluar impacto en servicio/caja/datos",
+      "Definir prevención, respuesta y responsable"
+    ],
+    "decision": "No declarar resiliencia sin probar contingencia",
+    "kpi": "continuidad y tiempo de recuperación",
+    "type": "Atomic"
+  }
+]

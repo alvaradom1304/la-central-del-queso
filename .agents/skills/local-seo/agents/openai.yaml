@@ -1,0 +1,4 @@
+interface:
+  display_name: "Local Seo"
+  short_description: "Marketing Intelligence: capacidad AEM OS"
+  default_prompt: "Usa $local-seo para abordar esta tarea con evidencia y resultado verificable."

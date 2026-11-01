@@ -1,0 +1,185 @@
+[
+  {
+    "name": "go-to-market",
+    "domain": "Orchestration",
+    "sprint": 9,
+    "inputs": "oferta validada, segmento, economía, canales, operación",
+    "output": "gtm_plan, handoffs, launch_gates",
+    "procedure": [
+      "Revisar evidencia de problema, propuesta y economía",
+      "Seleccionar canal, proceso comercial y capacidad de entrega",
+      "Coordinar piloto, medición y decisión de launch"
+    ],
+    "decision": "No lanzar sin operación viable ni tratar estrategia como campaña",
+    "kpi": "adquisición rentable y capacidad de entrega",
+    "type": "Composite"
+  },
+  {
+    "name": "brand-development",
+    "domain": "Orchestration",
+    "sprint": 9,
+    "inputs": "diagnóstico, posicionamiento, audiencias, activos",
+    "output": "brand_program, specialist_outputs, review",
+    "procedure": [
+      "Seleccionar investigación/estrategia necesarias sin repetir las validadas",
+      "Coordinar voz, identidad y aplicaciones con contratos",
+      "Revisar marca completa contra promesa y experiencia"
+    ],
+    "decision": "No activar todos los especialistas por defecto",
+    "kpi": "coherencia de marca en puntos de contacto",
+    "type": "Composite"
+  },
+  {
+    "name": "premium-digital-experience-builder",
+    "domain": "Orchestration",
+    "sprint": 9,
+    "inputs": "estrategia, UX, marca, repo/acceso, objetivos, recursos",
+    "output": "experience_plan, verified_increment, qa",
+    "procedure": [
+      "Coordinar web-strategy, UX y diseño según fase actual",
+      "Seleccionar motion/3D solo con valor y presupuesto",
+      "Integrar desarrollo, seguridad, performance y QA por incrementos"
+    ],
+    "decision": "No duplicar immersive-commerce; usarlo si hay pedidos; no publicar producción sin autorización",
+    "kpi": "éxito de tareas con calidad/rendimiento",
+    "type": "Composite"
+  },
+  {
+    "name": "revenue-intelligence",
+    "domain": "Orchestration",
+    "sprint": 9,
+    "inputs": "funnel, ventas, marketing, margen, cohortes, operación",
+    "output": "revenue_diagnosis, cross_team_actions, experiments",
+    "procedure": [
+      "Conciliar señales desde demanda hasta cliente/retención",
+      "Seleccionar discovery/qualificación/analítica según cuello",
+      "Priorizar mejora por contribución y devolver aprendizaje a marketing"
+    ],
+    "decision": "No confundir actividad comercial con ingreso ni ingresos con caja",
+    "kpi": "contribución y conversión por etapa",
+    "type": "Composite"
+  },
+  {
+    "name": "aem-venture-architect",
+    "domain": "Orchestration",
+    "sprint": 9,
+    "inputs": "idea, recursos, límites, clientes accesibles",
+    "output": "venture_plan, evidence_by_gate, recommendation",
+    "procedure": [
+      "Coordinar oportunidad→problema/cliente→mercado y economía",
+      "Diseñar modelo/MVP y validación antes de GTM",
+      "Revisar launch y growth con gates y supervisión"
+    ],
+    "decision": "Mantener inversión/compromisos críticos en decisión humana; no presentar idea como negocio validado",
+    "kpi": "hipótesis críticas resueltas por costo",
+    "type": "Orchestrator"
+  },
+  {
+    "name": "aem-company-builder",
+    "domain": "Orchestration",
+    "sprint": 9,
+    "inputs": "contexto, negocio nuevo/existente, objetivos, restricciones, autoridad",
+    "output": "route_selection, capability_plan, gate_report",
+    "procedure": [
+      "Clasificar NEW BUSINESS/EXISTING BUSINESS/TRANSFORMATION/GROWTH/SCALING/TURNAROUND",
+      "Seleccionar solo capacidades necesarias y validar inputs",
+      "Coordinar ejecución/revisión, registrar decisiones y aprendizaje"
+    ],
+    "decision": "TURNAROUND prioriza liquidez y continuidad antes de expansión; no inventar ejecutores",
+    "kpi": "resultados aceptados por milestone",
+    "type": "Orchestrator"
+  },
+  {
+    "name": "aem-business-transformation",
+    "domain": "Orchestration",
+    "sprint": 9,
+    "inputs": "negocio existente, estado actual, problemas, datos, autoridad",
+    "output": "current_target_state, root_causes, roadmap, kpis",
+    "procedure": [
+      "Diagnosticar estrategia, finanzas, operaciones, clientes, ventas, marketing, marca, tecnología, personas, datos, seguridad y automatización",
+      "Relacionar problemas/causas/impactos con evidencia",
+      "Diseñar target state y roadmap con responsables/gates"
+    ],
+    "decision": "No automatizar ni rediseñar antes de diagnosticar; causas provisionales explícitas",
+    "kpi": "reducción de fricción y resultado negocio",
+    "type": "Orchestrator"
+  },
+  {
+    "name": "enterprise-growth-orchestrator",
+    "domain": "Orchestration",
+    "sprint": 9,
+    "inputs": "estrategia, economía, demanda, capacidad, riesgos",
+    "output": "growth_route, scale_constraints, staged_plan",
+    "procedure": [
+      "Separar expansión comercial de capacidad de escalar",
+      "Seleccionar palancas de revenue/retención/canales",
+      "Revisar caja, operación, organización y seguridad antes de escala"
+    ],
+    "decision": "No escalar sistema roto ni omitir revisión humana de capital",
+    "kpi": "crecimiento rentable y capacidad repetible",
+    "type": "Orchestrator"
+  },
+  {
+    "name": "business-decision-gates",
+    "domain": "Orchestration",
+    "sprint": 10,
+    "inputs": "gate, evidencia, supuestos, riesgos, KPIs, autoridad",
+    "output": "gate, evidence, assumptions, risks, kpis, missing_information, recommendation",
+    "procedure": [
+      "Seleccionar OPPORTUNITY/VALIDATION/VIABILITY/LAUNCH/GROWTH/SCALE y criterios previos",
+      "Evaluar evidencia, riesgos y vacíos sin puntuar desconocidos como éxito",
+      "Devolver GO/REVISE/HOLD/STOP como recomendación con condiciones"
+    ],
+    "decision": "GO no es autorización; evidencia insuficiente crítica implica HOLD/REVISE; decisión final crítica humana",
+    "kpi": "decisiones con evidencia y condiciones claras",
+    "type": "Atomic"
+  },
+  {
+    "name": "aem-autonomous-quality-loop",
+    "domain": "Orchestration",
+    "sprint": 10,
+    "inputs": "task, acceptance criteria, herramientas, riesgo, budget, autoridad",
+    "output": "status, cycles, evidence, defects, final_result",
+    "procedure": [
+      "PLAN→EXECUTE→TEST→EVALUATE; definir éxito antes de ejecutar",
+      "DIAGNOSE→CORRECT→RETEST con máximo inicial de tres ciclos correctivos",
+      "VALIDATE→REPORT; parar si no hay progreso, aparece riesgo o se agota presupuesto"
+    ],
+    "decision": "SUCCESS solo con criterios cumplidos y pruebas; FAILED si no cumple; BLOCKED si falta recurso/autoridad; NEEDS_REVIEW si decisión crítica o incertidumbre material",
+    "kpi": "criterios cumplidos y costo por corrección",
+    "type": "Orchestrator"
+  },
+  {
+    "name": "quality-council",
+    "domain": "Orchestration",
+    "sprint": 9,
+    "inputs": "resultado, criterios, riesgos, revisores reales disponibles",
+    "output": "selected_reviewers, independent_findings, verdict",
+    "procedure": [
+      "Seleccionar revisión de negocio/finanzas/UX/seguridad/etc según riesgo",
+      "Entregar contexto mínimo y pedir evidencia independiente",
+      "Resolver discrepancias sin votación ciega y registrar decisión"
+    ],
+    "decision": "Roles conceptuales no son agentes activos; no escalar datos sensibles a terceros sin necesidad/autorización",
+    "kpi": "defectos materiales detectados antes de entrega",
+    "type": "Orchestrator"
+  },
+  {
+    "name": "aem-skill-factory",
+    "domain": "Orchestration",
+    "sprint": 1,
+    "inputs": "capacidad repetible, ejemplos, alcance, fuentes, skills existentes",
+    "output": "capability_contract, skill_package, evaluation",
+    "procedure": [
+      "Auditar capacidades/alias y decidir REUSE/IMPROVE/CREATE/DEFER con aporte incremental.",
+      "Precisar responsabilidad, contexto, salida, métrica y baseline real o UNKNOWN.",
+      "Implementar procedimiento y contrato técnicos con límites, alternativas, estados adversos y recuperación.",
+      "Depurar fuentes y diseñar casos propios; ejecutar validación estructural y casos independientes pertinentes.",
+      "Revisar criterios de primera entrega, corregir defectos sustantivos y preservar evidencia/versiones.",
+      "Guardar y verificar persistencia; registrar aprendizaje y decidir KEEP/REVISE/REVERT con regresiones."
+    ],
+    "decision": "No generar variantes vacías ni marcar VALIDATED por YAML; preservar originales y verificar guardado",
+    "kpi": "reutilización y éxito en casos independientes",
+    "type": "Composite"
+  }
+]

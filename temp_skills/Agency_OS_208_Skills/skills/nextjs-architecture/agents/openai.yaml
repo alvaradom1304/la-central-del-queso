@@ -1,0 +1,4 @@
+interface:
+  display_name: "Nextjs Architecture"
+  short_description: "Premium Web Experience: capacidad AEM OS"
+  default_prompt: "Usa $nextjs-architecture para abordar esta tarea con evidencia y resultado verificable."

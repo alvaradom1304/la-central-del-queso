@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ui Direction"
+  short_description: "Premium Web Experience: capacidad AEM OS"
+  default_prompt: "Usa $ui-direction para abordar esta tarea con evidencia y resultado verificable."

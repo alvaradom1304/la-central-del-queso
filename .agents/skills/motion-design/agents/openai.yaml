@@ -1,0 +1,4 @@
+interface:
+  display_name: "Motion Design"
+  short_description: "Premium Web Experience: capacidad AEM OS"
+  default_prompt: "Usa $motion-design para abordar esta tarea con evidencia y resultado verificable."

@@ -1,0 +1,105 @@
+{
+  "name": "aem-library-validation",
+  "domain": "Foundation",
+  "sprint": 10,
+  "type": "Atomic",
+  "inputs": "workspace de skills, criterios, outputs de evaluación, alcance autorizado",
+  "output": "structural_report, behavioral_review, maturity_recommendation",
+  "procedure": [
+    "Verificar contratos schemas referencias y dependencias de biblioteca",
+    "Examinar outputs independientes y reproducir pruebas locales autorizadas",
+    "Distinguir validación estructural comportamiento y campo antes de promover madurez"
+  ],
+  "decision": "No certificar producción con schema o fixture sintético; mantener casos no ejecutados visibles",
+  "kpi": "defectos detectados y cobertura verificable",
+  "dependencies": [],
+  "sources": [],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Foundation",
+  "purpose": "Verificar contratos schemas referencias y dependencias de biblioteca",
+  "business_outcome": "defectos detectados y cobertura verificable",
+  "when_to_use": "aem-library-validation: Foundation. Usar para producir structural_report, behavioral_review, maturity_recommendation a partir de workspace de skills, criterios, outputs de evaluación, alcance autorizado; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "aem-library-validation",
+    "structural_report, behavioral_review, maturity_recommendation"
+  ],
+  "required_inputs": [
+    "workspace de skills",
+    " criterios",
+    " outputs de evaluación",
+    " alcance autorizado"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [],
+  "decision_rules": [
+    "No certificar producción con schema o fixture sintético; mantener casos no ejecutados visibles",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "structural_report",
+    " behavioral_review",
+    " maturity_recommendation"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No certificar producción con schema o fixture sintético; mantener casos no ejecutados visibles",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "defectos detectados y cobertura verificable"
+  ],
+  "examples": [
+    "Usa $aem-library-validation con workspace de skills, criterios, outputs de evaluación, alcance autorizado para obtener structural_report, behavioral_review, maturity_recommendation.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

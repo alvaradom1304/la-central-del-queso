@@ -1,0 +1,116 @@
+{
+  "name": "opportunity-analysis",
+  "domain": "Business Intelligence",
+  "sprint": 2,
+  "inputs": "alternativas, evidencia, costos, impacto, capacidad",
+  "output": "opportunity_matrix, recommendation, validation_plan",
+  "procedure": [
+    "Describir oportunidad y mecanismo de valor",
+    "Comparar impacto, confianza, costo, riesgo y dependencias",
+    "Priorizar y diseñar prueba de la oportunidad elegida"
+  ],
+  "decision": "Hacer visibles pesos y supuestos; score no sustituye juicio",
+  "kpi": "oportunidad validada por inversión",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://www.sba.gov/counseling/plan-your-business/",
+      "SBA; marco empresarial, contexto estadounidense, no regulación de Costa Rica"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Business Intelligence",
+  "purpose": "Describir oportunidad y mecanismo de valor",
+  "business_outcome": "oportunidad validada por inversión",
+  "when_to_use": "opportunity-analysis: Business Intelligence. Usar para producir opportunity_matrix, recommendation, validation_plan a partir de alternativas, evidencia, costos, impacto, capacidad; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "opportunity-analysis",
+    "opportunity_matrix, recommendation, validation_plan"
+  ],
+  "required_inputs": [
+    "alternativas",
+    " evidencia",
+    " costos",
+    " impacto",
+    " capacidad"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://www.sba.gov/counseling/plan-your-business/",
+      "SBA; marco empresarial, contexto estadounidense, no regulación de Costa Rica"
+    ]
+  ],
+  "decision_rules": [
+    "Hacer visibles pesos y supuestos; score no sustituye juicio",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "opportunity_matrix",
+    " recommendation",
+    " validation_plan"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: Hacer visibles pesos y supuestos; score no sustituye juicio",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "oportunidad validada por inversión"
+  ],
+  "examples": [
+    "Usa $opportunity-analysis con alternativas, evidencia, costos, impacto, capacidad para obtener opportunity_matrix, recommendation, validation_plan.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

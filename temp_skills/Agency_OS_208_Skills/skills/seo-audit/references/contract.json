@@ -1,0 +1,123 @@
+{
+  "name": "seo-audit",
+  "domain": "Marketing Intelligence",
+  "sprint": 4,
+  "inputs": "dominio, páginas, acceso/alcance, datos search",
+  "output": "audit_findings, evidence, remediation",
+  "procedure": [
+    "Inspeccionar rastreabilidad, indexación, canonical y enlaces",
+    "Comparar intención/contenido y problemas técnicos",
+    "Priorizar correcciones por impacto y evidencia"
+  ],
+  "decision": "No ejecutar cambios ni rastreo agresivo fuera de autorización",
+  "kpi": "problemas SEO corregidos y verificados",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+      "Google Search Central; SEO"
+    ],
+    [
+      "https://www.influenceatwork.com/7-principles-of-persuasion/",
+      "Cialdini; aplicar críticamente, no garantía"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Marketing Intelligence",
+  "purpose": "Inspeccionar rastreabilidad, indexación, canonical y enlaces",
+  "business_outcome": "problemas SEO corregidos y verificados",
+  "when_to_use": "seo-audit: Marketing Intelligence. Usar para producir audit_findings, evidence, remediation a partir de dominio, páginas, acceso/alcance, datos search; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "seo-audit",
+    "audit_findings, evidence, remediation"
+  ],
+  "required_inputs": [
+    "dominio",
+    " páginas",
+    " acceso/alcance",
+    " datos search"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+      "Google Search Central; SEO"
+    ],
+    [
+      "https://www.influenceatwork.com/7-principles-of-persuasion/",
+      "Cialdini; aplicar críticamente, no garantía"
+    ]
+  ],
+  "decision_rules": [
+    "No ejecutar cambios ni rastreo agresivo fuera de autorización",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "audit_findings",
+    " evidence",
+    " remediation"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No ejecutar cambios ni rastreo agresivo fuera de autorización",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "problemas SEO corregidos y verificados"
+  ],
+  "examples": [
+    "Usa $seo-audit con dominio, páginas, acceso/alcance, datos search para obtener audit_findings, evidence, remediation.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

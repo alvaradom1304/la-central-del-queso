@@ -1,0 +1,4 @@
+interface:
+  display_name: "Market Penetration"
+  short_description: "Growth & Scaling: capacidad AEM OS"
+  default_prompt: "Usa $market-penetration para abordar esta tarea con evidencia y resultado verificable."

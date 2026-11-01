@@ -1,0 +1,4 @@
+interface:
+  display_name: "Scaling Readiness"
+  short_description: "Growth & Scaling: capacidad AEM OS"
+  default_prompt: "Usa $scaling-readiness para abordar esta tarea con evidencia y resultado verificable."

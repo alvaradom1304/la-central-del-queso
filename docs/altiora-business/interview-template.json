@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "status": "NOT_STARTED",
+  "candidate_id": null,
+  "interview_date": null,
+  "participant_consent": {
+    "participation": false,
+    "notes": false,
+    "recording": false,
+    "followup": false,
+    "commercial_presentation": false
+  },
+  "observations": [],
+  "reported_facts": [],
+  "negative_cases": [],
+  "interpretations": [],
+  "budget": {
+    "status": "UNKNOWN",
+    "currency": null,
+    "range_declared": null,
+    "source": null
+  },
+  "decision_process": {
+    "status": "UNKNOWN",
+    "buyer_role": null,
+    "conditions": []
+  },
+  "problem": {
+    "status": "UNKNOWN",
+    "recent_example": null,
+    "evidence_reference": null
+  },
+  "commercial_offer": {
+    "presented": false,
+    "target_project_usd": 10000,
+    "maintenance_optional": true,
+    "reaction": null
+  },
+  "qualification": "UNKNOWN",
+  "next_action": {
+    "consented": false,
+    "description": null
+  },
+  "notes": "Plantilla vacía; no representa una entrevista ni autoriza contactos.",
+  "duration_plan": {
+    "research_minutes": 15,
+    "offer_minutes_optional": 10,
+    "actual_minutes": null
+  }
+}

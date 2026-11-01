@@ -1,0 +1,4 @@
+interface:
+  display_name: "Premium Digital Experience Builder"
+  short_description: "Orchestration: capacidad AEM OS"
+  default_prompt: "Usa $premium-digital-experience-builder para abordar esta tarea con evidencia y resultado verificable."

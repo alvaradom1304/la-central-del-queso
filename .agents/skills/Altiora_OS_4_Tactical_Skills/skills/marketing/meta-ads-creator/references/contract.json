@@ -1,0 +1,65 @@
+{
+  "name": "meta-ads-creator",
+  "version": "1.0.0",
+  "domain": "marketing",
+  "type": "composite_sop",
+  "purpose": "Crear variantes de anuncios Meta con guion y concepto visual sustentados y una prueba medible.",
+  "business_outcome": "Crear variantes de anuncios Meta con guion y concepto visual sustentados y una prueba medible.",
+  "status": "EXPERIMENTAL",
+  "when_to_use": "Cuando el usuario solicita este procedimiento y proporciona el contexto mínimo.",
+  "when_not_to_use": "Si la ejecución requiere una acción externa no autorizada, falta un dato crítico o se incumple la política aplicable.",
+  "triggers": [
+    "meta-ads-creator"
+  ],
+  "required_inputs": [
+    "product",
+    "objective",
+    "audience",
+    "market",
+    "destination"
+  ],
+  "optional_inputs": [
+    "funnel_stage",
+    "brand_voice",
+    "placements",
+    "formats",
+    "constraints"
+  ],
+  "dependencies": [],
+  "tools": "Solo herramientas explícitamente disponibles y autorizadas; los datos externos deben llevar fuente y fecha.",
+  "sources": "Preferir documentación primaria y páginas públicas permitidas; comprobar vigencia antes de decisión.",
+  "procedure": "Seguir secuencialmente los pasos numerados de SKILL.md; pausar en los gates indicados.",
+  "decision_rules": "Separar hechos, inferencias y propuestas. Si falta evidencia, bajar confianza y no inventar.",
+  "output_schema": "output-schema.json",
+  "quality_gates": [
+    "Completitud de entradas",
+    "Evidencia verificable",
+    "Riesgo/política revisados",
+    "Validación del esquema",
+    "Aprobación humana antes de acción externa"
+  ],
+  "failure_and_escalation": "Devolver BLOCKED si falta requisito; NEEDS_REVIEW si hace falta criterio humano; FAILED si falla validación técnica. Indicar dato faltante y siguiente acción segura.",
+  "security": "Minimización de datos; no exponer secretos; no acceder ni recolectar información fuera de permisos.",
+  "approval_requirements": "Borradores y diseños pueden prepararse; envío, publicación, despliegue, cambios de presupuesto o compromiso comercial requieren aprobación explícita.",
+  "kpis": [
+    "Completitud",
+    "proporción de afirmaciones con fuente",
+    "tasa de validación",
+    "errores/omisiones por caso"
+  ],
+  "examples": [
+    "Servicio con claims y landing aprobados",
+    "Cliente pide afirmar que el anuncio sabe que usuario padece enfermedad",
+    "Testimonio/ROI no documentado"
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "1.0.0",
+      "date": "2026-10-10",
+      "change": "Primera versión SOP para Altiora OS."
+    }
+  ],
+  "owner": "Altiora OS",
+  "limitations": "Estructura revisada; comportamiento y resultados de negocio no certificados."
+}

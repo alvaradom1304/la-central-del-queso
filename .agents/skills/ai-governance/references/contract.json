@@ -1,0 +1,132 @@
+{
+  "name": "ai-governance",
+  "domain": "AI & Automation",
+  "sprint": 7,
+  "inputs": "usos IA, datos, actores, riesgo, políticas",
+  "output": "governance_controls, responsibilities, review",
+  "procedure": [
+    "Inventariar usos y decisiones afectadas",
+    "Evaluar riesgo, límites, transparencia y responsables",
+    "Definir evaluación, incidentes y cambios de modelos"
+  ],
+  "decision": "No certificar cumplimiento ni sustituir autoridad humana crítica",
+  "kpi": "usos con controles y responsable",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://www.nist.gov/itl/ai-risk-management-framework",
+      "NIST AI RMF; marco, no certificación"
+    ],
+    [
+      "https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro",
+      "MCP; versión observada en esta auditoría, revalidar"
+    ],
+    [
+      "https://docs.n8n.io/",
+      "n8n; docs"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — AI & Automation",
+  "purpose": "Inventariar usos y decisiones afectadas",
+  "business_outcome": "usos con controles y responsable",
+  "when_to_use": "ai-governance: AI & Automation. Usar para producir governance_controls, responsibilities, review a partir de usos IA, datos, actores, riesgo, políticas; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "ai-governance",
+    "governance_controls, responsibilities, review"
+  ],
+  "required_inputs": [
+    "usos IA",
+    " datos",
+    " actores",
+    " riesgo",
+    " políticas"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://www.nist.gov/itl/ai-risk-management-framework",
+      "NIST AI RMF; marco, no certificación"
+    ],
+    [
+      "https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro",
+      "MCP; versión observada en esta auditoría, revalidar"
+    ],
+    [
+      "https://docs.n8n.io/",
+      "n8n; docs"
+    ]
+  ],
+  "decision_rules": [
+    "No certificar cumplimiento ni sustituir autoridad humana crítica",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "governance_controls",
+    " responsibilities",
+    " review"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No certificar cumplimiento ni sustituir autoridad humana crítica",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "usos con controles y responsable"
+  ],
+  "examples": [
+    "Usa $ai-governance con usos IA, datos, actores, riesgo, políticas para obtener governance_controls, responsibilities, review.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

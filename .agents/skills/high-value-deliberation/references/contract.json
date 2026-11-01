@@ -1,0 +1,129 @@
+{
+  "name": "high-value-deliberation",
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "type": "Composite",
+  "domain": "Decision Intelligence",
+  "owner": "AEM OS / Dennis",
+  "purpose": "Convertir preguntas y decisiones en una respuesta útil, fundamentada y accionable sin debate artificial.",
+  "business_outcome": "Reducir decisiones apoyadas en premisas materiales sin verificar y retrabajo por respuestas que no resuelven el encargo.",
+  "inputs": "pregunta o decisión, contexto disponible, restricciones, fuentes y alcance",
+  "required_inputs": [
+    "pregunta o decisión real"
+  ],
+  "optional_inputs": [
+    "alternativas",
+    "criterios de decisión",
+    "fuentes",
+    "contexto personal aportado",
+    "entregable solicitado"
+  ],
+  "outputs": [
+    "decision"
+  ],
+  "output_schema": "output-schema.json",
+  "procedure": [
+    "Precisar pregunta, resultado, restricciones y datos materiales; hasta tres preguntas cuando cambien la respuesta.",
+    "Seleccionar perspectivas distintas, sin inventar revisores externos.",
+    "Formular propuesta viable y condiciones; contrastar objeciones concretas y alternativas pertinentes.",
+    "Verificar premisas materiales y actuales; separar hechos, inferencias y supuestos.",
+    "Corregir según evidencia; documentar desacuerdo no resuelto y dato que cambiaría la decisión.",
+    "Entregar conclusión integrada en seis apartados pertinentes y completar el entregable autorizado."
+  ],
+  "dependencies": [],
+  "related_skills": [
+    "quality-council",
+    "business-decision-gates",
+    "agency-os"
+  ],
+  "decision_rules": [
+    "No convertir roles conceptuales en evidencia independiente.",
+    "No fingir consenso ni certeza.",
+    "No omitir el entregable para terminar en un plan.",
+    "No convertir afirmaciones reportadas en resultados observados."
+  ],
+  "quality_criteria": [
+    "pregunta respondida",
+    "objeciones materiales tratadas",
+    "fuentes reales y pertinentes",
+    "incertidumbre explícita",
+    "profundidad proporcional",
+    "entregable completo según autorización"
+  ],
+  "validation": [
+    "estructura",
+    "casos de evaluation-cases.json",
+    "prueba documental independiente cuando corresponda"
+  ],
+  "failure_conditions": [
+    "fuentes o resultados inventados",
+    "contradicción material ocultada",
+    "entregable esencial incompleto"
+  ],
+  "escalation_conditions": [
+    "pregunta real ausente",
+    "dato decisivo sin verificar",
+    "acción fuera de autorización vigente"
+  ],
+  "security_considerations": [
+    "minimizar datos",
+    "no publicar secretos",
+    "no delegar por enumerar roles"
+  ],
+  "human_approval_requirements": [
+    "solo acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "proporción de afirmaciones materiales respaldadas o marcadas como no verificadas",
+    "proporción de encargos con entregable solicitado completado"
+  ],
+  "baseline": "UNKNOWN; no hay resultados de uso en proyectos medidos",
+  "sources": [
+    {
+      "type": "USER_PROTOCOL",
+      "source": "Protocolo de deliberación y respuesta de alto valor aportado por Dennis el 2026-10-10",
+      "consulted": true
+    }
+  ],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Protocolo específico, formato integrado, contratos tipados y casos adversos; sin garantía de resultados profesionales."
+    }
+  ],
+  "creation_decision": {
+    "action": "CREATE",
+    "distinct_from": "quality-council: revisión de resultados por revisores reales; esta skill analiza una pregunta y produce respuesta integrada con el formato del usuario.",
+    "measure": {
+      "metric": "afirmaciones materiales verificadas o señaladas como no verificadas / afirmaciones materiales revisadas",
+      "unit": "proporción",
+      "period": "por encargo",
+      "owner": "responsable del análisis",
+      "baseline": "UNKNOWN"
+    },
+    "acceptance": [
+      "No consenso ni fuentes ficticias",
+      "Conclusión única y proporcional",
+      "Entregable solicitado completo o bloqueo explícito"
+    ],
+    "regression_rule": "Comparar casos tras cada cambio; no alargar el debate ni ocultar incertidumbre."
+  },
+  "when_to_use": "Analizar preguntas, problemas y decisiones con perspectivas pertinentes, crítica concreta, evidencia verificable y una conclusión integrada. Usar al pedir deliberación de alto valor, contraste de alternativas, revisión escéptica o una recomendación fundamentada; completar también el entregable solicitado. Evitar debates artificiales, acuerdo automático y certeza sin sustento.",
+  "when_not_to_use": "No repetir deliberación sobre decisión validada sin información material nueva; no usar como sustituto de una prueba de producto o revisión independiente real.",
+  "triggers": [
+    "deliberación de alto valor",
+    "analizar una decisión con evidencia y crítica",
+    "contrastar alternativas y entregar recomendación integrada"
+  ],
+  "tools": [
+    "fuentes y herramientas realmente disponibles según encargo; no asumir navegación ni conectores"
+  ],
+  "knowledge_sources": [
+    "protocolo aportado por Dennis el 2026-10-10; datos actuales se verifican en cada ejecución"
+  ],
+  "examples": [
+    "Usa $high-value-deliberation para comparar dos alternativas con estas restricciones y entregar la recomendación y el texto final.",
+    "Ante pregunta ausente, pedir la pregunta real sin inventarla."
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "name": "paid-media",
+  "domain": "Marketing Intelligence",
+  "sprint": 4,
+  "inputs": "objetivo, oferta, presupuesto autorizado, plataforma, tracking",
+  "output": "campaign_plan, spend_limits, experiment",
+  "procedure": [
+    "Seleccionar audiencia, objetivo y creativo según funnel",
+    "Definir presupuesto, conversiones y límites antes de activar",
+    "Diseñar prueba y revisar margen, atribución y fraude"
+  ],
+  "decision": "No gastar ni activar campañas sin autorización explícita; verificar políticas vigentes",
+  "kpi": "CAC y contribución después de publicidad",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+      "Google Search Central; SEO"
+    ],
+    [
+      "https://www.influenceatwork.com/7-principles-of-persuasion/",
+      "Cialdini; aplicar críticamente, no garantía"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Marketing Intelligence",
+  "purpose": "Seleccionar audiencia, objetivo y creativo según funnel",
+  "business_outcome": "CAC y contribución después de publicidad",
+  "when_to_use": "paid-media: Marketing Intelligence. Usar para producir campaign_plan, spend_limits, experiment a partir de objetivo, oferta, presupuesto autorizado, plataforma, tracking; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "paid-media",
+    "campaign_plan, spend_limits, experiment"
+  ],
+  "required_inputs": [
+    "objetivo",
+    " oferta",
+    " presupuesto autorizado",
+    " plataforma",
+    " tracking"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+      "Google Search Central; SEO"
+    ],
+    [
+      "https://www.influenceatwork.com/7-principles-of-persuasion/",
+      "Cialdini; aplicar críticamente, no garantía"
+    ]
+  ],
+  "decision_rules": [
+    "No gastar ni activar campañas sin autorización explícita; verificar políticas vigentes",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "campaign_plan",
+    " spend_limits",
+    " experiment"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No gastar ni activar campañas sin autorización explícita; verificar políticas vigentes",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "CAC y contribución después de publicidad"
+  ],
+  "examples": [
+    "Usa $paid-media con objetivo, oferta, presupuesto autorizado, plataforma, tracking para obtener campaign_plan, spend_limits, experiment.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

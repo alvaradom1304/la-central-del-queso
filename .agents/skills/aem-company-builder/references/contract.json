@@ -1,0 +1,118 @@
+{
+  "name": "aem-company-builder",
+  "domain": "Orchestration",
+  "sprint": 9,
+  "inputs": "contexto, negocio nuevo/existente, objetivos, restricciones, autoridad",
+  "output": "route_selection, capability_plan, gate_report",
+  "procedure": [
+    "Clasificar NEW BUSINESS/EXISTING BUSINESS/TRANSFORMATION/GROWTH/SCALING/TURNAROUND",
+    "Seleccionar solo capacidades necesarias y validar inputs",
+    "Coordinar ejecución/revisión, registrar decisiones y aprendizaje"
+  ],
+  "decision": "TURNAROUND prioriza liquidez y continuidad antes de expansión; no inventar ejecutores",
+  "kpi": "resultados aceptados por milestone",
+  "type": "Orchestrator",
+  "dependencies": [
+    "business-diagnostic",
+    "aem-venture-architect",
+    "aem-business-transformation",
+    "enterprise-growth-orchestrator",
+    "business-decision-gates"
+  ],
+  "sources": [],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Orchestration",
+  "purpose": "Clasificar NEW BUSINESS/EXISTING BUSINESS/TRANSFORMATION/GROWTH/SCALING/TURNAROUND",
+  "business_outcome": "resultados aceptados por milestone",
+  "when_to_use": "aem-company-builder: Orchestration. Usar para producir route_selection, capability_plan, gate_report a partir de contexto, negocio nuevo/existente, objetivos, restricciones, autoridad; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "aem-company-builder",
+    "route_selection, capability_plan, gate_report"
+  ],
+  "required_inputs": [
+    "contexto",
+    " negocio nuevo/existente",
+    " objetivos",
+    " restricciones",
+    " autoridad"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [],
+  "decision_rules": [
+    "TURNAROUND prioriza liquidez y continuidad antes de expansión; no inventar ejecutores",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "route_selection",
+    " capability_plan",
+    " gate_report"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: TURNAROUND prioriza liquidez y continuidad antes de expansión; no inventar ejecutores",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "resultados aceptados por milestone"
+  ],
+  "examples": [
+    "Usa $aem-company-builder con contexto, negocio nuevo/existente, objetivos, restricciones, autoridad para obtener route_selection, capability_plan, gate_report.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [
+    "business-diagnostic",
+    "aem-venture-architect",
+    "aem-business-transformation",
+    "enterprise-growth-orchestrator",
+    "business-decision-gates"
+  ],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

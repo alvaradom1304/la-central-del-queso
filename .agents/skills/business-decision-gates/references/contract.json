@@ -1,0 +1,111 @@
+{
+  "name": "business-decision-gates",
+  "domain": "Orchestration",
+  "sprint": 10,
+  "inputs": "gate, evidencia, supuestos, riesgos, KPIs, autoridad",
+  "output": "gate, evidence, assumptions, risks, kpis, missing_information, recommendation",
+  "procedure": [
+    "Seleccionar OPPORTUNITY/VALIDATION/VIABILITY/LAUNCH/GROWTH/SCALE y criterios previos",
+    "Evaluar evidencia, riesgos y vacíos sin puntuar desconocidos como éxito",
+    "Devolver GO/REVISE/HOLD/STOP como recomendación con condiciones"
+  ],
+  "decision": "GO no es autorización; evidencia insuficiente crítica implica HOLD/REVISE; decisión final crítica humana",
+  "kpi": "decisiones con evidencia y condiciones claras",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Orchestration",
+  "purpose": "Seleccionar OPPORTUNITY/VALIDATION/VIABILITY/LAUNCH/GROWTH/SCALE y criterios previos",
+  "business_outcome": "decisiones con evidencia y condiciones claras",
+  "when_to_use": "business-decision-gates: Orchestration. Usar para producir gate, evidence, assumptions, risks, kpis, missing_information, recommendation a partir de gate, evidencia, supuestos, riesgos, KPIs, autoridad; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "business-decision-gates",
+    "gate, evidence, assumptions, risks, kpis, missing_information, recommendation"
+  ],
+  "required_inputs": [
+    "gate",
+    " evidencia",
+    " supuestos",
+    " riesgos",
+    " KPIs",
+    " autoridad"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [],
+  "decision_rules": [
+    "GO no es autorización; evidencia insuficiente crítica implica HOLD/REVISE; decisión final crítica humana",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "gate",
+    " evidence",
+    " assumptions",
+    " risks",
+    " kpis",
+    " missing_information",
+    " recommendation"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: GO no es autorización; evidencia insuficiente crítica implica HOLD/REVISE; decisión final crítica humana",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "decisiones con evidencia y condiciones claras"
+  ],
+  "examples": [
+    "Usa $business-decision-gates con gate, evidencia, supuestos, riesgos, KPIs, autoridad para obtener gate, evidence, assumptions, risks, kpis, missing_information, recommendation.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

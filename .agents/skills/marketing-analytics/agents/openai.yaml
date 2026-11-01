@@ -1,0 +1,4 @@
+interface:
+  display_name: "Marketing Analytics"
+  short_description: "Marketing Intelligence: capacidad AEM OS"
+  default_prompt: "Usa $marketing-analytics para abordar esta tarea con evidencia y resultado verificable."

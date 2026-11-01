@@ -1,0 +1,116 @@
+{
+  "name": "frontend-security",
+  "domain": "Cybersecurity",
+  "sprint": 6,
+  "inputs": "cliente, render, entradas, sesiones, CSP",
+  "output": "frontend_findings, fixes, tests",
+  "procedure": [
+    "Revisar DOM/render y fuentes no confiables",
+    "Evaluar XSS, contenido activo y exposición de datos",
+    "Aplicar defensas y verificar flujo afectado"
+  ],
+  "decision": "No tratar input del cliente como confiable ni auth cliente como enforcement",
+  "kpi": "rutas de entrada protegidas",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://owasp.org/projects/asvs",
+      "OWASP ASVS; verificar versión y scope"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Cybersecurity",
+  "purpose": "Revisar DOM/render y fuentes no confiables",
+  "business_outcome": "rutas de entrada protegidas",
+  "when_to_use": "frontend-security: Cybersecurity. Usar para producir frontend_findings, fixes, tests a partir de cliente, render, entradas, sesiones, CSP; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "frontend-security",
+    "frontend_findings, fixes, tests"
+  ],
+  "required_inputs": [
+    "cliente",
+    " render",
+    " entradas",
+    " sesiones",
+    " CSP"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://owasp.org/projects/asvs",
+      "OWASP ASVS; verificar versión y scope"
+    ]
+  ],
+  "decision_rules": [
+    "No tratar input del cliente como confiable ni auth cliente como enforcement",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "frontend_findings",
+    " fixes",
+    " tests"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No tratar input del cliente como confiable ni auth cliente como enforcement",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "rutas de entrada protegidas"
+  ],
+  "examples": [
+    "Usa $frontend-security con cliente, render, entradas, sesiones, CSP para obtener frontend_findings, fixes, tests.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

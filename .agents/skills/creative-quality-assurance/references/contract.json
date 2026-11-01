@@ -1,0 +1,106 @@
+{
+  "name": "creative-quality-assurance",
+  "domain": "Creative Intelligence",
+  "sprint": 5,
+  "inputs": "piezas, brief, marca, formato, criterios",
+  "output": "creative_review, defects, fixes",
+  "procedure": [
+    "Verificar intención, claridad, composición y fidelidad",
+    "Revisar claims, derechos, accesibilidad y platform fit",
+    "Priorizar y comprobar correcciones"
+  ],
+  "decision": "Separar gusto del revisor de criterios definidos",
+  "kpi": "defectos críticos por pieza",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Creative Intelligence",
+  "purpose": "Verificar intención, claridad, composición y fidelidad",
+  "business_outcome": "defectos críticos por pieza",
+  "when_to_use": "creative-quality-assurance: Creative Intelligence. Usar para producir creative_review, defects, fixes a partir de piezas, brief, marca, formato, criterios; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "creative-quality-assurance",
+    "creative_review, defects, fixes"
+  ],
+  "required_inputs": [
+    "piezas",
+    " brief",
+    " marca",
+    " formato",
+    " criterios"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [],
+  "decision_rules": [
+    "Separar gusto del revisor de criterios definidos",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "creative_review",
+    " defects",
+    " fixes"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: Separar gusto del revisor de criterios definidos",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "defectos críticos por pieza"
+  ],
+  "examples": [
+    "Usa $creative-quality-assurance con piezas, brief, marca, formato, criterios para obtener creative_review, defects, fixes.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

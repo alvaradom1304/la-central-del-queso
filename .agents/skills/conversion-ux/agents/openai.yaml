@@ -1,0 +1,14 @@
+interface:
+  display_name: Conversion Ux
+  short_description: 'Premium Web Experience: capacidad AEM OS'
+  default_prompt: Usa $conversion-ux para abordar esta tarea con evidencia y resultado
+    verificable.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

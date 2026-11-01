@@ -1,0 +1,123 @@
+{
+  "name": "instagram-growth",
+  "domain": "Marketing Intelligence",
+  "sprint": 4,
+  "inputs": "cuenta/datos autorizados, audiencia, marca, oferta",
+  "output": "instagram_plan, format_tests, funnel",
+  "procedure": [
+    "Analizar audiencia y formatos disponibles actuales",
+    "Diseñar pruebas de contenido y perfil orientadas a oferta",
+    "Medir respuestas, consultas y venta con límites de atribución"
+  ],
+  "decision": "No bots ni seguidores comprados; algoritmo no es fórmula universal",
+  "kpi": "consultas cualificadas por alcance",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+      "Google Search Central; SEO"
+    ],
+    [
+      "https://www.influenceatwork.com/7-principles-of-persuasion/",
+      "Cialdini; aplicar críticamente, no garantía"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Marketing Intelligence",
+  "purpose": "Analizar audiencia y formatos disponibles actuales",
+  "business_outcome": "consultas cualificadas por alcance",
+  "when_to_use": "instagram-growth: Marketing Intelligence. Usar para producir instagram_plan, format_tests, funnel a partir de cuenta/datos autorizados, audiencia, marca, oferta; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "instagram-growth",
+    "instagram_plan, format_tests, funnel"
+  ],
+  "required_inputs": [
+    "cuenta/datos autorizados",
+    " audiencia",
+    " marca",
+    " oferta"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+      "Google Search Central; SEO"
+    ],
+    [
+      "https://www.influenceatwork.com/7-principles-of-persuasion/",
+      "Cialdini; aplicar críticamente, no garantía"
+    ]
+  ],
+  "decision_rules": [
+    "No bots ni seguidores comprados; algoritmo no es fórmula universal",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "instagram_plan",
+    " format_tests",
+    " funnel"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No bots ni seguidores comprados; algoritmo no es fórmula universal",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "consultas cualificadas por alcance"
+  ],
+  "examples": [
+    "Usa $instagram-growth con cuenta/datos autorizados, audiencia, marca, oferta para obtener instagram_plan, format_tests, funnel.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

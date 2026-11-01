@@ -1,0 +1,81 @@
+{
+  "id": "20261031T192727Z-6405c950",
+  "files": {
+    ".agents/skills/audio-production/SKILL.md": {
+      "backup": null,
+      "installed_hash": "96b37d0b6487b2ac09a3d633e2fd4b731215348a4f4557b384bdf96b55945da9"
+    },
+    ".agents/skills/audio-production/agents/openai.yaml": {
+      "backup": null,
+      "installed_hash": "0995d731de6e8660f2717a16e575381a3de0c3d8b810c99c9d183cecc5e7cc0b"
+    },
+    ".agents/skills/audio-production/references/evaluation-cases.json": {
+      "backup": null,
+      "installed_hash": "01f902f6bdcfe4335cc2df75495f9b5b788aa5cc6584ee393320b046730e7b66"
+    },
+    ".agents/skills/audio-production/references/handoff.example.json": {
+      "backup": null,
+      "installed_hash": "73c15c86d65633ff1c577598d9650a3f2b3bd5cce8634f44176bbedf23bbfb45"
+    },
+    ".agents/skills/audio-production/references/production.md": {
+      "backup": null,
+      "installed_hash": "54f2f3d03828e54f1a448318ec338d4b3c1962663567d11f28bbd50d22bc7f14"
+    },
+    ".agents/skills/audio-production/references/repositories.json": {
+      "backup": null,
+      "installed_hash": "948bec0a0d2e2b66914571424131c0019c9a0dfb6786fbbdd6f9a210b40a0b66"
+    },
+    ".agents/skills/audio-production/references/tools.md": {
+      "backup": null,
+      "installed_hash": "a94f37e3d7c387d24dc49d03c35c88adbe2802a779746f406665c8f74212874d"
+    },
+    ".agents/skills/audio-production/scripts/audio_qa.py": {
+      "backup": null,
+      "installed_hash": "17d7312dfe51b163ee6d4618b867b6b77f3dd90d9bb31c286f9e2027db18100c"
+    },
+    ".agents/skills/audio-production/scripts/test_audio_qa.py": {
+      "backup": null,
+      "installed_hash": "5d626cc9da5bafa49cbf4474c463abee558616cab9c289d33ad7b054b42d1aa9"
+    },
+    ".claude/skills/audio-production/SKILL.md": {
+      "backup": null,
+      "installed_hash": "96b37d0b6487b2ac09a3d633e2fd4b731215348a4f4557b384bdf96b55945da9"
+    },
+    ".claude/skills/audio-production/agents/openai.yaml": {
+      "backup": null,
+      "installed_hash": "0995d731de6e8660f2717a16e575381a3de0c3d8b810c99c9d183cecc5e7cc0b"
+    },
+    ".claude/skills/audio-production/references/evaluation-cases.json": {
+      "backup": null,
+      "installed_hash": "01f902f6bdcfe4335cc2df75495f9b5b788aa5cc6584ee393320b046730e7b66"
+    },
+    ".claude/skills/audio-production/references/handoff.example.json": {
+      "backup": null,
+      "installed_hash": "73c15c86d65633ff1c577598d9650a3f2b3bd5cce8634f44176bbedf23bbfb45"
+    },
+    ".claude/skills/audio-production/references/production.md": {
+      "backup": null,
+      "installed_hash": "54f2f3d03828e54f1a448318ec338d4b3c1962663567d11f28bbd50d22bc7f14"
+    },
+    ".claude/skills/audio-production/references/repositories.json": {
+      "backup": null,
+      "installed_hash": "948bec0a0d2e2b66914571424131c0019c9a0dfb6786fbbdd6f9a210b40a0b66"
+    },
+    ".claude/skills/audio-production/references/tools.md": {
+      "backup": null,
+      "installed_hash": "a94f37e3d7c387d24dc49d03c35c88adbe2802a779746f406665c8f74212874d"
+    },
+    ".claude/skills/audio-production/scripts/audio_qa.py": {
+      "backup": null,
+      "installed_hash": "17d7312dfe51b163ee6d4618b867b6b77f3dd90d9bb31c286f9e2027db18100c"
+    },
+    ".claude/skills/audio-production/scripts/test_audio_qa.py": {
+      "backup": null,
+      "installed_hash": "5d626cc9da5bafa49cbf4474c463abee558616cab9c289d33ad7b054b42d1aa9"
+    },
+    ".altiora/installation.json": {
+      "backup": "18.bak",
+      "installed_hash": "e90066fb1a62b8b26d6147dadd032f47d31a5859ab3917c0cfb367e4f629fb62"
+    }
+  }
+}

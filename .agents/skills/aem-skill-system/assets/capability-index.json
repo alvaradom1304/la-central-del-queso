@@ -1,0 +1,72 @@
+[
+  {
+    "domain": "Business Intelligence",
+    "file": "capabilities-01.json",
+    "count": 15
+  },
+  {
+    "domain": "Venture Building",
+    "file": "capabilities-02.json",
+    "count": 13
+  },
+  {
+    "domain": "Financial Intelligence",
+    "file": "capabilities-03.json",
+    "count": 12
+  },
+  {
+    "domain": "Sales Intelligence",
+    "file": "capabilities-04.json",
+    "count": 20
+  },
+  {
+    "domain": "Marketing Intelligence",
+    "file": "capabilities-05.json",
+    "count": 23
+  },
+  {
+    "domain": "Brand Intelligence",
+    "file": "capabilities-06.json",
+    "count": 14
+  },
+  {
+    "domain": "Creative Intelligence",
+    "file": "capabilities-07.json",
+    "count": 13
+  },
+  {
+    "domain": "Premium Web Experience",
+    "file": "capabilities-08.json",
+    "count": 19
+  },
+  {
+    "domain": "Cybersecurity",
+    "file": "capabilities-09.json",
+    "count": 17
+  },
+  {
+    "domain": "AI & Automation",
+    "file": "capabilities-10.json",
+    "count": 15
+  },
+  {
+    "domain": "Operations & Logistics",
+    "file": "capabilities-11.json",
+    "count": 15
+  },
+  {
+    "domain": "Growth & Scaling",
+    "file": "capabilities-12.json",
+    "count": 15
+  },
+  {
+    "domain": "Orchestration",
+    "file": "capabilities-13.json",
+    "count": 12
+  },
+  {
+    "domain": "Decision Intelligence",
+    "file": "capabilities-14.json",
+    "count": 1
+  }
+]

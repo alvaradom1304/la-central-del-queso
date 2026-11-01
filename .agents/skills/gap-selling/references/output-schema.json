@@ -1,0 +1,234 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:aem:gap-selling:output:0.1.0",
+  "title": "gap-selling result",
+  "type": "object",
+  "required": [
+    "task_id",
+    "skill",
+    "version",
+    "status",
+    "result",
+    "evidence",
+    "assumptions",
+    "missing_inputs",
+    "validation",
+    "next_actions"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "skill": {
+      "const": "gap-selling"
+    },
+    "version": {
+      "const": "0.1.0"
+    },
+    "status": {
+      "enum": [
+        "SUCCESS",
+        "FAILED",
+        "BLOCKED",
+        "NEEDS_REVIEW"
+      ]
+    },
+    "result": {
+      "type": "object",
+      "required": [
+        "current_future_gap",
+        "value_case",
+        "open_questions"
+      ],
+      "properties": {
+        "current_future_gap": {
+          "type": "object",
+          "required": [
+            "summary",
+            "data",
+            "evidence_ids",
+            "limitations"
+          ],
+          "properties": {
+            "summary": {
+              "type": "string"
+            },
+            "data": {},
+            "evidence_ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "limitations": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        "value_case": {
+          "type": "object",
+          "required": [
+            "summary",
+            "data",
+            "evidence_ids",
+            "limitations"
+          ],
+          "properties": {
+            "summary": {
+              "type": "string"
+            },
+            "data": {},
+            "evidence_ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "limitations": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        "open_questions": {
+          "type": "object",
+          "required": [
+            "summary",
+            "data",
+            "evidence_ids",
+            "limitations"
+          ],
+          "properties": {
+            "summary": {
+              "type": "string"
+            },
+            "data": {},
+            "evidence_ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "limitations": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "type",
+          "source",
+          "observed_at",
+          "claim",
+          "limits"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "FACT",
+              "EVIDENCE",
+              "INTERPRETATION",
+              "HYPOTHESIS",
+              "RECOMMENDATION"
+            ]
+          },
+          "source": {
+            "type": "string"
+          },
+          "observed_at": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "claim": {
+            "type": "string"
+          },
+          "limits": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "missing_inputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "validation": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "criterion",
+          "performed",
+          "outcome",
+          "evidence_ids"
+        ],
+        "properties": {
+          "criterion": {
+            "type": "string"
+          },
+          "performed": {
+            "type": "boolean"
+          },
+          "outcome": {
+            "enum": [
+              "PASS",
+              "FAIL",
+              "NOT_RUN",
+              "NOT_APPLICABLE"
+            ]
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "next_actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,173 @@
+{
+  "task_id": "altiora-value-business-20261031",
+  "skill": "business-diagnostic",
+  "version": "0.1.0",
+  "status": "NEEDS_REVIEW",
+  "result": {
+    "current_state": {
+      "summary": "Empresa en preparación comercial; oferta objetivo por validar",
+      "data": {
+        "strategy": "Oferta y segmento propuestos",
+        "finance": "Costes/caja/jurisdicción reales desconocidos",
+        "clients": "0 de pago confirmado; piloto separado",
+        "sales_marketing": "Pipeline local sin oportunidades reales registradas",
+        "brand_technology": "Capacidades declaradas y herramientas probadas, no resultados comerciales",
+        "people_operations": "Roles de apoyo y proceso preparados; capacidad no medida, profesionales humanos no contratados",
+        "data_security": "Sin credenciales o datos de clientes incorporados; permisos existentes conservados"
+      },
+      "evidence_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "limitations": [
+        "No es auditoría integral o prueba de demanda."
+      ]
+    },
+    "root_cause_hypotheses": {
+      "summary": "Hipótesis por comprobar, no causas demostradas",
+      "data": [
+        {
+          "hypothesis": "Oferta amplia y esfuerzo no presupuestado pueden dificultar una venta rentable",
+          "test": "Entrevistas, estimación por fase y comparación de costes reales"
+        },
+        {
+          "hypothesis": "Capacidades técnicas declaradas pueden no constituir una prueba comercial suficiente",
+          "test": "Recorrido demostrable y evidencia permitida del piloto con limitaciones"
+        }
+      ],
+      "evidence_ids": [
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "limitations": [
+        "No se entrevistó a compradores ni se midió la causa de ausencia de ventas."
+      ]
+    },
+    "prioritized_actions": {
+      "summary": "Priorizar validación y economía antes de crecimiento",
+      "data": [
+        {
+          "priority": 1,
+          "action": "Validar problema, comprador y voluntad de revisar propuesta",
+          "owner": "Fundador con apoyo de investigación/ventas",
+          "status": "NOT_RUN"
+        },
+        {
+          "priority": 2,
+          "action": "Presupuestar coste, capacidad y caja reales por proyecto",
+          "owner": "Fundador/analista; revisión contable correspondiente",
+          "status": "MISSING_REAL_INPUTS"
+        },
+        {
+          "priority": 3,
+          "action": "Demostrar recorrido y preparar aceptación/entrega",
+          "owner": "Responsable de entrega y QA",
+          "status": "PREPARED_NOT_CLIENT_VALIDATED"
+        },
+        {
+          "priority": 4,
+          "action": "Mantenimiento opcional con capacidad y cuota calculadas",
+          "owner": "Operación/finanzas",
+          "status": "DESIGNED_NOT_CONTRACTED"
+        }
+      ],
+      "evidence_ids": [
+        "E1",
+        "E3",
+        "E4"
+      ],
+      "limitations": [
+        "No contactos, contratos, gasto o publicaciones ejecutados."
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "id": "E1",
+      "type": "FACT",
+      "source": "Confirmación del usuario en este chat",
+      "observed_at": "2026-10-31",
+      "claim": "Cero clientes de pago; objetivo10000USD por proyecto; mantenimiento mensual opcional.",
+      "limits": [
+        "No confirma caja, coste, disponibilidad de compra o jurisdicción."
+      ]
+    },
+    {
+      "id": "E2",
+      "type": "EVIDENCE",
+      "source": "README.md y CLIENTS_PORTFOLIO.md de empresa; inspección local",
+      "observed_at": "2026-10-31",
+      "claim": "Capacidades declaradas, un piloto y marcadores de pipeline.",
+      "limits": [
+        "No verifica rendimiento comercial o entregas actuales del cliente."
+      ]
+    },
+    {
+      "id": "E3",
+      "type": "EVIDENCE",
+      "source": "Revisión financiera delegada; fuentes SBA citadas en FINANZAS.md y cálculo local",
+      "observed_at": "2026-10-31",
+      "claim": "Modelo ilustrativo y aritmética comprobados; escenario90h deja1750USD antes de estructura.",
+      "limits": [
+        "Costes supuestos, no contabilidad o rentabilidad real."
+      ]
+    },
+    {
+      "id": "E4",
+      "type": "EVIDENCE",
+      "source": "Revisión comercial delegada; OFERTA.md",
+      "observed_at": "2026-10-31",
+      "claim": "Oferta y recorrido propuestos con criterios de aceptación y límites.",
+      "limits": [
+        "No entrevistas, propuestas enviadas o precio validado."
+      ]
+    }
+  ],
+  "assumptions": [
+    "Segmento de servicios B2B, seis semanas y90h son hipótesis de oferta; no compromisos aceptados.",
+    "25% de margen económico es política interna propuesta, no estándar universal.",
+    "50/30/20 es calendario de cobros propuesto, sujeto a condiciones revisadas."
+  ],
+  "missing_inputs": [
+    "Compradores/segmento validado",
+    "Costes reales y cotizaciones",
+    "Caja y capacidad medida",
+    "Jurisdicción/entidad",
+    "Material aprobado y evidencia de resultados del piloto"
+  ],
+  "validation": [
+    {
+      "criterion": "Objetivo comercial respeta la última corrección del usuario",
+      "performed": true,
+      "outcome": "PASS",
+      "evidence_ids": [
+        "E1"
+      ]
+    },
+    {
+      "criterion": "Cálculos de planificación y límites numéricos",
+      "performed": true,
+      "outcome": "PASS",
+      "evidence_ids": [
+        "E3"
+      ]
+    },
+    {
+      "criterion": "Demanda, capacidad y rentabilidad reales",
+      "performed": false,
+      "outcome": "NOT_RUN",
+      "evidence_ids": [
+        "E2",
+        "E3",
+        "E4"
+      ]
+    }
+  ],
+  "next_actions": [
+    "Preparar entrevistas y costes con evidencia real; no prometer éxito ni precio validado.",
+    "Revisar alcance si las horas y costes no sostienen el margen antes de cotizar."
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "task_id": "quote-fixture-success",
+  "objective": "Implementar y verificar cotización local de carrito en CRC",
+  "context": {
+    "catalog": "fixture sintético",
+    "environment": "3.12.14"
+  },
+  "inputs": {
+    "task": "Función Python de cotización por gramos",
+    "acceptance_criteria": [
+      "Decimal y moneda CRC",
+      "Catálogo A=6000 CRC/kg y B=8000 CRC/kg",
+      "Conversión gramos/kg y fracciones de gramo",
+      "Suma de múltiples ítems",
+      "Rechazo de producto desconocido",
+      "Rechazo de cantidad cero/negativa"
+    ],
+    "herramientas": [
+      "Python",
+      "unittest",
+      "jsonschema",
+      "CLI local"
+    ],
+    "riesgo": "Bajo; fixture local sin servicios ni datos reales",
+    "budget": "Una ejecución inicial y máximo tres ciclos correctivos; sin gasto externo",
+    "autoridad": "Escribir solo dentro de quote-fixture, ejecutar comprobaciones locales"
+  },
+  "authorized_scope": {
+    "write_root": "/workspace/scratch/e2c14501f214/aem-build/quote-fixture",
+    "external_services": false,
+    "modify_skills": false
+  },
+  "available_tools": [
+    "Python",
+    "unittest",
+    "jsonschema",
+    "CLI local"
+  ],
+  "acceptance_criteria": [
+    "Decimal y moneda CRC",
+    "Catálogo A=6000 CRC/kg y B=8000 CRC/kg",
+    "Conversión gramos/kg y fracciones de gramo",
+    "Suma de múltiples ítems",
+    "Rechazo de producto desconocido",
+    "Rechazo de cantidad cero/negativa"
+  ],
+  "budget": {
+    "maximum_corrective_cycles": 3
+  }
+}

@@ -1,0 +1,233 @@
+[
+  {
+    "name": "prompt-engineering",
+    "domain": "AI & Automation",
+    "sprint": 7,
+    "inputs": "tarea, modelo disponible, ejemplos, criterios",
+    "output": "prompt, variants, evaluation",
+    "procedure": [
+      "Separar objetivo, instrucciones, contexto y esquema",
+      "Diseñar ejemplos y manejo de incertidumbre",
+      "Evaluar con casos reales/negativos y ajustar"
+    ],
+    "decision": "No pedir razonamiento privado ni creer que rol experto garantiza exactitud",
+    "kpi": "tasa de outputs aceptables",
+    "type": "Atomic"
+  },
+  {
+    "name": "context-engineering",
+    "domain": "AI & Automation",
+    "sprint": 7,
+    "inputs": "objetivo, fuentes, límites, estado, token budget",
+    "output": "context_pack, provenance, refresh_rules",
+    "procedure": [
+      "Seleccionar información mínima relevante y confiable",
+      "Separar instrucciones de contenido no confiable",
+      "Gestionar vigencia, compresión y recuperación con trazabilidad"
+    ],
+    "decision": "No incluir secretos/historial ajeno ni promover texto externo a policy",
+    "kpi": "relevancia y ahorro de contexto",
+    "type": "Atomic"
+  },
+  {
+    "name": "agent-design",
+    "domain": "AI & Automation",
+    "sprint": 7,
+    "inputs": "objetivo, tareas, herramientas reales, riesgo, límites",
+    "output": "agent_spec, tool_contracts, evaluation",
+    "procedure": [
+      "Elegir agente solo si ayuda frente a workflow determinista",
+      "Definir estado, herramientas, permisos y condiciones de parar",
+      "Evaluar fallos, costo y supervisión"
+    ],
+    "decision": "Especificación no es agente desplegado; mínimo privilegio",
+    "kpi": "éxito acotado y costo por tarea",
+    "type": "Atomic"
+  },
+  {
+    "name": "agent-orchestration",
+    "domain": "AI & Automation",
+    "sprint": 7,
+    "inputs": "roles disponibles, subtareas, dependencia, presupuesto",
+    "output": "delegation_plan, execution_states, review",
+    "procedure": [
+      "Descomponer trabajo sin duplicar fuentes o decisiones",
+      "Asignar contexto mínimo y outputs verificables",
+      "Coordinar dependencias, fallos y revisión final"
+    ],
+    "decision": "No inventar agentes activos; usar paralelismo solo con autorización aplicable",
+    "kpi": "trabajo aceptado y costo de coordinación",
+    "type": "Atomic"
+  },
+  {
+    "name": "tool-selection",
+    "domain": "AI & Automation",
+    "sprint": 7,
+    "inputs": "tarea, opciones disponibles, permisos, costo",
+    "output": "tool_comparison, choice, fallback",
+    "procedure": [
+      "Inventariar capacidades reales y restricciones",
+      "Comparar exactitud, costo, latencia, datos y mantenimiento",
+      "Elegir herramienta y fallback con evidencia"
+    ],
+    "decision": "Disponibilidad no implica autorización; no probar sesiones ajenas",
+    "kpi": "resultado por costo/latencia",
+    "type": "Atomic"
+  },
+  {
+    "name": "mcp-integration",
+    "domain": "AI & Automation",
+    "sprint": 7,
+    "inputs": "cliente/servidor, versión, herramientas, scope",
+    "output": "mcp_contract, auth_plan, tests",
+    "procedure": [
+      "Verificar especificación vigente y compatibilidad real",
+      "Definir tools/resources y esquema con privilegio mínimo",
+      "Probar conexión, validación, errores y contenido no confiable"
+    ],
+    "decision": "MCP no elimina autenticación ni autoriza acciones; no enviar secretos a servidores desconocidos",
+    "kpi": "llamadas válidas y errores controlados",
+    "type": "Atomic"
+  },
+  {
+    "name": "rag-architecture",
+    "domain": "AI & Automation",
+    "sprint": 7,
+    "inputs": "corpus autorizado, preguntas, acceso, volumen",
+    "output": "rag_design, retrieval_eval, data_controls",
+    "procedure": [
+      "Definir ingesta, chunking, metadata y actualización",
+      "Elegir retrieval/reranking según pruebas con corpus",
+      "Evaluar respuestas, citas, abstención y aislamiento"
+    ],
+    "decision": "No llamar verdad a resultado recuperado ni mezclar permisos entre clientes",
+    "kpi": "recall/precision y respuestas sustentadas",
+    "type": "Atomic"
+  },
+  {
+    "name": "knowledge-retrieval",
+    "domain": "AI & Automation",
+    "sprint": 7,
+    "inputs": "pregunta, fuentes/corpus, permisos, actualidad",
+    "output": "retrieved_evidence, provenance, gaps",
+    "procedure": [
+      "Resolver pregunta y filtros de alcance",
+      "Recuperar fragmentos pertinentes con versión/fecha",
+      "Contrastar y abstener si fuentes no responden"
+    ],
+    "decision": "No citar snippets como documento completo ni inventar acceso",
+    "kpi": "relevancia y trazabilidad",
+    "type": "Atomic"
+  },
+  {
+    "name": "n8n-workflow-design",
+    "domain": "AI & Automation",
+    "sprint": 7,
+    "inputs": "proceso, triggers, integraciones, permisos, versiones",
+    "output": "workflow_spec, mappings, error_paths",
+    "procedure": [
+      "Verificar nodos/APIs vigentes y credenciales separadas",
+      "Diseñar trigger→validación→persistencia→acción con idempotencia",
+      "Definir retries, alertas, recuperación y pruebas"
+    ],
+    "decision": "Export sin secrets; no activar workflow ni enviar mensajes sin autorización",
+    "kpi": "éxito y duplicados por ejecución",
+    "type": "Atomic"
+  },
+  {
+    "name": "api-integration",
+    "domain": "AI & Automation",
+    "sprint": 7,
+    "inputs": "API oficial, contrato, entorno, auth, objetivo",
+    "output": "integration_code, error_handling, tests",
+    "procedure": [
+      "Identificar proveedor, versión, endpoints, permisos, límites y sandbox; leer documentación oficial vigente específica.",
+      "Definir schemas request/response/eventos, IDs, errores, fuente de verdad y efectos de cada operación.",
+      "Implementar autenticación servidor, validación de entrada/salida y verificación de webhooks según proveedor.",
+      "Diseñar idempotencia persistente, concurrencia, timeout ambiguo, retry acotado y reconciliación por entidad.",
+      "Separar recepción durable de procesamiento; registrar logs sin secretos ni PII, correlation IDs y fallos recuperables.",
+      "Ejecutar pruebas contractuales y recorrido autorizado, incluyendo duplicado, desorden, 429, 5xx y fallo parcial."
+    ],
+    "decision": "No reintentar operaciones no idempotentes sin control ni exponer tokens",
+    "kpi": "éxito y latencia de integración",
+    "type": "Atomic"
+  },
+  {
+    "name": "automation-design",
+    "domain": "AI & Automation",
+    "sprint": 7,
+    "inputs": "proceso actual, volumen, costos, errores, autoridad",
+    "output": "automation_case, workflow, human_exceptions",
+    "procedure": [
+      "Medir proceso manual: volumen, tiempo, errores, excepciones y capacidad; mantener UNKNOWN donde falten datos.",
+      "Definir outcome, fuente de verdad, responsables y ROI neto incluyendo licencias, soporte y fallos.",
+      "Elegir regla determinista, IA o revisión humana por variabilidad, reversibilidad y costo de error.",
+      "Especificar eventos, schemas, idempotencia, concurrencia, credenciales y estados; comprobar capacidades del conector real.",
+      "Diseñar cola de fallos, compensación, conciliación y procedimiento manual que permita seguir operando.",
+      "Probar happy path y fallos pertinentes con datos sintéticos; documentar operación, alertas y criterio de salida."
+    ],
+    "decision": "No automatizar proceso roto sin diagnóstico ni prometer tiempo real",
+    "kpi": "horas/costos ahorrados con calidad",
+    "type": "Atomic"
+  },
+  {
+    "name": "human-in-the-loop",
+    "domain": "AI & Automation",
+    "sprint": 7,
+    "inputs": "acciones críticas, roles, tiempos, estados",
+    "output": "review_gates, escalation, fallback",
+    "procedure": [
+      "Identificar decisiones que exceden autonomía",
+      "Definir qué evidencia recibe revisor y opciones",
+      "Diseñar cola, tiempos y conducta si no responde"
+    ],
+    "decision": "Silencio no es aprobación; no bloquear tareas independientes innecesariamente",
+    "kpi": "revisiones útiles y tiempo de resolución",
+    "type": "Atomic"
+  },
+  {
+    "name": "ai-evaluation",
+    "domain": "AI & Automation",
+    "sprint": 7,
+    "inputs": "tarea, outputs, dataset, criterios, riesgos",
+    "output": "evaluation_protocol, results, limitations",
+    "procedure": [
+      "Definir rúbrica y casos representativos/adversos",
+      "Separar desarrollo de evaluación y evitar contaminación",
+      "Medir calidad, costo y seguridad con revisión proporcional"
+    ],
+    "decision": "No declarar producción por prueba sintética ni usar judge único sin calibrar",
+    "kpi": "éxito/abstención y errores críticos",
+    "type": "Atomic"
+  },
+  {
+    "name": "ai-observability",
+    "domain": "AI & Automation",
+    "sprint": 7,
+    "inputs": "sistema, eventos, límites de privacidad, KPIs",
+    "output": "telemetry_plan, alerts, diagnostics",
+    "procedure": [
+      "Definir trazas, métricas y correlación por ejecución",
+      "Minimizar contenido sensible y retención",
+      "Diseñar alertas de costo, latencia, fallos y drift"
+    ],
+    "decision": "No almacenar prompts con datos privados por defecto",
+    "kpi": "detección y explicación de fallos",
+    "type": "Atomic"
+  },
+  {
+    "name": "ai-governance",
+    "domain": "AI & Automation",
+    "sprint": 7,
+    "inputs": "usos IA, datos, actores, riesgo, políticas",
+    "output": "governance_controls, responsibilities, review",
+    "procedure": [
+      "Inventariar usos y decisiones afectadas",
+      "Evaluar riesgo, límites, transparencia y responsables",
+      "Definir evaluación, incidentes y cambios de modelos"
+    ],
+    "decision": "No certificar cumplimiento ni sustituir autoridad humana crítica",
+    "kpi": "usos con controles y responsable",
+    "type": "Atomic"
+  }
+]

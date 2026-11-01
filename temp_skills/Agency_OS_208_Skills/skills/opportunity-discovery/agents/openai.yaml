@@ -1,0 +1,4 @@
+interface:
+  display_name: "Opportunity Discovery"
+  short_description: "Venture Building: capacidad AEM OS"
+  default_prompt: "Usa $opportunity-discovery para abordar esta tarea con evidencia y resultado verificable."

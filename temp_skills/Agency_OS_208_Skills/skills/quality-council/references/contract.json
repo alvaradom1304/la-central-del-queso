@@ -1,0 +1,109 @@
+{
+  "name": "quality-council",
+  "domain": "Orchestration",
+  "sprint": 9,
+  "inputs": "resultado, criterios, riesgos, revisores reales disponibles",
+  "output": "selected_reviewers, independent_findings, verdict",
+  "procedure": [
+    "Seleccionar revisión de negocio/finanzas/UX/seguridad/etc según riesgo",
+    "Entregar contexto mínimo y pedir evidencia independiente",
+    "Resolver discrepancias sin votación ciega y registrar decisión"
+  ],
+  "decision": "Roles conceptuales no son agentes activos; no escalar datos sensibles a terceros sin necesidad/autorización",
+  "kpi": "defectos materiales detectados antes de entrega",
+  "type": "Orchestrator",
+  "dependencies": [
+    "business-decision-gates"
+  ],
+  "sources": [],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Orchestration",
+  "purpose": "Seleccionar revisión de negocio/finanzas/UX/seguridad/etc según riesgo",
+  "business_outcome": "defectos materiales detectados antes de entrega",
+  "when_to_use": "quality-council: Orchestration. Usar para producir selected_reviewers, independent_findings, verdict a partir de resultado, criterios, riesgos, revisores reales disponibles; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "quality-council",
+    "selected_reviewers, independent_findings, verdict"
+  ],
+  "required_inputs": [
+    "resultado",
+    " criterios",
+    " riesgos",
+    " revisores reales disponibles"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [],
+  "decision_rules": [
+    "Roles conceptuales no son agentes activos; no escalar datos sensibles a terceros sin necesidad/autorización",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "selected_reviewers",
+    " independent_findings",
+    " verdict"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: Roles conceptuales no son agentes activos; no escalar datos sensibles a terceros sin necesidad/autorización",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "defectos materiales detectados antes de entrega"
+  ],
+  "examples": [
+    "Usa $quality-council con resultado, criterios, riesgos, revisores reales disponibles para obtener selected_reviewers, independent_findings, verdict.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [
+    "business-decision-gates"
+  ],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

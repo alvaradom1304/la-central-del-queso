@@ -1,0 +1,4 @@
+interface:
+  display_name: "Visual Identity"
+  short_description: "Brand Intelligence: capacidad AEM OS"
+  default_prompt: "Usa $visual-identity para abordar esta tarea con evidencia y resultado verificable."

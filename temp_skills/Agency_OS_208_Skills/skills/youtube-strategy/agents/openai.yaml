@@ -1,0 +1,4 @@
+interface:
+  display_name: "Youtube Strategy"
+  short_description: "Marketing Intelligence: capacidad AEM OS"
+  default_prompt: "Usa $youtube-strategy para abordar esta tarea con evidencia y resultado verificable."

@@ -1,0 +1,116 @@
+{
+  "name": "threat-modeling",
+  "domain": "Cybersecurity",
+  "sprint": 6,
+  "inputs": "arquitectura, activos, actores, boundaries, permisos",
+  "output": "threat_model, scenarios, mitigations",
+  "procedure": [
+    "Diagramar datos y fronteras de confianza",
+    "Identificar amenazas por escenario y control existente",
+    "Priorizar impacto/probabilidad y acciones de mitigación"
+  ],
+  "decision": "Solo sistemas autorizados; sin arquitectura no afirmar modelo completo",
+  "kpi": "amenazas materiales con control",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://owasp.org/projects/asvs",
+      "OWASP ASVS; verificar versión y scope"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Cybersecurity",
+  "purpose": "Diagramar datos y fronteras de confianza",
+  "business_outcome": "amenazas materiales con control",
+  "when_to_use": "threat-modeling: Cybersecurity. Usar para producir threat_model, scenarios, mitigations a partir de arquitectura, activos, actores, boundaries, permisos; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "threat-modeling",
+    "threat_model, scenarios, mitigations"
+  ],
+  "required_inputs": [
+    "arquitectura",
+    " activos",
+    " actores",
+    " boundaries",
+    " permisos"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://owasp.org/projects/asvs",
+      "OWASP ASVS; verificar versión y scope"
+    ]
+  ],
+  "decision_rules": [
+    "Solo sistemas autorizados; sin arquitectura no afirmar modelo completo",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "threat_model",
+    " scenarios",
+    " mitigations"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: Solo sistemas autorizados; sin arquitectura no afirmar modelo completo",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "amenazas materiales con control"
+  ],
+  "examples": [
+    "Usa $threat-modeling con arquitectura, activos, actores, boundaries, permisos para obtener threat_model, scenarios, mitigations.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

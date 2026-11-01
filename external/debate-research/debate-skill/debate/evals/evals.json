@@ -1,0 +1,45 @@
+{
+  "skill_name": "debate",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "/debate Should students use AI for homework?",
+      "expected_output": "A full 3-round debate transcript with all 5 agents (Visionary, Skeptic, Engineer, Economist, Ethicist) plus a judge summary section containing: best argument per agent, biggest disagreement, final consensus, winning agent, and a concrete recommendation.",
+      "files": [],
+      "expectations": [
+        "All 5 agents appear in Round 1 (Opening Arguments): Visionary, Skeptic, Engineer, Economist, Ethicist",
+        "Round 2 (Crossfire) shows agents responding to each other — at least one response explicitly targets another agent's argument",
+        "Round 3 (Final Positions) contains all 5 agents giving their final stance",
+        "The Judge's Summary section is present and names a winning agent",
+        "The Judge's Summary includes a 'What you should do' recommendation"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "/debate I'm considering building a startup that replaces junior developers with AI coding agents. Should I do it?",
+      "expected_output": "A 3-round debate treating this as a startup idea review. All 5 personas weigh in from their angle (Visionary: market upside; Skeptic: assumptions; Engineer: technical feasibility; Economist: unit economics and labor markets; Ethicist: workforce displacement). Judge summary names the key tension and gives a go/no-go style recommendation.",
+      "files": [],
+      "expectations": [
+        "All 5 agents appear in all 3 rounds",
+        "The Economist addresses labor market impact or cost structure",
+        "The Ethicist addresses workforce displacement or fairness",
+        "The Skeptic challenges at least one specific assumption",
+        "The judge summary gives a concrete recommendation (not just 'it depends')",
+        "A transcript JSON file is saved to /tmp/"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Debate this for me: should a city ban cars from its downtown core within the next 5 years?",
+      "expected_output": "A policy debate where the 5 agents engage the urban planning question from their perspectives. Includes economic tradeoffs (Economist), infrastructure feasibility (Engineer), quality-of-life upside (Visionary), unintended harms (Ethicist), and risk of overpromising (Skeptic). Full 3 rounds plus judge summary.",
+      "files": [],
+      "expectations": [
+        "The skill triggers correctly even without the /debate slash command — just from the word 'debate' in the prompt",
+        "All 5 agents appear in all 3 rounds",
+        "At least one agent specifically mentions implementation timeline or infrastructure",
+        "The crossfire round shows at least one direct quote or reference to another agent's argument",
+        "Judge summary identifies the biggest disagreement between two named agents"
+      ]
+    }
+  ]
+}

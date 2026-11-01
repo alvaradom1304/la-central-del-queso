@@ -1,0 +1,42 @@
+[
+  {
+    "skill": "gsap-animation",
+    "checks": {
+      "explicit_unknown_BLOCKED_accepted": "PASS",
+      "SUCCESS_null_result_rejected": "PASS",
+      "unstructured_data_rejected": "PASS",
+      "stale_version_rejected": "PASS"
+    },
+    "kind": "OUTPUT_CONTRACT_SYNTHETIC_NOT_PRODUCT_TEST"
+  },
+  {
+    "skill": "threejs-experience",
+    "checks": {
+      "explicit_unknown_BLOCKED_accepted": "PASS",
+      "SUCCESS_null_result_rejected": "PASS",
+      "unstructured_data_rejected": "PASS",
+      "stale_version_rejected": "PASS"
+    },
+    "kind": "OUTPUT_CONTRACT_SYNTHETIC_NOT_PRODUCT_TEST"
+  },
+  {
+    "skill": "api-integration",
+    "checks": {
+      "explicit_unknown_BLOCKED_accepted": "PASS",
+      "SUCCESS_null_result_rejected": "PASS",
+      "unstructured_data_rejected": "PASS",
+      "stale_version_rejected": "PASS"
+    },
+    "kind": "OUTPUT_CONTRACT_SYNTHETIC_NOT_PRODUCT_TEST"
+  },
+  {
+    "skill": "web-performance",
+    "checks": {
+      "explicit_unknown_BLOCKED_accepted": "PASS",
+      "SUCCESS_null_result_rejected": "PASS",
+      "unstructured_data_rejected": "PASS",
+      "stale_version_rejected": "PASS"
+    },
+    "kind": "OUTPUT_CONTRACT_SYNTHETIC_NOT_PRODUCT_TEST"
+  }
+]

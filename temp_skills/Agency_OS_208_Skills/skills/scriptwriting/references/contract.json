@@ -1,0 +1,106 @@
+{
+  "name": "scriptwriting",
+  "domain": "Creative Intelligence",
+  "sprint": 5,
+  "inputs": "concepto, duración, canal, mensaje, derechos",
+  "output": "script, timing, production_notes",
+  "procedure": [
+    "Estructurar inicio, desarrollo, prueba y cierre",
+    "Asignar imagen/audio/texto y tiempo por bloque",
+    "Comprobar ritmo, claridad y producibilidad"
+  ],
+  "decision": "No prometer plano o efecto técnicamente probado sin test",
+  "kpi": "comprensión dentro de duración",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Creative Intelligence",
+  "purpose": "Estructurar inicio, desarrollo, prueba y cierre",
+  "business_outcome": "comprensión dentro de duración",
+  "when_to_use": "scriptwriting: Creative Intelligence. Usar para producir script, timing, production_notes a partir de concepto, duración, canal, mensaje, derechos; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "scriptwriting",
+    "script, timing, production_notes"
+  ],
+  "required_inputs": [
+    "concepto",
+    " duración",
+    " canal",
+    " mensaje",
+    " derechos"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [],
+  "decision_rules": [
+    "No prometer plano o efecto técnicamente probado sin test",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "script",
+    " timing",
+    " production_notes"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No prometer plano o efecto técnicamente probado sin test",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "comprensión dentro de duración"
+  ],
+  "examples": [
+    "Usa $scriptwriting con concepto, duración, canal, mensaje, derechos para obtener script, timing, production_notes.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

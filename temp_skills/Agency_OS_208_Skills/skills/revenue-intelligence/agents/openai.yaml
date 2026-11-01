@@ -1,0 +1,4 @@
+interface:
+  display_name: "Revenue Intelligence"
+  short_description: "Orchestration: capacidad AEM OS"
+  default_prompt: "Usa $revenue-intelligence para abordar esta tarea con evidencia y resultado verificable."

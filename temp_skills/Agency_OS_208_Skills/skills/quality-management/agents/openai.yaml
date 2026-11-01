@@ -1,0 +1,4 @@
+interface:
+  display_name: "Quality Management"
+  short_description: "Operations & Logistics: capacidad AEM OS"
+  default_prompt: "Usa $quality-management para abordar esta tarea con evidencia y resultado verificable."

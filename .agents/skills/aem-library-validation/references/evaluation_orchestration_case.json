@@ -1,0 +1,835 @@
+{
+  "task_id": "queso-orchestration-case",
+  "skill": "aem-company-builder",
+  "version": "0.1.0",
+  "status": "NEEDS_REVIEW",
+  "result": {
+    "route_selection": {
+      "summary": "EXISTING BUSINESS con ruta prioritaria TRANSFORMATION; GROWTH/SCALING diferidos.",
+      "data": {
+        "business_class": "EXISTING BUSINESS",
+        "primary_route": "TRANSFORMATION",
+        "conditional_routes": [
+          "GROWTH",
+          "SCALING"
+        ],
+        "not_selected": {
+          "NEW_BUSINESS": "Ya hay actividad según relato.",
+          "TURNAROUND": "No hay prueba de crisis de liquidez; condición de activación si diagnóstico la descubre."
+        },
+        "sequence": [
+          "Diagnóstico y datos",
+          "Transformación operativa",
+          "VIABILITY",
+          "Validación/piloto condicionado",
+          "Crecimiento/escala condicionado"
+        ]
+      },
+      "evidence_ids": [
+        "E1",
+        "E2",
+        "E5"
+      ],
+      "limitations": [
+        "Propuesta analítica sin implementación ni resultados medidos."
+      ]
+    },
+    "capability_plan": {
+      "summary": "Plan por hitos con dependencia y aceptación explícita.",
+      "data": {
+        "milestones": [
+          {
+            "milestone": "M0",
+            "capability": "business-diagnostic: output equivalente provisional basado en brief; skill no ejecutada",
+            "deliverable": "Mapa de procesos venta/peso/cobro/stock y lista de datos faltantes.",
+            "acceptance": "Familia revisa mapa y designa responsables.",
+            "status": "PROPOSED",
+            "responsible": "Familia; persona no designada"
+          },
+          {
+            "milestone": "M1",
+            "capability": "aem-business-transformation: candidata futura, no ejecutada",
+            "deliverable": "Diseño de registro mínimo: fecha, feria/ruta, producto/lote, kg, precio, importe, cobro, stock y merma; cierre conciliado.",
+            "acceptance": "Propuesta: cubrir un ciclo completo representativo de producción y todas las ferias/rutas; diferencias explicadas.",
+            "status": "PROPOSED",
+            "responsible": "Familia; persona no designada"
+          },
+          {
+            "milestone": "M2",
+            "capability": "business-decision-gates 0.1.0: ejecutada como evaluación analítica",
+            "deliverable": "HOLD/REVISE con condiciones y KPIs; releer datos después de M1.",
+            "acceptance": "Contribución, capacidad, caja y riesgos comprobados con registros antes de decisión humana.",
+            "status": "ANALYTICAL_OUTPUT_COMPLETED_PENDING_DATA",
+            "responsible": "Responsable humano pendiente"
+          },
+          {
+            "milestone": "M3",
+            "capability": "enterprise-growth-orchestrator: candidata condicionada, no ejecutada",
+            "deliverable": "Plan de piloto de una ruta adicional y canal de pedidos simple, antes de duplicación/3D.",
+            "acceptance": "M2 superado, presupuesto/criterios y autorización de piloto definidos.",
+            "status": "DEFERRED",
+            "responsible": "No designado"
+          },
+          {
+            "milestone": "M4",
+            "capability": "Investigación de exportación pertinente: capacidad futura sin ejecutor asignado",
+            "deliverable": "Evaluación de destino, requisitos, logística y economía; reconciliación documental de marca.",
+            "acceptance": "Fuentes pertinentes verificadas bajo nuevo encargo; fecha de origen no elegida sin sustento.",
+            "status": "DEFERRED",
+            "responsible": "No designado"
+          }
+        ],
+        "rejected_for_now": [
+          "aem-venture-architect: no se requiere diseñar negocio nuevo.",
+          "Construcción/despliegue 3D y contactos comerciales: fuera de alcance."
+        ],
+        "execution_boundary": "Solo este diagnóstico/plan y gate analítico; capacidades futuras no ejecutadas.",
+        "normalized_input": {
+          "task_id": "queso-orchestration-case",
+          "objective": "Diagnóstico y plan provisional para ordenar operación y evaluar expansión.",
+          "context": {
+            "business": "Queso familiar existente",
+            "source": "Brief del usuario",
+            "observed_at": "2026-10-10"
+          },
+          "authorized_scope": {
+            "allowed": [
+              "diagnóstico",
+              "plan",
+              "guardar JSON en ruta solicitada"
+            ],
+            "excluded": [
+              "externos",
+              "contactos",
+              "despliegues",
+              "modificar skills"
+            ]
+          },
+          "available_tools": [
+            "Lectura local de skills y referencias",
+            "Python local / jsonschema"
+          ],
+          "acceptance_criteria": [
+            "Outputs trazables de ambas skills",
+            "HOLD/REVISE cuando falte evidencia crítica",
+            "Preservar contradicción 1980/1994",
+            "No ejecutar expansión ni inventar datos"
+          ],
+          "inputs": {
+            "contexto": {
+              "business": "Queso familiar existente",
+              "source": "Brief del usuario",
+              "observed_at": "2026-10-10"
+            },
+            "negocio_nuevo_existente": "EXISTING BUSINESS, declarado",
+            "objetivos": [
+              "duplicar rutas",
+              "tienda 3D",
+              "exportar"
+            ],
+            "restricciones": {
+              "allowed": [
+                "diagnóstico",
+                "plan",
+                "guardar JSON en ruta solicitada"
+              ],
+              "excluded": [
+                "externos",
+                "contactos",
+                "despliegues",
+                "modificar skills"
+              ]
+            },
+            "autoridad": "Solo diagnóstico y plan"
+          }
+        }
+      },
+      "evidence_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "limitations": [
+        "Propuesta analítica sin implementación ni resultados medidos."
+      ]
+    },
+    "gate_report": {
+      "summary": "Evaluación business-decision-gates incorporada.",
+      "data": {
+        "task_id": "queso-orchestration-case",
+        "skill": "business-decision-gates",
+        "version": "0.1.0",
+        "status": "NEEDS_REVIEW",
+        "result": {
+          "gate": {
+            "summary": "Gate prioritario: VIABILITY antes de expansión.",
+            "data": {
+              "primary": "VIABILITY",
+              "secondary": [
+                "VALIDATION",
+                "GROWTH",
+                "LAUNCH",
+                "SCALE"
+              ],
+              "reason": "Demanda y economía no verificadas; operación existente no implica viabilidad de expansión.",
+              "normalized_input": {
+                "task_id": "queso-orchestration-case",
+                "objective": "Diagnóstico y plan provisional para ordenar operación y evaluar expansión.",
+                "context": {
+                  "business": "Queso familiar existente",
+                  "source": "Brief del usuario",
+                  "observed_at": "2026-10-10"
+                },
+                "authorized_scope": {
+                  "allowed": [
+                    "diagnóstico",
+                    "plan",
+                    "guardar JSON en ruta solicitada"
+                  ],
+                  "excluded": [
+                    "externos",
+                    "contactos",
+                    "despliegues",
+                    "modificar skills"
+                  ]
+                },
+                "available_tools": [
+                  "Lectura local de skills y referencias",
+                  "Python local / jsonschema"
+                ],
+                "acceptance_criteria": [
+                  "Outputs trazables de ambas skills",
+                  "HOLD/REVISE cuando falte evidencia crítica",
+                  "Preservar contradicción 1980/1994",
+                  "No ejecutar expansión ni inventar datos"
+                ],
+                "inputs": {
+                  "gate": "VIABILITY propuesto por análisis, no decisión previa",
+                  "evidencia": [
+                    {
+                      "id": "E1",
+                      "type": "EVIDENCE",
+                      "source": "Brief del usuario recibido en esta tarea",
+                      "observed_at": "2026-10-10",
+                      "claim": "El usuario describe negocio familiar existente de queso, ventas en feria sin registrar, pesos manuales y WhatsApp esporádico.",
+                      "limits": [
+                        "Relato no auditado; no se observaron operaciones ni documentos."
+                      ]
+                    },
+                    {
+                      "id": "E2",
+                      "type": "EVIDENCE",
+                      "source": "Brief del usuario recibido en esta tarea",
+                      "observed_at": "2026-10-10",
+                      "claim": "Objetivos declarados: duplicar rutas, tienda 3D y exportación; costos y stock actuales desconocidos.",
+                      "limits": [
+                        "No hay baseline de ventas, rutas, capacidad, caja ni demanda."
+                      ]
+                    },
+                    {
+                      "id": "E3",
+                      "type": "EVIDENCE",
+                      "source": "Brief del usuario recibido en esta tarea",
+                      "observed_at": "2026-10-10",
+                      "claim": "El usuario informa un antecedente de origen en 1980 y otro logo con 1994.",
+                      "limits": [
+                        "No se proporcionaron originales, fechas documentales, autores ni alcance de cada afirmación; contradicción sin resolver."
+                      ]
+                    },
+                    {
+                      "id": "E4",
+                      "type": "FACT",
+                      "source": "Brief del usuario recibido en esta tarea",
+                      "observed_at": "2026-10-10",
+                      "claim": "Solo diagnóstico y plan autorizados; sin contactos, despliegues, externos ni cambios a skills.",
+                      "limits": [
+                        "Autorización limitada a este entregable."
+                      ]
+                    },
+                    {
+                      "id": "E5",
+                      "type": "INTERPRETATION",
+                      "source": "Brief del usuario recibido en esta tarea",
+                      "observed_at": "2026-10-10",
+                      "claim": "La prioridad razonada es transformación operativa de un negocio existente antes de crecimiento o escala.",
+                      "limits": [
+                        "No se puede inferir crisis ni TURNAROUND solo por falta de datos."
+                      ]
+                    }
+                  ],
+                  "supuestos": [
+                    "El negocio sigue operando según el relato; no se afirma solvencia.",
+                    "Los umbrales y plazos de medición son propuestas a revisar por la familia, no datos actuales."
+                  ],
+                  "riesgos": [
+                    {
+                      "risk": "Crecer sin margen, caja o stock conocido",
+                      "basis": [
+                        "E1",
+                        "E2"
+                      ],
+                      "mitigation": "HOLD para duplicación de rutas; medir contribución y capacidad."
+                    },
+                    {
+                      "risk": "Inversión 3D sin demanda o capacidad de cumplir pedidos",
+                      "basis": [
+                        "E2"
+                      ],
+                      "mitigation": "REVISE: validar primero catálogo/pedido simple como hipótesis; no desplegar."
+                    },
+                    {
+                      "risk": "Exportación sin destino ni requisitos verificados",
+                      "basis": [
+                        "E2"
+                      ],
+                      "mitigation": "HOLD: investigación normativa posterior solo con alcance autorizado; no afirmar cumplimiento."
+                    },
+                    {
+                      "risk": "Afirmar una fecha histórica incorrecta",
+                      "basis": [
+                        "E3"
+                      ],
+                      "mitigation": "No seleccionar 1980 ni 1994; preservar ambas versiones hasta evidencia primaria."
+                    },
+                    {
+                      "risk": "Continuidad financiera desconocida",
+                      "basis": [
+                        "E2"
+                      ],
+                      "mitigation": "Si aparece déficit material de liquidez, activar ruta TURNAROUND y priorizar caja/continuidad sobre expansión."
+                    }
+                  ],
+                  "kpis": [
+                    {
+                      "name": "Cobertura de registro",
+                      "formula": "ventas registradas / ventas observadas × 100",
+                      "unit": "%",
+                      "baseline": "DESCONOCIDA",
+                      "period": "Por feria y semana",
+                      "target": "Propuesta: registrar todas las operaciones; contrastar con caja y peso."
+                    },
+                    {
+                      "name": "Stock reconciliado",
+                      "formula": "stock inicial kg + producción/entradas kg − ventas/salidas kg − merma kg = stock final kg",
+                      "unit": "kg por lote",
+                      "baseline": "DESCONOCIDA",
+                      "period": "Cada cierre",
+                      "target": "Toda diferencia identificada y explicada antes de expansión."
+                    },
+                    {
+                      "name": "Contribución por ruta",
+                      "formula": "ingresos de ruta − costo variable del queso vendido − empaque − transporte − mano de obra incremental − otros costos variables atribuibles",
+                      "unit": "moneda local por ruta; moneda pendiente",
+                      "baseline": "DESCONOCIDA",
+                      "period": "Mismo ciclo de ruta",
+                      "target": "Positiva y suficiente para cubrir costos fijos incrementales y reserva de caja definidos por la familia."
+                    },
+                    {
+                      "name": "Conversión digital",
+                      "formula": "pedidos confirmados / oportunidades o sesiones válidas × 100",
+                      "unit": "%",
+                      "baseline": "DESCONOCIDA",
+                      "period": "Ventana comparable a definir",
+                      "target": "Medir primero; no atribuir beneficios a 3D sin comparación."
+                    },
+                    {
+                      "name": "Resultados aceptados por milestone",
+                      "formula": "entregables aceptados / entregables previstos × 100",
+                      "unit": "%",
+                      "baseline": "DESCONOCIDA",
+                      "period": "Por milestone",
+                      "target": "Aceptación humana documentada; cero aceptación simulada."
+                    }
+                  ],
+                  "autoridad": "Solo diagnóstico y plan; KPIs baseline desconocida"
+                }
+              }
+            },
+            "evidence_ids": [
+              "E1",
+              "E2"
+            ],
+            "limitations": [
+              "Propuesta analítica sin implementación ni resultados medidos."
+            ]
+          },
+          "evidence": {
+            "summary": "Evidencia disponible limitada al brief.",
+            "data": {
+              "evidence_ids": [
+                "E1",
+                "E2",
+                "E3",
+                "E4",
+                "E5"
+              ],
+              "external_verification": "NOT_RUN"
+            },
+            "evidence_ids": [
+              "E1",
+              "E2",
+              "E3",
+              "E4",
+              "E5"
+            ],
+            "limitations": [
+              "No fuentes externas ni registros internos examinados."
+            ]
+          },
+          "assumptions": {
+            "summary": "Supuestos explícitos.",
+            "data": [
+              "El negocio sigue operando según el relato; no se afirma solvencia.",
+              "Los umbrales y plazos de medición son propuestas a revisar por la familia, no datos actuales."
+            ],
+            "evidence_ids": [
+              "E1",
+              "E2"
+            ],
+            "limitations": [
+              "Propuesta analítica sin implementación ni resultados medidos."
+            ]
+          },
+          "risks": {
+            "summary": "Riesgos que impiden GO comercial.",
+            "data": [
+              {
+                "risk": "Crecer sin margen, caja o stock conocido",
+                "basis": [
+                  "E1",
+                  "E2"
+                ],
+                "mitigation": "HOLD para duplicación de rutas; medir contribución y capacidad."
+              },
+              {
+                "risk": "Inversión 3D sin demanda o capacidad de cumplir pedidos",
+                "basis": [
+                  "E2"
+                ],
+                "mitigation": "REVISE: validar primero catálogo/pedido simple como hipótesis; no desplegar."
+              },
+              {
+                "risk": "Exportación sin destino ni requisitos verificados",
+                "basis": [
+                  "E2"
+                ],
+                "mitigation": "HOLD: investigación normativa posterior solo con alcance autorizado; no afirmar cumplimiento."
+              },
+              {
+                "risk": "Afirmar una fecha histórica incorrecta",
+                "basis": [
+                  "E3"
+                ],
+                "mitigation": "No seleccionar 1980 ni 1994; preservar ambas versiones hasta evidencia primaria."
+              },
+              {
+                "risk": "Continuidad financiera desconocida",
+                "basis": [
+                  "E2"
+                ],
+                "mitigation": "Si aparece déficit material de liquidez, activar ruta TURNAROUND y priorizar caja/continuidad sobre expansión."
+              }
+            ],
+            "evidence_ids": [
+              "E1",
+              "E2",
+              "E3"
+            ],
+            "limitations": [
+              "Propuesta analítica sin implementación ni resultados medidos."
+            ]
+          },
+          "kpis": {
+            "summary": "KPIs propuestos con baseline desconocido.",
+            "data": [
+              {
+                "name": "Cobertura de registro",
+                "formula": "ventas registradas / ventas observadas × 100",
+                "unit": "%",
+                "baseline": "DESCONOCIDA",
+                "period": "Por feria y semana",
+                "target": "Propuesta: registrar todas las operaciones; contrastar con caja y peso."
+              },
+              {
+                "name": "Stock reconciliado",
+                "formula": "stock inicial kg + producción/entradas kg − ventas/salidas kg − merma kg = stock final kg",
+                "unit": "kg por lote",
+                "baseline": "DESCONOCIDA",
+                "period": "Cada cierre",
+                "target": "Toda diferencia identificada y explicada antes de expansión."
+              },
+              {
+                "name": "Contribución por ruta",
+                "formula": "ingresos de ruta − costo variable del queso vendido − empaque − transporte − mano de obra incremental − otros costos variables atribuibles",
+                "unit": "moneda local por ruta; moneda pendiente",
+                "baseline": "DESCONOCIDA",
+                "period": "Mismo ciclo de ruta",
+                "target": "Positiva y suficiente para cubrir costos fijos incrementales y reserva de caja definidos por la familia."
+              },
+              {
+                "name": "Conversión digital",
+                "formula": "pedidos confirmados / oportunidades o sesiones válidas × 100",
+                "unit": "%",
+                "baseline": "DESCONOCIDA",
+                "period": "Ventana comparable a definir",
+                "target": "Medir primero; no atribuir beneficios a 3D sin comparación."
+              },
+              {
+                "name": "Resultados aceptados por milestone",
+                "formula": "entregables aceptados / entregables previstos × 100",
+                "unit": "%",
+                "baseline": "DESCONOCIDA",
+                "period": "Por milestone",
+                "target": "Aceptación humana documentada; cero aceptación simulada."
+              }
+            ],
+            "evidence_ids": [
+              "E1",
+              "E2"
+            ],
+            "limitations": [
+              "No ratios calculados: denominadores desconocidos; un denominador cero se devuelve NO_CALCULABLE."
+            ]
+          },
+          "missing_information": {
+            "summary": "Vacíos críticos pendientes.",
+            "data": [
+              "Costos por producto/kg y ruta, precios, moneda y período comparable.",
+              "Stock físico por producto/lote, peso kg, fechas y merma; producción y capacidad disponible.",
+              "Caja, cuentas por cobrar/pagar, compromisos y capacidad de financiar expansión.",
+              "Ventas y cobros por feria/canal, número actual de rutas, pedidos, clientes y demanda.",
+              "País de operación, destino de exportación, tipo de queso, almacenamiento y documentación sanitaria.",
+              "Originales que sostienen 1980 y 1994, procedencia, fecha, significado y responsable familiar que pueda confirmar.",
+              "Presupuesto, equipo responsable, horarios y criterios comerciales de aceptación."
+            ],
+            "evidence_ids": [
+              "E2",
+              "E3"
+            ],
+            "limitations": [
+              "Propuesta analítica sin implementación ni resultados medidos."
+            ]
+          },
+          "recommendation": {
+            "summary": "HOLD expansión; REVISE tienda 3D; continuar diagnóstico autorizado.",
+            "data": {
+              "overall": "HOLD",
+              "routes": {
+                "gate": "GROWTH",
+                "recommendation": "HOLD",
+                "release_conditions": [
+                  "Baseline confiable de rutas y demanda.",
+                  "Stock conciliado y capacidad disponible.",
+                  "Contribución por ruta y caja incremental verificadas.",
+                  "Decisión humana y autorización específica para ejecutar."
+                ]
+              },
+              "store_3d": {
+                "gate": "VALIDATION",
+                "recommendation": "REVISE",
+                "release_conditions": [
+                  "Validar necesidad comercial y capacidad de pedidos con solución simple.",
+                  "Comparar costo/beneficio de 3D con alternativa y presupuesto definido.",
+                  "Sin desarrollo ni despliegue bajo este alcance."
+                ]
+              },
+              "export": {
+                "gate": "VIABILITY",
+                "recommendation": "HOLD",
+                "release_conditions": [
+                  "Definir país y producto/destino.",
+                  "Verificar requisitos vigentes con fuentes pertinentes en encargo posterior autorizado.",
+                  "Validar trazabilidad, conservación, costos logísticos y demanda."
+                ]
+              },
+              "history": {
+                "recommendation": "HOLD",
+                "release_conditions": [
+                  "Documentar originales y alcance de 1980/1994.",
+                  "Distinguir inicio de actividad, marca y fecha del logo solo si las fuentes lo sostienen.",
+                  "Confirmación humana documentada antes de publicar fecha."
+                ]
+              },
+              "authorization": "GO futuro no equivale a permiso; no hubo decisión final comercial humana."
+            },
+            "evidence_ids": [
+              "E1",
+              "E2",
+              "E3",
+              "E4"
+            ],
+            "limitations": [
+              "Propuesta analítica sin implementación ni resultados medidos."
+            ]
+          }
+        },
+        "evidence": [
+          {
+            "id": "E1",
+            "type": "EVIDENCE",
+            "source": "Brief del usuario recibido en esta tarea",
+            "observed_at": "2026-10-10",
+            "claim": "El usuario describe negocio familiar existente de queso, ventas en feria sin registrar, pesos manuales y WhatsApp esporádico.",
+            "limits": [
+              "Relato no auditado; no se observaron operaciones ni documentos."
+            ]
+          },
+          {
+            "id": "E2",
+            "type": "EVIDENCE",
+            "source": "Brief del usuario recibido en esta tarea",
+            "observed_at": "2026-10-10",
+            "claim": "Objetivos declarados: duplicar rutas, tienda 3D y exportación; costos y stock actuales desconocidos.",
+            "limits": [
+              "No hay baseline de ventas, rutas, capacidad, caja ni demanda."
+            ]
+          },
+          {
+            "id": "E3",
+            "type": "EVIDENCE",
+            "source": "Brief del usuario recibido en esta tarea",
+            "observed_at": "2026-10-10",
+            "claim": "El usuario informa un antecedente de origen en 1980 y otro logo con 1994.",
+            "limits": [
+              "No se proporcionaron originales, fechas documentales, autores ni alcance de cada afirmación; contradicción sin resolver."
+            ]
+          },
+          {
+            "id": "E4",
+            "type": "FACT",
+            "source": "Brief del usuario recibido en esta tarea",
+            "observed_at": "2026-10-10",
+            "claim": "Solo diagnóstico y plan autorizados; sin contactos, despliegues, externos ni cambios a skills.",
+            "limits": [
+              "Autorización limitada a este entregable."
+            ]
+          },
+          {
+            "id": "E5",
+            "type": "INTERPRETATION",
+            "source": "Brief del usuario recibido en esta tarea",
+            "observed_at": "2026-10-10",
+            "claim": "La prioridad razonada es transformación operativa de un negocio existente antes de crecimiento o escala.",
+            "limits": [
+              "No se puede inferir crisis ni TURNAROUND solo por falta de datos."
+            ]
+          }
+        ],
+        "assumptions": [
+          "El negocio sigue operando según el relato; no se afirma solvencia.",
+          "Los umbrales y plazos de medición son propuestas a revisar por la familia, no datos actuales."
+        ],
+        "missing_inputs": [
+          "Costos por producto/kg y ruta, precios, moneda y período comparable.",
+          "Stock físico por producto/lote, peso kg, fechas y merma; producción y capacidad disponible.",
+          "Caja, cuentas por cobrar/pagar, compromisos y capacidad de financiar expansión.",
+          "Ventas y cobros por feria/canal, número actual de rutas, pedidos, clientes y demanda.",
+          "País de operación, destino de exportación, tipo de queso, almacenamiento y documentación sanitaria.",
+          "Originales que sostienen 1980 y 1994, procedencia, fecha, significado y responsable familiar que pueda confirmar.",
+          "Presupuesto, equipo responsable, horarios y criterios comerciales de aceptación."
+        ],
+        "validation": [
+          {
+            "criterion": "2026-10-10, Python local: revisión semántica de caso missing: no inventar costos, stock, baseline ni ejecutores",
+            "performed": true,
+            "outcome": "PASS",
+            "evidence_ids": [
+              "E2"
+            ]
+          },
+          {
+            "criterion": "2026-10-10, revisión conflict: 1980/1994 preservados sin elegir; método/fecha/alcance desconocidos declarados",
+            "performed": true,
+            "outcome": "PASS",
+            "evidence_ids": [
+              "E3"
+            ]
+          },
+          {
+            "criterion": "2026-10-10, revisión risk: solo plan y diagnóstico, GO separado de autorización",
+            "performed": true,
+            "outcome": "PASS",
+            "evidence_ids": [
+              "E4"
+            ]
+          },
+          {
+            "criterion": "Requisitos de exportación y datos operativos verificados en campo",
+            "performed": false,
+            "outcome": "NOT_RUN",
+            "evidence_ids": [
+              "E1",
+              "E2"
+            ]
+          },
+          {
+            "criterion": "Revisión independiente por otro agente",
+            "performed": false,
+            "outcome": "NOT_RUN",
+            "evidence_ids": []
+          },
+          {
+            "criterion": "2026-10-10, Python/jsonschema: output-schema 0.1.0",
+            "performed": true,
+            "outcome": "PASS",
+            "evidence_ids": []
+          },
+          {
+            "criterion": "2026-10-10, Python/jsonschema: input-schema 0.1.0; inputs semánticos explícitos y vacíos críticos no aprobados",
+            "performed": true,
+            "outcome": "PASS",
+            "evidence_ids": [
+              "E1",
+              "E2",
+              "E3",
+              "E4"
+            ]
+          }
+        ],
+        "next_actions": [
+          "Familia: revisar plan y designar responsables; no se afirma aceptación.",
+          "Recopilar datos internos y originales de historia de marca bajo autorización futura aplicable.",
+          "Reevaluar viabilidad antes de cualquier inversión o lanzamiento; la decisión crítica corresponde al responsable humano."
+        ]
+      },
+      "evidence_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "limitations": [
+        "Propuesta analítica sin implementación ni resultados medidos."
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "id": "E1",
+      "type": "EVIDENCE",
+      "source": "Brief del usuario recibido en esta tarea",
+      "observed_at": "2026-10-10",
+      "claim": "El usuario describe negocio familiar existente de queso, ventas en feria sin registrar, pesos manuales y WhatsApp esporádico.",
+      "limits": [
+        "Relato no auditado; no se observaron operaciones ni documentos."
+      ]
+    },
+    {
+      "id": "E2",
+      "type": "EVIDENCE",
+      "source": "Brief del usuario recibido en esta tarea",
+      "observed_at": "2026-10-10",
+      "claim": "Objetivos declarados: duplicar rutas, tienda 3D y exportación; costos y stock actuales desconocidos.",
+      "limits": [
+        "No hay baseline de ventas, rutas, capacidad, caja ni demanda."
+      ]
+    },
+    {
+      "id": "E3",
+      "type": "EVIDENCE",
+      "source": "Brief del usuario recibido en esta tarea",
+      "observed_at": "2026-10-10",
+      "claim": "El usuario informa un antecedente de origen en 1980 y otro logo con 1994.",
+      "limits": [
+        "No se proporcionaron originales, fechas documentales, autores ni alcance de cada afirmación; contradicción sin resolver."
+      ]
+    },
+    {
+      "id": "E4",
+      "type": "FACT",
+      "source": "Brief del usuario recibido en esta tarea",
+      "observed_at": "2026-10-10",
+      "claim": "Solo diagnóstico y plan autorizados; sin contactos, despliegues, externos ni cambios a skills.",
+      "limits": [
+        "Autorización limitada a este entregable."
+      ]
+    },
+    {
+      "id": "E5",
+      "type": "INTERPRETATION",
+      "source": "Brief del usuario recibido en esta tarea",
+      "observed_at": "2026-10-10",
+      "claim": "La prioridad razonada es transformación operativa de un negocio existente antes de crecimiento o escala.",
+      "limits": [
+        "No se puede inferir crisis ni TURNAROUND solo por falta de datos."
+      ]
+    }
+  ],
+  "assumptions": [
+    "El negocio sigue operando según el relato; no se afirma solvencia.",
+    "Los umbrales y plazos de medición son propuestas a revisar por la familia, no datos actuales."
+  ],
+  "missing_inputs": [
+    "Costos por producto/kg y ruta, precios, moneda y período comparable.",
+    "Stock físico por producto/lote, peso kg, fechas y merma; producción y capacidad disponible.",
+    "Caja, cuentas por cobrar/pagar, compromisos y capacidad de financiar expansión.",
+    "Ventas y cobros por feria/canal, número actual de rutas, pedidos, clientes y demanda.",
+    "País de operación, destino de exportación, tipo de queso, almacenamiento y documentación sanitaria.",
+    "Originales que sostienen 1980 y 1994, procedencia, fecha, significado y responsable familiar que pueda confirmar.",
+    "Presupuesto, equipo responsable, horarios y criterios comerciales de aceptación."
+  ],
+  "validation": [
+    {
+      "criterion": "2026-10-10, Python local: revisión semántica de caso missing: no inventar costos, stock, baseline ni ejecutores",
+      "performed": true,
+      "outcome": "PASS",
+      "evidence_ids": [
+        "E2"
+      ]
+    },
+    {
+      "criterion": "2026-10-10, revisión conflict: 1980/1994 preservados sin elegir; método/fecha/alcance desconocidos declarados",
+      "performed": true,
+      "outcome": "PASS",
+      "evidence_ids": [
+        "E3"
+      ]
+    },
+    {
+      "criterion": "2026-10-10, revisión risk: solo plan y diagnóstico, GO separado de autorización",
+      "performed": true,
+      "outcome": "PASS",
+      "evidence_ids": [
+        "E4"
+      ]
+    },
+    {
+      "criterion": "Requisitos de exportación y datos operativos verificados en campo",
+      "performed": false,
+      "outcome": "NOT_RUN",
+      "evidence_ids": [
+        "E1",
+        "E2"
+      ]
+    },
+    {
+      "criterion": "Revisión independiente por otro agente",
+      "performed": false,
+      "outcome": "NOT_RUN",
+      "evidence_ids": []
+    },
+    {
+      "criterion": "2026-10-10, Python/jsonschema: output-schema 0.1.0",
+      "performed": true,
+      "outcome": "PASS",
+      "evidence_ids": []
+    },
+    {
+      "criterion": "2026-10-10, Python/jsonschema: input-schema 0.1.0; inputs semánticos explícitos y vacíos críticos no aprobados",
+      "performed": true,
+      "outcome": "PASS",
+      "evidence_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ]
+    }
+  ],
+  "next_actions": [
+    "Familia: revisar plan y designar responsables; no se afirma aceptación.",
+    "Recopilar datos internos y originales de historia de marca bajo autorización futura aplicable.",
+    "Reevaluar viabilidad antes de cualquier inversión o lanzamiento; la decisión crítica corresponde al responsable humano."
+  ]
+}

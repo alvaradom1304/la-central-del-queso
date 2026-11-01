@@ -1,0 +1,4 @@
+interface:
+  display_name: "Operational Risk"
+  short_description: "Operations & Logistics: capacidad AEM OS"
+  default_prompt: "Usa $operational-risk para abordar esta tarea con evidencia y resultado verificable."

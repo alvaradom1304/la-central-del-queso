@@ -1,0 +1,105 @@
+{
+  "name": "inventory-forecasting",
+  "domain": "Operations & Logistics",
+  "sprint": 8,
+  "inputs": "ventas/consumo histórico, stockouts, leadtime, temporada",
+  "output": "inventory_forecast, uncertainty, replenishment",
+  "procedure": [
+    "Depurar demanda y distinguir venta de demanda no atendida",
+    "Estimar consumo por horizonte y error",
+    "Relacionar reposición con leadtime, variabilidad y caducidad"
+  ],
+  "decision": "No proyectar ventas censuradas como demanda completa",
+  "kpi": "error y stockouts/merma",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Operations & Logistics",
+  "purpose": "Depurar demanda y distinguir venta de demanda no atendida",
+  "business_outcome": "error y stockouts/merma",
+  "when_to_use": "inventory-forecasting: Operations & Logistics. Usar para producir inventory_forecast, uncertainty, replenishment a partir de ventas/consumo histórico, stockouts, leadtime, temporada; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "inventory-forecasting",
+    "inventory_forecast, uncertainty, replenishment"
+  ],
+  "required_inputs": [
+    "ventas/consumo histórico",
+    " stockouts",
+    " leadtime",
+    " temporada"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [],
+  "decision_rules": [
+    "No proyectar ventas censuradas como demanda completa",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "inventory_forecast",
+    " uncertainty",
+    " replenishment"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No proyectar ventas censuradas como demanda completa",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "error y stockouts/merma"
+  ],
+  "examples": [
+    "Usa $inventory-forecasting con ventas/consumo histórico, stockouts, leadtime, temporada para obtener inventory_forecast, uncertainty, replenishment.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

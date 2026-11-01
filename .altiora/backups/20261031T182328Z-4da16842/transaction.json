@@ -1,0 +1,49 @@
+{
+  "id": "20261031T182328Z-4da16842",
+  "files": {
+    ".agents/skills/altiora-bibliotecario/references/retrieval-evaluation.md": {
+      "backup": "0.bak",
+      "installed_hash": "79ade611ab8f46e4bf23bac2721cf121d6d78e777391989f08f96ecd13d0aae5"
+    },
+    ".agents/skills/altiora-bibliotecario/references/routing-evals.json": {
+      "backup": "1.bak",
+      "installed_hash": "27df75b0be163a1ce2d1c60a0c7f903e814e85a2715155e890464ca6f2e5f6d5"
+    },
+    ".agents/skills/altiora-bibliotecario/references/word-boundaries.md": {
+      "backup": null,
+      "installed_hash": "55a846b08672199581c3b0fa5d4a76a4d60101b3a115a5d1019eba9e6f823b98"
+    },
+    ".agents/skills/altiora-bibliotecario/scripts/library.py": {
+      "backup": "3.bak",
+      "installed_hash": "9542af2b238e0f146a384e41bf8bcf4b31fa9f2bea891a221be079b5760970d7"
+    },
+    ".agents/skills/altiora-bibliotecario/scripts/test_library.py": {
+      "backup": "4.bak",
+      "installed_hash": "7b81ec27b97d451d2867773dd0e2bace116b96369e9ff7cce12c47bcc7f14611"
+    },
+    ".claude/skills/altiora-bibliotecario/references/retrieval-evaluation.md": {
+      "backup": "5.bak",
+      "installed_hash": "79ade611ab8f46e4bf23bac2721cf121d6d78e777391989f08f96ecd13d0aae5"
+    },
+    ".claude/skills/altiora-bibliotecario/references/routing-evals.json": {
+      "backup": "6.bak",
+      "installed_hash": "27df75b0be163a1ce2d1c60a0c7f903e814e85a2715155e890464ca6f2e5f6d5"
+    },
+    ".claude/skills/altiora-bibliotecario/references/word-boundaries.md": {
+      "backup": null,
+      "installed_hash": "55a846b08672199581c3b0fa5d4a76a4d60101b3a115a5d1019eba9e6f823b98"
+    },
+    ".claude/skills/altiora-bibliotecario/scripts/library.py": {
+      "backup": "8.bak",
+      "installed_hash": "9542af2b238e0f146a384e41bf8bcf4b31fa9f2bea891a221be079b5760970d7"
+    },
+    ".claude/skills/altiora-bibliotecario/scripts/test_library.py": {
+      "backup": "9.bak",
+      "installed_hash": "7b81ec27b97d451d2867773dd0e2bace116b96369e9ff7cce12c47bcc7f14611"
+    },
+    ".altiora/installation.json": {
+      "backup": "10.bak",
+      "installed_hash": "4349466ee1eca7a4c3a9e66359b08ce88927eb3a223fcffa2e4251dc99741239"
+    }
+  }
+}

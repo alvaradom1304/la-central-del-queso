@@ -1,0 +1,4 @@
+interface:
+  display_name: "Market Development"
+  short_description: "Growth & Scaling: capacidad AEM OS"
+  default_prompt: "Usa $market-development para abordar esta tarea con evidencia y resultado verificable."

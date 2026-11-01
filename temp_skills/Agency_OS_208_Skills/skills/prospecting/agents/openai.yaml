@@ -1,0 +1,4 @@
+interface:
+  display_name: "Prospecting"
+  short_description: "Sales Intelligence: capacidad AEM OS"
+  default_prompt: "Usa $prospecting para abordar esta tarea con evidencia y resultado verificable."

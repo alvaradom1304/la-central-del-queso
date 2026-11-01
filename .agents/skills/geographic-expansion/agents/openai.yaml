@@ -1,0 +1,4 @@
+interface:
+  display_name: "Geographic Expansion"
+  short_description: "Growth & Scaling: capacidad AEM OS"
+  default_prompt: "Usa $geographic-expansion para abordar esta tarea con evidencia y resultado verificable."

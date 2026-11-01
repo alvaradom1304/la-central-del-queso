@@ -1,0 +1,104 @@
+{
+  "name": "brand-storytelling",
+  "domain": "Brand Intelligence",
+  "sprint": 5,
+  "inputs": "hechos de origen/proceso, propósito, audiencia",
+  "output": "narrative, verified_claims, content_routes",
+  "procedure": [
+    "Seleccionar conflicto, proceso y valor reales",
+    "Construir narrativa centrada en cliente y evidencia",
+    "Separar hechos históricos, metáforas y aspiraciones"
+  ],
+  "decision": "No inventar fechas, legado, certificaciones o impacto social",
+  "kpi": "recuerdo y confianza sustentada",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Brand Intelligence",
+  "purpose": "Seleccionar conflicto, proceso y valor reales",
+  "business_outcome": "recuerdo y confianza sustentada",
+  "when_to_use": "brand-storytelling: Brand Intelligence. Usar para producir narrative, verified_claims, content_routes a partir de hechos de origen/proceso, propósito, audiencia; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "brand-storytelling",
+    "narrative, verified_claims, content_routes"
+  ],
+  "required_inputs": [
+    "hechos de origen/proceso",
+    " propósito",
+    " audiencia"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [],
+  "decision_rules": [
+    "No inventar fechas, legado, certificaciones o impacto social",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "narrative",
+    " verified_claims",
+    " content_routes"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No inventar fechas, legado, certificaciones o impacto social",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "recuerdo y confianza sustentada"
+  ],
+  "examples": [
+    "Usa $brand-storytelling con hechos de origen/proceso, propósito, audiencia para obtener narrative, verified_claims, content_routes.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

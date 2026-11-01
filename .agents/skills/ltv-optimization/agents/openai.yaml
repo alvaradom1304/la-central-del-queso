@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ltv Optimization"
+  short_description: "Growth & Scaling: capacidad AEM OS"
+  default_prompt: "Usa $ltv-optimization para abordar esta tarea con evidencia y resultado verificable."

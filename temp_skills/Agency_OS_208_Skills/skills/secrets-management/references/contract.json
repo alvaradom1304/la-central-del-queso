@@ -1,0 +1,114 @@
+{
+  "name": "secrets-management",
+  "domain": "Cybersecurity",
+  "sprint": 6,
+  "inputs": "inventario claves sin valores, entornos, acceso",
+  "output": "secret_locations, remediation, rotation_plan",
+  "procedure": [
+    "Identificar dónde se inyectan y quién accede sin imprimir valores",
+    "Detectar exposición en cliente, repo y logs",
+    "Proponer rotación/revocación y validar configuración"
+  ],
+  "decision": "Si hay secreto expuesto, no volver a publicarlo; cambios de credenciales requieren autoridad",
+  "kpi": "exposiciones remediadas",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://owasp.org/projects/asvs",
+      "OWASP ASVS; verificar versión y scope"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Cybersecurity",
+  "purpose": "Identificar dónde se inyectan y quién accede sin imprimir valores",
+  "business_outcome": "exposiciones remediadas",
+  "when_to_use": "secrets-management: Cybersecurity. Usar para producir secret_locations, remediation, rotation_plan a partir de inventario claves sin valores, entornos, acceso; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "secrets-management",
+    "secret_locations, remediation, rotation_plan"
+  ],
+  "required_inputs": [
+    "inventario claves sin valores",
+    " entornos",
+    " acceso"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://owasp.org/projects/asvs",
+      "OWASP ASVS; verificar versión y scope"
+    ]
+  ],
+  "decision_rules": [
+    "Si hay secreto expuesto, no volver a publicarlo; cambios de credenciales requieren autoridad",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "secret_locations",
+    " remediation",
+    " rotation_plan"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: Si hay secreto expuesto, no volver a publicarlo; cambios de credenciales requieren autoridad",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "exposiciones remediadas"
+  ],
+  "examples": [
+    "Usa $secrets-management con inventario claves sin valores, entornos, acceso para obtener secret_locations, remediation, rotation_plan.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

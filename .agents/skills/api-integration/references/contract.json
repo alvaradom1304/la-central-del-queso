@@ -1,0 +1,121 @@
+{
+  "name": "api-integration",
+  "domain": "AI & Automation",
+  "sprint": 7,
+  "inputs": "API oficial, contrato, entorno, auth, objetivo",
+  "output": "integration_code, error_handling, tests",
+  "procedure": [
+    "Identificar proveedor, versión, endpoints, permisos, límites y sandbox; leer documentación oficial vigente específica.",
+    "Definir schemas request/response/eventos, IDs, errores, fuente de verdad y efectos de cada operación.",
+    "Implementar autenticación servidor, validación de entrada/salida y verificación de webhooks según proveedor.",
+    "Diseñar idempotencia persistente, concurrencia, timeout ambiguo, retry acotado y reconciliación por entidad.",
+    "Separar recepción durable de procesamiento; registrar logs sin secretos ni PII, correlation IDs y fallos recuperables.",
+    "Ejecutar pruebas contractuales y recorrido autorizado, incluyendo duplicado, desorden, 429, 5xx y fallo parcial."
+  ],
+  "decision": "No reintentar operaciones no idempotentes sin control ni exponer tokens",
+  "kpi": "éxito y latencia de integración",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [],
+  "version": "0.2.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — AI & Automation",
+  "purpose": "Verificar docs, límites y versión del proveedor",
+  "business_outcome": "éxito y latencia de integración",
+  "when_to_use": "api-integration: AI & Automation. Usar para producir integration_code, error_handling, tests a partir de API oficial, contrato, entorno, auth, objetivo; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "api-integration",
+    "integration_code, error_handling, tests"
+  ],
+  "required_inputs": [
+    "API oficial",
+    " contrato",
+    " entorno",
+    " auth",
+    " objetivo"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [],
+  "decision_rules": [
+    "No reintentar operaciones no idempotentes sin control ni exponer tokens",
+    "No cerrar entrega con bloqueadores de tarea esencial ni pruebas declaradas sin ejecutar.",
+    "Aplicar especificación técnica y casos propios de esta capacidad."
+  ],
+  "outputs": [
+    "integration_code",
+    " error_handling",
+    " tests"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo",
+    "Resultado ambiguo se reconcilia por ID",
+    "Una reserva y una transición comercial por evento lógico",
+    "No duplicar efecto ni afirmar exactly-once"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No reintentar operaciones no idempotentes sin control ni exponer tokens",
+    "escenarios según evaluation-cases.json; registrar ejecutados",
+    "Resultado ambiguo se reconcilia por ID",
+    "Una reserva y una transición comercial por evento lógico",
+    "No duplicar efecto ni afirmar exactly-once"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "éxito y latencia de integración"
+  ],
+  "examples": [
+    "Usa $api-integration con API oficial, contrato, entorno, auth, objetivo para obtener integration_code, error_handling, tests.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    },
+    {
+      "version": "0.2.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento técnico, fallos propios, especificación de aceptación y fuentes depuradas; no presume evaluación de cliente/producción."
+    }
+  ]
+}

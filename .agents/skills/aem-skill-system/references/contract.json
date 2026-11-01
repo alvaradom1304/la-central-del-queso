@@ -1,0 +1,134 @@
+{
+  "name": "aem-skill-system",
+  "domain": "Foundation",
+  "sprint": 1,
+  "inputs": "objetivo, capacidades existentes, contexto disponible, alcance autorizado",
+  "output": "inventory, routing, contracts, evaluation",
+  "procedure": [
+    "Auditar capacidades y límites de acceso",
+    "Seleccionar core, knowledge, context, policy o workflow según función",
+    "Validar estructura/comportamiento y persistir cambios autorizados"
+  ],
+  "decision": "No promover estados por YAML ni inventar agentes, fuentes o compatibilidad",
+  "kpi": "reutilización y resultados verificables",
+  "type": "Composite",
+  "dependencies": [],
+  "sources": [],
+  "version": "0.1.2",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis",
+  "purpose": "Mantener arquitectura, catálogo, contratos, fábrica y aprendizaje de capacidades",
+  "business_outcome": "reutilización y resultados verificables",
+  "when_to_use": "Auditar, seleccionar, delegar y mantener skills de AEM OS",
+  "when_not_to_use": "No reemplazar análisis especializado ni ejecutar integraciones no implementadas",
+  "triggers": [
+    "AEM OS",
+    "catálogo de skills",
+    "delegación",
+    "portabilidad"
+  ],
+  "required_inputs": [
+    "objetivo",
+    " capacidades existentes",
+    " contexto disponible",
+    " alcance autorizado"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "directiva actual",
+      "texto de visión AEM OS y skills previas"
+    ]
+  ],
+  "decision_rules": [
+    "No promover estados por YAML ni inventar agentes, fuentes o compatibilidad",
+    "Buscar por nombre, alias y responsabilidad antes de crear; distinguir definición existente de guardado pendiente.",
+    "Toda capacidad nueva debe declarar problema repetible, aporte incremental, métrica y plan de evaluación; baseline desconocido no equivale a cero.",
+    "Registrar aprendizaje verificado, evaluar cambio y regresiones, versionar y conservar opción de reversión.",
+    "No declarar biblioteca de alto nivel por conteo o validación estructural.",
+    "Mejora continua afina calidad inicial completa; no posterga requisitos esenciales."
+  ],
+  "outputs": [
+    "inventory",
+    " routing",
+    " contracts",
+    " evaluation"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo",
+    "primera entrega técnicamente completa",
+    "casos adversos propios",
+    "fuentes específicas y estado de consulta declarado",
+    "contratos operativos y salida verificable"
+  ],
+  "validation": [
+    "estructura del catálogo/dependencias/schemas",
+    "escenarios de delegación y capacidad",
+    "revisión de madurez documentada"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "reutilización y resultados verificables"
+  ],
+  "examples": [
+    "Usa $aem-skill-system para seleccionar capacidades para este proyecto."
+  ],
+  "related_skills": [
+    "aem-skill-factory",
+    "quality-council",
+    "agency-os"
+  ],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    },
+    {
+      "version": "0.1.1",
+      "date": "2026-10-10",
+      "change": "Creación autónoma de capacidades faltantes dentro del alcance autorizado, aporte verificable y ciclo de mejora continua con regresiones y versionado."
+    },
+    {
+      "version": "0.1.2",
+      "date": "2026-10-10",
+      "change": "Incorporar high-value-deliberation al catálogo; separar perspectivas conceptuales de revisión independiente y conservar límites de evaluación."
+    }
+  ]
+}

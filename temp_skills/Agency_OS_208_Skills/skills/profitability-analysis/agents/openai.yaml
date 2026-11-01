@@ -1,0 +1,4 @@
+interface:
+  display_name: "Profitability Analysis"
+  short_description: "Financial Intelligence: capacidad AEM OS"
+  default_prompt: "Usa $profitability-analysis para abordar esta tarea con evidencia y resultado verificable."

@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "name": "Altiora",
+  "objective": "Construir y validar una oferta rentable de US$10.000 por proyecto, con mantenimiento mensual opcional, entrega verificable y herramientas compartidas fiables.",
+  "acceptance_criteria": [
+    "Skills pertinentes localizables por metadatos en las rutas del proyecto, con recursos y variantes conservados.",
+    "Duplicados exactos soportados retirados con respaldo y hashes; sin afirmar ahorro de tokens medido.",
+    "Estados MCP distinguen lectura/escritura probada, configuración y sesión no verificada.",
+    "Identidad de proyecto confirmada antes de publicar; no mezclar empresa, laboratorio y cliente.",
+    "Oferta y experiencia con alcance, aceptación y mantenimiento opcional delimitados; precio por validar.",
+    "Costes, caja y capacidad se distinguen de escenarios hipotéticos; revisión profesional cuando corresponda.",
+    "Cero oportunidades o resultados inventados; entrevistas/contactos y publicación conservan autorizaciones propias."
+  ],
+  "validation_commands": [],
+  "business_metric": {
+    "name": "paying_clients",
+    "baseline": 0,
+    "target": 1,
+    "baseline_source": "Confirmado por el usuario el 2026-10-31",
+    "target_kind": "Objetivo de planificación del primer cliente, no previsión ni resultado prometido"
+  },
+  "context_files": [
+    "01_DISCOVERY_ALTIORA.md",
+    "CLIENTS_PORTFOLIO.md",
+    "docs/altiora-toolkit/ROUTING.md",
+    "docs/altiora-business/INICIO.md"
+  ],
+  "note": "Contexto operativo del encargo autorizado. No ejecuta comandos, agentes ni automatizaciones y no concede permisos.",
+  "publication": {
+    "expected_repository": null,
+    "status": "TARGET_NOT_CONFIRMED",
+    "note": "No publicar este directorio hasta confirmar identidad. No deducir destino de origin ni cambiar el remoto automáticamente."
+  },
+  "commercial_context": {
+    "target_project_price": {
+      "amount": 10000,
+      "currency": "USD",
+      "basis": "per_project",
+      "kind": "USER_CONFIRMED_TARGET_NOT_MARKET_VALIDATED"
+    },
+    "monthly_maintenance": "OPTIONAL_SEPARATE_SCOPE_AND_PRICE",
+    "paying_clients_confirmed": 0,
+    "actual_costs_cash_capacity": "UNKNOWN",
+    "jurisdiction": "NOT_CONFIRMED",
+    "source": "Última corrección explícita del usuario el2026-10-31"
+  }
+}

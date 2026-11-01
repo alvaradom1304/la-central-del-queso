@@ -1,0 +1,121 @@
+{
+  "name": "automation-design",
+  "domain": "AI & Automation",
+  "sprint": 7,
+  "inputs": "proceso actual, volumen, costos, errores, autoridad",
+  "output": "automation_case, workflow, human_exceptions",
+  "procedure": [
+    "Medir proceso manual: volumen, tiempo, errores, excepciones y capacidad; mantener UNKNOWN donde falten datos.",
+    "Definir outcome, fuente de verdad, responsables y ROI neto incluyendo licencias, soporte y fallos.",
+    "Elegir regla determinista, IA o revisión humana por variabilidad, reversibilidad y costo de error.",
+    "Especificar eventos, schemas, idempotencia, concurrencia, credenciales y estados; comprobar capacidades del conector real.",
+    "Diseñar cola de fallos, compensación, conciliación y procedimiento manual que permita seguir operando.",
+    "Probar happy path y fallos pertinentes con datos sintéticos; documentar operación, alertas y criterio de salida."
+  ],
+  "decision": "No automatizar proceso roto sin diagnóstico ni prometer tiempo real",
+  "kpi": "horas/costos ahorrados con calidad",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [],
+  "version": "0.2.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — AI & Automation",
+  "purpose": "Mapear proceso antes de automatizar",
+  "business_outcome": "horas/costos ahorrados con calidad",
+  "when_to_use": "automation-design: AI & Automation. Usar para producir automation_case, workflow, human_exceptions a partir de proceso actual, volumen, costos, errores, autoridad; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "automation-design",
+    "automation_case, workflow, human_exceptions"
+  ],
+  "required_inputs": [
+    "proceso actual",
+    " volumen",
+    " costos",
+    " errores",
+    " autoridad"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [],
+  "decision_rules": [
+    "No automatizar proceso roto sin diagnóstico ni prometer tiempo real",
+    "No cerrar entrega con bloqueadores de tarea esencial ni pruebas declaradas sin ejecutar.",
+    "Aplicar especificación técnica y casos propios de esta capacidad."
+  ],
+  "outputs": [
+    "automation_case",
+    " workflow",
+    " human_exceptions"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo",
+    "No prometer inventario sincronizado por simulación",
+    "Resolver fuente de verdad/concurrencia o confirmación manual",
+    "Registrar costo y capacidad de excepciones"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No automatizar proceso roto sin diagnóstico ni prometer tiempo real",
+    "escenarios según evaluation-cases.json; registrar ejecutados",
+    "No prometer inventario sincronizado por simulación",
+    "Resolver fuente de verdad/concurrencia o confirmación manual",
+    "Registrar costo y capacidad de excepciones"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "horas/costos ahorrados con calidad"
+  ],
+  "examples": [
+    "Usa $automation-design con proceso actual, volumen, costos, errores, autoridad para obtener automation_case, workflow, human_exceptions.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    },
+    {
+      "version": "0.2.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento técnico, fallos propios, especificación de aceptación y fuentes depuradas; no presume evaluación de cliente/producción."
+    }
+  ]
+}

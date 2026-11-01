@@ -1,0 +1,106 @@
+{
+  "name": "brand-architecture",
+  "domain": "Brand Intelligence",
+  "sprint": 5,
+  "inputs": "portafolio, marcas, públicos, costos, relaciones",
+  "output": "architecture_options, naming_rules, migration",
+  "procedure": [
+    "Mapear ofertas y relaciones entre marcas",
+    "Comparar marca paraguas, endorsed y marcas separadas",
+    "Definir jerarquía y transición con costos/riesgos"
+  ],
+  "decision": "No recomendar renombrar sin revisar equity, disponibilidad y consecuencias",
+  "kpi": "claridad del portafolio",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Brand Intelligence",
+  "purpose": "Mapear ofertas y relaciones entre marcas",
+  "business_outcome": "claridad del portafolio",
+  "when_to_use": "brand-architecture: Brand Intelligence. Usar para producir architecture_options, naming_rules, migration a partir de portafolio, marcas, públicos, costos, relaciones; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "brand-architecture",
+    "architecture_options, naming_rules, migration"
+  ],
+  "required_inputs": [
+    "portafolio",
+    " marcas",
+    " públicos",
+    " costos",
+    " relaciones"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [],
+  "decision_rules": [
+    "No recomendar renombrar sin revisar equity, disponibilidad y consecuencias",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "architecture_options",
+    " naming_rules",
+    " migration"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No recomendar renombrar sin revisar equity, disponibilidad y consecuencias",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "claridad del portafolio"
+  ],
+  "examples": [
+    "Usa $brand-architecture con portafolio, marcas, públicos, costos, relaciones para obtener architecture_options, naming_rules, migration.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

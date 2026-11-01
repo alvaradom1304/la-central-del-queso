@@ -1,0 +1,116 @@
+{
+  "name": "market-research",
+  "domain": "Business Intelligence",
+  "sprint": 2,
+  "inputs": "pregunta, mercado, geografía, periodo, fuentes accesibles",
+  "output": "evidence_matrix, insights, research_gaps",
+  "procedure": [
+    "Delimitar pregunta y población; diseñar búsqueda y criterios de inclusión",
+    "Contrastar fuentes primarias con fecha, método y unidad; registrar contradicciones",
+    "Sintetizar insights vinculados a evidencia y decisiones, no solo recopilar enlaces"
+  ],
+  "decision": "No extrapolar una muestra no representativa; cada afirmación externa debe tener fuente o marcarse hipótesis",
+  "kpi": "cobertura de preguntas decisivas",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://www.sba.gov/counseling/plan-your-business/",
+      "SBA; marco empresarial, contexto estadounidense, no regulación de Costa Rica"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Business Intelligence",
+  "purpose": "Delimitar pregunta y población; diseñar búsqueda y criterios de inclusión",
+  "business_outcome": "cobertura de preguntas decisivas",
+  "when_to_use": "market-research: Business Intelligence. Usar para producir evidence_matrix, insights, research_gaps a partir de pregunta, mercado, geografía, periodo, fuentes accesibles; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "market-research",
+    "evidence_matrix, insights, research_gaps"
+  ],
+  "required_inputs": [
+    "pregunta",
+    " mercado",
+    " geografía",
+    " periodo",
+    " fuentes accesibles"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://www.sba.gov/counseling/plan-your-business/",
+      "SBA; marco empresarial, contexto estadounidense, no regulación de Costa Rica"
+    ]
+  ],
+  "decision_rules": [
+    "No extrapolar una muestra no representativa; cada afirmación externa debe tener fuente o marcarse hipótesis",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "evidence_matrix",
+    " insights",
+    " research_gaps"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No extrapolar una muestra no representativa; cada afirmación externa debe tener fuente o marcarse hipótesis",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "cobertura de preguntas decisivas"
+  ],
+  "examples": [
+    "Usa $market-research con pregunta, mercado, geografía, periodo, fuentes accesibles para obtener evidence_matrix, insights, research_gaps.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

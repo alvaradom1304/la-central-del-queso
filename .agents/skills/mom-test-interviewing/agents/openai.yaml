@@ -1,0 +1,4 @@
+interface:
+  display_name: "Mom Test Interviewing"
+  short_description: "Sales Intelligence: capacidad AEM OS"
+  default_prompt: "Usa $mom-test-interviewing para abordar esta tarea con evidencia y resultado verificable."

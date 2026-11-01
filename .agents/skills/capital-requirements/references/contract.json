@@ -1,0 +1,124 @@
+{
+  "name": "capital-requirements",
+  "domain": "Venture Building",
+  "sprint": 3,
+  "inputs": "inversión inicial, gastos, cobros, calendario, reserva",
+  "output": "capital_schedule, funding_gap, sensitivity",
+  "procedure": [
+    "Separar gastos iniciales, recurrentes y capital de trabajo",
+    "Modelar entradas/salidas por periodo y punto mínimo de caja",
+    "Evaluar contingencias y financiamiento requerido"
+  ],
+  "decision": "No sumar gasto y activo dos veces; supuestos no son disponibilidad de dinero",
+  "kpi": "déficit máximo de caja proyectado",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://www.sba.gov/counseling/plan-your-business/",
+      "SBA; planificación"
+    ],
+    [
+      "https://robfitz.com/about/",
+      "Autor de The Mom Test; referencia de autor, no libro leído completo"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Venture Building",
+  "purpose": "Separar gastos iniciales, recurrentes y capital de trabajo",
+  "business_outcome": "déficit máximo de caja proyectado",
+  "when_to_use": "capital-requirements: Venture Building. Usar para producir capital_schedule, funding_gap, sensitivity a partir de inversión inicial, gastos, cobros, calendario, reserva; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "capital-requirements",
+    "capital_schedule, funding_gap, sensitivity"
+  ],
+  "required_inputs": [
+    "inversión inicial",
+    " gastos",
+    " cobros",
+    " calendario",
+    " reserva"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://www.sba.gov/counseling/plan-your-business/",
+      "SBA; planificación"
+    ],
+    [
+      "https://robfitz.com/about/",
+      "Autor de The Mom Test; referencia de autor, no libro leído completo"
+    ]
+  ],
+  "decision_rules": [
+    "No sumar gasto y activo dos veces; supuestos no son disponibilidad de dinero",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "capital_schedule",
+    " funding_gap",
+    " sensitivity"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No sumar gasto y activo dos veces; supuestos no son disponibilidad de dinero",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "déficit máximo de caja proyectado"
+  ],
+  "examples": [
+    "Usa $capital-requirements con inversión inicial, gastos, cobros, calendario, reserva para obtener capital_schedule, funding_gap, sensitivity.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

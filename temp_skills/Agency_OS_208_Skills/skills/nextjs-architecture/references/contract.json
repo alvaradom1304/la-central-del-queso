@@ -1,0 +1,164 @@
+{
+  "name": "nextjs-architecture",
+  "domain": "Premium Web Experience",
+  "sprint": 6,
+  "inputs": "repo/versiones, rutas, datos, auth, hosting",
+  "output": "architecture, boundaries, implementation_plan",
+  "procedure": [
+    "Inspeccionar stack actual y docs oficiales",
+    "Definir server/client, datos, errores y caché por necesidad",
+    "Verificar build y flujo completo sin exponer secretos"
+  ],
+  "decision": "No asumir versión o API; no meter claves servidor en cliente",
+  "kpi": "integridad de build y tareas",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://www.w3.org/TR/WCAG22/",
+      "W3C; norma accesibilidad"
+    ],
+    [
+      "https://gsap.com/docs/v3/",
+      "GSAP; documentación"
+    ],
+    [
+      "https://nextjs.org/docs",
+      "Next.js; documentación"
+    ],
+    [
+      "https://web.dev/articles/vitals",
+      "Web Vitals; distinguir campo/laboratorio"
+    ],
+    [
+      "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+      "Search Central"
+    ],
+    [
+      "https://threejs.org/docs/",
+      "Three.js; docs consultadas"
+    ],
+    [
+      "https://r3f.docs.pmnd.rs/getting-started/introduction",
+      "R3F; docs consultadas"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Premium Web Experience",
+  "purpose": "Inspeccionar stack actual y docs oficiales",
+  "business_outcome": "integridad de build y tareas",
+  "when_to_use": "nextjs-architecture: Premium Web Experience. Usar para producir architecture, boundaries, implementation_plan a partir de repo/versiones, rutas, datos, auth, hosting; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "nextjs-architecture",
+    "architecture, boundaries, implementation_plan"
+  ],
+  "required_inputs": [
+    "repo/versiones",
+    " rutas",
+    " datos",
+    " auth",
+    " hosting"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://www.w3.org/TR/WCAG22/",
+      "W3C; norma accesibilidad"
+    ],
+    [
+      "https://gsap.com/docs/v3/",
+      "GSAP; documentación"
+    ],
+    [
+      "https://nextjs.org/docs",
+      "Next.js; documentación"
+    ],
+    [
+      "https://web.dev/articles/vitals",
+      "Web Vitals; distinguir campo/laboratorio"
+    ],
+    [
+      "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+      "Search Central"
+    ],
+    [
+      "https://threejs.org/docs/",
+      "Three.js; docs consultadas"
+    ],
+    [
+      "https://r3f.docs.pmnd.rs/getting-started/introduction",
+      "R3F; docs consultadas"
+    ]
+  ],
+  "decision_rules": [
+    "No asumir versión o API; no meter claves servidor en cliente",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "architecture",
+    " boundaries",
+    " implementation_plan"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No asumir versión o API; no meter claves servidor en cliente",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "integridad de build y tareas"
+  ],
+  "examples": [
+    "Usa $nextjs-architecture con repo/versiones, rutas, datos, auth, hosting para obtener architecture, boundaries, implementation_plan.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

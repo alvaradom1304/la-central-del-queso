@@ -1,0 +1,3 @@
+display_name: "Cold Outbound System"
+short_description: "Investigar prospectos B2B con evidencia pública y producir mensajes fríos personalizados para revisión humana."
+default_prompt: "Usa $cold-outbound-system y sigue su SOP completo. Primero valida entradas, evidencia y aprobaciones; entrega el sobre de salida definido en las referencias."

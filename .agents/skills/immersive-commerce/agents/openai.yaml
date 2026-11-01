@@ -1,0 +1,14 @@
+interface:
+  display_name: Comercio Web Inmersivo
+  short_description: Experiencias premium con rendimiento y conversión
+  default_prompt: Usa $immersive-commerce junto con $agency-os para diseñar e implementar
+    esta experiencia de venta digital.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

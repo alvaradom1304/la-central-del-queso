@@ -1,0 +1,65 @@
+{
+  "name": "high-ticket-offer",
+  "version": "1.0.0",
+  "domain": "orchestration",
+  "type": "composite_sop",
+  "purpose": "Diseñar una oferta comercial viable y auditable para sitio web más automatización.",
+  "business_outcome": "Diseñar una oferta comercial viable y auditable para sitio web más automatización.",
+  "status": "EXPERIMENTAL",
+  "when_to_use": "Cuando el usuario solicita este procedimiento y proporciona el contexto mínimo.",
+  "when_not_to_use": "Si la ejecución requiere una acción externa no autorizada, falta un dato crítico o se incumple la política aplicable.",
+  "triggers": [
+    "high-ticket-offer"
+  ],
+  "required_inputs": [
+    "client_profile",
+    "problem",
+    "desired_outcome",
+    "delivery_capacity",
+    "cost_assumptions"
+  ],
+  "optional_inputs": [
+    "baseline_data",
+    "budget_range_usd",
+    "timeline",
+    "client_dependencies",
+    "support_expectation"
+  ],
+  "dependencies": [],
+  "tools": "Solo herramientas explícitamente disponibles y autorizadas; los datos externos deben llevar fuente y fecha.",
+  "sources": "Preferir documentación primaria y páginas públicas permitidas; comprobar vigencia antes de decisión.",
+  "procedure": "Seguir secuencialmente los pasos numerados de SKILL.md; pausar en los gates indicados.",
+  "decision_rules": "Separar hechos, inferencias y propuestas. Si falta evidencia, bajar confianza y no inventar.",
+  "output_schema": "output-schema.json",
+  "quality_gates": [
+    "Completitud de entradas",
+    "Evidencia verificable",
+    "Riesgo/política revisados",
+    "Validación del esquema",
+    "Aprobación humana antes de acción externa"
+  ],
+  "failure_and_escalation": "Devolver BLOCKED si falta requisito; NEEDS_REVIEW si hace falta criterio humano; FAILED si falla validación técnica. Indicar dato faltante y siguiente acción segura.",
+  "security": "Minimización de datos; no exponer secretos; no acceder ni recolectar información fuera de permisos.",
+  "approval_requirements": "Borradores y diseños pueden prepararse; envío, publicación, despliegue, cambios de presupuesto o compromiso comercial requieren aprobación explícita.",
+  "kpis": [
+    "Completitud",
+    "proporción de afirmaciones con fuente",
+    "tasa de validación",
+    "errores/omisiones por caso"
+  ],
+  "examples": [
+    "Sitio, CRM y WhatsApp definidos, costos y dueño de entrega confirmados",
+    "Rango USD 3,000–5,000 no cubre margen con el alcance solicitado",
+    "Pide garantizar aumento de ventas y urgencia ficticia"
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "1.0.0",
+      "date": "2026-10-10",
+      "change": "Primera versión SOP para Altiora OS."
+    }
+  ],
+  "owner": "Altiora OS",
+  "limitations": "Estructura revisada; comportamiento y resultados de negocio no certificados."
+}

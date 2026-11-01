@@ -1,0 +1,8 @@
+MIT License
+
+Copyright (c) Vercel, Inc.
+
+El repositorio vercel-labs/agent-skills declara la licencia MIT en su README
+(revisión 1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62) pero no incluye archivo LICENSE.
+Se conserva esta nota como atribución; consultar el texto estándar en
+https://opensource.org/license/mit

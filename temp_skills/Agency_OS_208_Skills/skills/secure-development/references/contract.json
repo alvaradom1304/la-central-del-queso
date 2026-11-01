@@ -1,0 +1,116 @@
+{
+  "name": "secure-development",
+  "domain": "Cybersecurity",
+  "sprint": 6,
+  "inputs": "repo, stack, datos, alcance autorizado, amenazas",
+  "output": "secure_controls, fixes, verification",
+  "procedure": [
+    "Definir requisitos de seguridad y trust boundaries",
+    "Revisar validación, auth, datos, errores y dependencias",
+    "Aplicar correcciones mínimas y retestar controles"
+  ],
+  "decision": "Seguridad por diseño; no declarar sistema seguro por ausencia de hallazgos",
+  "kpi": "controles críticos verificados",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://owasp.org/projects/asvs",
+      "OWASP ASVS; verificar versión y scope"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Cybersecurity",
+  "purpose": "Definir requisitos de seguridad y trust boundaries",
+  "business_outcome": "controles críticos verificados",
+  "when_to_use": "secure-development: Cybersecurity. Usar para producir secure_controls, fixes, verification a partir de repo, stack, datos, alcance autorizado, amenazas; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "secure-development",
+    "secure_controls, fixes, verification"
+  ],
+  "required_inputs": [
+    "repo",
+    " stack",
+    " datos",
+    " alcance autorizado",
+    " amenazas"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://owasp.org/projects/asvs",
+      "OWASP ASVS; verificar versión y scope"
+    ]
+  ],
+  "decision_rules": [
+    "Seguridad por diseño; no declarar sistema seguro por ausencia de hallazgos",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "secure_controls",
+    " fixes",
+    " verification"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: Seguridad por diseño; no declarar sistema seguro por ausencia de hallazgos",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "controles críticos verificados"
+  ],
+  "examples": [
+    "Usa $secure-development con repo, stack, datos, alcance autorizado, amenazas para obtener secure_controls, fixes, verification.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

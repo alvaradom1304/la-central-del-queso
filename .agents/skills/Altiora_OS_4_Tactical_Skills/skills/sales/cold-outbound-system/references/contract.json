@@ -1,0 +1,64 @@
+{
+  "name": "cold-outbound-system",
+  "version": "1.0.0",
+  "domain": "sales",
+  "type": "composite_sop",
+  "purpose": "Investigar prospectos B2B con evidencia pública y producir mensajes fríos personalizados para revisión humana.",
+  "business_outcome": "Investigar prospectos B2B con evidencia pública y producir mensajes fríos personalizados para revisión humana.",
+  "status": "EXPERIMENTAL",
+  "when_to_use": "Cuando el usuario solicita este procedimiento y proporciona el contexto mínimo.",
+  "when_not_to_use": "Si la ejecución requiere una acción externa no autorizada, falta un dato crítico o se incumple la política aplicable.",
+  "triggers": [
+    "cold-outbound-system"
+  ],
+  "required_inputs": [
+    "campaign_goal",
+    "offer",
+    "icp",
+    "geography",
+    "contact_channel"
+  ],
+  "optional_inputs": [
+    "language",
+    "volume_target",
+    "exclusions",
+    "approved_evidence"
+  ],
+  "dependencies": [],
+  "tools": "Solo herramientas explícitamente disponibles y autorizadas; los datos externos deben llevar fuente y fecha.",
+  "sources": "Preferir documentación primaria y páginas públicas permitidas; comprobar vigencia antes de decisión.",
+  "procedure": "Seguir secuencialmente los pasos numerados de SKILL.md; pausar en los gates indicados.",
+  "decision_rules": "Separar hechos, inferencias y propuestas. Si falta evidencia, bajar confianza y no inventar.",
+  "output_schema": "output-schema.json",
+  "quality_gates": [
+    "Completitud de entradas",
+    "Evidencia verificable",
+    "Riesgo/política revisados",
+    "Validación del esquema",
+    "Aprobación humana antes de acción externa"
+  ],
+  "failure_and_escalation": "Devolver BLOCKED si falta requisito; NEEDS_REVIEW si hace falta criterio humano; FAILED si falla validación técnica. Indicar dato faltante y siguiente acción segura.",
+  "security": "Minimización de datos; no exponer secretos; no acceder ni recolectar información fuera de permisos.",
+  "approval_requirements": "Borradores y diseños pueden prepararse; envío, publicación, despliegue, cambios de presupuesto o compromiso comercial requieren aprobación explícita.",
+  "kpis": [
+    "Completitud",
+    "proporción de afirmaciones con fuente",
+    "tasa de validación",
+    "errores/omisiones por caso"
+  ],
+  "examples": [
+    "Prospecto con señal verificable y correo corporativo publicado",
+    "Perfil solo accesible tras login o scraping",
+    "Requiere mensaje de baja y regla jurídica no especificada"
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "1.0.0",
+      "date": "2026-10-10",
+      "change": "Primera versión SOP para Altiora OS."
+    }
+  ],
+  "owner": "Altiora OS",
+  "limitations": "Estructura revisada; comportamiento y resultados de negocio no certificados."
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Paid Media"
+  short_description: "Marketing Intelligence: capacidad AEM OS"
+  default_prompt: "Usa $paid-media para abordar esta tarea con evidencia y resultado verificable."

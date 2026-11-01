@@ -1,0 +1,1188 @@
+{
+  "schema_version": 1,
+  "scope": "local_metadata_snapshot_not_runtime_capabilities",
+  "roots": [
+    "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills",
+    "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.claude\\skills",
+    "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.codex\\agents",
+    "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.claude\\agents"
+  ],
+  "entries": [
+    {
+      "kind": "agent-definition",
+      "name": "altiora-engineering",
+      "description": "Implementar únicamente el alcance y archivos asignados. Respetar interfaces, versiones y decisiones verificadas. No revertir trabajo ajeno; adaptar cambios a la versión actual. Eje",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.claude\\agents\\altiora-engineering.md"
+    },
+    {
+      "kind": "agent-definition",
+      "name": "altiora-engineering",
+      "description": "Implementar únicamente el alcance y archivos asignados. Respetar interfaces, versiones y decisiones verificadas. No revertir trabajo ajeno; adaptar cambios a la versión actual. Eje",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.codex\\agents\\altiora-engineering.toml"
+    },
+    {
+      "kind": "agent-definition",
+      "name": "altiora-experience",
+      "description": "Traducir el brief a composición, recorrido, estados y acciones comerciales. Reutilizar identidad y assets confirmados. En motion/3D, identificar técnica, alternativa ligera y movim",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.claude\\agents\\altiora-experience.md"
+    },
+    {
+      "kind": "agent-definition",
+      "name": "altiora-experience",
+      "description": "Traducir el brief a composición, recorrido, estados y acciones comerciales. Reutilizar identidad y assets confirmados. En motion/3D, identificar técnica, alternativa ligera y movim",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.codex\\agents\\altiora-experience.toml"
+    },
+    {
+      "kind": "agent-definition",
+      "name": "altiora-os-automation-growth",
+      "description": "Diseñar marketing medible y automatizaciones de Altiora con variantes separadas para campañas, experimentos y flujos operativos.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.claude\\agents\\altiora-os-automation-growth.md"
+    },
+    {
+      "kind": "agent-definition",
+      "name": "altiora-os-coordinate",
+      "description": "Coordinar entregas de Altiora entre investigación, estrategia, creación, desarrollo y revisión cuando el encargo requiere varias especialidades.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.claude\\agents\\altiora-os-coordinate.md"
+    },
+    {
+      "kind": "agent-definition",
+      "name": "altiora-os-creative",
+      "description": "Definir dirección creativa de Altiora con concepto, narrativa, composición y movimiento ligados al objetivo del proyecto.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.claude\\agents\\altiora-os-creative.md"
+    },
+    {
+      "kind": "agent-definition",
+      "name": "altiora-os-media",
+      "description": "Producir y preparar activos 3D, imagen o vídeo para Altiora mediante Blender y herramientas multimedia disponibles.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.claude\\agents\\altiora-os-media.md"
+    },
+    {
+      "kind": "agent-definition",
+      "name": "altiora-os-qa",
+      "description": "Revisar de forma independiente entregas de Altiora contra requisitos, funcionamiento, calidad visual y límites de seguridad.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.claude\\agents\\altiora-os-qa.md"
+    },
+    {
+      "kind": "agent-definition",
+      "name": "altiora-os-research",
+      "description": "Investigar fuentes, repositorios y alternativas para Altiora con evidencia trazable, licencias y compatibilidad comprobadas.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.claude\\agents\\altiora-os-research.md"
+    },
+    {
+      "kind": "agent-definition",
+      "name": "altiora-os-strategy",
+      "description": "Convertir investigación y contexto comercial de Altiora en posicionamiento, oferta y prioridades medibles para un cliente o proyecto.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.claude\\agents\\altiora-os-strategy.md"
+    },
+    {
+      "kind": "agent-definition",
+      "name": "altiora-os-web-3d",
+      "description": "Implementar experiencias web premium 3D de Altiora en un proyecto existente con interacción, accesibilidad y rendimiento verificados.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.claude\\agents\\altiora-os-web-3d.md"
+    },
+    {
+      "kind": "agent-definition",
+      "name": "altiora-research",
+      "description": "Investigar solo el problema asignado. Comparar capacidades existentes antes de proponer repositorios o nuevas skills. Verificar fuentes primarias, versión, licencia y compatibilida",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.claude\\agents\\altiora-research.md"
+    },
+    {
+      "kind": "agent-definition",
+      "name": "altiora-research",
+      "description": "Investigar solo el problema asignado. Comparar capacidades existentes antes de proponer repositorios o nuevas skills. Verificar fuentes primarias, versión, licencia y compatibilida",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.codex\\agents\\altiora-research.toml"
+    },
+    {
+      "kind": "agent-definition",
+      "name": "altiora-review",
+      "description": "Revisar el resultado contra el encargo y criterios de aceptación. Inspeccionar el delta y reproducir los problemas relevantes con herramientas disponibles. Trabajar sin editar por ",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.claude\\agents\\altiora-review.md"
+    },
+    {
+      "kind": "agent-definition",
+      "name": "altiora-review",
+      "description": "Revisar el resultado contra el encargo y criterios de aceptación. Inspeccionar el delta y reproducir los problemas relevantes con herramientas disponibles. Trabajar sin editar por ",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.codex\\agents\\altiora-review.toml"
+    },
+    {
+      "kind": "skill",
+      "name": "accessibility",
+      "description": "accessibility: Premium Web Experience. Usar para producir a11y_findings, fixes, manual_checks a partir de UI/código, alcance, nivel objetivo, usuarios; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\accessibility\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "advertising-concept",
+      "description": "advertising-concept: Creative Intelligence. Usar para producir ad_routes, hooks, claim_checks a partir de problema, oferta, canal, evidencia, restricciones; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\advertising-concept\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "aem-autonomous-quality-loop",
+      "description": "aem-autonomous-quality-loop: Orchestration. Usar para producir status, cycles, evidence, defects, final_result a partir de task, acceptance criteria, herramientas, riesgo, budget, autoridad; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\aem-autonomous-quality-loop\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "aem-business-transformation",
+      "description": "aem-business-transformation: Orchestration. Usar para producir current_target_state, root_causes, roadmap, kpis a partir de negocio existente, estado actual, problemas, datos, autoridad; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\aem-business-transformation\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "aem-company-builder",
+      "description": "aem-company-builder: Orchestration. Usar para producir route_selection, capability_plan, gate_report a partir de contexto, negocio nuevo/existente, objetivos, restricciones, autoridad; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\aem-company-builder\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "aem-core-philosophy",
+      "description": "Usa este skill para alinear decisiones con la filosofía AEM OS (Strategy before design, Evidence before opinion) y entender la arquitectura central del sistema.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\aem-core-philosophy\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "aem-learning-os",
+      "description": "Usa este skill para procesar nuevos conocimientos o herramientas, extraer frameworks y productizar capacidades (Learning OS & Productization).",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\aem-learning-os\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "aem-library-validation",
+      "description": "aem-library-validation: Foundation. Usar para producir structural_report, behavioral_review, maturity_recommendation a partir de workspace de skills, criterios, outputs de evaluación, alcance autorizado; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\aem-library-validation\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "aem-skill-factory",
+      "description": "aem-skill-factory: Orchestration. Usar para producir capability_contract, skill_package, evaluation a partir de capacidad repetible, ejemplos, alcance, fuentes, skills existentes; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\aem-skill-factory\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "aem-skill-system",
+      "description": "Mantener la biblioteca AEM OS de capacidades reutilizables y delegables. Usar para auditar capacidades, consultar catálogo/taxonomía, seleccionar skills, diseñar contratos y workflows, evaluar portabilidad entre IAs, revisar calidad o incorporar aprendizajes. No sustituir las skills de negocio ni activar agentes o integraciones inexistentes.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\aem-skill-system\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "aem-stage-01-discovery",
+      "description": "Ejecuta la Fase 01 de AEM. Úsalo para auditar un nuevo cliente, extraer sus dolores de negocio reales y definir el alcance inicial antes de proponer soluciones.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\aem-stage-01-discovery\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "aem-stage-02-research",
+      "description": "Ejecuta la Fase 02 de AEM. Realiza investigación de mercado profundo, análisis de competidores (Benchmarking) y auditoría de presencia digital.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\aem-stage-02-research\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "aem-stage-03-strategy",
+      "description": "Ejecuta la Fase 03 de AEM. Define posicionamiento, Unit Economics, Propuesta de Valor (UVP) y Go-To-Market strategy.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\aem-stage-03-strategy\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "aem-stage-04-brand",
+      "description": "Ejecuta la Fase 04 de AEM. Arquitectura de marca premium, arquetipos, tono de voz y dirección de arte.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\aem-stage-04-brand\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "aem-stage-05-digital",
+      "description": "Ejecuta la Fase 05 de AEM. Arquitectura de soluciones digitales, selección de Tech Stack y experiencia de usuario (UX).",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\aem-stage-05-digital\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "aem-stage-06-automation",
+      "description": "Ejecuta la Fase 06 de AEM. Auditoría de procesos repetitivos, diseño de workflows en n8n e integración de Agentes de IA.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\aem-stage-06-automation\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "aem-stage-07-growth",
+      "description": "Ejecuta la Fase 07 de AEM. Estrategias de retención, optimización LTV:CAC, y experimentación de crecimiento (Growth Hacking).",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\aem-stage-07-growth\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "aem-venture-architect",
+      "description": "aem-venture-architect: Orchestration. Usar para producir venture_plan, evidence_by_gate, recommendation a partir de idea, recursos, límites, clientes accesibles; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\aem-venture-architect\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "aem-venture-architect",
+      "description": "Usa esta skill para crear empresas o líneas de negocio desde cero, validando problemas (Lean Startup, Mom Test), diseñando MVPs y analizando Unit Economics.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\venture\\aem-venture-architect\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "agency-os",
+      "description": "Aplicar la metodología Agency OS de Dennis a proyectos de consultoría, branding, marketing, UX, web y transformación digital. Usar cuando se solicite Agency OS/AEM OS, iniciar o retomar un proyecto, diagnosticar un negocio, definir estrategia y roadmap, diseñar experiencias, desarrollar soluciones o revisar etapas y resultados. Priorizar estrategia antes que diseño, evidencia antes que opinión, sistemas antes que entregables aislados y resultados de negocio antes que estética. Adaptar el alcance al encargo sin reconstruir ni repetir fases ya validadas.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\agency-os\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "agent-design",
+      "description": "agent-design: AI & Automation. Usar para producir agent_spec, tool_contracts, evaluation a partir de objetivo, tareas, herramientas reales, riesgo, límites; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\agent-design\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "agent-orchestration",
+      "description": "agent-orchestration: AI & Automation. Usar para producir delegation_plan, execution_states, review a partir de roles disponibles, subtareas, dependencia, presupuesto; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\agent-orchestration\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "ai-evaluation",
+      "description": "ai-evaluation: AI & Automation. Usar para producir evaluation_protocol, results, limitations a partir de tarea, outputs, dataset, criterios, riesgos; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\ai-evaluation\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "ai-governance",
+      "description": "ai-governance: AI & Automation. Usar para producir governance_controls, responsibilities, review a partir de usos IA, datos, actores, riesgo, políticas; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\ai-governance\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "ai-image-direction",
+      "description": "ai-image-direction: Creative Intelligence. Usar para producir generation_brief, variants, qa a partir de objetivo, referencias autorizadas, marca, generador; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\ai-image-direction\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "ai-observability",
+      "description": "ai-observability: AI & Automation. Usar para producir telemetry_plan, alerts, diagnostics a partir de sistema, eventos, límites de privacidad, KPIs; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\ai-observability\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "ai-video-direction",
+      "description": "ai-video-direction: Creative Intelligence. Usar para producir video_brief, prompts, continuity_checks a partir de guion, duración, referencias, herramienta, créditos; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\ai-video-direction\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "altiora-agent-orchestrator",
+      "description": "Coordina proyectos de Altiora que combinan investigación de repositorios, diseño, implementación y revisión mediante agentes y skills. Se usa al pedir un equipo de agentes, un flujo con skills o trabajo de varias especialidades; los cambios pequeños se resuelven directamente.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\altiora-agent-orchestrator\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "altiora-agent-orchestrator",
+      "description": "Coordina proyectos de Altiora que combinan investigación de repositorios, diseño, implementación y revisión mediante agentes y skills. Se usa al pedir un equipo de agentes, un flujo con skills o trabajo de varias especialidades; los cambios pequeños se resuelven directamente.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.claude\\skills\\altiora-agent-orchestrator\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "altiora-bibliotecario",
+      "description": "Selecciona skills, herramientas y roles con contexto mínimo en Altiora. Usar al enrutar una petición nueva, retomar una tarea o resolver solapamientos; continuar trabajo pequeño directamente si ninguna skill aporta.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\altiora-bibliotecario\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "altiora-bibliotecario",
+      "description": "Selecciona skills, herramientas y roles con contexto mínimo en Altiora. Usar al enrutar una petición nueva, retomar una tarea o resolver solapamientos; continuar trabajo pequeño directamente si ninguna skill aporta.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.claude\\skills\\altiora-bibliotecario\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "altiora-os-automation-growth",
+      "description": "Diseñar marketing medible y automatizaciones de Altiora con variantes separadas para campañas, experimentos y flujos operativos.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\altiora-os-automation-growth\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "altiora-os-automation-growth",
+      "description": "Diseñar marketing medible y automatizaciones de Altiora con variantes separadas para campañas, experimentos y flujos operativos.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.claude\\skills\\altiora-os-automation-growth\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "altiora-os-coordinate",
+      "description": "Coordinar entregas de Altiora entre investigación, estrategia, creación, desarrollo y revisión cuando el encargo requiere varias especialidades.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\altiora-os-coordinate\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "altiora-os-coordinate",
+      "description": "Coordinar entregas de Altiora entre investigación, estrategia, creación, desarrollo y revisión cuando el encargo requiere varias especialidades.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.claude\\skills\\altiora-os-coordinate\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "altiora-os-creative",
+      "description": "Definir dirección creativa de Altiora con concepto, narrativa, composición y movimiento ligados al objetivo del proyecto.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\altiora-os-creative\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "altiora-os-creative",
+      "description": "Definir dirección creativa de Altiora con concepto, narrativa, composición y movimiento ligados al objetivo del proyecto.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.claude\\skills\\altiora-os-creative\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "altiora-os-media",
+      "description": "Producir y preparar activos 3D, imagen o vídeo para Altiora mediante Blender y herramientas multimedia disponibles.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\altiora-os-media\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "altiora-os-media",
+      "description": "Producir y preparar activos 3D, imagen o vídeo para Altiora mediante Blender y herramientas multimedia disponibles.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.claude\\skills\\altiora-os-media\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "altiora-os-qa",
+      "description": "Revisar de forma independiente entregas de Altiora contra requisitos, funcionamiento, calidad visual y límites de seguridad.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\altiora-os-qa\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "altiora-os-qa",
+      "description": "Revisar de forma independiente entregas de Altiora contra requisitos, funcionamiento, calidad visual y límites de seguridad.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.claude\\skills\\altiora-os-qa\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "altiora-os-research",
+      "description": "Investigar fuentes, repositorios y alternativas para Altiora con evidencia trazable, licencias y compatibilidad comprobadas.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\altiora-os-research\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "altiora-os-research",
+      "description": "Investigar fuentes, repositorios y alternativas para Altiora con evidencia trazable, licencias y compatibilidad comprobadas.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.claude\\skills\\altiora-os-research\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "altiora-os-strategy",
+      "description": "Convertir investigación y contexto comercial de Altiora en posicionamiento, oferta y prioridades medibles para un cliente o proyecto.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\altiora-os-strategy\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "altiora-os-strategy",
+      "description": "Convertir investigación y contexto comercial de Altiora en posicionamiento, oferta y prioridades medibles para un cliente o proyecto.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.claude\\skills\\altiora-os-strategy\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "altiora-os-web-3d",
+      "description": "Implementar experiencias web premium 3D de Altiora en un proyecto existente con interacción, accesibilidad y rendimiento verificados.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\altiora-os-web-3d\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "altiora-os-web-3d",
+      "description": "Implementar experiencias web premium 3D de Altiora en un proyecto existente con interacción, accesibilidad y rendimiento verificados.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.claude\\skills\\altiora-os-web-3d\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "altiora-quality-review",
+      "description": "Revisa cambios de Altiora contra el encargo, las funciones afectadas y su evidencia de prueba. Se usa para comprobar una entrega o una tarea de otro agente antes de integrarla.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\altiora-quality-review\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "altiora-quality-review",
+      "description": "Revisa cambios de Altiora contra el encargo, las funciones afectadas y su evidencia de prueba. Se usa para comprobar una entrega o una tarea de otro agente antes de integrarla.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.claude\\skills\\altiora-quality-review\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "altiora-runtime-bridge",
+      "description": "Prepara o verifica la portabilidad de un proyecto Altiora entre Codex, Claude Code y Antigravity cuando se configura o cambia el entorno de trabajo.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\altiora-runtime-bridge\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "altiora-runtime-bridge",
+      "description": "Prepara o verifica la portabilidad de un proyecto Altiora entre Codex, Claude Code y Antigravity cuando se configura o cambia el entorno de trabajo.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.claude\\skills\\altiora-runtime-bridge\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "altiora-session-handoff",
+      "description": "Conserva o retoma el estado de una tarea Altiora al cambiar entre Antigravity, Codex y Claude Code o continuar en otra sesión.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\altiora-session-handoff\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "altiora-session-handoff",
+      "description": "Conserva o retoma el estado de una tarea Altiora al cambiar entre Antigravity, Codex y Claude Code o continuar en otra sesión.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.claude\\skills\\altiora-session-handoff\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "api-integration",
+      "description": "api-integration: AI & Automation. Usar para producir integration_code, error_handling, tests a partir de API oficial, contrato, entorno, auth, objetivo; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\api-integration\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "api-security",
+      "description": "api-security: Cybersecurity. Usar para producir api_risks, controls, verification a partir de endpoints, contrato, auth, datos, límites; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\api-security\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "art-direction",
+      "description": "art-direction: Brand Intelligence. Usar para producir art_concept, visual_rules, alternatives a partir de estrategia, audiencia, medios, referencias, recursos; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\art-direction\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "audio-production",
+      "description": "Diseña y revisa sonido, voz, música, restauración, mezcla y masterización para anuncios, video, podcasts y experiencias interactivas. Usar ante trabajos de audio; no sustituye escucha real ni acceso autorizado a un DAW.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\audio-production\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "audio-production",
+      "description": "Diseña y revisa sonido, voz, música, restauración, mezcla y masterización para anuncios, video, podcasts y experiencias interactivas. Usar ante trabajos de audio; no sustituye escucha real ni acceso autorizado a un DAW.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.claude\\skills\\audio-production\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "authentication-security",
+      "description": "authentication-security: Cybersecurity. Usar para producir auth_findings, session_controls, fixes a partir de flujos login/sesión, roles, proveedor, amenazas; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\authentication-security\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "authorization-security",
+      "description": "authorization-security: Cybersecurity. Usar para producir access_matrix, negative_tests, fixes a partir de roles, recursos, reglas, ownership, API; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\authorization-security\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "automation-design",
+      "description": "automation-design: AI & Automation. Usar para producir automation_case, workflow, human_exceptions a partir de proceso actual, volumen, costos, errores, autoridad; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\automation-design\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "b2b-expansion",
+      "description": "b2b-expansion: Growth & Scaling. Usar para producir b2b_pilot, qualification, economics a partir de oferta, cuentas objetivo, capacidad, términos; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\b2b-expansion\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "backend-security",
+      "description": "backend-security: Cybersecurity. Usar para producir backend_controls, findings, validation a partir de servidor, datos, endpoints, roles, deployment; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\backend-security\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "brand-architecture",
+      "description": "brand-architecture: Brand Intelligence. Usar para producir architecture_options, naming_rules, migration a partir de portafolio, marcas, públicos, costos, relaciones; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\brand-architecture\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "brand-development",
+      "description": "brand-development: Orchestration. Usar para producir brand_program, specialist_outputs, review a partir de diagnóstico, posicionamiento, audiencias, activos; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\brand-development\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "brand-guidelines",
+      "description": "brand-guidelines: Brand Intelligence. Usar para producir brand_rules, examples, governance a partir de decisiones de identidad, usos, responsables; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\brand-guidelines\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "brand-personality",
+      "description": "brand-personality: Brand Intelligence. Usar para producir personality_traits, behaviors, boundaries a partir de plataforma, audiencia, comportamiento, tono; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\brand-personality\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "brand-positioning",
+      "description": "brand-positioning: Brand Intelligence. Usar para producir brand_position, reasons_to_believe, validation a partir de marca, audiencia, alternativas, diferenciadores; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\brand-positioning\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "brand-quality-assurance",
+      "description": "brand-quality-assurance: Brand Intelligence. Usar para producir brand_findings, corrections, verdict a partir de piezas, guideline vigente, brief, criterios; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\brand-quality-assurance\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "brand-research",
+      "description": "brand-research: Brand Intelligence. Usar para producir brand_audit, perception_evidence, gaps a partir de marca, mercado, audiencia, activos, evidencia; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\brand-research\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "brand-storytelling",
+      "description": "brand-storytelling: Brand Intelligence. Usar para producir narrative, verified_claims, content_routes a partir de hechos de origen/proceso, propósito, audiencia; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\brand-storytelling\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "brand-strategy",
+      "description": "brand-strategy: Brand Intelligence. Usar para producir brand_platform, promises, proof a partir de estrategia negocio, audiencia, valor, competencia; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\brand-strategy\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "brand-voice",
+      "description": "brand-voice: Brand Intelligence. Usar para producir voice_rules, tone_matrix, examples a partir de personalidad, públicos, canales, ejemplos; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\brand-voice\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "break-even-analysis",
+      "description": "break-even-analysis: Financial Intelligence. Usar para producir break_even_units, break_even_revenue, conditions a partir de precio neto, costo variable, costo fijo, mezcla, periodo; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\break-even-analysis\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "business-decision-gates",
+      "description": "business-decision-gates: Orchestration. Usar para producir gate, evidence, assumptions, risks, kpis, missing_information, recommendation a partir de gate, evidencia, supuestos, riesgos, KPIs, autoridad; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\business-decision-gates\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "business-decision-gates",
+      "description": "Usa esta skill para aplicar las 5 etapas de decisión estricta (Opportunity, Validation, Viability, Launch, Scale) a cualquier proyecto empresarial antes de invertir recursos o escalar operaciones.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\orchestration\\business-decision-gates\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "business-diagnostic",
+      "description": "business-diagnostic: Business Intelligence. Usar para producir current_state, root_cause_hypotheses, prioritized_actions a partir de brief, procesos, ventas/costos disponibles, problemas, responsables; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\business-diagnostic\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "business-diagnostic",
+      "description": "business-diagnostic: Business Intelligence. Usar para producir current_state, root_cause_hypotheses, prioritized_actions a partir de brief, procesos, ventas/costos disponibles, problemas, responsables; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.claude\\skills\\business-diagnostic\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "business-health-assessment",
+      "description": "business-health-assessment: Business Intelligence. Usar para producir health_dimensions, red_flags, monitoring_plan a partir de periodos comparables, finanzas, demanda, servicio, capacidad; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\business-health-assessment\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "business-health-assessment",
+      "description": "Auditoría integral 360 del estado financiero, operativo y estratégico de una compañía.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\transformation\\business-health-assessment\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "business-model-analysis",
+      "description": "business-model-analysis: Business Intelligence. Usar para producir model_map, dependencies, vulnerabilities a partir de oferta, segmentos, canales, ingresos, costos, procesos; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\business-model-analysis\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "business-model-design",
+      "description": "business-model-design: Venture Building. Usar para producir model_options, economics_hypotheses, operating_requirements a partir de valor, segmentos, recursos, canales, costos, ingresos; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\business-model-design\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "business-model-validation",
+      "description": "business-model-validation: Venture Building. Usar para producir hypothesis_results, model_changes, viability_limits a partir de modelo, supuestos críticos, pruebas, datos observados; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\business-model-validation\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "business-strategy",
+      "description": "business-strategy: Business Intelligence. Usar para producir strategic_choices, tradeoffs, outcome_map a partir de diagnóstico, objetivos, recursos, evidencia, restricciones; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\business-strategy\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "buyer-persona",
+      "description": "buyer-persona: Marketing Intelligence. Usar para producir evidence_persona, goals, barriers a partir de segmento, entrevistas/datos, decisiones de compra; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\buyer-persona\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "campaign-concept",
+      "description": "campaign-concept: Creative Intelligence. Usar para producir campaign_idea, channel_expressions, test a partir de brief, audiencia, oferta, canales; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\campaign-concept\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "capacity-planning",
+      "description": "capacity-planning: Operations & Logistics. Usar para producir capacity_model, bottleneck, scenarios a partir de demanda, recursos, tiempos, rendimiento, restricciones; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\capacity-planning\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "capital-requirements",
+      "description": "capital-requirements: Venture Building. Usar para producir capital_schedule, funding_gap, sensitivity a partir de inversión inicial, gastos, cobros, calendario, reserva; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\capital-requirements\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "cash-flow-analysis",
+      "description": "cash-flow-analysis: Financial Intelligence. Usar para producir cash_schedule, closing_balance, liquidity_gaps a partir de cobros/pagos, saldo inicial, fechas, moneda; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\cash-flow-analysis\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "challenger-selling",
+      "description": "challenger-selling: Sales Intelligence. Usar para producir teaching_insight, tailored_message, next_step a partir de problema B2B, insight sustentado, stakeholders, oferta; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\challenger-selling\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "channel-expansion",
+      "description": "channel-expansion: Growth & Scaling. Usar para producir channel_options, pilot, conflict_controls a partir de canal actual, clientes, costos, inventario; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\channel-expansion\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "cicd-security",
+      "description": "cicd-security: Cybersecurity. Usar para producir pipeline_risks, controls, verification a partir de pipeline, repos, secretos, artifacts, permisos; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\cicd-security\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "cinematic-direction",
+      "description": "cinematic-direction: Creative Intelligence. Usar para producir cinematic_brief, camera_plan, continuity a partir de guion, marca, recursos, look, seguridad; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\cinematic-direction\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "cloud-security",
+      "description": "cloud-security: Cybersecurity. Usar para producir cloud_review, misconfigurations, actions a partir de proveedor, recursos, permisos, redes, alcance; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\cloud-security\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "cold-outbound-system",
+      "description": "Investiga y prepara prospección B2B personalizada y verificable con fuentes públicas permitidas, produce borradores de correo y seguimientos sujetos a revisión humana. No automatiza scraping ni envía mensajes.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\Altiora_OS_4_Tactical_Skills\\skills\\sales\\cold-outbound-system\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "color-system",
+      "description": "color-system: Brand Intelligence. Usar para producir palette, semantic_tokens, contrast_checks a partir de marca, contextos, estados, contraste; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\color-system\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "company-builder-orchestrator",
+      "description": "Usa esta skill como orquestador principal al recibir un nuevo cliente o requerimiento en Altiora OS. Determina escenarios de diagnóstico y delega el trabajo a dominios especializados (Crear, Mejorar, Escalar).",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\company-builder-orchestrator\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "company-builder-orchestrator",
+      "description": "Usa esta skill como orquestador principal al recibir un nuevo cliente o requerimiento en Altiora OS. Determina escenarios de diagnóstico y delega el trabajo a dominios especializados (Crear, Mejorar, Escalar).",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\orchestration\\company-builder-orchestrator\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "company-builder-orchestrator",
+      "description": "Usa esta skill como orquestador principal al recibir un nuevo cliente o requerimiento en Altiora OS. Determina escenarios de diagnóstico y delega el trabajo a dominios especializados (Crear, Mejorar, Escalar).",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.claude\\skills\\company-builder-orchestrator\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "competitive-intelligence",
+      "description": "competitive-intelligence: Business Intelligence. Usar para producir intelligence_plan, signals, alerts a partir de decisiones estratégicas, competidores, fuentes públicas, frecuencia; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\competitive-intelligence\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "competitor-analysis",
+      "description": "competitor-analysis: Business Intelligence. Usar para producir comparison_matrix, differentiation_gaps a partir de competidores directos/indirectos, criterios, mercado, fecha; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\competitor-analysis\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "consumer-behavior",
+      "description": "consumer-behavior: Business Intelligence. Usar para producir behavior_model, barriers, hypotheses a partir de categoría, contexto de compra, observaciones, segmento; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\consumer-behavior\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "consumer-psychology",
+      "description": "Integra frameworks de Cialdini, Seth Godin y Byron Sharp para posicionamiento, persuasión ética y targeting.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\marketing\\consumer-psychology\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "content-strategy",
+      "description": "content-strategy: Marketing Intelligence. Usar para producir content_pillars, plan, measurement a partir de posicionamiento, journey, canales, recursos; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\content-strategy\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "context-engineering",
+      "description": "context-engineering: AI & Automation. Usar para producir context_pack, provenance, refresh_rules a partir de objetivo, fuentes, límites, estado, token budget; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\context-engineering\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "conversion-analysis",
+      "description": "conversion-analysis: Marketing Intelligence. Usar para producir funnel_rates, leakage, data_quality a partir de eventos, denominadores, periodos, segmentos; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\conversion-analysis\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "conversion-rate-optimization",
+      "description": "conversion-rate-optimization: Marketing Intelligence. Usar para producir cro_backlog, experiment, outcome a partir de funnel, eventos fiables, hipótesis, muestra; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\conversion-rate-optimization\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "conversion-ux",
+      "description": "conversion-ux: Premium Web Experience. Usar para producir conversion_flow, trust_content, test_plan a partir de oferta, flujo, fricciones, datos; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\conversion-ux\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "copywriting",
+      "description": "copywriting: Marketing Intelligence. Usar para producir copy_variants, claim_sources, rationale a partir de audiencia, oferta, evidencia, tono, canal; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\copywriting\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "cost-analysis",
+      "description": "cost-analysis: Financial Intelligence. Usar para producir cost_structure, drivers, allocation_rules a partir de costos, drivers, volúmenes, periodos; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\cost-analysis\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "cost-to-serve",
+      "description": "cost-to-serve: Operations & Logistics. Usar para producir service_cost, allocation, decisions a partir de pedidos/clientes, tiempos, transporte, atención, costos; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\cost-to-serve\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "creative-direction",
+      "description": "creative-direction: Creative Intelligence. Usar para producir creative_routes, production_rules, recommendation a partir de brief, marca, medios, recursos; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\creative-direction\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "creative-quality-assurance",
+      "description": "creative-quality-assurance: Creative Intelligence. Usar para producir creative_review, defects, fixes a partir de piezas, brief, marca, formato, criterios; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\creative-quality-assurance\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "creative-strategy",
+      "description": "creative-strategy: Creative Intelligence. Usar para producir creative_brief, message, success_criteria a partir de objetivo, insight, audiencia, marca, canal; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\creative-strategy\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "cross-selling",
+      "description": "cross-selling: Sales Intelligence. Usar para producir complementary_offer, suitability, message a partir de compra/uso actual, necesidad adicional, compatibilidad; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\cross-selling\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "customer-acquisition",
+      "description": "customer-acquisition: Growth & Scaling. Usar para producir acquisition_tests, cac, learning a partir de ICP, propuesta, canales, cohortes, costos; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\customer-acquisition\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "customer-discovery",
+      "description": "customer-discovery: Venture Building. Usar para producir interview_plan, behavior_notes, learning a partir de hipótesis, segmento, guía, acceso consentido; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\customer-discovery\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "customer-journey",
+      "description": "customer-journey: Marketing Intelligence. Usar para producir journey_map, friction, opportunities a partir de segmento, tareas, puntos de contacto, evidencias; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\customer-journey\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "customer-research",
+      "description": "customer-research: Business Intelligence. Usar para producir research_protocol, observations, findings a partir de preguntas, segmento, acceso consentido, datos de clientes; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\customer-research\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "customer-success",
+      "description": "customer-success: Sales Intelligence. Usar para producir success_plan, health_signals, interventions a partir de promesa vendida, onboarding, uso, resultado, soporte; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\customer-success\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "cybersecurity-owasp",
+      "description": "Auditoría de seguridad y desarrollo seguro bajo estándares OWASP Top 10.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\cyber_ai\\cybersecurity-owasp\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "demand-planning",
+      "description": "demand-planning: Operations & Logistics. Usar para producir demand_scenarios, consensus_plan, review a partir de demanda, promociones, capacidad, leadtime; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\demand-planning\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "dependency-security",
+      "description": "dependency-security: Cybersecurity. Usar para producir dependency_findings, upgrade_plan, retest a partir de manifest/lockfile, advisories, versiones, alcance; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\dependency-security\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "design-system",
+      "description": "design-system: Premium Web Experience. Usar para producir tokens, components, guidelines a partir de producto, componentes, marca, stack, estados; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\design-system\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "email-marketing",
+      "description": "email-marketing: Marketing Intelligence. Usar para producir email_plan, drafts, suppression_rules a partir de audiencia consentida, oferta, lifecycle, plataforma; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\email-marketing\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "enterprise-growth-orchestrator",
+      "description": "enterprise-growth-orchestrator: Orchestration. Usar para producir growth_route, scale_constraints, staged_plan a partir de estrategia, economía, demanda, capacidad, riesgos; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\enterprise-growth-orchestrator\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "ethical-influence",
+      "description": "ethical-influence: Sales Intelligence. Usar para producir persuasion_options, evidence_checks, test a partir de audiencia, mensaje, evidencia, objetivo; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\ethical-influence\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "facebook-growth",
+      "description": "facebook-growth: Marketing Intelligence. Usar para producir facebook_plan, community_tests, measures a partir de cuenta/página, mercado, audiencia, oferta; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\facebook-growth\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "fanatical-prospecting",
+      "description": "fanatical-prospecting: Sales Intelligence. Usar para producir prospecting_blocks, channel_mix, tracking a partir de ICP, capacidad, canales consentidos, objetivos; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\fanatical-prospecting\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "financial-diagnostic",
+      "description": "financial-diagnostic: Financial Intelligence. Usar para producir reconciled_snapshot, red_flags, missing_data a partir de estados/registros, periodos, moneda, políticas contables; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\financial-diagnostic\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "financial-forecasting",
+      "description": "Planeación financiera y escalamiento. Creación de escenarios (Conservador, Base, Optimista) y Unit Economics.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\finance_operations\\financial-forecasting\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "financial-forecasting",
+      "description": "financial-forecasting: Financial Intelligence. Usar para producir forecast, drivers, intervals a partir de histórico, drivers, horizonte, supuestos, moneda; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\financial-forecasting\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "frontend-security",
+      "description": "frontend-security: Cybersecurity. Usar para producir frontend_findings, fixes, tests a partir de cliente, render, entradas, sesiones, CSP; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\frontend-security\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "funding-strategy",
+      "description": "funding-strategy: Venture Building. Usar para producir funding_options, tradeoffs, verification_tasks a partir de necesidad, etapa, territorio, condiciones, tolerancia al riesgo; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\funding-strategy\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "gap-selling",
+      "description": "gap-selling: Sales Intelligence. Usar para producir current_future_gap, value_case, open_questions a partir de estado actual, estado deseado, impacto, causa, oferta; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\gap-selling\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "gap-selling",
+      "description": "Ejecuta la metodología Gap Selling (Keenan) para auditar ventas, calificar clientes o crear argumentos comerciales. Úsalo para cuantificar brechas económicas.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\sales\\gap-selling\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "geographic-expansion",
+      "description": "geographic-expansion: Growth & Scaling. Usar para producir zone_options, pilot, viability a partir de zonas, demanda, rutas, servicio, costos; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\geographic-expansion\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "go-to-market",
+      "description": "go-to-market: Orchestration. Usar para producir gtm_plan, handoffs, launch_gates a partir de oferta validada, segmento, economía, canales, operación; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\go-to-market\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "growth-experimentation",
+      "description": "growth-experimentation: Marketing Intelligence. Usar para producir experiment_design, results, learning a partir de hipótesis, funnel, baseline, recursos, riesgo; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\growth-experimentation\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "growth-strategy",
+      "description": "growth-strategy: Growth & Scaling. Usar para producir growth_levers, priorities, safeguards a partir de demanda, economía, capacidad, funnel, objetivos; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\growth-strategy\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "gsap-animation",
+      "description": "gsap-animation: Premium Web Experience. Usar para producir animation_code, cleanup, verification a partir de repo, versiones, elementos, motion spec; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\gsap-animation\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "high-ticket-offer",
+      "description": "Empaqueta servicios de sitio web y automatización en una propuesta B2B de alto valor, con alcance, precio sustentable, evidencia, hitos, exclusiones y aceptación explícita. No inventa ROI, urgencia ni garantías.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\Altiora_OS_4_Tactical_Skills\\skills\\orchestration\\high-ticket-offer\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "high-value-deliberation",
+      "description": "Analizar preguntas, problemas y decisiones con perspectivas pertinentes, crítica concreta, evidencia verificable y una conclusión integrada. Usar al pedir deliberación de alto valor, contraste de alternativas, revisión escéptica o una recomendación fundamentada; completar también el entregable solicitado. Evitar debates artificiales, acuerdo automático y certeza sin sustento.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\high-value-deliberation\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "human-in-the-loop",
+      "description": "human-in-the-loop: AI & Automation. Usar para producir review_gates, escalation, fallback a partir de acciones críticas, roles, tiempos, estados; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\human-in-the-loop\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "immersive-commerce",
+      "description": "Diseñar, implementar y optimizar experiencias web inmersivas orientadas a ventas, con branding premium, UX/UI, GSAP/WebGL/Three.js, rendimiento, pedidos por WhatsApp, automatización logística, SEO y conversión. Usar cuando el usuario solicite comercio web inmersivo, recorridos narrativos como finca a producto, experiencias premium con 3D/scroll, flujos de pedidos e inventario o esta metodología técnica como complemento de Agency OS. Adaptar a distintos negocios sin asumir que todos venden queso ni necesitan 3D o una API.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\immersive-commerce\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "immersive-web-design",
+      "description": "immersive-web-design: Premium Web Experience. Usar para producir immersive_concept, interaction_map, fallback a partir de narrativa, marca, tareas, recursos, dispositivos; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\immersive-web-design\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "incident-response",
+      "description": "incident-response: Cybersecurity. Usar para producir incident_timeline, containment_options, recovery_plan a partir de incidente, autoridad, activos, evidencias, contactos; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\incident-response\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "industry-analysis",
+      "description": "industry-analysis: Business Intelligence. Usar para producir industry_map, structural_forces, implications a partir de industria delimitada, cadena de valor, territorio, periodo; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\industry-analysis\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "information-architecture",
+      "description": "information-architecture: Premium Web Experience. Usar para producir sitemap, taxonomy, navigation_rules a partir de contenido, tareas, audiencias, navegación; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\information-architecture\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "instagram-growth",
+      "description": "instagram-growth: Marketing Intelligence. Usar para producir instagram_plan, format_tests, funnel a partir de cuenta/datos autorizados, audiencia, marca, oferta; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\instagram-growth\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "international-expansion",
+      "description": "international-expansion: Growth & Scaling. Usar para producir country_research, requirements, staged_plan a partir de mercado destino, producto, operación, recursos; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\international-expansion\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "inventory-forecasting",
+      "description": "inventory-forecasting: Operations & Logistics. Usar para producir inventory_forecast, uncertainty, replenishment a partir de ventas/consumo histórico, stockouts, leadtime, temporada; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\inventory-forecasting\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "inventory-management",
+      "description": "inventory-management: Operations & Logistics. Usar para producir stock_model, reconciliation, controls a partir de SKUs, unidades, stock inicial, movimientos, responsable; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\inventory-management\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "investment-analysis",
+      "description": "investment-analysis: Financial Intelligence. Usar para producir investment_cases, sensitivity, recommendation a partir de desembolsos, flujos incrementales, horizonte, riesgo; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\investment-analysis\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "knowledge-retrieval",
+      "description": "knowledge-retrieval: AI & Automation. Usar para producir retrieved_evidence, provenance, gaps a partir de pregunta, fuentes/corpus, permisos, actualidad; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\knowledge-retrieval\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "launch-readiness",
+      "description": "launch-readiness: Venture Building. Usar para producir readiness_checks, blockers, launch_plan a partir de oferta, operación, calidad, medición, soporte, autorización; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\launch-readiness\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "lead-generation",
+      "description": "lead-generation: Marketing Intelligence. Usar para producir lead_system, capture_fields, handoff a partir de ICP, propuesta, canal, calificación, capacidad; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\lead-generation\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "lead-qualification",
+      "description": "lead-qualification: Sales Intelligence. Usar para producir qualification, disqualifiers, next_action a partir de ICP, señal de necesidad, capacidad, autoridad, momento; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\lead-qualification\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "local-seo",
+      "description": "local-seo: Marketing Intelligence. Usar para producir local_presence_plan, consistency, measures a partir de ubicación/servicio, datos negocio, acceso, mercado; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\local-seo\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "logistics",
+      "description": "logistics: Operations & Logistics. Usar para producir fulfillment_process, service_rules, costs a partir de pedidos, cobertura, horarios, capacidad, restricciones; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\logistics\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "logistics-supply-chain",
+      "description": "Inteligencia operativa para gestión de inventarios, merma, optimización de rutas y proveedores (Inspirado en The Goal, Toyota Way).",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\finance_operations\\logistics-supply-chain\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "ltv-optimization",
+      "description": "ltv-optimization: Growth & Scaling. Usar para producir ltv_model, levers, uncertainty a partir de cohortes, margen, retención, horizonte, costo; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\ltv-optimization\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "margin-analysis",
+      "description": "margin-analysis: Financial Intelligence. Usar para producir margin_bridge, contribution, reconciliation a partir de ingresos netos, costos, mezcla, canal, periodo; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\margin-analysis\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "market-development",
+      "description": "market-development: Growth & Scaling. Usar para producir market_options, validation, entry_plan a partir de oferta vigente, mercados nuevos, acceso, recursos; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\market-development\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "market-penetration",
+      "description": "market-penetration: Growth & Scaling. Usar para producir penetration_options, tests, risks a partir de mercado actual, cuota/evidencia, canales, capacidad; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\market-penetration\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "market-research",
+      "description": "market-research: Business Intelligence. Usar para producir evidence_matrix, insights, research_gaps a partir de pregunta, mercado, geografía, periodo, fuentes accesibles; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\market-research\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "market-segmentation",
+      "description": "market-segmentation: Marketing Intelligence. Usar para producir segments, criteria, validation a partir de mercado, necesidades, comportamiento, datos, alcance; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\market-segmentation\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "market-sizing",
+      "description": "market-sizing: Business Intelligence. Usar para producir tam_sam_som, calculation, sensitivity a partir de segmento, territorio, unidad de demanda, precios, fuentes; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\market-sizing\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "market-validation",
+      "description": "market-validation: Venture Building. Usar para producir validation_experiment, demand_signals, verdict a partir de oferta, segmento, canal, prueba, criterio; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\market-validation\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "marketing-analytics",
+      "description": "marketing-analytics: Marketing Intelligence. Usar para producir measurement_model, reconciliation, insights a partir de objetivos, fuentes, eventos, permisos, periodos; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\marketing-analytics\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "marketing-strategy",
+      "description": "marketing-strategy: Marketing Intelligence. Usar para producir demand_strategy, channel_choices, measurement a partir de objetivos, segmentos, oferta, recursos, funnel; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\marketing-strategy\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "mcp-integration",
+      "description": "mcp-integration: AI & Automation. Usar para producir mcp_contract, auth_plan, tests a partir de cliente/servidor, versión, herramientas, scope; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\mcp-integration\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "meddicc",
+      "description": "meddicc: Sales Intelligence. Usar para producir qualification_dimensions, evidence_gaps, deal_plan a partir de oportunidad B2B, métricas, actores, proceso, competencia; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\meddicc\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "meddicc",
+      "description": "Aplica el framework de ventas Enterprise MEDDICC para cualificar leads de alto valor (B2B).",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\sales\\meddicc\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "meta-ads-creator",
+      "description": "Convierte un brief aprobado en variantes de anuncios para Meta con hook, body, CTA, concepto visual y plan de prueba, señalando claims y políticas por verificar. Produce borradores, nunca publica ni cambia presupuestos.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\Altiora_OS_4_Tactical_Skills\\skills\\marketing\\meta-ads-creator\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "mom-test-interviewing",
+      "description": "mom-test-interviewing: Sales Intelligence. Usar para producir interview_questions, past_behavior, commitments a partir de hipótesis, acceso a usuarios, guía y consentimiento; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\mom-test-interviewing\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "motion-design",
+      "description": "motion-design: Premium Web Experience. Usar para producir motion_spec, states, alternatives a partir de tarea, UI/escena, ritmo, marca; no sustituir otras fases ni declarar resultados sin evidencia.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\motion-design\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "n8n-webhook-architect",
+      "description": "Diseña y documenta el flujo CRM Web → n8n → WhatsApp con validación, idempotencia, consentimiento, reintentos, observabilidad y plan de pruebas. No despliega ni envía mensajes reales sin autorización.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\Altiora_OS_4_Tactical_Skills\\skills\\operations\\n8n-webhook-architect\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "premium-branding",
+      "description": "Desarrolla identidad de marca premium, dirección de arte, Storybrand (Donald Miller) y arquetipos.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\branding\\premium-branding\\SKILL.md"
+    },
+    {
+      "kind": "skill",
+      "name": "spin-selling",
+      "description": "Aplica metodología SPIN de Neil Rackham para estructurar preguntas de ventas complejas.",
+      "path": "C:\\Users\\Usuario\\OneDrive\\Desktop\\altiora\\.agents\\skills\\sales\\spin-selling\\SKILL.md"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+test_catalog_and_kg_conversion (test_quote.QuoteTests.test_catalog_and_kg_conversion) ... ok
+test_empty_and_generator (test_quote.QuoteTests.test_empty_and_generator) ... ok
+test_fractional_grams_multiple_and_repeat (test_quote.QuoteTests.test_fractional_grams_multiple_and_repeat) ... ok
+test_invalid_and_nonfinite (test_quote.QuoteTests.test_invalid_and_nonfinite) ... ok
+test_nonpositive_quantities (test_quote.QuoteTests.test_nonpositive_quantities) ... ok
+test_precision_independent_of_callers_context (test_quote.QuoteTests.test_precision_independent_of_callers_context) ... ok
+test_unknown_product (test_quote.QuoteTests.test_unknown_product) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.001s
+
+OK

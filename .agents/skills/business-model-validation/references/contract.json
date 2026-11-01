@@ -1,0 +1,123 @@
+{
+  "name": "business-model-validation",
+  "domain": "Venture Building",
+  "sprint": 3,
+  "inputs": "modelo, supuestos críticos, pruebas, datos observados",
+  "output": "hypothesis_results, model_changes, viability_limits",
+  "procedure": [
+    "Priorizar supuestos de demanda, economía y operación",
+    "Diseñar pruebas que puedan refutar el modelo",
+    "Integrar resultados en cambios y próxima decisión"
+  ],
+  "decision": "Validar compra no valida logística o rentabilidad; cubrir dimensiones por separado",
+  "kpi": "supuestos críticos comprobados",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://www.sba.gov/counseling/plan-your-business/",
+      "SBA; planificación"
+    ],
+    [
+      "https://robfitz.com/about/",
+      "Autor de The Mom Test; referencia de autor, no libro leído completo"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Venture Building",
+  "purpose": "Priorizar supuestos de demanda, economía y operación",
+  "business_outcome": "supuestos críticos comprobados",
+  "when_to_use": "business-model-validation: Venture Building. Usar para producir hypothesis_results, model_changes, viability_limits a partir de modelo, supuestos críticos, pruebas, datos observados; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "business-model-validation",
+    "hypothesis_results, model_changes, viability_limits"
+  ],
+  "required_inputs": [
+    "modelo",
+    " supuestos críticos",
+    " pruebas",
+    " datos observados"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://www.sba.gov/counseling/plan-your-business/",
+      "SBA; planificación"
+    ],
+    [
+      "https://robfitz.com/about/",
+      "Autor de The Mom Test; referencia de autor, no libro leído completo"
+    ]
+  ],
+  "decision_rules": [
+    "Validar compra no valida logística o rentabilidad; cubrir dimensiones por separado",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "hypothesis_results",
+    " model_changes",
+    " viability_limits"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: Validar compra no valida logística o rentabilidad; cubrir dimensiones por separado",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "supuestos críticos comprobados"
+  ],
+  "examples": [
+    "Usa $business-model-validation con modelo, supuestos críticos, pruebas, datos observados para obtener hypothesis_results, model_changes, viability_limits.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

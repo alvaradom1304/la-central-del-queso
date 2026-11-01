@@ -1,0 +1,4 @@
+interface:
+  display_name: "Meddicc"
+  short_description: "Sales Intelligence: capacidad AEM OS"
+  default_prompt: "Usa $meddicc para abordar esta tarea con evidencia y resultado verificable."

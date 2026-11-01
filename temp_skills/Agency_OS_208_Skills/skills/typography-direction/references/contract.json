@@ -1,0 +1,120 @@
+{
+  "name": "typography-direction",
+  "domain": "Brand Intelligence",
+  "sprint": 5,
+  "inputs": "voz visual, idioma, soportes, licencias",
+  "output": "type_system, hierarchy, usage",
+  "procedure": [
+    "Relacionar tono y lectura con posicionamiento, idiomas, audiencias y contextos de uso.",
+    "Comparar familias por carácter, legibilidad, repertorio, números, pesos y licencias.",
+    "Definir roles, escala, line-height, longitudes, jerarquía y comportamiento responsive con contenido real.",
+    "Especificar fallback y carga de fuentes, subconjuntos/licencias y prevención de cambios de layout.",
+    "Verificar precios, cantidades, acentos, textos largos, zoom y pantallas representativas.",
+    "Entregar tokens, reglas y excepciones justificadas con evidencia visual y pruebas de lectura disponibles."
+  ],
+  "decision": "Verificar licencia; no cargar pesos innecesarios",
+  "kpi": "legibilidad y consistencia tipográfica",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [],
+  "version": "0.2.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Brand Intelligence",
+  "purpose": "Elegir familia por legibilidad, expresión y cobertura",
+  "business_outcome": "legibilidad y consistencia tipográfica",
+  "when_to_use": "typography-direction: Brand Intelligence. Usar para producir type_system, hierarchy, usage a partir de voz visual, idioma, soportes, licencias; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "typography-direction",
+    "type_system, hierarchy, usage"
+  ],
+  "required_inputs": [
+    "voz visual",
+    " idioma",
+    " soportes",
+    " licencias"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [],
+  "decision_rules": [
+    "Verificar licencia; no cargar pesos innecesarios",
+    "No cerrar entrega con bloqueadores de tarea esencial ni pruebas declaradas sin ejecutar.",
+    "Aplicar especificación técnica y casos propios de esta capacidad."
+  ],
+  "outputs": [
+    "type_system",
+    " hierarchy",
+    " usage"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo",
+    "Resolver el fallo específico con evidencia y límites",
+    "No cerrar con contradicción material o resultado inventado",
+    "Entregar criterios verificables y responsables operativos según alcance"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: Verificar licencia; no cargar pesos innecesarios",
+    "escenarios según evaluation-cases.json; registrar ejecutados",
+    "Resolver el fallo específico con evidencia y límites",
+    "No cerrar con contradicción material o resultado inventado",
+    "Entregar criterios verificables y responsables operativos según alcance"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "legibilidad y consistencia tipográfica"
+  ],
+  "examples": [
+    "Usa $typography-direction con voz visual, idioma, soportes, licencias para obtener type_system, hierarchy, usage.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    },
+    {
+      "version": "0.2.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento técnico, fallos propios, especificación de aceptación y fuentes depuradas; no presume evaluación de cliente/producción."
+    }
+  ]
+}

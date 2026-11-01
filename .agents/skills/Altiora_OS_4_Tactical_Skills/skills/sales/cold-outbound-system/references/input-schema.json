@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "cold-outbound-system input",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "campaign_goal",
+    "offer",
+    "icp",
+    "geography",
+    "contact_channel"
+  ],
+  "properties": {
+    "campaign_goal": {
+      "type": "string"
+    },
+    "offer": {
+      "type": "object",
+      "required": [
+        "description",
+        "substantiated_claims"
+      ],
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "substantiated_claims": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "icp": {
+      "type": "object",
+      "required": [
+        "industries",
+        "company_criteria"
+      ],
+      "properties": {
+        "industries": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "company_criteria": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "roles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "geography": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "contact_channel": {
+      "enum": [
+        "email",
+        "manual_linkedin",
+        "both"
+      ]
+    },
+    "language": {
+      "type": "string"
+    },
+    "volume_target": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "exclusions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "approved_evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

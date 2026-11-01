@@ -1,0 +1,4 @@
+interface:
+  display_name: "Especialista en sonido y audio"
+  short_description: "Diseño sonoro, mezcla y QA con evidencia"
+  default_prompt: "Usa $audio-production para dirigir y revisar el sonido de esta pieza con intención, fuentes verificadas y QA."

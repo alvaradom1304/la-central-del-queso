@@ -1,0 +1,41 @@
+{
+  "id": "20261101T014009Z-e26c1eac",
+  "files": {
+    ".altiora/system/roles/altiora-creative-analyst.md": {
+      "backup": null,
+      "installed_hash": "033b0df4e228dba7383824adef24ce1bfd4ab76cc76770e125587af920b10e26"
+    },
+    ".altiora/system/scripts/manage.py": {
+      "backup": "1.bak",
+      "installed_hash": "7f4468e6e2f5b9c386388016901ccacd3e140ed5f22b1f1336cc229559a81999"
+    },
+    ".altiora/system/scripts/package.py": {
+      "backup": "2.bak",
+      "installed_hash": "3c9023cc4e7c2129f07358f4176fba20491af1c4ecd8cf83ffb5f90e0f48032f"
+    },
+    "AGENTS.md": {
+      "backup": "3.bak",
+      "installed_hash": "f9d0bc0a0c9666703ae9a874639307d92f3256ccf2b572247485882ed3e9fae7"
+    },
+    "CLAUDE.md": {
+      "backup": "4.bak",
+      "installed_hash": "0234789e2b600c304a79fd5a78e179a15b0259ed78dff7456a5640d2b1961bf9"
+    },
+    "GEMINI.md": {
+      "backup": "5.bak",
+      "installed_hash": "f9d0bc0a0c9666703ae9a874639307d92f3256ccf2b572247485882ed3e9fae7"
+    },
+    ".codex/agents/altiora-creative-analyst.toml": {
+      "backup": null,
+      "installed_hash": "20c6bf0c1fbf759424089377318d78acf069b31e635993deed38cfa28478a1c0"
+    },
+    ".claude/agents/altiora-creative-analyst.md": {
+      "backup": null,
+      "installed_hash": "42c1801402395e3755432a98ced38ed2efe70e25a60e478c6abf5116423b855c"
+    },
+    ".altiora/installation.json": {
+      "backup": "8.bak",
+      "installed_hash": "b1af18199de5aaac80fe8398927cefb2f35ae29647757306cbe45403d3359790"
+    }
+  }
+}

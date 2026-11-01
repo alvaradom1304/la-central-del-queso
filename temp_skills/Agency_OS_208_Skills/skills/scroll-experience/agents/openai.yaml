@@ -1,0 +1,4 @@
+interface:
+  display_name: "Scroll Experience"
+  short_description: "Premium Web Experience: capacidad AEM OS"
+  default_prompt: "Usa $scroll-experience para abordar esta tarea con evidencia y resultado verificable."

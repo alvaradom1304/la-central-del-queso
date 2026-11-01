@@ -1,0 +1,130 @@
+{
+  "name": "web-performance",
+  "domain": "Premium Web Experience",
+  "sprint": 6,
+  "inputs": "sitio, entorno, dispositivos/red, objetivos",
+  "output": "performance_budget, measurements, fixes",
+  "procedure": [
+    "Definir plantillas y acciones críticas, dispositivo/red, build, cache y condiciones; separar laboratorio, RUM y CrUX.",
+    "Registrar baseline reproducible y presupuestos por ruta para carga, interacción, layout, recursos y costo de inmersión.",
+    "Diagnosticar LCP por TTFB, demora/carga del recurso y demora de render; INP por input delay/procesamiento/presentación; CLS por shifts.",
+    "Corregir la causa medida: prioridad/dimensiones del hero, JS/hidratación, terceros, fuentes, cache o trabajo de GPU.",
+    "Repetir antes/después bajo condiciones comparables y registrar variabilidad, ejecuciones y limitaciones.",
+    "Verificar compra y regresiones visuales/accesibilidad; definir monitor de campo y recuperación sin prometer datos ausentes."
+  ],
+  "decision": "Distinguir laboratorio de campo; verificar umbrales vigentes",
+  "kpi": "LCP/INP/CLS y peso bajo condiciones registradas",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://web.dev/articles/vitals",
+      "web.dev; consultado 2026-10-10, métricas/umbrales/campo"
+    ]
+  ],
+  "version": "0.2.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Premium Web Experience",
+  "purpose": "Medir baseline de carga/interacción/layout y recursos",
+  "business_outcome": "LCP/INP/CLS y peso bajo condiciones registradas",
+  "when_to_use": "web-performance: Premium Web Experience. Usar para producir performance_budget, measurements, fixes a partir de sitio, entorno, dispositivos/red, objetivos; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "web-performance",
+    "performance_budget, measurements, fixes"
+  ],
+  "required_inputs": [
+    "sitio",
+    " entorno",
+    " dispositivos/red",
+    " objetivos"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://web.dev/articles/vitals",
+      "web.dev; consultado 2026-10-10, métricas/umbrales/campo"
+    ]
+  ],
+  "decision_rules": [
+    "Distinguir laboratorio de campo; verificar umbrales vigentes",
+    "No cerrar entrega con bloqueadores de tarea esencial ni pruebas declaradas sin ejecutar.",
+    "Aplicar especificación técnica y casos propios de esta capacidad."
+  ],
+  "outputs": [
+    "performance_budget",
+    " measurements",
+    " fixes"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo",
+    "No aprobar campo con score agregado",
+    "Investigar selector con trace reproducible",
+    "Separar medición conocida y verificación pendiente"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: Distinguir laboratorio de campo; verificar umbrales vigentes",
+    "escenarios según evaluation-cases.json; registrar ejecutados",
+    "No aprobar campo con score agregado",
+    "Investigar selector con trace reproducible",
+    "Separar medición conocida y verificación pendiente"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "LCP/INP/CLS y peso bajo condiciones registradas"
+  ],
+  "examples": [
+    "Usa $web-performance con sitio, entorno, dispositivos/red, objetivos para obtener performance_budget, measurements, fixes.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    },
+    {
+      "version": "0.2.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento técnico, fallos propios, especificación de aceptación y fuentes depuradas; no presume evaluación de cliente/producción."
+    }
+  ]
+}

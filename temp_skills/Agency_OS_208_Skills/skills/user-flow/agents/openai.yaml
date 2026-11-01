@@ -1,0 +1,4 @@
+interface:
+  display_name: "User Flow"
+  short_description: "Premium Web Experience: capacidad AEM OS"
+  default_prompt: "Usa $user-flow para abordar esta tarea con evidencia y resultado verificable."

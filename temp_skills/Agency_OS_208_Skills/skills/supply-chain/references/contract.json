@@ -1,0 +1,120 @@
+{
+  "name": "supply-chain",
+  "domain": "Operations & Logistics",
+  "sprint": 8,
+  "inputs": "red proveedores, flujos, inventario, servicio",
+  "output": "supply_network, vulnerabilities, resilience",
+  "procedure": [
+    "Mapear proveedores, lotes, lead times, inventario, preparación, cobertura y transporte con fuentes de operación.",
+    "Definir unidad/base temporal, variabilidad de demanda y capacidad; distinguir stock físico, reservado, disponible y rechazado.",
+    "Dimensionar reposición y buffers según nivel de servicio y restricciones reales; comparar costos y riesgo de perecederos.",
+    "Especificar trazabilidad, manejo de excepciones y owner de abastecimiento, entrega y devolución.",
+    "Analizar interrupción de proveedor, demanda pico y retraso; comprobar coherencia de reservas y promesas.",
+    "Entregar políticas operativas, indicadores con denominador y riesgos; validar con operación antes de comprometer niveles."
+  ],
+  "decision": "No asumir diversificación sin costos y calidad comparables",
+  "kpi": "servicio y resiliencia de suministro",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [],
+  "version": "0.2.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Operations & Logistics",
+  "purpose": "Mapear suministro hasta cliente y datos críticos",
+  "business_outcome": "servicio y resiliencia de suministro",
+  "when_to_use": "supply-chain: Operations & Logistics. Usar para producir supply_network, vulnerabilities, resilience a partir de red proveedores, flujos, inventario, servicio; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "supply-chain",
+    "supply_network, vulnerabilities, resilience"
+  ],
+  "required_inputs": [
+    "red proveedores",
+    " flujos",
+    " inventario",
+    " servicio"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [],
+  "decision_rules": [
+    "No asumir diversificación sin costos y calidad comparables",
+    "No cerrar entrega con bloqueadores de tarea esencial ni pruebas declaradas sin ejecutar.",
+    "Aplicar especificación técnica y casos propios de esta capacidad."
+  ],
+  "outputs": [
+    "supply_network",
+    " vulnerabilities",
+    " resilience"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo",
+    "Resolver el fallo específico con evidencia y límites",
+    "No cerrar con contradicción material o resultado inventado",
+    "Entregar criterios verificables y responsables operativos según alcance"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No asumir diversificación sin costos y calidad comparables",
+    "escenarios según evaluation-cases.json; registrar ejecutados",
+    "Resolver el fallo específico con evidencia y límites",
+    "No cerrar con contradicción material o resultado inventado",
+    "Entregar criterios verificables y responsables operativos según alcance"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "servicio y resiliencia de suministro"
+  ],
+  "examples": [
+    "Usa $supply-chain con red proveedores, flujos, inventario, servicio para obtener supply_network, vulnerabilities, resilience.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    },
+    {
+      "version": "0.2.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento técnico, fallos propios, especificación de aceptación y fuentes depuradas; no presume evaluación de cliente/producción."
+    }
+  ]
+}

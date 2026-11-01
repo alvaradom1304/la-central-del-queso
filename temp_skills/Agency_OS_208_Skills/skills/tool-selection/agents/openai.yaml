@@ -1,0 +1,4 @@
+interface:
+  display_name: "Tool Selection"
+  short_description: "AI & Automation: capacidad AEM OS"
+  default_prompt: "Usa $tool-selection para abordar esta tarea con evidencia y resultado verificable."

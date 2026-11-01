@@ -1,0 +1,114 @@
+{
+  "name": "competitor-analysis",
+  "domain": "Business Intelligence",
+  "sprint": 2,
+  "inputs": "competidores directos/indirectos, criterios, mercado, fecha",
+  "output": "comparison_matrix, differentiation_gaps",
+  "procedure": [
+    "Definir comparables por tarea del cliente y segmento",
+    "Registrar oferta, precio comparable, canales y prueba de posicionamiento",
+    "Comparar fortalezas y vacíos con evidencia y límites"
+  ],
+  "decision": "No afirmar ventas o rentabilidad del rival a partir de su web; normalizar precio/unidad",
+  "kpi": "proporción de comparaciones verificables",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://www.sba.gov/counseling/plan-your-business/",
+      "SBA; marco empresarial, contexto estadounidense, no regulación de Costa Rica"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Business Intelligence",
+  "purpose": "Definir comparables por tarea del cliente y segmento",
+  "business_outcome": "proporción de comparaciones verificables",
+  "when_to_use": "competitor-analysis: Business Intelligence. Usar para producir comparison_matrix, differentiation_gaps a partir de competidores directos/indirectos, criterios, mercado, fecha; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "competitor-analysis",
+    "comparison_matrix, differentiation_gaps"
+  ],
+  "required_inputs": [
+    "competidores directos/indirectos",
+    " criterios",
+    " mercado",
+    " fecha"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://www.sba.gov/counseling/plan-your-business/",
+      "SBA; marco empresarial, contexto estadounidense, no regulación de Costa Rica"
+    ]
+  ],
+  "decision_rules": [
+    "No afirmar ventas o rentabilidad del rival a partir de su web; normalizar precio/unidad",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "comparison_matrix",
+    " differentiation_gaps"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No afirmar ventas o rentabilidad del rival a partir de su web; normalizar precio/unidad",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "proporción de comparaciones verificables"
+  ],
+  "examples": [
+    "Usa $competitor-analysis con competidores directos/indirectos, criterios, mercado, fecha para obtener comparison_matrix, differentiation_gaps.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "Business Intelligence": [
+    [
+      "https://www.sba.gov/counseling/plan-your-business/",
+      "SBA; marco empresarial, contexto estadounidense, no regulación de Costa Rica"
+    ]
+  ],
+  "Venture Building": [
+    [
+      "https://www.sba.gov/counseling/plan-your-business/",
+      "SBA; planificación"
+    ],
+    [
+      "https://robfitz.com/about/",
+      "Autor de The Mom Test; referencia de autor, no libro leído completo"
+    ]
+  ],
+  "Financial Intelligence": [
+    [
+      "https://www.sba.gov/counseling/plan-your-business/",
+      "SBA; planificación oficial, contexto estadounidense; verificar fuente financiera concreta y normativa local al ejecutar"
+    ]
+  ],
+  "Sales Intelligence": [
+    [
+      "https://www.huthwaiteinternational.com/spin-methodology",
+      "SPIN; fuente original"
+    ],
+    [
+      "https://gapsellingonlinetraining.com/methodology-training/",
+      "Keenan/Gap Selling; temario oficial"
+    ],
+    [
+      "https://meddicc.com/meddpicc-sales-methodology-and-process",
+      "MEDDICC/MEDDPICC; proveedor metodológico"
+    ],
+    [
+      "https://challengerinc.com/what-is-challenger-sales-methodology/",
+      "Challenger; referencia del proveedor"
+    ],
+    [
+      "https://www.blackswanltd.com/newsletter/bridging-the-gap-using-tactical-empathy-to-neutralize-power-in-negotiations",
+      "Black Swan; perspectiva de empatía táctica"
+    ],
+    [
+      "https://jebblount.com/product/fanatical-prospecting/",
+      "Jeb Blount; referencia del autor"
+    ],
+    [
+      "https://www.influenceatwork.com/7-principles-of-persuasion/",
+      "Cialdini; perspectiva del autor"
+    ],
+    [
+      "https://robfitz.com/about/",
+      "Fitzpatrick; referencia del autor"
+    ]
+  ],
+  "Marketing Intelligence": [
+    [
+      "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+      "Google Search Central; SEO"
+    ],
+    [
+      "https://www.influenceatwork.com/7-principles-of-persuasion/",
+      "Cialdini; aplicar críticamente, no garantía"
+    ]
+  ],
+  "Brand Intelligence": [],
+  "Creative Intelligence": [],
+  "Premium Web Experience": [
+    [
+      "https://www.w3.org/TR/WCAG22/",
+      "W3C; norma accesibilidad"
+    ],
+    [
+      "https://gsap.com/docs/v3/",
+      "GSAP; documentación"
+    ],
+    [
+      "https://nextjs.org/docs",
+      "Next.js; documentación"
+    ],
+    [
+      "https://web.dev/articles/vitals",
+      "Web Vitals; distinguir campo/laboratorio"
+    ],
+    [
+      "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+      "Search Central"
+    ],
+    [
+      "https://threejs.org/docs/",
+      "Three.js; docs consultadas"
+    ],
+    [
+      "https://r3f.docs.pmnd.rs/getting-started/introduction",
+      "R3F; docs consultadas"
+    ]
+  ],
+  "Cybersecurity": [
+    [
+      "https://owasp.org/projects/asvs",
+      "OWASP ASVS; verificar versión y scope"
+    ]
+  ],
+  "AI & Automation": [
+    [
+      "https://www.nist.gov/itl/ai-risk-management-framework",
+      "NIST AI RMF; marco, no certificación"
+    ],
+    [
+      "https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro",
+      "MCP; versión observada en esta auditoría, revalidar"
+    ],
+    [
+      "https://docs.n8n.io/",
+      "n8n; docs"
+    ]
+  ],
+  "Operations & Logistics": [],
+  "Growth & Scaling": [],
+  "Orchestration": []
+}

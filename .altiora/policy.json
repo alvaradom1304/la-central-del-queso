@@ -1,0 +1,6 @@
+{
+  "schema_version": "1.0.0",
+  "protected_names": [".env", ".env.*", "*.pem", "*.key", "id_rsa", "id_ed25519"],
+  "allowed_names": [".env.example", ".env.sample", ".env.template"],
+  "scope": "Escrituras directas de herramientas de archivos y apply_patch. No analiza comandos shell, scripts ni herramientas MCP arbitrarias."
+}

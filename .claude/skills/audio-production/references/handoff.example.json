@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "job_id": "AUDIO-EXAMPLE",
+  "purpose": "Ejemplo vacío para preparar una pieza; no representa producción ejecutada",
+  "status": "DESIGNED",
+  "delivery_profile": {"destination": null, "sample_rate_hz": null, "channels": null, "integrated_lufs_target": null, "true_peak_ceiling_dbtp": null, "source": null},
+  "cue_sheet": [],
+  "assets": [],
+  "tool_access": [],
+  "source_sessions": [],
+  "stems": [],
+  "exports": [],
+  "measurements": [],
+  "listening_review": {"status": "NOT_PERFORMED", "reviewer": null, "devices": [], "findings": []},
+  "rights_review": "NOT_VERIFIED",
+  "approval": "PENDING"
+}

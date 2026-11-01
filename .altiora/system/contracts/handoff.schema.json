@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Altiora handoff 1.0.0",
+  "type": "object",
+  "required": ["schema_version", "task_id", "objective", "updated_at", "source_runtime", "status", "authorized_scope", "git_revision", "decisions", "changed_files", "tests", "pending", "next_action", "limitations"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "task_id": {"type": "string", "minLength": 1},
+    "objective": {"type": "string", "minLength": 1},
+    "updated_at": {"type": "string", "format": "date-time"},
+    "source_runtime": {"enum": ["codex", "claude", "antigravity"]},
+    "status": {"enum": ["in_progress", "blocked", "needs_review", "complete"]},
+    "authorized_scope": {"type": "array", "items": {"type": "string"}},
+    "git_revision": {"type": ["string", "null"]},
+    "decisions": {"type": "array", "items": {"type": "string"}},
+    "changed_files": {"type": "array", "items": {"type": "string"}},
+    "tests": {"type": "array", "items": {
+      "type": "object", "required": ["command", "status", "evidence", "executed_at"],
+      "properties": {
+        "command": {"type": "string", "minLength": 1},
+        "status": {"enum": ["passed", "failed", "not_run"]},
+        "evidence": {"type": "string"},
+        "executed_at": {"type": ["string", "null"], "format": "date-time"}
+      }, "additionalProperties": false
+    }},
+    "pending": {"type": "array", "items": {"type": "string"}},
+    "next_action": {"type": "string", "minLength": 1},
+    "limitations": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

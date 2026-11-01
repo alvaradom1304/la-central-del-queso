@@ -1,0 +1,151 @@
+{
+  "skill_count": 4,
+  "source": "Cuatro SOPs tácticos Altiora OS, versión 1.0.0.",
+  "files": [
+    {
+      "path": "LEEME.md",
+      "bytes": 526,
+      "sha256": "27f149f33106567dbfe4500745690b01449d67cae088554c05ae5c24e52b3b83"
+    },
+    {
+      "path": "skills/marketing/meta-ads-creator/SKILL.md",
+      "bytes": 5563,
+      "sha256": "3cfa6ebb64aac9e802846ddb8b5b7b66584f1ad6c8b896c961cf13d39eff0d7a"
+    },
+    {
+      "path": "skills/marketing/meta-ads-creator/agents/openai.yaml",
+      "bytes": 321,
+      "sha256": "fbb3e11aab8b4a509049701f2370d5c3ac000639f967a9f82b2d36b931e90509"
+    },
+    {
+      "path": "skills/marketing/meta-ads-creator/references/contract.json",
+      "bytes": 2736,
+      "sha256": "b0fb8155867f8afef27a8fb00c8ee09a0b29c18856cf744e28e7632c34889c72"
+    },
+    {
+      "path": "skills/marketing/meta-ads-creator/references/evaluation-cases.json",
+      "bytes": 869,
+      "sha256": "4e035f7b7cc879bc4a332368089d8dffdf646fecb1b7b389934fbdb6736cffe7"
+    },
+    {
+      "path": "skills/marketing/meta-ads-creator/references/input-schema.json",
+      "bytes": 1634,
+      "sha256": "9b46352acdb0cc9ed22beedcb5752491b655ce5cc4b90ea14c95e085c2af8ac1"
+    },
+    {
+      "path": "skills/marketing/meta-ads-creator/references/output-schema.json",
+      "bytes": 1887,
+      "sha256": "2372184148fe74abdc36d7fcd0b66793663d596ad938d9badf4a938806e5b47e"
+    },
+    {
+      "path": "skills/marketing/meta-ads-creator/references/protocol.md",
+      "bytes": 850,
+      "sha256": "6ce66d262961fe823fffb31f2a87dc6a823ee3c3ca9318f229b77454ee0bd55b"
+    },
+    {
+      "path": "skills/operations/n8n-webhook-architect/SKILL.md",
+      "bytes": 7153,
+      "sha256": "57038642470df0d633110a3c8dbf22c02e4b90dbcd0f66763bc0d7eee68b8319"
+    },
+    {
+      "path": "skills/operations/n8n-webhook-architect/agents/openai.yaml",
+      "bytes": 323,
+      "sha256": "80978587d8170a7435b646dcf6e0fb57e2c5a8e11c34a9431da5ecdc168790bf"
+    },
+    {
+      "path": "skills/operations/n8n-webhook-architect/references/contract.json",
+      "bytes": 2854,
+      "sha256": "6acd4f645a7fae92576376565d2e75d54ee8227a356c2ef6b5d11c8e34b5bb58"
+    },
+    {
+      "path": "skills/operations/n8n-webhook-architect/references/evaluation-cases.json",
+      "bytes": 1163,
+      "sha256": "7832282923334c132961dde06124cea930a44c6c27b8442d44fc8576f9e19762"
+    },
+    {
+      "path": "skills/operations/n8n-webhook-architect/references/input-schema.json",
+      "bytes": 1050,
+      "sha256": "24b67d555cce315ef6068db474a6e234208e1819583f5b6a333898c42e21e80e"
+    },
+    {
+      "path": "skills/operations/n8n-webhook-architect/references/output-schema.json",
+      "bytes": 1897,
+      "sha256": "6da1d62eacccf61542b2dd720be6a14f4d08db36faa40fad035b905cf25fb4c1"
+    },
+    {
+      "path": "skills/operations/n8n-webhook-architect/references/protocol.md",
+      "bytes": 855,
+      "sha256": "12fb3e9fc0a29d82d9a72ba150346b295fa6a34b79879a36d2c7a819d6cecd7f"
+    },
+    {
+      "path": "skills/orchestration/high-ticket-offer/SKILL.md",
+      "bytes": 6701,
+      "sha256": "30a043e07595a1ccb54f8f18fb6d57bc291666303457306f9a5bd25279d2751a"
+    },
+    {
+      "path": "skills/orchestration/high-ticket-offer/agents/openai.yaml",
+      "bytes": 314,
+      "sha256": "6732341da3dc70e60f35471fb89b45f55be1011ac0172845bd4885430fad47ff"
+    },
+    {
+      "path": "skills/orchestration/high-ticket-offer/references/contract.json",
+      "bytes": 2827,
+      "sha256": "649181db9dde65968fb488ea306f36de75a02641094af6f2f3c03c03fbc9d7d9"
+    },
+    {
+      "path": "skills/orchestration/high-ticket-offer/references/evaluation-cases.json",
+      "bytes": 982,
+      "sha256": "32efd99008f731ef6240f1d734d4015c853c2051116ba7a971fc90d97377b716"
+    },
+    {
+      "path": "skills/orchestration/high-ticket-offer/references/input-schema.json",
+      "bytes": 1302,
+      "sha256": "3844eb9152e27c35637ed1d78306f160a8f33e84f2412576dfc1ee7ead14b56d"
+    },
+    {
+      "path": "skills/orchestration/high-ticket-offer/references/output-schema.json",
+      "bytes": 1889,
+      "sha256": "d61c7171cca62260c2d16b72a668cd9864f54074b1cec9c3a0791c28de18832e"
+    },
+    {
+      "path": "skills/orchestration/high-ticket-offer/references/protocol.md",
+      "bytes": 851,
+      "sha256": "263ca247e8e683e4cee824fc0950bad1305f2f16bfbbc83a3f237332e6bfa710"
+    },
+    {
+      "path": "skills/sales/cold-outbound-system/SKILL.md",
+      "bytes": 7508,
+      "sha256": "d668e00ee3e14b26bb3392a0f5b716245633ff325615085a49d8c7185753f111"
+    },
+    {
+      "path": "skills/sales/cold-outbound-system/agents/openai.yaml",
+      "bytes": 348,
+      "sha256": "1620c87288312a5bac6c92f059f29e485302e9c3ff71db0d4425c08051c89944"
+    },
+    {
+      "path": "skills/sales/cold-outbound-system/references/contract.json",
+      "bytes": 2797,
+      "sha256": "16523889033d7d00f235b99e8c2920ebc386742e153747282aeb2021f5918d62"
+    },
+    {
+      "path": "skills/sales/cold-outbound-system/references/evaluation-cases.json",
+      "bytes": 932,
+      "sha256": "8337445b5ab8fc393cbdf4bebc2d8954c98de00f92ed58b4b327c2caa8134660"
+    },
+    {
+      "path": "skills/sales/cold-outbound-system/references/input-schema.json",
+      "bytes": 1760,
+      "sha256": "11e45c597d390bbc63a3a8452da2ce3e1dec8891c3cb4a211d7b6306058eb4d3"
+    },
+    {
+      "path": "skills/sales/cold-outbound-system/references/output-schema.json",
+      "bytes": 1895,
+      "sha256": "b97dc13bc0632579228846fceba31b51e8873c303064fad147dd9763cf7949f1"
+    },
+    {
+      "path": "skills/sales/cold-outbound-system/references/protocol.md",
+      "bytes": 854,
+      "sha256": "15928cc6d3bf356acb008f860c9dc27cdb7e2baf71451c7c77175610f30d05f7"
+    }
+  ]
+}

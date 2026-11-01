@@ -1,0 +1,4 @@
+interface:
+  display_name: "Venture Risk Assessment"
+  short_description: "Venture Building: capacidad AEM OS"
+  default_prompt: "Usa $venture-risk-assessment para abordar esta tarea con evidencia y resultado verificable."

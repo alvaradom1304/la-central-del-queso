@@ -1,0 +1,163 @@
+{
+  "name": "motion-design",
+  "domain": "Premium Web Experience",
+  "sprint": 6,
+  "inputs": "tarea, UI/escena, ritmo, marca",
+  "output": "motion_spec, states, alternatives",
+  "procedure": [
+    "Asignar función a cada transición y feedback",
+    "Definir timing y continuidad espacial",
+    "Comprobar movimiento reducido, foco y comprensión"
+  ],
+  "decision": "No esconder información necesaria detrás de animación",
+  "kpi": "claridad de estados y feedback",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [
+    [
+      "https://www.w3.org/TR/WCAG22/",
+      "W3C; norma accesibilidad"
+    ],
+    [
+      "https://gsap.com/docs/v3/",
+      "GSAP; documentación"
+    ],
+    [
+      "https://nextjs.org/docs",
+      "Next.js; documentación"
+    ],
+    [
+      "https://web.dev/articles/vitals",
+      "Web Vitals; distinguir campo/laboratorio"
+    ],
+    [
+      "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+      "Search Central"
+    ],
+    [
+      "https://threejs.org/docs/",
+      "Three.js; docs consultadas"
+    ],
+    [
+      "https://r3f.docs.pmnd.rs/getting-started/introduction",
+      "R3F; docs consultadas"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Premium Web Experience",
+  "purpose": "Asignar función a cada transición y feedback",
+  "business_outcome": "claridad de estados y feedback",
+  "when_to_use": "motion-design: Premium Web Experience. Usar para producir motion_spec, states, alternatives a partir de tarea, UI/escena, ritmo, marca; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "motion-design",
+    "motion_spec, states, alternatives"
+  ],
+  "required_inputs": [
+    "tarea",
+    " UI/escena",
+    " ritmo",
+    " marca"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://www.w3.org/TR/WCAG22/",
+      "W3C; norma accesibilidad"
+    ],
+    [
+      "https://gsap.com/docs/v3/",
+      "GSAP; documentación"
+    ],
+    [
+      "https://nextjs.org/docs",
+      "Next.js; documentación"
+    ],
+    [
+      "https://web.dev/articles/vitals",
+      "Web Vitals; distinguir campo/laboratorio"
+    ],
+    [
+      "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+      "Search Central"
+    ],
+    [
+      "https://threejs.org/docs/",
+      "Three.js; docs consultadas"
+    ],
+    [
+      "https://r3f.docs.pmnd.rs/getting-started/introduction",
+      "R3F; docs consultadas"
+    ]
+  ],
+  "decision_rules": [
+    "No esconder información necesaria detrás de animación",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "motion_spec",
+    " states",
+    " alternatives"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No esconder información necesaria detrás de animación",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "claridad de estados y feedback"
+  ],
+  "examples": [
+    "Usa $motion-design con tarea, UI/escena, ritmo, marca para obtener motion_spec, states, alternatives.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

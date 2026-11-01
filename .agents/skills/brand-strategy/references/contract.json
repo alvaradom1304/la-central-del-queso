@@ -1,0 +1,105 @@
+{
+  "name": "brand-strategy",
+  "domain": "Brand Intelligence",
+  "sprint": 5,
+  "inputs": "estrategia negocio, audiencia, valor, competencia",
+  "output": "brand_platform, promises, proof",
+  "procedure": [
+    "Definir propósito, promesa y rol de marca desde negocio",
+    "Elegir atributos y posicionamiento sustentados",
+    "Traducir a principios de expresión y experiencia"
+  ],
+  "decision": "Valores deben observarse en operación; no imponer estética",
+  "kpi": "coherencia entre promesa y experiencia",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Brand Intelligence",
+  "purpose": "Definir propósito, promesa y rol de marca desde negocio",
+  "business_outcome": "coherencia entre promesa y experiencia",
+  "when_to_use": "brand-strategy: Brand Intelligence. Usar para producir brand_platform, promises, proof a partir de estrategia negocio, audiencia, valor, competencia; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "brand-strategy",
+    "brand_platform, promises, proof"
+  ],
+  "required_inputs": [
+    "estrategia negocio",
+    " audiencia",
+    " valor",
+    " competencia"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [],
+  "decision_rules": [
+    "Valores deben observarse en operación; no imponer estética",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "brand_platform",
+    " promises",
+    " proof"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: Valores deben observarse en operación; no imponer estética",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "coherencia entre promesa y experiencia"
+  ],
+  "examples": [
+    "Usa $brand-strategy con estrategia negocio, audiencia, valor, competencia para obtener brand_platform, promises, proof.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

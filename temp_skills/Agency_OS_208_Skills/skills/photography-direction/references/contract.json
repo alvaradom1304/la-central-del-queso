@@ -1,0 +1,105 @@
+{
+  "name": "photography-direction",
+  "domain": "Brand Intelligence",
+  "sprint": 5,
+  "inputs": "posicionamiento, producto, medios, presupuesto",
+  "output": "photo_brief, shot_list, rights",
+  "procedure": [
+    "Definir autenticidad, luz, encuadre y contexto",
+    "Preparar lista de tomas con objetivo y formatos",
+    "Revisar consistencia y derechos/model releases pertinentes"
+  ],
+  "decision": "No usar imagen sintética como prueba documental de producto real",
+  "kpi": "tomas útiles y consistentes",
+  "type": "Atomic",
+  "dependencies": [],
+  "sources": [],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Brand Intelligence",
+  "purpose": "Definir autenticidad, luz, encuadre y contexto",
+  "business_outcome": "tomas útiles y consistentes",
+  "when_to_use": "photography-direction: Brand Intelligence. Usar para producir photo_brief, shot_list, rights a partir de posicionamiento, producto, medios, presupuesto; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "photography-direction",
+    "photo_brief, shot_list, rights"
+  ],
+  "required_inputs": [
+    "posicionamiento",
+    " producto",
+    " medios",
+    " presupuesto"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [],
+  "decision_rules": [
+    "No usar imagen sintética como prueba documental de producto real",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "photo_brief",
+    " shot_list",
+    " rights"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No usar imagen sintética como prueba documental de producto real",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "tomas útiles y consistentes"
+  ],
+  "examples": [
+    "Usa $photography-direction con posicionamiento, producto, medios, presupuesto para obtener photo_brief, shot_list, rights.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "name": "aem-autonomous-quality-loop",
+  "domain": "Orchestration",
+  "sprint": 10,
+  "inputs": "task, acceptance criteria, herramientas, riesgo, budget, autoridad",
+  "output": "status, cycles, evidence, defects, final_result",
+  "procedure": [
+    "PLAN→EXECUTE→TEST→EVALUATE; definir éxito antes de ejecutar",
+    "DIAGNOSE→CORRECT→RETEST con máximo inicial de tres ciclos correctivos",
+    "VALIDATE→REPORT; parar si no hay progreso, aparece riesgo o se agota presupuesto"
+  ],
+  "decision": "SUCCESS solo con criterios cumplidos y pruebas; FAILED si no cumple; BLOCKED si falta recurso/autoridad; NEEDS_REVIEW si decisión crítica o incertidumbre material",
+  "kpi": "criterios cumplidos y costo por corrección",
+  "type": "Orchestrator",
+  "dependencies": [],
+  "sources": [],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Orchestration",
+  "purpose": "PLAN→EXECUTE→TEST→EVALUATE; definir éxito antes de ejecutar",
+  "business_outcome": "criterios cumplidos y costo por corrección",
+  "when_to_use": "aem-autonomous-quality-loop: Orchestration. Usar para producir status, cycles, evidence, defects, final_result a partir de task, acceptance criteria, herramientas, riesgo, budget, autoridad; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "aem-autonomous-quality-loop",
+    "status, cycles, evidence, defects, final_result"
+  ],
+  "required_inputs": [
+    "task",
+    " acceptance criteria",
+    " herramientas",
+    " riesgo",
+    " budget",
+    " autoridad"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [],
+  "decision_rules": [
+    "SUCCESS solo con criterios cumplidos y pruebas; FAILED si no cumple; BLOCKED si falta recurso/autoridad; NEEDS_REVIEW si decisión crítica o incertidumbre material",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "status",
+    " cycles",
+    " evidence",
+    " defects",
+    " final_result"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: SUCCESS solo con criterios cumplidos y pruebas; FAILED si no cumple; BLOCKED si falta recurso/autoridad; NEEDS_REVIEW si decisión crítica o incertidumbre material",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "criterios cumplidos y costo por corrección"
+  ],
+  "examples": [
+    "Usa $aem-autonomous-quality-loop con task, acceptance criteria, herramientas, riesgo, budget, autoridad para obtener status, cycles, evidence, defects, final_result.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

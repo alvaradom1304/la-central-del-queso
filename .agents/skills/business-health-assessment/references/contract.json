@@ -1,0 +1,124 @@
+{
+  "name": "business-health-assessment",
+  "domain": "Business Intelligence",
+  "sprint": 2,
+  "inputs": "periodos comparables, finanzas, demanda, servicio, capacidad",
+  "output": "health_dimensions, red_flags, monitoring_plan",
+  "procedure": [
+    "Definir dimensiones y umbrales pertinentes antes de puntuar",
+    "Evaluar tendencia, liquidez, margen, concentración y calidad operativa",
+    "Identificar alertas y seguimiento con responsable"
+  ],
+  "decision": "No asignar puntaje verde a dimensiones sin datos; umbrales requieren contexto",
+  "kpi": "cobertura de dimensiones con datos",
+  "type": "Composite",
+  "dependencies": [
+    "financial-diagnostic",
+    "operational-kpis",
+    "retention"
+  ],
+  "sources": [
+    [
+      "https://www.sba.gov/counseling/plan-your-business/",
+      "SBA; marco empresarial, contexto estadounidense, no regulación de Costa Rica"
+    ]
+  ],
+  "version": "0.1.0",
+  "status": "EXPERIMENTAL",
+  "owner": "AEM OS / Dennis — Business Intelligence",
+  "purpose": "Definir dimensiones y umbrales pertinentes antes de puntuar",
+  "business_outcome": "cobertura de dimensiones con datos",
+  "when_to_use": "business-health-assessment: Business Intelligence. Usar para producir health_dimensions, red_flags, monitoring_plan a partir de periodos comparables, finanzas, demanda, servicio, capacidad; no sustituir otras fases ni declarar resultados sin evidencia.",
+  "when_not_to_use": "Si el encargo no requiere esta capacidad, está fuera del alcance autorizado o depende de una decisión ya validada que no cambió.",
+  "triggers": [
+    "business-health-assessment",
+    "health_dimensions, red_flags, monitoring_plan"
+  ],
+  "required_inputs": [
+    "periodos comparables",
+    " finanzas",
+    " demanda",
+    " servicio",
+    " capacidad"
+  ],
+  "optional_inputs": [
+    "decisiones previas",
+    "baseline",
+    "fuentes primarias adicionales",
+    "restricciones de herramienta"
+  ],
+  "tools": [
+    "herramientas realmente disponibles y autorizadas; discovery antes de usar",
+    "documentos/CLI/analítica según tarea; no se presupone conector"
+  ],
+  "knowledge_sources": [
+    [
+      "https://www.sba.gov/counseling/plan-your-business/",
+      "SBA; marco empresarial, contexto estadounidense, no regulación de Costa Rica"
+    ]
+  ],
+  "decision_rules": [
+    "No asignar puntaje verde a dimensiones sin datos; umbrales requieren contexto",
+    "aplicar protocolo común"
+  ],
+  "outputs": [
+    "health_dimensions",
+    " red_flags",
+    " monitoring_plan"
+  ],
+  "output_schema": "output-schema.json",
+  "quality_criteria": [
+    "exactitud",
+    "completitud según alcance",
+    "evidencia",
+    "utilidad empresarial",
+    "seguridad",
+    "consistencia",
+    "reusabilidad",
+    "manejo de fallo"
+  ],
+  "validation": [
+    "schema y nombres",
+    "criterio específico: No asignar puntaje verde a dimensiones sin datos; umbrales requieren contexto",
+    "escenarios según evaluation-cases.json; registrar ejecutados"
+  ],
+  "failure_conditions": [
+    "resultado contradice evidencia",
+    "no cumple criterios",
+    "fallo de herramienta sin recuperación"
+  ],
+  "escalation_conditions": [
+    "dato/material crítico faltante",
+    "contradicción no resuelta",
+    "acción excede alcance",
+    "decisión crítica requiere responsable humano"
+  ],
+  "security_considerations": [
+    "minimización",
+    "privilegio mínimo",
+    "no secretos en output",
+    "scope autorizado"
+  ],
+  "human_approval_requirements": [
+    "decisiones críticas finales y acciones fuera de autorización vigente; no repetir permiso ya concedido"
+  ],
+  "kpis": [
+    "cobertura de dimensiones con datos"
+  ],
+  "examples": [
+    "Usa $business-health-assessment con periodos comparables, finanzas, demanda, servicio, capacidad para obtener health_dimensions, red_flags, monitoring_plan.",
+    "Si faltan datos, entregar método y preguntas pendientes sin fingir ejecución."
+  ],
+  "related_skills": [
+    "financial-diagnostic",
+    "operational-kpis",
+    "retention"
+  ],
+  "version_history": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-10",
+      "change": "Procedimiento y contrato inicial; experimental, requiere evaluación contextual."
+    }
+  ]
+}

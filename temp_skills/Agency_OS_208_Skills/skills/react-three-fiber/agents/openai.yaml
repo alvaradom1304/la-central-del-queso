@@ -1,0 +1,4 @@
+interface:
+  display_name: "React Three Fiber"
+  short_description: "Premium Web Experience: capacidad AEM OS"
+  default_prompt: "Usa $react-three-fiber para abordar esta tarea con evidencia y resultado verificable."

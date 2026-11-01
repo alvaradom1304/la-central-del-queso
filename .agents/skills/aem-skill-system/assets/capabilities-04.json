@@ -1,0 +1,308 @@
+[
+  {
+    "name": "sales-discovery",
+    "domain": "Sales Intelligence",
+    "sprint": 4,
+    "inputs": "oferta, contexto del comprador, notas, objetivo de conversación",
+    "output": "discovery_questions, buyer_evidence, next_step",
+    "procedure": [
+      "Investigar contexto pertinente y pedir permiso para explorar",
+      "Indagar problema, impacto, decisión, restricciones y alternativas",
+      "Devolver resumen al comprador y acordar siguiente paso si procede"
+    ],
+    "decision": "No convertir conversación en interrogatorio ni propuesta antes de validar problema",
+    "kpi": "oportunidades con problema confirmado",
+    "type": "Atomic"
+  },
+  {
+    "name": "problem-centric-selling",
+    "domain": "Sales Intelligence",
+    "sprint": 4,
+    "inputs": "problema, causa/impacto, solución, límites",
+    "output": "problem_solution_map, fit, discovery_gaps",
+    "procedure": [
+      "Separar síntomas técnicos de problema empresarial",
+      "Conectar capacidad de solución a impacto verificable",
+      "Detectar mal encaje y recomendar no vender si no ayuda"
+    ],
+    "decision": "No inventar dolor ni urgencia",
+    "kpi": "encaje documentado y conversión cualificada",
+    "type": "Atomic"
+  },
+  {
+    "name": "gap-selling",
+    "domain": "Sales Intelligence",
+    "sprint": 4,
+    "inputs": "estado actual, estado deseado, impacto, causa, oferta",
+    "output": "current_future_gap, value_case, open_questions",
+    "procedure": [
+      "Documentar situación y problema actual con datos del comprador",
+      "Explorar estado futuro y diferencia cuantificable o cualitativa",
+      "Relacionar cambio requerido con solución y criterio de decisión"
+    ],
+    "decision": "Método de Keenan; no exagerar costo de inacción ni declarar brecha numérica sin base",
+    "kpi": "brechas confirmadas por comprador",
+    "type": "Atomic"
+  },
+  {
+    "name": "spin-selling",
+    "domain": "Sales Intelligence",
+    "sprint": 4,
+    "inputs": "conversación, segmento, solución, evidencia previa",
+    "output": "spin_questions, needs_summary, next_step",
+    "procedure": [
+      "Limitar Situation a información desconocida",
+      "Explorar Problem e Implication sin inducir respuestas",
+      "Usar Need-payoff para que comprador exprese valor; iterar según conversación"
+    ],
+    "decision": "SPIN de Huthwaite/Rackham es guía flexible; no asumir secuencia rígida ni garantizar cierre",
+    "kpi": "necesidades explícitas y avance acordado",
+    "type": "Atomic"
+  },
+  {
+    "name": "lead-qualification",
+    "domain": "Sales Intelligence",
+    "sprint": 4,
+    "inputs": "ICP, señal de necesidad, capacidad, autoridad, momento",
+    "output": "qualification, disqualifiers, next_action",
+    "procedure": [
+      "Definir criterios de encaje y exclusión antes de puntuar",
+      "Evaluar evidencia de necesidad, decisión, recursos y momento",
+      "Clasificar cualificado/provisional/no encaja y tarea faltante"
+    ],
+    "decision": "Datos desconocidos no son respuestas positivas; no discriminar por categorías sensibles",
+    "kpi": "precisión de cualificación",
+    "type": "Atomic"
+  },
+  {
+    "name": "meddicc",
+    "domain": "Sales Intelligence",
+    "sprint": 4,
+    "inputs": "oportunidad B2B, métricas, actores, proceso, competencia",
+    "output": "qualification_dimensions, evidence_gaps, deal_plan",
+    "procedure": [
+      "Evaluar Metrics, Economic Buyer, Decision Criteria y Decision Process",
+      "Evaluar Identify/Implicate Pain, Champion y Competition con evidencia",
+      "Registrar desconocidos y acciones; distinguir MEDDICC de MEDDPICC que añade Paper Process"
+    ],
+    "decision": "Champion requiere influencia/acción, no simpatía; no inventar nombres ni forecast por checklist",
+    "kpi": "dimensiones respaldadas y precisión del forecast",
+    "type": "Atomic"
+  },
+  {
+    "name": "value-selling",
+    "domain": "Sales Intelligence",
+    "sprint": 4,
+    "inputs": "impacto base, drivers, costo, alternativas, criterios comprador",
+    "output": "value_case, assumptions, validation",
+    "procedure": [
+      "Precisar alternativa actual, problema, drivers y criterio económico del comprador.",
+      "Construir baseline trazable con unidad, periodo, volumen y propietario de datos.",
+      "Cuantificar efecto incremental por mecanismo, evitando doble conteo de ahorro/ingreso/riesgo.",
+      "Calcular costos totales, adopción, tiempo a valor y escenarios de sensibilidad.",
+      "Validar supuestos materiales con evidencia del comprador y separar estimación de resultado.",
+      "Entregar caso de valor, fórmula, límites y condiciones de revisión sin garantía de retorno."
+    ],
+    "decision": "No tratar beneficio bruto como ROI ni ingreso como utilidad",
+    "kpi": "valor confirmado frente a costo",
+    "type": "Atomic"
+  },
+  {
+    "name": "sales-objection-analysis",
+    "domain": "Sales Intelligence",
+    "sprint": 4,
+    "inputs": "objeción textual, etapa, contexto, políticas",
+    "output": "objection_hypotheses, clarification, response_options",
+    "procedure": [
+      "Clasificar precio, confianza, encaje, prioridad o decisión",
+      "Preguntar para distinguir causa de frase superficial",
+      "Responder con evidencia pertinente y respetar rechazo"
+    ],
+    "decision": "Objeción no es permiso para presión; no inventar garantías",
+    "kpi": "resolución y avance sin quejas",
+    "type": "Atomic"
+  },
+  {
+    "name": "negotiation",
+    "domain": "Sales Intelligence",
+    "sprint": 4,
+    "inputs": "intereses, alternativas, límites, autoridad, contexto",
+    "output": "negotiation_plan, concessions, approval_points",
+    "procedure": [
+      "Separar posiciones de intereses y alternativa sin acuerdo",
+      "Escuchar y resumir perspectiva; aplicar empatía y preguntas abiertas",
+      "Preparar concesiones condicionales, límites y registro de acuerdo"
+    ],
+    "decision": "No prometer descuentos o condiciones fuera de autoridad; no manipular vulnerabilidad",
+    "kpi": "valor retenido y acuerdos cumplidos",
+    "type": "Atomic"
+  },
+  {
+    "name": "sales-proposal",
+    "domain": "Sales Intelligence",
+    "sprint": 4,
+    "inputs": "problema validado, alcance, oferta, precio, condiciones",
+    "output": "proposal, options, acceptance_terms",
+    "procedure": [
+      "Conectar problema/resultado con alcance y evidencia",
+      "Especificar entregables, exclusiones, responsabilidad, inversión y riesgos",
+      "Definir aceptación y siguiente decisión del comprador"
+    ],
+    "decision": "No convertir estimación en garantía ni omitir cargos; enviar solo con autorización",
+    "kpi": "propuestas aceptadas y margen",
+    "type": "Atomic"
+  },
+  {
+    "name": "prospecting",
+    "domain": "Sales Intelligence",
+    "sprint": 4,
+    "inputs": "ICP, oferta, canales permitidos, datos legítimos",
+    "output": "prospecting_plan, contact_criteria, drafts",
+    "procedure": [
+      "Elegir cuentas por encaje y señales públicas legítimas",
+      "Diseñar mensaje útil y secuencia por canal",
+      "Definir frecuencia, opt-out y seguimiento por etapa"
+    ],
+    "decision": "No recolectar datos sensibles ni enviar sin instrucción explícita; verificar reglas locales/plataforma",
+    "kpi": "conversaciones cualificadas por contacto",
+    "type": "Atomic"
+  },
+  {
+    "name": "sales-follow-up",
+    "domain": "Sales Intelligence",
+    "sprint": 4,
+    "inputs": "interacción previa, consentimiento, siguiente paso, fecha",
+    "output": "followup_draft, cadence, stop_rules",
+    "procedure": [
+      "Recuperar compromiso real y contexto del comprador",
+      "Aportar evidencia o ayuda relacionada con su decisión",
+      "Proponer siguiente paso sencillo y detener ante rechazo/opt-out"
+    ],
+    "decision": "No inventar conversación anterior ni enviar automáticamente",
+    "kpi": "respuesta útil y avance acordado",
+    "type": "Atomic"
+  },
+  {
+    "name": "cross-selling",
+    "domain": "Sales Intelligence",
+    "sprint": 4,
+    "inputs": "compra/uso actual, necesidad adicional, compatibilidad",
+    "output": "complementary_offer, suitability, message",
+    "procedure": [
+      "Identificar problema adicional conectado al uso",
+      "Verificar compatibilidad, costos y conveniencia",
+      "Ofrecer opcionalmente con explicación transparente"
+    ],
+    "decision": "No añadir productos ni cobros sin aceptación; evaluar elegibilidad si regulado",
+    "kpi": "adopción útil y margen incremental",
+    "type": "Atomic"
+  },
+  {
+    "name": "upselling",
+    "domain": "Sales Intelligence",
+    "sprint": 4,
+    "inputs": "solución actual, necesidad, alternativa superior, costo",
+    "output": "upgrade_case, comparison, suitability",
+    "procedure": [
+      "Recuperar necesidad real, uso actual, alternativas, restricciones y costo total.",
+      "Identificar el límite concreto del producto actual y si una opción superior lo resuelve.",
+      "Comparar valor incremental, cantidad/utilidad, compatibilidad y costo para el comprador.",
+      "Presentar recomendación opcional y opción actual suficiente con condiciones transparentes.",
+      "Medir margen incremental, satisfacción, devoluciones y retención por cohorte.",
+      "Revisar elegibilidad/resultado sin agregar productos o cobros por defecto."
+    ],
+    "decision": "No ocultar opción económica suficiente",
+    "kpi": "mejora de valor y retención tras upgrade",
+    "type": "Atomic"
+  },
+  {
+    "name": "customer-success",
+    "domain": "Sales Intelligence",
+    "sprint": 4,
+    "inputs": "promesa vendida, onboarding, uso, resultado, soporte",
+    "output": "success_plan, health_signals, interventions",
+    "procedure": [
+      "Convertir promesa en hitos de adopción y resultado",
+      "Identificar barreras de uso con cliente",
+      "Coordinar ayuda, revisión y feedback a ventas/producto"
+    ],
+    "decision": "No equiparar login con éxito; no prometer soporte inexistente",
+    "kpi": "tiempo a valor y resultado del cliente",
+    "type": "Atomic"
+  },
+  {
+    "name": "retention",
+    "domain": "Sales Intelligence",
+    "sprint": 4,
+    "inputs": "cohortes, compras/uso, churn, feedback, costos",
+    "output": "retention_diagnosis, interventions, measures",
+    "procedure": [
+      "Definir activo/recompra/churn y periodo por negocio",
+      "Analizar cohortes y razones de abandono",
+      "Probar mejoras de experiencia y oferta con margen protegido"
+    ],
+    "decision": "No obstaculizar cancelación ni usar descuentos indiscriminados",
+    "kpi": "retención por cohorte y contribución",
+    "type": "Atomic"
+  },
+  {
+    "name": "challenger-selling",
+    "domain": "Sales Intelligence",
+    "sprint": 4,
+    "inputs": "problema B2B, insight sustentado, stakeholders, oferta",
+    "output": "teaching_insight, tailored_message, next_step",
+    "procedure": [
+      "Construir insight comercial verificable que reencuadre problema",
+      "Adaptar relevancia para cada actor",
+      "Guiar decisión con tensión constructiva respetuosa"
+    ],
+    "decision": "No fabricar hechos para desafiar al comprador ni confundir control con coerción",
+    "kpi": "comprensión del insight y avance",
+    "type": "Atomic"
+  },
+  {
+    "name": "mom-test-interviewing",
+    "domain": "Sales Intelligence",
+    "sprint": 4,
+    "inputs": "hipótesis, acceso a usuarios, guía y consentimiento",
+    "output": "interview_questions, past_behavior, commitments",
+    "procedure": [
+      "Preguntar por episodios pasados y soluciones actuales",
+      "Escuchar hechos y costos antes de explicar idea",
+      "Registrar compromiso observable y evidencia que contradice hipótesis"
+    ],
+    "decision": "Síntesis original inspirada en Rob Fitzpatrick; no copiar libro ni tomar cumplidos por demanda",
+    "kpi": "evidencia conductual por entrevista",
+    "type": "Atomic"
+  },
+  {
+    "name": "ethical-influence",
+    "domain": "Sales Intelligence",
+    "sprint": 4,
+    "inputs": "audiencia, mensaje, evidencia, objetivo",
+    "output": "persuasion_options, evidence_checks, test",
+    "procedure": [
+      "Evaluar prueba social, autoridad, reciprocidad y escasez auténticas",
+      "Conectar a necesidad y comprensión, sin falsas señales",
+      "Comprobar impacto y efectos adversos"
+    ],
+    "decision": "Conceptos atribuidos a Cialdini no son ley universal; no fingir testimonios/cupos",
+    "kpi": "conversión informada y quejas",
+    "type": "Atomic"
+  },
+  {
+    "name": "fanatical-prospecting",
+    "domain": "Sales Intelligence",
+    "sprint": 4,
+    "inputs": "ICP, capacidad, canales consentidos, objetivos",
+    "output": "prospecting_blocks, channel_mix, tracking",
+    "procedure": [
+      "Definir bloques sostenibles de prospección multicanal",
+      "Relacionar actividad con conversaciones cualificadas",
+      "Revisar calidad, respuesta y fatiga por canal"
+    ],
+    "decision": "Inspiración original en Jeb Blount; no equiparar volumen con efectividad ni enviar sin permiso",
+    "kpi": "pipeline cualificado por tiempo",
+    "type": "Atomic"
+  }
+]
