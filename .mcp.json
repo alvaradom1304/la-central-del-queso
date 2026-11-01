@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "altiora-graphify": {
+      "command": "C:/Users/Usuario/.altiora-tools/graphify/Scripts/graphify-mcp.exe",
+      "args": [
+        "C:/Users/Usuario/.altiora-tools/graphs/altiora/graphify-out/graph.json",
+        "--transport",
+        "stdio"
+      ]
+    }
+  }
+}
+
