@@ -1,0 +1,19 @@
+# Ignorar árboles de trabajo duplicados y cachés locales
+.claude/worktrees/
+worktrees/
+.git/
+
+# Ignorar dependencias y compilación
+node_modules/
+.next/
+out/
+coverage/
+
+# Ignorar assets multimedia pesados y binarios 3D
+public/models/*.glb
+public/textures/
+public/videos/*.mp4
+
+# Ignorar grafos pesados en escaneos automáticos de contexto
+graphify-out/
+

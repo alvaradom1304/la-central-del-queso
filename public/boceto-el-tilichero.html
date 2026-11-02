@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El Tilichero CR — Cyber-Shop & Drops Virales</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              black: '#0A0A0C',
+              surface: '#121318',
+              card: '#181A22',
+              cardHover: '#1F222E',
+              border: '#272A36',
+              neon: '#00FFA3',
+              neonHover: '#00e592',
+              orange: '#FF5E1E',
+              cyan: '#00E5FF',
+              muted: '#8E94A5',
+              white: '#F4F5F8'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+            syne: ['Syne', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=JetBrains+Mono:wght@500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <style>
+    body {
+      background-color: #0A0A0C;
+      color: #F4F5F8;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+    .neon-glow {
+      box-shadow: 0 0 30px -5px rgba(0, 255, 163, 0.4);
+    }
+    .orange-glow {
+      box-shadow: 0 0 30px -5px rgba(255, 94, 30, 0.4);
+    }
+    .cyan-glow {
+      box-shadow: 0 0 30px -5px rgba(0, 229, 255, 0.4);
+    }
+    .grid-bg {
+      background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+    /* Cursor Glow */
+    #cursor-glow {
+      pointer-events: none;
+      position: fixed;
+      width: 450px;
+      height: 450px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 255, 163, 0.07) 0%, rgba(255, 94, 30, 0.03) 40%, transparent 70%);
+      transform: translate(-50%, -50%);
+      transition: width 0.2s, height 0.2s;
+      z-index: 1;
+    }
+    /* 3D Tilt Card */
+    .tilt-card {
+      transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+      transform-style: preserve-3d;
+      perspective: 1000px;
+    }
+    /* Loot Box 3D Pulse */
+    @keyframes loot-pulse {
+      0%, 100% { transform: scale(1) translateY(0); filter: drop-shadow(0 0 15px rgba(0, 255, 163, 0.4)); }
+      50% { transform: scale(1.04) translateY(-6px); filter: drop-shadow(0 0 35px rgba(255, 94, 30, 0.6)); }
+    }
+    .animate-loot {
+      animation: loot-pulse 3s infinite ease-in-out;
+    }
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0A0A0C;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #272A36;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #00FFA3;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-brand-black text-brand-white selection:bg-brand-neon selection:text-brand-black relative">
+
+  <!-- Interactive Cursor Ambient Glow -->
+  <div id="cursor-glow"></div>
+
+  <!-- BARRA DE CONFIANZA SUPERIOR -->
+  <div class="bg-gradient-to-r from-brand-surface via-brand-card to-brand-surface border-b border-brand-border py-2 text-xs font-mono text-center text-brand-muted flex items-center justify-center gap-4 px-4 relative z-20">
+    <span class="inline-flex items-center gap-1.5 text-brand-neon font-bold">
+      <span class="h-2 w-2 rounded-full bg-brand-neon animate-ping"></span>
+      ENVÍOS A TODO COSTA RICA
+    </span>
+    <span class="hidden sm:inline text-brand-border">|</span>
+    <span class="hidden sm:inline">📦 GAM 24 Horas Express · Fuera de GAM Correos de CR</span>
+    <span class="hidden sm:inline text-brand-border">|</span>
+    <span class="text-brand-orange font-bold">💳 SINPE Móvil Verificado (7270-7894)</span>
+    
+    <!-- Audio Toggle -->
+    <button id="sound-btn" onclick="toggleAudio()" class="ml-2 px-2 py-0.5 rounded bg-brand-surface border border-brand-border text-[10px] text-brand-muted hover:text-brand-neon flex items-center gap-1 transition-all" title="Activar/Desactivar efectos de sonido">
+      <span id="sound-icon">🔊</span> <span class="hidden md:inline">Sonido SFX</span>
+    </button>
+  </div>
+
+  <!-- NAVEGACIÓN PRINCIPAL FLOTANTE -->
+  <header class="sticky top-0 z-40 backdrop-blur-xl bg-brand-black/85 border-b border-brand-border/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+      
+      <!-- LOGO CON ISOTIPO INTERACTIVO -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-12 h-12 rounded-2xl bg-brand-surface border-2 border-brand-neon/50 flex items-center justify-center relative neon-glow transition-all group-hover:scale-110 group-hover:rotate-6">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" class="text-brand-neon">
+            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div class="absolute -top-1 -right-1 w-3 h-3 bg-brand-orange rounded-full animate-ping"></div>
+          <div class="absolute -top-1 -right-1 w-3 h-3 bg-brand-orange rounded-full"></div>
+        </div>
+        
+        <div>
+          <span class="font-syne font-extrabold text-2xl tracking-tight text-white block leading-none">
+            EL TILICHERO<span class="text-brand-neon">.CR</span>
+          </span>
+          <span class="text-[10px] font-mono tracking-widest uppercase text-brand-muted mt-1 block">
+            Cazadores de Gadgets & Drops
+          </span>
+        </div>
+      </a>
+
+      <!-- CATEGORÍAS RÁPIDAS -->
+      <nav class="hidden lg:flex items-center gap-1 bg-brand-surface/80 border border-brand-border px-3 py-1.5 rounded-full text-xs font-medium">
+        <button onclick="filterCategory('all')" class="cat-pill active px-3 py-1 rounded-full text-brand-black bg-brand-neon font-bold transition-all">Todos</button>
+        <button onclick="filterCategory('gaming')" class="cat-pill px-3 py-1 rounded-full text-brand-muted hover:text-white transition-all">Setup & Gaming</button>
+        <button onclick="filterCategory('viral')" class="cat-pill px-3 py-1 rounded-full text-brand-muted hover:text-white transition-all">Virales TikTok</button>
+        <button onclick="filterCategory('collectible')" class="cat-pill px-3 py-1 rounded-full text-brand-muted hover:text-white transition-all">Coleccionables</button>
+        <button onclick="filterCategory('under10k')" class="cat-pill px-3 py-1 rounded-full text-brand-orange hover:text-white transition-all font-mono">&lt; ₡10.000</button>
+      </nav>
+
+      <!-- BOTONES DE ACCIÓN (LOOT BOX + CARRITO INTERACTIVO) -->
+      <div class="flex items-center gap-3">
+        <!-- Botón Mini Loot Box -->
+        <button onclick="openLootModal()" class="hidden sm:flex items-center gap-2 bg-brand-card hover:bg-brand-surface border border-brand-orange/60 text-brand-orange px-3.5 py-2 rounded-xl text-xs font-mono font-bold hover:scale-105 transition-all orange-glow">
+          <span>🎁</span>
+          <span>Abrir Caja Sorpresa</span>
+        </button>
+
+        <!-- Botón Carrito Lateral -->
+        <button onclick="toggleCartDrawer()" class="relative bg-brand-surface hover:bg-brand-card border border-brand-border hover:border-brand-neon p-2.5 rounded-xl transition-all flex items-center justify-center group">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-brand-white group-hover:text-brand-neon transition-colors">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span id="cart-badge" class="absolute -top-1.5 -right-1.5 bg-brand-neon text-brand-black text-[11px] font-mono font-bold w-5 h-5 rounded-full flex items-center justify-center scale-0 transition-transform duration-300">
+            0
+          </span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- HERO SECTION CON LOOT BOX INTERACTIVO 3D -->
+  <section class="relative overflow-hidden grid-bg border-b border-brand-border py-12 sm:py-20 z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        
+        <!-- TEXTO ESTRATÉGICO -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-surface border border-brand-border text-xs font-mono text-brand-neon">
+            <span class="w-2 h-2 rounded-full bg-brand-orange animate-ping"></span>
+            NUEVO DROP COSTA RICA · EDICIÓN NOVIEMBRE
+          </div>
+          
+          <h1 class="font-syne text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.08]">
+            El tiliche que no sabías <br class="hidden sm:inline">
+            que <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-neon via-emerald-300 to-brand-orange">ocupabas en tu vida.</span>
+          </h1>
+          
+          <p class="text-brand-muted text-base sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed">
+            Curaduría de tecnología accesible, setups gamer y accesorios virales. En bodega en San José, con garantía local y entrega express en todo Costa Rica por SINPE Móvil.
+          </p>
+
+          <!-- BOTONES PRINCIPALES HERO -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+            <button onclick="openLootModal()" class="bg-gradient-to-r from-brand-neon to-emerald-400 hover:from-brand-neonHover hover:to-emerald-300 text-brand-black font-syne font-extrabold px-6 py-4 rounded-2xl transition-all shadow-xl hover:shadow-brand-neon/30 flex items-center gap-3 text-base group">
+              <span class="text-xl group-hover:rotate-12 transition-transform">🎁</span>
+              <span>ABRIR LOOT BOX (PREMIO TICO)</span>
+            </button>
+            <a href="#catalogo" class="bg-brand-surface hover:bg-brand-card border border-brand-border hover:border-brand-neon/50 text-white font-syne font-bold px-6 py-4 rounded-2xl transition-all text-sm flex items-center gap-2">
+              <span>Ver Catálogo en Stock</span>
+              <span>↓</span>
+            </a>
+          </div>
+
+          <!-- PROMESAS EN NÚMEROS -->
+          <div class="grid grid-cols-3 gap-3 pt-6 border-t border-brand-border/60 max-w-lg mx-auto lg:mx-0">
+            <div class="bg-brand-surface/70 border border-brand-border p-3 rounded-xl text-center">
+              <div class="font-mono text-xl font-bold text-brand-white">24h</div>
+              <div class="text-[11px] text-brand-muted">Entrega en GAM</div>
+            </div>
+            <div class="bg-brand-surface/70 border border-brand-border p-3 rounded-xl text-center">
+              <div class="font-mono text-xl font-bold text-brand-neon">100%</div>
+              <div class="text-[11px] text-brand-muted">Garantía Local</div>
+            </div>
+            <div class="bg-brand-surface/70 border border-brand-border p-3 rounded-xl text-center">
+              <div class="font-mono text-xl font-bold text-brand-orange">SINPE</div>
+              <div class="text-[11px] text-brand-muted">Pago Inmediato</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- LOOT BOX INTERACTIVO VISUAL EN VIVO -->
+        <div class="lg:col-span-5">
+          <div class="bg-gradient-to-b from-brand-surface to-brand-card border-2 border-brand-neon/40 rounded-3xl p-6 sm:p-8 neon-glow relative text-center">
+            
+            <div class="absolute -top-3.5 right-6 bg-brand-orange text-white font-mono text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow">
+              🔥 Minijuego de Bienvenida
+            </div>
+
+            <!-- Caja 3D animada -->
+            <div onclick="openLootModal()" class="cursor-pointer my-4 group">
+              <div class="w-36 h-36 mx-auto rounded-3xl bg-brand-black border-2 border-brand-neon flex items-center justify-center relative animate-loot group-hover:scale-110 transition-transform">
+                <!-- Icono de Caja Sorpresa -->
+                <svg width="70" height="70" viewBox="0 0 24 24" fill="none" class="text-brand-neon group-hover:text-brand-orange transition-colors">
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" stroke="currentColor" stroke-width="1.8"/>
+                  <polyline points="3.27 6.96 12 12.01 20.73 6.96" stroke="currentColor" stroke-width="1.8"/>
+                  <line x1="12" y1="22.08" x2="12" y2="12" stroke="currentColor" stroke-width="1.8"/>
+                </svg>
+                <div class="absolute inset-0 bg-brand-neon/10 rounded-3xl blur-xl group-hover:bg-brand-orange/20 transition-all"></div>
+              </div>
+              <p class="text-xs font-mono text-brand-neon mt-4 font-bold tracking-wide">
+                [ TOCA LA CAJA PARA DESBLOQUEAR TU PREMIO ]
+              </p>
+            </div>
+
+            <p class="text-xs text-brand-muted max-w-xs mx-auto mb-4">
+              Cada nuevo visitante puede abrir la caja una vez y obtener descuentos de hasta ₡3.000 o envíos gratis por SINPE Móvil.
+            </p>
+
+            <button onclick="openLootModal()" class="w-full bg-brand-card hover:bg-brand-surface border border-brand-neon text-brand-white font-syne font-bold py-3 rounded-xl transition-all text-xs tracking-wider uppercase">
+              Probar mi Suerte Ahora
+            </button>
+
+            <!-- Badge de Cupón Ganado si ya abrió la caja -->
+            <div id="unlocked-coupon-banner" class="hidden mt-4 p-3 rounded-xl bg-brand-neon/15 border border-brand-neon text-left flex items-center justify-between">
+              <div>
+                <span class="text-[10px] font-mono text-brand-neon block uppercase font-bold">Cupón Activo en tu Orden:</span>
+                <span id="unlocked-coupon-text" class="text-xs font-bold text-white">₡2.000 DESCUENTO</span>
+              </div>
+              <span class="text-lg">✅</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CATÁLOGO INTERACTIVO CON FILTRADO EN TIEMPO REAL -->
+  <section id="catalogo" class="max-w-7xl mx-auto px-4 sm:px-6 py-20 z-10 relative">
+    
+    <!-- HEADER DEL CATÁLOGO & FILTROS -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+      <div>
+        <div class="flex items-center gap-2 mb-2">
+          <span class="h-2 w-2 rounded-full bg-brand-neon animate-pulse"></span>
+          <span class="text-brand-neon font-mono text-xs uppercase tracking-wider">// STOCK DISPONIBLE EN BODEGA SAN JOSÉ</span>
+        </div>
+        <h2 class="font-syne text-3xl sm:text-4xl font-extrabold text-white">Catálogo de Tiliches & Drops</h2>
+      </div>
+
+      <!-- Buscador dinámico -->
+      <div class="relative w-full md:w-72">
+        <input type="text" id="search-input" oninput="searchProducts(this.value)" placeholder="Buscar gadget, gamer, cable..." class="w-full bg-brand-surface border border-brand-border rounded-xl pl-10 pr-4 py-2.5 text-xs text-white placeholder-brand-muted focus:outline-none focus:border-brand-neon transition-colors font-mono">
+        <svg class="w-4 h-4 text-brand-muted absolute left-3.5 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <circle cx="11" cy="11" r="8" stroke-width="2"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65" stroke-width="2"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- BOTONES DE CATEGORÍAS (MOBILE Y DESKTOP) -->
+    <div class="flex items-center gap-2 overflow-x-auto pb-4 mb-8 text-xs font-mono scrollbar-none">
+      <button onclick="filterCategory('all')" class="cat-filter active shrink-0 px-4 py-2 rounded-xl bg-brand-neon text-brand-black font-bold border border-brand-neon transition-all">
+        ⚡ Todos (<span id="count-all">6</span>)
+      </button>
+      <button onclick="filterCategory('gaming')" class="cat-filter shrink-0 px-4 py-2 rounded-xl bg-brand-surface text-brand-muted hover:text-white border border-brand-border transition-all">
+        🎮 Setup & Gaming
+      </button>
+      <button onclick="filterCategory('viral')" class="cat-filter shrink-0 px-4 py-2 rounded-xl bg-brand-surface text-brand-muted hover:text-white border border-brand-border transition-all">
+        🔥 Virales TikTok
+      </button>
+      <button onclick="filterCategory('collectible')" class="cat-filter shrink-0 px-4 py-2 rounded-xl bg-brand-surface text-brand-muted hover:text-white border border-brand-border transition-all">
+        👾 Coleccionables
+      </button>
+      <button onclick="filterCategory('under10k')" class="cat-filter shrink-0 px-4 py-2 rounded-xl bg-brand-surface text-brand-orange hover:text-white border border-brand-border transition-all font-bold">
+        💰 Tiliches de &lt; ₡10.000
+      </button>
+    </div>
+
+    <!-- GRID DE PRODUCTOS INTERACTIVOS (TILTCARDS) -->
+    <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- PRODUCTO 1: Soporte RGB Gaming -->
+      <div class="product-item tilt-card bg-brand-surface border border-brand-border rounded-3xl overflow-hidden hover:border-brand-neon/80 transition-all group flex flex-col justify-between" data-category="gaming" data-price="14900" data-name="Soporte RGB con HUB USB para Auriculares">
+        <div class="relative p-6 bg-brand-card/50 flex items-center justify-center h-60 border-b border-brand-border overflow-hidden">
+          <span class="absolute top-4 left-4 bg-brand-neon/20 border border-brand-neon text-brand-neon text-[10px] font-mono font-bold px-2.5 py-1 rounded-full z-10">
+            TOP GAMING CR
+          </span>
+          <span class="absolute top-4 right-4 bg-brand-black/80 text-emerald-400 border border-emerald-800 text-[10px] font-mono px-2 py-0.5 rounded-full z-10">
+            8 en bodega
+          </span>
+          <div class="text-center group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-28 h-28 text-brand-muted group-hover:text-brand-neon transition-colors mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M3 18v-6a9 9 0 0 1 18 0v6"/>
+              <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>
+            </svg>
+          </div>
+        </div>
+        
+        <div class="p-6 space-y-4">
+          <div>
+            <h3 class="font-syne font-bold text-lg text-white group-hover:text-brand-neon transition-colors">
+              Soporte RGB con HUB USB para Auriculares
+            </h3>
+            <p class="text-xs text-brand-muted mt-1 leading-relaxed">
+              Organiza tu escritorio, añade 3 puertos USB de alta velocidad y 10 modos de luz reactiva para tu setup.
+            </p>
+          </div>
+
+          <div class="flex items-baseline justify-between pt-2 border-t border-brand-border/60">
+            <div>
+              <span class="text-xs font-mono text-brand-muted line-through">₡18.500</span>
+              <div class="font-mono text-2xl font-bold text-brand-neon">₡14.900 <span class="text-xs text-brand-muted font-normal">CRC</span></div>
+            </div>
+            <div class="text-right">
+              <span class="text-[10px] font-mono text-brand-muted block">GAM Express</span>
+              <span class="text-[11px] font-mono text-brand-orange font-bold">24h</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2 pt-1">
+            <button onclick="addToCart('Soporte RGB con HUB USB', 14900, 'Gaming')" class="w-full bg-brand-neon hover:bg-emerald-400 text-brand-black font-syne font-bold py-3 rounded-xl transition-all text-xs flex items-center justify-center gap-1 shadow hover:shadow-brand-neon/20">
+              <span>+ AGREGAR</span>
+            </button>
+            <button onclick="buyNow('Soporte RGB con HUB USB', 14900)" class="w-full bg-brand-card hover:bg-brand-surface border border-brand-border hover:border-brand-orange text-white font-syne font-bold py-3 rounded-xl transition-all text-xs flex items-center justify-center">
+              <span>COMPRAR YA</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRODUCTO 2: Kit Limpiador 7 en 1 -->
+      <div class="product-item tilt-card bg-brand-surface border border-brand-border rounded-3xl overflow-hidden hover:border-brand-orange/80 transition-all group flex flex-col justify-between" data-category="viral under10k" data-price="6500" data-name="Kit Limpiador Multifunción 7 en 1">
+        <div class="relative p-6 bg-brand-card/50 flex items-center justify-center h-60 border-b border-brand-border overflow-hidden">
+          <span class="absolute top-4 left-4 bg-brand-orange/20 border border-brand-orange text-brand-orange text-[10px] font-mono font-bold px-2.5 py-1 rounded-full z-10">
+            VIRAL TIKTOK 🔥
+          </span>
+          <span class="absolute top-4 right-4 bg-brand-black/80 text-amber-400 border border-amber-800 text-[10px] font-mono px-2 py-0.5 rounded-full z-10">
+            Últimos 12
+          </span>
+          <div class="text-center group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-28 h-28 text-brand-muted group-hover:text-brand-orange transition-colors mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+        </div>
+        
+        <div class="p-6 space-y-4">
+          <div>
+            <h3 class="font-syne font-bold text-lg text-white group-hover:text-brand-orange transition-colors">
+              Kit Limpiador Multifunción 7 en 1
+            </h3>
+            <p class="text-xs text-brand-muted mt-1 leading-relaxed">
+              El tiliche más viral para limpiar AirPods, teclados mecánicos, pantallas de laptop y cámaras sin rayar.
+            </p>
+          </div>
+
+          <div class="flex items-baseline justify-between pt-2 border-t border-brand-border/60">
+            <div>
+              <span class="text-xs font-mono text-brand-muted line-through">₡9.500</span>
+              <div class="font-mono text-2xl font-bold text-brand-orange">₡6.500 <span class="text-xs text-brand-muted font-normal">CRC</span></div>
+            </div>
+            <div class="text-right">
+              <span class="text-[10px] font-mono text-brand-muted block">&lt; ₡10.000</span>
+              <span class="text-[11px] font-mono text-emerald-400 font-bold">Ahorro 32%</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2 pt-1">
+            <button onclick="addToCart('Kit Limpiador Multifunción 7 en 1', 6500, 'Viral')" class="w-full bg-brand-orange hover:bg-orange-500 text-white font-syne font-bold py-3 rounded-xl transition-all text-xs flex items-center justify-center gap-1 shadow hover:shadow-brand-orange/20">
+              <span>+ AGREGAR</span>
+            </button>
+            <button onclick="buyNow('Kit Limpiador Multifunción 7 en 1', 6500)" class="w-full bg-brand-card hover:bg-brand-surface border border-brand-border hover:border-brand-neon text-white font-syne font-bold py-3 rounded-xl transition-all text-xs flex items-center justify-center">
+              <span>COMPRAR YA</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRODUCTO 3: Lámpara Holográfica Anime / Geek -->
+      <div class="product-item tilt-card bg-brand-surface border border-brand-border rounded-3xl overflow-hidden hover:border-brand-cyan/80 transition-all group flex flex-col justify-between" data-category="collectible" data-price="11900" data-name="Lámpara Holográfica 3D Acrílica">
+        <div class="relative p-6 bg-brand-card/50 flex items-center justify-center h-60 border-b border-brand-border overflow-hidden">
+          <span class="absolute top-4 left-4 bg-brand-cyan/20 border border-brand-cyan text-brand-cyan text-[10px] font-mono font-bold px-2.5 py-1 rounded-full z-10">
+            EDICIÓN COLECCIÓN
+          </span>
+          <span class="absolute top-4 right-4 bg-brand-black/80 text-emerald-400 border border-emerald-800 text-[10px] font-mono px-2 py-0.5 rounded-full z-10">
+            5 en bodega
+          </span>
+          <div class="text-center group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-28 h-28 text-brand-muted group-hover:text-brand-cyan transition-colors mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7z"/>
+              <line x1="9" y1="21" x2="15" y2="21"/>
+            </svg>
+          </div>
+        </div>
+        
+        <div class="p-6 space-y-4">
+          <div>
+            <h3 class="font-syne font-bold text-lg text-white group-hover:text-brand-cyan transition-colors">
+              Lámpara Holográfica 3D Acrílica
+            </h3>
+            <p class="text-xs text-brand-muted mt-1 leading-relaxed">
+              Ilumina tu cuarto o setup con 7 colores intercambiables táctiles, control remoto y diseño anime/gaming.
+            </p>
+          </div>
+
+          <div class="flex items-baseline justify-between pt-2 border-t border-brand-border/60">
+            <div>
+              <span class="text-xs font-mono text-brand-muted line-through">₡15.000</span>
+              <div class="font-mono text-2xl font-bold text-brand-cyan">₡11.900 <span class="text-xs text-brand-muted font-normal">CRC</span></div>
+            </div>
+            <div class="text-right">
+              <span class="text-[10px] font-mono text-brand-muted block">Garantía</span>
+              <span class="text-[11px] font-mono text-white font-bold">30 Días</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2 pt-1">
+            <button onclick="addToCart('Lámpara Holográfica 3D', 11900, 'Coleccionable')" class="w-full bg-brand-cyan hover:bg-cyan-400 text-brand-black font-syne font-bold py-3 rounded-xl transition-all text-xs flex items-center justify-center gap-1 shadow hover:shadow-brand-cyan/20">
+              <span>+ AGREGAR</span>
+            </button>
+            <button onclick="buyNow('Lámpara Holográfica 3D', 11900)" class="w-full bg-brand-card hover:bg-brand-surface border border-brand-border hover:border-brand-neon text-white font-syne font-bold py-3 rounded-xl transition-all text-xs flex items-center justify-center">
+              <span>COMPRAR YA</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRODUCTO 4: Teclado Mecánico Compacto 60% -->
+      <div class="product-item tilt-card bg-brand-surface border border-brand-border rounded-3xl overflow-hidden hover:border-brand-neon/80 transition-all group flex flex-col justify-between" data-category="gaming" data-price="22500" data-name="Teclado Mecánico 60% RGB Custom">
+        <div class="relative p-6 bg-brand-card/50 flex items-center justify-center h-60 border-b border-brand-border overflow-hidden">
+          <span class="absolute top-4 left-4 bg-brand-neon/20 border border-brand-neon text-brand-neon text-[10px] font-mono font-bold px-2.5 py-1 rounded-full z-10">
+            PRO GAMER
+          </span>
+          <span class="absolute top-4 right-4 bg-brand-black/80 text-emerald-400 border border-emerald-800 text-[10px] font-mono px-2 py-0.5 rounded-full z-10">
+            4 en bodega
+          </span>
+          <div class="text-center group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-28 h-28 text-brand-muted group-hover:text-brand-neon transition-colors mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="M6 8h.001M10 8h.001M14 8h.001M18 8h.001M6 12h.001M10 12h.001M14 12h.001M18 12h.001M8 16h8"/>
+            </svg>
+          </div>
+        </div>
+        
+        <div class="p-6 space-y-4">
+          <div>
+            <h3 class="font-syne font-bold text-lg text-white group-hover:text-brand-neon transition-colors">
+              Teclado Mecánico 60% RGB Custom
+            </h3>
+            <p class="text-xs text-brand-muted mt-1 leading-relaxed">
+              Switches mecánicos táctiles, cable tipo C desmontable y tamaño compacto para máximo espacio de mouse.
+            </p>
+          </div>
+
+          <div class="flex items-baseline justify-between pt-2 border-t border-brand-border/60">
+            <div>
+              <span class="text-xs font-mono text-brand-muted line-through">₡28.000</span>
+              <div class="font-mono text-2xl font-bold text-brand-neon">₡22.500 <span class="text-xs text-brand-muted font-normal">CRC</span></div>
+            </div>
+            <div class="text-right">
+              <span class="text-[10px] font-mono text-brand-muted block">Switches</span>
+              <span class="text-[11px] font-mono text-brand-neon font-bold">Blue / Red</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2 pt-1">
+            <button onclick="addToCart('Teclado Mecánico 60%', 22500, 'Gaming')" class="w-full bg-brand-neon hover:bg-emerald-400 text-brand-black font-syne font-bold py-3 rounded-xl transition-all text-xs flex items-center justify-center gap-1 shadow hover:shadow-brand-neon/20">
+              <span>+ AGREGAR</span>
+            </button>
+            <button onclick="buyNow('Teclado Mecánico 60%', 22500)" class="w-full bg-brand-card hover:bg-brand-surface border border-brand-border hover:border-brand-orange text-white font-syne font-bold py-3 rounded-xl transition-all text-xs flex items-center justify-center">
+              <span>COMPRAR YA</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRODUCTO 5: Cable Magnético Giratorio 540° -->
+      <div class="product-item tilt-card bg-brand-surface border border-brand-border rounded-3xl overflow-hidden hover:border-brand-orange/80 transition-all group flex flex-col justify-between" data-category="viral under10k" data-price="4900" data-name="Cable Magnético 540° Carga Rápida">
+        <div class="relative p-6 bg-brand-card/50 flex items-center justify-center h-60 border-b border-brand-border overflow-hidden">
+          <span class="absolute top-4 left-4 bg-brand-orange/20 border border-brand-orange text-brand-orange text-[10px] font-mono font-bold px-2.5 py-1 rounded-full z-10">
+            TILICHE ESTRELLA
+          </span>
+          <span class="absolute top-4 right-4 bg-brand-black/80 text-emerald-400 border border-emerald-800 text-[10px] font-mono px-2 py-0.5 rounded-full z-10">
+            20+ en bodega
+          </span>
+          <div class="text-center group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-28 h-28 text-brand-muted group-hover:text-brand-orange transition-colors mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+            </svg>
+          </div>
+        </div>
+        
+        <div class="p-6 space-y-4">
+          <div>
+            <h3 class="font-syne font-bold text-lg text-white group-hover:text-brand-orange transition-colors">
+              Cable Magnético 540° Carga Rápida
+            </h3>
+            <p class="text-xs text-brand-muted mt-1 leading-relaxed">
+              Cabezal magnético giratorio con luz LED. Incluye 3 puntas (Tipo C, Lightning y Micro USB). No se rompe.
+            </p>
+          </div>
+
+          <div class="flex items-baseline justify-between pt-2 border-t border-brand-border/60">
+            <div>
+              <span class="text-xs font-mono text-brand-muted line-through">₡7.500</span>
+              <div class="font-mono text-2xl font-bold text-brand-orange">₡4.900 <span class="text-xs text-brand-muted font-normal">CRC</span></div>
+            </div>
+            <div class="text-right">
+              <span class="text-[10px] font-mono text-brand-muted block">&lt; ₡5.000</span>
+              <span class="text-[11px] font-mono text-emerald-400 font-bold">Ultra Barato</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2 pt-1">
+            <button onclick="addToCart('Cable Magnético 540°', 4900, 'Viral')" class="w-full bg-brand-orange hover:bg-orange-500 text-white font-syne font-bold py-3 rounded-xl transition-all text-xs flex items-center justify-center gap-1 shadow hover:shadow-brand-orange/20">
+              <span>+ AGREGAR</span>
+            </button>
+            <button onclick="buyNow('Cable Magnético 540°', 4900)" class="w-full bg-brand-card hover:bg-brand-surface border border-brand-border hover:border-brand-neon text-white font-syne font-bold py-3 rounded-xl transition-all text-xs flex items-center justify-center">
+              <span>COMPRAR YA</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRODUCTO 6: Mini Figura Coleccionable Anime/Gamer -->
+      <div class="product-item tilt-card bg-brand-surface border border-brand-border rounded-3xl overflow-hidden hover:border-brand-cyan/80 transition-all group flex flex-col justify-between" data-category="collectible under10k" data-price="8500" data-name="Figura Mystery Drop Coleccionable">
+        <div class="relative p-6 bg-brand-card/50 flex items-center justify-center h-60 border-b border-brand-border overflow-hidden">
+          <span class="absolute top-4 left-4 bg-brand-cyan/20 border border-brand-cyan text-brand-cyan text-[10px] font-mono font-bold px-2.5 py-1 rounded-full z-10">
+            LIMITED DROP
+          </span>
+          <span class="absolute top-4 right-4 bg-brand-black/80 text-amber-400 border border-amber-800 text-[10px] font-mono px-2 py-0.5 rounded-full z-10">
+            Últimos 6
+          </span>
+          <div class="text-center group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-28 h-28 text-brand-muted group-hover:text-brand-cyan transition-colors mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"/>
+              <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+              <line x1="9" y1="9" x2="9.01" y2="9"/>
+              <line x1="15" y1="9" x2="15.01" y2="9"/>
+            </svg>
+          </div>
+        </div>
+        
+        <div class="p-6 space-y-4">
+          <div>
+            <h3 class="font-syne font-bold text-lg text-white group-hover:text-brand-cyan transition-colors">
+              Figura Mystery Drop Coleccionable
+            </h3>
+            <p class="text-xs text-brand-muted mt-1 leading-relaxed">
+              Caja sorpresa con figura de colección de alta calidad para repisas o tablero de auto.
+            </p>
+          </div>
+
+          <div class="flex items-baseline justify-between pt-2 border-t border-brand-border/60">
+            <div>
+              <span class="text-xs font-mono text-brand-muted line-through">₡12.000</span>
+              <div class="font-mono text-2xl font-bold text-brand-cyan">₡8.500 <span class="text-xs text-brand-muted font-normal">CRC</span></div>
+            </div>
+            <div class="text-right">
+              <span class="text-[10px] font-mono text-brand-muted block">Original</span>
+              <span class="text-[11px] font-mono text-white font-bold">Importada</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2 pt-1">
+            <button onclick="addToCart('Figura Mystery Drop', 8500, 'Coleccionable')" class="w-full bg-brand-cyan hover:bg-cyan-400 text-brand-black font-syne font-bold py-3 rounded-xl transition-all text-xs flex items-center justify-center gap-1 shadow hover:shadow-brand-cyan/20">
+              <span>+ AGREGAR</span>
+            </button>
+            <button onclick="buyNow('Figura Mystery Drop', 8500)" class="w-full bg-brand-card hover:bg-brand-surface border border-brand-border hover:border-brand-neon text-white font-syne font-bold py-3 rounded-xl transition-all text-xs flex items-center justify-center">
+              <span>COMPRAR YA</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Mensaje si no hay resultados en búsqueda -->
+    <div id="no-results" class="hidden text-center py-16">
+      <div class="text-4xl mb-3">🔍</div>
+      <h3 class="font-syne font-bold text-xl text-white">No encontramos ese tiliche exacto</h3>
+      <p class="text-xs text-brand-muted mt-1">Escribinos por WhatsApp y te lo cotizamos o traemos por encargo.</p>
+    </div>
+
+  </section>
+
+  <!-- MODAL INTERACTIVO DE LOOT BOX (UNBOXING EXPERIENCE) -->
+  <div id="loot-modal" class="fixed inset-0 z-50 bg-brand-black/90 backdrop-blur-xl flex items-center justify-center p-4 hidden">
+    <div class="bg-gradient-to-b from-brand-surface via-brand-card to-brand-black border-2 border-brand-neon rounded-3xl max-w-md w-full p-6 sm:p-8 text-center neon-glow relative">
+      
+      <!-- Cerrar Modal -->
+      <button onclick="closeLootModal()" class="absolute top-4 right-4 text-brand-muted hover:text-white p-2">
+        ✕
+      </button>
+
+      <span class="text-[11px] font-mono text-brand-neon font-bold tracking-widest uppercase block mb-2">
+        // UNBOXING DROP REWARD
+      </span>
+      
+      <h3 class="font-syne text-2xl sm:text-3xl font-extrabold text-white mb-2">
+        Caja Secreta del Tilichero
+      </h3>
+      <p class="text-xs text-brand-muted mb-6">
+        Tocá el botón abajo para romper el precinto de la caja y desbloquear tu premio tico.
+      </p>
+
+      <!-- Visual Caja en el Modal -->
+      <div id="loot-animation-box" class="w-32 h-32 mx-auto rounded-3xl bg-brand-black border-2 border-brand-neon flex items-center justify-center relative cursor-pointer group mb-6 transition-transform">
+        <span id="loot-icon" class="text-5xl group-hover:scale-125 transition-transform">🎁</span>
+      </div>
+
+      <!-- Resultado del Premio (Oculto inicialmente) -->
+      <div id="loot-reward" class="hidden mb-6 p-4 rounded-2xl bg-brand-neon/15 border-2 border-brand-neon">
+        <span class="text-xs font-mono text-brand-neon font-bold block uppercase">¡FELICIDADES, TE GANASTE!</span>
+        <div id="loot-prize-title" class="font-syne font-extrabold text-xl text-white my-1">
+          ₡2.000 de Descuento
+        </div>
+        <p class="text-[11px] text-brand-muted">
+          Aplicable de inmediato en tu compra por SINPE Móvil o WhatsApp.
+        </p>
+      </div>
+
+      <!-- Botón de Acción -->
+      <div id="loot-action-container">
+        <button id="loot-trigger-btn" onclick="triggerLootOpen()" class="w-full bg-gradient-to-r from-brand-neon to-emerald-400 hover:from-brand-neonHover hover:to-emerald-300 text-brand-black font-syne font-extrabold py-4 px-6 rounded-2xl text-sm transition-all shadow-lg hover:shadow-brand-neon/40 flex items-center justify-center gap-2">
+          <span>⚡ ABRIR MI CAJA AHORA</span>
+        </button>
+      </div>
+
+      <div id="loot-claimed-container" class="hidden space-y-3">
+        <button onclick="claimRewardToCart()" class="w-full bg-brand-neon text-brand-black font-syne font-extrabold py-3.5 px-6 rounded-xl text-xs hover:bg-emerald-400 transition-all">
+          APLICAR PREMIO A MI CARRITO
+        </button>
+        <button onclick="closeLootModal()" class="w-full bg-brand-surface border border-brand-border text-white text-xs py-2.5 rounded-xl hover:bg-brand-card">
+          Seguir viendo productos
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DRAWER LATERAL DE CARRITO EN TIEMPO REAL CON CHECKOUT WHATSAPP -->
+  <div id="cart-drawer" class="fixed inset-y-0 right-0 z-50 w-full sm:w-[420px] bg-brand-surface border-l border-brand-border transform translate-x-full transition-transform duration-300 ease-out flex flex-col justify-between shadow-2xl">
+    
+    <!-- Top del Carrito -->
+    <div class="p-6 border-b border-brand-border flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-brand-neon/20 border border-brand-neon flex items-center justify-center text-brand-neon">
+          🛒
+        </div>
+        <div>
+          <h3 class="font-syne font-bold text-lg text-white">Tu Pedido Express</h3>
+          <span class="text-[10px] font-mono text-brand-muted">Costa Rica · SINPE Móvil</span>
+        </div>
+      </div>
+      <button onclick="toggleCartDrawer()" class="text-brand-muted hover:text-white p-2 text-lg">
+        ✕
+      </button>
+    </div>
+
+    <!-- Lista de Items en el Carrito -->
+    <div id="cart-items" class="flex-1 overflow-y-auto p-6 space-y-4">
+      <!-- Item dinámico insertado por JS -->
+      <div id="empty-cart-msg" class="text-center py-16 text-brand-muted">
+        <span class="text-4xl block mb-2">📦</span>
+        <p class="font-syne font-bold text-white text-sm">Tu carrito está vacío</p>
+        <p class="text-xs text-brand-muted mt-1">Explora los drops de arriba y agrega tus tiliches favoritos.</p>
+      </div>
+    </div>
+
+    <!-- Resumen y Checkout -->
+    <div class="p-6 bg-brand-card border-t border-brand-border space-y-4">
+      
+      <!-- Selector de Zona de Envío Costa Rica -->
+      <div>
+        <label class="block text-[11px] font-mono text-brand-muted mb-1">Zona de Entrega:</label>
+        <select id="shipping-select" onchange="updateCartTotals()" class="w-full bg-brand-surface border border-brand-border rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-brand-neon font-mono">
+          <option value="2500">GAM Express (24h) — ₡2.500</option>
+          <option value="3000">Fuera de GAM (Correos de CR) — ₡3.000</option>
+          <option value="0">Retiro Personal (San José) — Gratis</option>
+        </select>
+      </div>
+
+      <!-- Desglose de Precios -->
+      <div class="space-y-1.5 text-xs font-mono border-t border-brand-border pt-3">
+        <div class="flex justify-between text-brand-muted">
+          <span>Subtotal:</span>
+          <span id="cart-subtotal" class="text-white">₡0</span>
+        </div>
+        <div class="flex justify-between text-brand-muted">
+          <span>Envío:</span>
+          <span id="cart-shipping" class="text-white">₡2.500</span>
+        </div>
+        <div id="cart-discount-row" class="hidden flex justify-between text-brand-neon font-bold">
+          <span>Bono Loot Box:</span>
+          <span id="cart-discount">-₡2.000</span>
+        </div>
+        <div class="flex justify-between text-base font-bold text-white pt-2 border-t border-brand-border">
+          <span class="font-syne">Total a Pagar:</span>
+          <span id="cart-total" class="font-mono text-brand-neon text-lg">₡0</span>
+        </div>
+      </div>
+
+      <!-- Botón de Pago directo por WhatsApp -->
+      <button onclick="checkoutWhatsApp()" class="w-full bg-brand-neon hover:bg-emerald-400 text-brand-black font-syne font-extrabold py-4 px-6 rounded-xl transition-all shadow-lg hover:shadow-brand-neon/30 flex items-center justify-center gap-2 text-sm">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.199.534 1.286.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.449.741.964 1.201.662.591 1.221.774 1.394.861.173.087.275.072.376-.043.101-.116.433-.506.549-.679.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/>
+        </svg>
+        <span>PAGAR CON SINPE POR WHATSAPP</span>
+      </button>
+
+      <div class="text-[10px] font-mono text-brand-muted text-center flex items-center justify-center gap-1">
+        🔒 Se abre WhatsApp con el pedido desglosado para confirmar SINPE.
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-brand-border py-12 text-center text-xs font-mono text-brand-muted relative z-10">
+    <div class="max-w-7xl mx-auto px-4 space-y-2">
+      <div class="font-syne font-bold text-lg text-white">EL TILICHERO CR</div>
+      <p>Boceto Interactivo y Creativo · Diseñado bajo Altiora OS</p>
+      <p class="text-brand-border pt-4">© 2026 El Tilichero CR · WhatsApp Ventas: +506 7270-7894</p>
+    </div>
+  </footer>
+
+  <!-- SCRIPT CON TODA LA LÓGICA INTERACTIVA, AUDIO SFX Y CART ENGINE -->
+  <script>
+    // --- ESTADO GLOBAL ---
+    let cart = [];
+    let activeReward = null;
+    let audioEnabled = true;
+
+    // --- SINTETIZADOR DE AUDIO PROCEDURAL (Web Audio API) ---
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    let audioCtx = null;
+
+    function playTone(freq, type = 'sine', duration = 0.15) {
+      if (!audioEnabled) return;
+      try {
+        if (!audioCtx) audioCtx = new AudioContext();
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+        gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + duration);
+      } catch (e) {
+        console.log("Audio not allowed yet");
+      }
+    }
+
+    function soundCoin() {
+      playTone(587, 'triangle', 0.1);
+      setTimeout(() => playTone(880, 'sine', 0.25), 100);
+    }
+
+    function soundLootWin() {
+      playTone(440, 'sine', 0.15);
+      setTimeout(() => playTone(554, 'triangle', 0.15), 120);
+      setTimeout(() => playTone(659, 'triangle', 0.2), 240);
+      setTimeout(() => playTone(880, 'sine', 0.4), 360);
+    }
+
+    function toggleAudio() {
+      audioEnabled = !audioEnabled;
+      document.getElementById('sound-icon').innerText = audioEnabled ? '🔊' : '🔇';
+    }
+
+    // --- CURSOR AMBIENT GLOW EFFECT ---
+    const glow = document.getElementById('cursor-glow');
+    window.addEventListener('mousemove', (e) => {
+      glow.style.left = e.clientX + 'px';
+      glow.style.top = e.clientY + 'px';
+    });
+
+    // --- 3D TILT EFFECT ON PRODUCT CARDS ---
+    document.querySelectorAll('.tilt-card').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        const rotateX = -(y / rect.height) * 12;
+        const rotateY = (x / rect.width) * 12;
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)';
+      });
+    });
+
+    // --- FILTRADO DE PRODUCTOS ---
+    function filterCategory(cat) {
+      playTone(400, 'sine', 0.08);
+      // Actualizar botones
+      document.querySelectorAll('.cat-filter, .cat-pill').forEach(btn => {
+        btn.classList.remove('active', 'bg-brand-neon', 'text-brand-black');
+      });
+
+      const cards = document.querySelectorAll('.product-item');
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const categories = card.getAttribute('data-category');
+        if (cat === 'all' || categories.includes(cat)) {
+          card.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      document.getElementById('no-results').classList.toggle('hidden', visibleCount > 0);
+    }
+
+    function searchProducts(query) {
+      const q = query.toLowerCase().trim();
+      const cards = document.querySelectorAll('.product-item');
+      let count = 0;
+
+      cards.forEach(card => {
+        const name = card.getAttribute('data-name').toLowerCase();
+        if (name.includes(q)) {
+          card.classList.remove('hidden');
+          count++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      document.getElementById('no-results').classList.toggle('hidden', count > 0);
+    }
+
+    // --- LOOT BOX UNBOXING LOGIC ---
+    const rewards = [
+      { title: "Bono de ₡2.000 Descuento", value: 2000, desc: "Aplicado automáticamente en tu carrito para pago por SINPE." },
+      { title: "Envío Gratis GAM (Ahorro ₡2.500)", value: 2500, desc: "Tu pedido llega sin costo de flete directo a tu puerta." },
+      { title: "Bono Especial ₡3.000 Descuento", value: 3000, desc: "Válido para compras superiores a ₡10.000." },
+      { title: "Mystery Keychain Gamer Gratis", value: 1500, desc: "Agregado como obsequio físico en tu paquete de envío." }
+    ];
+
+    function openLootModal() {
+      playTone(520, 'sine', 0.1);
+      document.getElementById('loot-modal').classList.remove('hidden');
+    }
+
+    function closeLootModal() {
+      document.getElementById('loot-modal').classList.add('hidden');
+    }
+
+    function triggerLootOpen() {
+      const box = document.getElementById('loot-animation-box');
+      box.style.transform = 'scale(1.3) rotate(15deg)';
+      playTone(300, 'sawtooth', 0.2);
+
+      setTimeout(() => {
+        box.style.transform = 'scale(0.8) rotate(-15deg)';
+      }, 200);
+
+      setTimeout(() => {
+        box.style.transform = 'scale(1) rotate(0deg)';
+        document.getElementById('loot-icon').innerText = '🎉';
+        
+        // Disparar confeti
+        confetti({
+          particleCount: 80,
+          spread: 70,
+          origin: { y: 0.6 },
+          colors: ['#00FFA3', '#FF5E1E', '#00E5FF']
+        });
+
+        soundLootWin();
+
+        // Seleccionar premio
+        const randomReward = rewards[Math.floor(Math.random() * rewards.length)];
+        activeReward = randomReward;
+
+        document.getElementById('loot-prize-title').innerText = randomReward.title;
+        document.getElementById('loot-reward').classList.remove('hidden');
+        document.getElementById('loot-action-container').classList.add('hidden');
+        document.getElementById('loot-claimed-container').classList.remove('hidden');
+
+        // Actualizar banner en home
+        document.getElementById('unlocked-coupon-banner').classList.remove('hidden');
+        document.getElementById('unlocked-coupon-text').innerText = randomReward.title;
+
+        updateCartTotals();
+      }, 500);
+    }
+
+    function claimRewardToCart() {
+      closeLootModal();
+      toggleCartDrawer(true);
+      soundCoin();
+    }
+
+    // --- CARRITO DE COMPRAS & CHECKOUT ENGINE ---
+    function addToCart(name, price, category) {
+      soundCoin();
+      const existing = cart.find(item => item.name === name);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({ name, price, category, qty: 1 });
+      }
+      renderCart();
+      toggleCartDrawer(true);
+    }
+
+    function buyNow(name, price) {
+      addToCart(name, price, '');
+    }
+
+    function updateQty(name, delta) {
+      const item = cart.find(i => i.name === name);
+      if (!item) return;
+      item.qty += delta;
+      if (item.qty <= 0) {
+        cart = cart.filter(i => i.name !== name);
+      }
+      playTone(450, 'sine', 0.08);
+      renderCart();
+    }
+
+    function toggleCartDrawer(forceOpen = false) {
+      const drawer = document.getElementById('cart-drawer');
+      if (forceOpen) {
+        drawer.classList.remove('translate-x-full');
+      } else {
+        drawer.classList.toggle('translate-x-full');
+      }
+      playTone(350, 'sine', 0.1);
+    }
+
+    function renderCart() {
+      const container = document.getElementById('cart-items');
+      const badge = document.getElementById('cart-badge');
+      const emptyMsg = document.getElementById('empty-cart-msg');
+
+      const totalItems = cart.reduce((acc, item) => acc + item.qty, 0);
+      badge.innerText = totalItems;
+      badge.style.transform = totalItems > 0 ? 'scale(1)' : 'scale(0)';
+
+      if (cart.length === 0) {
+        container.innerHTML = '';
+        container.appendChild(emptyMsg);
+        emptyMsg.classList.remove('hidden');
+      } else {
+        emptyMsg.classList.add('hidden');
+        container.innerHTML = cart.map(item => `
+          <div class="bg-brand-card border border-brand-border rounded-2xl p-4 flex items-center justify-between">
+            <div class="pr-2">
+              <h4 class="font-syne font-bold text-xs text-white">${item.name}</h4>
+              <div class="font-mono text-xs text-brand-neon mt-1">₡${item.price.toLocaleString('es-CR')} CRC</div>
+            </div>
+            <div class="flex items-center gap-2 bg-brand-surface border border-brand-border rounded-lg px-2 py-1">
+              <button onclick="updateQty('${item.name}', -1)" class="text-brand-muted hover:text-white px-1 text-sm font-bold">-</button>
+              <span class="font-mono text-xs text-white font-bold">${item.qty}</span>
+              <button onclick="updateQty('${item.name}', 1)" class="text-brand-muted hover:text-brand-neon px-1 text-sm font-bold">+</button>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      updateCartTotals();
+    }
+
+    function updateCartTotals() {
+      const subtotal = cart.reduce((acc, item) => acc + (item.price * item.qty), 0);
+      const shipping = subtotal > 0 ? parseInt(document.getElementById('shipping-select').value) : 0;
+      
+      let discount = 0;
+      if (activeReward && subtotal > 0) {
+        discount = activeReward.value;
+        document.getElementById('cart-discount-row').classList.remove('hidden');
+        document.getElementById('cart-discount').innerText = `-₡${discount.toLocaleString('es-CR')}`;
+      } else {
+        document.getElementById('cart-discount-row').classList.add('hidden');
+      }
+
+      const total = Math.max(0, subtotal + shipping - discount);
+
+      document.getElementById('cart-subtotal').innerText = `₡${subtotal.toLocaleString('es-CR')}`;
+      document.getElementById('cart-shipping').innerText = `₡${shipping.toLocaleString('es-CR')}`;
+      document.getElementById('cart-total').innerText = `₡${total.toLocaleString('es-CR')} CRC`;
+    }
+
+    function checkoutWhatsApp() {
+      if (cart.length === 0) {
+        alert("Tu carrito está vacío. Agrega al menos un tiliche para continuar.");
+        return;
+      }
+
+      const shippingCost = parseInt(document.getElementById('shipping-select').value);
+      const shippingName = document.getElementById('shipping-select').selectedOptions[0].text;
+      
+      const subtotal = cart.reduce((acc, item) => acc + (item.price * item.qty), 0);
+      const discount = activeReward ? activeReward.value : 0;
+      const total = Math.max(0, subtotal + shippingCost - discount);
+
+      let itemsList = cart.map(i => `• ${i.qty}x ${i.name} (₡${(i.price * i.qty).toLocaleString('es-CR')})`).join('%0A');
+
+      let message = `¡Hola *El Tilichero CR*! 📦%0AQuiero confirmar el siguiente pedido:%0A%0A`
+        + `*PRODUCTOS:*%0A${itemsList}%0A%0A`
+        + `*MÉTODO DE ENVÍO:* ${encodeURIComponent(shippingName)}%0A`;
+
+      if (activeReward) {
+        message += `*PREMIO LOOT BOX:* ${encodeURIComponent(activeReward.title)} (-₡${discount.toLocaleString('es-CR')})%0A`;
+      }
+
+      message += `*TOTAL A PAGAR POR SINPE:* ₡${total.toLocaleString('es-CR')} CRC%0A%0A`
+        + `¿Tienen disponible para realizar el SINPE Móvil al 7270-7894?`;
+
+      window.open(`https://wa.me/50672707894?text=${message}`, '_blank');
+    }
+  </script>
+
+</body>
+</html>
