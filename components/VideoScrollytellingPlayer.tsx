@@ -19,7 +19,7 @@ export const JOURNEY_VIDEOS: JourneyVideoClip[] = [
     stageIndex: 0,
     title: "El Umbral · Cordillera de Turrialba",
     src: "/videos/finca_umbral_camino.mp4",
-    poster: "/porton_finca_turrialba.jpg",
+    poster: "/porton_finca_turrialba.webp",
     atmosphereGradient:
       "linear-gradient(180deg, rgba(10,18,14,0.60) 0%, rgba(16,28,20,0.22) 45%, rgba(10,17,13,0.85) 100%)",
   },
@@ -53,191 +53,57 @@ export const JOURNEY_VIDEOS: JourneyVideoClip[] = [
 ];
 
 interface VideoScrollytellingPlayerProps {
-  currentStage: number; // 0, 1, 2, 3
-  localStageProgress: number; // 0.0 to 1.0 within the active stage
-  globalProgress: number; // 0.0 to 1.0 total narrative progress
+  currentStage: number;
+  localStageProgress: number;
+  globalProgress: number;
   cameraDollyScale?: number;
   liteMode?: boolean;
   className?: string;
 }
 
-export const VideoScrollytellingPlayer: React.FC<VideoScrollytellingPlayerProps> = ({
-  currentStage,
-  localStageProgress,
-  globalProgress,
-  cameraDollyScale = 1.05,
-  liteMode = false,
-  className = "",
-}) => {
-  // Referencias a los dos elementos de video para crossfade sin parpadeo (A / B buffer)
-  const videoPrimaryRef = useRef<HTMLVideoElement>(null);
-  const videoSecondaryRef = useRef<HTMLVideoElement>(null);
-  const rafIdRef = useRef<number | null>(null);
-
-  // Estados de control
-  const [playbackMode, setPlaybackMode] = useState<"scrub" | "ambient">("scrub");
-  const [isMuted, setIsMuted] = useState(true);
-  const [activeSlot, setActiveSlot] = useState<"primary" | "secondary">("primary");
-  const [activeClipIndex, setActiveClipIndex] = useState(currentStage);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [hasError, setHasError] = useState(false);
-
-  // Video actual y siguiente
-  const activeClip = JOURNEY_VIDEOS[currentStage] || JOURNEY_VIDEOS[0];
-
-  // Sincronizar clip activo cuando cambia de escena
+export function VideoScrollytellingPlayer({ currentStage, localStageProgress, cameraDollyScale = 1, liteMode = false, className = "" }: VideoScrollytellingPlayerProps) {
+  const root = useRef<HTMLDivElement>(null);
+  const videos = useRef<(HTMLVideoElement | null)[]>([]);
+  const target = useRef({ stage: currentStage, progress: localStageProgress });
+  target.current = { stage: currentStage, progress: localStageProgress };
+  const [ready, setReady] = useState<Record<number, boolean>>({});
+  const [failed, setFailed] = useState<Record<number, boolean>>({});
+  const [ambient, setAmbient] = useState(false);
+  const [visible, setVisible] = useState(true);
   useEffect(() => {
-    setActiveClipIndex(currentStage);
-  }, [currentStage]);
-
-  // Manejo de sincronización precisa de fotogramas según el scroll (Scrubbing con amortiguación lerp)
+    const observer = new IntersectionObserver(([entry]) => setVisible(entry.isIntersecting));
+    if (root.current) observer.observe(root.current);
+    return () => observer.disconnect();
+  }, []);
   useEffect(() => {
-    if (liteMode || playbackMode !== "scrub") return;
-
-    const video = activeSlot === "primary" ? videoPrimaryRef.current : videoSecondaryRef.current;
-    if (!video || !video.duration || isNaN(video.duration)) return;
-
-    // Calcular el segundo objetivo en base al progreso local de la escena
-    const clampedProgress = Math.max(0, Math.min(1, localStageProgress));
-    const targetTime = clampedProgress * video.duration;
-
-    // Bucle amortiguado por requestAnimationFrame para evitar micro-bloqueos en el decodificador
-    const updateVideoFrame = () => {
-      if (!video || video.seeking || !video.duration) return;
-
-      const diff = targetTime - video.currentTime;
-      if (Math.abs(diff) > 0.04) {
-        // Avance suave hacia el fotograma objetivo
-        const step = diff * 0.16;
-        const newTime = video.currentTime + step;
-        if (isFinite(newTime) && newTime >= 0 && newTime <= video.duration) {
-          video.currentTime = newTime;
-        }
+    videos.current.forEach((v, index) => {
+      if (!v) return;
+      if (ambient && visible && !liteMode && index === currentStage) v.play().catch(() => {});
+      else v.pause();
+    });
+  }, [ambient, currentStage, liteMode, visible, ready]);
+  useEffect(() => {
+    if (liteMode || ambient || !visible) return;
+    let frame = 0;
+    const tick = () => {
+      const {stage, progress} = target.current;
+      const v = videos.current[stage];
+      if (v && v.readyState >= 2 && Number.isFinite(v.duration) && !v.seeking) {
+        const time = Math.max(0, Math.min(v.duration - .08, progress * v.duration));
+        if (Math.abs(v.currentTime - time) > .08) v.currentTime = time;
       }
+      frame = requestAnimationFrame(tick);
     };
-
-    rafIdRef.current = requestAnimationFrame(updateVideoFrame);
-
-    return () => {
-      if (rafIdRef.current) {
-        cancelAnimationFrame(rafIdRef.current);
-      }
-    };
-  }, [localStageProgress, currentStage, activeSlot, playbackMode, liteMode]);
-
-  // Modo Reproducción Cinemática Continua (Ambient Loop)
-  useEffect(() => {
-    const video = activeSlot === "primary" ? videoPrimaryRef.current : videoSecondaryRef.current;
-    if (!video) return;
-
-    if (playbackMode === "ambient" && !liteMode) {
-      video.loop = true;
-      video.muted = true;
-      video.play().catch(() => {
-        // Los navegadores bloquean autoplay si no está muteado
-      });
-    } else if (playbackMode === "scrub") {
-      video.pause();
-    }
-  }, [playbackMode, activeSlot, currentStage, liteMode]);
-
-  // Carga inicial y listeners de video
-  const handleLoadedData = () => {
-    setIsLoaded(true);
-    setHasError(false);
-  };
-
-  const handleVideoError = () => {
-    setHasError(true);
-  };
-
-  return (
-    <div className={`relative w-full h-full overflow-hidden select-none ${className}`}>
-      {/* Contenedor con escala cinemática continua (Dolly travelling) */}
-      <div
-        className="absolute inset-0 w-full h-full will-change-transform"
-        style={{
-          transform: `scale(${cameraDollyScale.toFixed(4)})`,
-          transition: "transform 140ms linear",
-        }}
-      >
-        {/* VIDEO ACTIVO PRINCIPAL */}
-        {!liteMode && !hasError ? (
-          <video
-            ref={videoPrimaryRef}
-            key={activeClip.src}
-            src={activeClip.src}
-            poster={activeClip.poster}
-            playsInline
-            muted
-            preload="auto"
-            onLoadedData={handleLoadedData}
-            onError={handleVideoError}
-            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 pointer-events-none"
-            style={{
-              opacity: isLoaded ? 1 : 0.85,
-              filter: "contrast(1.04) saturate(1.08) brightness(0.96)",
-            }}
-          />
-        ) : (
-          /* FALLBACK FOTOGRÁFICO ACCESIBLE (Modo Ligero o Error de Reproducción) */
-          <img
-            src={activeClip.poster}
-            alt={activeClip.title}
-            className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-            style={{ filter: "contrast(1.04) saturate(1.06)" }}
-          />
-        )}
-
-        {/* Gradiente Atmosférico de Escena (Luz Volcánica / Amanecer de Montaña / Cava) */}
-        <div
-          className="absolute inset-0 pointer-events-none transition-all duration-700"
-          style={{ background: activeClip.atmosphereGradient }}
-        />
-      </div>
-
-      {/* Control Discreto de Cinemática: Modo Scrubbing vs. Reproducción Continua */}
-      {!liteMode && (
-        <div className="absolute bottom-6 right-6 z-30 flex items-center gap-2">
-          <div className="inline-flex items-center gap-1.5 p-1 rounded-full bg-[#0B120E]/80 backdrop-blur-md border border-white/15 shadow-xl text-xs">
-            <button
-              type="button"
-              onClick={() => setPlaybackMode("scrub")}
-              title="El video avanza o retrocede sincronizado con el scroll"
-              className={`px-3 py-1.5 rounded-full font-mono text-[11px] transition-colors flex items-center gap-1.5 ${
-                playbackMode === "scrub"
-                  ? "bg-[#DDA13E] text-[#0D1510] font-bold shadow-xs"
-                  : "text-[#F7F4EC]/70 hover:text-white"
-              }`}
-            >
-              <Film className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">Scrollytelling</span>
-            </button>
-
-            <button
-              type="button"
-              onClick={() => setPlaybackMode("ambient")}
-              title="Reproducción cinemática fluida continua"
-              className={`px-3 py-1.5 rounded-full font-mono text-[11px] transition-colors flex items-center gap-1.5 ${
-                playbackMode === "ambient"
-                  ? "bg-[#DDA13E] text-[#0D1510] font-bold shadow-xs"
-                  : "text-[#F7F4EC]/70 hover:text-white"
-              }`}
-            >
-              <Play className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">Cinemática en Vivo</span>
-            </button>
-          </div>
-        </div>
-      )}
-
-      {/* Indicador de Coherencia de Video & Metadatos de Producción */}
-      <div className="absolute bottom-6 left-6 z-30 hidden md:flex items-center gap-2 pointer-events-none">
-        <span className="flex items-center gap-2 px-3 py-1 rounded-full bg-[#0B120E]/70 backdrop-blur-md border border-white/10 font-mono text-[10px] uppercase tracking-widest text-[#DDA13E]">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#DDA13E] animate-pulse" />
-          <span>Metraje Real Continuo · {activeClip.title}</span>
-        </span>
-      </div>
-    </div>
-  );
-};
+    frame = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(frame);
+  }, [liteMode, ambient, visible]);
+  return <div ref={root} className={`relative w-full h-full overflow-hidden ${className}`}>
+    {JOURNEY_VIDEOS.map((clip, i) => <div key={clip.id} className="absolute inset-0 transition-opacity duration-700" style={{opacity: currentStage === i ? 1 : 0, transform: `scale(${currentStage === i ? cameraDollyScale : 1.02})`, transition: "opacity 700ms ease, transform 180ms linear"}} aria-hidden="true">
+      <img src={clip.poster} srcSet={i === 0 ? "/porton_finca_turrialba-mobile.webp 768w, /porton_finca_turrialba.webp 1376w" : undefined} sizes="100vw" alt="" className="absolute inset-0 w-full h-full object-cover" loading={i === 0 ? "eager" : "lazy"} fetchPriority={i === 0 ? "high" : "auto"}/>
+      {!liteMode && !failed[i] && (localStageProgress > .005 || ambient || currentStage > 0) && Math.abs(i - currentStage) <= 1 && <video ref={v => { videos.current[i] = v; }} src={clip.src} muted playsInline loop preload={i === currentStage ? "auto" : "metadata"}
+        onLoadedData={() => setReady(r => ({...r, [i]: true}))} onError={() => setFailed(r => ({...r, [i]: true}))}
+        className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500" style={{opacity: ready[i] ? 1 : 0}}/>}
+    </div>)}
+    {!liteMode && <button type="button" aria-pressed={ambient} onClick={() => setAmbient(a => !a)} className="cinematic-play">{ambient ? "Pausar reproducción" : "Reproducir sin desplazar"}</button>}
+  </div>;
+}

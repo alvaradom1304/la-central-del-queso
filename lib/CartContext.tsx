@@ -29,6 +29,8 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [currency, setCurrency] = useState<"CRC" | "USD">("CRC");
+  const [restored, setRestored] = useState(false);
+  const [lastAdded, setLastAdded] = useState("");
 
   // Recuperar carrito de sessionStorage
   useEffect(() => {
@@ -40,18 +42,22 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     } catch {
       // Ignorar errores en navegadores restrictivos
     }
+    setRestored(true);
   }, []);
 
   // Guardar en sessionStorage
   useEffect(() => {
+    if (!restored) return;
     try {
       sessionStorage.setItem("central_cart", JSON.stringify(items));
     } catch {
       // Ignorar errores
     }
-  }, [items]);
+  }, [items, restored]);
 
   const addToCart = (product: Product, quantity = 1) => {
+    if (!Number.isFinite(quantity) || quantity <= 0) return;
+    setLastAdded(`${product.name} añadido a su pedido`);
     setItems((prev) => {
       const existing = prev.find((item) => item.product.id === product.id);
       if (existing) {
@@ -113,6 +119,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       }}
     >
       {children}
+      <span className="sr-only" role="status" aria-live="polite">{lastAdded}</span>
     </CartContext.Provider>
   );
 }

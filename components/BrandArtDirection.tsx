@@ -9,6 +9,7 @@ import {
   useVelocity,
   useAnimationFrame,
   useMotionValue,
+  useReducedMotion,
 } from "framer-motion";
 import { Sparkles, Compass } from "lucide-react";
 
@@ -121,6 +122,7 @@ export function KineticBrandMarquee({
   baseVelocity?: number;
 }) {
   const baseX = useMotionValue(0);
+  const reducedMotion = useReducedMotion();
   const { scrollY } = useScroll();
   const scrollVelocity = useVelocity(scrollY);
   const smoothVelocity = useSpring(scrollVelocity, {
@@ -134,6 +136,7 @@ export function KineticBrandMarquee({
   const directionFactor = useRef<number>(1);
 
   useAnimationFrame((_, delta) => {
+    if (reducedMotion) return;
     let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
 
     if (velocityFactor.get() < 0) {

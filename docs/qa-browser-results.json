@@ -1,0 +1,244 @@
+{
+  "preview": "http://127.0.0.1:3102",
+  "checks": [
+    {
+      "name": "closed entry doors",
+      "ok": true,
+      "detail": {
+        "w": 696,
+        "transform": "matrix(1, 0, 0, 1, 0, 0)"
+      }
+    },
+    {
+      "name": "no initial WebGL context",
+      "ok": true
+    },
+    {
+      "name": "entry opens into pasture",
+      "ok": true
+    },
+    {
+      "name": "scroll reaches a decoded video frame",
+      "ok": true
+    },
+    {
+      "name": "ambient cinematic playback advances",
+      "ok": true
+    },
+    {
+      "name": "second doors swing open",
+      "ok": true,
+      "detail": {
+        "closedBarn": "matrix3d(0.999943, 0, -0.0106559, 0, 0, 1, 0, 0, 0.0106559, 0, 0.999943, 0, 0, 0, 0, 1)",
+        "openBarn": "matrix3d(-0.173648, 0, -0.984808, 0, 0, 1, 0, 0, 0.984808, 0, -0.173648, 0, 0, 0, 0, 1)"
+      }
+    },
+    {
+      "name": "3D viewport has fixed size",
+      "ok": true,
+      "detail": {
+        "x": 33,
+        "y": 359.5,
+        "width": 787.328125,
+        "height": 540
+      }
+    },
+    {
+      "name": "cut interaction changes state",
+      "ok": true
+    },
+    {
+      "name": "3D survives scroll roundtrip",
+      "ok": true
+    },
+    {
+      "name": "drawer traps focus",
+      "ok": true
+    },
+    {
+      "name": "add to cart opens correct item",
+      "ok": true
+    },
+    {
+      "name": "drawer closes with Escape",
+      "ok": true
+    },
+    {
+      "name": "cart survives reload",
+      "ok": true
+    },
+    {
+      "name": "calculator two-person total",
+      "ok": true
+    },
+    {
+      "name": "calculator bundle added with expected total",
+      "ok": true
+    },
+    {
+      "name": "responsive 375",
+      "ok": true,
+      "detail": {
+        "viewport": 375,
+        "scroll": 375,
+        "header": [
+          {
+            "name": "LCLa Central del QuesoDe la Finca a tu Mesa · 1980",
+            "rect": {
+              "x": 16,
+              "right": 206.4375
+            }
+          },
+          {
+            "name": "Activar modo ligero",
+            "rect": {
+              "x": 229,
+              "right": 265
+            }
+          },
+          {
+            "name": "Activar sonido de finca",
+            "rect": {
+              "x": 273,
+              "right": 307
+            }
+          },
+          {
+            "name": "Mi Pedido",
+            "rect": {
+              "x": 315,
+              "right": 359
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "mobile add to cart 375",
+      "ok": true
+    },
+    {
+      "name": "responsive 768",
+      "ok": true,
+      "detail": {
+        "viewport": 768,
+        "scroll": 768,
+        "header": [
+          {
+            "name": "LCLa Central del QuesoDe la Finca a tu Mesa · 1980",
+            "rect": {
+              "x": 32,
+              "right": 299.546875
+            }
+          },
+          {
+            "name": "Activar modo ligero",
+            "rect": {
+              "x": 311.546875,
+              "right": 393.125
+            }
+          },
+          {
+            "name": "Activar sonido de finca",
+            "rect": {
+              "x": 403.125,
+              "right": 437.125
+            }
+          },
+          {
+            "name": "Calculadora",
+            "rect": {
+              "x": 447.125,
+              "right": 541.171875
+            }
+          },
+          {
+            "name": "Ver Productos",
+            "rect": {
+              "x": 551.171875,
+              "right": 655.1875
+            }
+          },
+          {
+            "name": "Mi Pedido",
+            "rect": {
+              "x": 665.1875,
+              "right": 767.859375
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "mobile add to cart 768",
+      "ok": true
+    },
+    {
+      "name": "reduced motion has no doors or videos",
+      "ok": true
+    },
+    {
+      "name": "explicit full mode override works",
+      "ok": true
+    },
+    {
+      "name": "no page errors",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "name": "no failed assets",
+      "ok": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "warnings": [
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.WebGLProgram: Program Info Log: (210,81-129): warning X4122: sum of 0.996094 and -2.98545e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision\n\n\n\u0000",
+    "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead."
+  ],
+  "httpErrors": [],
+  "timings": {
+    "desktopInitial": {
+      "lcp": 2388,
+      "layoutShiftSum": 0,
+      "maxEventDuration": 0,
+      "webglContexts": 0,
+      "lcpElement": {
+        "tag": "DIV",
+        "class": "timber-leaf timber-leaf-0",
+        "url": "http://127.0.0.1:3102/textures/wood_plank_diff.webp",
+        "size": 262144
+      },
+      "scriptEncodedBytes": 178238,
+      "navigation": [
+        {
+          "responseStart": 911.2000000178814,
+          "domContentLoaded": 1486.800000011921,
+          "load": 2516.9000000059605
+        }
+      ]
+    },
+    "desktopAfter": {
+      "lcp": 1572,
+      "layoutShiftSum": 2.000788948986331,
+      "maxEventDuration": 2624,
+      "webglContexts": 0,
+      "lcpElement": {
+        "tag": "IMG",
+        "class": "absolute inset-0 w-full h-full object-cover",
+        "url": "http://127.0.0.1:3102/mesa_interactiva_tasting.jpg",
+        "size": 514501
+      }
+    }
+  }
+}

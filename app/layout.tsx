@@ -1,25 +1,6 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
+
 import "./globals.css";
-
-const plusJakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-inter",
-});
-
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
-  variable: "--font-playfair",
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-mono",
-});
 
 export const metadata: Metadata = {
   title: "La Central del Queso | De la Finca a tu Mesa · Desde 1980",
@@ -35,8 +16,9 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${plusJakarta.variable} ${cormorant.variable} ${jetbrainsMono.variable}`}
+      style={{ "--font-inter": "Arial, sans-serif", "--font-playfair": "Georgia, serif", "--font-mono": "Consolas, monospace" } as React.CSSProperties}
     >
+      <head><link rel="preload" as="image" href="/porton_finca_turrialba.webp" imageSrcSet="/porton_finca_turrialba-mobile.webp 768w, /porton_finca_turrialba.webp 1376w" imageSizes="100vw" fetchPriority="high"/></head>
       <body className="font-sans bg-[#0D1510] text-[#F7F4EC] selection:bg-[#DDA13E] selection:text-[#0D1510]">
         {children}
       </body>

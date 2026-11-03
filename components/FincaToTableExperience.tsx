@@ -1,10 +1,8 @@
 "use client";
 
 import React, { useRef, useState, useEffect, useMemo } from "react";
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { ContactShadows, Html } from "@react-three/drei";
+import dynamic from "next/dynamic";
 import { motion, AnimatePresence } from "framer-motion";
-import * as THREE from "three";
 import {
   Sparkles,
   Volume2,
@@ -39,8 +37,8 @@ import { useCart } from "../lib/CartContext";
 import { products, CATEGORIES, Product, USD_EXCHANGE_RATE } from "../lib/products";
 import { locations } from "../lib/locations";
 import { spatialAudio } from "../lib/spatialAudio";
-import { DepthPhotoCanvas } from "./DepthPhotoCanvas";
-import { VideoScrollytellingPlayer } from "./VideoScrollytellingPlayer";
+import CinematicJourney from "./CinematicJourney";
+const TastingSculpture = dynamic(() => import("./TastingSculpture"), { ssr: false, loading: () => <div className="absolute inset-0 flex items-center justify-center text-sm" role="status">Preparando de la mesa 3D…</div> });
 
 // ==============================================================================
 // 1. DEFINICIÓN DE LAS 7 ESCENAS DEL STORYBOARD «DE LA FINCA A TU MESA»
@@ -125,7 +123,7 @@ export const NARRATIVE_SCENES: NarrativeSceneMeta[] = [
 // ==============================================================================
 // 2. CONFIGURACIÓN ESPACIAL DE FAMILIAS SOBRE LA MESA (ESCENAS 05 Y 06)
 // ==============================================================================
-interface TableFamilyConfig {
+export interface TableFamilyConfig {
   category: string;
   shortTitle: string;
   tableZoneLabel: string;
@@ -151,7 +149,7 @@ const TABLE_FAMILIES: TableFamilyConfig[] = [
     ambientGradient:
       "radial-gradient(circle at 25% 20%, rgba(221, 161, 62, 0.24), rgba(15, 30, 22, 0.96) 72%)",
     accentHex: "#DDA13E",
-    rindColor: "#e2a43b",
+    rindColor: "#d8c08f",
     pasteColor: "#fff5d6",
     waxBandColor: "#7a2e1d",
     tablePinX: "38%",
@@ -243,378 +241,6 @@ const TABLE_FAMILIES: TableFamilyConfig[] = [
 // ==============================================================================
 // 3. TEXTURAS PROCEDURALES PBR Y ESCULTURA 3D PARA LA MESA (ESCENA 05)
 // ==============================================================================
-function createTableCheeseTextures() {
-  if (typeof document === "undefined") {
-    return { rindBump: null, pasteBump: null, woodPlankBump: null };
-  }
-
-  const rindCanvas = document.createElement("canvas");
-  rindCanvas.width = 512;
-  rindCanvas.height = 512;
-  const rctx = rindCanvas.getContext("2d")!;
-  rctx.fillStyle = "#808080";
-  rctx.fillRect(0, 0, 512, 512);
-
-  rctx.strokeStyle = "rgba(255,255,255,0.06)";
-  rctx.lineWidth = 1;
-  for (let i = 0; i < 512; i += 6) {
-    rctx.beginPath();
-    rctx.moveTo(i, 0);
-    rctx.lineTo(i, 512);
-    rctx.stroke();
-    rctx.beginPath();
-    rctx.moveTo(0, i);
-    rctx.lineTo(512, i);
-    rctx.stroke();
-  }
-
-  for (let i = 0; i < 3600; i++) {
-    const x = Math.random() * 512;
-    const y = Math.random() * 512;
-    const r = 0.6 + Math.random() * 2.0;
-    const v = 105 + Math.floor(Math.random() * 55);
-    rctx.fillStyle = `rgb(${v},${v},${v})`;
-    rctx.beginPath();
-    rctx.arc(x, y, r, 0, Math.PI * 2);
-    rctx.fill();
-  }
-
-  const rindBump = new THREE.CanvasTexture(rindCanvas);
-  rindBump.wrapS = THREE.RepeatWrapping;
-  rindBump.wrapT = THREE.RepeatWrapping;
-  rindBump.repeat.set(4, 2);
-
-  const pasteCanvas = document.createElement("canvas");
-  pasteCanvas.width = 512;
-  pasteCanvas.height = 512;
-  const pctx = pasteCanvas.getContext("2d")!;
-  pctx.fillStyle = "#969696";
-  pctx.fillRect(0, 0, 512, 512);
-
-  for (let i = 0; i < 85; i++) {
-    const x = Math.random() * 512;
-    const y = Math.random() * 512;
-    const r = 2 + Math.random() * 7.5;
-    const grad = pctx.createRadialGradient(x, y, r * 0.1, x, y, r);
-    grad.addColorStop(0, "#323232");
-    grad.addColorStop(0.75, "#585858");
-    grad.addColorStop(1, "#969696");
-    pctx.fillStyle = grad;
-    pctx.beginPath();
-    pctx.arc(x, y, r, 0, Math.PI * 2);
-    pctx.fill();
-  }
-
-  const pasteBump = new THREE.CanvasTexture(pasteCanvas);
-  pasteBump.wrapS = THREE.RepeatWrapping;
-  pasteBump.wrapT = THREE.RepeatWrapping;
-
-  const woodCanvas = document.createElement("canvas");
-  woodCanvas.width = 512;
-  woodCanvas.height = 512;
-  const wctx = woodCanvas.getContext("2d")!;
-  wctx.fillStyle = "#707070";
-  wctx.fillRect(0, 0, 512, 512);
-  for (let i = 0; i < 550; i++) {
-    wctx.fillStyle = i % 2 === 0 ? "rgba(255,255,255,0.05)" : "rgba(0,0,0,0.06)";
-    wctx.fillRect(0, Math.random() * 512, 512, 1 + Math.random() * 2.5);
-  }
-  const woodPlankBump = new THREE.CanvasTexture(woodCanvas);
-
-  return { rindBump, pasteBump, woodPlankBump };
-}
-
-function TableStudioLighting() {
-  const { scene, gl } = useThree();
-
-  useEffect(() => {
-    const pmremGenerator = new THREE.PMREMGenerator(gl);
-    pmremGenerator.compileEquirectangularShader();
-
-    const envScene = new THREE.Scene();
-    envScene.background = new THREE.Color("#140e09");
-
-    const topSoftbox = new THREE.Mesh(
-      new THREE.PlaneGeometry(10, 10),
-      new THREE.MeshBasicMaterial({ color: "#ffecd1", side: THREE.DoubleSide })
-    );
-    topSoftbox.position.set(0, 6, 0);
-    topSoftbox.rotation.x = Math.PI / 2;
-    envScene.add(topSoftbox);
-
-    const keyPanel = new THREE.Mesh(
-      new THREE.PlaneGeometry(7, 7),
-      new THREE.MeshBasicMaterial({ color: "#ffd996", side: THREE.DoubleSide })
-    );
-    keyPanel.position.set(5, 3.5, 5);
-    keyPanel.lookAt(0, 0, 0);
-    envScene.add(keyPanel);
-
-    const rimPanel = new THREE.Mesh(
-      new THREE.PlaneGeometry(6, 6),
-      new THREE.MeshBasicMaterial({ color: "#e68a2e", side: THREE.DoubleSide })
-    );
-    rimPanel.position.set(-5, 3, -4);
-    rimPanel.lookAt(0, 0, 0);
-    envScene.add(rimPanel);
-
-    const envRT = pmremGenerator.fromScene(envScene, 0.04);
-    scene.environment = envRT.texture;
-
-    return () => {
-      envRT.dispose();
-      pmremGenerator.dispose();
-    };
-  }, [scene, gl]);
-
-  return null;
-}
-
-function TableCheeseSculpture3D({
-  familyConfig,
-  cheeseRotYRef,
-  isDraggingRef,
-  isWedgeCut,
-  onToggleWedge,
-}: {
-  familyConfig: TableFamilyConfig;
-  cheeseRotYRef: React.MutableRefObject<number>;
-  isDraggingRef: React.MutableRefObject<boolean>;
-  isWedgeCut: boolean;
-  onToggleWedge: () => void;
-}) {
-  const turntableRef = useRef<THREE.Group>(null);
-  const wedgeGroupRef = useRef<THREE.Group>(null);
-  const wedgeSlideRef = useRef(1);
-
-  const { rindBump, pasteBump, woodPlankBump } = useMemo(
-    () => createTableCheeseTextures(),
-    []
-  );
-
-  const WEDGE_ANGLE = Math.PI * 0.34;
-  const MAIN_WHEEL_ANGLE = Math.PI * 2 - WEDGE_ANGLE;
-  const RADIUS = 1.24;
-  const HEIGHT = 0.56;
-
-  useFrame((_, delta) => {
-    const dt = Math.min(delta, 0.05);
-
-    if (!isDraggingRef.current) {
-      cheeseRotYRef.current += dt * 0.16;
-    }
-
-    if (turntableRef.current) {
-      turntableRef.current.rotation.y = THREE.MathUtils.damp(
-        turntableRef.current.rotation.y,
-        cheeseRotYRef.current,
-        10,
-        dt
-      );
-    }
-
-    const targetSlide = isWedgeCut ? 1.0 : 0.0;
-    wedgeSlideRef.current = THREE.MathUtils.damp(wedgeSlideRef.current, targetSlide, 8, dt);
-
-    if (wedgeGroupRef.current) {
-      const s = wedgeSlideRef.current;
-      const bisector = WEDGE_ANGLE * 0.5;
-      const dist = s * 0.44;
-      wedgeGroupRef.current.position.set(
-        Math.sin(bisector) * dist,
-        s * 0.04,
-        Math.cos(bisector) * dist
-      );
-    }
-  });
-
-  return (
-    <group position={[0, -0.28, 0]}>
-      <group ref={turntableRef}>
-        {/* Tabla Artesanal de Madera de Guanacaste */}
-        <mesh position={[0, -0.16, 0]} receiveShadow castShadow>
-          <cylinderGeometry args={[1.66, 1.74, 0.12, 64]} />
-          <meshStandardMaterial
-            color="#2b1b10"
-            roughness={0.68}
-            metalness={0.08}
-            bumpMap={woodPlankBump}
-            bumpScale={0.022}
-          />
-        </mesh>
-
-        {/* Aro de Bronce Bruñido */}
-        <mesh position={[0, -0.09, 0]}>
-          <cylinderGeometry args={[1.56, 1.56, 0.028, 64]} />
-          <meshStandardMaterial color="#DDA13E" metalness={0.9} roughness={0.22} />
-        </mesh>
-
-        {/* Superficie de Corte de Madera */}
-        <mesh position={[0, -0.05, 0]} receiveShadow castShadow>
-          <cylinderGeometry args={[1.48, 1.5, 0.07, 64]} />
-          <meshStandardMaterial
-            color="#4a2c18"
-            roughness={0.52}
-            metalness={0.05}
-            bumpMap={woodPlankBump}
-            bumpScale={0.02}
-          />
-        </mesh>
-
-        {/* Horma Principal */}
-        <group position={[0, 0, 0]}>
-          <mesh position={[0, HEIGHT / 2, 0]} castShadow receiveShadow>
-            <cylinderGeometry
-              args={[RADIUS, RADIUS, HEIGHT, 64, 4, false, WEDGE_ANGLE, MAIN_WHEEL_ANGLE]}
-            />
-            <meshPhysicalMaterial
-              color={familyConfig.rindColor}
-              roughness={0.38}
-              metalness={0.02}
-              clearcoat={0.22}
-              clearcoatRoughness={0.42}
-              sheen={0.38}
-              sheenColor="#fff2cc"
-              bumpMap={rindBump}
-              bumpScale={0.026}
-            />
-          </mesh>
-
-          {/* Cinta de Cera de la Familia */}
-          <mesh position={[0, HEIGHT / 2, 0]}>
-            <cylinderGeometry
-              args={[
-                RADIUS + 0.004,
-                RADIUS + 0.004,
-                0.12,
-                64,
-                1,
-                true,
-                WEDGE_ANGLE,
-                MAIN_WHEEL_ANGLE,
-              ]}
-            />
-            <meshStandardMaterial color={familyConfig.waxBandColor} roughness={0.5} />
-          </mesh>
-
-          {/* Caras Interiores de la Pasta */}
-          <mesh
-            position={[0, HEIGHT / 2, 0]}
-            rotation={[0, WEDGE_ANGLE - Math.PI / 2, 0]}
-            receiveShadow
-          >
-            <planeGeometry args={[RADIUS, HEIGHT]} />
-            <meshPhysicalMaterial
-              color={familyConfig.pasteColor}
-              roughness={0.32}
-              clearcoat={0.26}
-              clearcoatRoughness={0.35}
-              bumpMap={pasteBump}
-              bumpScale={0.032}
-              side={THREE.DoubleSide}
-            />
-          </mesh>
-
-          <mesh position={[0, HEIGHT / 2, 0]} rotation={[0, -Math.PI / 2, 0]} receiveShadow>
-            <planeGeometry args={[RADIUS, HEIGHT]} />
-            <meshPhysicalMaterial
-              color={familyConfig.pasteColor}
-              roughness={0.32}
-              clearcoat={0.26}
-              clearcoatRoughness={0.35}
-              bumpMap={pasteBump}
-              bumpScale={0.032}
-              side={THREE.DoubleSide}
-            />
-          </mesh>
-        </group>
-
-        {/* Cuña Cortada Interactiva */}
-        <group
-          ref={wedgeGroupRef}
-          onClick={(e) => {
-            e.stopPropagation();
-            onToggleWedge();
-          }}
-        >
-          <mesh position={[0, HEIGHT / 2, 0]} castShadow receiveShadow>
-            <cylinderGeometry args={[RADIUS, RADIUS, HEIGHT, 32, 2, false, 0, WEDGE_ANGLE]} />
-            <meshPhysicalMaterial
-              color={familyConfig.rindColor}
-              roughness={0.38}
-              metalness={0.02}
-              clearcoat={0.22}
-              bumpMap={rindBump}
-              bumpScale={0.026}
-            />
-          </mesh>
-
-          <mesh
-            position={[0, HEIGHT / 2, 0]}
-            rotation={[0, WEDGE_ANGLE - Math.PI / 2, 0]}
-            receiveShadow
-          >
-            <planeGeometry args={[RADIUS, HEIGHT]} />
-            <meshPhysicalMaterial
-              color={familyConfig.pasteColor}
-              roughness={0.3}
-              clearcoat={0.28}
-              bumpMap={pasteBump}
-              bumpScale={0.03}
-              side={THREE.DoubleSide}
-            />
-          </mesh>
-
-          <mesh position={[0, HEIGHT / 2, 0]} rotation={[0, -Math.PI / 2, 0]} receiveShadow>
-            <planeGeometry args={[RADIUS, HEIGHT]} />
-            <meshPhysicalMaterial
-              color={familyConfig.pasteColor}
-              roughness={0.3}
-              clearcoat={0.28}
-              bumpMap={pasteBump}
-              bumpScale={0.03}
-              side={THREE.DoubleSide}
-            />
-          </mesh>
-
-          <Html position={[0.45, HEIGHT + 0.18, 0.45]} center distanceFactor={6}>
-            <button
-              type="button"
-              onClick={onToggleWedge}
-              className="px-2.5 py-1 rounded-full bg-[#120d09]/90 border border-[#DDA13E]/60 text-[#F7F4EC] text-[10px] font-mono uppercase tracking-widest whitespace-nowrap shadow-xl hover:bg-[#DDA13E] hover:text-[#120d09] transition-colors"
-            >
-              {isWedgeCut ? "Unir Cuña" : "Cortar Cuña"}
-            </button>
-          </Html>
-        </group>
-
-        {/* Cuchillo Quesero Forjado sobre la Tabla */}
-        <group position={[-0.95, 0.02, 0.85]} rotation={[0, 0.55, 0]}>
-          <mesh position={[0, 0.02, 0]} castShadow>
-            <boxGeometry args={[0.72, 0.015, 0.14]} />
-            <meshStandardMaterial color="#d8dde2" metalness={0.92} roughness={0.18} />
-          </mesh>
-          <mesh position={[-0.52, 0.03, 0]} rotation={[0, 0, Math.PI / 2]} castShadow>
-            <cylinderGeometry args={[0.045, 0.038, 0.42, 16]} />
-            <meshStandardMaterial color="#3b2112" roughness={0.6} />
-          </mesh>
-        </group>
-      </group>
-
-      <ContactShadows
-        position={[0, -0.24, 0]}
-        opacity={0.65}
-        scale={5.5}
-        blur={2.2}
-        far={2.5}
-      />
-    </group>
-  );
-}
-
-// ==============================================================================
-// 4. COMPONENTE PRINCIPAL: VIAJE EN 7 ESCENAS «DE LA FINCA A TU MESA»
-// ==============================================================================
 export default function FincaToTableExperience() {
   const {
     addToCart,
@@ -631,16 +257,24 @@ export default function FincaToTableExperience() {
   const journeyContainerRef = useRef<HTMLDivElement>(null);
   const [narrativeProgress, setNarrativeProgress] = useState(0);
   const [activeSceneIndex, setActiveSceneIndex] = useState(0);
-  const [mouseNorm, setMouseNorm] = useState({ x: 0, y: 0 });
 
   // --- Preferencias de Accesibilidad, Rendimiento y Audio ---
   const [liteMode, setLiteMode] = useState(false);
+  const [fullMotionOverride, setFullMotionOverride] = useState(false);
   const [audioEnabled, setAudioEnabled] = useState(false);
 
   // --- Estado de Escena 05 y 06 (La Mesa como Interfaz Viva) ---
   const [selectedFamilyIndex, setSelectedFamilyIndex] = useState(0);
   const [showAllFamilies, setShowAllFamilies] = useState(false);
   const [tableVisualMode, setTableVisualMode] = useState<"panorama" | "3d">("panorama");
+  const tableViewportRef = useRef<HTMLDivElement>(null);
+  const [tableVisible, setTableVisible] = useState(false);
+  const [webglLost, setWebglLost] = useState(false);
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => setTableVisible(entry.isIntersecting), { rootMargin: "120px" });
+    if (tableViewportRef.current) observer.observe(tableViewportRef.current);
+    return () => observer.disconnect();
+  }, [tableVisualMode]);
   const [isFamilyLoading, setIsFamilyLoading] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [quantities, setQuantities] = useState<Record<string, number>>({});
@@ -762,11 +396,9 @@ export default function FincaToTableExperience() {
   useEffect(() => {
     if (typeof window === "undefined") return;
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (mq.matches) {
-      setLiteMode(true);
-    }
+    setLiteMode(mq.matches);
     const handler = (e: MediaQueryListEvent) => {
-      if (e.matches) setLiteMode(true);
+      setLiteMode(e.matches);
     };
     mq.addEventListener("change", handler);
     return () => mq.removeEventListener("change", handler);
@@ -818,7 +450,7 @@ export default function FincaToTableExperience() {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleScroll);
     };
-  }, [audioEnabled]);
+  }, [audioEnabled, liteMode]);
 
   const toggleAudio = () => {
     if (audioEnabled) {
@@ -834,6 +466,11 @@ export default function FincaToTableExperience() {
   const navigateToScene = (index: number) => {
     const scene = NARRATIVE_SCENES[index];
     if (!scene) return;
+    if (liteMode && scene.scrollRange) {
+      setNarrativeProgress(scene.scrollRange[0] + 0.01);
+      setActiveSceneIndex(index);
+      return;
+    }
 
     if (scene.anchorId) {
       const target = document.getElementById(scene.anchorId);
@@ -850,7 +487,7 @@ export default function FincaToTableExperience() {
         1,
         journeyContainerRef.current.offsetHeight - window.innerHeight
       );
-      const targetProgress = scene.scrollRange[0] + 0.03;
+      const targetProgress = scene.scrollRange[0] + (index === 1 ? 0.09 : 0.03);
       window.scrollTo({
         top: containerTop + scrollableDistance * targetProgress,
         behavior: liteMode ? "auto" : "smooth",
@@ -956,12 +593,6 @@ export default function FincaToTableExperience() {
 
   return (
     <div
-      onMouseMove={(e) => {
-        if (liteMode) return;
-        const nx = (e.clientX / window.innerWidth - 0.5) * 2;
-        const ny = (e.clientY / window.innerHeight - 0.5) * 2;
-        setMouseNorm({ x: nx, y: ny });
-      }}
       className="relative bg-[#0D1510] text-[#F7F4EC] selection:bg-[#DDA13E] selection:text-[#0D1510]"
     >
       {/* ====================================================================
@@ -976,16 +607,16 @@ export default function FincaToTableExperience() {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: liteMode ? "auto" : "smooth" });
             }}
-            className="flex items-center gap-3 group focus:outline-hidden"
+            className="flex items-center gap-2 sm:gap-3 group focus:outline-hidden shrink-0"
           >
             <div className="w-10 h-10 rounded-full bg-[#DDA13E]/15 border border-[#DDA13E]/50 flex items-center justify-center text-[#DDA13E] font-serif font-bold text-lg group-hover:bg-[#DDA13E] group-hover:text-[#0D1510] transition-colors">
               LC
             </div>
             <div>
-              <span className="font-serif text-lg sm:text-xl font-semibold tracking-tight text-[#F7F4EC] block leading-none">
+              <span className="font-serif text-sm sm:text-xl font-semibold tracking-tight text-[#F7F4EC] block leading-none">
                 La Central del Queso
               </span>
-              <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-[#DDA13E]/90 block mt-1">
+              <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-[#DDA13E]/90 hidden sm:block mt-1">
                 De la Finca a tu Mesa · 1980
               </span>
             </div>
@@ -994,7 +625,7 @@ export default function FincaToTableExperience() {
           {/* Mapa Interactivo de las 7 Escenas (Desktop) */}
           <nav
             aria-label="Recorrido narrativo de 7 escenas"
-            className="hidden xl:flex items-center gap-1 bg-white/[0.04] p-1.5 rounded-full border border-white/10"
+            className="hidden"
           >
             {NARRATIVE_SCENES.map((scene, idx) => {
               const isCurrent = activeSceneIndex === idx;
@@ -1020,8 +651,8 @@ export default function FincaToTableExperience() {
           <div className="flex items-center gap-2 sm:gap-2.5">
             <button
               type="button"
-              onClick={() => setLiteMode((prev) => !prev)}
-              title="Activar o desactivar animaciones espaciales y 3D"
+              onClick={() => { setFullMotionOverride(liteMode); setLiteMode(!liteMode); }}
+              aria-label={liteMode ? "Desactivar modo ligero" : "Activar modo ligero"} aria-pressed={liteMode} title="Activar o desactivar animaciones espaciales y 3D"
               className={`px-2.5 py-1.5 rounded-full text-[11px] font-mono uppercase tracking-wider border transition-colors flex items-center gap-1.5 ${
                 liteMode
                   ? "bg-[#DDA13E]/20 border-[#DDA13E] text-[#DDA13E]"
@@ -1071,7 +702,7 @@ export default function FincaToTableExperience() {
 
             <button
               type="button"
-              onClick={() => setIsCartOpen(true)}
+              aria-label="Mi Pedido" onClick={() => setIsCartOpen(true)}
               className="relative px-3.5 sm:px-4 py-2 rounded-full bg-[#DDA13E] hover:bg-[#F0BA5C] text-[#0D1510] font-semibold text-xs sm:text-sm flex items-center gap-2 shadow-lg transition-transform active:scale-95"
             >
               <ShoppingBag className="w-4 h-4" />
@@ -1092,363 +723,7 @@ export default function FincaToTableExperience() {
           apertura 3D del portón «Finca Doña Martha», camino vivo, lechería y
           match-cut espacial hacia la mesa.
       ==================================================================== */}
-      <section
-        id="inicio-umbral"
-        ref={journeyContainerRef}
-        className={`relative w-full ${liteMode ? "min-h-screen py-24" : "h-[430vh]"}`}
-      >
-        <div
-          className={`${
-            liteMode ? "relative min-h-[85vh]" : "sticky top-0 h-screen w-full"
-          } overflow-hidden flex flex-col justify-between pt-20 pb-8 px-4 sm:px-10 select-none`}
-        >
-          {/* CAPA 1: VIDEO SCROLLYTELLING CONTINUO COHERENTE («DE LA FINCA A TU MESA») */}
-          <div className="absolute inset-0 -z-20 overflow-hidden bg-[#0A110D]">
-            <VideoScrollytellingPlayer
-              currentStage={currentJourneyStage}
-              localStageProgress={localStageProgress}
-              globalProgress={narrativeProgress}
-              cameraDollyScale={cameraDollyScale}
-              liteMode={liteMode}
-              className="w-full h-full"
-            />
-          </div>
-
-          {/* CAPA 2: NIEBLA VOLCÁNICA Y VAPOR ARTESANAL EN MOVIMIENTO */}
-          {!liteMode && (
-            <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-              <div
-                className="absolute -inset-x-1/4 top-12 h-72 rounded-full blur-[90px] opacity-40 transition-transform duration-500"
-                style={{
-                  background:
-                    currentJourneyStage <= 1
-                      ? "radial-gradient(circle, rgba(232,240,234,0.45) 0%, transparent 70%)"
-                      : "radial-gradient(circle, rgba(245,205,140,0.35) 0%, transparent 70%)",
-                  transform: `translate3d(${(mouseNorm.x * -28).toFixed(1)}px, ${(
-                    mouseNorm.y * -14
-                  ).toFixed(1)}px, 0)`,
-                }}
-              />
-            </div>
-          )}
-
-          {/* CAPA 2.5: PINES INTERACTIVOS DE DESCUBRIMIENTO EN EL PAISAJE (ESCENAS 01–04) */}
-          <div className="hidden md:block absolute inset-0 z-15 pointer-events-none">
-            {(STAGE_FIELD_HOTSPOTS[currentJourneyStage] || []).map((spot, idx) => {
-              const isSpotActive = activeFieldHotspot === idx;
-              return (
-                <button
-                  key={spot.title}
-                  type="button"
-                  data-cursor="EXPLORAR"
-                  onClick={() => setActiveFieldHotspot(idx)}
-                  style={{ left: spot.x, top: spot.y }}
-                  className="pointer-events-auto absolute -translate-x-1/2 -translate-y-1/2 group focus:outline-hidden"
-                >
-                  <span
-                    className={`flex items-center gap-2 px-3.5 py-1.5 rounded-full border backdrop-blur-md transition-all shadow-2xl ${
-                      isSpotActive
-                        ? "bg-[#DDA13E] text-[#0D1510] border-white font-bold scale-105"
-                        : "bg-[#0B120E]/85 text-[#F7F4EC] border-[#DDA13E]/60 hover:bg-[#16110C]"
-                    }`}
-                  >
-                    <span
-                      className={`w-2 h-2 rounded-full ${
-                        isSpotActive ? "bg-[#0D1510] animate-ping" : "bg-[#DDA13E]"
-                      }`}
-                    />
-                    <span className="font-mono text-[11px]">{spot.title}</span>
-                  </span>
-                </button>
-              );
-            })}
-          </div>
-
-          {/* CAPA 3: ESCENA 01 — PORTÓN DE MADERA TALLADA «FINCA DOÑA MARTHA» EN PERSPECTIVA 3D */}
-          {gateFrameOpacity > 0.01 && !liteMode && (
-            <div
-              className="pointer-events-none absolute inset-0 z-10 flex flex-col justify-between overflow-hidden"
-              style={{
-                perspective: "1400px",
-                opacity: gateFrameOpacity,
-                transform: `scale(${gateFrameScale.toFixed(3)})`,
-                transformOrigin: "center center",
-              }}
-            >
-              {/* Dintel / Arco Superior de Madera Rústica con Letrero «FINCA DOÑA MARTHA» */}
-              <div className="w-full pt-16 sm:pt-20 flex justify-center">
-                <div className="relative px-8 sm:px-14 py-3.5 sm:py-4 rounded-2xl bg-gradient-to-b from-[#2E1E12] via-[#23160D] to-[#1A1009] border-2 border-[#6E4B2E]/70 shadow-[0_25px_60px_rgba(0,0,0,0.85)] text-center">
-                  {/* Clavos de hierro forjado en las esquinas del letrero */}
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#8C6D46] absolute top-2.5 left-3 shadow-inner" />
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#8C6D46] absolute top-2.5 right-3 shadow-inner" />
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#8C6D46] absolute bottom-2.5 left-3 shadow-inner" />
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#8C6D46] absolute bottom-2.5 right-3 shadow-inner" />
-
-                  <span className="font-mono text-[10px] uppercase tracking-[0.32em] text-[#DDA13E]/90 block">
-                    Santa Cruz de Turrialba · Costa Rica
-                  </span>
-                  <span className="font-serif text-2xl sm:text-4xl md:text-5xl font-bold tracking-[0.14em] text-[#F7F4EC] drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] block mt-0.5">
-                    FINCA DOÑA MARTHA
-                  </span>
-                  <span className="font-mono text-[9px] text-[#F7F4EC]/55 block mt-1">
-                    * Nombre narrativo del recorrido · Tradición Familiar desde 1980
-                  </span>
-                </div>
-              </div>
-
-              {/* Hojas Izquierda y Derecha del Portón de Madera que se abren al hacer Scroll */}
-              <div className="relative flex-1 flex items-end justify-between px-0 pb-0">
-                {/* Hoja Izquierda del Portón */}
-                <div
-                  style={{
-                    transformOrigin: "left center",
-                    transform: `rotateY(${gateSwingDeg.toFixed(1)}deg)`,
-                  }}
-                  className="w-[26vw] max-w-[320px] h-[54vh] border-r-4 border-t-4 border-[#4A321F]/85 bg-gradient-to-r from-[#1E130B]/95 via-[#2C1C11]/75 to-transparent rounded-tr-xl shadow-2xl flex flex-col justify-evenly py-6"
-                >
-                  <div className="h-5 w-full bg-[#3A2516]/90 border-y border-[#6B482D]/40" />
-                  <div className="h-5 w-full bg-[#3A2516]/90 border-y border-[#6B482D]/40" />
-                  <div className="h-5 w-full bg-[#3A2516]/90 border-y border-[#6B482D]/40" />
-                </div>
-
-                {/* Hoja Derecha del Portón */}
-                <div
-                  style={{
-                    transformOrigin: "right center",
-                    transform: `rotateY(-${gateSwingDeg.toFixed(1)}deg)`,
-                  }}
-                  className="w-[26vw] max-w-[320px] h-[54vh] border-l-4 border-t-4 border-[#4A321F]/85 bg-gradient-to-l from-[#1E130B]/95 via-[#2C1C11]/75 to-transparent rounded-tl-xl shadow-2xl flex flex-col justify-evenly py-6"
-                >
-                  <div className="h-5 w-full bg-[#3A2516]/90 border-y border-[#6B482D]/40" />
-                  <div className="h-5 w-full bg-[#3A2516]/90 border-y border-[#6B482D]/40" />
-                  <div className="h-5 w-full bg-[#3A2516]/90 border-y border-[#6B482D]/40" />
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* CAPA 4: TELEMETRÍA SUPERIOR DEL VIAJE Y SELECTOR DE ESCENA */}
-          <div className="relative z-20 max-w-[1440px] w-full mx-auto flex flex-wrap items-center justify-between gap-4 pt-2">
-            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-[#0B120E]/75 backdrop-blur-md border border-white/15">
-              <span className="px-2 py-0.5 rounded-full bg-[#DDA13E] text-[#0D1510] font-mono text-xs font-bold">
-                ESCENA {NARRATIVE_SCENES[currentJourneyStage].number} / 07
-              </span>
-              <span className="font-serif italic text-base sm:text-lg text-[#F7F4EC]">
-                {NARRATIVE_SCENES[currentJourneyStage].title}
-              </span>
-              <span className="hidden sm:inline text-white/30">·</span>
-              <span className="hidden sm:inline font-mono text-xs text-[#DDA13E]">
-                {NARRATIVE_SCENES[currentJourneyStage].timeOfDay}
-              </span>
-            </div>
-
-            {/* Indicador de Altitud y Transparencia Editorial */}
-            <div className="flex items-center gap-2">
-              <div className="px-3.5 py-1.5 rounded-full bg-[#0B120E]/75 backdrop-blur-md border border-white/15 font-mono text-xs text-[#F7F4EC]/85 flex items-center gap-2">
-                <Mountain className="w-3.5 h-3.5 text-[#DDA13E]" />
-                <span>{NARRATIVE_SCENES[currentJourneyStage].altitude}</span>
-              </div>
-              {currentJourneyStage === 2 && (
-                <div className="px-3.5 py-1.5 rounded-full bg-[#B85634]/90 backdrop-blur-md border border-white/20 text-[11px] font-medium text-white">
-                  Recreación artística conceptual del oficio artesanal
-                </div>
-              )}
-            </div>
-          </div>
-
-          {/* CAPA 5: NARRATIVA CENTRAL Y PUNTOS DE INTERÉS ESPACIALES POR ESCENA */}
-          <div className="relative z-20 max-w-[1440px] w-full mx-auto my-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
-            <div className="lg:col-span-7 space-y-5 bg-[#0B120E]/70 backdrop-blur-xl p-6 sm:p-10 rounded-[2rem] border border-white/15 shadow-[0_30px_80px_rgba(0,0,0,0.65)]">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentJourneyStage}
-                  initial={{ opacity: 0, y: 14 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -14 }}
-                  transition={{ duration: 0.32 }}
-                  className="space-y-4"
-                >
-                  <div className="font-mono text-xs uppercase tracking-[0.25em] text-[#DDA13E] flex items-center gap-2">
-                    <Compass className="w-4 h-4" />
-                    <span>{NARRATIVE_SCENES[currentJourneyStage].subtitle}</span>
-                  </div>
-
-                  {currentJourneyStage === 0 && (
-                    <>
-                      <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-semibold leading-[1.02] tracking-tight text-[#F7F4EC] text-balance">
-                        Cruzar el portón donde nace el sabor de 1980.
-                      </h1>
-                      <p className="text-sm sm:text-base text-[#F7F4EC]/85 font-light leading-relaxed max-w-2xl">
-                        Bienvenido al umbral de{" "}
-                        <strong className="font-medium text-[#DDA13E]">
-                          «Finca Doña Martha»
-                        </strong>{" "}
-                        en las faldas húmedas de Turrialba. Avance con el scroll para abrir el
-                        portón de madera, recorrer nuestros potreros de altura y llegar hasta la
-                        mesa donde cada horma se convierte en su pedido semanal.
-                      </p>
-                    </>
-                  )}
-
-                  {currentJourneyStage === 1 && (
-                    <>
-                      <h2 className="font-serif text-4xl sm:text-6xl font-semibold leading-[1.04] tracking-tight text-[#F7F4EC] text-balance">
-                        El camino vivo entre hortensias, neblina y pastoreo libre.
-                      </h2>
-                      <p className="text-sm sm:text-base text-[#F7F4EC]/85 font-light leading-relaxed max-w-2xl">
-                        A 1.180 metros de altitud, el rocío volcánico mantiene tierno el pasto todo
-                        el año. Las vacas pastan sin prisa industrial, aportando el color dorado
-                        natural y la riqueza butírica que distingue al verdadero queso de montaña.
-                      </p>
-                    </>
-                  )}
-
-                  {currentJourneyStage === 2 && (
-                    <>
-                      <h2 className="font-serif text-4xl sm:text-6xl font-semibold leading-[1.04] tracking-tight text-[#F7F4EC] text-balance">
-                        La lechería al amanecer: leche tibia, lienzo y manos expertas.
-                      </h2>
-                      <p className="text-sm sm:text-base text-[#F7F4EC]/85 font-light leading-relaxed max-w-2xl">
-                        La leche recién ordeñada llega en tarros a 34°C. Se corta la cuajada con
-                        lira artesanal, se hila el palmito en caliente y se prensan las hormas en
-                        mantas de algodón puro.{" "}
-                        <span className="italic text-[#DDA13E]">
-                          (Escena de recreación artística conceptual inspirada en el oficio
-                          tradicional costarricense).
-                        </span>
-                      </p>
-                    </>
-                  )}
-
-                  {currentJourneyStage === 3 && (
-                    <>
-                      <h2 className="font-serif text-4xl sm:text-6xl font-semibold leading-[1.04] tracking-tight text-[#F7F4EC] text-balance">
-                        La transformación: silencio de cava y humo de guayabo.
-                      </h2>
-                      <p className="text-sm sm:text-base text-[#F7F4EC]/85 font-light leading-relaxed max-w-2xl">
-                        Atravesamos el pórtico de madera hacia la cava de maduración. Aquí el
-                        tiempo y el humo suave de maderas frutales sellan la corteza dorada antes
-                        de servir las piezas directamente en nuestra mesa artesanal.
-                      </p>
-                    </>
-                  )}
-                </motion.div>
-              </AnimatePresence>
-
-              {/* Botonera de Acción Inmediata: Avanzar Tramo, Ir a La Mesa o Abrir Calculadora */}
-              <div className="pt-3 flex flex-wrap items-center gap-3">
-                <button
-                  type="button"
-                  onClick={() => navigateToScene(4)}
-                  className="min-h-[48px] px-6 py-3 rounded-full bg-[#DDA13E] hover:bg-[#F0BA5C] text-[#0D1510] font-semibold text-sm flex items-center gap-2.5 shadow-xl transition-all active:scale-95"
-                >
-                  <ShoppingBag className="w-4 h-4" />
-                  <span>Ver Productos en La Mesa</span>
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-
-                <a
-                  href="#calculadora-sommelier"
-                  className="min-h-[48px] px-5 py-3 rounded-full bg-[#1B130D]/90 hover:bg-[#DDA13E] text-[#DDA13E] hover:text-[#0D1510] border border-[#DDA13E]/45 text-sm font-semibold flex items-center gap-2 transition-colors"
-                >
-                  <span>Calculadora de Feria & Sommelier</span>
-                  <ChevronRight className="w-4 h-4" />
-                </a>
-              </div>
-            </div>
-
-            {/* Tarjeta Lateral Interactiva de Hallazgos de Campo + Control de Progreso */}
-            <div className="lg:col-span-5 flex flex-col gap-3">
-              {STAGE_FIELD_HOTSPOTS[currentJourneyStage]?.[activeFieldHotspot] && (
-                <div className="bg-[#16110C]/90 backdrop-blur-xl p-5 rounded-3xl border border-[#DDA13E]/40 space-y-2 shadow-2xl">
-                  <div className="flex items-center justify-between">
-                    <span className="font-mono text-[10px] uppercase tracking-widest text-[#DDA13E]">
-                      ● HALLAZGO INTERACTIVO ·{" "}
-                      {STAGE_FIELD_HOTSPOTS[currentJourneyStage][activeFieldHotspot].tag}
-                    </span>
-                    <div className="flex gap-1.5">
-                      {STAGE_FIELD_HOTSPOTS[currentJourneyStage].map((s, idx) => (
-                        <button
-                          key={s.title}
-                          type="button"
-                          onClick={() => setActiveFieldHotspot(idx)}
-                          className={`px-2 py-0.5 rounded-full font-mono text-[10px] ${
-                            activeFieldHotspot === idx
-                              ? "bg-[#DDA13E] text-[#0D1510] font-bold"
-                              : "bg-white/10 text-[#F7F4EC]/70"
-                          }`}
-                        >
-                          Nota 0{idx + 1}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                  <h3 className="font-serif text-xl font-semibold text-[#F7F4EC]">
-                    {STAGE_FIELD_HOTSPOTS[currentJourneyStage][activeFieldHotspot].title}
-                  </h3>
-                  <p className="text-xs text-[#F7F4EC]/80 font-light leading-relaxed">
-                    {STAGE_FIELD_HOTSPOTS[currentJourneyStage][activeFieldHotspot].desc}
-                  </p>
-                </div>
-              )}
-
-              <div className="bg-[#0B120E]/75 backdrop-blur-xl p-5 rounded-3xl border border-white/15 space-y-3">
-                <div className="flex items-center justify-between text-xs font-mono text-[#DDA13E]">
-                  <span>PROGRESO DEL RECORRIDO POR LA FINCA</span>
-                  <span>{Math.round(narrativeProgress * 100)}%</span>
-                </div>
-                <div className="h-2 w-full bg-white/10 rounded-full overflow-hidden">
-                  <div
-                    className="h-full bg-gradient-to-r from-[#DDA13E] to-[#F0BA5C] transition-all duration-150"
-                    style={{ width: `${Math.round(narrativeProgress * 100)}%` }}
-                  />
-                </div>
-                <div className="grid grid-cols-4 gap-1.5 pt-1">
-                  {[0, 1, 2, 3].map((stageIdx) => (
-                    <button
-                      key={stageIdx}
-                      type="button"
-                      onClick={() => {
-                        setActiveFieldHotspot(0);
-                        navigateToScene(stageIdx);
-                      }}
-                      className={`py-2 px-2 rounded-xl text-left border transition-all ${
-                        currentJourneyStage === stageIdx
-                          ? "bg-[#DDA13E]/20 border-[#DDA13E] text-[#F7F4EC]"
-                          : "bg-white/5 border-white/10 text-[#F7F4EC]/60 hover:text-white"
-                      }`}
-                    >
-                      <span className="font-mono text-[10px] text-[#DDA13E] block">
-                        0{stageIdx + 1}
-                      </span>
-                      <span className="text-xs font-medium line-clamp-1">
-                        {NARRATIVE_SCENES[stageIdx].title}
-                      </span>
-                    </button>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* CAPA 6: PIE DE ESCENA CON INDICADOR DE SCROLL O SALTO DIRECTO */}
-          <div className="relative z-20 max-w-[1440px] w-full mx-auto flex items-center justify-between text-xs text-[#F7F4EC]/70 pt-4">
-            <span className="font-mono uppercase tracking-widest">
-              {currentJourneyStage < 3
-                ? "Deslice hacia abajo para avanzar por el sendero"
-                : "Siguiente paso: La Mesa Artesanal Interactiva"}
-            </span>
-            <button
-              type="button"
-              onClick={() => navigateToScene(5)}
-              className="font-mono uppercase tracking-widest text-[#DDA13E] hover:underline flex items-center gap-1"
-            >
-              <span>Saltar animación e ir al catálogo</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </button>
-          </div>
-        </div>
-      </section>
+      <CinematicJourney containerRef={journeyContainerRef} progress={narrativeProgress} liteMode={liteMode} fullMotionOverride={fullMotionOverride} onNavigate={navigateToScene}/>
 
       {/* ====================================================================
           ESCENA 05 — LA MESA ARTESANAL COMO INTERFAZ VIVA (#escena-mesa)
@@ -1556,7 +831,7 @@ export default function FincaToTableExperience() {
           {/* Escenario Principal de La Mesa: Vista Izquierda (Mesa Interactiva / 3D) + Vista Derecha (Pieza Protagonista en Mesa) */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
             {/* Lado Izquierdo (7 cols): La Mesa Viva */}
-            <div className="lg:col-span-7 relative rounded-[2.25rem] overflow-hidden border border-white/15 bg-[#120D09] shadow-[0_30px_80px_rgba(0,0,0,0.65)] min-h-[440px] sm:min-h-[540px] flex flex-col justify-between">
+            <div ref={tableViewportRef} className="lg:col-span-7 relative rounded-[2.25rem] overflow-hidden border border-white/15 bg-[#120D09] shadow-[0_30px_80px_rgba(0,0,0,0.65)] min-h-[440px] sm:min-h-[540px] flex flex-col justify-between">
               {tableVisualMode === "panorama" ? (
                 <div className="relative w-full h-full min-h-[440px] sm:min-h-[540px] flex-1">
                   <img
@@ -1635,7 +910,7 @@ export default function FincaToTableExperience() {
                   onPointerLeave={() => {
                     isDragging3DRef.current = false;
                   }}
-                  className="relative w-full h-full min-h-[440px] sm:min-h-[540px] flex-1 cursor-grab active:cursor-grabbing"
+                  className="relative w-full h-[440px] sm:h-[540px] flex-none cursor-grab active:cursor-grabbing"
                 >
                   {/* Selector Interactivo del Ritual de Cata en 4 Fases */}
                   <div className="absolute top-4 inset-x-4 z-20 grid grid-cols-2 sm:grid-cols-4 gap-2">
@@ -1669,31 +944,11 @@ export default function FincaToTableExperience() {
                     })}
                   </div>
 
-                  {!liteMode ? (
-                    <Canvas
-                      shadows
-                      dpr={[1, 1.5]}
-                      camera={{ position: [0, 1.45, 3.35], fov: 42 }}
-                    >
-                      <TableStudioLighting />
-                      <ambientLight intensity={0.55} />
-                      <directionalLight
-                        position={[4, 6, 4]}
-                        intensity={1.6}
-                        castShadow
-                        shadow-mapSize={[1024, 1024]}
-                      />
-                      <TableCheeseSculpture3D
-                        familyConfig={activeFamily}
-                        cheeseRotYRef={cheeseRotYRef}
-                        isDraggingRef={isDragging3DRef}
-                        isWedgeCut={isWedgeCut}
-                        onToggleWedge={() => {
-                          setIsWedgeCut((prev) => !prev);
-                          if (audioEnabled) spatialAudio.playKnifeSliceSfx();
-                        }}
-                      />
-                    </Canvas>
+                  {!liteMode && !webglLost ? (
+                    <TastingSculpture familyConfig={activeFamily} cheeseRotYRef={cheeseRotYRef} isDraggingRef={isDragging3DRef} isWedgeCut={isWedgeCut}
+                      visible={tableVisible} image={spotlightProduct.image} name={spotlightProduct.name} onContextLost={() => setWebglLost(true)}
+                      onToggleWedge={() => { setIsWedgeCut(prev => !prev); if (audioEnabled) spatialAudio.playKnifeSliceSfx(); }}/>
+
                   ) : (
                     <div className="w-full h-full flex flex-col items-center justify-center p-8 text-center space-y-4">
                       <img
@@ -2408,7 +1663,7 @@ export default function FincaToTableExperience() {
 
               <button
                 type="button"
-                onClick={() => setIsCartOpen(true)}
+                aria-label="Mi Pedido" onClick={() => setIsCartOpen(true)}
                 className="min-h-[44px] px-5 py-2.5 rounded-xl bg-[#DDA13E] hover:bg-[#F0BA5C] text-[#0D1510] font-bold text-xs sm:text-sm flex items-center gap-2 shadow-md transition-transform active:scale-95"
               >
                 <span>Confirmar Pedido por WhatsApp</span>
