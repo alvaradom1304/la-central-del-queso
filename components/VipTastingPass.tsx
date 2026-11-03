@@ -2,6 +2,7 @@
 
 import React, { useState, useMemo } from "react";
 import { motion } from "framer-motion";
+import { BUSINESS_PHONE } from "../lib/whatsapp";
 import {
   Ticket,
   Gift,
@@ -80,7 +81,7 @@ export default function VipTastingPass() {
       `_Hola, acabo de generar mi Pase VIP en la web. Por favor avísenme cuando llegue el lote fresco de esta semana._`;
 
     window.open(
-      `https://wa.me/50688888888?text=${encodeURIComponent(msg)}`,
+      `https://wa.me/${BUSINESS_PHONE}?text=${encodeURIComponent(msg)}`,
       "_blank"
     );
   };
@@ -92,7 +93,7 @@ export default function VipTastingPass() {
       `Hola, quiero recibir el aviso prioritario de los jueves cuando llega el camión con el lote fresco de Turrialba para apartar mi canasta ${clubFrequency} y acumular mi regalía cada 4 pedidos.`;
 
     window.open(
-      `https://wa.me/50688888888?text=${encodeURIComponent(msg)}`,
+      `https://wa.me/${BUSINESS_PHONE}?text=${encodeURIComponent(msg)}`,
       "_blank"
     );
   };
