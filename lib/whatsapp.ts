@@ -1,7 +1,13 @@
 import { Product } from "./products";
 
-// Use a placeholder phone number for Doña Martha
-const BUSINESS_PHONE = "50688888888";
+// Número oficial de WhatsApp de La Central del Queso (confirmado por el fundador el 2026-11-02).
+// Única fuente en el código; se puede sobrescribir con NEXT_PUBLIC_BUSINESS_PHONE (ver .env.example).
+export const BUSINESS_PHONE = process.env.NEXT_PUBLIC_BUSINESS_PHONE || "50671714679";
+export const BUSINESS_PHONE_DISPLAY = `+${BUSINESS_PHONE.slice(0, 3)} ${BUSINESS_PHONE.slice(3, 7)}-${BUSINESS_PHONE.slice(7)}`;
+
+export function whatsappUrl(text?: string): string {
+  return `https://wa.me/${BUSINESS_PHONE}${text ? `?text=${encodeURIComponent(text)}` : ""}`;
+}
 
 export function generateWhatsAppLink(product: Product): string {
   const greeting = "¡Hola Doña Martha! Qué gusto saludarle.";
